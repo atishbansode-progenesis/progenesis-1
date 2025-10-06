@@ -1,6 +1,5 @@
 'use client';
-
-import React, { useMemo , useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { centersData, type Center } from './CenterCard';
 import { useRouter } from 'next/navigation';
 import FaQ from '../about/FaQ';
@@ -8,9 +7,14 @@ import CenterDoctorsSection from './SingleCenterDoctors';
 import TestimonialsCenters from './TestimonialCenters';
 import AppointmentForm from '../about/AppointmentForm';
 
-export default function SingleCenter({ selectedId }: { selectedId?: number }) {
+interface SingleCenterProps {
+  selectedId?: number;
+}
+
+export default function SingleCenter({ selectedId }: SingleCenterProps) {
   const router = useRouter();
-  
+  const [isOpen, setIsOpen] = useState(false);
+
   const selectedCenter = useMemo(() => {
     return selectedId ? centersData.find((c) => c.id === selectedId) : undefined;
   }, [selectedId]);
@@ -19,21 +23,18 @@ export default function SingleCenter({ selectedId }: { selectedId?: number }) {
     return null;
   }
 
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div>
       {/* Hero Banner Section */}
-      <section 
+      <section
         className="relative w-full h-[500px] bg-cover bg-center flex items-center"
-        style={{ 
+        style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${selectedCenter.image})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover'
         }}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-[90px] w-full">
-          
           <h1 className="text-white text-4xl md:text-6xl font-[Manrope] font-semibold mb-4">
             Progenesis IVF,
           </h1>
@@ -51,7 +52,7 @@ export default function SingleCenter({ selectedId }: { selectedId?: number }) {
             <h1 className="text-[#1656A5] text-3xl font-[Manrope] font-semibold mb-6">
               Progenesis IVF, {selectedCenter.name}
             </h1>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               {/* Left: Contact Information */}
               <div className="font-[Manrope] space-y-8">
@@ -90,19 +91,12 @@ export default function SingleCenter({ selectedId }: { selectedId?: number }) {
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <button
                     onClick={() => {
-                      if (selectedCenter.coordinates) {
-                        window.open(
-                          `https://www.google.com/maps?q=${selectedCenter.coordinates.lat},${selectedCenter.coordinates.lng}`,
-                          '_blank'
-                        );
-                      } else if (selectedCenter.address) {
-                        window.open(
-                          `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedCenter.address)}`,
-                          '_blank'
-                        );
+                      if (selectedCenter.mapUri) {
+                        window.open(`https://maps.app.goo.gl/${selectedCenter.mapUri}`, '_blank');
                       }
                     }}
-                    className="px-8 py-3 rounded-lg border border-[#1656A5] text-[#1656A5] bg-white text-sm font-medium hover:bg-gray-50 transition-colors"
+                    disabled={!selectedCenter.mapUri}
+                    className="px-8 py-3 rounded-lg border border-[#1656A5] text-[#1656A5] bg-white text-sm font-medium hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Get Location
                   </button>
@@ -112,34 +106,37 @@ export default function SingleCenter({ selectedId }: { selectedId?: number }) {
                   >
                     Book an Appointment
                   </button>
+
                   {/* Modal */}
-            {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
+                  {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
                 </div>
               </div>
 
-              {/* Right: Map */}
-              
+              {/* Right: Minimap with Marker */}
+              {selectedCenter.coordinates && (
+                <div className="w-full h-[400px] lg:h-[500px] overflow-hidden rounded-lg bg-gray-100 shadow-sm">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src={`https://www.google.com/maps?q=${selectedCenter.coordinates.lat},${selectedCenter.coordinates.lng}&z=15&output=embed`}
+                  ></iframe>
+                </div>
+              )}
             </div>
           </div>
-          <div className="w-full h-[400px] lg:h-[500px] overflow-hidden rounded-lg bg-gray-100 shadow-sm">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.391805115976!2d72.9734238!3d19.2319302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b00a1c5d4e59%3A0x63f8a6e5a0d5c9a8!2sProgenesis%20Fertility%20Center!5e0!3m2!1sen!2sin!4v1727488361842!5m2!1sen!2sin"
-                ></iframe>
-              </div>
         </div>
       </section>
+
       <div className='w-full h-[400px] md:h-[500px] lg:h-[600px]'>
-          <img src="/images/CenterFixed.png" alt="fixed" className='h-[100%] w-full overflow-hidden' />
+        <img src="/images/CenterFixed.png" alt="fixed" className='h-[100%] w-full overflow-hidden' />
       </div>
+
       <CenterDoctorsSection />
       <TestimonialsCenters />
-      <AppointmentForm />
       <FaQ />
     </div>
   );
