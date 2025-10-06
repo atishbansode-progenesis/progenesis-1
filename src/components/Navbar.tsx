@@ -1,560 +1,3 @@
-// "use client";
-
-// import React, { useState } from "react";
-// import Link from "next/link"; // ✅ Next.js routing
-// import { usePathname } from "next/navigation"; // ✅ For active link highlighting
-// import { Search, Menu, X, ChevronDown } from "lucide-react";
-
-
-// const Navbar = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const pathname = usePathname();
-
-
-//   const navigationItems = [
-//     { label: "About Us", path: "/about-us", hasMegaMenu: true },
-//     { label: "Infertility Issues", path: "/infertility-issues" },
-//     { label: "Our Centers", path: "/centers" },
-//     { label: "Treatments", path: "/infertility-treatment" },
-//     { label: "Doctors", path: "/doctors" },
-//     { label: "Success Stories", path: "/success-stories" },
-//     { label: "Patient Resources", path: "/resources" },
-//     { label: "Careers", path: "/careers" },
-//   ];
-
-//   return (
-//     <header className="w-full bg-white border-b shadow-sm font-sans">
-//       <div className="mx-auto flex items-center justify-between h-20 px-4 md:px-[80px] lg:px-[120px]">
-//         {/* Logo */}
-//         <div className="flex items-center">
-//           <Link href="/">
-//             <img
-//               src="/logo1.png"
-//               alt="Progenesis Logo"
-//               className="w-[120px] h-[41.52px] md:w-[180px] object-contain"
-//             />
-//           </Link>
-//         </div>
-
-//         {/* Desktop Nav */}
-//         <nav className="hidden lg:flex items-center space-x-6">
-//           {navigationItems.map((item, index) => (
-//             <div key={index} className="relative group">
-//               <Link
-//                 href={item.path}
-//                 className={`flex items-center space-x-1 text-base font-medium px-1 py-2 rounded-md transition ${
-//                   pathname === item.path
-//                     ? "text-blue-600 font-semibold"
-//                     : item.hasMegaMenu
-//                     ? "group-hover:bg-blue-600 group-hover:text-white text-gray-800"
-//                     : "hover:text-blue-600 text-gray-800"
-//                 }`}
-//               >
-//                 {item.label}
-//                 {item.hasMegaMenu && <ChevronDown size={16} />}
-//               </Link>
-
-//               {/* Mega Menu for About Us */}
-//               {item.hasMegaMenu && (
-//                 <div
-//                   className="absolute -left-28 top-[104px] mt-2 hidden group-hover:flex
-//                              bg-white shadow-lg rounded-2xl p-6
-//                              max-w-[1646px] h-[468px]"
-//                 >
-//                   {/* Left Image */}
-//                   <div className="w-[375px] h-[388px] rounded-lg overflow-hidden mr-8">
-//                     <img
-//                       src="./about-image.jpg"
-//                       alt="About Us"
-//                       className="w-full h-full object-cover rounded-lg"
-//                     />
-//                   </div>
-
-//                   {/* Divider */}
-//                   <div
-//                     style={{
-//                       width: "1px",
-//                       height: "500px",
-//                       background: "rgba(22, 86, 165, 0.05)",
-//                     }}
-//                     className="mx-6"
-//                   />
-
-//                   {/* Discover Us */}
-//                   <div className="w-[232px] mr-8">
-//                     <h2 className="text-[28px] font-medium mb-6">
-//                       Discover Us
-//                     </h2>
-//                     <ul className="space-y-3">
-//                       {[
-//                         { title: "Our Story", path: "/about-us" },
-//                         { title: "Our Approach", path: "/about-us" },
-//                         { title: "Our Vision & Mission", path: "/about-us" },
-//                         { title: "Why choose us", path: "/about-us" },
-//                         { title: "Leadership Team", path: "/leadership-team" },
-//                         { title: "Impact & Growth", path: "/about-us" },
-//                         { title: "FAQs", path: "/about-us" },
-//                       ].map((link, i) => (
-//                         <li
-//                           key={i}
-//                           className={`text-sm hover:text-blue-600 ${
-//                             pathname === link.path
-//                               ? "text-blue-600 font-semibold"
-//                               : "text-gray-800"
-//                           }`}
-//                         >
-//                           <Link href={link.path}>{link.title}</Link>
-//                         </li>
-//                       ))}
-//                     </ul>
-//                   </div>
-
-//                   {/* Divider */}
-//                   <div
-//                     style={{
-//                       width: "1px",
-//                       height: "500px",
-//                       background: "rgba(22, 86, 165, 0.05)",
-//                     }}
-//                     className="mx-6"
-//                   />
-
-//                   {/* Quick Links */}
-//                   <div className="w-[232px] mr-8">
-//                     <h2 className="text-[28px] font-medium mb-6">
-//                       Quick Links
-//                     </h2>
-
-//                     <Link
-//                       href="/online-consultation"
-//                       className="flex items-center justify-between w-full bg-blue-600 text-white px-4 py-2 rounded-lg mb-3"
-//                     >
-//                       Book Appointment
-//                     </Link>
-
-//                     <div className="space-y-3 mb-4">
-//                       {[
-//                         { number: "+91 94239 71260", icon: "/call.svg" },
-//                         { number: "+91 70309 44041", icon: "/calla.svg" },
-//                       ].map((phone, idx) => (
-//                         <a
-//                           key={idx}
-//                           href={`tel:${phone.number}`}
-//                           className="flex items-center gap-3 px-3 py-2 bg-gray-50 rounded-lg hover:bg-gray-100"
-//                         >
-//                           <img src={phone.icon} alt="call" className="w-6 h-6" />
-//                           <span>{phone.number}</span>
-//                         </a>
-//                       ))}
-//                     </div>
-
-//                     {[
-//                       { title: "Take a Quiz", path: "/resources" },
-//                       { title: "Our Specialists", path: "/doctors" },
-//                       { title: "Online Consult", path: "/online-consultation" },
-//                     ].map((link, idx) => (
-//                       <Link
-//                         key={idx}
-//                         href={link.path}
-//                         className="flex items-center justify-between w-full px-3 py-2 rounded-full hover:bg-gray-50"
-//                       >
-//                         {link.title}
-//                       </Link>
-//                     ))}
-//                   </div>
-
-//                   {/* Divider */}
-//                   <div
-//                     style={{
-//                       width: "1px",
-//                       height: "500px",
-//                       background: "rgba(22, 86, 165, 0.05)",
-//                     }}
-//                     className="mx-6"
-//                   />
-
-//                   {/* Additional Links */}
-//                   <div className="w-[232px]">
-//                     {[
-//                       { title: "EMI Options", path: "/emi-options" },
-//                       { title: "Fellowship", path: "/career" },
-//                       { title: "Our Centers", path: "/centers" },
-//                       { title: "Our Social Impact", path: "/about-us" },
-//                     ].map((link, idx) => (
-//                       <Link
-//                         key={idx}
-//                         href={link.path}
-//                         className="flex items-center justify-between w-full px-3 py-2 rounded-full hover:bg-gray-50"
-//                       >
-//                         {link.title}
-//                       </Link>
-//                     ))}
-//                   </div>
-//                 </div>
-//               )}
-//             </div>
-//           ))}
-//         </nav>
-
-//         {/* Right Controls */}
-//         <div className="flex items-center space-x-3">
-//           <button className="flex items-center space-x-1 px-3 py-2 rounded-xl bg-gray-50 hover:bg-gray-100 text-gray-800 text-sm font-medium">
-//             <span>En</span>
-//             <ChevronDown size={14} />
-//           </button>
-//           <button
-//             onClick={() => setIsMenuOpen(!isMenuOpen)}
-//             className="p-2 rounded-xl bg-gray-50 hover:bg-gray-100"
-//           >
-//             <Search size={20} className="text-gray-800" />
-//           </button>
-//           <button
-//             onClick={() => setIsMenuOpen(!isMenuOpen)}
-//             className="lg:hidden p-2 text-gray-600"
-//           >
-//             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-//           </button>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// "use client";
-
-// import React, { useState } from "react";
-// import Link from "next/link";
-// import Image from "next/image";
-// import { usePathname } from "next/navigation";
-// import { Search, Menu, X, ChevronDown } from "lucide-react";
-
-// const Navbar = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const pathname = usePathname();
-
-//   const navigationItems = [
-//     { label: "About Us", path: "/about-us", hasMegaMenu: true },
-//     { label: "Infertility Issues", path: "/infertility-issues",hasMegaMenu: true },
-//     { label: "Our Centers", path: "/centers",hasMegaMenu: true },
-//     { label: "Treatments", path: "/infertility-treatment", hasMegaMenu: true },
-//     { label: "Doctors", path: "/doctors" ,hasMegaMenu: false},
-//     { label: "Success Stories", path: "/success-stories",hasMegaMenu: false },
-//     { label: "Patient Resources", path: "/resources",hasMegaMenu: true },
-//     { label: "Careers", path: "/careers",hasMegaMenu: false },
-//   ];
-
-//   return (
-//     <header className="w-full bg-white  shadow-sm font-sans">
-//       <div className="mx-auto flex items-center justify-between h-20 px-4 md:px-[80px] lg:px-[120px]">
-//         {/* Logo */}
-//         <div className="flex items-center flex-shrink-0 w-[180.84px] h-[41.517px] relative">
-//           <Link href="/">
-//             <Image
-//               src="/logo1.png"
-//               alt="Progenesis Logo"
-//               fill
-//               className="object-contain"
-//               priority
-//             />
-//           </Link>
-//         </div>
-
-//         {/* Desktop Nav */}
-//         <nav className="hidden lg:flex items-center space-x-6">
-//           {navigationItems.map((item, index) => (
-//             <div key={index} className="relative group">
-//               <Link
-//                 href={item.path}
-//                 className={`flex items-center gap-1 px-1 py-2 rounded-md text-[14px] font-normal leading-[24px] tracking-[-0.28px] ${
-//                   pathname === item.path
-//                     ? "text-blue-600 font-semibold"
-//                     : "text-[#2C2C2C] hover:text-blue-600"
-//                 }`}
-//               >
-//                 {item.label}
-//                 {item.hasMegaMenu && <ChevronDown size={20} stroke="#2C2C2C" />}
-//               </Link>
-
-//               {/* Mega Menu for About Us */}
-// {/* Mega Menu for About Us */}
-// {item.hasMegaMenu && (
-//   <div
-//     className="absolute left-1/2 top-[80px] hidden group-hover:flex 
-//                -translate-x-1/2 bg-white shadow-lg rounded-2xl p-6 
-//                w-[90vw] max-w-[1646px] h-[468px] overflow-hidden"
-//   >
-//     {/* Left Image */}
-//     <div className="w-[714px] h-full rounded-lg overflow-hidden flex-shrink-0 mr-10">
-//       <Image
-//         src="/Navbar/about-image.png"
-//         alt="About Us"
-//         width={714}
-//         height={468} // match dropdown height
-//         className="w-full h-full object-cover rounded-lg"
-//       />
-//     </div>
-
-//     {/* Divider */}
-//     <div
-//       className="mx-6"
-//       style={{
-//         width: "1px",
-//         height: "100%",
-//         background: "rgba(22, 86, 165, 0.05)",
-//       }}
-//     />
-
-//     {/* Discover Us */}
-//     <div className="w-[232px] mr-10">
-//       <h2 className="text-[#2C2C2C] font-[Manrope] text-[28px] font-normal tracking-[-0.56px] mb-6">
-//         Discover Us
-//       </h2>
-//       <ul className="space-y-3">
-//         {[
-//           { title: "Our Story", path: "/about-us", active: true },
-//           { title: "Our Approach", path: "/about-us" },
-//           { title: "Our Vision & Mission", path: "/about-us" },
-//           { title: "Why choose us", path: "/about-us" },
-//           { title: "Leadership Team", path: "/leadership-team" },
-//           { title: "Impact & Growth", path: "/about-us" },
-//           { title: "FAQs", path: "/about-us" },
-//         ].map((link, i) => (
-//           <li key={i}>
-//             <Link
-//               href={link.path}
-//               className={`font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] ${
-//                 link.active
-//                   ? "text-[#1656A5] font-semibold"
-//                   : "text-[#2C2C2C] font-normal hover:text-[#1656A5]"
-//               }`}
-//             >
-//               {link.title}
-//             </Link>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-
-//     {/* Divider */}
-//     <div
-//       className="mx-6"
-//       style={{
-//         width: "1px",
-//         height: "100%",
-//         background: "rgba(22, 86, 165, 0.05)",
-//       }}
-//     />
-
-//     {/* Quick Links */}
-//     <div className="w-[232px] mr-10">
-//       <h2 className="text-[#2C2C2C] font-[Manrope] text-[28px] font-normal tracking-[-0.56px] mb-6">
-//         Quick Links
-//       </h2>
-
-//       {/* Book Appointment Button */}
-//       <Link
-//         href="/online-consultation"
-//         className="flex items-center justify-center gap-2 bg-[#1656A5] px-3 py-2 rounded-lg mb-3"
-//       >
-//         <span className="text-[#F9F9F9] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]">
-//           Book Appointment
-//         </span>
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           width="24"
-//           height="24"
-//           viewBox="0 0 24 24"
-//           fill="none"
-//         >
-//           <path
-//             d="M5 12H19M19 12L13 6M19 12L13 18"
-//             stroke="#F9F9F9"
-//             strokeWidth="2"
-//             strokeLinecap="round"
-//             strokeLinejoin="round"
-//           />
-//         </svg>
-//       </Link>
-
-//       {/* Phone Numbers */}
-//       <div className="space-y-3 mb-4">
-//         {[
-//           { number: "+91 94239 71260", icon: "/call.svg" },
-//           { number: "+91 70309 44041", icon: "/calla.svg" },
-//         ].map((phone, idx) => (
-//           <a
-//             key={idx}
-//             href={`tel:${phone.number}`}
-//             className="flex items-center gap-3 px-3 py-2 bg-gray-50 rounded-lg hover:bg-gray-100"
-//           >
-//             <Image src={phone.icon} alt="call" width={24} height={24} />
-//             <span className="text-[#252525] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]">
-//               {phone.number}
-//             </span>
-//           </a>
-//         ))}
-//       </div>
-
-//       {/* Extra Links */}
-//       {[
-//         { title: "Take a Quiz", path: "/resources" },
-//         { title: "Our Specialists", path: "/doctors" },
-//         { title: "Online Consult", path: "/online-consultation" },
-//       ].map((link, idx) => (
-//         <Link
-//           key={idx}
-//           href={link.path}
-//           className="flex items-center justify-between w-full px-3 py-2 rounded-full hover:bg-gray-50 text-[#252525] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]"
-//         >
-//           {link.title}
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             width="24"
-//             height="24"
-//             fill="none"
-//             viewBox="0 0 24 24"
-//           >
-//             <path
-//               d="M5 12H19M19 12L13 6M19 12L13 18"
-//               stroke="#252525"
-//               strokeWidth="2"
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//             />
-//           </svg>
-//         </Link>
-//       ))}
-//     </div>
-
-//     {/* Divider */}
-//     <div
-//       className="mx-6"
-//       style={{
-//         width: "1px",
-//         height: "100%",
-//         background: "rgba(22, 86, 165, 0.05)",
-//       }}
-//     />
-
-//     {/* Additional Links */}
-//     <div className="w-[232px]">
-//       {[
-//         { title: "EMI Options", path: "/emi-options" },
-//         { title: "Fellowship", path: "/career" },
-//         { title: "Our Centers", path: "/centers" },
-//         { title: "Our Social Impact", path: "/about-us" },
-//       ].map((link, idx) => (
-//         <Link
-//           key={idx}
-//           href={link.path}
-//           className="flex items-center justify-between w-full px-3 py-2 rounded-full hover:bg-gray-50 text-[#252525] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]"
-//         >
-//           {link.title}
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             width="24"
-//             height="24"
-//             fill="none"
-//             viewBox="0 0 24 24"
-//           >
-//             <path
-//               d="M5 12H19M19 12L13 6M19 12L13 18"
-//               stroke="#252525"
-//               strokeWidth="2"
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//             />
-//           </svg>
-//         </Link>
-//       ))}
-//     </div>
-//   </div>
-// )}
-
-
-
-//             </div>
-//           ))}
-//         </nav>
-
-//         {/* Right Controls */}
-//         <div className="flex items-center space-x-3">
-//           {/* Language Selector */}
-//           <button className="flex items-center gap-1 h-[56px] px-4 py-2 rounded-[16px] bg-[rgba(0,0,0,0.05)] backdrop-blur-[7.5px] text-[#2C2C2C] text-sm font-medium">
-//             <span>En</span>
-//             <ChevronDown size={20} stroke="#2C2C2C" />
-//           </button>
-
-//           {/* Search */}
-//           <button className="inline-flex h-[56px] px-4 py-2 items-center justify-center rounded-[16px] bg-[rgba(0,0,0,0.05)] backdrop-blur-[7.5px]">
-//             <Search size={24} stroke="#2C2C2C" />
-//           </button>
-
-//           {/* Mobile Menu Toggle */}
-//           <button
-//             onClick={() => setIsMenuOpen(!isMenuOpen)}
-//             className="lg:hidden p-2 text-gray-600"
-//           >
-//             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-//           </button>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 import React, { useState, useRef } from "react";
 import Link from "next/link";
@@ -682,17 +125,17 @@ const megaMenuData: Record<string, any> = {
         links: [
           { label: "Book Appointment", path: "/appointment", isButton: true },
           { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
-          { label: "Take a Quiz", path: "/quiz" },
-          { label: "Online Consult", path: "/online-consult" },
-          { label: "EMI Options", path: "/emi-options" },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "Take a Quiz", path: "/quiz", isarrow: true },
+          { label: "Online Consult", path: "/online-consult", isarrow: true },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
         ],
       },
       {
         links: [
-          { label: "Fellowship", path: "/fellowship" },
-          { label: "Our Centers", path: "/centers" },
-          { label: "Our Social Impact", path: "/social-impact" },
+          { label: "Fellowship", path: "/fellowship", isarrow: true },
+          { label: "Our Centers", path: "/centers", isarrow: true },
+          { label: "Our Social Impact", path: "/social-impact", isarrow: true },
         ],
       },
     ],
@@ -784,60 +227,235 @@ const megaMenuData: Record<string, any> = {
     ],
   },
 };
+
 /* -------------------- MEGA MENU -------------------- */
 const MegaMenu = ({ menu }: { menu: any }) => {
   if (!menu) return null;
+
   return (
-    <div className="fixed left-1/2 top-[80px] -translate-x-1/2 bg-white shadow-lg rounded-2xl z-50 w-[90vw] max-w-[1646px] flex gap-8 p-6">
+    <div className="fixed left-1/2 top-[100px] -translate-x-1/2 
+                    bg-white shadow-lg rounded-2xl z-50 
+                    w-[90vw] max-w-[1646px] flex gap-8 p-6">
+
+      {/* Left Image */}
       {menu.image && (
-        <div className="hidden lg:block w-[350px] h-[300px] flex-shrink-0">
+        <div className="hidden lg:block w-[350px] max-h-[450px] flex-shrink-0">
           <Image
             src={menu.image}
             alt="menu-img"
             width={350}
-            height={300}
+            height={350}
             className="w-full h-full object-cover rounded-lg"
           />
         </div>
       )}
-      {menu.columns.map((col: any, idx: number) => (
-        <div key={idx} className="flex-1">
-          {col.title && (
-            <h3 className="text-lg font-semibold mb-3 text-gray-900">{col.title}</h3>
-          )}
-          <ul className="space-y-2">
-            {col.links.map((link: any, i: number) => (
-              <li key={i} className="text-sm">
-                {link.isButton ? (
-                  <Link
-                    href={link.path}
-                    className="inline-flex items-center px-4 py-2 bg-[#1656A5] text-white rounded-lg hover:bg-blue-700 transition"
-                  >
-                    {link.label}
-                  </Link>
-                ) : link.isPhone ? (
-                  <a
-                    href={link.path}
-                    className="inline-flex items-center text-gray-700 hover:text-blue-600"
-                  >
-                    <Phone size={16} className="mr-2" /> {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    href={link.path}
-                    className="text-gray-700 hover:text-blue-600"
-                  >
-                    {link.label}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+
+      <div
+        className="w-[1px]"
+        style={{
+          background: "rgba(22, 86, 165, 0.05)",
+          height: "auto",
+        }}
+      />
+
+      {/* Dynamic Columns with Divider */}
+      <div className="flex flex-1">
+        {menu.columns.map((col: any, idx: number) => (
+          <React.Fragment key={idx}>
+            {/* Column */}
+            <div className="flex-1">
+              {col.title && (
+                <h3
+                  className="text-[28px] font-normal leading-normal tracking-[-0.56px] text-[#2C2C2C] font-[Manrope] mb-[30px]"
+                >
+                  {col.title}
+                </h3>
+
+              )}
+              <ul className="space-y-2 w-[180px]">
+                {col.links.map((link: any, i: number) => (
+                  <li key={i} className="mb-4">
+                    {link.isButton ? (
+                      <Link
+                        href={link.path}
+                        className="
+                          flex items-center justify-center gap-2
+                          w-full px-4 py-[10px] rounded-[8px]
+                          bg-[#1656A5] text-white font-[Manrope] text-[14px] font-semibold leading-[24px] tracking-[-0.28px]
+                          hover:bg-[#12498C] transition
+                        "
+                      >
+                        {link.label}
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='12'
+                          height='12'
+                          viewBox='0 0 12 12'
+                          fill='none'
+                          className="shrink-0"
+                        >
+                          <path
+                            d='M1.37624 5.5498L10.0103 5.6986M10.0103 5.6986L5.56228 1.36376M10.0103 5.6986L5.76761 9.94124'
+                            stroke='white'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </svg>
+                      </Link>
+                    ) : link.isPhone ? (
+                      <a
+                        href={link.path}
+                        className="
+                          flex items-center gap-3 w-full
+                          bg-[rgba(22,86,165,0.10)] rounded-[8px]
+                          px-4 py-[10px]
+                          text-[#252525] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+                          hover:bg-[rgba(22,86,165,0.15)] transition
+                        "
+                      >
+                        <span className="flex items-center justify-center w-[24px] h-[24px] shrink-0">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="26"
+                            height="26"
+                            viewBox="0 0 27 26"
+                            fill="none"
+                          >
+                            <mask
+                              id={`mask_${i}`}
+                              style={{ maskType: "alpha" }}
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="27"
+                              height="26"
+                            >
+                              <rect x="0.5" width="26" height="26" fill="#D9D9D9" />
+                            </mask>
+                            <g mask={`url(#mask_${i})`}>
+                              <path
+                                d="M20.675 21.3417C18.9778 21.3417 17.2128 20.8948 15.3802 20.001C13.5476 19.1073 11.8323 17.8569 10.2344 16.25C8.63646 14.643 7.39062 12.9278 6.49687 11.1042C5.60313 9.28055 5.15625 7.52013 5.15625 5.82291C5.15625 5.49014 5.26458 5.2129 5.48125 4.99118C5.69792 4.76928 5.96875 4.65833 6.29375 4.65833H8.46042C8.76736 4.65833 9.03368 4.75312 9.25937 4.9427C9.48507 5.13228 9.64305 5.38055 9.73333 5.68749L10.2208 7.90832C10.275 8.21527 10.266 8.4861 10.1937 8.72082C10.1215 8.95555 9.99514 9.14513 9.81458 9.28958L7.5125 11.375C7.98194 12.2236 8.49201 13.0045 9.04271 13.7177C9.5934 14.4309 10.1757 15.1035 10.7896 15.7354C11.4396 16.3854 12.1437 16.9903 12.9021 17.55C13.6604 18.1097 14.5 18.6424 15.4208 19.1479L17.6687 16.8458C17.8493 16.6472 18.0434 16.5208 18.251 16.4667C18.4587 16.4125 18.6979 16.4035 18.9687 16.4396L20.8104 16.8187C21.1174 16.891 21.3656 17.0444 21.5552 17.2792C21.7448 17.5139 21.8396 17.7847 21.8396 18.0917V20.2042C21.8396 20.5292 21.7286 20.8 21.5067 21.0167C21.285 21.2333 21.0078 21.3417 20.675 21.3417Z"
+                                fill="#1C1B1F"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        {link.label}
+                      </a>
+                    ) : link.isWhatsapp ? (
+                      <a
+                        href={link.path}
+                        className="
+                          flex items-center gap-3 w-full
+                          bg-[rgba(22,86,165,0.10)] rounded-[8px]
+                          px-4 py-[10px]
+                          text-[#252525] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+                          hover:bg-[rgba(22,86,165,0.15)] transition
+                        "
+                      >
+                        <span className="flex items-center justify-center w-[24px] h-[24px] shrink-0">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="26"
+                            height="26"
+                            viewBox="0 0 27 26"
+                            fill="none"
+                          >
+                            <mask
+                              id={`mask_${i}`}
+                              style={{ maskType: "alpha" }}
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="27"
+                              height="26"
+                            >
+                              <rect x="0.5" width="26" height="26" fill="#D9D9D9" />
+                            </mask>
+                            <g mask={`url(#mask_${i})`}>
+                              {/* <path
+                                d="M20.675 21.3417C18.9778 21.3417 17.2128 20.8948 15.3802 20.001C13.5476 19.1073 11.8323 17.8569 10.2344 16.25C8.63646 14.643 7.39062 12.9278 6.49687 11.1042C5.60313 9.28055 5.15625 7.52013 5.15625 5.82291C5.15625 5.49014 5.26458 5.2129 5.48125 4.99118C5.69792 4.76928 5.96875 4.65833 6.29375 4.65833H8.46042C8.76736 4.65833 9.03368 4.75312 9.25937 4.9427C9.48507 5.13228 9.64305 5.38055 9.73333 5.68749L10.2208 7.90832C10.275 8.21527 10.266 8.4861 10.1937 8.72082C10.1215 8.95555 9.99514 9.14513 9.81458 9.28958L7.5125 11.375C7.98194 12.2236 8.49201 13.0045 9.04271 13.7177C9.5934 14.4309 10.1757 15.1035 10.7896 15.7354C11.4396 16.3854 12.1437 16.9903 12.9021 17.55C13.6604 18.1097 14.5 18.6424 15.4208 19.1479L17.6687 16.8458C17.8493 16.6472 18.0434 16.5208 18.251 16.4667C18.4587 16.4125 18.6979 16.4035 18.9687 16.4396L20.8104 16.8187C21.1174 16.891 21.3656 17.0444 21.5552 17.2792C21.7448 17.5139 21.8396 17.7847 21.8396 18.0917V20.2042C21.8396 20.5292 21.7286 20.8 21.5067 21.0167C21.285 21.2333 21.0078 21.3417 20.675 21.3417Z"
+                                fill="#1C1B1F"
+                              /> */}
+
+
+                               <path d="M21.5497 9.57082C21.0872 8.54894 20.4234 7.63148 19.5805 6.84082C18.7376 6.05763 17.7605 5.43853 16.6715 5.00591C15.5452 4.55837 14.3517 4.33459 13.121 4.33459C11.8902 4.33459 10.6968 4.55837 9.57048 5.00591C8.48146 5.43853 7.50433 6.05017 6.66146 6.84082C5.81859 7.63148 5.15475 8.54894 4.69229 9.57082C4.21491 10.63 3.96875 11.7638 3.96875 12.9274C3.96875 14.9637 4.72956 16.918 6.1244 18.4694L5.3785 22.5346L9.34671 20.7668C10.5327 21.274 11.7933 21.5276 13.1135 21.5276C14.3442 21.5276 15.5377 21.3039 16.664 20.8563C17.753 20.4237 18.7302 19.8121 19.573 19.0214C20.4159 18.2307 21.0797 17.3133 21.5422 16.2914C22.0196 15.2322 22.2657 14.0984 22.2657 12.9348C22.2732 11.7638 22.027 10.6375 21.5497 9.57082Z" stroke="black" stroke-width="0.7"/>
+    <path d="M16.8348 14.6452C16.4469 14.4513 16.1635 14.3319 15.9621 14.2574C15.8353 14.2126 15.5369 14.0783 15.4325 14.1604C15.1043 14.4289 14.7537 15.1897 14.3808 15.3315C13.4558 15.1524 12.5981 14.5184 11.9268 13.8695C11.6284 13.586 11.0764 12.7805 10.9571 12.5642C10.9347 12.3404 11.3375 12.042 11.427 11.8705C11.8894 11.3483 11.5389 11.0201 11.4792 10.8038C11.3748 10.5801 11.1958 10.1773 11.0391 9.84908C10.9049 9.63277 10.875 9.31203 10.6363 9.19268C9.6219 8.67055 9.04012 9.71482 8.80143 10.2593C7.36184 13.7278 16.0143 20.329 17.7746 15.779C17.8641 15.3837 17.8268 15.2345 17.6926 15.0555C17.424 14.869 17.1108 14.7869 16.8348 14.6452Z" stroke="black" stroke-width="0.7"/>
+
+                            </g>
+                          </svg>
+
+
+                         
+
+                        </span>
+                        {link.label}
+                      </a>
+                    ) : link.isarrow ? (
+                      <Link
+                        href={link.path}
+                        className="
+                          flex items-center justify-between w-full
+                          text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+                          hover:text-[#1656A5] transition ml-4
+                        "
+                      >
+                        <span>{link.label}</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="shrink-0 mr-[20px]"
+                        >
+                          <path
+                            d="M7.37624 11.5498L16.0103 11.6986M16.0103 11.6986L11.5623 7.36376M16.0103 11.6986L11.7676 15.9412"
+                            stroke="#252525"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </Link>
+                    ) : (
+                      <Link
+                        href={link.path}
+                        className="
+                          text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+                          hover:text-[#1656A5] transition
+                        "
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+
+
+
+
+            </div>
+
+            {/* Divider (not after last column) */}
+            {idx < menu.columns.length - 1 && (
+              <div
+                className="w-[1px] mx-6"
+                style={{
+                  background: "rgba(22, 86, 165, 0.05)",
+                  height: "auto",
+                }}
+              />
+            )}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };
+
+
 /* -------------------- NAVBAR -------------------- */
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -879,10 +497,9 @@ export default function Navbar() {
                 <Link
                   href={item.path}
                   className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm transition
-                    ${
-                      pathname === item.path || openMenu === item.label
-                        ? "bg-[#1656A5] text-white"
-                        : "text-gray-700 hover:bg-[#1656A5] hover:text-white"
+                    ${pathname === item.path || openMenu === item.label
+                      ? "bg-[#1656A5] text-white"
+                      : "text-gray-700 hover:bg-[#1656A5] hover:text-white"
                     }`}
                 >
                   {item.label}
