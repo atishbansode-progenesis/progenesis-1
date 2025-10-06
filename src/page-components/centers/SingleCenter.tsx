@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo , useState } from 'react';
 import { centersData, type Center } from './CenterCard';
 import { useRouter } from 'next/navigation';
-import ResourceConsultation from '../resources/ResourceConsultation';
 import FaQ from '../about/FaQ';
 import CenterDoctorsSection from './SingleCenterDoctors';
 import TestimonialsCenters from './TestimonialCenters';
+import AppointmentForm from '../about/AppointmentForm';
 
 export default function SingleCenter({ selectedId }: { selectedId?: number }) {
   const router = useRouter();
@@ -18,6 +18,8 @@ export default function SingleCenter({ selectedId }: { selectedId?: number }) {
   if (!selectedCenter) {
     return null;
   }
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
@@ -105,11 +107,13 @@ export default function SingleCenter({ selectedId }: { selectedId?: number }) {
                     Get Location
                   </button>
                   <button
-                    onClick={() => router.push('/book-appointment')}
+                    onClick={() => setIsOpen(true)}
                     className="px-8 py-3 rounded-lg bg-[#1656A5] text-white text-sm font-medium hover:bg-[#1656A5]/90 transition-colors"
                   >
                     Book an Appointment
                   </button>
+                  {/* Modal */}
+            {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
                 </div>
               </div>
 
@@ -135,7 +139,7 @@ export default function SingleCenter({ selectedId }: { selectedId?: number }) {
       </div>
       <CenterDoctorsSection />
       <TestimonialsCenters />
-      <ResourceConsultation />
+      <AppointmentForm />
       <FaQ />
     </div>
   );

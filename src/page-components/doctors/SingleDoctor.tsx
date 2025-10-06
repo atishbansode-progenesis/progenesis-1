@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo , useState } from "react";
 import "../about/AboutMain.css";
-
+import AppointmentForm from "../about/AppointmentForm";
 import { doctors, Doctor } from "./DoctorsInfo";
 
 export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }) {
   const selectedDoctor: Doctor | undefined = useMemo(() => {
     return selectedSlug ? doctors.find((d) => d.slug === selectedSlug) : undefined;
   }, [selectedSlug]);
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="section-spacing w-full bg-white px-6 md:px-12 lg:px-[90px] py-10 md:py-14">
       <div className="pb-4">
@@ -55,10 +55,13 @@ export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }
                     Call Our Team
                   </button>
                   <button
+                    onClick={() => setIsOpen(true)}
                     className="h-[44px] px-5 rounded-[16px] bg-[#252525] text-white text-sm font-semibold shadow-sm hover:bg-[#000000]"
                   >
                     Book Your Appointment
                   </button>
+                  {/* Modal */}
+            {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
                 </div>
               </div>
             </div>

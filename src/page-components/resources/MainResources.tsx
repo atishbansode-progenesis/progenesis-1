@@ -5,7 +5,7 @@ import ResourceGrid from './ResourceGrid'
 import ResourceCta from './ResourceCta'
 import ResourceStories from './ResourceStories'
 import FaQ from '../about/FaQ'
-import ResourceConsultation from './ResourceConsultation'
+import AppointmentForm from '../about/AppointmentForm'
 
 
 const MainResources = () => {
@@ -16,7 +16,7 @@ const MainResources = () => {
       <ResourceStories />
       <ResourceCta />
       <FaQ />
-      <ResourceConsultation />
+      <AppointmentForm />
     </div>
   )
 }
