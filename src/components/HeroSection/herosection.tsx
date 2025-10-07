@@ -1,116 +1,3 @@
-// "use client";
-// import Image from "next/image";
-// import Link from "next/link";
-
-// interface Breadcrumb {
-//   label: string;
-//   href?: string;
-// }
-
-// interface HeroSectionProps {
-//   breadcrumbs: Breadcrumb[];
-//   title: string | React.ReactNode;
-//   buttonText?: string;
-//   buttonLink?: string;
-//   backgroundImage?: string;
-//   showBlurredShape?: boolean;
-//   foregroundImage?: string; 
-//   overlayImage?: string;    
-// }
-
-// export default function HeroSection({
-//   breadcrumbs,
-//   title,
-//   buttonText,
-//   buttonLink,
-//   backgroundImage,
-//   foregroundImage,
-//   overlayImage,
-//   showBlurredShape = true,
-// }: HeroSectionProps) {
-//   return (
-//     <section
-//       className="relative w-full h-[500px] md:h-[600px] flex pl-[12px] md:pl-[120px] bg-cover bg-center overflow-hidden"
-//       style={{
-//         backgroundImage: backgroundImage ? `url('${backgroundImage}')` : "none",
-//       }}
-//     >
-//       {/* Blurred gradient shape */}
-//       {showBlurredShape && (
-//         <div
-//           className="absolute left-[-150px] top-[80px] w-[445px] h-[441px] rounded-full opacity-70"
-//           style={{
-//             background: "#94BA3D",
-//             filter: "blur(250px)",
-//             transform: "rotate(-2deg)",
-//           }}
-//         ></div>
-//       )}
-
-//       {/* Left content */}
-//       <div className="relative z-10 mt-2 md:mt-[85px] max-w-5xl">
-//         {/* Breadcrumbs */}
-//         <p className="text-[18px] text-gray-600 mb-2 md:mb-[44px] flex items-center flex-wrap">
-//           {breadcrumbs.map((crumb, idx) => (
-//             <span key={idx} className="flex items-center">
-//               {crumb.href ? (
-//                 <Link
-//                   href={crumb.href}
-//                   className={`${
-//                     idx === breadcrumbs.length - 1
-//                       ? "text-[#1656A5] font-medium"
-//                       : "text-gray-600"
-//                   } px-[6px]`}
-//                 >
-//                   {crumb.label}
-//                 </Link>
-//               ) : (
-//                 <span
-//                   className={`${
-//                     idx === breadcrumbs.length - 1
-//                       ? "text-[#1656A5] font-medium"
-//                       : "text-gray-600"
-//                   } px-[6px]`}
-//                 >
-//                   {crumb.label}
-//                 </span>
-//               )}
-//               {idx < breadcrumbs.length - 1 && (
-//                 <span className="px-[6px]">›</span>
-//               )}
-//             </span>
-//           ))}
-//         </p>
-
-//         {/* Title */}
-//         <h1
-//           className="text-3xl md:text-[80px] font-bold leading-tight mb-[44px]"
-//           style={{ color: "#252525" }}
-//         >
-//           {title}
-//         </h1>
-
-//         {/* Button */}
-//         {buttonText && (
-//           <div>
-//             {buttonLink ? (
-//               <Link
-//                 href={buttonLink}
-//                 className="mt-6 inline-block px-[20px] py-[16px] bg-black text-white rounded-[16px]"
-//               >
-//                 {buttonText}
-//               </Link>
-//             ) : (
-//               <button className="mt-6 px-[20px] py-[16px] bg-black text-white rounded-[16px]">
-//                 {buttonText}
-//               </button>
-//             )}
-//           </div>
-//         )}
-//       </div>
-//     </section>
-//   );
-// }
 "use client";
 
 import Link from "next/link";
@@ -161,7 +48,7 @@ export default function HeroSection({
       )}
 
       {/* Foreground Image (responsive, above overlay & background) */}
-      {foregroundImage && (
+      {/* {foregroundImage && (
         <Image
           src={foregroundImage}
           alt="Foreground"
@@ -172,7 +59,9 @@ export default function HeroSection({
           className="absolute bottom-0 right-0 object-contain z-0 
                      w-[180px] md:w-[350px] lg:w-[500px] h-auto"
         />
-      )}
+      )} */}
+
+      
 
       {/* Blurred gradient shape */}
       {showBlurredShape && (
@@ -247,6 +136,36 @@ export default function HeroSection({
           </div>
         )}
       </div>
+       {foregroundImage && (
+        <div
+          className="
+            relative w-full lg:w-[55%] xl:w-[50%]
+            flex justify-center lg:justify-end
+            items-end
+            mt-10 lg:mt-0
+          "
+        >
+          {/* Responsive container with locked aspect ratio */}
+          <div
+            className="
+              relative
+              w-[85vw] sm:w-[500px] md:w-[650px] lg:w-[800px] xl:w-[1042px]
+              aspect-[1042/553]
+              flex-shrink-0
+              bottom-0
+            "
+          >
+            <Image
+              src={foregroundImage}
+              alt="Hero Foreground"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1042px"
+              className="object-contain object-bottom"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

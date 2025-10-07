@@ -17,7 +17,7 @@ const HeroCarousel = () => {
     },
     {
       id: 2,
-      image: "/home/hcv.mp4",
+      image: "/home/v2.mp4",
       title: "Your parenthood journey starts with us",
       buttons: [
         { label: "Get Started", href: "/get-started" },
@@ -26,16 +26,7 @@ const HeroCarousel = () => {
     },
     {
       id: 3,
-      image: "/home/hcv.mp4",
-      title: "Trusted care for every step of the way",
-      buttons: [
-        { label: "Book Consultation", href: "/consultation" },
-        { label: "See Success Stories", href: "/success-stories" },
-      ],
-    },
-    {
-      id: 4,
-      image: "/home/hcv.mp4",
+      image: "/home/v3.mp4",
       title: "Trusted care for every step of the way",
       buttons: [
         { label: "Book Consultation", href: "/consultation" },
@@ -55,7 +46,7 @@ const HeroCarousel = () => {
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
-    <div className="relative w-full h-[650px] md:h-[800px] xl:h-[850px] overflow-hidden">
+    <div className="relative w-full h-[100vh] overflow-hidden">
       {/* Background Slides */}
       {slides.map((slide, index) => (
         <div
@@ -84,7 +75,7 @@ const HeroCarousel = () => {
       ))}
 
       {/* Content */}
-      <div className="absolute top-0 left-0 pt-[300px] px-4 md:px-[80px] lg:px-[120px] text-white max-w-[850px] z-10">
+      <div className="absolute top-0 left-0 pt-[15%] px-6 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px] text-white max-w-[900px] z-10">
         {/* Title */}
         <p
           className="
