@@ -143,7 +143,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="bg-[#fafafa] pt-[42px] md:h-[100vh] md:pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
+    <section className="bg-[#fafafa] pt-[42px] md:h-auto md:pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
       <div className="mx-auto grid lg:grid-cols-2 gap-1 md:pr-[80px]">
         {/* Header / Intro */}
         <div className="mb-6">
