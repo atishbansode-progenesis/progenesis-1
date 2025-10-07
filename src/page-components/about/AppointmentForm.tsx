@@ -104,73 +104,12 @@ const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
 };
 
 const ScratchImage = () => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [scratchCount, setScratchCount] = useState(0);
-  const [revealed, setRevealed] = useState(false);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-
-    ctx.fillStyle = "#1656A5";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    const scratch = (e: any) => {
-      if (revealed) return;
-
-      const rect = canvas.getBoundingClientRect();
-      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-      const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
-
-      ctx.globalCompositeOperation = "destination-out";
-      ctx.beginPath();
-      ctx.arc(x, y, 30, 0, Math.PI * 2);
-      ctx.fill();
-
-      setScratchCount((prev) => {
-        const newCount = prev + 1;
-        if (newCount >= 2) {
-          setRevealed(true);
-        }
-        return newCount;
-      });
-    };
-
-    canvas.addEventListener("mousemove", scratch);
-    canvas.addEventListener("touchmove", scratch);
-
-    return () => {
-      canvas.removeEventListener("mousemove", scratch);
-      canvas.removeEventListener("touchmove", scratch);
-    };
-  }, [revealed]);
-
-  useEffect(() => {
-    if (revealed && canvasRef.current) {
-      const ctx = canvasRef.current.getContext("2d");
-      if (ctx) {
-        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-      }
-    }
-  }, [revealed]);
-
   return (
-    <div className="w-full h-full relative rounded-2xl overflow-hidden">
-      <img
-        src="/ConsultationForm/contact.png"
-        alt="Consultation"
-        className="w-full h-full object-cover"
-      />
-      {!revealed && (
-        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-      )}
-    </div>
+    <img
+      src="/images/appointment.jpg"
+      alt="Consultation"
+      className="w-full h-full object-cover rounded-2xl"
+    />
   );
 };
 
