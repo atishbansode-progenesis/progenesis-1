@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -7,25 +7,64 @@ import { Search, X, ChevronDown, Phone } from "lucide-react";
 import { centersData } from "@/page-components/centers/CenterCard";
 /* -------------------- SEARCH SECTION -------------------- */
 export function SearchSection({ onClose }: { onClose: () => void }) {
-  const [activeStep, setActiveStep] = useState<"what" | "where" | "who" | null>("what");
+  const [activeStep, setActiveStep] = useState<"what" | "where" | "who">("what");
+  const [isMobile, setIsMobile] = useState(false);
   const buttonRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({
     what: null,
     where: null,
     who: null,
   });
-  const [popupPosition, setPopupPosition] = useState<{ left: number; top: number }>({ left: 0, top: 0 });
+  const [popupPosition, setPopupPosition] = useState<{ left: number; top: number } | null>(null);
 
-  const handleStepClick = (step: "what" | "where" | "who") => {
-    setActiveStep(step);
+  const updatePopupPosition = (step: "what" | "where" | "who") => {
     const button = buttonRefs.current[step];
     if (button) {
       const rect = button.getBoundingClientRect();
-      setPopupPosition({
-        left: rect.left + rect.width / 2,
-        top: rect.bottom + window.scrollY + 20, // 8px spacing below
-      });
+      const isMobileView = window.innerWidth < 768;
+      setIsMobile(isMobileView);
+      
+      if (isMobileView) {
+        // Center popup on mobile
+        setPopupPosition({
+          left: window.innerWidth / 2,
+          top: rect.bottom + window.scrollY + 20,
+        });
+      } else {
+        // Original behavior for desktop
+        setPopupPosition({
+          left: rect.left + rect.width / 2,
+          top: rect.bottom + window.scrollY + 20,
+        });
+      }
     }
-  }
+  };
+
+  const handleStepClick = (step: "what" | "where" | "who") => {
+    setActiveStep(step);
+    updatePopupPosition(step);
+  };
+
+  // ✅ Run synchronously after refs mount and when activeStep changes
+  useLayoutEffect(() => {
+    if (activeStep) {
+      updatePopupPosition(activeStep);
+    }
+  }, [activeStep]);
+
+  // ✅ Optional: also reposition on resize/scroll so popup never drifts
+  useEffect(() => {
+    const handleResizeOrScroll = () => {
+      if (activeStep) {
+        updatePopupPosition(activeStep);
+      }
+    };
+    window.addEventListener("resize", handleResizeOrScroll);
+    window.addEventListener("scroll", handleResizeOrScroll);
+    return () => {
+      window.removeEventListener("resize", handleResizeOrScroll);
+      window.removeEventListener("scroll", handleResizeOrScroll);
+    };
+  }, [activeStep]);
 
   const treatments = [
     "IVF Treatment",
@@ -55,17 +94,16 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
   return (
     <section className="relative w-full bg-white shadow-md">
       {/* Search Tabs */}
-      <div className="flex items-center w-full max-w-[1600px] mx-auto px-4 py-4 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px] gap-2 relative">
-
+      <div className="flex items-center w-full max-w-[1600px] mx-auto px-4 py-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] gap-2 relative">
         <Link href="/" className="w-[150px] h-[40px] relative">
-            <Image src="/logo1.png" alt="Logo" fill className="object-contain" />
-          </Link>
-          
-        {["what", "where", "who"].map((step, idx) => (
+          <Image src="/logo1.png" alt="Logo" fill className="object-contain" />
+        </Link>
+
+        {(["what", "where", "who"] as const).map((step) => (
           <button
-            key={idx}
+            key={step}
             ref={(el) => (buttonRefs.current[step] = el)}
-            onClick={() => handleStepClick(step as any)}
+            onClick={() => handleStepClick(step)}
             className={`flex-1 px-4 py-3 rounded-xl text-left text-sm md:text-base transition
               ${activeStep === step ? "bg-[#1656A5] text-white" : "bg-gray-100 text-gray-600"}`}
           >
@@ -74,6 +112,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
             {step === "who" && "Who"}
           </button>
         ))}
+
         {/* Close */}
         <button
           onClick={onClose}
@@ -84,13 +123,13 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
       </div>
 
       {/* Popup below active tab */}
-      {activeStep && (
+      {activeStep && popupPosition && (
         <div
           className="absolute z-50 bg-white rounded-2xl shadow-xl p-6 w-[90%] max-w-[400px] max-h-[400px] overflow-y-auto transition-all duration-200"
           style={{
             left: popupPosition.left,
             top: popupPosition.top,
-            transform: "translateX(-50%)",
+            transform: isMobile ? "translateX(-50%)" : "translateX(-50%)",
           }}
         >
           {activeStep === "what" && (
@@ -110,8 +149,17 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
           {activeStep === "where" && (
             <div className="space-y-3">
               {locations.map((l, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <Image src={l.icon} alt={l.name} width={40} height={40} className="rounded-md object-cover" />
+                <div
+                  key={i}
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
+                >
+                  <Image
+                    src={l.icon}
+                    alt={l.name}
+                    width={40}
+                    height={40}
+                    className="rounded-md object-cover"
+                  />
                   <div>
                     <p className="font-medium text-gray-900">{l.name}</p>
                     <p className="text-sm text-gray-600">{l.desc}</p>
@@ -124,8 +172,17 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
           {activeStep === "who" && (
             <div className="space-y-3">
               {doctors.map((d, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <Image src={d.img} alt={d.name} width={48} height={48} className="rounded-full object-cover" />
+                <div
+                  key={i}
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
+                >
+                  <Image
+                    src={d.img}
+                    alt={d.name}
+                    width={48}
+                    height={48}
+                    className="rounded-full object-cover"
+                  />
                   <div>
                     <p className="font-medium text-gray-900">{d.name}</p>
                     <p className="text-sm text-gray-600">{d.role}</p>
