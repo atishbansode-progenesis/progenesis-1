@@ -283,7 +283,7 @@ const DoctorsSection = () => {
           className="
             bg-white rounded-2xl flex flex-col md:flex-row 
             overflow-hidden shadow-sm border border-gray-200
-            w-full lg:max-w-[1000px] 2xl:[1400px] mx-auto 
+            w-full lg:max-w-[1000px] 2xl:max-w-[1400px] mx-auto 
             px-4 sm:px-6 md:px-10 2xl:px-20 
             py-6 md:py-10 
             relative transition-all duration-300
