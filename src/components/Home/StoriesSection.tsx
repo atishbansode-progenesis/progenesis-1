@@ -77,22 +77,28 @@ export default function StoriesSection() {
             <button
               onClick={prevSlide}
               aria-label="Previous"
-              className="w-10 h-10 rounded-lg border border-blue-600 text-blue-600 bg-white flex items-center justify-center"
+              className="w-10 h-10 rounded-lg border border-blue-600 text-blue-600 bg-white hover:bg-blue-50 flex items-center justify-center"
             >
-              ←
+          <img src="/icons/left.svg" alt="right" width={12} height={12} /> 
             </button>
 
             <button
               onClick={nextSlide}
               aria-label="Next"
-              className="w-10 h-10 rounded-lg border border-blue-600 text-blue-600 bg-white flex items-center justify-center"
+              className="w-10 h-10 rounded-lg border border-blue-600 text-blue-600 bg-white hover:bg-blue-50 flex items-center justify-center"
             >
-              →
+              <img src="/icons/right.svg" alt="right" width={12} height={12} />
             </button>
           </div>
         </div>
 
-        {/* Carousel */}
+        {/* Carousel   Left Arrow 
+        <button
+          onClick={prevDoctor}
+          className="absolute -left-20 top-1/2 transform -translate-y-1/2 w-[40px] h-[40px] hidden md:flex items-center justify-center rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-50 flex-shrink-0 cursor-pointer"
+        >
+          <img src="/icons/left.svg" alt="left" width={12} height={12} /> 
+        </button> */}
         <div
           ref={scrollRef}
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"

@@ -250,7 +250,7 @@ const BannerOfApproach: React.FC = () => {
             isFirst ? 'opacity-40 cursor-not-allowed hover:bg-transparent' : ''
           }`}
         >
-          ←
+          <img src="/icons/left.svg" alt="left" width={12} height={12} />
         </button>
         <button
           aria-label="Next slide"
@@ -260,7 +260,7 @@ const BannerOfApproach: React.FC = () => {
             isLast ? 'opacity-40 cursor-not-allowed hover:bg-transparent' : ''
           }`}
         >
-          →
+          <img src="/icons/right.svg" alt="right" width={12} height={12} />
         </button> 
       </div>
     </div>

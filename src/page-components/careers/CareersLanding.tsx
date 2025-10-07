@@ -63,7 +63,7 @@ const CareersLanding = () => {
                     }}
                     className="h-[56px] w-[56px] rounded-[16px] font-bold border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100"
                 >
-                    ←
+                    <img src="/icons/left.svg" alt="right" width={12} height={12} />
                 </button>
                     <button
                         aria-label="Next"
@@ -75,7 +75,7 @@ const CareersLanding = () => {
                             }}
                         className="h-[56px] w-[56px] font-bold rounded-[16px] border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100"
                             >
-                                →
+                                <img src="/icons/right.svg" alt="right" width={12} height={12} />
                     </button>
                 </div>
             </section>

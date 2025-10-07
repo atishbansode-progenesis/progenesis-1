@@ -33,7 +33,7 @@ const ResourceLanding = () => {
                   aria-label="Read more"
                   className="group inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/40 text-white hover:bg-white hover:text-gray-900 transition-colors"
                 >
-                  <span className="text-2xl">→</span>
+                  <img src="/icons/right.svg" alt="right" width={12} height={12} />
                 </button>
               </div>
 
@@ -44,7 +44,7 @@ const ResourceLanding = () => {
                 aria-label="Read more"
                 className="group inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/40 text-white hover:bg-white hover:text-gray-900 transition-colors"
               >
-                <span className="text-2xl md:text-3xl">→</span>
+                <img src="/icons/right.svg" alt="right" width={12} height={12} />
               </button>
             </div>
 
@@ -55,4 +55,4 @@ const ResourceLanding = () => {
   )
 }
 
-export default ResourceLanding 
+export default ResourceLanding
