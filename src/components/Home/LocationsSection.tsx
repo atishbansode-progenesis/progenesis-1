@@ -220,6 +220,7 @@ export default function LocationsSection() {
                           return (
                             <button
                               key={i}
+                              onClick={() => router.push(`/centers/${sub.name}`)}
                               onMouseEnter={() => setActiveLocation(sub)}
                               className={`rounded-xl p-4 flex justify-between items-center w-full text-left transition cursor-pointer ${isActive
                                   ? "bg-[rgba(22,86,165,0.05)]"
