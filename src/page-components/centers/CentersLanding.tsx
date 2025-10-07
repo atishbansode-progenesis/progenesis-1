@@ -12,7 +12,7 @@ const CentersLanding = () => {
         aria-hidden
       />
         <div
-        className="absolute inset-0 w-[120%] h-[120%] hidden md:block bg-cover bg-center"
+        className="absolute inset-0 w-[100%] h-[100%] hidden md:block bg-cover bg-center"
         style={{ backgroundImage: "url('/images/cenBanD.png')" }}
         aria-hidden
         />

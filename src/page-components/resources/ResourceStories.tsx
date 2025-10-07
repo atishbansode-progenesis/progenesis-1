@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 
-const stories = [
+export const resourceStoriesData = [
   {
     title: 'Because Dreams Do Come True | A Journey with Progenesis',
     videoUrl: 'https://www.youtube.com/embed/-TO7z5x2Qhs',
@@ -16,12 +16,28 @@ const stories = [
   },
   {
     title: 'Hope and Happiness | Progenesis Success',
-    videoUrl: 'https://www.youtube.com/embed/abc123xyz',
+    videoUrl: 'https://www.youtube.com/embed/9JHCfSD20Pk?si=ZyAMK1NoOkwvgZbE',
   },
   {
     title: 'A New Chapter | Progenesis Family',
-    videoUrl: 'https://www.youtube.com/embed/def456uvw',
+    videoUrl: 'https://www.youtube.com/embed/W-SRo_zFe6M?si=pXC9m38X_diiAhrA',
   },
+{
+  title: 'Hope and Happiness | Progenesis Success',
+  videoUrl: 'https://www.youtube.com/embed/9JHCfSD20Pk?si=ZyAMK1NoOkwvgZbE',
+},
+{
+  title: 'A New Chapter | Progenesis Family',
+  videoUrl: 'https://www.youtube.com/embed/W-SRo_zFe6M?si=pXC9m38X_diiAhrA',
+},
+{
+  title: 'Hope and Happiness | Progenesis Success',
+  videoUrl: 'https://www.youtube.com/embed/9JHCfSD20Pk?si=ZyAMK1NoOkwvgZbE',
+},
+{
+  title: 'A New Chapter | Progenesis Family',
+  videoUrl: 'https://www.youtube.com/embed/W-SRo_zFe6M?si=pXC9m38X_diiAhrA',
+},
 ]
 
 const ResourceStories = () => {
@@ -55,10 +71,10 @@ const ResourceStories = () => {
         <div className="mt-6">
           {!showAll ? (
             <div className="flex gap-4 overflow-x-auto md:overflow-visible scrollbar-hide">
-              {stories.slice(0, 3).map((s, i) => (
+              {resourceStoriesData.slice(0, 3).map((s, i) => (
                 <article
                   key={i}
-                  className="rounded-2xl border border-gray-200 overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.04)] w-[60%] flex-none md:w-auto p-2"
+                  className="rounded-2xl border border-gray-200 overflow-hidden shadow-[0_1px_2px_RGBA(0,0,0,0.04)] w-[60%] flex-none md:w-auto p-2"
                 >
                   <div className="px-3 pt-3">
                     <p className="text-[11px] md:text-[13px] text-gray-400">2k views • 1 month ago</p>
@@ -83,10 +99,10 @@ const ResourceStories = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {stories.map((s, i) => (
+              {resourceStoriesData.map((s, i) => (
                 <article
                   key={i}
-                  className="rounded-2xl border border-gray-200 overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.04)] p-2"
+                  className="rounded-2xl border border-gray-200 overflow-hidden shadow-[0_1px_2px_RGBA(0,0,0,0.04)] p-2"
                 >
                   <div className="px-3 pt-3">
                     <p className="text-[11px] md:text-[13px] text-gray-400">2k views • 1 month ago</p>
