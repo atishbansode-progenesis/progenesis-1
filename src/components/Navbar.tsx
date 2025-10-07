@@ -240,31 +240,31 @@ const megaMenuData: Record<string, any> = {
         title: "Where We Are",
         links: centersData.map((center) => ({
           label: center.name,
-          path: `/centers/${center.id}#${center.name.toLowerCase()}`,
+          path: `/centers/${center.name.toLowerCase()}`,
         })).slice(0, 9), 
       },
       {
         links: [
-          { label: "Mumbai", path: "/centers/16#ahilyanagar",
+          { label: "Mumbai", path: "/centers/mumbai",
             submenu: [
-            { label: "Thane", path: "/infertility-issues/overview" },
-            { label: "Andheri", path: "/infertility-issues/symptoms" },
-            { label: "Borivali", path: "/infertility-issues/diagnosis" },
-            { label: "Ghatkopar", path: "/infertility-issues/treatments" },
-            { label: "Vashi", path: "/infertility-issues/treatments" },
-            { label: "Virar", path: "/infertility-issues/treatments" },
-            { label: "Kalyan", path: "/infertility-issues/treatments" },
-            { label: "Panvel", path: "/infertility-issues/treatments" },
+            { label: "Thane", path: "/centers/thane" },
+            { label: "Andheri", path: "/centers/andheri" },
+            { label: "Borivali", path: "/centers/borivali" },
+            { label: "Ghatkopar", path: "/centers/ghatkopar" },
+            { label: "Vashi", path: "/centers/vashi" },
+            { label: "Virar", path: "/centers/virar" },
+            { label: "Kalyan", path: "/centers/kalyan" },
+            { label: "Panvel", path: "/centers/panvel" },
           ],
            },
-           { label: "Nashik", path: "/centers/16#ahilyanagar" },
-           { label: "Jalgaon", path: "/centers/16#ahilyanagar" },
-          { label: "Ahilyanagar", path: "/centers/16#ahilyanagar" },
-          { label: "Amravati", path: "/centers/15#amravati" },
-          { label: "Kolhapur", path: "/centers/14#kolhapur" },
-          { label: "Nagpur", path: "/centers/13#nagpur" },
-          { label: "Solapur", path: "/centers/12#solapur" },
-          { label: "Pune", path: "/centers/4#pune" },
+           { label: "Nashik", path: "/centers/nashik" },
+           { label: "Jalgaon", path: "/centers/jalgaon" },
+          { label: "Ahilyanagar", path: "/centers/ahilyanagar" },
+          { label: "Amravati", path: "/centers/amravati" },
+          { label: "Kolhapur", path: "/centers/kolhapur" },
+          { label: "Nagpur", path: "/centers/nagpur" },
+          { label: "Solapur", path: "/centers/solapur" },
+          { label: "Pune", path: "/centers/pune" },
         ],
       },
       {
@@ -550,7 +550,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
         </Link>
       ) : (
         // ✅ DEFAULT LINK + INLINE SUBMENU
-        <>
+        <Link href={link.path}>
           <button
             onClick={() =>
               setExpandedLink(expandedLink === link.label ? null : link.label)
@@ -586,7 +586,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
           </button>
 
           {/* Nested submenu (inline, like Figma) */}
-          {link.submenu && expandedLink === link.label && (
+          {/* {link.submenu && expandedLink === link.label && (
             <ul className="ml-4 mt-2 space-y-1 animate-fadeIn">
               {link.submenu.map((sublink: any, subIdx: number) => (
                 <li key={subIdx}>
@@ -602,8 +602,8 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                 </li>
               ))}
             </ul>
-          )}
-        </>
+          )} */}
+        </Link>
       )}
     </li>
   ))}
