@@ -221,7 +221,7 @@ const awards = [
   },
   {
     year: "2017-18",
-    title: "India's Fastest Growing Brand in IVF",
+    title: "India's Fastest Growing Brand in IVF,Brand in IVF",
     subtitle: "URS and ASIA ONE in Dubai.",
     image: "/awards/awardsb.png",
   },
