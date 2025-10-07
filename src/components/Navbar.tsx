@@ -240,12 +240,12 @@ const megaMenuData: Record<string, any> = {
         title: "Where We Are",
         links: centersData.map((center) => ({
           label: center.name,
-          path: `/centers/${center.id}#${center.name.toLowerCase()}`,
+          path: `/centers/${center.name.toLowerCase()}`,
         })).slice(0, 9), 
       },
       {
         links: [
-          { label: "Mumbai", path: "/centers/16#ahilyanagar",
+          { label: "Mumbai", path: "/centers/mumbai",
             submenu: [
             { label: "Thane", path: "/centers/thane" },
             { label: "Andheri", path: "/centers/andheri" },
@@ -550,7 +550,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
         </Link>
       ) : (
         // ✅ DEFAULT LINK + INLINE SUBMENU
-        <>
+        <Link href={link.path}>
           <button
             onClick={() =>
               setExpandedLink(expandedLink === link.label ? null : link.label)
@@ -586,7 +586,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
           </button>
 
           {/* Nested submenu (inline, like Figma) */}
-          {link.submenu && expandedLink === link.label && (
+          {/* {link.submenu && expandedLink === link.label && (
             <ul className="ml-4 mt-2 space-y-1 animate-fadeIn">
               {link.submenu.map((sublink: any, subIdx: number) => (
                 <li key={subIdx}>
@@ -602,8 +602,8 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                 </li>
               ))}
             </ul>
-          )}
-        </>
+          )} */}
+        </Link>
       )}
     </li>
   ))}
