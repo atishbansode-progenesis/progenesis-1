@@ -68,7 +68,7 @@ export default function StoriesSection() {
 
           <div className="flex items-center gap-3">
             <Link
-              href="/blog"
+              href="/resources"
               className="hidden md:inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
             >
               See all
