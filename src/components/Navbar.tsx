@@ -191,8 +191,25 @@ const megaMenuData: Record<string, any> = {
             { label: "Treatment Options", path: "/infertility-issues/treatments" },
           ],
           },
-          { label: "Female Infertility Causes", path: "/infertility-issues#female" },
-          { label: "Male Infertility Causes", path: "/infertility-issues#male" },
+          { label: "Female Infertility Causes", path: "/infertility-issues#female" ,
+            submenu: [
+            { label: "Repeated IUI Failures", path: "/infertility-issues/overview" },
+            { label: "Repeated IVF Failures", path: "/infertility-issues/symptoms" },
+            { label: "Pregnancy after Menopause", path: "/infertility-issues/diagnosis" },
+            { label: "Low AMH", path: "/infertility-issues/treatments" },
+            { label: "PCOS", path: "/infertility-issues/treatments" },
+            { label: "Tubal Blockage", path: "/infertility-issues/treatments" },
+            { label: "Fibroids", path: "/infertility-issues/treatments" },
+            { label: "Endometriosis", path: "/infertility-issues/treatments" },
+          ],
+          },
+          { label: "Male Infertility Causes", path: "/infertility-issues#male",
+            submenu: [
+            { label: "Azoospermia", path: "/infertility-issues/overview" },
+            { label: "Low Sperm Count", path: "/infertility-issues/symptoms" },
+            { label: "Erectile Dysfunction (ED)", path: "/infertility-issues/diagnosis" },
+          ],
+           },
           { label: "Real Stories. Real Miracles.", path: "/stories" },
         ],
       },
@@ -224,10 +241,24 @@ const megaMenuData: Record<string, any> = {
         links: centersData.map((center) => ({
           label: center.name,
           path: `/centers/${center.id}#${center.name.toLowerCase()}`,
-        })).slice(0, 9), // Showing first 9 centers like the image
+        })).slice(0, 9), 
       },
       {
         links: [
+          { label: "Mumbai", path: "/centers/16#ahilyanagar",
+            submenu: [
+            { label: "Thane", path: "/infertility-issues/overview" },
+            { label: "Andheri", path: "/infertility-issues/symptoms" },
+            { label: "Borivali", path: "/infertility-issues/diagnosis" },
+            { label: "Ghatkopar", path: "/infertility-issues/treatments" },
+            { label: "Vashi", path: "/infertility-issues/treatments" },
+            { label: "Virar", path: "/infertility-issues/treatments" },
+            { label: "Kalyan", path: "/infertility-issues/treatments" },
+            { label: "Panvel", path: "/infertility-issues/treatments" },
+          ],
+           },
+           { label: "Nashik", path: "/centers/16#ahilyanagar" },
+           { label: "Jalgaon", path: "/centers/16#ahilyanagar" },
           { label: "Ahilyanagar", path: "/centers/16#ahilyanagar" },
           { label: "Amravati", path: "/centers/15#amravati" },
           { label: "Kolhapur", path: "/centers/14#kolhapur" },
@@ -258,11 +289,55 @@ const megaMenuData: Record<string, any> = {
       {
         title: "Fertility Solutions",
         links: [
-          { label: "Your Path to Parenthood", path: "/treatments#ivf" },
-          { label: "Advanced Infertility Treatments", path: "/treatments#iui" },
-          { label: "Advanced Facilities for Trusted Care", path: "/treatments#icsi" },
-          { label: "Infertility Treatments", path: "/treatments#icsi" },
-          { label: "Fertility Preservation", path: "/treatments#icsi" },
+          { label: "Your Path to Parenthood", path: "/treatments#ivf"},
+          { label: "Advanced Infertility Treatments", path: "/treatments#iui",
+            submenu: [
+            { label: "IMSI – High-Resolution Sperm Selection", path: "/infertility-issues/overview" },
+            { label: "PICSI – Physiological ICSI", path: "/infertility-issues/symptoms" },
+            { label: "LAH – Laser Assisted Hatching", path: "/infertility-issues/diagnosis" },
+            { label: "Blastocyst Transfer – Stronger Embryo Transfer", path: "/infertility-issues/treatments" },
+            { label: "Sequential Embryo Transfer – Two-Stage Transfer", path: "/infertility-issues/symptoms" },
+            { label: "PGD/PGS/PGT-A – Genetic Screening", path: "/infertility-issues/symptoms" },
+            
+          ],
+           },
+          { label: "Advanced Facilities for Trusted Care", path: "/treatments#icsi",
+            submenu: [
+            { label: "Class-1000 Modular Lab", path: "/infertility-issues/overview" },
+            { label: "Trigas Incubators", path: "/infertility-issues/symptoms" },
+            { label: "Witness System", path: "/infertility-issues/diagnosis" },
+            { label: "Cryopreservation", path: "/infertility-issues/treatments" },
+          
+        ],
+      },
+          { label: "Infertility Treatments", path: "/treatments#icsi",
+             submenu: [
+            { label: "Ovulation Induction", path: "/infertility-issues/overview" },
+            { label: "IUI", path: "/infertility-issues/symptoms" },
+            { label: "IVF", path: "/infertility-issues/diagnosis" },
+            { label: "IVF-ICSI ", path: "/infertility-issues/treatments" },
+            { label: "Frozen Embryo Transfer", path: "/infertility-issues/diagnosis" },
+            { label: "Fertility Surgery  ", path: "/infertility-issues/treatments" },
+          
+        ],
+           },
+          { label: "Fertility Preservation", path: "/treatments#icsi",
+submenu: [
+            { label: "Female Fertility Preservation", path: "/infertility-issues/overview" },
+            { label: "Male Fertility Preservation", path: "/infertility-issues/symptoms" },
+            { label: "Embryo Preservation", path: "/infertility-issues/diagnosis" },
+          
+        ],
+
+           },
+           { label: "Fertility Evaluation", path: "/treatments#icsi",
+submenu: [
+            { label: "Female Analysis-Complete Reproductive Health Check", path: "/infertility-issues/overview" },
+            { label: "Male Analysis – Advanced Sperm Testing", path: "/infertility-issues/symptoms" },
+          
+        ],
+
+           },
         ],
       },
       {
