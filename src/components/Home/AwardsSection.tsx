@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const tabs = ["Awards & Certifications", "Knowledge Center"];
 
@@ -29,39 +30,50 @@ const awards = [
   },
 ];
 
-
-
 const knowledge = [
   {
     year: "1 month ago",
     title: "Breaking the Myths Around IVF",
     subtitle: "Discover the truth behind common misconceptions, so you can approach your fertility journey with clarity and confidence.",
     image: "/awards/kc1.png", // ✅ public folder
+    views: "2k views",
   },
   {
     year: "1 month ago",
     title: "Nutrition for Fertility Success",
     subtitle: " Learn how small, mindful changes in your diet can create a healthier foundation for conception and IVF success.",
     image: "/awards/kc2.png", // ✅ public folder
+    views: "2k views",
   },
   {
     year: "1 month ago",
     title: "Advanced Technology in IVF",
     subtitle: "Explore how innovations in reproductive science are transforming possibilities and bringing dreams to life.",
     image: "/awards/kc3.png", // ✅ public folder
+    views: "2k views",
   },
   {
     year: "1 month ago",
     title: "Preparing for Parenthood",
     subtitle: "Steps you can take today to feel ready — emotionally, physically, and mentally — for the beautiful journey ahead.",
     image: "/awards/kc4.png", // ✅ public folder
+    views: "2k views",
   },
 ];
 
-
-
 export default function AwardsSection() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
+  const [mobileIndex, setMobileIndex] = useState(0);
+
+  const data = activeTab === "Awards & Certifications" ? awards : knowledge;
+
+  const handleNext = () => {
+    setMobileIndex((prev) => (prev + 1) % data.length);
+  };
+
+  const handlePrev = () => {
+    setMobileIndex((prev) => (prev - 1 + data.length) % data.length);
+  };
 
   return (
     <section className="bg-gray-50 pt-[42px] md:pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
@@ -82,10 +94,13 @@ export default function AwardsSection() {
               {tabs.map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`block font-[Manrope] text-[18px] md:text-[32px] font-normal leading-[40px] tracking-[-0.64px] ${activeTab === tab
-                    ? "text-[#1656A5] border-b-2 border-[#1656A5] pb-1"
-                    : "text-gray-400 hover:text-gray-600"
+                  onClick={() => {
+                    setActiveTab(tab);
+                    setMobileIndex(0);
+                  }}
+                  className={`block font-[Manrope] text-[18px] md:text-[32px] font-normal leading-[40px] tracking-[-0.64px] pb-2 border-b-2 ${activeTab === tab
+                    ? "text-[#1656A5] border-[#1656A5]"
+                    : "text-gray-400 border-gray-300 hover:text-gray-600"
                     }`}
                 >
                   {tab}
@@ -96,98 +111,88 @@ export default function AwardsSection() {
 
           {/* Right column: tab content */}
           <div>
-            {activeTab === "Awards & Certifications" ? (
-              <div className="mt-2">
-                {/* Grid: single column on mobile, two columns from sm/md */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {awards.map((award, idx) => (
-                    <article
-                      key={idx}
-                      className="bg-white rounded-2xl shadow-sm overflow-hidden transition hover:shadow-m h-[490px]
-                      md:p-[24px]"
-                    >
-                      <div className="flex justify-between mb-4 text-[#606060]/50 font-[Manrope] text-[15.8px] font-medium leading-[26.3px] tracking-[-0.316px]">
-                        <span>{award.year}</span>
-                        <span>Awards</span>
-                      </div>
-                      <div className="w-full h-44 sm:h-40 md:h-44 lg:h-48 rounded-2xl  overflow-hidden">
-                        <img
-                          src={award.image}
-                          alt={award.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+            {/* Desktop view */}
+            <div className="hidden lg:block mt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                {data.map((item, idx) => (
+                  <article
+                    key={idx}
+                    className="bg-white rounded-2xl shadow-sm overflow-hidden transition hover:shadow-m h-[490px]
+                    p-[16px] md:p-[24px] flex flex-col"
+                  >
+                    <div className="flex justify-between mb-4 text-[#606060]/50 font-[Manrope] text-[15.8px] font-medium leading-[26.3px] tracking-[-0.316px]">
+                      <span>{item.year}</span>
+                      <span>{activeTab === "Awards & Certifications" ? "Awards" : item.views}</span>
+                    </div>
+                    <div className="w-full h-44 sm:h-40 md:h-44 lg:h-48 rounded-2xl overflow-hidden flex-1">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
-                      <div className="pt-4 sm:pt-5 flex flex-col h-[150px]">
-                        <h3
-                          className="text-[#2C2C2C] font-[Manrope] text-[20px] font-normal leading-[28px] tracking-[-0.4px] pb-[57px]"
-                        >
-                          {award.title}
-                        </h3>
+                    <div className="pt-4 sm:pt-5 flex flex-col justify-end flex-1">
+                      <h3
+                        className="text-[#2C2C2C] font-[Manrope] text-[20px] font-normal leading-[28px] tracking-[-0.4px]"
+                      >
+                        {item.title}
+                      </h3>
 
-                        <p
-                          className="text-[#606060] font-[Manrope] text-[16px] font-normal leading-[24px] tracking-[-0.32px] opacity-50 mt-3"
-                        >
-                          {award.subtitle}
-                        </p>
-                      </div>
-
-
-                    </article>
-                  ))}
-                </div>
+                      <p
+                        className="text-[#606060] font-[Manrope] text-[16px] font-normal leading-[24px] tracking-[-0.32px] opacity-50 mt-3"
+                      >
+                        {item.subtitle}
+                      </p>
+                    </div>
+                  </article>
+                ))}
               </div>
-            ) : (
-              // <div className="bg-white rounded-2xl p-6 shadow-sm">
-              //   <h4 className="text-lg font-semibold text-gray-900 mb-2">
-              //     Knowledge Center
-              //   </h4>
-              //   <p className="text-sm text-gray-600">
-              //     Articles, guides and patient resources will appear here.
-              //     (Replace this placeholder with your real content.)
-              //   </p>
-              // </div>
-              <div className="mt-2">
-                {/* Grid: single column on mobile, two columns from sm/md */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {knowledge.map((award, idx) => (
-                    <article
-                      key={idx}
-                      className="bg-white rounded-2xl shadow-sm overflow-hidden transition hover:shadow-m h-[490px]
-                      md:p-[24px]"
-                    >
-                      <div className="flex justify-between mb-4 text-[#606060]/50 font-[Manrope] text-[15.8px] font-medium leading-[26.3px] tracking-[-0.316px]">
-                        <span>{award.year}</span>
-                        <span>Awards</span>
-                      </div>
-                      <div className="w-full h-44 sm:h-40 md:h-44 lg:h-48 rounded-2xl  overflow-hidden">
-                        <img
-                          src={award.image}
-                          alt={award.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+            </div>
 
-                      <div className="pt-4 sm:pt-5 flex flex-col h-[150px]">
-                        <h3
-                          className="text-[#2C2C2C] font-[Manrope] text-[20px] font-normal leading-[28px] tracking-[-0.4px] pb-[57px]"
-                        >
-                          {award.title}
-                        </h3>
-
-                        <p
-                          className="text-[#606060] font-[Manrope] text-[16px] font-normal leading-[24px] tracking-[-0.32px] opacity-50 mt-3"
-                        >
-                          {award.subtitle}
-                        </p>
-                      </div>
-
-
-                    </article>
-                  ))}
+            {/* Mobile view - Carousel */}
+            <div className="lg:hidden mt-2">
+              <article className="overflow-hidden p-0">
+                <div className="flex justify-between mb-4 text-[#606060]/50 font-[Manrope] text-[15.8px] font-medium leading-[26.3px] tracking-[-0.316px]">
+                  <span>{data[mobileIndex].year}</span>
+                  <span>{activeTab === "Awards & Certifications" ? "Awards" : data[mobileIndex].views}</span>
                 </div>
-              </div>
-            )}
+
+                <div className="w-full h-48 rounded-2xl overflow-hidden mb-0">
+                  <img
+                    src={data[mobileIndex].image}
+                    alt={data[mobileIndex].title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="pt-4 flex flex-col">
+                  <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-normal leading-[28px] tracking-[-0.4px]">
+                    {data[mobileIndex].title}
+                  </h3>
+
+                  <p className="text-[#606060] font-[Manrope] text-[16px] font-normal leading-[24px] tracking-[-0.32px] opacity-50 mt-3">
+                    {data[mobileIndex].subtitle}
+                  </p>
+                </div>
+
+                {/* Navigation buttons */}
+                <div className="flex gap-3 mt-6">
+                  <button
+                    onClick={handlePrev}
+                    className="w-10 h-10 rounded-lg border-2 border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                  >
+                    <ChevronLeft className="w-5 h-5 text-[#1656A5]" />
+                  </button>
+                  <button
+                    onClick={handleNext}
+                    className="w-10 h-10 rounded-lg border-2 border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                  >
+                    <ChevronRight className="w-5 h-5 text-[#1656A5]" />
+                  </button>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>
