@@ -8,16 +8,21 @@ import TestimonialsCenters from './TestimonialCenters';
 import AppointmentForm from '../about/AppointmentForm';
 
 interface SingleCenterProps {
-  selectedId?: number;
+  selectedSlug?: string;
 }
 
-export default function SingleCenter({ selectedId }: SingleCenterProps) {
+export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const selectedCenter = useMemo(() => {
-    return selectedId ? centersData.find((c) => c.id === selectedId) : undefined;
-  }, [selectedId]);
+    if (!selectedSlug) {
+      return undefined;
+    }
+
+    const normalizedSlug = selectedSlug.toLowerCase();
+    return centersData.find((c) => c.slug === normalizedSlug);
+  }, [selectedSlug]);
 
   if (!selectedCenter) {
     return null;

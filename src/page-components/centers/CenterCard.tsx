@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 // Center interface
 export interface Center {
   id: number;
+  slug: string;
   name: string;
   city: string;
   state: string;
@@ -28,6 +29,7 @@ export interface Center {
 export const centersData: Center[] = [
   {
     id: 1,
+    slug: "andheri",
     name: "Andheri",
     city: "Mumbai",
     state: "MAHARASHTRA",
@@ -48,6 +50,7 @@ export const centersData: Center[] = [
   },
   {
     id: 2,
+    slug: "thane",
     name: "Thane",
     city: "Thane",
     state: "MAHARASHTRA",
@@ -68,6 +71,7 @@ export const centersData: Center[] = [
   },
   {
     id: 3,
+    slug: "borivali",
     name: "Borivali",
     city: "Mumbai",
     state: "MAHARASHTRA",
@@ -88,6 +92,7 @@ export const centersData: Center[] = [
   },
   {
     id: 4,
+    slug: "pune",
     name: "Pune",
     city: "Pune",
     state: "MAHARASHTRA",
@@ -108,6 +113,7 @@ export const centersData: Center[] = [
   },
   {
     id: 5,
+    slug: "nashik",
     name: "Nashik",
     city: "Nashik",
     state: "MAHARASHTRA",
@@ -128,6 +134,7 @@ export const centersData: Center[] = [
   },
   {
     id: 6,
+    slug: "jalgaon",
     name: "Jalgaon",
     city: "Jalgaon",
     state: "MAHARASHTRA",
@@ -148,6 +155,7 @@ export const centersData: Center[] = [
   },
   {
     id: 7,
+    slug: "ghatkopar",
     name: "Ghatkopar",
     city: "Mumbai",
     state: "MAHARASHTRA",
@@ -168,6 +176,7 @@ export const centersData: Center[] = [
   },
   {
     id: 8,
+    slug: "vashi",
     name: "Vashi",
     city: "Navi Mumbai",
     state: "MAHARASHTRA",
@@ -188,6 +197,7 @@ export const centersData: Center[] = [
   },
   {
     id: 9,
+    slug: "virar",
     name: "Virar",
     city: "Palghar",
     state: "MAHARASHTRA",
@@ -208,6 +218,7 @@ export const centersData: Center[] = [
   },
   {
     id: 10,
+    slug: "kalyan",
     name: "Kalyan",
     city: "Thane",
     state: "MAHARASHTRA",
@@ -228,6 +239,7 @@ export const centersData: Center[] = [
   },
   {
     id: 11,
+    slug: "panvel",
     name: "Panvel",
     city: "Navi Mumbai",
     state: "MAHARASHTRA",
@@ -248,6 +260,7 @@ export const centersData: Center[] = [
   },
   {
     id: 12,
+    slug: "solapur",
     name: "Solapur",
     city: "Solapur",
     state: "MAHARASHTRA",
@@ -268,6 +281,7 @@ export const centersData: Center[] = [
   },
   {
     id: 13,
+    slug: "nagpur",
     name: "Nagpur",
     city: "Nagpur",
     state: "MAHARASHTRA",
@@ -288,6 +302,7 @@ export const centersData: Center[] = [
   },
   {
     id: 14,
+    slug: "kolhapur",
     name: "Kolhapur",
     city: "Kolhapur",
     state: "MAHARASHTRA",
@@ -308,6 +323,7 @@ export const centersData: Center[] = [
   },
   {
     id: 15,
+    slug: "amravati",
     name: "Amravati",
     city: "Amravati",
     state: "MAHARASHTRA",
@@ -328,6 +344,7 @@ export const centersData: Center[] = [
   },
   {
     id: 16,
+    slug: "ahilyanagar",
     name: "Ahilyanagar",
     city: "Ahilyanagar",
     state: "MAHARASHTRA",
@@ -363,6 +380,12 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
       console.warn(`Center data not found for: ${name}`);
       return {
         id: 0,
+        slug: (name || 'unknown-center')
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-'),
         name: name || 'Unknown Center',
         city: '',
         state: '',
@@ -378,7 +401,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
 
   return (
     <div onClick={() => {
-              router.push(`/centers/${centerData.id}`);
+              router.push(`/centers/${centerData.slug}`);
             }}
      className="flex flex-col md:flex-row gap-4 bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {/* Image Container */}
