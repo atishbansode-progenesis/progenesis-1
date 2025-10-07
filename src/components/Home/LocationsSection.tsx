@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 
 type SubCity = {
@@ -126,6 +127,7 @@ const locations: City[] = [
 ];
 
 export default function LocationsSection() {
+  const router = useRouter();
   const [activeLocation, setActiveLocation] = useState<City | SubCity>(locations[1]); // default Pune
   const [openCity, setOpenCity] = useState<string | null>(null);
 
@@ -238,10 +240,10 @@ export default function LocationsSection() {
                                 </p>
                               </div>
                               <div
-                                className={`px-[16px] py-[8px] flex items-center justify-center rounded-full ${isActive
-                                    ? "bg-blue-600 text-white"
-                                    : "bg-black text-white"
-                                  }`}
+                                 className={`flex items-center justify-center rounded-full px-[24px] py-[16px]  ${isActive
+                                  ? "bg-blue-600 text-white"
+                                  : "bg-black text-white"
+                                }`}
                               >
                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none" >
   <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
@@ -264,6 +266,7 @@ export default function LocationsSection() {
               return (
                 <button
                   key={idx}
+                  onClick={() => router.push(`/centers/${loc.city}`)}
                   onMouseEnter={() => setActiveLocation(loc)}
                   className={`rounded-xl p-5 flex justify-between items-center w-full text-left transition cursor-pointer ${isActive
                       ? "bg-[rgba(22,86,165,0.05)]"
@@ -280,13 +283,15 @@ export default function LocationsSection() {
                     <p className="text-sm text-gray-600 mt-1">{loc.address}</p>
                   </div>
                   <div
-                    className={`flex items-center justify-center rounded-full px-[16px] py-[8px]  ${isActive
+                    className={`flex items-center justify-center rounded-full px-[24px] py-[16px]  ${isActive
                         ? "bg-blue-600 text-white"
                         : "bg-black text-white"
                       }`}
-                  ><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-  <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></div>
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                      <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>  
+                  </div>
                 </button>
               );
             })}
