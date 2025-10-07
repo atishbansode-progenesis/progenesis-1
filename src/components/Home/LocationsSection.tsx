@@ -1,7 +1,11 @@
+
+
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 
 type SubCity = {
@@ -82,7 +86,7 @@ const locations: City[] = [
     city: "Nashik",
     address:
       "IKON, 3rd Floor, Above Westside, Opp. Sun Bird Building, Yeolekar Mala, College Road, Nashik -422 005, Maharashtra",
-    image: "/LocationsSection/nashik.png",
+    image: "/LocationsSection/nasik.png",
   },
   {
     city: "Jalgaon",
@@ -123,6 +127,7 @@ const locations: City[] = [
 ];
 
 export default function LocationsSection() {
+  const router = useRouter();
   const [activeLocation, setActiveLocation] = useState<City | SubCity>(locations[1]); // default Pune
   const [openCity, setOpenCity] = useState<string | null>(null);
 
@@ -158,7 +163,7 @@ export default function LocationsSection() {
         {/* Content */}
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left: clickable list */}
-          <div className="hidden md:flex md:flex-col md:w-1/3 space-y-4 pr-2 overflow-y-auto h-[450px]">
+          <div className="hidden md:flex md:flex-col md:w-1/3 space-y-4 pr-2 overflow-y-auto h-[450px] cursor-pointer">
             {locations.map((loc, idx) => {
               const isOpen = openCity === loc.city;
 
@@ -168,49 +173,56 @@ export default function LocationsSection() {
                   <div key={idx} className="w-full">
 
                     {/* Parent Card */}
-                    <button
+                    <motion.button
                       onClick={() => toggleCity(loc.city)}
-                      className={`w-full flex justify-between items-center rounded-xl px-5 py-4 transition ${isOpen
-                          ? "bg-blue-600 text-white"
-                          : "bg-gray-50 text-gray-900"
-                        }`}
+                      onMouseEnter={() => setActiveLocation(loc)}
+                      animate={{
+                        backgroundColor: isOpen ? "rgb(37, 99, 235)" : "rgb(249, 250, 251)",
+                        color: isOpen ? "white" : "rgb(17, 24, 39)"
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className={`w-full flex justify-between items-center rounded-xl px-5 py-4 cursor-pointer`}
                     >
                       <span className="text-lg md:text-xl font-semibold">
                         {loc.city}
                       </span>
-                      <span
-                        className={`flex items-center justify-center w-10 h-10 rounded-full border transition ${isOpen
-                            ? "border-white text-white"
-                            : "border-black text-black"
-                          }`}
+                      <motion.span
+                        animate={{
+                          borderColor: isOpen ? "white" : "black",
+                          color: isOpen ? "white" : "black",
+                          rotate: isOpen ? 180 : 0
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className={`flex items-center justify-center w-10 h-10 rounded-full border`}
                       >
-                        {isOpen ? (
-                          // Arrow UP
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path d="M9 13L12 10L15 13" stroke="white" strokeLinecap="square" strokeLinejoin="round" />
-                          </svg>
-                        ) : (
-                          // Arrow DOWN
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path d="M9 11L12 14L15 11" stroke="black" strokeLinecap="square" strokeLinejoin="round" />
-                          </svg>
-                        )}
-                      </span>
-                    </button>
+                        {/* Arrow DOWN */}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                          <path d="M9 11L12 14L15 11" stroke="currentColor" strokeLinecap="square" strokeLinejoin="round" />
+                        </svg>
+                      </motion.span>
+                    </motion.button>
 
 
                     {/* SubCities */}
-                    {isOpen && (
-                      <div className="mt-2 space-y-3">
-                        {loc.subCities.map((sub, i) => {
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-2 space-y-3 overflow-hidden"
+                        >
+                          {loc.subCities.map((sub, i) => {
                           const isActive =
                             "name" in activeLocation &&
                             activeLocation.name === sub.name;
                           return (
                             <button
                               key={i}
-                              onClick={() => setActiveLocation(sub)}
-                              className={`rounded-xl p-4 flex justify-between items-center w-full text-left transition ${isActive
+                              onClick={() => router.push(`/centers/${sub.name}`)}
+                              onMouseEnter={() => setActiveLocation(sub)}
+                              className={`rounded-xl p-4 flex justify-between items-center w-full text-left transition cursor-pointer ${isActive
                                   ? "bg-[rgba(22,86,165,0.05)]"
                                   : "bg-gray-50"
                                 }`}
@@ -229,10 +241,10 @@ export default function LocationsSection() {
                                 </p>
                               </div>
                               <div
-                                className={`px-[16px] py-[8px] flex items-center justify-center rounded-full ${isActive
-                                    ? "bg-blue-600 text-white"
-                                    : "bg-black text-white"
-                                  }`}
+                                 className={`flex items-center justify-center rounded-full px-[24px] py-[16px]  ${isActive
+                                  ? "bg-blue-600 text-white"
+                                  : "bg-black text-white"
+                                }`}
                               >
                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none" >
   <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
@@ -240,9 +252,10 @@ export default function LocationsSection() {
                               </div>
                             </button>
                           );
-                        })}
-                      </div>
-                    )}
+                                                  })}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               }
@@ -254,8 +267,9 @@ export default function LocationsSection() {
               return (
                 <button
                   key={idx}
-                  onClick={() => setActiveLocation(loc)}
-                  className={`rounded-xl p-5 flex justify-between items-center w-full text-left transition ${isActive
+                  onClick={() => router.push(`/centers/${loc.city}`)}
+                  onMouseEnter={() => setActiveLocation(loc)}
+                  className={`rounded-xl p-5 flex justify-between items-center w-full text-left transition cursor-pointer ${isActive
                       ? "bg-[rgba(22,86,165,0.05)]"
                       : "bg-gray-50"
                     }`}
@@ -270,13 +284,15 @@ export default function LocationsSection() {
                     <p className="text-sm text-gray-600 mt-1">{loc.address}</p>
                   </div>
                   <div
-                    className={`flex items-center justify-center rounded-full px-[16px] py-[8px]  ${isActive
+                    className={`flex items-center justify-center rounded-full px-[24px] py-[16px]  ${isActive
                         ? "bg-blue-600 text-white"
                         : "bg-black text-white"
                       }`}
-                  ><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-  <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></div>
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                      <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>  
+                  </div>
                 </button>
               );
             })}
@@ -285,18 +301,28 @@ export default function LocationsSection() {
           {/* Right: Dynamic Image */}
           <div className="w-full md:w-2/3">
             <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-[1115px] h-[450px]">
-              <Image
-                src={activeLocation.image || "/LocationsSection/location.png"}
-                alt={
-                  "city" in activeLocation
-                    ? activeLocation.city
-                    : activeLocation.name
-                }
-
-                fill
-                className="object-cover"
-                priority
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeLocation.image}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="relative w-full h-full"
+                >
+                  <Image
+                    src={activeLocation.image || "/LocationsSection/location.png"}
+                    alt={
+                      "city" in activeLocation
+                        ? activeLocation.city
+                        : activeLocation.name
+                    }
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
 
           </div>
