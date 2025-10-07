@@ -80,13 +80,13 @@ const TestimonialsSection = () => {
               ref={prevRef}
               className="w-10 h-10 flex items-center justify-center border border-white rounded-lg hover:bg-white hover:text-blue-700 transition"
             >
-              ←
+              <img src="/icons/left.svg" alt="right" width={12} height={12} />
             </button>
             <button
               ref={nextRef}
               className="w-10 h-10 flex items-center justify-center border border-white rounded-lg hover:bg-white hover:text-blue-700 transition"
             >
-              →
+              <img src="/icons/right.svg" alt="right" width={12} height={12} />
             </button>
           </div>
         </div>
