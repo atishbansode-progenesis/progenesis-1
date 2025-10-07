@@ -268,9 +268,9 @@ const DifferenceSection = () => {
 
           {/* Heading */}
           <h2 className="mt-6 text-2xl md:text-4xl font-[Manrope] font-normal leading-[36px] md:leading-[50px] tracking-[-0.96px] text-[#94BA3D]">
-            Choosing a fertility clinic means choosing the people <br />
+            Choosing a fertility clinic<br /> means choosing the people <br />
             who’ll walk beside you. <br />
-            At Progenesis, expert care meets heartfelt support, every step of the way.
+            At Progenesis, expert care <br />meets heartfelt support,<br /> every step of the way.
           </h2>
 
           {/* Card stack (overlays text) */}
