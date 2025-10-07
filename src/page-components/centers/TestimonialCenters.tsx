@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { resourceStoriesData } from "@/page-components/resources/ResourceStories";
 
 const TestimonialsSection = () => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
@@ -15,24 +16,35 @@ const TestimonialsSection = () => {
     {
       text: "I came in with questions, doubts, and a heart full of fear. But I left with answers, reassurance, and hope. Today... I have someone who calls me ‘Mom.’",
       author: "Rhea Deshapnde, Progenesis Mom, Nashik",
-      image: "/images/Rvid1.png",
     },
     {
       text: "The team was so supportive throughout my journey. Their care and expertise gave me hope again.",
       author: "Priya Sharma, Progenesis Mom, Pune",
-      image: "/images/Rvid2.png",
     },
     {
       text: "Every visit gave me more confidence. Today, I’m blessed with the family I always dreamed of.",
       author: "Anjali Mehta, Progenesis Mom, Mumbai",
-      image: "/images/Rvid3.png",
     },
     {
       text: "Amazing care and wonderful staff. They made our journey smooth and hopeful.",
       author: "Sneha Kulkarni, Progenesis Mom, Nagpur",
-      image: "/images/Rvid4.png",
     },
   ];
+
+  const videoTestimonials = useMemo(() => {
+    if (!resourceStoriesData.length) {
+      return testimonials;
+    }
+
+    return testimonials.map((testimonial, index) => {
+      const story = resourceStoriesData[index % resourceStoriesData.length];
+      return {
+        ...testimonial,
+        videoUrl: story.videoUrl,
+        storyTitle: story.title,
+      };
+    });
+  }, [testimonials]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -56,7 +68,7 @@ const TestimonialsSection = () => {
               <div
                 className="h-1 bg-white rounded-full transition-all duration-500"
                 style={{
-                  width: `${((currentIndex + 1) / testimonials.length) * 100}%`,
+                  width: `${((currentIndex + 1) / videoTestimonials.length) * 100}%`,
                 }}
               ></div>
             </div>
@@ -93,7 +105,7 @@ const TestimonialsSection = () => {
               onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
               className="w-full max-w-[900px]"
             >
-              {testimonials.map((t, i) => (
+              {videoTestimonials.map((t, i) => (
                 <SwiperSlide key={i}>
                   <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-md overflow-hidden w-full h-[500px]">
                     {/* Text */}
@@ -106,13 +118,22 @@ const TestimonialsSection = () => {
                       </span>
                     </div>
 
-                    {/* Image */}
+                    {/* Video */}
                     <div className="md:w-1/2 h-[250px] md:h-full">
-                      <img
-                        src={t.image}
-                        alt={t.author}
-                        className="w-full h-full object-cover"
-                      />
+                      {t.videoUrl ? (
+                        <iframe
+                          src={t.videoUrl}
+                          title={t.storyTitle || t.author}
+                          className="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400">
+                          Video unavailable
+                        </div>
+                      )}
                     </div>
                   </div>
                 </SwiperSlide>
