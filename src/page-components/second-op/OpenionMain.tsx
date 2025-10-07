@@ -6,7 +6,7 @@ import OpinionContent from "./OpinionContent";
 import OpinionBenefits from "./OpinionBenefits";
 import OpinionStats from "./OpinionStats";
 import OpinionCare from "./OpinionCare";
-import OpinionConsultation from "./OpinionConsultation";
+import AppointmentForm from "../about/AppointmentForm";
 
 const OpenionMain = () => {
       return (
@@ -17,7 +17,7 @@ const OpenionMain = () => {
         <OpinionBenefits />
         <OpinionStats />
         <OpinionCare />
-        <OpinionConsultation />
+        <AppointmentForm />
         </div>
       )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import DoctorBanner from './DoctorsBanner'
 import '../about/AboutMain.css'
 import DoctorsInfo from './DoctorsInfo'
-import ResourceConsultation from '../resources/ResourceConsultation'
+import AppointmentForm from '../about/AppointmentForm'
 import DoctorsPart from './DoctorsPart'
 const MainDoctors = () => {
   return (
@@ -10,7 +10,8 @@ const MainDoctors = () => {
         <DoctorBanner/>
         <DoctorsInfo />
         <DoctorsPart />
-        <ResourceConsultation />
+        <AppointmentForm />
+       
     </div>
   )
 }

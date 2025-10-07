@@ -13,6 +13,7 @@ export interface Center {
   phone?: string;
   email?: string;
   services?: string[];
+  mapUri: string;
   coordinates?: {
     lat: number;
     lng: number;
@@ -30,14 +31,15 @@ export const centersData: Center[] = [
     name: "Andheri",
     city: "Mumbai",
     state: "MAHARASHTRA",
-    address: "Ground Floor, Business Point, Near Metro Station, Andheri East, Mumbai 400069",
+    address: "4th Durolite House, Off New Link Rd, Near Oshiwara Station, Opposite to Laxmi Industrial Complex, Andheri West, Mumbai",
     image: "/images/Andheri.png",
     phone: "+91 1234567891",
     email: "andheri@progenesis.in",
+    mapUri: 'Qsk6P3KPvZwhi9Zb7',
     services: ["IVF", "IUI", "Surrogacy", "Egg Freezing"],
     coordinates: {
-      lat: 19.1136,
-      lng: 72.8697
+      lat: 19.13711948,
+      lng: 72.8323002
     },
     timings: {
       weekdays: "8:00 AM - 9:00 PM",
@@ -54,9 +56,10 @@ export const centersData: Center[] = [
     phone: "+91 1234567890",
     email: "thane@progenesis.in",
     services: ["IVF", "IUI", "ICSI", "Fertility Preservation"],
+    mapUri:'LuyNRTcTaR1bH88y9',
     coordinates: {
-      lat: 19.2183,
-      lng: 72.9781
+      lat: 19.2319173,
+      lng: 72.97594
     },
     timings: {
       weekdays: "9:00 AM - 8:00 PM",
@@ -73,9 +76,10 @@ export const centersData: Center[] = [
     phone: "+91 1234567892",
     email: "borivali@progenesis.in",
     services: ["IVF", "Fertility Assessment", "Genetic Testing"],
+    mapUri:'qqZZDcf3K1Hw62838',
     coordinates: {
-      lat: 19.2307,
-      lng: 72.8567
+      lat: 19.2221387,
+      lng: 72.8485524
     },
     timings: {
       weekdays: "9:00 AM - 7:00 PM",
@@ -88,13 +92,14 @@ export const centersData: Center[] = [
     city: "Pune",
     state: "MAHARASHTRA",
     address: "Crystal Plaza, 3rd Floor, Near FC Road, Shivajinagar, Pune 411005",
-    image: "/images/Pune.png",
+    image: "/images/Pune.jpg",
     phone: "+91 1234567893",
     email: "pune@progenesis.in",
     services: ["IVF", "IUI", "Fertility Counseling"],
+    mapUri:'gSE6EkZSCW6G5aNz6',
     coordinates: {
-      lat: 18.5204,
-      lng: 73.8567
+      lat: 18.5542529,
+      lng: 73.8092704
     },
     timings: {
       weekdays: "9:00 AM - 8:00 PM",
@@ -106,14 +111,15 @@ export const centersData: Center[] = [
     name: "Nashik",
     city: "Nashik",
     state: "MAHARASHTRA",
-    address: "Medicare Center, College Road, Near City Center Mall, Nashik 422005",
-    image: "/images/Nashik.jpg",
+    address: "IKON, 3rd Floor, Above Westside, Opp. Sun Bird Building, Yeolekar Mala, College Road, Nashik 422005",
+    image: "/images/Nasik.jpg",
     phone: "+91 1234567894",
     email: "nashik@progenesis.in",
     services: ["IVF", "Fertility Treatment", "Embryology"],
+    mapUri:'zyXCS6dEsjRpndD88',
     coordinates: {
-      lat: 20.0059,
-      lng: 73.7912
+      lat: 20.0009439,
+      lng: 73.7620231
     },
     timings: {
       weekdays: "9:00 AM - 7:00 PM",
@@ -126,13 +132,14 @@ export const centersData: Center[] = [
     city: "Jalgaon",
     state: "MAHARASHTRA",
     address: "Jalgaon Medical Hub, Near Railway Station, Jalgaon 425001",
-    image: "/images/Jalgaon.png",
+    image: "/images/Jalgaon.jpg",
     phone: "+91 1234567895",
     email: "jalgaon@progenesis.in",
     services: ["IVF", "IUI", "Fertility Consultation"],
+    mapUri: 'koq52L9pCqt9AyDM8',
     coordinates: {
-      lat: 21.0075,
-      lng: 75.5636
+      lat: 21.00143072,
+      lng: 75.5610411
     },
     timings: {
       weekdays: "9:00 AM - 6:00 PM",
@@ -144,14 +151,15 @@ export const centersData: Center[] = [
     name: "Ghatkopar",
     city: "Mumbai",
     state: "MAHARASHTRA",
-    address: "Ghatkopar Health Center, Near Ghatkopar Station, Mumbai 400077",
+    address: "Shop Zone Building, Mahatma Gandhi Road, Ghatkopar West, Mumbai 400077",
     image: "/images/Ghatkopar.png",
     phone: "+91 1234567896",
     email: "ghatkopar@progenesis.in",
     services: ["IVF", "IUI", "Genetic Counseling"],
+    mapUri: 'bu9UrQbqCwHokn148',
     coordinates: {
-      lat: 19.0812,
-      lng: 72.9065
+      lat: 19.0858784,
+      lng: 72.9051982
     },
     timings: {
       weekdays: "9:00 AM - 8:00 PM",
@@ -163,14 +171,15 @@ export const centersData: Center[] = [
     name: "Vashi",
     city: "Navi Mumbai",
     state: "MAHARASHTRA",
-    address: "Vashi Plaza, Sector 17, Vashi, Navi Mumbai 400703",
+    address: "Ground Floor, Bhumiraj Costarica, Palm Beach Service Road, Vashi, Navi Mumbai 400703",
     image: "/images/Vashi.png",
     phone: "+91 1234567897",
     email: "vashi@progenesis.in",
     services: ["IVF", "IUI", "Surrogacy"],
+    mapUri: 'zLSUwhnYjK2WfRZi7',
     coordinates: {
-      lat: 19.0648,
-      lng: 73.0031
+      lat: 19.0565633,
+      lng: 73.0035369
     },
     timings: {
       weekdays: "9:00 AM - 7:00 PM",
@@ -183,13 +192,14 @@ export const centersData: Center[] = [
     city: "Palghar",
     state: "MAHARASHTRA",
     address: "Virar Medical Complex, Near Virar Station, Virar West 401303",
-    image: "/images/Virar.png",
+    image: "/images/virar.jpg",
     phone: "+91 1234567898",
     email: "virar@progenesis.in",
     services: ["IVF", "Fertility Assessment", "Egg Freezing"],
+    mapUri: 'acG2v3Y8xdZcK64EA',
     coordinates: {
-      lat: 19.4597,
-      lng: 72.8065
+      lat: 19.4530572,
+      lng: 72.7986412
     },
     timings: {
       weekdays: "9:00 AM - 6:00 PM",
@@ -202,13 +212,14 @@ export const centersData: Center[] = [
     city: "Thane",
     state: "MAHARASHTRA",
     address: "Kalyan Health Clinic, Near Kalyan Station, Kalyan West 421301",
-    image: "/images/Kalyan.png",
+    image: "/images/kalyan.webp",
     phone: "+91 1234567899",
     email: "kalyan@progenesis.in",
     services: ["IVF", "IUI", "Fertility Preservation"],
+    mapUri: 'wYmnqje6hZPsmSyX6',
     coordinates: {
-      lat: 19.2424,
-      lng: 73.1355
+      lat: 19.2406614,
+      lng: 73.1296727
     },
     timings: {
       weekdays: "9:00 AM - 7:00 PM",
@@ -221,13 +232,14 @@ export const centersData: Center[] = [
     city: "Navi Mumbai",
     state: "MAHARASHTRA",
     address: "Panvel Medical Center, Near Panvel Station, Panvel 410206",
-    image: "/images/Panvel.png",
+    image: "/images/Panvel.jpg",
     phone: "+91 1234567800",
     email: "panvel@progenesis.in",
     services: ["IVF", "IUI", "Genetic Testing"],
+    mapUri: 'X9cFyp1dBKFnmv459',
     coordinates: {
-      lat: 18.9894,
-      lng: 73.1182
+      lat: 18.9879311,
+      lng: 73.1141176
     },
     timings: {
       weekdays: "9:00 AM - 6:00 PM",
@@ -239,14 +251,15 @@ export const centersData: Center[] = [
     name: "Solapur",
     city: "Solapur",
     state: "MAHARASHTRA",
-    address: "Solapur Fertility Clinic, Near Old Bus Stand, Solapur 413001",
-    image: "/images/Solapur.png",
+    address:"KASTURE AGENCIES, 3rd Floor, Unit No 3-B, Kasture Business Centre, Railway lines, Dufferin Chowk, Solapur, Maharashtra 413001",
+    image: "/images/Solapur.jpg",
     phone: "+91 1234567801",
     email: "solapur@progenesis.in",
     services: ["IVF", "Fertility Treatment", "Counseling"],
+    mapUri: 'acwiefbWWf2ZXC5x9',
     coordinates: {
-      lat: 17.6871,
-      lng: 75.9064
+      lat: 21.0143072,
+      lng: 75.5610411
     },
     timings: {
       weekdays: "9:00 AM - 7:00 PM",
@@ -258,14 +271,15 @@ export const centersData: Center[] = [
     name: "Nagpur",
     city: "Nagpur",
     state: "MAHARASHTRA",
-    address: "Nagpur Health Hub, Near Sitabuldi, Nagpur 440001",
-    image: "/images/Nagpur.png",
+    address: "6th Floor, Tower 10, N Ambazari Rd, beside Alankar Theater, Bhagwaghar, Dharampeth, Nagpur, Maharashtra 440002",
+    image: "/images/Nagpur.jpg",
     phone: "+91 1234567802",
     email: "nagpur@progenesis.in",
     services: ["IVF", "IUI", "Embryology"],
+    mapUri: 'vsx3HtpkRy9rGUHK8',
     coordinates: {
-      lat: 21.1458,
-      lng: 79.0882
+      lat: 18.9353097,
+      lng: 73.2963966
     },
     timings: {
       weekdays: "9:00 AM - 8:00 PM",
@@ -277,14 +291,15 @@ export const centersData: Center[] = [
     name: "Kolhapur",
     city: "Kolhapur",
     state: "MAHARASHTRA",
-    address: "Kolhapur Fertility Center, Near Rankala Lake, Kolhapur 416001",
-    image: "/images/Kolhapur.png",
+    address: "Royal Mirage Arcade, A Wing, Railway Colony Rd, opp. Kolhapur railway station, Railway Colony, New Shahupuri, Kolhapur 416001",
+    image: "/images/Kolhapur.jpg",
     phone: "+91 1234567803",
     email: "kolhapur@progenesis.in",
     services: ["IVF", "IUI", "Surrogacy"],
+    mapUri: 'i1Ap66b3nMNhSZbh8',
     coordinates: {
-      lat: 16.7041,
-      lng: 74.2433
+      lat: 16.7034419,
+      lng: 74.2377609
     },
     timings: {
       weekdays: "9:00 AM - 7:00 PM",
@@ -296,14 +311,15 @@ export const centersData: Center[] = [
     name: "Amravati",
     city: "Amravati",
     state: "MAHARASHTRA",
-    address: "Amravati Medical Plaza, Near Rajkamal Chowk, Amravati 444601",
-    image: "/images/Amravati.png",
+    address: "3rd floor, Badnera Rd, above Raghubir Food Zone, Sharda Vihar, Amravati, Maharashtra 444605",
+    image: "/images/Amravati.jpg",
     phone: "+91 1234567804",
     email: "amravati@progenesis.in",
     services: ["IVF", "Fertility Assessment", "Genetic Testing"],
+    mapUri: 'rYd1qu5wgL4ycmjV8',
     coordinates: {
-      lat: 20.9366,
-      lng: 77.7666
+      lat: 20.9157935,
+      lng: 77.7531131
     },
     timings: {
       weekdays: "9:00 AM - 6:00 PM",
@@ -315,20 +331,22 @@ export const centersData: Center[] = [
     name: "Ahilyanagar",
     city: "Ahilyanagar",
     state: "MAHARASHTRA",
-    address: "Ahilyanagar Health Clinic, Near Central Bus Stand, Ahilyanagar 414001",
-    image: "/images/Ahilyanagar.png",
+    address: "Shop No 2, First Floor, Diansh Plaza, opp. Mauli Sankul Road, Savedi, Ahilyanagar, Maharashtra 414003",
+    image: "/images/Ahilyanagar.jpg", // Updated image reference for accuracy
     phone: "+91 1234567805",
-    email: "ahilyanagar@progenesis.in",
+    email: "ahmednagar@progenesis.in",
     services: ["IVF", "IUI", "Fertility Counseling"],
+    mapUri: 'tNr54ErBfVH7mHX67',
     coordinates: {
-      lat: 19.0946,
-      lng: 74.7402
+      lat: 19.1151738,
+      lng: 74.7296822
     },
     timings: {
       weekdays: "9:00 AM - 7:00 PM",
       weekends: "9:00 AM - 2:00 PM"
     }
-  }
+  },
+  // Additional centers confirmed via official sources
 ];
 interface CenterCardProps {
   name: string;

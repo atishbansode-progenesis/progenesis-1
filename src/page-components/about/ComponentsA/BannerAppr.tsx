@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
+import AppointmentForm from '../AppointmentForm';
 
 // Slides: first one uses the exact content you already provided. Others are dummy and can be replaced later.
 const slides = [
@@ -98,6 +99,7 @@ const BannerOfApproach: React.FC = () => {
   const current = slides[activeTab];
   const isFirst = activeTab === 0;
   const isLast = activeTab === slides.length - 1;
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="w-full bg-white px-6 md:px-12 lg:px-[90px] py-10 md:py-12 section-spacing" >
@@ -160,7 +162,7 @@ const BannerOfApproach: React.FC = () => {
                 </h3>
                 <div className="flex flex-wrap gap-4 mt-5" style={{paddingBottom:'20px'}}>
                   <button
-                    onClick={() => setCtaActive((prev) => ({ ...prev, [index]: 'primary' }))}
+                    onClick={() => {setCtaActive((prev) => ({ ...prev, [index]: 'primary' })); setIsOpen(true);}}
                     className={`${(ctaActive[index] ?? 'primary') === 'primary' ? 'bg-white text-black' : 'border border-white/90 text-white'} h-[40px] px-4 rounded-[12px] text-xs font-semibold shadow-sm`}
                     style={{padding:'8px'}}
                   >
@@ -173,6 +175,8 @@ const BannerOfApproach: React.FC = () => {
                   >
                     {s.ctaSecondary}
                   </button>
+                  {/* Modal */}
+            {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
                 </div>
                 <div className="grid grid-cols-1 gap-2 max-w-[1100px] pt-5">
                   {s.features.map((item, idx) => (
@@ -208,7 +212,7 @@ const BannerOfApproach: React.FC = () => {
           </h3>
           <div className="flex flex-wrap gap-3 md:gap-4 mb-10" style={{paddingTop:'30px', paddingBottom:'100px'}}>
             <button
-              onClick={() => setCtaActive((prev) => ({ ...prev, [activeTab]: 'primary' }))}
+              onClick={() => {setCtaActive((prev) => ({ ...prev, [activeTab]: 'primary' })); setIsOpen(true);}}
               className={`${(ctaActive[activeTab] ?? 'primary') === 'primary' ? 'bg-white text-black' : 'border border-white/90 text-white'} w-[183px] h-[56px] px-5 py-2.5 rounded-[16px] text-sm font-semibold shadow-sm`}
             >
               {current.ctaPrimary}
@@ -219,6 +223,8 @@ const BannerOfApproach: React.FC = () => {
             >
                 {current.ctaSecondary}
             </button>
+            {/* Modal */}
+            {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
           </div>
 
           {/* Feature cards */}

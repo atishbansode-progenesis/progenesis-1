@@ -1,10 +1,11 @@
-import React from "react";
+'use client'
+import React, {useState} from "react";
 import BlogLanding from './BlogLanding';
 import BlogContent from './BlogContent';
 import '../about/AboutMain.css';
-import ResourceConsultation from "../resources/ResourceConsultation";
 import BlogCtaBanner from './BlogCtaBanner';
 import ResourceGrid from "../resources/ResourceGrid";
+import AppointmentForm from "../about/AppointmentForm";
 
 interface BlogMainProps {
   data?: any;
@@ -13,6 +14,7 @@ interface BlogMainProps {
 
 const BlogMain: React.FC<BlogMainProps> = ({ data, showGridFirst = false }) => {
   const hasBlogData = Boolean(data);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
@@ -43,7 +45,7 @@ const BlogMain: React.FC<BlogMainProps> = ({ data, showGridFirst = false }) => {
       )}
 
       <BlogCtaBanner />
-      <ResourceConsultation />
+      <AppointmentForm />
     </div>
   );
 };
