@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface GradientBannerProps {
@@ -7,8 +6,6 @@ interface GradientBannerProps {
 
 const GradientBanner: React.FC<GradientBannerProps> = ({ text }) => {
   return (
-
-
     <section className="relative w-full h-[475px] flex items-center justify-center overflow-hidden">
       {/* 🔹 Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-green-50 via-white to-blue-50" />
@@ -34,20 +31,20 @@ const GradientBanner: React.FC<GradientBannerProps> = ({ text }) => {
 
       {/* 🔹 Text */}
       <h2
-        className="relative w-[50%] text-center font-[Manrope] 
-             text-[#94BA3D] text-[48px] font-normal leading-[56px] 
+        className="relative w-[90%] md:w-[70%] lg:w-[50%] text-center font-[Manrope] 
+             text-[#94BA3D] text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] 
+             font-normal leading-[36px] sm:leading-[44px] md:leading-[52px] lg:leading-[56px] 
              tracking-[-0.96px] px-4 z-10"
       >
         {text}
       </h2>
-
     </section>
-
   );
 };
 
-export default GradientBanner;
-
-
-
-
+// Example usage
+export default function App() {
+  return (
+    <GradientBanner text="Striving to set a new standard for reproductive health care services." />
+  );
+}

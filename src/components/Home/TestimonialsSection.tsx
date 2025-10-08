@@ -44,16 +44,27 @@ const TestimonialsSection = () => {
           <div className="md:text-left text-center">
             {/* Google Rating */}
             <div className="flex md:flex-row md:items-end items-center justify-center md:justify-start space-x-2 mb-2">
-              <img
-                src="/TestimonialsSection/google.png"
-                alt="Google"
-                className="w-10 h-8 rounded-[5px]"
-              />
-              <span className="text-3xl md:text-5xl font-[Manrope] font-semibold text-[#F9F9F9]">
-                4.9
-              </span>
-              <span className="text-lg">/5</span>
-            </div>
+  {/* Mobile image */}
+  <img
+    src="/images/google.png"
+    alt="Google"
+    className="w-[71px] h-[]34px rounded-[5px] block md:hidden"
+  />
+
+  {/* Desktop image */}
+  <img
+    src="/TestimonialsSection/google.png"
+    alt="Google"
+    className="w-10 h-8 rounded-[5px] hidden md:block"
+  />
+
+  <span className="text-3xl md:text-5xl font-[Manrope] font-semibold text-[#F9F9F9]">
+    4.9
+  </span>
+  <span className="text-lg">/5</span>
+</div>
+
+            {/* public/images/google.png */}
 
             {/* Stars */}
             <div className="flex justify-center md:justify-start items-center text-yellow-400 text-xl mb-2">
