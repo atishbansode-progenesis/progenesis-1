@@ -221,9 +221,21 @@ const StatsSection = () => {
 
       <div className="relative mx-0 px-6 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px]">
         {/* Badge */}
-        <span className="inline-block text-[12px] font-manrope font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
-  Stats and Metrics
-</span>
+        <span
+          className="inline-flex items-center gap-[4px] px-[8px] py-[4px] rounded-[8px]"
+          style={{
+            color: "var(--Blue, #1656A5)",
+            fontFamily: "Manrope",
+            fontSize: "12px",
+            fontStyle: "normal",
+            fontWeight: 500,
+            lineHeight: "20px",
+            letterSpacing: "-0.24px",
+            background: "var(--Chip_Blue, rgba(22, 86, 165, 0.05))",
+          }}
+        >
+          Stats and Metrics
+        </span>
 
         {/* Title */}
         <h2 className="text-[48px] font-manrope font-normal text-[#2c2c2c] mb-12 max-w-3xl leading-snug">

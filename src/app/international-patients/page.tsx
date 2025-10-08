@@ -146,9 +146,9 @@ const steps = [
     title: "Connect With Us",
     image: "/InternationalPatients/connect.png",
     subtitle: "Begin your treatment journey",
-    sub_description:  "Fill the form and our team will guide you",
+    sub_description: "Fill the form and our team will guide you",
     description: [
-     
+
       "Clear answers to your questions",
       "Suggested personalized treatment plan",
       "Documentation checklist",
@@ -169,10 +169,10 @@ const steps = [
     title: "Arrive & Begin Treatment",
     image: "/InternationalPatients/arrive.png",
     subtitle: "We’re with you at every step",
-    sub_description: 
+    sub_description:
       "Meet your doctor & team personally. Start your planned treatment with comfort & clarity. 24x7 support during your stay",
-       description: []
- 
+    description: []
+
   },
 ];
 
@@ -181,7 +181,7 @@ const StepsSection = () => {
 
   return (
     <section id="journey-section" className="py-16 px-4 md:px-[80px] lg:px-[120px] bg-white">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-1 items-start">
         {/* Left */}
         <div>
           <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
@@ -222,7 +222,7 @@ const StepsSection = () => {
         </div>
 
         {/* Right */}
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-3">
           <p
             className="text-[#2C2C2C] font-[Manrope] text-[32px] font-normal leading-[40px] tracking-[-0.64px]"
           >
@@ -234,61 +234,61 @@ const StepsSection = () => {
               <img
                 src={steps[activeIndex].image}
                 alt={steps[activeIndex].title}
-                className="w-[300px] h-[280px] md:w-[600px] md:h-[500px] object-cover"
+                className="w-[300px] h-[280px] md:w-[600px] md:h-[450px] object-cover"
               />
             </div>
             <div className="w-[350px]">
-  {/* Step Count */}
-  <span
-    className="
+              {/* Step Count */}
+              <span
+                className="
       block mb-1 font-[Manrope]
       text-[#606060] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
       md:text-[#94BA3D] md:text-[16px] md:leading-[24px] md:tracking-[-0.32px]
 
       md:mt-16
     "
-  >
-    0{activeIndex + 1}
-  </span>
+              >
+                0{activeIndex + 1}
+              </span>
 
-  {/* Subtitle */}
-  <h3
-    className="
+              {/* Subtitle */}
+              <h3
+                className="
       mb-2 font-[Manrope]
       text-[#2C2C2C] text-[16px] font-semibold leading-[24px] tracking-[-0.32px]
       md:text-[#1656A5] md:text-[32px] md:font-medium md:leading-[40px] md:tracking-[-0.64px]
     "
-  >
-    {steps[activeIndex].subtitle}
-  </h3>
+              >
+                {steps[activeIndex].subtitle}
+              </h3>
 
-  <span
-      
-        className="
+              <span
+
+                className="
           font-[Manrope]
           text-[#606060] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
           md:text-[#2C2C2C] md:text-[16px] md:leading-[24px] md:tracking-[-0.32px]
         "
-      >
-        {steps[activeIndex].sub_description}
-      </span>
+              >
+                {steps[activeIndex].sub_description}
+              </span>
 
-  {/* Description List */}
-  <ul className="space-y-2 list-disc list-inside text-gray-600 space-y-1">
-    {steps[activeIndex].description.map((line, i) => (
-      <li
-        key={i}
-        className="
+              {/* Description List */}
+              <ul className="space-y-2 list-disc list-inside text-gray-600 space-y-1">
+                {steps[activeIndex].description.map((line, i) => (
+                  <li
+                    key={i}
+                    className="
           font-[Manrope]
           text-[#606060] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
           md:text-[#2C2C2C] md:text-[16px] md:leading-[24px] md:tracking-[-0.32px]
         "
-      >
-        {line}
-      </li>
-    ))}
-  </ul>
-</div>
+                  >
+                    {line}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
           </div>
         </div>
@@ -359,7 +359,7 @@ const TreatmentsSection = () => {
       image: "/InternationalPatients/ivf6.png",
     },
     {
-      title: "Freezing/Vitrification",
+      title: "Freezing / Vitrification",
       image: "/InternationalPatients/ivf7.png",
     },
     {
@@ -423,31 +423,55 @@ const TreatmentsSection = () => {
         </motion.div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-6 px-[120px] py-[50px]">
-        {treatments.map((item, idx) => (
-          <div
-            key={idx}
-            className="flex flex-col items-center 
-                 w-[408px] px-6 pt-6 pb-[78px] gap-[57px] 
-                 bg-[rgba(22,86,165,0.05)] border rounded-2xl shadow-sm 
-                 hover:shadow-md transition"
-          >
-            {/* Title */}
-            <h3 className="text-[#2C2C2C] font-[Manrope] 
-                     text-[32px] font-normal leading-[40px] 
-                     tracking-[-0.64px] text-center">
-              {item.title}
-            </h3>
+<div className="px-4 md:px-[80px] lg:px-[120px] py-[50px]">
+  <div
+    className="
+      grid 
+      grid-cols-1 
+      sm:grid-cols-2 
+      lg:grid-cols-4 
+      gap-6
+      justify-items-center
+    "
+  >
+    {treatments.map((item, idx) => (
+      <div
+        key={idx}
+        className="
+          flex flex-col items-center justify-between
+          w-full max-w-[350px]
+          px-6 py-6 gap-[40px]
+          bg-[rgba(22,86,165,0.05)] border rounded-2xl shadow-sm
+          hover:shadow-md hover:scale-[1.02]
+          transition-all duration-300
+        "
+      >
+        {/* Title */}
+        <h3
+          className="
+            text-[#2C2C2C] font-[Manrope] text-[24px] lg:text-[28px] xl:text-[32px]
+            font-normal leading-[36px] lg:leading-[40px] tracking-[-0.64px]
+            text-center
+          "
+        >
+          {item.title}
+        </h3>
 
-            {/* Image */}
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-[299px] h-[267px] aspect-[299/267] object-contain mix-blend-multiply"
-            />
-          </div>
-        ))}
+        {/* Image */}
+        <img
+          src={item.image}
+          alt={item.title}
+          className="
+            w-[250px] lg:w-[280px] xl:w-[299px]
+            h-[220px] lg:h-[250px] xl:h-[267px]
+            object-contain mix-blend-multiply
+          "
+        />
       </div>
+    ))}
+  </div>
+</div>
+
 
     </section>
   )
@@ -522,7 +546,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* 🔹 Right Carousel */}
-        <div className="w-[549px] mr-[16px]">
+        <div className="w-[509px] mr-[16px]">
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={24}
@@ -542,8 +566,8 @@ const TestimonialsSection = () => {
               <SwiperSlide key={i}>
                 <div
                   className="flex flex-col justify-between 
-                            w-[549px] h-[536px] flex-shrink-0 
-                            px-[83px] py-[96px] 
+                            w-[509px] h-[536px] flex-shrink-0 
+                            px-[43px] py-[96px] 
                             bg-white text-gray-800 rounded-2xl shadow-lg"
                 >
                   {/* Testimonial text */}
@@ -566,7 +590,7 @@ const TestimonialsSection = () => {
           </Swiper>
         </div>
 
-        <div className="w-[700px] ">
+        <div className="w-[750px] ">
           <img
             src="/InternationalPatients/testimonial.png" // 🔹 add this image in /public/international/
             alt="Happy Family"

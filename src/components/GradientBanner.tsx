@@ -34,7 +34,7 @@ const GradientBanner: React.FC<GradientBannerProps> = ({ text }) => {
 
       {/* 🔹 Text */}
       <h2
-        className="relative w-[80%] text-center font-[Manrope] 
+        className="relative w-[50%] text-center font-[Manrope] 
              text-[#94BA3D] text-[48px] font-normal leading-[56px] 
              tracking-[-0.96px] px-4 z-10"
       >
