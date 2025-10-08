@@ -16,7 +16,9 @@ const MainResources = () => {
       <ResourceStories />
       <ResourceCta />
       <FaQ />
-      <AppointmentForm />
+      <div className="bg-[url('')">
+        <AppointmentForm  />
+      </div>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 const ResourceCta: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row items-stretch justify-between bg-gradient-to-r from-[#f6fbf5] via-[#f6fbf5] to-[#e3eef7]">
+    <div className="flex flex-col md:flex-row items-stretch  bg-gradient-to-r from-[#f6fbf5] via-[#f6fbf5] to-[#e3eef7]">
       
 
       {/* Text block with spacing */}
@@ -13,11 +13,12 @@ const ResourceCta: React.FC = () => {
       </div>
 
       {/* Image block (flush left on desktop) */}
-      <div className="order-1 md:order-2 w-full md:w-auto flex justify-center md:justify-end">
+      <div className="order-1 md:order-2 w-full md:w-auto flex justify-center md:justify-end relative">
+
         <img
-          src="/images/ResourceCta.png"
+          src="\images\babywithhandimage.png"
           alt="Resources illustration"
-          className="w-full md:h-full md:max-w-[420px] object-cover"
+          className="w-full md:h-full md:max-w-[420px] object-cover "
         />
       </div>
     </div>
