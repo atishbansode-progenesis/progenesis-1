@@ -98,7 +98,7 @@ const PrivacyPolicyPage = () => {
       {/* Content Section */}
       <section className="px-6 md:px-[80px] xl:px-[120px] py-12 md:py-20 flex flex-col md:flex-row gap-12">
         {/* Mobile Dropdown */}
-        <div className="block md:hidden mb-6 w-full">
+        {/* <div className="block md:hidden mb-6 w-full">
           <select
             value={activeId}
             onChange={(e) => scrollToSection(e.target.value)}
@@ -110,7 +110,37 @@ const PrivacyPolicyPage = () => {
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
+<div className="block md:hidden mb-6 w-full">
+  <select
+    value={activeId}
+    onChange={(e) => scrollToSection(e.target.value)}
+    className="
+      w-full 
+      rounded-lg 
+      px-4 py-3 
+      bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
+      text-gray-800 
+      text-base 
+      appearance-none 
+      focus:outline-none 
+      focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+    "
+    style={{
+      backgroundImage:
+        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 11L12 14L15 11' stroke='%232C2C2C' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "right 1rem center",
+      backgroundSize: "24px",
+    }}
+  >
+    {sections.map((section) => (
+      <option key={section.id} value={section.id}>
+        {section.label}
+      </option>
+    ))}
+  </select>
+</div>
 
         {/* Sidebar */}
         <aside className="hidden md:block md:w-1/4 sticky top-28 self-start">
