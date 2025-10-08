@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
           <div className="mb-10 md:mb-20">
             <Link href="/">
               <img
-                src="/logo1.png"
+                src="/footer.svg"
                 alt="Progenesis Logo"
                 className="w-40 md:w-64 object-contain"
               />
