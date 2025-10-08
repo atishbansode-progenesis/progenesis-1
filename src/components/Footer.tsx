@@ -50,16 +50,16 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-      className="relative w-full min-h-screen flex flex-col justify-between bg-cover text-white"
+      className="relative w-full h-[120vh] flex flex-col justify-between bg-cover text-white"
       style={{ backgroundImage: "url('/footer.png')" }}
     >
       <div className="absolute inset-0 bg-black/25" />
 
       {/* Content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-between max-w-screen-2xl w-full mx-auto px-6 md:px-20 pt-10 md:pt-20 pb-10">
-        <div>
+      <div className="relative z-10 flex-1 flex flex-col max-w-screen-2xl w-full mx-auto px-6 md:px-20 pt-10 md:pt-20 pb-10">
+      
           {/* Logo */}
-          <div className="mb-10 md:mb-20">
+          <div className="mb-10 md:mb-30">
             <Link href="/">
               <img
                 src="/footer.svg"
@@ -68,10 +68,13 @@ const Footer: React.FC = () => {
               />
             </Link>
           </div>
-
+ 
           {/* Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-y-10 gap-x-8 md:gap-x-12 lg:gap-x-20">
             {/* About */}
+
+      
+            
             <div>
               <h3 className="text-base md:text-lg font-[Manrope] font-semibold leading-6 mb-4 text-white">
                 About
@@ -267,72 +270,46 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
             </div>
-          </div>
+   
         </div>
+ {/* Bottom section — stays at bottom */}
+  <div className="mt-auto w-full pb-10">
+    {/* Tagline + Socials */}
+    <div className="mt-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+      <p className="text-base md:text-2xl leading-6 md:leading-10 font-normal max-w-sm md:max-w-2xl">
+        Aiming to be the benchmark for reproductive health care services.
+      </p>
 
-        {/* Tagline + Socials */}
-        {/* <div className="mt-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
-          <p className="text-base md:text-2xl leading-6 md:leading-10 font-normal max-w-sm md:max-w-2xl">
-            Aiming to be the benchmark for reproductive health care services.
-          </p>
-
-          <div className="flex items-center gap-4">
-            {["/linkedin.svg", "/insta.svg", "/facebook.svg", "/threads.svg", "/twitter.svg"].map((icon, i, arr) => (
-              <React.Fragment key={icon + i}>
-                <a href="#" className="hover:opacity-100 opacity-80">
-                  <img src={icon} className="w-8 h-8" alt="social" />
-                </a>
-                {i !== arr.length - 1 && (
-                  <div className="h-6 w-px bg-[#685C52] md:bg-white" />
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </div> */}
-
-        {/* Divider Line */}
-        {/* <div className="mt-2 w-full">
-          <div className="w-full max-w-sm md:max-w-[1680px] h-px bg-white opacity-25" />
-        </div> */}
-
-        {/* Bottom row */}
-        {/* <div className="pt-2">
-          <p className="text-sm md:text-base leading-6 text-white/50">
-            © {new Date().getFullYear()} All Rights Reserved. Progenesis Fertility Center.
-          </p>
-        </div> */}
-
-{/* Tagline + Socials */}
-<div className="mt-[60px] flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-  <p className="text-base md:text-2xl leading-6 md:leading-10 font-normal max-w-sm md:max-w-2xl">
-    Aiming to be the benchmark for reproductive health care services.
-  </p>
-
-  <div className="flex items-center gap-4">
-    {["/linkedin.svg", "/insta.svg", "/facebook.svg", "/threads.svg", "/twitter.svg"].map((icon, i, arr) => (
-      <React.Fragment key={icon + i}>
-        <a href="#" className="hover:opacity-100 opacity-80">
-          <img src={icon} className="w-8 h-8" alt="social" />
-        </a>
-        {i !== arr.length - 1 && (
-          <div className="h-6 w-px bg-[#685C52] md:bg-white" />
+      <div className="flex items-center gap-4">
+        {["/linkedin.svg", "/insta.svg", "/facebook.svg", "/threads.svg", "/twitter.svg"].map(
+          (icon, i, arr) => (
+            <React.Fragment key={icon + i}>
+              <a href="#" className="hover:opacity-100 opacity-80">
+                <img src={icon} className="w-8 h-8" alt="social" />
+              </a>
+              {i !== arr.length - 1 && (
+                <div className="h-6 w-px bg-[#685C52] md:bg-white" />
+              )}
+            </React.Fragment>
+          )
         )}
-      </React.Fragment>
-    ))}
+      </div>
+    </div>
+
+    {/* Divider Line */}
+    <div className="mt-2 w-full">
+      <div className="w-full max-w-sm md:max-w-[1680px] h-px bg-white opacity-25" />
+    </div>
+
+    {/* Bottom row */}
+    <div className="pt-2">
+      <p className="text-sm md:text-base leading-6 text-white/50">
+        © {new Date().getFullYear()} All Rights Reserved. Progenesis Fertility Center.
+      </p>
+    </div>
   </div>
-</div>
 
-{/* Divider Line */}
-<div className="mt-[24px] w-full">
-  <div className="w-full max-w-[1680px] h-[1px] bg-white opacity-25" />
-</div>
 
-{/* Bottom row */}
-<div className="pt-[8px]">
-  <p className="text-sm md:text-base leading-6 text-white/50">
-    © {new Date().getFullYear()} All Rights Reserved. Progenesis Fertility Center.
-  </p>
-</div>
 
 
       </div>
