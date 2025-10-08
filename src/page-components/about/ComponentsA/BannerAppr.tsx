@@ -156,13 +156,12 @@ const BannerOfApproach: React.FC = () => {
         bottom: '-20px',
         width: 'calc(100% + 48px)',
         zIndex: 10,
-        paddingLeft: '120px'
       }}>
         <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory px-5"
              style={{
                scrollbarWidth: 'none',
                msOverflowStyle: 'none',
-               height: 'calc(100% + 40px)'
+               height: 'calc(100%)'
              }}>
           <style jsx>{`
             div::-webkit-scrollbar {
@@ -227,7 +226,7 @@ const BannerOfApproach: React.FC = () => {
       <div className="hidden md:block mt-10" style={{
         position: 'relative',
         left: '-120px',
-        right: '-120px',
+        right: '-0px',
         width: 'calc(100% + 180px)',
         zIndex: 10,
         paddingLeft: '120px'
@@ -236,7 +235,7 @@ const BannerOfApproach: React.FC = () => {
              style={{
                scrollbarWidth: 'none',
                msOverflowStyle: 'none',
-               height: 'calc(100% + 80px)'
+               height: 'calc(100% )'
              }}>
           <style jsx>{`
             div::-webkit-scrollbar {
@@ -298,6 +297,7 @@ const BannerOfApproach: React.FC = () => {
       </div>
 
       {/* Prev / Next buttons */}
+      <div className='hidden lg:block'>
       <div className="w-full flex items-center justify-center mt-6 gap-4" style={{paddingTop:'20px'}}>
         <button
           aria-label="Previous slide"
@@ -339,6 +339,7 @@ const BannerOfApproach: React.FC = () => {
         >
           <img src="/icons/right.svg" alt="right" width={12} height={12} />
         </button>
+      </div>
       </div>
     </div>
   );
