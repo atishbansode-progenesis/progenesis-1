@@ -69,13 +69,13 @@ const tabs: Tab[] = [
 
 const FaQ: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
-  // By default, open the first question in the General tab
-  const [openIndex, setOpenIndex] = useState(0);
+  // By default, no question is open
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const handleTab = (idx: number) => {
     setActiveTab(idx);
-    // reset open state, open first if available
-    setOpenIndex(0);
+    // reset open state, no question open by default
+    setOpenIndex(-1);
   };
 
   const activeItems = tabs[activeTab].items;
