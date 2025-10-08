@@ -45,7 +45,7 @@ const OnlineConsultation: React.FC = () => {
       <HeroSection
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Infertility", href: "/infertility" },
+          { label: "Online Consultation", href: "/online-consultation" },
         ]}
         title="IVF & Fertility <br/> Online Consultation"
         buttonText="Book Your Appointment"
