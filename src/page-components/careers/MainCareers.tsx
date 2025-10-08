@@ -9,7 +9,7 @@ const MainCareers = () => {
   return (
     <div>
       <CareersLanding />
-      <CareersValues />
+      <CareersValues />/
       <CareersBenefits />
       <CareersOpenings />
     </div>

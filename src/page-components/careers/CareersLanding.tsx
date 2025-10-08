@@ -10,7 +10,7 @@ const CareersLanding = () => {
             <section className="section-spacing bg-gradient-to-r from-green-100 via-white to-sky-200 relative w-full h-[340px] sm:h-[380px] md:h-[500px] lg:h-[567px] overflow-hidden bg-no-repeat bg-cover bg-center flex items-start
                   bg-[url('/images/Carrer-mobile.png')] h-[444px] csLg:h-full sm:bg-[url('/images/Carrer.png')]">
                 <div className="container md:pr-0 grid grid-cols-12 gap-6 items-start">
-                    <div className="col-span-12 csLg:col-span-8 flex flex-col gap-4">
+                    <div className="col-span-12 csLg:col-span-8 flex flex-col gap-10">
                         <p className="font-manrope csLg:text-[18px] text-[12px] leading-[26px] tracking-[-0.02em] text-gray-700">
                             <button onClick={() => window.location.href = '/'} className='hover:cursor-pointer'> Home </button><span className="px-[12px]">›</span> <span className="text-[#1656A5]"> Careers</span>
                         </p>
