@@ -1,1 +1,1 @@
-export const API_DOMAIN = "http://192.168.1.63:8000/"
+export const API_DOMAIN = "http://192.168.1.52:8000/ "
