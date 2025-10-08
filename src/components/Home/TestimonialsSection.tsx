@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
     <section className="w-full bg-white overflow-hidden">
       <div className="flex flex-col md:flex-row h-auto md:h-[700px]">
         {/* LEFT PANEL */}
-        <div className="bg-blue-700 text-white p-10 flex flex-col justify-between md:w-1/4 px-6 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px] pt-[80px] md:pt-[128px]">
+        <div className="bg-[#1656A5] text-white p-10 flex flex-col justify-between md:w-1/4 px-6 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px] pt-[80px] md:pt-[128px]">
           <div className="md:text-left text-center">
             {/* Google Rating */}
             <div className="flex md:flex-row md:items-end items-center justify-center md:justify-start space-x-2 mb-2">
@@ -77,20 +77,46 @@ const TestimonialsSection = () => {
 
           {/* Arrows only (progress bar removed) */}
           <div className="hidden md:flex flex-col mt-10 mb-[100px]">
-            <div className="flex space-x-4">
-              <button
-                ref={prevRef}
-                className="w-12 h-12 flex items-center justify-center border border-white rounded-lg hover:bg-white hover:text-blue-700 transition"
-              >
-                ←
-              </button>
-              <button
-                ref={nextRef}
-                className="w-12 h-12 flex items-center justify-center border border-white rounded-lg hover:bg-white hover:text-blue-700 transition"
-              >
-                →
-              </button>
-            </div>
+          <div className="flex space-x-4">
+  {/* Prev Button */}
+  <button
+    ref={prevRef}
+    className="group w-12 h-12 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
+  >
+    {/* Default white icon */}
+    <img
+      src="/icons/left-white.svg"
+      alt="left"
+      className="block group-hover:hidden"
+    />
+    {/* Hover icon */}
+    <img
+      src="/icons/left.svg"
+      alt="left-hover"
+      className="hidden group-hover:block"
+    />
+  </button>
+
+  {/* Next Button */}
+  <button
+    ref={nextRef}
+    className="group w-12 h-12 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
+  >
+    {/* Default white icon */}
+    <img
+      src="/icons/right-white.svg"
+      alt="right"
+      className="block group-hover:hidden"
+    />
+    {/* Hover icon */}
+    <img
+      src="/icons/right.svg"
+      alt="right-hover"
+      className="hidden group-hover:block"
+    />
+  </button>
+</div>
+
           </div>
         </div>
 

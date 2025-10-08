@@ -17,10 +17,10 @@ const VisionMission: React.FC = () => {
       {/* Our Vision Row */}
       <div className="border-t border-gray-200 pt-6 pb-10 md:flex ">
         <div className="md:w-1/3 md:mb-0">
-          <h3 className="text-[32px] leading-[40px] tracking-[-0.02em] font-normal text-[#2C2C2C] csLg:text-[48px]">Our Vision</h3>
+          <h3 className="text-[32px] leading-[40px] tracking-[-0.02em] font-normal text-[#2C2C2C] csLg:lea csLg:text-[48px]">Our Vision</h3>
         </div>
         <div className="md:w-2/3">
-          <p className="font-[Manrope] text-[16px] leading-[24px] tracking-[-0.02em] font-normal csLg:text-[32px] csLg:leading-[36px] text-[#2C2C2C]">
+          <p className="font-[Manrope] text-[16px] leading-[24px] tracking-[-0.02em] font-normal csLg:text-[32px] csLg:leading-[40px] text-[#2C2C2C]">
             At Progenesis IVF, our vision is to become the benchmark for reproductive healthcare — a trusted name where hope meets expertise. We are committed to walking hand-in-hand with every couple on their path to parenthood, blending cutting-edge fertility science with deep empathy and ethical care.
           </p>
         </div>
@@ -35,7 +35,7 @@ const VisionMission: React.FC = () => {
           <h3 className="text-[32px] leading-[40px] tracking-[-0.02em] font-normal text-[#2C2C2C] csLg:text-[48px] ">Our Mission</h3>
         </div>
         <div className="md:w-2/3">
-          <p className="font-[Manrope] text-[16px] leading-[24px] tracking-[-0.02em] font-normal csLg:text-[32px] csLg:leading-[36px] text-[#2C2C2C]">
+          <p className="font-[Manrope] text-[16px] leading-[24px] tracking-[-0.02em] font-normal csLg:text-[32px] csLg:leading-[40px] text-[#2C2C2C]">
             Our mission is to provide comprehensive, personalized fertility solutions in a nurturing environment that values trust, transparency, and dignity. We strive to deliver the highest standards in reproductive medicine, guided by compassion, clinical excellence, and a relentless dedication to making parenthood possible, one family at a time.
           </p>
         </div>
