@@ -12,7 +12,7 @@ const HeroCarousel = () => {
     {
       id: 1,
       image: "/home/hcv.mp4",
-      title: "What would you like to learn about fertility?",
+      title: "What would you like to know about your fertility journey?",
       buttons: [
         { label: "Book Your Appointment", href: "/appointment" },
         { label: "Find My Right Treatment", href: "/treatments" },
@@ -130,18 +130,19 @@ const HeroCarousel = () => {
       })}
 
       {/* Overlay Content */}
-      <div className="absolute bottom-0 left-0 pb-[5%] px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] text-white max-w-[900px] z-30 transition-all duration-700 ease-in-out">
+      <div className="absolute bottom-0 left-0 pb-[10%] px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] text-white max-w-[900px] z-30 transition-all duration-700 ease-in-out">
         <p
-          className="
-          font-[Manrope] font-semibold text-[#F9F9F9]
-          text-[32px] leading-[40px] tracking-[-0.64px] 
-          md:text-[56px] md:leading-[64px] md:tracking-[-1px]
-          xl:text-[80px] xl:leading-[88px] xl:tracking-[-1.6px]
-          transition-all duration-700 ease-in-out
-        "
-        >
-          {slides[currentSlide].title}
-        </p>
+  className="
+    font-[Manrope] font-semibold text-[var(--BG_White,#FFF)]
+    text-[32px] leading-[40px] tracking-[-0.64px] 
+    md:text-[56px] md:leading-[64px] md:tracking-[-1px]
+    xl:text-[80px] xl:leading-[88px] xl:tracking-[-1.6px]
+    w-[753px] font-normal not-italic
+    transition-all duration-700 ease-in-out
+  "
+>
+  {slides[currentSlide].title}
+</p>
 
         <div className="flex flex-row gap-3 mt-6 md:mt-12">
           {slides[currentSlide].buttons.map((btn, i) => (
