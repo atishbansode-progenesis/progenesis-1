@@ -16,22 +16,22 @@ const slides = [
       {
         title: 'In-Depth Diagnosis First',
         desc: 'Finding real causes before treatment begins.',
-        icon: '🔍',
+        icon: '/images/icons/1.svg',
       },
       {
         title: 'Tailored Protocols',
         desc: 'Plans made for your body’s unique needs.',
-        icon: '🧬',
+        icon: '/images/icons/2.svg',
       },
       {
         title: 'Flexible Care',
         desc: 'In-clinic or teleconsultation options for your convenience.',
-        icon: '💻',
+        icon: '/images/icons/3.svg',
       },
       {
         title: 'Smarter Progress',
         desc: 'Fewer treatment cycles, saving you time and stress.',
-        icon: '⚡',
+        icon: '/images/icons/4.svg',
       },
     ],
   },
@@ -43,10 +43,26 @@ const slides = [
     ctaPrimary: 'Book Your Appointment',
     ctaSecondary: 'Check My Fit',
     features: [
-      { title: 'Certified ART Lab', desc: 'Accredited labs for reliable fertility treatments.', icon: '📊' },
-      { title: 'Advanced Techniques', desc: 'odern methods for higher success rates.', icon: '🧪' },
-      { title: 'Expert Care Team', desc: 'Dedicated embryologists offering personalized care.', icon: '👩‍⚕️' },
-      { title: 'Personalized Care & Support', desc: 'Guidance on health, nutrition, and emotional well-being.', icon: '🫶' },
+      {
+        title: 'Certified ART Lab',
+        desc: 'Accredited labs for reliable fertility treatments.',
+        icon: '/images/icons/5.svg',
+      },
+      {
+        title: 'Advanced Techniques',
+        desc: 'odern methods for higher success rates.',
+        icon: '/images/icons/6.svg',
+      },
+      {
+        title: 'Expert Care Team',
+        desc: 'Dedicated embryologists offering personalized care.',
+        icon: '/images/icons/7.svg',
+      },
+      {
+        title: 'Personalized Care & Support',
+        desc: 'Guidance on health, nutrition, and emotional well-being.',
+        icon: '/images/icons/8.svg',
+      },
     ],
   },
   {
@@ -57,10 +73,26 @@ const slides = [
     ctaPrimary: 'Book Your Appointment',
     ctaSecondary: 'Check My Fit',
     features: [
-      { title: 'Transparent costs & timelines', desc: 'Clear estimates and timelines to help you plan confidently.', icon: '💡' },
-      { title: 'Success rates by age & treatment', desc: ' Realistic expectations based on age and treatment.', icon: '🗺️' },
-      { title: 'Planning tools', desc: 'Cost estimates and timeline guidance.', icon: '🤝' },
-      { title: 'Patient resources & FAQs', desc: 'Easy guides, FAQs, and support information.', icon: '✅' },
+      {
+        title: 'Transparent costs & timelines',
+        desc: 'Clear estimates and timelines to help you plan confidently.',
+        icon: '/images/icons/9.svg',
+      },
+      {
+        title: 'Success rates by age & treatment',
+        desc: ' Realistic expectations based on age and treatment.',
+        icon: '/images/icons/10.svg',
+      },
+      {
+        title: 'Planning tools',
+        desc: 'Cost estimates and timeline guidance.',
+        icon: '/images/icons/11.svg',
+      },
+      {
+        title: 'Patient resources & FAQs',
+        desc: 'Easy guides, FAQs, and support information.',
+        icon: '/images/icons/12.svg',
+      },
     ],
   },
 ];
@@ -106,16 +138,14 @@ const BannerOfApproach: React.FC = () => {
       {/* Headings */}
       <div className="mb-8" style={{paddingBottom:'50px'}}>
         <span className="inline-block bg-[#E9F0FF] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" style={{padding:'8px'}}>Our Approach</span>
-        <h2 className="text-[34px] md:text-[44px] lg:text-[48px] leading-tight tracking-[-0.02em] text-black font-[Manrope] font-normal">
+        <h2 className="text-[34px] md:text-[44px] lg:text-[48px] leading-tight tracking-[-0.02em] text-[#2C2C2C] font-[Manrope] font-normal">
           Compassion Meets Science
         </h2>
       </div>
 
       {/* Tabs */}
       <div className="relative" style={{paddingBottom:'20px'}}>
-        {/* Grey baseline across full width */}
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200" />
-        <div className="relative flex items-center justify-between gap-10 max-w-5xl pb-4">
+        <div className="relative flex items-center justify-between gap-10 w-full max-w-none pb-3">
           {slides.map((s, index) => (
             <button
               key={s.tab}
@@ -124,28 +154,36 @@ const BannerOfApproach: React.FC = () => {
                 // Scroll the corresponding mobile slide into view
                 slideRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
               }}
-              className={`relative text-center text-[15px] md:text-[16px] font-medium font-[Manrope] transition-colors ${
+              className={`relative flex-1 text-center text-[15px] md:text-[16px] font-medium font-[Manrope] transition-colors ${
                 activeTab === index ? 'text-[#1656A5]' : 'text-gray-500 hover:text-blue-600'
               }`}
             >
-              {s.tab}
-              {/* Short blue underline sitting on the baseline */}
-              {activeTab === index && (
-                <span className="pointer-events-none absolute -bottom-[1px] left-1/2 -translate-x-1/2 h-[2px] w-[120px] bg-[#1656A5]" />
-              )}
+              <span>{s.tab}</span>
             </button>
+          ))}
+        </div>
+        <div className="grid grid-cols-3 w-full max-w-none h-[2px]">
+          {slides.map((_, index) => (
+            <span
+              key={`separator-${index}`}
+              className={`transition-colors duration-300 ${
+                activeTab === index ? 'bg-[#1656A5]' : 'bg-gray-200'
+              }`}
+            />
           ))}
         </div>
       </div>
 
       {/* Banner - Mobile: horizontal scroll of all slides */}
-      <div className="md:hidden mt-10 p-5 h-auto">
+      <div className="md:hidden mt-10 p-5">
         <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory px-5">
           {slides.map((s, index) => (
             <div
               key={s.tab}
-              ref={(el) => (slideRefs.current[index] = el)}
-              className="relative snap-start shrink-0 w-[88%] h-auto rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-white shadow-lg border border-white/10"
+              ref={(el) => {
+                slideRefs.current[index] = el;
+              }}
+              className="relative snap-start shrink-0 w-[88%] lg:min-h-[520px] md:h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-white shadow-lg border border-white/10"
               style={{ backgroundImage: `url(${s.image})` }}
             >
               {/* Left dark gradient overlay */}
@@ -181,7 +219,7 @@ const BannerOfApproach: React.FC = () => {
                 <div className="grid grid-cols-1 gap-2 max-w-[1100px] pt-5">
                   {s.features.map((item, idx) => (
                     <div key={idx} className="flex flex-col gap-2">
-                      <span className="text-xl">{item.icon}</span>
+                      <img src={item.icon} alt={item.title} className="w-[30px] h-[30px] object-contain" />
                       <h4 className="font-semibold text-white text-[15px]">{item.title}</h4>
                       <p className="text-[13px] text-gray-200 leading-[18px]">{item.desc}</p>
                     </div>
@@ -191,13 +229,13 @@ const BannerOfApproach: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div >
 
       {/* Banner - Desktop/Tablet unchanged */}
       <div
-        className="hidden md:flex relative w-full md:h-auto h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-white  shadow-lg mt-10"
+        className="hidden md:flex relative w-full md:h-auto h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-white  shadow-lg mt-10 "
         style={{ backgroundImage: `url(${current.image})` }}
-      >
+       >
         {/* Left dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-0" />
         {/* Right subtle green tint */}
@@ -213,7 +251,7 @@ const BannerOfApproach: React.FC = () => {
           <div className="flex flex-wrap gap-3 md:gap-4 mb-10" style={{paddingTop:'30px', paddingBottom:'100px'}}>
             <button
               onClick={() => {setCtaActive((prev) => ({ ...prev, [activeTab]: 'primary' })); setIsOpen(true);}}
-              className={`${(ctaActive[activeTab] ?? 'primary') === 'primary' ? 'bg-white text-black' : 'border border-white/90 text-white'} w-[183px] h-[56px] px-5 py-2.5 rounded-[16px] text-sm font-semibold shadow-sm`}
+              className={`${(ctaActive[activeTab] ?? 'primary') === 'primary' ? 'bg-white text-black' : 'border border-white/90 text-white'} w-auto h-[56px] px-5 py-2.5 rounded-[16px] text-sm font-medium shadow-sm`}
             >
               {current.ctaPrimary}
             </button>
@@ -228,11 +266,11 @@ const BannerOfApproach: React.FC = () => {
           </div>
 
           {/* Feature cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px] pb-4">
             {current.features.map((item, idx) => (
               <div key={idx} className="flex flex-col gap-2">
-                <span className="text-2xl">{item.icon}</span>
-                <h4 className="font-semibold text-[15px] md:text-[16px]">{item.title}</h4>
+                <img src={item.icon} alt={item.title} className="w-[30px] h-[30px] object-contain" />
+                <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
                 <p className="text-sm text-gray-200">{item.desc}</p>
               </div>
             ))}
