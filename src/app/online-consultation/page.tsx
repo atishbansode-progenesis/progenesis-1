@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import ConsultationForm from "../../components/Consultation/ConsultationForm";
 import Link from "next/link";
+import HeroSection from "../../components/HeroSection/herosection";
 
 
 const OnlineConsultation: React.FC = () => {
 
 
-  const [activeTab, setActiveTab] = useState("journey");
+  const [activeTab, setActiveTab] = useState<keyof typeof sections>("journey");
 
   // 🔹 Define content for each tab
   const sections = {
@@ -41,89 +42,24 @@ const OnlineConsultation: React.FC = () => {
 
   return (
     <div className="w-full flex flex-col">
-      {/* 1️⃣ Hero Section */}
-      <section
-        className="relative w-full h-[500px] md:h-[600px] flex flex-col md:flex-row pl-[12px] md:pl-[80px] xl:pl-[120px] bg-cover bg-center overflow-hidden"
-      >
-        {/* Blurred gradient shape */}
-
-        <div
-          className="absolute left-[-150px] top-[80px] w-[445px] h-[441px] rounded-full opacity-80"
-          style={{
-            background: "#94BA3D",
-            filter: "blur(250px)",
-            transform: "rotate(-2deg)",
-          }}
-        ></div>
-
-        {/* Right Blue Glow (slightly darker, richer tone) */}
-        <div
-          className="absolute right-[-150px] top-[100px] w-[445px] h-[441px] rounded-full opacity-80"
-          style={{
-            background: "#0F3E7D", // darker shade of 1656A5
-            filter: "blur(250px)",
-            transform: "rotate(2deg)",
-          }}
-        ></div>
-
-
-        {/* Left content */}
-        <div className="relative z-10 mt-2 md:mt-[85px] max-w-5xl">
-          <p className="text-[12px] md:text-[14px] l:text-[18px] text-gray-600  md:mb-[44px]">
-            <Link href="/" className="hover:text-blue-700 transition-colors">
-              Home
-            </Link><span className="px-[12px]">›</span>
-            <span
-              className="inline-block px-3 py-1 rounded-md text-[12px] md:text-[14px] l:text-[18px] font-medium leading-[40px] tracking-[-0.36px] text-blue-700"
-            >
-              Online Consultation
-            </span>
-          </p>
-          <h1 className="text-[32px] md:text-[52px] lg:text-[62px]  2xl:text-[80px] font-bold leading-tight mb-[12px] md:mb-[44px] text-[#252525]">
-            IVF & Fertility<br /> Online Consultation
-          </h1>
-          <button className="md:mt-6 px-[10px] md:px-[20px] py-[10px] md:py-[16px] text-[12px] md:text-[14px] bg-black text-white rounded-[8px] md:rounded-[14px]">
-            Book Your Appointment
-          </button>
-        </div>
-        <div className="relative w-full max-w-[994px] aspect-[994/663] flex-shrink-0 md:mr-auto md:ml-[-80px] xl:ml-[-120px]">
-          {/* Decorative Background Shape */}
-          <div
-            className="absolute inset-0 transform rotate-[-6.006deg] opacity-25 pointer-events-none"
-            style={{ zIndex: 1 }}
-          >
-            <Image
-              src="/online-consultation/heartbg.png"
-              alt="Background shape"
-              fill
-              className="object-contain object-bottom rounded-lg"
-            />
-          </div>
-
-          {/* Main Foreground Image */}
-          <div className="absolute inset-0 z-10">
-            <Image
-              src="/online-consultation/onlinebg.png"
-              alt="Doctor consultation"
-              fill
-              className="object-contain object-bottom rounded-lg"
-              priority
-            />
-          </div>
-        </div>
-
-
-
-
-
-      </section>
+      <HeroSection
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Infertility", href: "/infertility" },
+        ]}
+        title="IVF & Fertility <br/> Online Consultation"
+        buttonText="Book Your Appointment"
+        buttonLink="/book-appointment"
+        foregroundImage="/online-consultation/onlinebg.png"
+        overlayImage="/online-consultation/heartbg.png"
+      />
 
 
 
 
 
 
-      <div className="flex flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[80px] bg-[#fff]">
+      <div className="flex flex-wrap gap-4 pt-[50px] px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] pb-[80px] bg-[#fff]">
         <button
           type="button"
           onClick={() => document.getElementById("journey-section")?.scrollIntoView({ behavior: "smooth" })}
@@ -172,7 +108,7 @@ const OnlineConsultation: React.FC = () => {
 
       {/* 2️⃣ Section: Talk to Specialists */}
 
-      <section id="journey-section" className="w-full flex flex-col lg:flex-row justify-between px-[12px] md:px-[80px] xl:px-[120px] py-16 gap-10 bg-[#FAFAFA]">
+      <section id="journey-section" className="w-full flex flex-col lg:flex-row justify-between px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 gap-10 bg-[#FAFAFA]">
         {/* Left content */}
         <div className="max-w-lg flex flex-col justify-between">
           <div>
@@ -220,7 +156,7 @@ const OnlineConsultation: React.FC = () => {
       <section
         className="
     relative w-full h-[600px] flex flex-col md:flex-row justify-between 
-    px-[12px] md:px-[80px] xl:px-[120px] 
+    px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px]
     bg-cover bg-no-repeat bg-center overflow-hidden
     bg-[url('/online-consultation/online_cta_mobile.png')] md:bg-none
   "
@@ -285,7 +221,7 @@ const OnlineConsultation: React.FC = () => {
 
       {/* 4️⃣ 4-Step Journey Section */}
 
-      <section id="how-section" className="w-full px-[12px] md:px-[80px] xl:px-[120px]  py-20 bg-[#FAFAFA]">
+      <section id="how-section" className="w-full px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 bg-[#FAFAFA]">
         {/* Small Label (How it works) */}
 
 
@@ -381,7 +317,7 @@ const OnlineConsultation: React.FC = () => {
         className="
     relative w-full flex flex-col
     bg-no-repeat bg-cover bg-center h-[582px] md:h-[474px]
-    px-6 md:px-[80px] xl:px-[120px] 
+    px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px]
     py-16 md:py-24 lg:py-[80px]
     /* ✅ Mobile Background */
     bg-[url('/online-consultation/take_a_quiz_bg_mobile.png')]
