@@ -23,7 +23,7 @@ const ResourceStories = () => {
             <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
               First Person. Real Stories.
             </span>
-            <h3 className="mt-1 text-[22px] sm:text-[26px] md:text-[32px] lg:text-[34px] font-semibold text-gray-900">
+            <h3 className="mt-1 text-[22px] sm:text-[26px] md:text-[32px] lg:text-[34px] font-semibold text-gray-900 md:w-[80%]">
               Inspiring stories of strength & Victories
             </h3>
           </div>
@@ -78,29 +78,27 @@ const ResourceStories = () => {
 </div>
 
           ) : (
-            <div className="grid grid-cols-1 gap-3 px-2 py-2 sm:hidden w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {resourceStoriesData.map((s, i) => (
                 <article
                   key={i}
-                  className="rounded-xl border border-gray-200 overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.04)] bg-white"
+                  className="rounded-2xl border border-gray-200 overflow-hidden shadow-[0_1px_2px_RGBA(0,0,0,0.04)] p-2"
                 >
-                  <div className="px-2 pt-1">
-                    <p className="text-[10px] text-gray-400 truncate">
-                      2k views • 1 month ago
-                    </p>
+                  <div className="px-3 pt-3">
+                    <p className="text-[11px] md:text-[13px] text-gray-400">2k views • 1 month ago</p>
                   </div>
-                  <div className="relative w-full h-40 sm:h-48 rounded-xl overflow-hidden">
+                  <div className="relative w-full h-[260px] sm:h-[280px] md:aspect-[16/11] bg-gray-100 rounded-2xl overflow-hidden">
                     <iframe
                       src={s.videoUrl}
                       title={s.title}
-                      className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
+                      className="w-full h-full rounded-[12px]"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       loading="lazy"
                     />
                   </div>
-                  <div className="p-2">
-                    <h4 className="mt-1 text-[12px] font-medium text-gray-900 leading-snug break-words">
+                  <div className="p-3">
+                    <h4 className="mt-1 text-[14px] md:text-[15px] font-medium text-gray-900 leading-snug">
                       {s.title}
                     </h4>
                   </div>

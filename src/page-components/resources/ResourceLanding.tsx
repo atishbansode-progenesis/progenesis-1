@@ -6,7 +6,7 @@ const ResourceLanding = () => {
     <div>
       <section className="relative w-full section-spa">
         <div
-          className="relative  w-full h-[849px] md:h-[560px] lg:h-[620px] xl:h-[680px] bg-center bg-cover"
+          className="relative  w-full h-[728px] md:h-[560px] lg:h-[620px] xl:h-[680px] bg-center bg-cover"
           style={{ backgroundImage: "url('/images/Rbanner.png')" }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/70" />
@@ -17,24 +17,20 @@ const ResourceLanding = () => {
                 Featured
               </span>
 
-              <div className="flex justify-center items-center w-full">
-                <div>
-                  <h1 className="text-[#F9F9F9] font-semibold leading-tight md:leading-tight lg:leading-tight text-[28px] sm:text-[34px] md:text-[40px] lg:text-[52px] xl:text-[58px]">
+              <div className="flex justify-center items-center w-full relative ">
+              
+                  <h1 className="text-[#F9F9F9] font-semibold leading-tight md:leading-tight lg:leading-tight text-[28px] sm:text-[34px] md:text-[40px] lg:text-[52px] xl:text-[56px]">
                     Our Complete Guide to Parenthood Inspiring & Supportive
                     Story to Guide You.
                   </h1>
-                </div>
-                <div className="hidden md:block m-6 ">
-                  <button
-                    aria-label="Read more"
-                    className="group inline-flex items-center justify-center  "
-                  >
+                <div className="hidden md:block absolute bottom-2 right-[-90px]">
+                 
                     <img
                       src="\icons\resorcesrighter.svg"
                       alt="right"
                       className="w-40 h-10"
                     />
-                  </button>
+                  
                 </div>
               </div>
               <p className="text-[#F9F9F9]/80 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px] mt-4 max-w-3xl">
