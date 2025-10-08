@@ -198,7 +198,7 @@ const DoctorsInfo: React.FC = () => {
 >
 
 
-            <div onClick={() => router.push(`/doctors/${d.slug}`)} className="grid  grid-cols-1 lg:grid-cols-[320px_1fr_260px] gap-6 items-start hover:bg-[#1656A50D] lg:p-4 rounded-[16px] cursor-pointer">
+            <div onClick={() => router.push(`/doctors/${d.slug}`)} className="grid  grid-cols-1 lg:grid-cols-[320px_1fr_260px] gap-6 items-start lg:hover:bg-[#1656A50D] lg:p-4 rounded-[16px] cursor-pointer">
               {/* Left: Image */}
               <div className="w-full h-full md:h-full lg:h-full overflow-hidden rounded-[16px] bg-gray-100">
                 <img
@@ -241,11 +241,12 @@ const DoctorsInfo: React.FC = () => {
               </div>
 
               {/* CTA */}
-              <button
-                className="h-[56px]  px-5 rounded-[16px] bg-[#252525] text-white text-sm font-semibold shadow-sm hover:bg-[#000000] p-2"
-              >
-                Book Your Appointment
-              </button>
+             <button
+  className="h-[56px] px-5 rounded-[16px] bg-[#252525] text-white text-sm font-semibold shadow-sm hover:bg-[#000000] p-2 cursor-pointer"
+>
+  Book Your Appointment
+</button>
+
             </div>
           </div>
         </div>

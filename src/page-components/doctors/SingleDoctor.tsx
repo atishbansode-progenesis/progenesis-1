@@ -12,9 +12,9 @@ export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }
   const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="section-spacing w-full bg-white px-6 md:px-12 lg:px-[90px] py-10 md:py-14">
-      <div className="pb-4">
+      <div>
         {selectedDoctor && (
-          <div className="w-full border-b border-gray-200 py-8 md:py-10 mb-8 md:mb-10 last:border-b-0 last:mb-0">
+          <div className="w-full border-b border-gray-200 md:py-10 mb-8 md:mb-10 last:border-b-0 last:mb-0">
             <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6 items-start">
               {/* Left: Image */}
               <div className="w-full h-full md:h-full lg:h-full overflow-hidden rounded-[16px] bg-gray-100">
@@ -29,7 +29,7 @@ export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }
                 <p className="mt-2 text-[14px] md:text-[15px] text-[#6B7280] max-w-[780px]">{selectedDoctor.bio}</p>
 
                 {/* Meta row: Hospital | Specialty | Languages */}
-                <div className="mt-6 flex flex-row items-start gap-8 md:gap-10 pb-4">
+                <div className="mt-6 flex flex-row items-start gap-8 lg:gap-[135px] pb-4">
                   <div className="min-w-[68px] lg:min-w-[90px]">
                     <div className="text-[16px] lg:text-[32px] text-[#1656A5]">Hospital</div>
                     <div className="text-[16px] text-[#2C2C2C] font-medium">{selectedDoctor.hospital}</div>
@@ -48,15 +48,15 @@ export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }
                   )}
                 </div>
                 {/* CTA buttons under meta: row on mobile, column on desktop */}
-                <div className="mt-5 flex flex-row lg:flex-col items-start gap-3 lg:gap-4 ju">
+                <div className="mt-5 flex flex-row lg:flex-col items-start lg:gap-[8px]  justify-between">
                   <button
-                    className="h-[44px] px-5 rounded-[16px] bg-white text-[#606060] border border-[#606060] text-sm font-semibold shadow-sm hover:bg-white hover:text-black hover:border-black p-2"
+                    className="h-[40px]  rounded-[8px]  lg:w-[194px] bg-white text-[#606060] border border-[#606060] text-sm font-semibold shadow-sm hover:bg-white hover:text-black hover:border-black p-[10px]"
                   >
                     Call Our Team
                   </button>
                   <button
                     onClick={() => setIsOpen(true)}
-                    className="h-[44px] px-5 rounded-[16px] bg-[#252525] text-white text-sm font-semibold shadow-sm hover:bg-[#000000]"
+                    className="h-[40px] p-[10px]  lg:w-[194px] rounded-[8px] bg-[#252525] text-white text-sm  lg:text-[14px] font-semibold shadow-sm hover:bg-[#000000]"
                   >
                     Book Your Appointment
                   </button>
