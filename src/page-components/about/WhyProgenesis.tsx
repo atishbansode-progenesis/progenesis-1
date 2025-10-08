@@ -77,7 +77,7 @@ const WhyProgenesis: React.FC = () => {
                 <button
                   key={s.number}
                   onClick={() => setActive(idx)}
-                  className="w-full text-left group"
+                  className="w-full text-left group hover:cursor-pointer"
                 >
                   {/* Top separator */}
                   <div className="h-[1px] w-full bg-[#A5A5A5] relative">

@@ -113,7 +113,7 @@ const FaQ: React.FC = () => {
                 <button
                   key={t.label}
                   onClick={() => handleTab(idx)}
-                  className={`h-[56px] w-auto px-4 rounded-[16px] border text-sm font-medium transition-colors ${
+                  className={`h-[56px] w-auto px-4 rounded-[16px] border text-sm font-medium hover:cursor-pointer transition-colors ${
                     active
                       ? "bg-[#1656A5] text-white border-[#1656A5]"
                       : "bg-[#FFFFFF] text-[#1656A5] border-[#1656A5] "
@@ -140,7 +140,7 @@ const FaQ: React.FC = () => {
                   <button
                     aria-expanded={open}
                     onClick={() => setOpenIndex(open ? -1 : i)}
-                    className="w-full flex items-center justify-between gap-3 text-left md:py-4 py-4 rounded-2xl  text-[14px] md:text-[15px] text-[#2C2C2C]"
+                    className="w-full flex items-center justify-between gap-3 hover:cursor-pointer text-left md:py-4 py-4 rounded-2xl  text-[14px] md:text-[15px] text-[#2C2C2C]"
                   >
                     <span className="pl-4 pr-2">{item.q}</span>
                     <span className="text-gray-500 pr-2">{open ? <img src='/images/icons/upward.svg' className="w-[10px] h-[10px] object-contain" /> : <img src='/images/icons/downward.svg' className="w-[10px] h-[10px] object-contain" />}</span>
