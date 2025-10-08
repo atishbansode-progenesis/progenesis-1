@@ -40,6 +40,10 @@ const slides = [
 export default function InfertilityIssues() {
   const [activeIndex, setActiveIndex] = useState(0);
 
+
+  
+  const [activeTab, setActiveTab] = useState("journey");
+
   return (
     <div className="w-full flex flex-col">
       {/* Section 1 */}
@@ -108,6 +112,52 @@ export default function InfertilityIssues() {
           {/* Your existing grid items unchanged */}
         </div>
       </section>
+
+
+
+      
+      <div className="flex flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[80px] bg-[#fff]">
+        <button
+          type="button"
+          onClick={() => document.getElementById("journey-section")?.scrollIntoView({ behavior: "smooth" })}
+          className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
+      font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] 
+      tracking-[-0.28px] transition ${activeTab === "journey"
+              ? "bg-[#1656A5] text-white"
+              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+            }`}
+        >
+          Start Your Journey Today
+        </button>
+
+        <button
+          type="button"
+          onClick={() => document.getElementById("how-section")?.scrollIntoView({ behavior: "smooth" })}
+          className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px]  
+      font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] 
+      tracking-[-0.28px] transition ${activeTab === "how"
+              ? "bg-[#1656A5] text-white"
+              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+            }`}
+        >
+          How It Works
+        </button>
+
+        <button
+          type="button"
+          onClick={() => document.getElementById("quiz-section")?.scrollIntoView({ behavior: "smooth" })}
+          className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px]  
+      font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] 
+      tracking-[-0.28px] transition ${activeTab === "quiz"
+              ? "bg-[#1656A5] text-white"
+              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+            }`}
+        >
+          Take a Quiz
+        </button>
+      </div>
+
+
 
       
  {/* Section 2 */}

@@ -76,7 +76,7 @@ export default function HeroSection({
       )}
 
       {/* Content (always above images) */}
-      <div className="relative z-10 mt-2 md:mt-[85px] max-w-5xl">
+      <div className="relative z-10 mt-2 md:mt-[85px] max-w-6xl">
         {/* Breadcrumbs */}
         <p className="text-[18px] text-gray-600 mb-2 md:mb-[44px] flex items-center flex-wrap">
           {breadcrumbs.map((crumb, idx) => (
@@ -112,9 +112,16 @@ export default function HeroSection({
 
         {/* Title */}
         <h1
-          className="text-3xl md:text-[80px] font-bold leading-tight mb-[44px]"
-          style={{ color: "#252525" }}
-        >
+  className="
+    text-[var(--BG_Black,#252525)]
+    font-[Manrope]
+    font-semibold
+    text-[80px]
+    leading-[88px]
+    tracking-[-1.6px]
+    pb-20
+  "
+>
           {title}
         </h1>
 

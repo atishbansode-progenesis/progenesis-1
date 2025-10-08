@@ -30,7 +30,7 @@ export default function Home() {
       <AwardsSection />
        <VideoSection />
       <ConsultationForm />
-      <GradientBanner text="Striving to set a new standard for reproductive health care services." />
+      <GradientBanner text="Striving to set a new standard for <br/> reproductive health care services." />
     </>
   );
 }

@@ -16,8 +16,8 @@ const slides: Slide[] = [
     number: "01",
     desc:
       "Every journey is unique. We design your treatment around your story, not just your symptoms.",
-    image: "/images/why-1.png", // replace with real image
-    bannerHeading: 'Care That Feels Like It’s Just for You.',
+    image: "/images/why-1.png",
+    bannerHeading: "Care That Feels Like It’s Just for You.",
   },
   {
     title: "Always Accessible",
@@ -48,19 +48,26 @@ const slides: Slide[] = [
 ];
 
 const WhyProgenesis: React.FC = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number>(0);
   const current = slides[active];
 
   return (
-    <section id="why-choose-us" className="w-full bg-[#1656A50D] px-6 md:px-10 lg:px-[90px] py-12 md:py-14 lg:py-16 section-spacing" >
-      <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] lg:grid-cols-[420px_1fr] gap-6 md:gap-8 lg:gap-10 items-start">
+    <section
+      id="why-choose-us"
+      className="w-full bg-[#1656A50D] px-6 lg:px-[90px] py-12 lg:py-16 section-spacing"
+    >
+      {/* ✅ Below lg = single column (mobile/tablet), lg+ = two columns */}
+      <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 lg:gap-10 items-start">
         {/* Left column */}
         <div>
           <div className="why-bott-pad">
-          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">Why choose us</span>
-          <h2 className="mt-3 text-[36px] md:text-[42px] font-semibold text-gray-900">
-            Why Progenesis?
-          </h2></div>
+            <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] px-3 py-1 rounded-[8px]">
+              Why choose us
+            </span>
+            <h2 className="mt-3 text-[36px] lg:text-[48px] leading-10 font-normal text-[#2C2C2C]">
+              Why Progenesis?
+            </h2>
+          </div>
 
           {/* List */}
           <div className="mt-6 space-y-4 pt-8">
@@ -70,34 +77,37 @@ const WhyProgenesis: React.FC = () => {
                 <button
                   key={s.number}
                   onClick={() => setActive(idx)}
-                  className="w-full text-left group"
+                  className="w-full text-left group hover:cursor-pointer"
                 >
-                  {/* Top separator line (always visible) */}
+                  {/* Top separator */}
                   <div className="h-[1px] w-full bg-[#A5A5A5] relative">
                     {activeRow && (
-                      <div className="absolute left-0 top-[-1px] h-[2px] w-32 bg-[#1656A5]" />
+                      <div className="absolute left-0 top-[-1px] h-[2px] w-60 bg-[#1656A5]" />
                     )}
                   </div>
-                  <div className="flex items-center justify-between pt-3 pb-3">
-                    <div className={`text-[16px] md:text-[32px] font-medium ${
-                      activeRow ? 'text-gray-900' : 'text-gray-800'
-                    }`}>
+
+                  <div className="flex items-center justify-between pt-3">
+                    <div
+                      className={`text-[16px] lg:leading-10 lg:text-[32px] font-medium ${
+                        activeRow ? "text-[#1a1a1a]" : "text-[#2C2C2C]"
+                      }`}
+                    >
                       {s.title}
                     </div>
-                    <span className="text-gray-400 font-semibold">{s.number}</span>
+                    <span className="text-[#606060] font-semibold">
+                      {s.number}
+                    </span>
                   </div>
-                  {/* Active description */}
+
                   {activeRow && (
-                    <p className="text-[14px] text-gray-600 mt-1 max-w-[360px]">
+                    <p className="text-[14px] text-[#606060] max-w-[360px]">
                       {s.desc}
                     </p>
                   )}
-                  {/* Bottom separator line (always visible) */}
+
                   {idx === slides.length - 1 && (
-                    <div className="h-[1px] w-full bg-[#A5A5A5] relative">
-                    
-                   </div>
-               )}
+                    <div className="mt-4 h-[1px] w-full bg-[#A5A5A5] relative" />
+                  )}
                 </button>
               );
             })}
@@ -105,70 +115,64 @@ const WhyProgenesis: React.FC = () => {
         </div>
 
         {/* Right banner */}
-        <div className="relative w-full rounded-2xl overflow-hidden min-h-[320px] shadow-sm csLg:min-h-[720px] flex items-center justify-center" style={{}}>
+        <div className="relative w-full rounded-2xl overflow-hidden min-h-[604px] shadow-sm csLg:min-h-[720px] flex">
           <div
             className="absolute inset-0 bg-cover bg-center items-center"
             style={{ backgroundImage: `url(${current.image})` }}
           />
-          {/* light gradient like screenshots */}
           <div className="absolute inset-0 bg-gradient-to-tr from-[#EAF6FF]/40 via-white/10 to-[#D7E8FF]/30" />
 
           {/* Content */}
           <div className="relative z-10 w-full h-full">
-            {/* Dynamic heading position */}
+            {/* Slide 1 */}
             {active === 0 && (
-              // First banner: center
-              <div className="absolute inset-0 flex items-center justify-center text-center px-4">
-                <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-gray-900 max-w-[720px]">
-                    {current.bannerHeading.includes("Like") ? (
+              <div className="absolute flex items-center justify-center text-center px-10">
+                <h3 className="relative lg:left-40 lg:top-70 text-[26px] lg:text-[46px] font-semibold text-[#2C2C2C] max-w-[720px]">
+                  {current.bannerHeading.includes("Like") ? (
                     <>
-                   {current.bannerHeading.split("Like")[0]}Like
-                     <br />
-                   {current.bannerHeading.split("Like")[1].trim()}
-                      </>
-                        ) : (
-                        current.bannerHeading
-                     )}
+                      {current.bannerHeading.split("Like")[0]}Like
+                      <br />
+                      {current.bannerHeading.split("Like")[1].trim()}
+                    </>
+                  ) : (
+                    current.bannerHeading
+                  )}
                 </h3>
-
               </div>
             )}
+
+            {/* Slide 2 */}
             {active === 1 && (
-              // Second banner: top left
-              <div className="absolute top-6 left-6 md:left-12 lg:left-16 text-top pr-6">
-                <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-gray-900 max-w-[720px]">
+              <div className="absolute top-6 lg:top-12 left-6 lg:left-14 pr-6">
+                <h3 className="text-[26px] lg:text-[46px] font-semibold text-[#2C2C2C] max-w-[660px]">
                   {current.bannerHeading}
                 </h3>
               </div>
             )}
+
+            {/* Slide 3 */}
             {active === 2 && (
-              // Third banner: heading top right, para bottom left
               <>
-                <div className="absolute top-6 md:top-10 lg:top-12 right-6 md:right-20 lg:right-16 text-right pl-6">
-                  <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-gray-900 max-w-[720px]">
+                <div className="absolute top-6 lg:top-12 right-6 lg:right-14 text-right pl-6">
+                  <h3 className="text-[26px] lg:text-[36px] font-semibold text-[#2C2C2C] max-w-[620px]">
                     {current.bannerHeading}
                   </h3>
                 </div>
                 {current.bannerPara && (
-                  <p className="absolute left-6 md:left-10 lg:left-12 bottom-6 md:bottom-8 lg:bottom-10 text-[14px] md:text-[15px] text-gray-700 max-w-[520px]">
+                  <p className="absolute top-100 left-6 lg:top-150 lg:left-4 lg:text-[18px] text-[14px] text-[#606060] max-w-[520px] text-left">
                     {current.bannerPara}
                   </p>
                 )}
               </>
             )}
+
+            {/* Slide 4 */}
             {active === 3 && (
-              // Fourth banner: top center
-              <div className="absolute top-6 md:top-10 lg:top-12  text-center px-4">
-                <h3 className="text-[26px] md:text-[32px] lg:text-[36px] font-semibold text-gray-900 max-w-[720px]">
+              <div className="absolute top-6 lg:top-12 left-1/2 -translate-x-1/2 text-center px-4">
+                <h3 className="text-[26px] lg:text-[36px] font-semibold text-[#2C2C2C] max-w-[660px]">
                   {current.bannerHeading}
                 </h3>
               </div>
-            )}
-            {/* Remove duplicate para for third banner below */}
-            {active !== 2 && current.bannerPara && (
-              <p className="absolute left-6 md:left-10 lg:left-12 bottom-6 md:bottom-8 lg:bottom-10 text-[14px] md:text-[15px] text-gray-700 max-w-[520px]">
-                {current.bannerPara}
-              </p>
             )}
           </div>
         </div>

@@ -85,38 +85,38 @@ const FaQ: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-[360px_1fr] lg:grid-cols-[420px_1fr] gap-6 md:gap-8 lg:gap-10">
         {/* Left intro */}
         <div>
-          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">Real Stories. Real Miracles.</span>
+          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px]">FAQ's</span>
           <div style={{paddingBottom:'20px'}}>
-          <h2 className="text-[36px] md:text-[44px] font-semibold leading-tight text-[#2C2C2C]">
+          <h2 className="text-[36px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
             Quick answers to the
             
-            <span className="text-[#77B255]"> most common</span>
+            <span className="text-[#94BA3D]"> most common</span>
             <br />
-            <span className="text-[#77B255]">fertility-related</span>
+            <span className="text-[#94BA3D]">fertility-related</span>
             <br />
-           <span className="text-[#77B255]">questions.</span> 
+           <span className="text-[#94BA3D]">questions.</span> 
           </h2></div>
-          <p className="mt-6 text-[13px] md:text-[14px] text-[#6B7280]">
+          <p className="mt-6 text-[13px] md:text-[16px] md:leading-6 font-normal text-[#2C2C2C]">
             Didn’t find what you are looking for?
             <br />
-            Checkout <span className="text-[#1656A5] underline">Patient Resources</span> section to know more.
+            Checkout <span className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px] ">Patient Resources</span> section to know more.
           </p>
         </div>
 
         {/* Right content */}
         <div>
           {/* Tabs */}
-          <div className="flex flex-wrap gap-3 mb-6" >
+          <div className="flex flex-wrap gap-2 mb-6" >
             {tabs.map((t, idx) => {
               const active = idx === activeTab;
               return (
                 <button
                   key={t.label}
                   onClick={() => handleTab(idx)}
-                  className={`h-[40px] w-auto px-4 rounded-[16px] border text-sm font-medium transition-colors ${
+                  className={`h-[56px] w-auto px-4 rounded-[16px] border text-sm font-medium hover:cursor-pointer transition-colors ${
                     active
                       ? "bg-[#1656A5] text-white border-[#1656A5]"
-                      : "bg-white text-[#2C2C2C] border-gray-300 hover:border-blue-400"
+                      : "bg-[#FFFFFF] text-[#1656A5] border-[#1656A5] "
                   }`}
                   
                 >
@@ -133,20 +133,20 @@ const FaQ: React.FC = () => {
               return (
                 <div
                   key={i}
-                  className={`bg-white overflow-hidden rounded-[16px] ${
+                  className={`bg-[#FFFFFF] overflow-hidden rounded-[16px] ${
                     open 
                   }`}
                 >
                   <button
                     aria-expanded={open}
                     onClick={() => setOpenIndex(open ? -1 : i)}
-                    className="w-full flex items-center justify-between gap-3 text-left md:py-4 py-4 rounded-2xl  text-[14px] md:text-[15px] text-[#2C2C2C]"
+                    className="w-full flex items-center justify-between gap-3 hover:cursor-pointer text-left md:py-4 py-4 rounded-2xl  text-[14px] md:text-[15px] text-[#2C2C2C]"
                   >
                     <span className="pl-4 pr-2">{item.q}</span>
-                    <span className="text-gray-500 pr-2">{open ? "▴" : "▾"}</span>
+                    <span className="text-gray-500 pr-2">{open ? <img src='/images/icons/upward.svg' className="w-[10px] h-[10px] object-contain" /> : <img src='/images/icons/downward.svg' className="w-[10px] h-[10px] object-contain" />}</span>
                   </button>
                   {open && (
-                    <div className="pl-4 pb-4 text-left text-[14px] text-[#4B5563]" >
+                    <div className="pl-4 pb-4 pr-4  text-left md:text-[16px] md:leading-6 text-[14px] text-[#4B5563]" >
                       {item.a}
                     </div>
                   )}

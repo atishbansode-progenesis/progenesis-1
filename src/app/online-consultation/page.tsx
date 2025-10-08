@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import ConsultationForm from "../../components/Consultation/ConsultationForm";
 import Link from "next/link";
+import HeroSection from "../../components/HeroSection/herosection";
 
 
 const OnlineConsultation: React.FC = () => {
 
 
-  const [activeTab, setActiveTab] = useState("journey");
+  const [activeTab, setActiveTab] = useState<keyof typeof sections>("journey");
 
   // 🔹 Define content for each tab
   const sections = {
@@ -41,106 +42,24 @@ const OnlineConsultation: React.FC = () => {
 
   return (
     <div className="w-full flex flex-col">
-      {/* 1️⃣ Hero Section */}
-      <section
-        className="relative w-full h-[500px] md:h-[600px] flex flex-col md:flex-row pl-[12px] md:pl-[80px] xl:pl-[120px] bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage: "/online-consultation/online_consultation_bg.png",
-        }}
-      >
-        {/* Blurred gradient shape */}
-        <div
-          className="absolute left-[-150px] top-[80px] w-[445px] h-[441px] rounded-full opacity-70"
-          style={{
-            background: "#94BA3D",
-            filter: "blur(250px)",
-            transform: "rotate(-2deg)",
-          }}
-        ></div>
-
-        {/* Left content */}
-        <div className="relative z-10 mt-2 md:mt-[85px] max-w-5xl">
-          <p className="text-[12px] md:text-[14px] l:text-[18px] text-gray-600  md:mb-[44px]">
-           <Link href="/" className="hover:text-blue-700 transition-colors">
-              Home
-            </Link><span className="px-[12px]">›</span>
-            <span
-              className="inline-block px-3 py-1 rounded-md text-[12px] md:text-[14px] l:text-[18px] font-medium leading-[40px] tracking-[-0.36px] text-blue-700"
-            >
-              Online Consultation
-            </span>
-          </p>
-          <h1 className="text-[32px] md:text-[52px] lg:text-[62px]  2xl:text-[80px] font-bold leading-tight mb-[12px] md:mb-[44px] text-[#252525]">
-            IVF & Fertility<br /> Online Consultation
-          </h1>
-          <button className="md:mt-6 px-[10px] md:px-[20px] py-[10px] md:py-[16px] text-[12px] md:text-[14px] bg-black text-white rounded-[8px] md:rounded-[14px]">
-            Book Your Appointment
-          </button>
-        </div>
-
-        {/* Right image */}
-        <div className="block relative w-full h-full md:w-[591px] md:h-[600px] ml-auto ">
-          <Image
-            src="/online-consultation/Backgroundshape.png"
-            alt="Background shape"
-            fill
-            className="object-contain object-bottom rounded-lg"
-          />
-          <Image
-            src="/online-consultation/online_consultation_1.png"
-            alt="Doctor consultation"
-            fill
-            className="object-contain object-bottom rounded-lg"
-          />
-        </div>
-      </section>
-
-
-      {/* ✅ Button Group */}
-      {/* <div className="flex flex-wrap gap-4 pt-[50px] px-[120px] pb-[80px]">
-        <button
-          type="button"
-          onClick={() => setActiveTab("journey")}
-          className={`px-[20px] py-[16px] rounded-[16px] 
-                font-[Manrope] text-[14px] font-medium leading-[24px] 
-                tracking-[-0.28px] transition ${activeTab === "journey"
-              ? "bg-[#1656A5] text-white"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-            }`}
-        >
-          Start Your Journey Today
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveTab("how")}
-          className={`px-[20px] py-[16px] rounded-[16px] 
-                font-[Manrope] text-[14px] font-medium leading-[24px] 
-                tracking-[-0.28px] transition ${activeTab === "how"
-              ? "bg-[#1656A5] text-white"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-            }`}
-        >
-          How It Works
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveTab("quiz")}
-          className={`px-[20px] py-[16px] rounded-[16px] 
-                font-[Manrope] text-[14px] font-medium leading-[24px] 
-                tracking-[-0.28px] transition ${activeTab === "quiz"
-              ? "bg-[#1656A5] text-white"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-            }`}
-        >
-          Take a Quiz
-        </button>
-      </div> */}
+      <HeroSection
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Infertility", href: "/infertility" },
+        ]}
+        title="IVF & Fertility <br/> Online Consultation"
+        buttonText="Book Your Appointment"
+        buttonLink="/book-appointment"
+        foregroundImage="/online-consultation/onlinebg.png"
+        overlayImage="/online-consultation/heartbg.png"
+      />
 
 
 
-      <div className="flex flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[80px] bg-[#fff]">
+
+
+
+      <div className="flex flex-wrap gap-4 pt-[50px] px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] pb-[80px] bg-[#fff]">
         <button
           type="button"
           onClick={() => document.getElementById("journey-section")?.scrollIntoView({ behavior: "smooth" })}
@@ -189,7 +108,7 @@ const OnlineConsultation: React.FC = () => {
 
       {/* 2️⃣ Section: Talk to Specialists */}
 
-      <section id="journey-section" className="w-full flex flex-col lg:flex-row justify-between px-[12px] md:px-[80px] xl:px-[120px] py-16 gap-10 bg-[#FAFAFA]">
+      <section id="journey-section" className="w-full flex flex-col lg:flex-row justify-between px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 gap-10 bg-[#FAFAFA]">
         {/* Left content */}
         <div className="max-w-lg flex flex-col justify-between">
           <div>
@@ -237,7 +156,7 @@ const OnlineConsultation: React.FC = () => {
       <section
         className="
     relative w-full h-[600px] flex flex-col md:flex-row justify-between 
-    px-[12px] md:px-[80px] xl:px-[120px] 
+    px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px]
     bg-cover bg-no-repeat bg-center overflow-hidden
     bg-[url('/online-consultation/online_cta_mobile.png')] md:bg-none
   "
@@ -302,7 +221,7 @@ const OnlineConsultation: React.FC = () => {
 
       {/* 4️⃣ 4-Step Journey Section */}
 
-      <section id="how-section" className="w-full px-[12px] md:px-[80px] xl:px-[120px]  py-20 bg-[#FAFAFA]">
+      <section id="how-section" className="w-full px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 bg-[#FAFAFA]">
         {/* Small Label (How it works) */}
 
 
@@ -351,35 +270,35 @@ const OnlineConsultation: React.FC = () => {
               className="flex flex-col items-start gap-3 p-6 rounded-[16px] bg-[#F2F2F2]"
             >
               {/* Icon */}
-             {/* Icon */}
-<Image
-  src={card.image}
-  alt={card.title}
-  width={50}
-  height={50}
-  className="w-[28px] h-[28px] md:w-[50px] md:h-[50px] aspect-[1/1] object-contain"
-/>
+              {/* Icon */}
+              <Image
+                src={card.image}
+                alt={card.title}
+                width={50}
+                height={50}
+                className="w-[28px] h-[28px] md:w-[50px] md:h-[50px] aspect-[1/1] object-contain"
+              />
 
-{/* Title (Contact Us etc.) */}
-<h3
-  className="
+              {/* Title (Contact Us etc.) */}
+              <h3
+                className="
     text-[#2C2C2C] font-[Manrope] 
     text-[16px] leading-[24px] tracking-[-0.32px] font-semibold  /* ✅ Mobile */
     md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal  /* ✅ Desktop */
   "
->
-  {card.title}
-</h3>
+              >
+                {card.title}
+              </h3>
 
-{/* Subheading (description) */}
-<p
-  className="
+              {/* Subheading (description) */}
+              <p
+                className="
     text-[#606060] font-[Manrope] 
     text-[16px] leading-[24px] tracking-[-0.32px] font-normal  /* ✅ Mobile & Desktop */
   "
->
-  {card.desc}
-</p>
+              >
+                {card.desc}
+              </p>
 
             </div>
           ))}
@@ -393,47 +312,47 @@ const OnlineConsultation: React.FC = () => {
 
 
 
-<section
-  id="quiz-section"
-  className="
+      <section
+        id="quiz-section"
+        className="
     relative w-full flex flex-col
     bg-no-repeat bg-cover bg-center h-[582px] md:h-[474px]
-    px-6 md:px-[80px] xl:px-[120px] 
+    px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px]
     py-16 md:py-24 lg:py-[80px]
     /* ✅ Mobile Background */
     bg-[url('/online-consultation/take_a_quiz_bg_mobile.png')]
     md:bg-[url('/online-consultation/take_a_quiz_bg_desktop.png')]
   "
->
-  {/* 🔹 Overlay if needed */}
-  {/* <div className="absolute inset-0 bg-black/30"></div> */}
+      >
+        {/* 🔹 Overlay if needed */}
+        {/* <div className="absolute inset-0 bg-black/30"></div> */}
 
-  {/* 🔹 Content */}
-  <div className="relative z-10 max-w-[700px] text-left md:text-left">
-    <span className="flex items-center gap-1 px-2 py-1 text-[#1656A5] font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px] mb-4">
-  Quick Fertility Score, Expert Advice
-</span>
+        {/* 🔹 Content */}
+        <div className="relative z-10 max-w-[700px] text-left md:text-left">
+          <span className="flex items-center gap-1 px-2 py-1 text-[#1656A5] font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px] mb-4">
+            Quick Fertility Score, Expert Advice
+          </span>
 
-    <h2
-      className="
+          <h2
+            className="
         text-[#2C2C2C] font-[Manrope] font-normal
         text-[28px] leading-[36px] tracking-[-0.56px] 
         md:text-[40px] md:leading-[48px] md:tracking-[-0.8px] 
         lg:text-[48px] lg:leading-[56px] lg:tracking-[-0.96px] 
         mb-6 md:mb-8
       "
-    >
-      Not Sure Where to Start? <br /> Take Our 2-Minute Fertility Quiz
-    </h2>
+          >
+            Not Sure Where to Start? <br /> Take Our 2-Minute Fertility Quiz
+          </h2>
 
-    <button
-      type="button"
-      className="px-6 py-3 rounded-[8px] bg-black text-[#F9F9F9] font-[Manrope] text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition hover:bg-gray-900"
-    >
-      Take a Quiz
-    </button>
-  </div>
-</section>
+          <button
+            type="button"
+            className="px-6 py-3 rounded-[8px] bg-black text-[#F9F9F9] font-[Manrope] text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition hover:bg-gray-900"
+          >
+            Take a Quiz
+          </button>
+        </div>
+      </section>
 
 
 
