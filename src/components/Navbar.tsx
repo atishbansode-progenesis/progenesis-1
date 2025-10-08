@@ -458,7 +458,11 @@ const MegaMenu = ({ menu }: { menu: any }) => {
               )}
 <ul className="space-y-2 w-[180px] text-left">
   {col.links.map((link: any, i: number) => (
-    <li key={i} className="mb-4">
+  <li key={i}   className="
+    mb-4 
+
+  ">
+
       {link.isButton ? (
         // ✅ BOOK APPOINTMENT BUTTON
         <Link
@@ -584,7 +588,12 @@ const MegaMenu = ({ menu }: { menu: any }) => {
           className="
             flex items-center justify-between w-full
             text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-            hover:text-[#1656A5] transition ml-4
+            hover:text-[#1656A5]
+
+                rounded-[8px]
+    transition-all duration-200
+    hover:bg-[rgba(22,86,165,0.10)]
+    hover:px-4 hover:py-[10px]
           "
         >
           <span>{link.label}</span>
@@ -607,16 +616,19 @@ const MegaMenu = ({ menu }: { menu: any }) => {
         </Link>
       ) : (
         // ✅ DEFAULT LINK + INLINE SUBMENU
-        <Link href={link.path}>
+        <Link href={link.path}   onMouseEnter={() => setExpandedLink(link.label)}
+  onMouseLeave={() => setExpandedLink(null)}>
           <button
-            onClick={() =>
-              setExpandedLink(expandedLink === link.label ? null : link.label)
-            }
+              
             className="
                   text-left
     text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-    hover:text-[#1656A5] transition w-full
+    hover:text-[#1656A5] w-full
     flex items-center justify-start gap-2
+     rounded-[8px]
+    transition-all duration-200
+    hover:bg-[rgba(22,86,165,0.10)]
+    hover:px-4 hover:py-[10px]
             "
           >
             {link.label}
@@ -643,7 +655,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
           </button>
 
           {/* Nested submenu (inline, like Figma) */}
-          {/* {link.submenu && expandedLink === link.label && (
+          {link.submenu && expandedLink === link.label && (
             <ul className="ml-4 mt-2 space-y-1 animate-fadeIn">
               {link.submenu.map((sublink: any, subIdx: number) => (
                 <li key={subIdx}>
@@ -659,7 +671,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                 </li>
               ))}
             </ul>
-          )} */}
+          )}
         </Link>
       )}
     </li>
@@ -699,7 +711,7 @@ export default function Navbar() {
   const closeTimeoutRef = useRef<number | null>(null);
   const navigationItems = [
     { label: "About Us", path: "/about-us", hasMegaMenu: true },
-    { label: "Infertility Issues", path: "/infertility-issues", hasMegaMenu: true },
+    { label: "Infertility Issues", path: "/infertility", hasMegaMenu: true },
     { label: "Our Centers", path: "/centers", hasMegaMenu: true },
     { label: "Treatments", path: "/treatments", hasMegaMenu: true },
     { label: "Doctors", path: "/doctors", hasMegaMenu: false },
