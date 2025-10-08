@@ -64,7 +64,7 @@ const WhyProgenesis: React.FC = () => {
             <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] px-3 py-1 rounded-[8px]">
               Why choose us
             </span>
-            <h2 className="mt-3 text-[36px] lg:text-[48px] font-normal text-[#2C2C2C]">
+            <h2 className="mt-3 text-[36px] lg:text-[48px] leading-10 font-normal text-[#2C2C2C]">
               Why Progenesis?
             </h2>
           </div>
@@ -77,18 +77,18 @@ const WhyProgenesis: React.FC = () => {
                 <button
                   key={s.number}
                   onClick={() => setActive(idx)}
-                  className="w-full text-left group"
+                  className="w-full text-left group hover:cursor-pointer"
                 >
                   {/* Top separator */}
                   <div className="h-[1px] w-full bg-[#A5A5A5] relative">
                     {activeRow && (
-                      <div className="absolute left-0 top-[-1px] h-[2px] w-32 bg-[#1656A5]" />
+                      <div className="absolute left-0 top-[-1px] h-[2px] w-60 bg-[#1656A5]" />
                     )}
                   </div>
 
-                  <div className="flex items-center justify-between pt-3 pb-3">
+                  <div className="flex items-center justify-between pt-3">
                     <div
-                      className={`text-[16px] lg:text-[32px] font-medium ${
+                      className={`text-[16px] lg:leading-10 lg:text-[32px] font-medium ${
                         activeRow ? "text-[#1a1a1a]" : "text-[#2C2C2C]"
                       }`}
                     >
@@ -100,7 +100,7 @@ const WhyProgenesis: React.FC = () => {
                   </div>
 
                   {activeRow && (
-                    <p className="text-[14px] text-[#606060] mt-1 max-w-[360px]">
+                    <p className="text-[14px] text-[#606060] max-w-[360px]">
                       {s.desc}
                     </p>
                   )}
@@ -159,7 +159,7 @@ const WhyProgenesis: React.FC = () => {
                   </h3>
                 </div>
                 {current.bannerPara && (
-                  <p className="absolute bottom-6 right-6 lg:bottom-10 lg:right-14 text-[14px] text-[#606060] max-w-[520px] text-right">
+                  <p className="absolute top-100 left-6 lg:top-150 lg:left-4 lg:text-[18px] text-[14px] text-[#606060] max-w-[520px] text-left">
                     {current.bannerPara}
                   </p>
                 )}
