@@ -33,8 +33,8 @@ const OurStories: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
-    <section id='why-1' className="w-full bg-white">
-      <div className="section-spacing">
+    <section id='why-1' className="w-full bg-[#FFFFFF] justify-center items-center">
+      <div className="section-spacing relative w-fit">
         {/* Desktop layout: visible on large screens and above */}
         <div className="hidden lg:grid lg:grid-cols-[400px_1fr] csLg:grid-cols-[400px_1fr] gap-6 lg:gap-10 xl:gap-x-32">
           {/* Left Column: Heading + Tab List */}
@@ -53,7 +53,7 @@ const OurStories: React.FC = () => {
               <div key={index}>
               <div className="h-[1px] w-full bg-[#A5A5A5] relative">
               {activeTab === index && (
-              <div className="absolute left-0 top-[-1px] h-[2px] w-32 bg-[#1656A5]" />
+              <div className="absolute left-0 top-[-1px] h-[2px]" />
               )}
                </div>
               <div
@@ -61,7 +61,7 @@ const OurStories: React.FC = () => {
               className="flex items-center justify-between cursor-pointer py-3 lg:flex-nowrap lg:gap-4"
               >
               <span
-              className={`text-lg md:text-[24px] lg:text-[28px] font-medium font-[Manrope] tracking-tight lg:whitespace-nowrap ${
+              className={`text-lg md:text-[24px] lg:text-[28px] font-medium font-[Manrope] gap-[41px] tracking-tight lg:whitespace-nowrap ${
               activeTab === index ? "text-[#1656A5]" : "text-[#606060]"
               }`}
               >
@@ -89,7 +89,7 @@ const OurStories: React.FC = () => {
           {/* Right Column: Paragraph + Image + Info Box */}
           <div className="flex flex-col gap-10">
             {/* Paragraph (top of right column) */}
-            <p className="text-lg lg:text-[32px] leading-[36px] text-[#2C2C2C] tracking-tight font-[Manrope]">
+            <p className="text-lg lg:text-[32px] leading-[40px] text-[#2C2C2C] tracking-tight font-[Manrope]">
               We believe every hopeful parent deserves a team that listens, cares, and fights to make
               dreams a reality — with science, empathy, and unwavering support.
             </p>

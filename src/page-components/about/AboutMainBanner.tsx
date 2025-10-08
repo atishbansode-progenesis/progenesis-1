@@ -24,7 +24,7 @@ const AboutMainBanner = () => {
                     <div className='lg:pt-11 pt-5'>
                         <button 
                             onClick={() => setIsOpen(true)} 
-                            className='bg-[#252525] lg:p-[8px] p-[8px] h-[40px] w-[150px] lg:h-[56px] lg:w-[188px] text-[12px] lg:text-[14px]  text-[#F9F9F9] rounded-[8px] lg:rounded-[16px] hover:bg-[#000] transition'
+                            className='bg-[#252525] lg:p-[8px] p-[8px] h-[40px] w-[150px] lg:h-[56px] lg:w-[188px] text-[12px] lg:text-[14px]  text-[#F9F9F9] rounded-[8px] lg:rounded-[16px] hover:bg-[#000] hover:cursor-pointer transition'
                         >
                             Book Your Appointment
                         </button>
