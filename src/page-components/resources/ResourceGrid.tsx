@@ -100,7 +100,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
           </div>
         )}
 
-        <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-14">
+        <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
           {cards.map((card) => {
             const formattedDate = card.created
               ? new Intl.DateTimeFormat('en-IN', {
@@ -134,7 +134,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                   <h4 className="mt-3 md:mt-4 text-[16px] md:text-[18px] font-semibold text-gray-900">
                     {card.title}
                   </h4>
-                  <p className="mt-2 text-[12px] md:text-[13px] text-gray-600 leading-relaxed">
+                  <p className="mt-2 text-[12px] md:text-[13px] text-gray-600 leading-relaxed line-clamp-2">
                     {previewDescription}
                   </p>
                 </article>
