@@ -164,12 +164,20 @@ const InternationalPatientsPage: React.FC = () => {
         id="testimonial"
         className="w-full bg-[#1656A5] text-white py-[82px] h-[700px]"
       >
-        <div className="flex items-center gap-[2rem] mx-auto px-6 md:px-[120px]">
-          <div className="flex flex-col justify-between w-[350px]">
+        <div className="flex flex-col md:flex-row items-center gap-[2rem] mx-auto px-6 md:px-[120px]">
+          <div className="flex flex-col justify-between w-full md:w-[350px]">
             <h2
-              className="text-[#F9F9F9] font-[Manrope] 
-             text-[48px] font-normal leading-[56px] 
-             tracking-[-0.96px] mb-8"
+              style={{
+                color: 'var(--Text_White, #F9F9F9)',
+                fontFamily: 'Manrope',
+                fontSize: '48px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '56px',
+                marginBottom: '2rem',
+                letterSpacing: '-0.96px',
+              }}
+              className="mb-8"
             >
               What our international patients are saying
             </h2>
@@ -199,51 +207,59 @@ const InternationalPatientsPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="w-[509px] mr-[16px]">
-            <Swiper
-              modules={[Navigation, Pagination]}
-              spaceBetween={24}
-              slidesPerView={1}
-              navigation={{
-                prevEl: prevRef.current,
-                nextEl: nextRef.current,
+          <div className="flex flex-row gap-8 items-center w-full md:w-auto justify-center">
+            <div
+              className="flex flex-col justify-between flex-shrink-0 bg-white text-gray-800 rounded-2xl shadow-lg"
+              style={{
+                display: 'flex',
+                width: '549px',
+                height: '536px',
+                padding: '96px 83px',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
-              onBeforeInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-              }}
-              onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
             >
-              {testimonials.map((t, i) => (
-                <SwiperSlide key={i}>
-                  <div
-                    className="flex flex-col justify-between 
-                            w-[509px] h-[536px] flex-shrink-0 
-                            px-[43px] py-[96px] 
-                            bg-white text-gray-800 rounded-2xl shadow-lg"
-                  >
-                    <p className="text-[#1656A5] font-[Manrope] 
-                              text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
-                      After years of failed attempts, Progenesis helped us find the cause,
-                      treated us with care, and blessed us with twins. Highly recommend them.
-                    </p>
+              <Swiper
+                modules={[Navigation, Pagination]}
+                spaceBetween={24}
+                slidesPerView={1}
+                navigation={{
+                  prevEl: prevRef.current,
+                  nextEl: nextRef.current,
+                }}
+                onBeforeInit={(swiper) => {
+                  swiper.params.navigation.prevEl = prevRef.current;
+                  swiper.params.navigation.nextEl = nextRef.current;
+                }}
+                onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
+                style={{ width: '100%', height: '100%' }}
+              >
+                {testimonials.map((t, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="flex flex-col justify-between w-full h-full">
+                      <p className="text-[#1656A5] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
+                        {t.text}
+                      </p>
+                      <span className="mt-[80px] text-[rgba(44,44,44,0.5)] font-[Manrope] text-[16px] leading-[24px] tracking-[-0.32px]">
+                        {t.author}
+                      </span>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
 
-                    <span className="mt-[80px] text-[rgba(44,44,44,0.5)] 
-                                  font-[Manrope] text-[16px] leading-[24px] tracking-[-0.32px]">
-                      – Gulelat Biamesh, Couple from Ethiopia
-                    </span>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-
-          <div className="w-[750px] ">
-            <img
-              src="/InternationalPatients/testimonial.png"
-              alt="Happy Family"
-              className=" rounded-xl h-auto shadow-lg"
-            />
+            <div
+              className="flex-shrink-0 hidden md:block"
+              style={{ width: '786px', height: '536px' }}
+            >
+              <img
+                src="/InternationalPatients/testimonial.png"
+                alt="Happy Family"
+                className="rounded-xl h-full w-full object-cover shadow-lg"
+                style={{ width: '786px', height: '536px' }}
+              />
+            </div>
           </div>
         </div>
       </section>
