@@ -1470,7 +1470,7 @@ const megaMenuData: Record<string, any> = {
       {
         links: [
           { label: "Our Centers", path: "/centers", isarrow: true },
-          { label: "Second Opinion", path: "/centers", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
           { label: "Online Consultation", path: "/online-consultion", isarrow: true },
