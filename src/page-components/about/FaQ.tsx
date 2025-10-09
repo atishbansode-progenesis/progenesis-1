@@ -69,13 +69,13 @@ const tabs: Tab[] = [
 
 const FaQ: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
-  // By default, open the first question in the General tab
-  const [openIndex, setOpenIndex] = useState(0);
+  // By default, no question is open
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const handleTab = (idx: number) => {
     setActiveTab(idx);
-    // reset open state, open first if available
-    setOpenIndex(0);
+    // reset open state, no question open by default
+    setOpenIndex(-1);
   };
 
   const activeItems = tabs[activeTab].items;
@@ -87,7 +87,7 @@ const FaQ: React.FC = () => {
         <div>
           <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px]">FAQ's</span>
           <div style={{paddingBottom:'20px'}}>
-          <h2 className="text-[36px] md:text-[48px] font-normal leading-tight text-[#2C2C2C]">
+          <h2 className="text-[36px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
             Quick answers to the
             
             <span className="text-[#94BA3D]"> most common</span>
@@ -96,7 +96,7 @@ const FaQ: React.FC = () => {
             <br />
            <span className="text-[#94BA3D]">questions.</span> 
           </h2></div>
-          <p className="mt-6 text-[13px] md:text-[16px] font-normal text-[#2C2C2C]">
+          <p className="mt-6 text-[13px] md:text-[16px] md:leading-6 font-normal text-[#2C2C2C]">
             Didn’t find what you are looking for?
             <br />
             Checkout <span className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px] ">Patient Resources</span> section to know more.
@@ -106,14 +106,14 @@ const FaQ: React.FC = () => {
         {/* Right content */}
         <div>
           {/* Tabs */}
-          <div className="flex flex-wrap gap-3 mb-6" >
+          <div className="flex flex-wrap gap-2 mb-6" >
             {tabs.map((t, idx) => {
               const active = idx === activeTab;
               return (
                 <button
                   key={t.label}
                   onClick={() => handleTab(idx)}
-                  className={`h-[40px] w-auto px-4 rounded-[16px] border text-sm font-medium transition-colors ${
+                  className={`h-[56px] w-auto px-4 rounded-[16px] border text-sm font-medium hover:cursor-pointer transition-colors ${
                     active
                       ? "bg-[#1656A5] text-white border-[#1656A5]"
                       : "bg-[#FFFFFF] text-[#1656A5] border-[#1656A5] "
@@ -140,13 +140,13 @@ const FaQ: React.FC = () => {
                   <button
                     aria-expanded={open}
                     onClick={() => setOpenIndex(open ? -1 : i)}
-                    className="w-full flex items-center justify-between gap-3 text-left md:py-4 py-4 rounded-2xl  text-[14px] md:text-[15px] text-[#2C2C2C]"
+                    className="w-full flex items-center justify-between gap-3 hover:cursor-pointer text-left md:py-4 py-4 rounded-2xl  text-[14px] md:text-[15px] text-[#2C2C2C]"
                   >
                     <span className="pl-4 pr-2">{item.q}</span>
                     <span className="text-gray-500 pr-2">{open ? <img src='/images/icons/upward.svg' className="w-[10px] h-[10px] object-contain" /> : <img src='/images/icons/downward.svg' className="w-[10px] h-[10px] object-contain" />}</span>
                   </button>
                   {open && (
-                    <div className="pl-4 pb-4 pr-4  text-left text-[14px] text-[#4B5563]" >
+                    <div className="pl-4 pb-4 pr-4  text-left md:text-[16px] md:leading-6 text-[14px] text-[#4B5563]" >
                       {item.a}
                     </div>
                   )}

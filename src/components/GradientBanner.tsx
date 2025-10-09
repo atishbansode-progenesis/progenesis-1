@@ -41,6 +41,10 @@ const GradientBanner: React.FC<GradientBannerProps> = ({ text }) => {
           md:text-[42px] md:leading-[50px]
           lg:text-[48px] lg:leading-[56px]
         "
+        className="relative w-[90%] md:w-[70%] lg:w-[50%] text-center font-[Manrope] 
+             text-[#94BA3D] text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] 
+             font-normal leading-[36px] sm:leading-[44px] md:leading-[52px] lg:leading-[56px] 
+             tracking-[-0.96px] px-4 z-10"
       >
         {text}
       </h2>
@@ -48,4 +52,9 @@ const GradientBanner: React.FC<GradientBannerProps> = ({ text }) => {
   );
 };
 
-export default GradientBanner;
+// Example usage
+export default function App() {
+  return (
+    <GradientBanner text="Striving to set a new standard for reproductive health care services." />
+  );
+}

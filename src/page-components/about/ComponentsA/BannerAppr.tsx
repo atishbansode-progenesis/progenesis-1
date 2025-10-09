@@ -103,38 +103,10 @@ const BannerOfApproach: React.FC = () => {
   // Track which CTA is active per slide: 'primary' or 'secondary'. Default is 'primary'.
   const [ctaActive, setCtaActive] = useState<Record<number, 'primary' | 'secondary'>>({});
 
-  // Clamp navigation: no wrap-around. Also scroll mobile carousel.
-  const goNext = () =>
-    setActiveTab((prev) => {
-      const next = Math.min(prev + 1, slides.length - 1);
-      // Smooth scroll on mobile carousel (no effect on desktop banner)
-      // Use rAF to ensure state updates do not interfere with scroll target calculation
-      if (typeof window !== 'undefined') {
-        requestAnimationFrame(() => {
-          slideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-        });
-      }
-      return next;
-    });
-
-  const goPrev = () =>
-    setActiveTab((prev) => {
-      const next = Math.max(prev - 1, 0);
-      if (typeof window !== 'undefined') {
-        requestAnimationFrame(() => {
-          slideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-        });
-      }
-      return next;
-    });
-
-  const current = slides[activeTab];
-  const isFirst = activeTab === 0;
-  const isLast = activeTab === slides.length - 1;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full bg-white px-6 md:px-12 lg:px-[90px] py-10 md:py-12 section-spacing" >
+    <div className="w-full bg-[#FAFAFA] px-6 md:px-12 lg:px-[90px] py-10 md:py-12 section-spacing" style={{overflow: 'visible', margin: 0}}>
       {/* Headings */}
       <div className="mb-8" style={{paddingBottom:'50px'}}>
         <span className="inline-block bg-[#E9F0FF] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" style={{padding:'8px'}}>Our Approach</span>
@@ -149,13 +121,14 @@ const BannerOfApproach: React.FC = () => {
           {slides.map((s, index) => (
             <button
               key={s.tab}
+              
               onClick={() => {
                 setActiveTab(index);
                 // Scroll the corresponding mobile slide into view
                 slideRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
               }}
-              className={`relative flex-1 text-center text-[15px] md:text-[16px] font-medium font-[Manrope] transition-colors ${
-                activeTab === index ? 'text-[#1656A5]' : 'text-gray-500 hover:text-blue-600'
+              className={`relative flex-1 text-center hover:cursor-pointer text-[15px] md:text-[16px] font-medium font-[Manrope] transition-colors ${
+                activeTab === index ? 'text-[#1656A5]' : 'text-[#606060] hover:text-[#1656A5]'
               }`}
             >
               <span>{s.tab}</span>
@@ -175,15 +148,33 @@ const BannerOfApproach: React.FC = () => {
       </div>
 
       {/* Banner - Mobile: horizontal scroll of all slides */}
-      <div className="md:hidden mt-10 p-5">
-        <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory px-5">
+      <div className="md:hidden p-5" style={{
+        position: 'relative',
+        left: '-24px',
+        right: '-24px',
+        top: '-20px',
+        bottom: '-20px',
+        width: 'calc(100% + 48px)',
+        zIndex: 10,
+      }}>
+        <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory px-5"
+             style={{
+               scrollbarWidth: 'none',
+               msOverflowStyle: 'none',
+               height: 'calc(100%)'
+             }}>
+          <style jsx>{`
+            div::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
           {slides.map((s, index) => (
             <div
               key={s.tab}
               ref={(el) => {
                 slideRefs.current[index] = el;
               }}
-              className="relative snap-start shrink-0 w-[88%] lg:min-h-[520px] md:h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-white shadow-lg border border-white/10"
+              className="relative snap-start shrink-0 w-[88%] lg:min-h-[520px] md:h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10"
               style={{ backgroundImage: `url(${s.image})` }}
             >
               {/* Left dark gradient overlay */}
@@ -195,20 +186,20 @@ const BannerOfApproach: React.FC = () => {
 
               {/* Internal content with padding - tuned for mobile */}
               <div className="relative gap-4 z-10 p-5 space-y-5 font-[Manrope]" style={{padding:'20px'}}>
-                <h3 className="text-[16px] leading-[22px] tracking-[-0.02em] font-normal text-white" style={{paddingBottom:'20px'}}>
+                <h3 className="text-[16px] leading-[22px] tracking-[-0.02em] font-normal text-[#F9F9F9]" style={{paddingBottom:'20px'}}>
                   {s.heading}
                 </h3>
                 <div className="flex flex-wrap gap-4 mt-5" style={{paddingBottom:'20px'}}>
                   <button
                     onClick={() => {setCtaActive((prev) => ({ ...prev, [index]: 'primary' })); setIsOpen(true);}}
-                    className={`${(ctaActive[index] ?? 'primary') === 'primary' ? 'bg-white text-black' : 'border border-white/90 text-white'} h-[40px] px-4 rounded-[12px] text-xs font-semibold shadow-sm`}
+                    className={`hover:cursor-pointer ${(ctaActive[index] ?? 'primary') === 'primary' ? 'bg-[#FAFAFA] text-[#2C2C2C]' : 'border border-white/90 text-[#F9F9F9]'} h-[40px] px-4 rounded-[12px] text-xs  font-semibold shadow-sm`}
                     style={{padding:'8px'}}
                   >
                     {s.ctaPrimary}
                   </button>
                   <button
                     onClick={() => setCtaActive((prev) => ({ ...prev, [index]: 'secondary' }))}
-                    className={`${(ctaActive[index] ?? 'primary') === 'secondary' ? 'bg-white text-black' : 'border border-white/90 text-white'} h-[40px] px-4 rounded-[12px] text-xs font-medium`}
+                    className={`${(ctaActive[index] ?? 'primary') === 'secondary' ? 'bg-[#FAFAFA] text-[#2C2C2C]' : 'border border-white/90 text-[#F9F9F9]'} h-[40px] px-4 rounded-[12px] hover:cursor-pointer text-xs font-medium`}
                     style={{padding:'8px'}}
                   >
                     {s.ctaSecondary}
@@ -220,7 +211,7 @@ const BannerOfApproach: React.FC = () => {
                   {s.features.map((item, idx) => (
                     <div key={idx} className="flex flex-col gap-2">
                       <img src={item.icon} alt={item.title} className="w-[30px] h-[30px] object-contain" />
-                      <h4 className="font-semibold text-white text-[15px]">{item.title}</h4>
+                      <h4 className="font-semibold text-[#F9F9F9] text-[15px]">{item.title}</h4>
                       <p className="text-[13px] text-gray-200 leading-[18px]">{item.desc}</p>
                     </div>
                   ))}
@@ -231,75 +222,124 @@ const BannerOfApproach: React.FC = () => {
         </div>
       </div >
 
-      {/* Banner - Desktop/Tablet unchanged */}
-      <div
-        className="hidden md:flex relative w-full md:h-auto h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-white  shadow-lg mt-10 "
-        style={{ backgroundImage: `url(${current.image})` }}
-       >
-        {/* Left dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-0" />
-        {/* Right subtle green tint */}
-        <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-green-400/20 to-transparent z-0" />
-        {/* Global dim overlay to reduce image clarity to ~70% visibility */}
-        <div className="absolute inset-0 bg-black/30 z-0" />
-
-        {/* Internal content with padding */}
-        <div className="relative z-10 p-6 md:p-10 lg:p-12" style={{paddingLeft:'60px', paddingTop:'80px', paddingRight:'60px'}}>
-          <h3 className="font-manrope text-[28px] leading-[30px] tracking-[-0.02em] font-normal">
-            {current.heading}
-          </h3>
-          <div className="flex flex-wrap gap-3 md:gap-4 mb-10" style={{paddingTop:'30px', paddingBottom:'100px'}}>
-            <button
-              onClick={() => {setCtaActive((prev) => ({ ...prev, [activeTab]: 'primary' })); setIsOpen(true);}}
-              className={`${(ctaActive[activeTab] ?? 'primary') === 'primary' ? 'bg-white text-black' : 'border border-white/90 text-white'} w-auto h-[56px] px-5 py-2.5 rounded-[16px] text-sm font-medium shadow-sm`}
+      {/* Banner - Desktop/Tablet carousel */}
+      <div className="hidden md:block mt-10" style={{
+        position: 'relative',
+        left: '-120px',
+        right: '-0px',
+        width: 'calc(100% + 180px)',
+        zIndex: 10,
+        paddingLeft: '120px'
+      }}>
+        <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory"
+             style={{
+               scrollbarWidth: 'none',
+               msOverflowStyle: 'none',
+               height: 'calc(100% )'
+             }}>
+          <style jsx>{`
+            div::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
+          {slides.map((s, index) => (
+            <div
+              key={s.tab}
+              ref={(el) => {
+                slideRefs.current[index] = el;
+              }}
+              className="relative snap-start shrink-0 w-[calc(100%-120px)] min-h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10"
+              style={{ backgroundImage: `url(${s.image})` }}
             >
-              {current.ctaPrimary}
-            </button>
-            <button
-              onClick={() => setCtaActive((prev) => ({ ...prev, [activeTab]: 'secondary' }))}
-              className={`${(ctaActive[activeTab] ?? 'primary') === 'secondary' ? 'bg-white text-black' : 'border border-white/90 text-white'} w-[128px] h-[56px] px-5 py-2.5 rounded-[16px] text-sm font-medium`}
-            >
-                {current.ctaSecondary}
-            </button>
-            {/* Modal */}
-            {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
-          </div>
+              {/* Left dark gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-0" />
+              {/* Right subtle green tint */}
+              <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-green-400/20 to-transparent z-0" />
+              {/* Global dim overlay to reduce image clarity to ~70% visibility */}
+              <div className="absolute inset-0 bg-black/30 z-0" />
 
-          {/* Feature cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px] pb-4">
-            {current.features.map((item, idx) => (
-              <div key={idx} className="flex flex-col gap-2">
-                <img src={item.icon} alt={item.title} className="w-[30px] h-[30px] object-contain" />
-                <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
-                <p className="text-sm text-gray-200">{item.desc}</p>
+              {/* Internal content with padding */}
+              <div className="relative z-10 p-6 md:p-10 lg:p-12" style={{paddingLeft:'60px', paddingTop:'80px', paddingRight:'60px'}}>
+                <h3 className="font-manrope text-[28px] leading-[30px] tracking-[-0.02em] font-normal">
+                  {s.heading}
+                </h3>
+                <div className="flex flex-wrap gap-3 md:gap-4 mb-10" style={{paddingTop:'30px', paddingBottom:'100px'}}>
+                  <button
+                    onClick={() => {setCtaActive((prev) => ({ ...prev, [index]: 'primary' })); setIsOpen(true);}}
+                    className={`${(ctaActive[index] ?? 'primary') === 'primary' ? 'bg-[#FAFAFA] text-[#2C2C2C]' : 'border border-white/90 text-[#F9F9F9]'} w-auto h-[56px] px-5 py-2.5 rounded-[16px] text-sm hover:cursor-pointer font-medium shadow-sm`}
+                  >
+                    {s.ctaPrimary}
+                  </button>
+                  <button
+                    onClick={() => setCtaActive((prev) => ({ ...prev, [index]: 'secondary' }))}
+                    className={`${(ctaActive[index] ?? 'primary') === 'secondary' ? 'bg-[#FAFAFA] text-[#2C2C2C]' : 'border border-white/90 text-[#F9F9F9]'} w-[128px] h-[56px] px-5 py-2.5 rounded-[16px] hover:cursor-pointer text-sm font-medium`}
+                  >
+                    {s.ctaSecondary}
+                  </button>
+                  {/* Modal */}
+                  {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
+                </div>
+
+                {/* Feature cards */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px] pb-4">
+                  {s.features.map((item, idx) => (
+                    <div key={idx} className="flex flex-col gap-2">
+                      <img src={item.icon} alt={item.title} className="w-[30px] h-[30px] object-contain" />
+                      <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
+                      <p className="text-sm text-gray-200">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Prev / Next buttons */}
+      <div className='hidden lg:block'>
       <div className="w-full flex items-center justify-center mt-6 gap-4" style={{paddingTop:'20px'}}>
         <button
           aria-label="Previous slide"
-          onClick={goPrev}
-          disabled={isFirst}
-          className={`h-[56px] w-[56px] font-bold rounded-[16px] border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100 ${
-            isFirst ? 'opacity-40 cursor-not-allowed hover:bg-transparent' : ''
+          onClick={() => {
+            setActiveTab((prev) => {
+              const next = Math.max(prev - 1, 0);
+              if (typeof window !== 'undefined') {
+                requestAnimationFrame(() => {
+                  slideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                });
+              }
+              return next;
+            });
+          }}
+          disabled={activeTab === 0}
+          className={`hover:cursor-pointer h-[56px] w-[56px] font-bold rounded-[16px] border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100 ${
+            activeTab === 0 ? 'opacity-40 cursor-not-allowed hover:bg-transparent' : ''
           }`}
         >
           <img src="/icons/left.svg" alt="left" width={12} height={12} />
         </button>
         <button
           aria-label="Next slide"
-          onClick={goNext}
-          disabled={isLast}
-          className={`h-[56px] w-[56px] font-bold rounded-[16px] border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100 ${
-            isLast ? 'opacity-40 cursor-not-allowed hover:bg-transparent' : ''
+          onClick={() => {
+            setActiveTab((prev) => {
+              const next = Math.min(prev + 1, slides.length - 1);
+              if (typeof window !== 'undefined') {
+                requestAnimationFrame(() => {
+                  slideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                });
+              }
+              return next;
+            });
+          }}
+          disabled={activeTab === slides.length - 1}
+          className={`hover:cursor-pointer h-[56px] w-[56px] font-bold rounded-[16px] border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100 ${
+            activeTab === slides.length - 1 ? 'opacity-40 cursor-not-allowed hover:bg-transparent' : ''
           }`}
         >
           <img src="/icons/right.svg" alt="right" width={12} height={12} />
-        </button> 
+        </button>
+      </div>
       </div>
     </div>
   );
