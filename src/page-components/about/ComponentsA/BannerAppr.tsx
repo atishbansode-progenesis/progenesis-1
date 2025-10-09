@@ -99,7 +99,8 @@ const slides = [
 
 const BannerOfApproach: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const mobileSlideRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const desktopSlideRefs = useRef<(HTMLDivElement | null)[]>([]);
   // Track which CTA is active per slide: 'primary' or 'secondary'. Default is 'primary'.
   const [ctaActive, setCtaActive] = useState<Record<number, 'primary' | 'secondary'>>({});
 
@@ -124,8 +125,9 @@ const BannerOfApproach: React.FC = () => {
               
               onClick={() => {
                 setActiveTab(index);
-                // Scroll the corresponding mobile slide into view
-                slideRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                // Scroll the corresponding slide into view (mobile or desktop)
+                mobileSlideRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                desktopSlideRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
               }}
               className={`relative flex-1 text-center hover:cursor-pointer text-[15px] md:text-[16px] font-medium font-[Manrope] transition-colors ${
                 activeTab === index ? 'text-[#1656A5]' : 'text-[#606060] hover:text-[#1656A5]'
@@ -172,7 +174,7 @@ const BannerOfApproach: React.FC = () => {
             <div
               key={s.tab}
               ref={(el) => {
-                slideRefs.current[index] = el;
+                mobileSlideRefs.current[index] = el;
               }}
               className="relative snap-start shrink-0 w-[88%] lg:min-h-[520px] md:h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10"
               style={{ backgroundImage: `url(${s.image})` }}
@@ -246,7 +248,7 @@ const BannerOfApproach: React.FC = () => {
             <div
               key={s.tab}
               ref={(el) => {
-                slideRefs.current[index] = el;
+                desktopSlideRefs.current[index] = el;
               }}
               className="relative snap-start shrink-0 w-[calc(100%-120px)] min-h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10"
               style={{ backgroundImage: `url(${s.image})` }}
@@ -306,7 +308,8 @@ const BannerOfApproach: React.FC = () => {
               const next = Math.max(prev - 1, 0);
               if (typeof window !== 'undefined') {
                 requestAnimationFrame(() => {
-                  slideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                  mobileSlideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                  desktopSlideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
                 });
               }
               return next;
@@ -326,7 +329,8 @@ const BannerOfApproach: React.FC = () => {
               const next = Math.min(prev + 1, slides.length - 1);
               if (typeof window !== 'undefined') {
                 requestAnimationFrame(() => {
-                  slideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                  mobileSlideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                  desktopSlideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
                 });
               }
               return next;
