@@ -294,7 +294,7 @@ const Infertility: React.FC = () => {
           
           <div className="mt-[80px] md:mt-[100px] lg:mt-[220px]">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {causes.map((item, idx) => (
+              {femaleInfertilityIssues.map((item, idx) => (
                 <div
                   key={idx}
                   className="
