@@ -248,8 +248,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
       </section>
 
 
-        <StoriesSectionNew/>
-
+      <StoriesSectionNew/>
       <ConsultationForm />
     
     </div>

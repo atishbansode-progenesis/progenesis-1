@@ -5,16 +5,14 @@ import Image from "next/image";
 import React from "react";
 import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import GradientBanner from "@/components/GradientBanner";
-import AwardsSection from "../../components/Home/AwardsSection";                 
+import AwardsSection from "../../components/Home/AwardsSection";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import HeroSection from "../../components/HeroSection/herosection";
 import Journey from '../../components/Journey'
-
 const InternationalPatientsPage: React.FC = () => {
   const categories = [
     { id: "start", label: "Start Your Journey Today" },
@@ -24,7 +22,7 @@ const InternationalPatientsPage: React.FC = () => {
   ];
 
   const [activeTab, setActiveTab] = useState("path");
-
+  const [isOpen, setIsOpen] = useState(false);
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -266,19 +264,63 @@ const InternationalPatientsPage: React.FC = () => {
     );
   };
 
+
   return (
     <main className="">
-      <HeroSection
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "International Patient", href: "international-patients/" },
-        ]}
-        title="IVF Treatment for <br/> International Patient"
-        buttonText="Book Your Appointment"
-        buttonLink="/book-appointment"
-        foregroundImage="/InternationalPatients/hero_person.png"
-        overlayImage="/online-consultation/heartbg.png"
-      />
+      <section className="relative w-full h-[60vh] py-4 csLg:px-[120px] px-6  flex flex-col csLg:justify-center">
+        {/* Background images: mobile and desktop */}
+        <div
+          className="absolute inset-0 md:hidden bg-cover bg-center"
+          style={{ backgroundImage: "url('/InternationalPatients/ipmbbg.png')" }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 hidden md:block bg-cover bg-center"
+          style={{ backgroundImage: "url('/InternationalPatients/ipbg.png')" }}
+          aria-hidden
+        />
+
+        <img className=" csLg:block hidden absolute csLg:right-0 bottom-0 h-[80%] w-[50%]" src="/InternationalPatients/iph2.png" alt="" />
+
+        <div className='relative w-full'>
+          {/* Left: Content block */}
+          <div className=''>
+            <div className='flex flex-col gap-[20px] mt-10 csLg:mt-0'>
+              {/* Breadcrumb-like line */}
+              <div >
+                <h2 className='font-manrope csLg:text-[18px] font-semibold text-[12px] leading-[26px] tracking-[-0.02em]'>
+                  <button onClick={() => window.location.href = '/'} className='hover:cursor-pointer'> Home </button> <span className="px-[12px]">›</span> <span className="text-[#1656A5]"> International Patient </span>
+                </h2>
+              </div>
+
+              {/* Title */}
+              <div>
+                <h1 className='font-manrope font-semibold csLg:text-[80px] text-[32px] csLg:leading-[88px] leading-[48px] tracking-[-0.02em] csLg:max-w-[60%]'>
+                  IVF Treatment for
+                  International Patient
+                </h1>
+              </div>
+
+              {/* CTA */}
+              <div className=''>
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className='bg-[#252525] text-[14px] h-[56px] px-6  text-[#F9F9F9] rounded-[16px] hover:bg-[#333] transition'
+                >
+                  Book Your Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column removed; background image now covers entire section */}
+        </div>
+        {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
+      </section>
+
+
+
+
       <div
         className="w-full bg-white pt-[50px] pb-[80px] px-[12px] md:px-[80px] xl:px-[120px]"
       >
@@ -288,11 +330,10 @@ const InternationalPatientsPage: React.FC = () => {
               key={cat.id}
               type="button"
               onClick={() => handleScroll(cat.id)}
-              className={`px-[10px] cursor-pointer py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition-all duration-200 ${
-                activeTab === cat.id
+              className={`px-[10px] cursor-pointer py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition-all duration-200 ${activeTab === cat.id
                   ? "bg-[#1656A5] text-white shadow-md"
                   : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-              }`}
+                }`}
             >
               {cat.label}
             </button>
@@ -305,7 +346,7 @@ const InternationalPatientsPage: React.FC = () => {
       </section>
 
       <GradientBanner text="Our specialists address your concerns, explain treatment steps, ensure safe care, and arrange hassle-free accommodation with comfort, transport, and support." />
-      
+
       <section id="fertility" className="bg-white pt-[80px] pb-[60px]">
         <div className="px-4 md:px-[80px] lg:px-[120px]">
           <div className="flex flex-col xl:flex-row justify-between gap-8">
