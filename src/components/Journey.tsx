@@ -5,31 +5,36 @@ import React, { useState } from 'react';
 const tabItems = [
   {
     storyNumber: '01',
-    title: 'Care, Backed by Innovation',
-    heading: 'Advanced care, delivered with heart.',
-    description:
-      'We combine leading fertility technology with genuine empathy, ensuring every couple’s unique journey is guided by both innovation and understanding.',
-    image: '/images/OurStory1.png',
+    title: 'Connect With Us',
+    heading: 'Begin your treatment journey',
+    description: [
+    'Fill the form and our team will guide you',
+    'Clear answers to your doubts',
+    'A personalized treatment plan',
+    'Duration with checklist',
+    'Pre & post-treatment guidance',
+  ],
+    image: '/InternationalPatients/connect.png',
   },
   {
     storyNumber: '02',
-    title: 'Walking Beside You Always',
-    heading: 'Support that never stops.',
+    title: 'Secure Your Visa',
+    heading: 'Confirm your treatment & travel',
     description:
-      'From your first appointment to life beyond treatment, we’re by your side — ready to listen, reassure, and guide you through every step.',
-    image: '/images/OurStory2.png',
+      'Once treatment and travel dates are confirmed, we issue a letter for your medical visa. Sharing your flight details with us is essential at this stage.',
+    image: '/InternationalPatients/visa.png',
   },
   {
     storyNumber: '03',
-    title: 'Turning Hope into Life',
-    heading: 'Proven results, real stories.',
+    title: 'Arrive & Begin Treatment',
+    heading: 'We’re with you at every step',
     description:
-      'With thousands of success stories and a commitment to ethical care, we’ve helped countless couples make their dream of parenthood a reality.',
-    image: '/images/OurStory3.png',
+      'Upon arrival in India, our team welcomes you, helps complete airport formalities, and arranges your appointment at Progenesis.',
+    image: '/InternationalPatients/arrive.png',
   },
 ];
 
-const OurStories: React.FC = () => {
+const Journey: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
@@ -41,9 +46,9 @@ const OurStories: React.FC = () => {
           <div className="flex flex-col gap-8 lg:gap-12">
             {/* Heading */}
             <div>
-              <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" >Why choose us</span>
+              <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" >Your Journey, Made Simple</span>
               <h2 className="text-4xl lg:text-5xl font-normal text-[#2C2C2C] leading-[56px] tracking-tight font-[Manrope]">
-                Our Story
+                Your Steps to Begin
               </h2>
             </div>
 
@@ -90,8 +95,7 @@ const OurStories: React.FC = () => {
           <div className="flex flex-col gap-10">
             {/* Paragraph (top of right column) */}
             <p className="text-lg lg:text-[32px] leading-[36px] text-[#2C2C2C] tracking-tight font-[Manrope]">
-              We believe every hopeful parent deserves a team that listens, cares, and fights to make
-              dreams a reality — with science, empathy, and unwavering support.
+             A clear, step-by-step process to make your fertility treatment in India smooth, transparent, and stress-free.
             </p>
 
             {/* Image + Info Box */}
@@ -124,16 +128,15 @@ const OurStories: React.FC = () => {
         <div className="flex flex-col gap-6 md:gap-8 lg:hidden">
           {/* Mobile heading */}
           <div>
-            <span className="inline-block bg-[#E9F0FF] text-[#1656A5] text-[12px] px-3 py-2 rounded-[8px]">Why choose us</span>
+            <span className="inline-block bg-[#E9F0FF] text-[#1656A5] text-[12px] px-3 py-2 rounded-[8px]">Your Journey, Made Simple</span>
             <h2 className="text-3xl font-normal text-[#2C2C2C] leading-[42px] tracking-tight font-[Manrope]">
-              Our Story
+             Your Steps to Begin
             </h2>
           </div>
 
           {/* Intro paragraph */}
           <p className="text-base leading-[28px] text-[#2C2C2C] tracking-tight font-[Manrope]">
-            We believe every hopeful parent deserves a team that listens, cares, and fights to make
-            dreams a reality — with science, empathy, and unwavering support.
+            A clear, step-by-step process to make your fertility treatment in India smooth, transparent, and stress-free.
           </p>
 
           {/* All stories stacked */}
@@ -166,4 +169,4 @@ const OurStories: React.FC = () => {
     </section>
   );
 };
-export default OurStories;
+export default Journey;
