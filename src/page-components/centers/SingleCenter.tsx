@@ -121,13 +121,13 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                       }
                     }}
                     disabled={!selectedCenter.mapUri}
-                    className="px-8 py-3 rounded-lg border border-[#1656A5] text-white bg-[#1656A5] text-sm font-medium hover:bg-white hover:text-[#1656A5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-8 py-3 rounded-lg border hover:cursor-pointer border-[#1656A5] text-white bg-[#1656A5] text-sm font-medium hover:bg-white hover:text-[#1656A5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Get Location
                   </button>
                   <button
                     onClick={() => setIsOpen(true)}
-                    className="px-8 py-3 rounded-lg border border-[#1656A5] bg-white text-[#1656A5] text-sm font-medium hover:bg-[#1656A5] hover:text-white transition-colors"
+                    className="px-8 py-3 rounded-lg border hover:cursor-pointer border-[#1656A5] bg-white text-[#1656A5] text-sm font-medium hover:bg-[#1656A5] hover:text-white transition-colors"
                   >
                     Book an Appointment
                   </button>
