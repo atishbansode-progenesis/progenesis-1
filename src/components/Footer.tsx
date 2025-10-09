@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-      className="relative w-full h-[120vh] flex flex-col justify-between bg-cover text-white"
+      className="relative w-full min-h-[120vh] flex flex-col justify-between bg-cover text-white"
       style={{ backgroundImage: "url('/footer.png')" }}
     >
       <div className="absolute inset-0 bg-black/25" />

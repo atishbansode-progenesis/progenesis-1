@@ -32,7 +32,7 @@ const OpinionNav: React.FC = () => {
                 style={{padding:'8px'}}
                 onClick={() => handleScroll(t.id)}
                 className={[
-                  "min-w-[180px] h-10 px-5 inline-flex items-center justify-center rounded-[12px] text-sm font-medium transition-colors",
+                  "min-w-[251px] h-[56px] rounded-[18px]  inline-flex items-center justify-center text-[14px] font-medium transition-colors",
                   isActive
                     ? "bg-[#1656A5] text-[#F9F9F9] shadow"
                     : "bg-[#F9F9F9] text-[#1656A5] border border-[#1656A5]/60 hover:bg-[#1656A5]/5",

@@ -491,7 +491,7 @@ const TreatmentsSection = () => {
             <h2 className="text-[48px] md:text-5xl font-light text-[#2c2c2c] mb-6">
               Being India’s Best Fertility & IVF Center. We Specialize in:
             </h2>
-            <button className="px-[14px] md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] text-[12px] md:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
+            <button className="px-[14px] cursor-pointer md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] text-[12px] md:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
               View all treatments
             </button>
           </div>

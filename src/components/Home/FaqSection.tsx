@@ -1,232 +1,155 @@
+"use client";
 import React, { useState } from "react";
 
-const categories = [
-  "General",
-  "Treatment-Specific",
-  "Fertility-Related",
-  "Others",
-];
+type QA = { q: string; a: string };
 
-const faqs = {
-  "General": [
-    {
-      q: "What is infertility?",
-      a: "Inability to get pregnant after a year under 35, or 6 months over 35, may indicate infertility. Consult a fertility specialist to determine the cause and get treatment.",
-    },
-    {
-      q: "What causes infertility?",
-      a: "It can be caused by issues in either partner or both. Medical evaluation is required.",
-    },
-    {
-      q: "What can cause infertility in Women?",
-      a: "Common causes include ovulation disorders, blocked fallopian tubes, endometriosis, and age-related factors.",
-    },
-    {
-      q: "How Common is Infertility?",
-      a: "Roughly 1 in 8 couples experience infertility issues globally.",
-    },
-    {
-      q: "What can cause infertility in Men?",
-      a: "Low sperm count, poor motility, lifestyle factors, and hormonal imbalances.",
-    },
-    {
-      q: "When should I seek consultation for infertility?",
-      a: "If you’ve been trying for over a year (or 6 months if over 35), it’s time to consult a specialist.",
-    },
-     {
-      q: "Can lifestyle affect fertility?",
-      a: "Yes, adopting a healthy lifestyle with balanced nutrition, regular exercise, avoiding tobacco and excessive alcohol, and managing stress can improve fertility outcomes for both men and women.",
-    },
-  ],
-  "Treatment-Specific": [
-    {
-      q: "What treatments are available for infertility?",
-      a: "Treatments include medication for ovulation issues, surgical procedures for blockages, IUI, IVF, and methods to assist fertilization or embryo development.",
-    },
-    {
-      q: "Is IVF the only option at Progenesis?",
-      a: "No, Progenesis offers a comprehensive range of treatments including IUI, targeted medications, laparoscopic surgeries, and assisted reproductive techniques in addition to IVF.",
-    },
-    {
-      q: "Is IVF the only option at Progenesis?",
-      a: "No, Progenesis offers a comprehensive range of treatments including IUI, targeted medications, laparoscopic surgeries, and assisted reproductive techniques in addition to IVF.",
-    },
-    {
-      q: "How long does IVF treatment take?",
-      a: "Typically, one IVF cycle spans about 4 to 6 weeks, encompassing ovarian stimulation, egg retrieval, fertilization, embryo culture, and embryo transfer into the uterus.",
-    },
-    {
-      q: "Is IVF painful?",
-      a: "IVF itself involves minor discomfort; egg retrieval may cause some pain but is conducted under sedation or anesthesia to minimize discomfort.",
-    },
-    {
-      q: "How many times can IVF be tried?",
-      a: "The number of IVF cycles varies by individual cases, but generally, 1 to 3 cycles are common, with personalized plans based on patient response and success rates.",
-    },
-    {
-      q: "What lifestyle changes improve IVF success?",
-      a: "Yes, maintaining a healthy diet, regular physical activity, quitting smoking, and reducing stress levels can positively influence IVF outcomes.",
-    },
-     {
-      q: "Are donor eggs or sperm available?",
-      a: "Yes, Progenesis offers donor sperm and egg services for patients who require these options to increase their chances of conception.",
-    },
-  ],
-  "Fertility-Related": [
-    {
-      q: "When is genetic testing advised?",
-      a: "Genetic testing is recommended for couples with a history of genetic disorders, recurrent miscarriages, or unsuccessful IVF attempts to ensure healthier pregnancy outcomes.",
-    },
-    {
-      q: "What does PGT-A mean in fertility treatments?",
-      a: "Preimplantation Genetic Testing for Aneuploidy (PGT-A) is a genetic screening performed on embryos to detect chromosomal abnormalities before implantation during IVF.",
-    },
-    {
-      q: "Is male infertility treatable?",
-      a: "Many forms of male infertility can be treated effectively through medication, surgical correction of abnormalities, or assisted reproductive technologies like ICSI.",
-    },
-    {
-      q: "How does age affect fertility?",
-      a: "Fertility naturally declines with age, especially in women after age 35, affecting both the quantity and quality of eggs and potentially decreasing IVF success rates.",
-    },
-    {
-      q: "Are fertility treatments safe??",
-      a: "Most fertility treatments are considered safe with minimal side effects, although risks vary depending on the specific treatment and individual health factors.",
-    },
-    {
-      q: "What is fertility preservation?",
-      a: "Fertility preservation involves freezing eggs, sperm, or embryos to maintain reproductive potential, often recommended before medical treatments that may compromise fertility.",
-    },
-    {
-      q: "Can secondary infertility affect couples?",
-      a: "Yes, secondary infertility refers to difficulty conceiving after already having one or more biological children and can have different causes than primary infertility.",
-    },
-  ],
-  "Others": [
-    {
-      q: "How can I access my fertility test results?",
-      a: "Test results are usually shared through your physician during consultations; many clinics also provide online portals for convenient access to results.",
-    },
-    {
-      q: "Does Progenesis offer financing for fertility treatments?",
-      a: "Yes, financing options including installment plans and collaborations with third-party financial services are available to help patients manage treatment costs.",
-    },
-    {
-      q: "Is genetic counseling available?",
-      a: "Genetic counseling services are offered to discuss test results, assess risks, and explore reproductive options based on individual genetic information.",
-    },
-    {
-      q: "Are fertility treatment plans personalized?",
-      a: "All treatment plans at Progenesis are tailored to each patient’s unique medical history, diagnosis, and fertility goals to ensure the most effective approach.",
-    },
-    {
-      q: "Can I get second opinions on fertility treatments?",
-      a: "Progenesis encourages patients to seek second opinions and provides detailed treatment records to support informed decisions.",
-    },
-    {
-      q: "Can I use a known sperm or egg donor for treatment?",
-      a: "Yes, Progenesis facilitates treatment using known donors following thorough medical and psychological screening.",
-    },
-    {
-      q: "How are donor candidates screened for safety?",
-      a: "Donor candidates undergo comprehensive medical evaluations including genetic testing and screening for infectious diseases to ensure donor and recipient safety.",
-    },
-  ],
+type Tab = {
+  label: string;
+  items: QA[];
 };
 
-const FaqSection = () => {
-  const [activeCategory, setActiveCategory] = useState("General");
-  const [openIndex, setOpenIndex] = useState(null);
+const tabs: Tab[] = [
+  {
+    label: "General",
+    items: [
+      {
+        q: "What is infertility?",
+        a: "Inability to get pregnant after a year under 35, or 6 months over 35, may indicate infertility. Consult a fertility specialist to determine the cause and get treatment.",
+      },
+      { q: "What causes infertility?", a: "Infertility can be caused by ovulation issues, low sperm count or motility, blocked tubes, hormonal problems, age, lifestyle, or unexplained factors." },
+      { q: "What can cause infertility in Women?", a: "Common causes include PCOS, endometriosis, tubal blockage, ovulation disorders, thyroid imbalance, and age-related decline." },
+      { q: "How Common is infertility?", a: "Roughly 10–15% of couples experience infertility, and many benefit from timely evaluation and treatment." },
+      { q: "What can cause infertility in Men?", a: "Low sperm count, poor motility or morphology, infections, varicocele, hormonal issues, or lifestyle factors can contribute." },
+      { q: "When should I seek consultation for infertility?", a: "Seek consultation after 12 months of trying (or 6 months if over 35), or earlier if you have known medical concerns." },
+      { q: "What can cause infertility in Men?", a: "Evaluation by a specialist can identify causes and guide options like lifestyle changes, medication, IUI, or IVF." },
+      { q: "Can I improve my fertility?", a: "Yes, adopting a healthy lifestyle with balanced nutrition, regular exercise, avoiding tobacco and excessive alcohol, and managing stress can improve fertility outcomes for both men and women." },
+    ],
+  },
+  {
+    label: "Pricing & Packages",
+    items: [
+      { q: "Do you offer packages?", a: "Yes, we offer transparent packages tailored to treatment needs. Contact our team for current details." },
+      { q: "Are there financing options?", a: "We can guide you to financing partners and flexible payment schedules where available." },
+      { q: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.", a: "Are there financing options available?" },
+    ],
+  },
+  {
+    label: "Treatment-Specific",
+    items: [
+      { q: "What is IVF?", a: "IVF involves fertilizing an egg with sperm in a lab and transferring the embryo into the uterus." },
+      { q: "What is IUI?", a: "IUI places processed sperm directly into the uterus around ovulation to improve chances of fertilization." },
+      { q: "How long does IVF treatment take?", a: "Typically, one IVF cycle spans about 4 to 6 weeks, encompassing ovarian stimulation, egg retrieval, fertilization, embryo culture, and embryo transfer into the uterus." },
+      { q: "How many IVF cycles are required?", a: "The number of IVF cycles varies by individual cases, but 1 to 3 cycles are common, with personalized plans based on patient response and success rates." },
+      { q: "Is IVF painful?", a: "IVF itself involves minor discomfort; egg retrieval may cause some pain but is conducted under sedation or anesthesia to minimize discomfort." },
+    ],
+  },
+  {
+    label: "Fertility-Related",
+    items: [
+      { q: "Does age affect fertility?", a: "Yes. Fertility declines with age, especially after 35 in women, and gradually in men over time." },
+      { q: "Can lifestyle affect fertility?", a: "Nutrition, sleep, stress, weight, and smoking/alcohol can all influence fertility outcomes." },
+      { q: "What is male infertility?", a: "Male infertility can be caused by low sperm count, poor motility, hormonal imbalances, or structural issues, and many forms can be treated effectively through medication, surgical correction of abnormalities, or assisted reproductive technologies like ICSI." },
+      { q: "How does age affect fertility?", a: "Fertility naturally declines with age, especially in women after age 35, affecting both the quantity and quality of eggs and potentially decreasing IVF success rates." },
+      { q: "Are fertility treatments safe?", a: "Most fertility treatments are considered safe with minimal side effects, though risks vary depending on the specific treatment and individual health factors." },
+      { q: "Can secondary infertility relate to difficulty conceiving after having one or more biological children and can have different causes than primary infertility?", a: "Yes, secondary infertility relates to difficulty conceiving after having one or more biological children and can have different causes than primary infertility." },
+    ],
+  },
+  {
+    label: "Others",
+    items: [
+      { q: "How long does a consult take?", a: "Typically 30–45 minutes for the first visit, depending on tests and history." },
+      { q: "Do I need a referral?", a: "No referral is required. You can book directly with our clinic." },
+      { q: "How can I access my fertility test results?", a: "Test results are usually shared through your physician during consultations; many clinics also provide online portals for convenient access to results." },
+      { q: "Can I get a second opinion on fertility treatments?", a: "Yes, Progenesis offers second opinions and provides detailed treatment records to support informed decisions." },
+      { q: "Can I use a known sperm/egg donor for treatment?", a: "Yes, Progenesis facilitates the use of known donors following thorough medical and psychological screening." },
+      { q: "Are donor candidates screened for safety?", a: "Donor candidates undergo comprehensive medical evaluations including genetic testing and screening for infectious diseases to ensure donor and recipient safety." },
+    ],
+  },
+];
 
-  const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+const FaQ: React.FC = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  // By default, no question is open
+  const [openIndex, setOpenIndex] = useState(-1);
+
+  const handleTab = (idx: number) => {
+    setActiveTab(idx);
+    // reset open state, no question open by default
+    setOpenIndex(-1);
   };
+
+  const activeItems = tabs[activeTab].items;
 
   return (
     <section className="bg-[#fafafa] pt-[42px] md:h-auto md:pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
-      <div className="mx-auto grid lg:grid-cols-2 gap-1 md:pr-[80px]">
-        {/* Header / Intro */}
-        <div className="mb-6">
-          <span className="inline-block bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full">
-            FAQ’s
-          </span>
-
-          <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 leading-tight">
-            Quick answers to the{" "}
-            <span className="text-[#94BA3D]">most common fertility-related questions.</span>
-          </h2>
-
-          <p className="mt-4 text-sm text-gray-600">
-            Didn’t find what you are looking for?<br></br>Checkout {" "}
-            <a href="#" className="text-blue-600 font-semibold underline">
-              Patient Resources
-            </a>{" "}
-            section to know more.
+      <div className="grid grid-cols-1 md:grid-cols-[360px_1fr] lg:grid-cols-[420px_1fr] gap-6 md:gap-8 lg:gap-10">
+        {/* Left intro */}
+        <div>
+          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px]">FAQ's</span>
+          <div style={{paddingBottom:'20px'}}>
+          <h2 className="text-[36px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
+            Quick answers to the
+            
+            <span className="text-[#94BA3D]"> most common</span>
+            <br />
+            <span className="text-[#94BA3D]">fertility-related</span>
+            <br />
+           <span className="text-[#94BA3D]">questions.</span> 
+          </h2></div>
+          <p className="mt-6 text-[13px] md:text-[16px] md:leading-6 font-normal text-[#2C2C2C]">
+            Didn’t find what you are looking for?
+            <br />
+            Checkout <span className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px] ">Patient Resources</span> section to know more.
           </p>
         </div>
 
-
+        {/* Right content */}
         <div>
-
           {/* Tabs */}
-
-          <div className="flex flex-wrap gap-3 mb-6">
-            {categories.map((cat) => {
-              const active = activeCategory === cat;
+          <div className="flex flex-wrap gap-2 mb-6" >
+            {tabs.map((t, idx) => {
+              const active = idx === activeTab;
               return (
                 <button
-                  key={cat}
-                  onClick={() => {
-                    setActiveCategory(cat);
-                    setOpenIndex(null);
-                  }}
-                  className={
-                    "px-4 py-2 rounded-lg text-sm font-medium transition focus:outline-none " +
-                    (active
-                      ? "bg-blue-600 text-white"
-                      : "bg-white text-blue-600 border border-blue-600 hover:bg-blue-50")
-                  }
+                  key={t.label}
+                  onClick={() => handleTab(idx)}
+                  className={`h-[56px] w-auto px-4 rounded-[16px] border text-sm font-medium hover:cursor-pointer transition-colors ${
+                    active
+                      ? "bg-[#1656A5] text-white border-[#1656A5]"
+                      : "bg-[#FFFFFF] text-[#1656A5] border-[#1656A5] "
+                  }`}
+                  
                 >
-                  {cat}
+                  {t.label}
                 </button>
               );
             })}
           </div>
 
-
-          {/* Accordion */}
+          {/* Accordion list */}
           <div className="space-y-3">
-            {faqs[activeCategory].map((item, idx) => {
-              const opened = openIndex === idx;
+            {activeItems.map((item, i) => {
+              const open = i === openIndex;
               return (
-                <div key={idx} className="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div
+                  key={i}
+                  className={`bg-[#FFFFFF] overflow-hidden rounded-[16px] ${
+                    open 
+                  }`}
+                >
                   <button
-                    onClick={() => toggleFaq(idx)}
-                    aria-expanded={opened}
-                    className="w-full text-left px-4 py-4 flex items-center justify-between"
+                    aria-expanded={open}
+                    onClick={() => setOpenIndex(open ? -1 : i)}
+                    className="w-full flex items-center justify-between gap-3 hover:cursor-pointer text-left md:py-4 py-4 rounded-2xl  text-[14px] md:text-[15px] text-[#2C2C2C]"
                   >
-                    <span className="text-gray-900 text-base font-medium">{item.q}</span>
-                    <span className="ml-3">
-                      {opened ? (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                          <path d="M18 15l-6-6-6 6" stroke="#2C2C2C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      ) : (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                          <path d="M6 9l6 6 6-6" stroke="#2C2C2C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      )}
-                    </span>
+                    <span className="pl-4 pr-2">{item.q}</span>
+                    <span className="text-gray-500 pr-2">{open ? <img src='/images/icons/upward.svg' className="w-[10px] h-[10px] object-contain" /> : <img src='/images/icons/downward.svg' className="w-[10px] h-[10px] object-contain" />}</span>
                   </button>
-
-                  <div
-                    className={`px-4 pb-4 transition-all duration-200 ${opened ? "pt-0" : "hidden"
-                      }`}
-                  >
-                    {opened && (
-                      <p className="text-gray-700 text-sm leading-relaxed">{item.a}</p>
-                    )}
-                  </div>
+                  {open && (
+                    <div className="pl-4 pb-4 pr-4  text-left md:text-[16px] md:leading-6 text-[14px] text-[#4B5563]" >
+                      {item.a}
+                    </div>
+                  )}
                 </div>
               );
             })}
@@ -237,4 +160,4 @@ const FaqSection = () => {
   );
 };
 
-export default FaqSection;
+export default FaQ;
