@@ -301,7 +301,7 @@ export default function LocationsSection() {
           {/* Right: Dynamic Image */}
           <div className="w-full md:w-2/3">
             <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-[1115px] h-[450px]">
-              <AnimatePresence mode="wait">
+              <motion.div className="relative w-full h-full">
                 <motion.div
                   key={activeLocation.image}
                   initial={{ opacity: 0 }}
@@ -322,7 +322,7 @@ export default function LocationsSection() {
                     priority
                   />
                 </motion.div>
-              </AnimatePresence>
+              </motion.div>
             </div>
 
           </div>
