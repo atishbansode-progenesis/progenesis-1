@@ -57,14 +57,14 @@ const LeadershipTeam: React.FC = () => {
     <div className="w-full flex flex-col">
       {/* 1️⃣ Hero Section */}
       <section
-        className="relative w-full h-[250px] md:h-[350px] flex items-center justify-start px-6 md:px-24 bg-cover bg-center"
+        className="relative w-full h-[250px] md:h-[500px] flex  px-6 md:px-24 pt-6 lg:pt-20 bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/leadership-bg.png')",
         }}
       >
-        <div className="relative z-10">
+        <div className="relative z-10" >
           {/* Breadcrumb */}
-          <nav className="text-sm text-gray-600 mb-6">
+          <nav className="text-sm text-gray-600 mb-6 ">
             <button
               onClick={() => (window.location.href = "/")}
               className="hover:cursor-pointer"
@@ -95,8 +95,8 @@ const LeadershipTeam: React.FC = () => {
 
 {/* Desktop / tablet heading (2 lines) */}
 <h1
-  className="hidden sm:block lg:text-[80px] md:text-5xl font-semibold"
-  style={{ color: "#252525", fontFamily: "Manrope" }}
+  className="hidden  sm:block lg:text-[60px] md:text-5xl font-semibold"
+  style={{ color: "#252525"}}
 >
   The Team Leading With <br />
   Expertise & Compassion
