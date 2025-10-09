@@ -57,7 +57,7 @@ const WhyProgenesis: React.FC = () => {
       className="w-full bg-[#1656A50D] px-6 lg:px-[90px] py-12 lg:py-16 section-spacing"
     >
       {/* ✅ Below lg = single column (mobile/tablet), lg+ = two columns */}
-      <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 lg:gap-10 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 lg:gap-18 items-start">
         {/* Left column */}
         <div>
           <div className="why-bott-pad">

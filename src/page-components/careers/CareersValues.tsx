@@ -75,7 +75,7 @@ const CareersValues = () => {
           alt={item.title}
           className="w-[19px] h-[19px] md:w-8 md:h-8 object-contain"
         />
-        <h3 className="font-manrope text-[16px] md:text-[32px] font-semibold text-gray-900 ">
+        <h3 className="font-normal text-[16px] md:text-[25px] text-gray-900 ">
           {item.title}
         </h3>
       </div>
