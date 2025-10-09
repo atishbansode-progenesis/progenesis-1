@@ -204,7 +204,7 @@ const HeroCarousel = () => {
       title: "What would you like to know about your fertility journey?",
       buttons: [
         { label: "Book Your Appointment", href: "/appointment" },
-        { label: "Check My Fit", href: "/check-fit" },
+        { label: "Find My Right Treatment", href: "/treatments" },
       ],
     },
     {

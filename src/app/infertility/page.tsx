@@ -147,6 +147,42 @@ const Infertility: React.FC = () => {
     },
   ];
 
+  const causes = [
+    {
+      title: "Repeated IUI Failures",
+      image: "/infertility/infertility1.png", // replace with actual path
+    },
+    {
+      title: "Repeated IVF Failures",
+      image: "/infertility/infertility2.png",
+    },
+    {
+      title: "Pregnancy after Menopause",
+      image: "/infertility/infertility3.png",
+    },
+    {
+      title: "Low AMH",
+      image: "/infertility/infertility4.png", // replace with actual path
+    },
+    {
+      title: "PCOS",
+      image: "/infertility/infertility5.png",
+    },
+    {
+      title: "Tubal Blockage",
+      image: "/infertility/infertility6.png",
+    },
+    {
+      title: "Fibroids",
+      image: "/infertility/infertility7.png", // replace with actual path
+    },
+    {
+      title: "Endometriosis",
+      image: "/infertility/infertility8.png",
+    },
+  ];
+
+
   const [activeTab, setActiveTab] = useState<string>("path");
 
   const handleScroll = (id: string) => {
@@ -291,7 +327,7 @@ const Infertility: React.FC = () => {
               </Link>
             ))}
           </div> */}
-          
+
           <div className="mt-[80px] md:mt-[100px] lg:mt-[220px]">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {causes.map((item, idx) => (
@@ -319,25 +355,25 @@ const Infertility: React.FC = () => {
                   </h3>
                   {/* Image */}
                   <div
-          className="
+                    className="
             flex justify-center items-center
             w-full h-[180px] md:h-[220px]
             mt-[40px] md:mt-[56px]
           "
-        >
-          <Image
-            src={item.image}
-            alt={item.title}
-            width={200}
-            height={200}
-            className="
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={200}
+                      height={200}
+                      className="
               w-auto h-full object-contain
               mix-blend-multiply
             "
-            style={{ mixBlendMode: 'multiply' }}
-            priority={false}
-          />
-        </div>
+                      style={{ mixBlendMode: 'multiply' }}
+                      priority={false}
+                    />
+                  </div>
 
 
 
@@ -347,7 +383,7 @@ const Infertility: React.FC = () => {
               ))}
             </div>
           </div>
-          
+
 
 
         </div>
@@ -382,51 +418,53 @@ const Infertility: React.FC = () => {
           </div>
 
           {/* Responsive 3-Card Grid */}
-          <div
-            className="
-    grid mt-[80px]
-    gap-[21px]
-    grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
-    justify-center xl:justify-start
-  "
-          >
-            {maleInfertilityIssues.map((item) => (
-              <Link
-                key={item.id}
-                href={`/infertility/${item.slug}`}
-                className="
-        flex flex-col items-center justify-between
-        w-[100%] sm:w-[520px] md:w-[540px] xl:w-[546px]
-        h-[444px]
-        px-6 pt-6 pb-[70px] gap-[40px]
-        bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6]
-        rounded-2xl shadow-sm hover:shadow-md transition hover:bg-[#E6F0FF]
-        flex-shrink-0
-      "
-              >
-                <h3
-                  className="
-          text-[#2C2C2C]
-          text-[20px] md:text-[24px]
-          leading-[28px] md:leading-[36px]
-          font-normal text-center font-[Manrope]
-        "
-                >
-                  {item.title}
-                </h3>
 
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="
-          w-[200px] h-[180px]
-          md:w-[280px] md:h-[240px]
-          object-contain mix-blend-multiply
+        <div className="mt-[80px] md:mt-[100px] lg:mt-[220px] px-4 md:px-8 lg:px-[80px]">
+  <div
+    className="
+      grid
+      gap-6 md:gap-8 xl:gap-10
+      grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
+      place-items-center
+    "
+  >
+    {maleInfertilityIssues.map((item) => (
+      <Link
+        key={item.id}
+        href={`/infertility/${item.slug}`}
+        className="
+          flex flex-col items-center justify-between
+          w-full sm:max-w-[480px] md:max-w-[500px] xl:max-w-[520px]
+          h-[420px] md:h-[444px]
+          px-6 pt-6 pb-[70px] gap-[40px]
+          bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6]
+          rounded-2xl shadow-sm hover:shadow-md transition hover:bg-[#E6F0FF]
         "
-                />
-              </Link>
-            ))}
-          </div>
+      >
+        <h3
+          className="
+            text-[#2C2C2C]
+            text-[20px] md:text-[24px]
+            leading-[28px] md:leading-[36px]
+            font-normal text-center font-[Manrope]
+          "
+        >
+          {item.title}
+        </h3>
+
+        <img
+          src={item.image}
+          alt={item.title}
+          className="
+            w-[180px] h-[160px]
+            md:w-[260px] md:h-[220px]
+            object-contain mix-blend-multiply
+          "
+        />
+      </Link>
+    ))}
+  </div>
+</div>
 
         </div>
       </section>

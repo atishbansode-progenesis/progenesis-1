@@ -141,7 +141,7 @@ export default function LocationsSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-8">
           <div className="md:flex-1">
-            <span className="inline-block text-xs md:text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-4">
+            <span className="inline-block text-xs md:text-sm font-medium  bg-[#1656A510] text-[#1656A5] px-3 py-1 rounded-full mb-4">
               Trusted Guidance Everywhere.
             </span>
 
@@ -152,7 +152,7 @@ export default function LocationsSection() {
 
           <div className="md:flex-none flex items-end">
             <Link href="/centers">
-              <button className="px-4 md:px-6 py-2 border border-blue-600 text-blue-600 rounded-lg transition text-sm hover:bg-blue-600 hover:text-white">
+              <button className="px-4 md:px-6 py-2 border border-[#1656A5] text-[#1656A5]  rounded-lg transition text-sm hover:bg-[#1656A5]  hover:text-white">
                 View all Centers
               </button>
             </Link>
@@ -177,7 +177,7 @@ export default function LocationsSection() {
                       onClick={() => toggleCity(loc.city)}
                       onMouseEnter={() => setActiveLocation(loc)}
                       animate={{
-                        backgroundColor: isOpen ? "rgb(37, 99, 235)" : "rgb(249, 250, 251)",
+                        backgroundColor: isOpen ? "#1656A5" : "rgb(249, 250, 251)",
                         color: isOpen ? "white" : "rgb(17, 24, 39)"
                       }}
                       transition={{ duration: 0.3 }}
@@ -230,7 +230,7 @@ export default function LocationsSection() {
                               <div className="pr-3">
                                 <h4
                                   className={`text-base font-semibold ${isActive
-                                      ? "text-blue-700"
+                                      ? "text-[#1656A5]"
                                       : "text-gray-900"
                                     }`}
                                 >
@@ -242,7 +242,7 @@ export default function LocationsSection() {
                               </div>
                               <div
                                  className={`flex items-center justify-center rounded-full px-[24px] py-[16px]  ${isActive
-                                  ? "bg-blue-600 text-white"
+                                  ? "bg-[#1656A5] text-white"
                                   : "bg-black text-white"
                                 }`}
                               >
@@ -276,7 +276,7 @@ export default function LocationsSection() {
                 >
                   <div className="pr-3">
                     <h3
-                      className={`text-lg md:text-xl font-semibold ${isActive ? "text-blue-700" : "text-gray-900"
+                      className={`text-lg md:text-xl font-semibold ${isActive ? "text-[#1656A5]" : "text-gray-900"
                         }`}
                     >
                       {loc.city}
@@ -285,7 +285,7 @@ export default function LocationsSection() {
                   </div>
                   <div
                     className={`flex items-center justify-center rounded-full px-[24px] py-[16px]  ${isActive
-                        ? "bg-blue-600 text-white"
+                        ? "bg-[#1656A5] text-white"
                         : "bg-black text-white"
                       }`}
                   >
@@ -301,7 +301,7 @@ export default function LocationsSection() {
           {/* Right: Dynamic Image */}
           <div className="w-full md:w-2/3">
             <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-[1115px] h-[450px]">
-              <AnimatePresence mode="wait">
+              <motion.div className="relative w-full h-full">
                 <motion.div
                   key={activeLocation.image}
                   initial={{ opacity: 0 }}
@@ -322,7 +322,7 @@ export default function LocationsSection() {
                     priority
                   />
                 </motion.div>
-              </AnimatePresence>
+              </motion.div>
             </div>
 
           </div>
