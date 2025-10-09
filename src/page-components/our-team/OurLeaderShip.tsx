@@ -83,24 +83,24 @@ const LeadershipTeam: React.FC = () => {
           </nav>
 
           {/* Heading */}
-         {/* Mobile-only heading (3 lines) */}
-<h1
-  className="block sm:hidden text-[32px]  font-semibold leading-snug"
-  style={{ color: "#252525", fontFamily: "Manrope" }}
->
-  The Team Leading <br />
-  With Expertise & <br />
-  Compassion
-</h1>
+          {/* Mobile-only heading (3 lines) */}
+          <h1
+            className="block sm:hidden text-[32px]  font-semibold leading-snug"
+            style={{ color: "#252525", fontFamily: "Manrope" }}
+          >
+            The Team Leading <br />
+            With Expertise & <br />
+            Compassion
+          </h1>
 
-{/* Desktop / tablet heading (2 lines) */}
-<h1
-  className="hidden  sm:block lg:text-[60px] md:text-5xl font-semibold"
-  style={{ color: "#252525"}}
->
-  The Team Leading With <br />
-  Expertise & Compassion
-</h1>
+          {/* Desktop / tablet heading (2 lines) */}
+          <h1
+            className="hidden  sm:block lg:text-[60px] md:text-5xl font-semibold"
+            style={{ color: "#252525" }}
+          >
+            The Team Leading With <br />
+            Expertise & Compassion
+          </h1>
 
         </div>
       </section>
@@ -112,38 +112,36 @@ const LeadershipTeam: React.FC = () => {
         </span>
 
         <div className="flex items-center justify-between mb-10">
- 
-{/* Mobile-only heading (2 lines) */}
-<h2 className="block sm:hidden text-[24px] font-[400] text-black leading-snug">
-  Our directors lead with <br />
-  vision and dedication.
-</h2>
 
-{/* Desktop / tablet heading (original) */}
-<h2 className="hidden sm:block lg:text-[48px] text-[32px] md:text-4xl font-[400] text-black">
-  Our directors lead with vision <br /> and dedication.
-</h2>
+          {/* Mobile-only heading (2 lines) */}
+          <h2 className="block sm:hidden text-[24px] font-[400] text-black leading-snug">
+            Our directors lead with <br />
+            vision and dedication.
+          </h2>
+
+          {/* Desktop / tablet heading (original) */}
+          <h2 className="hidden sm:block lg:text-[48px] text-[32px] md:text-4xl font-[400] text-black">
+            Our directors lead with vision <br /> and dedication.
+          </h2>
 
 
           {/* 🔘 Toggle Button */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsGridView(true)}
-              className={`p-2 rounded-md ${
-                isGridView
+              className={`p-2 rounded-md cursor-pointer ${isGridView
                   ? "bg-[#1656A5] text-white"
                   : "bg-gray-200 text-gray-600"
-              }`}
+                }`}
             >
               <FaThLarge />
             </button>
             <button
               onClick={() => setIsGridView(false)}
-              className={`p-2 rounded-md ${
-                !isGridView
+              className={`p-2 rounded-md cursor-pointer ${!isGridView
                   ? "bg-[#1656A5] text-white"
                   : "bg-gray-200 text-gray-600"
-              }`}
+                }`}
             >
               <FaList />
             </button>
@@ -154,22 +152,20 @@ const LeadershipTeam: React.FC = () => {
         <div
           className={
             isGridView
-              ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6"
               : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           }
         >
           {teamMembers.map((member) => (
             <article
               key={member.id}
-              className={`bg-[#FFFFFF] rounded-lg overflow-hidden transition 
-                lg:hover:bg-[#F3F6FA] cursor-pointer
-                ${isGridView ? "text-center p-6" : "flex items-center lg:max-w-fit gap-4 p-4"}`}
+              className={`bg-[#FFFFFF] rounded-lg overflow-hidden transition cursor-pointer hover:bg-[#F3F6FA]
+                ${isGridView ? "text-center p-0 md:p-6" : "flex items-center lg:max-w-fit gap-4 p-4"}`}
               onClick={() => alert(`Clicked on ${member.name}`)}
             >
               <div
-                className={`relative ${
-                  isGridView ? "w-full h-60 mb-4" : "w-24 h-24 flex-shrink-0"
-                }`}
+                className={`relative ${isGridView ? "w-full h-60 mb-4" : "w-24 h-24 flex-shrink-0"
+                  }`}
               >
                 <Image
                   src={member.image}
@@ -182,9 +178,16 @@ const LeadershipTeam: React.FC = () => {
                 className={isGridView ? "" : "lg:max-w-[190px]"}
                 style={{ textAlign: "left" }}
               >
-                <h3 className="text-lg justify-content-center font-semibold text-[#1656A5]">
+                {isGridView?(
+                  <h3 className="text-[32px] font-normal justify-content-center text-[#1656A5]">
                   {member.name}
                 </h3>
+                ):(
+                  <h3 className="text-[16px] font-normal justify-content-center text-[#1656A5] lg:text-[24px] lg:line-height-[25px]">
+                  {member.name}
+                </h3>
+                )}
+                
                 <p className="text-sm text-gray-600">{member.role}</p>
               </div>
             </article>
