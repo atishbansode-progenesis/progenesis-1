@@ -12,132 +12,9 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import HeroSection from "../../components/HeroSection/herosection";
+import Journey from '../../components/Journey'
 
-
-
-const HeroSection = () => {
-  const [activeTab, setActiveTab] = useState("journey");
-
-
-  return (
-
-
-    <>
-      <section
-        className="relative w-full h-[500px] md:h-[600px] flex pl-[12px] md:pl-[120px] bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage: "/online-consultation/online_consultation_bg.png",
-        }}
-      >
-        {/* Blurred gradient shape */}
-        <div
-          className="absolute left-[-150px] top-[80px] w-[445px] h-[441px] rounded-full opacity-70"
-          style={{
-            background: "#94BA3D",
-            filter: "blur(250px)",
-            transform: "rotate(-2deg)",
-          }}
-        ></div>
-
-        {/* Left content */}
-        <div className="relative z-10 mt-2 md:mt-[85px] max-w-5xl">
-          <p className="text-[18px] text-gray-600 mb-2 md:mb-[44px]">
-            <Link href="/" className="hover:text-blue-700 transition-colors">
-              Home
-            </Link>
-            <span className="px-[12px]">›</span>
-            <span
-              className="inline-block px-3 py-1 rounded-md text-[18px] font-medium leading-[40px] tracking-[-0.36px] text-blue-700"
-            >
-              International Patient
-            </span>
-          </p>
-
-          <h1 className="md:text-[5rem] font-bold leading-tight mb-[44px] text-[#252525]">
-            IVF Treatment for International Patient
-          </h1>
-          <button className="mt-6 px-[20px] py-[16px] bg-black text-white rounded-[14px]">
-            Book Your Appointment
-          </button>
-        </div>
-
-        {/* Right image */}
-        <div className="hidden md:block relative w-[591px] h-[600px] ml-auto mr-[150px]">
-          <Image
-            src="/online-consultation/Backgroundshape.png"
-            alt="Background shape"
-            fill
-            className="object-contain object-bottom rounded-lg"
-          />
-          <Image
-            src="/InternationalPatients/hero_person.png"
-            alt="Doctor consultation"
-            fill
-            className="object-contain object-bottom rounded-lg "
-          />
-        </div>
-      </section>
-
-      <div className="flex flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[80px] bg-[#fff]">
-        {/* Journey */}
-        <button
-          type="button"
-          onClick={() => document.getElementById("journey-section")?.scrollIntoView({ behavior: "smooth" })}
-          className={`px-[20px] py-[16px] rounded-[16px] 
-      font-[Manrope] text-[14px] font-medium leading-[24px] 
-      tracking-[-0.28px] transition ${activeTab === "journey"
-              ? "bg-[#1656A5] text-white"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-            }`}
-        >
-          Start Your Journey Today
-        </button>
-
-        {/* Advanced Fertility Solutions */}
-        <button
-          type="button"
-          onClick={() => document.getElementById("fertility-section")?.scrollIntoView({ behavior: "smooth" })}
-          className={`px-[20px] py-[16px] rounded-[16px] 
-      font-[Manrope] text-[14px] font-medium leading-[24px] 
-      tracking-[-0.28px] transition ${activeTab === "fertility"
-              ? "bg-[#1656A5] text-white"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-            }`}
-        >
-          Advanced Fertility Solutions
-        </button>
-
-        {/* Patients Testimonial */}
-        <button
-          type="button"
-          onClick={() => document.getElementById("testimonial-section")?.scrollIntoView({ behavior: "smooth" })}
-          className={`px-[20px] py-[16px] rounded-[16px] 
-      font-[Manrope] text-[14px] font-medium leading-[24px] 
-      tracking-[-0.28px] transition ${activeTab === "testimonial"
-              ? "bg-[#1656A5] text-white"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-            }`}
-        >
-          Patients Testimonial
-        </button>
-
-        {/* Featured News & Media */}
-        <button
-          type="button"
-          onClick={() => document.getElementById("news-section")?.scrollIntoView({ behavior: "smooth" })}
-          className={`px-[20px] py-[16px] rounded-[16px] 
-      font-[Manrope] text-[14px] font-medium leading-[24px] 
-      tracking-[-0.28px] transition ${activeTab === "news"
-              ? "bg-[#1656A5] text-white"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-            }`}
-        >
-          Featured News & Media
-        </button>
-      </div>
-    </>
-  )
-};
 
 // ---------- Section 2 ----------
 const steps = [
@@ -180,7 +57,7 @@ const StepsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="journey-section" className="py-16 px-4 md:px-[80px] lg:px-[120px] bg-white">
+    <section id="journey-section" className="py-16 px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] bg-white">
       <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-1 items-start">
         {/* Left */}
         <div>
@@ -371,7 +248,7 @@ const TreatmentsSection = () => {
   return (
     <section ref={ref} id="fertility-section" className=" bg-white pt-[40px]">
       <div
-        className="px-4 md:px-[80px] lg:px-[120px] pt-4 py-3"
+        className="px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] pt-4 py-3"
         style={{
           position: "sticky",
           top: 0,
@@ -423,7 +300,7 @@ const TreatmentsSection = () => {
         </motion.div>
       </div>
 
-<div className="px-4 md:px-[80px] lg:px-[120px] py-[50px]">
+<div className="px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] py-[50px]">
   <div
     className="
       grid 
@@ -855,9 +732,22 @@ const AwardsSection = () => {
 export default function InternationalPatientsPage() {
   return (
     <main className="flex flex-col">
-      <HeroSection />
-      <StepsSection />
 
+
+      <HeroSection
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "International Patient", href: "international-patients/" },
+        ]}
+        title="IVF Treatment for <br/> International Patient"
+        buttonText="Book Your Appointment"
+        buttonLink="/book-appointment"
+        foregroundImage="/InternationalPatients/hero_person.png"
+        overlayImage="/online-consultation/heartbg.png"
+      />
+
+      <StepsSection />
+      <Journey />
       <GradientBanner text="Our specialists address your concerns, explain treatment steps, ensure safe care, and arrange hassle-free accommodation with comfort, transport, and support." />
 
       <TreatmentsSection />

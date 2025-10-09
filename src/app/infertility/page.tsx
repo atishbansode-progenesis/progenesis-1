@@ -315,7 +315,54 @@ const Infertility: React.FC = () => {
     { id: "fertility-mini-section", label: "Male Infertility Causes" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ];
-
+  const preservation = [
+    {
+      title: "Azoospermia",
+      image: "/infertility/Azoospermia.png", // replace with actual path
+    },
+    {
+      title: "Low Sperm Count",
+      image: "/infertility/LowSpermCount.png",
+    },
+    {
+      title: "Erectile Dysfunction (ED)",
+      image: "/infertility/ErectileDysfunction.png",
+    },
+  ];
+  const causes = [
+    {
+      title: "Repeated IUI Failures",
+      image: "/infertility/infertility1.png", // replace with actual path
+    },
+    {
+      title: "Repeated IVF Failures",
+      image: "/infertility/infertility2.png",
+    },
+    {
+      title: "Pregnancy after Menopause",
+      image: "/infertility/infertility3.png",
+    },
+    {
+      title: "Low AMH",
+      image: "/infertility/infertility4.png", // replace with actual path
+    },
+    {
+      title: "PCOS",
+      image: "/infertility/infertility5.png",
+    },
+    {
+      title: "Tubal Blockage",
+      image: "/infertility/infertility6.png",
+    },
+    {
+      title: "Fibroids",
+      image: "/infertility/infertility7.png", // replace with actual path
+    },
+    {
+      title: "Endometriosis",
+      image: "/infertility/infertility8.png",
+    },
+  ];
   const [activeTab, setActiveTab] = useState<string>("path");
 
   const handleScroll = (id: string) => {
@@ -340,42 +387,41 @@ const Infertility: React.FC = () => {
       />
 
       {/* CATEGORY BUTTONS */}
-     {/* 2️⃣ Category Tabs */}
-<div
-  className="
+      {/* 2️⃣ Category Tabs */}
+      <div
+        className="
     w-full bg-white 
     pt-[50px] pb-[80px]
     px-[12px] md:px-[80px] xl:px-[120px]
   "
->
-  <div
-    className="
+      >
+        <div
+          className="
       flex flex-wrap justify-start items-start gap-3 md:gap-4
       text-left
     "
-  >
-    {categories.map((cat) => (
-      <button
-        key={cat.id}
-        type="button"
-        onClick={() => handleScroll(cat.id)}
-        className={`
+        >
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              onClick={() => handleScroll(cat.id)}
+              className={`
           px-[10px] py-[10px] md:px-[20px] md:py-[16px]
           rounded-[8px] md:rounded-[16px]
           font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px]
           tracking-[-0.28px] transition-all duration-200
-          ${
-            activeTab === cat.id
-              ? "bg-[#1656A5] text-white shadow-md"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-          }
+          ${activeTab === cat.id
+                  ? "bg-[#1656A5] text-white shadow-md"
+                  : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+                }
         `}
-      >
-        {cat.label}
-      </button>
-    ))}
-  </div>
-</div>
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+      </div>
 
 
       {/* SECTION 1: What is Infertility */}
@@ -413,8 +459,8 @@ const Infertility: React.FC = () => {
               </h2>
             </div>
             <div className="flex-1">
-  <p
-    className="
+              <p
+                className="
       font-[Manrope] font-normal text-[#2C2C2C]
       text-[18px] leading-[28px] tracking-[-0.36px]
       md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
@@ -422,16 +468,16 @@ const Infertility: React.FC = () => {
       xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
       max-w-[832px]
     "
-  >
-    Female infertility can arise from various health conditions such as PCOS,
-    low AMH, fibroids, or blocked tubes. Understanding these issues early
-    helps in seeking appropriate medical care and treatments.
-  </p>
-</div>
+              >
+                Female infertility can arise from various health conditions such as PCOS,
+                low AMH, fibroids, or blocked tubes. Understanding these issues early
+                helps in seeking appropriate medical care and treatments.
+              </p>
+            </div>
           </div>
 
           {/* GRID (Fully Responsive) */}
-          <div
+          {/* <div
             className="
               grid gap-6 mt-[80px]
               grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4
@@ -469,7 +515,66 @@ const Infertility: React.FC = () => {
                 />
               </Link>
             ))}
+          </div> */}
+          
+          <div className="mt-[80px] md:mt-[100px] lg:mt-[220px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {causes.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="
+              flex flex-col justify-between items-center
+              relative overflow-hidden
+              rounded-[16px]
+              h-[370px] md:h-[444px]
+              bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
+              hover:bg-[rgba(22,86,165,0.12)] transition
+              p-6
+              flex-shrink-0
+            "
+                >
+                  {/* Title */}
+                  <h3 className="
+    text-[var(--Text_Black,#2C2C2C)]
+    font-[Manrope] font-normal
+    text-[24px] leading-[32px] tracking-[-0.64px]
+    md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
+          pt-[24px] pl-[24px]">
+                    {item.title}
+                  </h3>
+                  {/* Image */}
+                  <div
+          className="
+            flex justify-center items-center
+            w-full h-[180px] md:h-[220px]
+            mt-[40px] md:mt-[56px]
+          "
+        >
+          <Image
+            src={item.image}
+            alt={item.title}
+            width={200}
+            height={200}
+            className="
+              w-auto h-full object-contain
+              mix-blend-multiply
+            "
+            style={{ mixBlendMode: 'multiply' }}
+            priority={false}
+          />
+        </div>
+
+
+
+
+
+                </div>
+              ))}
+            </div>
           </div>
+          
+
+
         </div>
       </section>
 
@@ -486,8 +591,8 @@ const Infertility: React.FC = () => {
               </h2>
             </div>
             <div className="flex-1">
-  <p
-    className="
+              <p
+                className="
       font-[Manrope] font-normal text-[#2C2C2C]
       text-[18px] leading-[28px] tracking-[-0.36px]
       md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
@@ -495,62 +600,55 @@ const Infertility: React.FC = () => {
       xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
       max-w-[832px]
     "
-  >
-    Male infertility can result from issues like low sperm count, azoospermia, or erectile dysfunction. Recognizing these causes early is the first step toward effective treatment and improving the chances of conception.
-  </p>
-</div>
+              >
+                Male infertility can result from issues like low sperm count, azoospermia, or erectile dysfunction. Recognizing these causes early is the first step toward effective treatment and improving the chances of conception.
+              </p>
+            </div>
           </div>
 
-          {/* Responsive 3-Card Grid */}
-          <div
-  className="
-    grid mt-[80px]
-    gap-[21px]
-    grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
-    justify-center xl:justify-start
-  "
->
-  {[
-    { title: "Azoospermia", image: "/infertility/Azoospermia.png" },
-    { title: "Low Sperm Count", image: "/infertility/LowSpermCount.png" },
-    { title: "Erectile Dysfunction (ED)", image: "/infertility/ErectileDysfunction.png" },
-  ].map((item, idx) => (
-    <Link
-      key={idx}
-      href="/dummy-page"
-      className="
-        flex flex-col items-center justify-between
-        w-[100%] sm:w-[520px] md:w-[540px] xl:w-[546px]
-        h-[444px]
-        px-6 pt-6 pb-[70px] gap-[40px]
-        bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6]
-        rounded-2xl shadow-sm hover:shadow-md transition hover:bg-[#E6F0FF]
-        flex-shrink-0
-      "
-    >
-      <h3
-        className="
-          text-[#2C2C2C]
-          text-[20px] md:text-[24px]
-          leading-[28px] md:leading-[36px]
-          font-normal text-center font-[Manrope]
-        "
-      >
-        {item.title}
-      </h3>
+          <div className="mt-[80px] md:mt-[100px] lg:mt-[220px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {preservation.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="
+              flex flex-col items-center
+              relative
+              rounded-[16px]
+              h-[370px] md:h-[444px]
+              bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
+              hover:bg-[rgba(22,86,165,0.12)] transition
+              p-6
+            "
+                >
+                  {/* Title */}
+                  <h3 className="
+    text-[var(--Text_Black,#2C2C2C)]
+    font-[Manrope] font-normal
+    text-[24px] leading-[32px] tracking-[-0.64px]
+    md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
+          pt-[24px] pl-[24px]">
+                    {item.title}
+                  </h3>
+                  {/* Image */}
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={238} // desktop size
+                    height={240}
+                    className="mt-[56px] w-[180px] h-[180px] md:w-[238px] md:h-[240px] object-contain"
+                    style={{ mixBlendMode: "multiply" }}
+                    priority={false} // optional: use priority for above-the-fold images
+                  />
 
-      <img
-        src={item.image}
-        alt={item.title}
-        className="
-          w-[200px] h-[180px]
-          md:w-[280px] md:h-[240px]
-          object-contain mix-blend-multiply
-        "
-      />
-    </Link>
-  ))}
-</div>
+
+
+
+
+                </div>
+              ))}
+            </div>
+          </div>
 
         </div>
       </section>
