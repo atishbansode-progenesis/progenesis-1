@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const tabs = [
-  { key: "landing", label: "Landing" },
   { key: "financial", label: "Financial support" },
   { key: "care", label: "We Take Care of You" },
   { key: "stats", label: "Stats and Metrics" },
@@ -22,8 +21,8 @@ const EmiNav: React.FC = () => {
 
   return (
     <nav className="w-full bg-[#FFFFFF]">
-      <div className="section-spacing max-w-7xl">
-        <div className="flex flex-wrap items-center gap-4 md:gap-6">
+      <div className="px-4 py-4 md:px-[120px] md:py-[80px]">
+        <div className="flex flex-wrap items-center gap-3 md:gap-6">
           {tabs.map((t) => {
             const isActive = t.key === active;
             return (
@@ -32,7 +31,7 @@ const EmiNav: React.FC = () => {
                 type="button"
                 onClick={() => handleScroll(t.key)}
                 className={[
-                  "min-w-[180px] h-10 px-5 inline-flex items-center justify-center rounded-[12px] text-sm font-medium transition-colors",
+                  "items-center p-3 md:p-2 justify-center rounded-[12px] text-sm font-medium transition-colors",
                   isActive
                     ? "bg-[#1656A5] text-white shadow"
                     : "bg-white text-[#1656A5] border border-[#1656A5]/60 hover:bg-[#1656A5]/5",
