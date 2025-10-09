@@ -14,6 +14,7 @@ import StoriesSection from "@/components/Home/StoriesSection";
 import TestimonialsSection from "@/components/Home/TestimonialsSection";
 import TreatmentsSection from "@/components/Home/TreatmentsSection";
 import VideoSection from "@/components/Home/VideoSection";
+import FaQ from "@/page-components/about/FaQ";
 
 export default function Home() {
   return (
