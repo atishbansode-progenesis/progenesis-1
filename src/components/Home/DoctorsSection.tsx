@@ -195,7 +195,7 @@ const DoctorsSection = () => {
   const doctor = doctors[currentIndex];
 
   return (
-    <section className="py-12 md:py-20 bg-gray-50 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
+    <section className="py-12 md:py-20 bg-[#FAFAFA] px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
       {/* Heading Section */}
       <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-12 mb-12 md:mb-20 lg:mb-32">
         {/* Left Side */}
@@ -206,7 +206,7 @@ const DoctorsSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 md:mb-6 leading-tight">
             Meet the Experts <br /> Behind the Magic
           </h2>
-          <button className="px-6 md:px-10 lg:px-12 py-2.5 md:py-3 rounded-lg md:rounded-2xl text-xs md:text-sm font-medium border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
+          <button className="px-6 cursor-pointer md:px-10 lg:px-12 py-2.5 md:py-3 rounded-lg md:rounded-2xl text-xs md:text-sm font-medium border border-[#1656a5] text-[#1656a5] hover:bg-[#1656a5] hover:text-white transition-all duration-300">
             View all Doctors
           </button>
         </div>
@@ -307,7 +307,7 @@ const DoctorsSection = () => {
           {/* Navigation Buttons - Desktop */}
           <button
             onClick={prevDoctor}
-            className="hidden xl:flex absolute cursor-pointer left-0 top-1/2 -translate-y-1/2 -translate-x-20 2xl:-translate-x-24 w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-blue-600 text-blue-600 text-xl hover:bg-blue-50 transition-all duration-300 z-10"
+            className="hidden xl:flex absolute cursor-pointer left-0 top-1/2 -translate-y-1/2 -translate-x-20 2xl:-translate-x-24 w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-[#1656a5] text-[#1656a5] text-xl hover:bg-[rgba(22,86,165,0.05)] transition-all duration-300 z-10"
             aria-label="Previous doctor"
           >
             <img src="/icons/left.svg" alt="Previous" width={12} height={12} />
@@ -315,7 +315,7 @@ const DoctorsSection = () => {
 
           <button
             onClick={nextDoctor}
-            className="hidden xl:flex absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 translate-x-20 2xl:translate-x-24 w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-blue-600 text-blue-600 text-xl hover:bg-blue-50 transition-all duration-300 z-10"
+            className="hidden xl:flex absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 translate-x-20 2xl:translate-x-24 w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-[#1656a5] text-[#1656a5] text-xl hover:bg-blue-50 transition-all duration-300 z-10"
             aria-label="Next doctor"
           >
             <img src="/icons/right.svg" alt="Next" width={12} height={12} />

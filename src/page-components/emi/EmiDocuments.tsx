@@ -23,7 +23,7 @@ const EmiDocuments = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-semibold tracking-tight text-[34px] sm:text-[34px] md:text-[48px] leading-[1.1] mb-8 pb-8">
+        <h2 className="text-[#2C2C2C] font-semibold tracking-tight text-[32px] sm:text-[32px] md:text-[48px] leading-[1.1] mb-8 md:pb-8">
           Required Documents
           <br />
           During Application.
@@ -71,9 +71,9 @@ const EmiDocuments = () => {
         
 
         {/* Mobile Layout: Stacked cards */}
-        <div className="md:hidden space-y-5">
+        <div className="md:hidden ">
           {/* Address Proof */}
-          <div className="bg-[#F5F9FF] rounded-[16px] gap-2 p-2 mt-2">
+          <div className="bg-[#F5F9FF] rounded-t-[16px] gap-2 p-2">
             <h3 className="text-[#2C2C2C] font-semibold mb-3 pb-2">Address Proof</h3>
             <div className="flex items-center gap-3 mb-2 text-[#2C2C2C] pb-2">
               <CheckIcon />
@@ -86,7 +86,7 @@ const EmiDocuments = () => {
           </div>
 
           {/* Identity Proof */}
-          <div className="bg-[#FFFFFF] rounded-[16px] p-2 mt-2">
+          <div className="bg-[#FFFFFF] p-2">
             <h3 className="text-[#2C2C2C] font-semibold mb-3 pb-2">Identity Proof</h3>
             <div className="flex items-center gap-3 mb-2 text-[#2C2C2C] pb-2">
               <CheckIcon />
@@ -99,7 +99,7 @@ const EmiDocuments = () => {
           </div>
 
           {/* Income Proof */}
-          <div className="bg-[#F5F9FF] rounded-[16px] p-2 mt-2">
+          <div className="bg-[#F5F9FF] p-2">
             <h3 className="text-[#2C2C2C] font-semibold mb-3 pb-2">Income Proof</h3>
             <div className="flex items-center gap-3 text-[#2C2C2C] pb-2">
               <CheckIcon />
@@ -108,7 +108,7 @@ const EmiDocuments = () => {
           </div>
 
           {/* Note card */}
-          <div className="bg-[#FFFFFF] rounded-[16px] p-2 mt-2 text-[#2C2C2C]">
+          <div className="bg-[#FFFFFF] rounded-b-[16px] p-2 text-[#2C2C2C]">
             Bank Statement of last 6 month from date of application
           </div>
         </div>
