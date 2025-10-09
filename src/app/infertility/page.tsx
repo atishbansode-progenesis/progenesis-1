@@ -313,66 +313,7 @@ const Infertility: React.FC = () => {
                 />
               </Link>
             ))}
-          </div> */}
-          
-          <div className="mt-[80px] md:mt-[100px] lg:mt-[220px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {causes.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="
-              flex flex-col justify-between items-center
-              relative overflow-hidden
-              rounded-[16px]
-              h-[370px] md:h-[444px]
-              bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
-              hover:bg-[rgba(22,86,165,0.12)] transition
-              p-6
-              flex-shrink-0
-            "
-                >
-                  {/* Title */}
-                  <h3 className="
-    text-[var(--Text_Black,#2C2C2C)]
-    font-[Manrope] font-normal
-    text-[24px] leading-[32px] tracking-[-0.64px]
-    md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
-          pt-[24px] pl-[24px]">
-                    {item.title}
-                  </h3>
-                  {/* Image */}
-                  <div
-          className="
-            flex justify-center items-center
-            w-full h-[180px] md:h-[220px]
-            mt-[40px] md:mt-[56px]
-          "
-        >
-          <Image
-            src={item.image}
-            alt={item.title}
-            width={200}
-            height={200}
-            className="
-              w-auto h-full object-contain
-              mix-blend-multiply
-            "
-            style={{ mixBlendMode: 'multiply' }}
-            priority={false}
-          />
-        </div>
-
-
-
-
-
-                </div>
-              ))}
-            </div>
           </div>
-          
-
-
         </div>
       </section>
 
@@ -405,34 +346,28 @@ const Infertility: React.FC = () => {
           {/* Responsive 3-Card Grid */}
           <div
             className="
-    grid mt-[80px]
-    gap-[21px]
-    grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
-    justify-center xl:justify-start
-  "
-          >
+            grid mt-[80px]
+            gap-[21px]
+            grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
+            justify-center xl:justify-start">
             {maleInfertilityIssues.map((item) => (
               <Link
                 key={item.id}
                 href={`/infertility/${item.slug}`}
                 className="
-        flex flex-col items-center justify-between
-        w-[100%] sm:w-[520px] md:w-[540px] xl:w-[546px]
-        h-[444px]
-        px-6 pt-6 pb-[70px] gap-[40px]
-        bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6]
-        rounded-2xl shadow-sm hover:shadow-md transition hover:bg-[#E6F0FF]
-        flex-shrink-0
-      "
-              >
+                  flex flex-col items-center justify-between
+                  w-[100%]
+                  h-[444px]
+                  px-6 pt-6 pb-[70px] gap-[40px]
+                  bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6]
+                  rounded-2xl transition hover:bg-[#1656A51F]
+                  flex-shrink-0 " >
                 <h3
                   className="
-          text-[#2C2C2C]
-          text-[20px] md:text-[24px]
-          leading-[28px] md:leading-[36px]
-          font-normal text-center font-[Manrope]
-        "
-                >
+                  text-[#2C2C2C]
+                    text-[20px] md:text-[24px]
+                    leading-[28px] md:leading-[36px]
+                    font-normal text-start w-full font-[Manrope] " >
                   {item.title}
                 </h3>
 
@@ -440,11 +375,9 @@ const Infertility: React.FC = () => {
                   src={item.image}
                   alt={item.title}
                   className="
-          w-[200px] h-[180px]
-          md:w-[280px] md:h-[240px]
-          object-contain mix-blend-multiply
-        "
-                />
+                  w-[200px] h-[180px]
+                  md:w-[280px] md:h-[240px]
+                  object-contain mix-blend-multiply" />
               </Link>
             ))}
           </div>
