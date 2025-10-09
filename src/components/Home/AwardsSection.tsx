@@ -19,13 +19,13 @@ const awards = [
   {
     year: "2017-18",
     title: "India's Fastest Growing Brand in IVF,Brand in IVF",
-    subtitle: "URS and ASIA ONE in Dubai.",
+    subtitle: "URS and ASIA ONE in Dubai.URS and ASIA ONE in Dubai",
     image: "/awards/awardsb.png",
   },
   {
     year: "2023-24",
     title: "The Number 1 IVF Centre for Emerging IVF Centre Category",
-    subtitle: "The Times of India.",
+    subtitle: "The Times of India.URS and ASIA ONE in DubaiURS and ASIA ONE in Dubai",
     image: "/awards/awardsc.png",
   },
 ];
@@ -122,16 +122,33 @@ export default function AwardsSection() {
                 {data.map((item, idx) => (
                   <article
                     key={idx}
-                    className="bg-white rounded-2xl shadow-sm overflow-hidden transition hover:shadow-md p-[24px] flex flex-col h-[490px]"
+                    className="bg-white rounded-2xl shadow-sm overflow-hidden transition hover:shadow-md p-[24px] flex flex-col h-[415px]"
                   >
-                    <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
+                    {/* <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
                       <span>{item.year}</span>
                       <span>
                         {activeTab === "Awards & Certifications"
                           ? "Awards"
                           : item.views}
                       </span>
-                    </div>
+                    </div> */}
+                    <div className="flex items-center gap-1.5 mb-3 text-[#606060]/70 font-[Manrope] text-[14px] font-medium leading-[22px] tracking-[-0.3px]">
+  {activeTab === "Awards & Certifications" ? (
+    <>
+      <span>{item.year}</span>
+      <span>•</span>
+      <span>Awards</span>
+    </>
+  ) : (
+    <>
+      <span>{item.views}</span>
+      <span>•</span>
+      <span>{item.year}</span>
+    </>
+  )}
+</div>
+
+
 
                     <div className="w-full h-[180px] rounded-xl overflow-hidden">
                       <img
@@ -141,7 +158,7 @@ export default function AwardsSection() {
                       />
                     </div>
 
-                    <div className="pt-5 flex flex-col justify-end flex-1">
+                    <div className="pt-5 flex flex-col justify-between flex-1">
                       <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-medium leading-[28px] tracking-[-0.4px]">
                         {item.title}
                       </h3>
