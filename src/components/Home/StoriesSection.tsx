@@ -69,7 +69,7 @@ export default function StoriesSection() {
           <div className="flex items-center gap-3">
             <Link
               href="/resources"
-              className="hidden md:inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              className="hidden md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition"
             >
               See all
             </Link>
@@ -77,7 +77,7 @@ export default function StoriesSection() {
             <button
               onClick={prevSlide}
               aria-label="Previous"
-              className="w-10 h-10 rounded-lg border border-blue-600 text-blue-600 bg-white hover:bg-blue-50 flex items-center justify-center"
+              className="w-10 h-10 rounded-lg border border-[#1656a5] text-[#1656a5] bg-white hover:bg-blue-50 flex items-center justify-center"
             >
           <img src="/icons/left.svg" alt="right" width={12} height={12} /> 
             </button>
@@ -85,7 +85,7 @@ export default function StoriesSection() {
             <button
               onClick={nextSlide}
               aria-label="Next"
-              className="w-10 h-10 rounded-lg border border-blue-600 text-blue-600 bg-white hover:bg-blue-50 flex items-center justify-center"
+              className="w-10 h-10 rounded-lg border border-[#1656a5] text-[#1656a5] bg-white hover:bg-blue-50 flex items-center justify-center"
             >
               <img src="/icons/right.svg" alt="right" width={12} height={12} />
             </button>
@@ -166,7 +166,7 @@ export default function StoriesSection() {
 
         {/* Mobile 'See all' button */}
         <div className="mt-4 md:hidden">
-          <Link href="/blog" className="px-4 py-2 bg-blue-600 text-white rounded-lg inline-flex w-28 items-center justify-center">
+          <Link href="/blog" className="px-4 py-2 bg-[#1656a5] text-white rounded-lg inline-flex w-28 items-center justify-center">
             See all
           </Link>
         </div>

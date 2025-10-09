@@ -582,7 +582,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         />
       )}
 
-      <section className="relative pt-[42px] md:pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px] flex justify-center bg-transparent">
+      <section className="relative py-4 px-4 md:py-[60px] lg:py-[80px] mx-0  md:px-[60px] lg:px-[120px]  flex justify-center bg-transparent">
         <div className={`bg-white rounded-2xl shadow-lg p-10 flex flex-col md:flex-row w-full max-w-6xl gap-10 ${isLoading ? 'justify-center items-center min-h-[400px]' : ''}`}>
           {isLoading ? (
             <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5]"></div>
@@ -590,11 +590,11 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
             <>
               {/* Left Form */}
               <div className="flex-1 text-center">
-                <span className="inline-block text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-6">
+                <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mb-6">
                   Schedule a Consultation
                 </span>
 
-                <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[32px] font-normal leading-[40px] tracking-[-0.64px] text-center mb-3">
+                <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[32px] font-normal leading-6 md:leading-[40px] tracking-[-0.64px] text-center mb-3">
                   Just focus on your fertility journey, <br /> We got the rest
                   covered!
                 </h2>

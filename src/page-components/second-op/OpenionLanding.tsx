@@ -6,7 +6,7 @@ import AppointmentForm from "../about/AppointmentForm";
 const OpenionLanding = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <section className="relative w-full h-[60%]">
+    <section className="relative w-full h-[60vh] py-4 md:px-[50px] flex flex-col justify-center">
       {/* Background images: mobile and desktop */}
       <div
         className="absolute inset-0 md:hidden bg-cover bg-center"
@@ -15,14 +15,15 @@ const OpenionLanding = () => {
       />
       <div
         className="absolute inset-0 hidden md:block bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/emiBgD.png')" }}
+        style={{ backgroundImage: "url('/images/hero-bg.png')" }}
         aria-hidden
       />
       
+      <img className="absolute right-0 bottom-0 h-[80%] w-[50%]" src="/images/hero-1.png" alt="" />
 
-      <div className='relative grid grid-cols-12 gap-4 min-h-[300px] md:min-h-[420px] lg:min-h-[500px] w-full'>
+      <div className='relative w-full'>
         {/* Left: Content block */}
-        <div className='col-span-12 csLg:col-span-8 section-spacing w-full'>
+        <div className=''>
           <div className='flex flex-col'>
             {/* Breadcrumb-like line */}
             <div>
@@ -39,7 +40,7 @@ const OpenionLanding = () => {
             </div>
 
             {/* CTA */}
-            <div className='pt-11'>
+            <div className=''>
                         <button 
                             onClick={() => setIsOpen(true)} 
                             className='bg-[#252525] csLg:text-[24px] px-6 py-3 text-[#F9F9F9] rounded-lg hover:bg-[#333] transition'
