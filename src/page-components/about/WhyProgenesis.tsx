@@ -16,7 +16,7 @@ const slides: Slide[] = [
     number: "01",
     desc:
       "Every journey is unique. We design your treatment around your story, not just your symptoms.",
-    image: "/images/why-1.png",
+    image: "/images/why1.png",
     bannerHeading: "Care That Feels Like It’s Just for You.",
   },
   {
@@ -24,7 +24,7 @@ const slides: Slide[] = [
     number: "02",
     desc:
       "We’re here whenever you need—answers, reassurance, or simply someone who understands.",
-    image: "/images/why-2.png",
+    image: "/images/why2.png",
     bannerHeading: "We’re always here for you, completely.",
   },
   {
@@ -32,7 +32,7 @@ const slides: Slide[] = [
     number: "03",
     desc:
       "You deserve to know everything—clearly, honestly, and respectfully.",
-    image: "/images/why-3.png",
+    image: "/images/why3.png",
     bannerHeading: "Every Step With Honest Care.",
     bannerPara:
       "From diagnosis to delivery, you’ll always know what’s happening and why because trust grows with transparency.",
@@ -42,7 +42,7 @@ const slides: Slide[] = [
     number: "04",
     desc:
       "We empower you to make confident, informed choices at every step of your parenthood journey.",
-    image: "/images/why-4.png",
+    image: "/images/why4.png",
     bannerHeading: "Because Parenthood is Your Choice.",
   },
 ];
@@ -56,10 +56,10 @@ const WhyProgenesis: React.FC = () => {
       id="why-choose-us"
       className="w-full bg-[#1656A50D] px-6 lg:px-[90px] py-12 lg:py-16 section-spacing"
     >
-      {/* ✅ Below lg = single column (mobile/tablet), lg+ = two columns */}
-      <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 lg:gap-18 items-start">
-        {/* Left column */}
-        <div>
+      {/* Grid: mobile = single column, lg = 2 equal columns */}
+      <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-6 lg:gap-10 items-start">
+        {/* Left Column - Tabs */}
+        <div className="flex flex-col">
           <div className="why-bott-pad">
             <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] px-3 py-1 rounded-[8px]">
               Why choose us
@@ -69,7 +69,6 @@ const WhyProgenesis: React.FC = () => {
             </h2>
           </div>
 
-          {/* List */}
           <div className="mt-6 space-y-4 pt-8">
             {slides.map((s, idx) => {
               const activeRow = idx === active;
@@ -114,67 +113,28 @@ const WhyProgenesis: React.FC = () => {
           </div>
         </div>
 
-        {/* Right banner */}
-        <div className="relative w-full rounded-2xl overflow-hidden min-h-[604px] shadow-sm csLg:min-h-[720px] flex">
+        {/* Right Column - Banner */}
+        <div className="md:mt-30 relative w-full rounded-2xl overflow-hidden min-h-[250px] md:min-h-[500px] flex items-center justify-center">
+          {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center items-center"
-            style={{ backgroundImage: `url(${current.image})` }}
+              className="absolute inset-0 bg-contain bg-center rounded-2xl bg-no-repeat"
+              style={{ backgroundImage: `url(${current.image})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#EAF6FF]/40 via-white/10 to-[#D7E8FF]/30" />
 
-          {/* Content */}
-          <div className="relative z-10 w-full h-full">
-            {/* Slide 1 */}
-            {active === 0 && (
-              <div className="absolute flex items-center justify-center text-center px-10">
-                <h3 className="relative lg:left-40 lg:top-70 text-[26px] lg:text-[46px] font-semibold text-[#2C2C2C] max-w-[720px]">
-                  {current.bannerHeading.includes("Like") ? (
-                    <>
-                      {current.bannerHeading.split("Like")[0]}Like
-                      <br />
-                      {current.bannerHeading.split("Like")[1].trim()}
-                    </>
-                  ) : (
-                    current.bannerHeading
-                  )}
-                </h3>
-              </div>
-            )}
+          {/* Gradient overlay */}
+          {/* <div className="absolute inset-0 bg-gradient-to-tr from-[#EAF6FF]/40 via-white/10 to-[#D7E8FF]/30" /> */}
 
-            {/* Slide 2 */}
-            {active === 1 && (
-              <div className="absolute top-6 lg:top-12 left-6 lg:left-14 pr-6">
-                <h3 className="text-[26px] lg:text-[46px] font-semibold text-[#2C2C2C] max-w-[660px]">
-                  {current.bannerHeading}
-                </h3>
-              </div>
+          {/* Fixed Content */}
+          {/* <div className="relative z-10 w-full h-full flex flex-col items-center justify-between text-center px-6 lg:px-10">
+            <h3 className="text-[26px] lg:text-[40px] font-semibold text-[#2C2C2C] max-w-[720px] leading-snug">
+              {current.bannerHeading}
+            </h3>
+            {current.bannerPara && (
+              <p className="mt-4 text-[14px] lg:text-[18px] text-[#606060] max-w-[520px]">
+                {current.bannerPara}
+              </p>
             )}
-
-            {/* Slide 3 */}
-            {active === 2 && (
-              <>
-                <div className="absolute top-6 lg:top-12 right-6 lg:right-14 text-right pl-6">
-                  <h3 className="text-[26px] lg:text-[36px] font-semibold text-[#2C2C2C] max-w-[620px]">
-                    {current.bannerHeading}
-                  </h3>
-                </div>
-                {current.bannerPara && (
-                  <p className="absolute top-100 left-6 lg:top-150 lg:left-4 lg:text-[18px] text-[14px] text-[#606060] max-w-[520px] text-left">
-                    {current.bannerPara}
-                  </p>
-                )}
-              </>
-            )}
-
-            {/* Slide 4 */}
-            {active === 3 && (
-              <div className="absolute top-6 lg:top-12 left-1/2 -translate-x-1/2 text-center px-4">
-                <h3 className="text-[26px] lg:text-[36px] font-semibold text-[#2C2C2C] max-w-[660px]">
-                  {current.bannerHeading}
-                </h3>
-              </div>
-            )}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

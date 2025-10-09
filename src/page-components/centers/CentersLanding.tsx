@@ -23,7 +23,7 @@ const CentersLanding = () => {
             <div className='col-span-12 csLg:col-span-9 flex items-center'>
                 <div className='text-start'>
             {/* Title */}
-                    <h1 className='font-manrope font-semibold csLg:text-[80px] text-[32px] csLg:leading-[88px] leading-[48px] tracking-[-0.02em] text-black'>
+                    <h1 className='font-manrope font-semibold lg:text-[80px] md:text-[48px] md:leading-[56px] text-[32px] lg:leading-[88px] leading-[48px] tracking-[-0.02em] text-[#2C2C2C]'>
                      Our Fertility Centers
                     </h1>
                 </div>
