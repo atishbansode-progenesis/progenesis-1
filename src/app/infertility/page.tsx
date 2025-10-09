@@ -148,42 +148,6 @@ const Infertility: React.FC = () => {
     },
   ];
 
-  const causes = [
-    {
-      title: "Repeated IUI Failures",
-      image: "/infertility/infertility1.png", // replace with actual path
-    },
-    {
-      title: "Repeated IVF Failures",
-      image: "/infertility/infertility2.png",
-    },
-    {
-      title: "Pregnancy after Menopause",
-      image: "/infertility/infertility3.png",
-    },
-    {
-      title: "Low AMH",
-      image: "/infertility/infertility4.png", // replace with actual path
-    },
-    {
-      title: "PCOS",
-      image: "/infertility/infertility5.png",
-    },
-    {
-      title: "Tubal Blockage",
-      image: "/infertility/infertility6.png",
-    },
-    {
-      title: "Fibroids",
-      image: "/infertility/infertility7.png", // replace with actual path
-    },
-    {
-      title: "Endometriosis",
-      image: "/infertility/infertility8.png",
-    },
-  ];
-
-
   const [activeTab, setActiveTab] = useState<string>("path");
 
   const handleScroll = (id: string) => {
