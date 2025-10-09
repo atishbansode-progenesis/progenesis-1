@@ -324,7 +324,7 @@ const DoctorsSection = () => {
           {/* Doctor Card */}
           <div className="overflow-hidden">
             {/* Counter */}
-            <div className="relative">
+            <div className="relative ">
               <p className="absolute top-4 right-4 md:top-6 md:right-6 text-gray-600 text-xs md:text-sm font-semibold z-10">
                 {String(currentIndex + 1).padStart(2, "0")} of{" "}
                 {String(doctors.length).padStart(2, "0")}

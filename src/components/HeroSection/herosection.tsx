@@ -31,7 +31,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className="relative w-full h-[500px] md:h-[600px] flex pl-[12px] md:pl-[120px] bg-cover bg-center overflow-hidden"
+      className="relative w-full h-[500px] md:h-[600px] flex px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] bg-cover bg-center overflow-hidden"
       style={{
         backgroundImage: backgroundImage ? `url('${backgroundImage}')` : "none",
       }}
@@ -76,7 +76,7 @@ export default function HeroSection({
       )}
 
       {/* Content (always above images) */}
-      <div className="relative z-10 mt-2 md:mt-[85px] max-w-6xl">
+      <div className="relative z-10 mt-2 md:mt-[85px] max-w-5xl">
         {/* Breadcrumbs */}
         <p className="text-[18px] text-gray-600 mb-2 md:mb-[44px] flex items-center flex-wrap">
           {breadcrumbs.map((crumb, idx) => (
@@ -112,17 +112,37 @@ export default function HeroSection({
 
         {/* Title */}
         <h1
-  className="
+          className="
     text-[var(--BG_Black,#252525)]
     font-[Manrope]
     font-semibold
-    text-[80px]
-    leading-[88px]
-    tracking-[-1.6px]
-    pb-20
+    text-[32px]
+    md:text-[40px]
+    xl:text-[80px]
+    leading-[40px]
+    md:leading-[40px]
+    xl:leading-[88px]
+    tracking-[-0.02em]
+    pb-[44px]
+    md:pb-[44px]
+    xl:pb-[80px]
+    max-w-full
+    sm:max-w-[500px]
+    md:max-w-[700px]
+    lg:max-w-[956px]
   "
->
-          {title}
+        >
+          {typeof title === "string" ? (
+            // Allow passing a string with <br> or <br/> to force line breaks
+            title.split(/<br\s*\/?>(?:\s*)/gi).map((part, idx, arr) => (
+              <span key={idx}>
+                {part}
+                {idx !== arr.length - 1 && <br />}
+              </span>
+            ))
+          ) : (
+            title
+          )}
         </h1>
 
         {/* Button */}
@@ -143,36 +163,22 @@ export default function HeroSection({
           </div>
         )}
       </div>
-       {foregroundImage && (
-        <div
-          className="
-            relative w-full lg:w-[55%] xl:w-[50%]
-            flex justify-center lg:justify-end
-            items-end
-            mt-10 lg:mt-0
-          "
-        >
-          {/* Responsive container with locked aspect ratio */}
-          <div
-            className="
-              relative
-              w-[85vw] sm:w-[500px] md:w-[650px] lg:w-[800px] xl:w-[1042px]
-              aspect-[1042/553]
-              flex-shrink-0
-              bottom-0
-            "
-          >
-            <Image
-              src={foregroundImage}
-              alt="Hero Foreground"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1042px"
-              className="object-contain object-bottom"
-            />
-          </div>
-        </div>
-      )}
+{foregroundImage && (
+  <div className="absolute right-0 lg:-right-[50px] xl:-right-[80px] 2xl:-right-[120px] bottom-0 top-[10%] z-0 pointer-events-none flex items-end justify-end">
+    <div className="relative w-[85vw] sm:w-[500px] md:w-[650px] lg:w-[800px] xl:w-[1042px] h-[500px] md:h-[600px] flex-shrink-0">
+      <Image
+        src={foregroundImage}
+        alt="Hero Foreground"
+        fill
+        priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1042px"
+        className="object-contain"
+        style={{ objectPosition: "right bottom" }}
+      />
+    </div>
+  </div>
+)}
+
     </section>
   );
 }

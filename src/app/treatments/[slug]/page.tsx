@@ -46,22 +46,22 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
   return (
     <div className="w-full flex flex-col">
       {/* Hero Section */}
-      <HeroSection
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Treatments", href: "/treatments" },
-          { label: "Advanced Treatment ", href: "/treatments" },
-          {
-            label: treatment.title.split(" – ")[0],
-            href: `/treatments/${treatment.slug}`,
-          },
-        ]}
-        title="Hope, Science & Parenthood Begin Here"
-        buttonText="Book Your Appointment"
-        buttonLink="/book-appointment"
+   <HeroSection
+      breadcrumbs={[
+        { label: "Home", href: "/" },
+        { label: "Treatments", href: "/treatments" },
+        { label: "Advanced Treatment", href: "/treatments" },
+        {
+          label: treatment?.title?.split(" – ")[0] || "",
+          href: `/treatments/${treatment?.slug || ""}`,
+        },
+      ]}
+      title={treatment?.hero_title || "Hope, Science & Parenthood Begin Here"}
+      buttonText={treatment?.hero_button_text || "Book Your Appointment"}
+      buttonLink={treatment?.hero_button_link || "/book-appointment"}
+      overlayImage={treatment?.hero_image || "/default-hero-bg.png"}
+    />
 
-        overlayImage="/treatments/imsi/imsibg.png"
-      />
 
       {/* Tabs */}
       {treatment.categories && (
