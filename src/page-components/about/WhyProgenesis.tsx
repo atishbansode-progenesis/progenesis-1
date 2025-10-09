@@ -114,7 +114,7 @@ const WhyProgenesis: React.FC = () => {
         </div>
 
         {/* Right Column - Banner */}
-        <div className="md:mt-30 relative w-full rounded-2xl overflow-hidden min-h-[250px] md:min-h-[500px] flex items-center justify-center">
+        <div className="lg:mt-30 relative w-full rounded-2xl overflow-hidden min-h-[250px] md:min-h-[500px] flex items-center justify-center">
           {/* Background Image */}
           <div
               className="absolute inset-0 bg-contain bg-center rounded-2xl bg-no-repeat"
