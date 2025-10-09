@@ -253,7 +253,7 @@ const Infertility: React.FC = () => {
           </div>
 
           {/* GRID (Fully Responsive) */}
-          {/* <div
+          <div
             className="
               grid gap-6 mt-[80px]
               grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4
@@ -277,66 +277,7 @@ const Infertility: React.FC = () => {
                 />
               </Link>
             ))}
-          </div> */}
-          
-          <div className="mt-[80px] md:mt-[100px] lg:mt-[220px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {femaleInfertilityIssues.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="
-              flex flex-col justify-between items-center
-              relative overflow-hidden
-              rounded-[16px]
-              h-[370px] md:h-[444px]
-              bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
-              hover:bg-[rgba(22,86,165,0.12)] transition
-              p-6
-              flex-shrink-0
-            "
-                >
-                  {/* Title */}
-                  <h3 className="
-    text-[var(--Text_Black,#2C2C2C)]
-    font-[Manrope] font-normal
-    text-[24px] leading-[32px] tracking-[-0.64px]
-    md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
-          pt-[24px] pl-[24px]">
-                    {item.title}
-                  </h3>
-                  {/* Image */}
-                  <div
-          className="
-            flex justify-center items-center
-            w-full h-[180px] md:h-[220px]
-            mt-[40px] md:mt-[56px]
-          "
-        >
-          <Image
-            src={item.image}
-            alt={item.title}
-            width={200}
-            height={200}
-            className="
-              w-auto h-full object-contain
-              mix-blend-multiply
-            "
-            style={{ mixBlendMode: 'multiply' }}
-            priority={false}
-          />
-        </div>
-
-
-
-
-
-                </div>
-              ))}
-            </div>
           </div>
-          
-
-
         </div>
       </section>
 
