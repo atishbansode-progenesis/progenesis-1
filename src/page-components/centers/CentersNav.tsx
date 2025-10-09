@@ -98,7 +98,7 @@ const CentersNav: React.FC = () => {
           <div className="relative">
             <button
               onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)}
-              className="min-w-[160px] h-10 px-4 inline-flex items-center justify-between rounded-[8px] text-sm font-medium 
+              className="min-w-[160px] hover:cursor-pointer h-10 px-4 inline-flex items-center justify-between rounded-[8px] text-sm font-medium 
               bg-[#1656A5] text-white shadow"
             >
               {selectedState}
@@ -114,7 +114,7 @@ const CentersNav: React.FC = () => {
                   <button
                     key={state}
                     onClick={() => handleStateChange(state)}
-                    className={`w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 transition-colors
+                    className={`w-full px-4 py-2.5 text-left hover:cursor-pointer text-sm hover:bg-gray-50 transition-colors
                       ${selectedState === state ? 'text-[#1656A5] font-medium bg-[#1656A5]/5' : 'text-gray-700'}`}
                   >
                     {state}
@@ -131,7 +131,7 @@ const CentersNav: React.FC = () => {
           <div className="relative">
             <button
               onClick={() => setIsCityDropdownOpen(!isCityDropdownOpen)}
-              className={`min-w-[160px] h-10 px-4 inline-flex items-center justify-between rounded-[8px] text-sm font-medium transition-colors
+              className={`min-w-[160px] hover:cursor-pointer h-10 px-4 inline-flex items-center justify-between rounded-[8px] text-sm font-medium transition-colors
                 ${isCityDropdownOpen ? 'bg-[#1656A5] text-white' : 'bg-[#1656A5] text-white border border-[#1656A5]/60'}`}
             >
               {selectedCity}
@@ -147,7 +147,7 @@ const CentersNav: React.FC = () => {
                   <button
                     key={city}
                     onClick={() => handleCityChange(city)}
-                    className={`w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 transition-colors
+                    className={`w-full hover:cursor-pointer px-4 py-2.5 text-left text-sm hover:bg-gray-50 transition-colors
                       ${selectedCity === city ? 'text-[#1656A5] font-medium bg-[#1656A5]/5' : 'text-gray-700'}`}
                   >
                     {city}
@@ -184,7 +184,7 @@ const CentersNav: React.FC = () => {
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className={`h-[56px] w-[56px] flex items-center justify-center rounded-xl border relative group
+            className={`h-[56px] w-[56px] flex hover:cursor-pointer items-center justify-center rounded-xl border relative group
              ${
              currentPage === 1
               ? 'border-[#1656A5] text-gray-400 cursor-not-allowed'
@@ -225,7 +225,7 @@ const CentersNav: React.FC = () => {
                     )
                       }       
                   disabled={currentPage === Math.ceil(filteredCenters.length / CENTERS_PER_PAGE)}
-                  className={`h-[56px] w-[56px] flex items-center justify-center rounded-xl border relative group
+                  className={`h-[56px] w-[56px] hover:cursor-pointer flex items-center justify-center rounded-xl border relative group
                   ${
                     currentPage === Math.ceil(filteredCenters.length / CENTERS_PER_PAGE)
                     ? 'border-[#1656A5] text-gray-400 cursor-not-allowed'
@@ -238,7 +238,7 @@ const CentersNav: React.FC = () => {
                   alt="right-white"
                   width={12}
                   height={12}
-                  className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer transition-opacity duration-200"
                 />
 
               {/* normal icon — shown by default, hidden on hover */}
@@ -247,7 +247,7 @@ const CentersNav: React.FC = () => {
                   alt="right"
                   width={12}
                   height={12}
-                  className="opacity-100 group-hover:opacity-0 transition-opacity duration-200"
+                  className="opacity-100 group-hover:opacity-0 hover:cursor-pointer transition-opacity duration-200"
                 />
             </button>
 

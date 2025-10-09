@@ -403,7 +403,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
     <div onClick={() => {
               router.push(`/centers/${centerData.slug}`);
             }}
-     className="flex flex-col md:flex-row gap-4 bg-[#FFFFFF] hover:bg-[#1656A50D] rounded-xl overflow-hidden transition-shadow">
+     className="flex flex-col hover:cursor-pointer md:flex-row gap-4 bg-[#FFFFFF] hover:bg-[#1656A50D] rounded-xl overflow-hidden transition-shadow">
       {/* Image Container */}
       <div className=" p-4 relative w-full  h-[100%] md:h-[444px]">
         <img
@@ -439,7 +439,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex justify-between flex-col md:flex-row gap-3 mt-4">
+        <div className="flex items-start justify-between flex-col md:flex-row gap-3 mt-4">
           <button 
             onClick={() => {
               if (centerData.coordinates) {
@@ -450,7 +450,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
               }
             }}
             disabled={!centerData.coordinates && !centerData.address}
-            className={`h-10 text-sm font-medium flex items-center underline decoration-[#2C2C2C] justify-center gap-2 ${
+            className={`h-10 text-sm font-medium hover:cursor-auto flex items-center underline decoration-[#2C2C2C] justify-center gap-2 ${
               !centerData.coordinates && !centerData.address
                 ? 'text-gray-400 cursor-not-allowed'
                 : 'text-[#2C2C2C] hover:text-[#1656A5] transition-colors'
@@ -464,7 +464,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
           </button>
           <button 
           
-            className="h-10 px-4 rounded-xl text-sm font-medium text-[#1656A5] bg-white border border-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors flex items-center justify-center gap-2"
+            className="h-10 px-4 hover:cursor-auto rounded-xl text-sm font-medium text-[#1656A5] bg-white border border-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors flex items-center justify-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

@@ -93,13 +93,13 @@ const TestimonialsSection = () => {
           <div className="hidden md:flex space-x-4">
             <button
               ref={prevRef}
-              className="w-10 lg:w-14 h-10 lg:h-14 flex items-center justify-center border border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
+              className="w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
             >
               ←
             </button>
             <button
               ref={nextRef}
-              className="w-10 lg:w-14 h-10 lg:h-14 flex items-center justify-center border border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
+              className="w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
             >
               →
             </button>
