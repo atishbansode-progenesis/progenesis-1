@@ -23,7 +23,7 @@ const EmiDocuments = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-semibold tracking-tight text-[34px] sm:text-[34px] md:text-[48px] leading-[1.1] mb-8 pb-8">
+        <h2 className="text-[#2C2C2C] font-semibold tracking-tight text-[34px] sm:text-[34px] md:text-[48px] leading-[1.1] mb-8 md:pb-8">
           Required Documents
           <br />
           During Application.

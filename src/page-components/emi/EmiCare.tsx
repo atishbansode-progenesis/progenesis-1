@@ -19,8 +19,8 @@ const EmiCare: React.FC = () => {
       <div className="w-full h-[1px] bg-gray-200"></div>
 
       {/* How It Works Section */}
-      <div className="mt-1 md:mt-2 lg:mt-3">
-        <h2 className="text-2xl md:text-3xl lg:text-[36px] font-manrope font-normal text-[#2C2C2C] mb-6 md:mb-8">
+      <div className="mt-1  md:mt-2 lg:mt-3 md:flex  justify-between align-center">
+        <h2 className="text-[32px] md:text-3xl lg:text-[36px] font-manrope font-normal text-[#2C2C2C] mb-6 md:mb-8">
           How It Works
         </h2>
 
