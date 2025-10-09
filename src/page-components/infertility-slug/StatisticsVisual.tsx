@@ -4,22 +4,8 @@ import React from "react";
 interface StatCircle {
   value: string;
   description: string;
-  position: {
-    right: string;
-    top?: string;
-    bottom?: string;
-  };
-  size: {
-    width: string;
-    height: string;
-  };
-  bgColor: string;
-  lineWidth: string;
-  textPosition: {
-    right: string;
-    top?: string;
-    bottom?: string;
-  };
+  circleClass: string;
+  textClass: string;
 }
 
 interface StatisticsVisualProps {
@@ -48,16 +34,7 @@ export default function StatisticsVisual({ tag, heading, circles }: StatisticsVi
         {circles.map((circle, index) => (
           <React.Fragment key={index}>
             {/* Circle */}
-            <div
-              className={`absolute rounded-full flex items-center justify-center text-center shadow-sm ${circle.bgColor}`}
-              style={{
-                right: circle.position.right,
-                top: circle.position.top,
-                bottom: circle.position.bottom,
-                width: circle.size.width,
-                height: circle.size.height,
-              }}
-            >
+            <div className={circle.circleClass}>
               <span 
                 className="font-manrope font-medium text-[64px] md:text-[64px] text-[#2C2C2C]"
                 dangerouslySetInnerHTML={{ __html: circle.value }}
@@ -65,19 +42,7 @@ export default function StatisticsVisual({ tag, heading, circles }: StatisticsVi
             </div>
 
             {/* Text description */}
-            <div
-              className="absolute text-[#606060] text-xs md:text-sm leading-[18px] md:leading-[22px]"
-              style={{
-                right: circle.textPosition.right,
-                top: circle.textPosition.top,
-                bottom: circle.textPosition.bottom,
-                width: '140px',
-              }}
-            >
-              <div
-                className="absolute top-0 left-0 h-[0.5px] bg-[#7a7a7a]"
-                style={{ width: circle.lineWidth }}
-              />
+            <div className={circle.textClass}>
               <p className="pt-5 relative z-10">{circle.description}</p>
             </div>
           </React.Fragment>
