@@ -7,6 +7,7 @@ import GradientBanner from "@/components/GradientBanner";
 import StoriesSectionNew from "@/components/Storiescard-with-new-layout";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
+import StoriesSection from "../../components/Home/StoriesSection";
 
 interface FeatureCardProps {
   title: string;
@@ -174,33 +175,29 @@ const Infertility: React.FC = () => {
       {/* 2️⃣ Category Tabs */}
       <div
         className="
-    w-full bg-white 
-    pt-[50px] pb-[80px]
-    px-[12px] md:px-[80px] xl:px-[120px]
-  "
-      >
-        <div
-          className="
-      flex flex-wrap justify-start items-start gap-3 md:gap-4
-      text-left
-    "
-        >
+          w-full bg-white 
+          pt-[50px] pb-[80px]
+          px-[12px] md:px-[80px] xl:px-[120px] " >
+              <div
+                className="
+                  flex flex-wrap justify-start items-start gap-3 md:gap-4
+                  text-left " >
           {categories.map((cat) => (
             <button
               key={cat.id}
               type="button"
               onClick={() => handleScroll(cat.id)}
               className={`
-          px-[10px] py-[10px] md:px-[20px] md:py-[16px]
-          rounded-[8px] md:rounded-[16px]
-          font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px]
-          tracking-[-0.28px] transition-all duration-200
-          ${activeTab === cat.id
-                  ? "bg-[#1656A5] text-white shadow-md"
-                  : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-                }
-        `}
-            >
+              px-[10px] py-[10px] md:px-[20px] md:py-[16px]
+              rounded-[8px] md:rounded-[16px]
+              font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px]
+              tracking-[-0.28px] transition-all duration-200
+              ${activeTab === cat.id
+                      ? "bg-[#1656A5] text-white shadow-md"
+                      : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+                    }
+            `}
+                >
               {cat.label}
             </button>
           ))}
@@ -222,10 +219,7 @@ const Infertility: React.FC = () => {
             Know the Facts
           </h3>
           <p className="text-[#606060] text-[15px] md:text-[16px] leading-[24px] max-w-3xl font-[Manrope]">
-            Infertility is defined as the inability to achieve pregnancy after a year of
-            regular, unprotected intercourse. It affects both men and women, and by
-            identifying causes early, couples can seek effective treatments and move
-            closer to parenthood.
+            Infertility is defined as the inability to achieve pregnancy after a year of regular, unprotected intercourse. It is a common condition that can affect both men and women, often linked to medical issues, lifestyle choices, or age-related factors. While the journey can feel overwhelming, it’s important to remember that many couples face similar challenges. By identifying the underlying causes and seeking timely medical support, individuals can explore a range of effective treatments and move closer to fulfilling their dream of parenthood.
           </p>
         </div>
       </section>
@@ -245,17 +239,15 @@ const Infertility: React.FC = () => {
             <div className="flex-1">
               <p
                 className="
-      font-[Manrope] font-normal text-[#2C2C2C]
-      text-[18px] leading-[28px] tracking-[-0.36px]
-      md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
-      lg:text-[28px] lg:leading-[36px] lg:tracking-[-0.56px]
-      xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
-      max-w-[832px]
-    "
+                  font-[Manrope] font-normal text-[#2C2C2C]
+                  text-[18px] leading-[28px] tracking-[-0.36px]
+                  md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
+                  lg:text-[28px] lg:leading-[36px] lg:tracking-[-0.56px]
+                  xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
+                  max-w-[832px]
+                "
               >
-                Female infertility can arise from various health conditions such as PCOS,
-                low AMH, fibroids, or blocked tubes. Understanding these issues early
-                helps in seeking appropriate medical care and treatments.
+                Female infertility can arise from various health conditions that affect ovulation, egg quality, or the reproductive system. Understanding these causes—such as PCOS, low AMH, fibroids, or repeated treatment failures—helps in taking timely steps toward the right medical care and treatment options.
               </p>
             </div>
           </div>
@@ -265,22 +257,17 @@ const Infertility: React.FC = () => {
             className="
               grid gap-6 mt-[80px]
               grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4
-              justify-items-center
-            "
-          >
+              justify-items-center">
             {femaleInfertilityIssues.map((issue) => (
               <Link
                 key={issue.id}
                 href={`/infertility/${issue.slug}`}
                 className="
                   flex flex-col items-center justify-between
-                  w-full sm:w-[300px] md:w-[340px] xl:w-[360px]
+                  w-full
                   px-6 pt-6 pb-[70px] gap-[40px]
-                  bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6] rounded-2xl
-                  shadow-sm hover:shadow-md transition hover:bg-[#E6F0FF]
-                "
-              >
-                <h3 className="text-[#2C2C2C] text-[20px] md:text-[24px] font-normal leading-[28px] md:leading-[36px] text-center font-[Manrope]">
+                  bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6] rounded-2xl transition hover:bg-[#1656A51F] " >
+                <h3 className="text-[#2C2C2C] text-[20px] md:text-[24px] font-normal leading-[28px] md:leading-[36px] text-start w-full font-[Manrope]">
                   {issue.title}
                 </h3>
                 <img
@@ -354,7 +341,7 @@ const Infertility: React.FC = () => {
       </section>
 
       {/* SECTION 3: Male Infertility (3 CARDS) */}
-      <section id="fertility-mini-section" className="bg-white pt-[80px] pb-[60px]">
+      <section id="fertility-mini-section" className="bg-[#FAFAFA] pt-[80px] pb-[60px]">
         <div className="px-4 md:px-[80px] lg:px-[120px]">
           <div className="flex flex-col xl:flex-row justify-between gap-8">
             <div className="w-full xl:w-[45%]">
@@ -368,15 +355,13 @@ const Infertility: React.FC = () => {
             <div className="flex-1">
               <p
                 className="
-      font-[Manrope] font-normal text-[#2C2C2C]
-      text-[18px] leading-[28px] tracking-[-0.36px]
-      md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
-      lg:text-[28px] lg:leading-[36px] lg:tracking-[-0.56px]
-      xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
-      max-w-[832px]
-    "
-              >
-                Male infertility can result from issues like low sperm count, azoospermia, or erectile dysfunction. Recognizing these causes early is the first step toward effective treatment and improving the chances of conception.
+                  font-[Manrope] font-normal text-[#2C2C2C]
+                  text-[18px] leading-[28px] tracking-[-0.36px]
+                  md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
+                  lg:text-[28px] lg:leading-[36px] lg:tracking-[-0.56px]
+                  xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
+                  max-w-[832px]" >
+                Male infertility can result from issues like low sperm count, azoospermia, or erectile dysfunction.<span className="text-[#606060]"> Recognizing these causes early is the first step toward effective treatment and improving the chances of conception.</span>
               </p>
             </div>
           </div>
@@ -384,34 +369,28 @@ const Infertility: React.FC = () => {
           {/* Responsive 3-Card Grid */}
           <div
             className="
-    grid mt-[80px]
-    gap-[21px]
-    grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
-    justify-center xl:justify-start
-  "
-          >
+            grid mt-[80px]
+            gap-[21px]
+            grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
+            justify-center xl:justify-start">
             {maleInfertilityIssues.map((item) => (
               <Link
                 key={item.id}
                 href={`/infertility/${item.slug}`}
                 className="
-        flex flex-col items-center justify-between
-        w-[100%] sm:w-[520px] md:w-[540px] xl:w-[546px]
-        h-[444px]
-        px-6 pt-6 pb-[70px] gap-[40px]
-        bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6]
-        rounded-2xl shadow-sm hover:shadow-md transition hover:bg-[#E6F0FF]
-        flex-shrink-0
-      "
-              >
+                  flex flex-col items-center justify-between
+                  w-[100%]
+                  h-[444px]
+                  px-6 pt-6 pb-[70px] gap-[40px]
+                  bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6]
+                  rounded-2xl transition hover:bg-[#1656A51F]
+                  flex-shrink-0 " >
                 <h3
                   className="
-          text-[#2C2C2C]
-          text-[20px] md:text-[24px]
-          leading-[28px] md:leading-[36px]
-          font-normal text-center font-[Manrope]
-        "
-                >
+                  text-[#2C2C2C]
+                    text-[20px] md:text-[24px]
+                    leading-[28px] md:leading-[36px]
+                    font-normal text-start w-full font-[Manrope] " >
                   {item.title}
                 </h3>
 
@@ -419,11 +398,9 @@ const Infertility: React.FC = () => {
                   src={item.image}
                   alt={item.title}
                   className="
-          w-[200px] h-[180px]
-          md:w-[280px] md:h-[240px]
-          object-contain mix-blend-multiply
-        "
-                />
+                  w-[200px] h-[180px]
+                  md:w-[280px] md:h-[240px]
+                  object-contain mix-blend-multiply" />
               </Link>
             ))}
           </div>
@@ -433,11 +410,45 @@ const Infertility: React.FC = () => {
 
       {/* SECTION 4: STORIES */}
       <section id="stories-section">
-        <StoriesSectionNew />
+        <StoriesSection />
       </section>
 
       <ConsultationForm />
-      <GradientBanner text="The road may be challenging, but with the right care, parenthood is within reach." />
+
+      {/* SECTION 6: GradientBanner */}
+      <section className="relative w-full h-[475px] flex items-center justify-center overflow-hidden">
+      {/* 🔹 Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-green-50 via-white to-blue-50" />
+
+      {/* 🔹 Background Blur Gradients */}
+      <div
+        className="absolute left-[-50px] bottom-[-50px] w-[322px] h-[443px] rounded-full opacity-70"
+        style={{
+          background: "#94BA3D",
+          filter: "blur(250px)",
+          transform: "rotate(-2deg)",
+        }}
+      ></div>
+
+      <div
+        className="absolute right-[-150px] top-[-200px] w-[350px] h-[350px] rounded-full opacity-90"
+        style={{
+          background: "#1656A5",
+          filter: "blur(250px)",
+          transform: "rotate(-2deg)",
+        }}
+      ></div>
+
+      {/* 🔹 Text */}
+      <h2
+        className="relative w-[90%] md:w-[70%] lg:w-[50%] text-center font-[Manrope] 
+             text-[#94BA3D] text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] 
+             font-normal leading-[36px] sm:leading-[44px] md:leading-[52px] lg:leading-[56px] 
+             tracking-[-0.96px] px-4 z-10"
+      >
+        The road may be challenging, but with the right care, parenthood is within reach.
+      </h2>
+    </section>
     </div>
   );
 };
