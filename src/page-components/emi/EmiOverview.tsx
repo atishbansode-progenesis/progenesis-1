@@ -71,7 +71,7 @@ const EmiOverview = () => {
         <div className="pt-[8px] md:pt-[40px]">
           <button
             type="button"
-            className="inline-flex items-center justify-center bg-[#1656A5] text-white rounded-[12px] h-10 px-4 md:h-11 md:px-5 shadow hover:opacity-90 transition"
+            className="inline-flex items-center hover:cursor-pointer justify-center bg-[#1656A5] text-white rounded-[12px] h-10 px-4 md:h-11 md:px-5 shadow hover:opacity-90 transition"
           >
             Know more about EMI facilities
           </button>
