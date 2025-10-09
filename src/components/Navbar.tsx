@@ -1470,7 +1470,7 @@ const megaMenuData: Record<string, any> = {
       {
         links: [
           { label: "Our Centers", path: "/centers", isarrow: true },
-          { label: "Second Opinion", path: "/centers", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
           { label: "Online Consultation", path: "/online-consultion", isarrow: true },
@@ -1946,7 +1946,7 @@ export default function Navbar() {
     <header className="w-full bg-white font-sans relative">
       {/* NAVBAR */}
       {!isSearchOpen && (
-        <div className="mx-auto flex items-center justify-between h-20 px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px]">
+        <div className="mx-auto flex items-center justify-between h-20 px-6   csLg:px-[120px]">
           <Link href="/" className="w-[150px] h-[40px] relative">
             <Image src="/logo1.png" alt="Logo" fill className="object-contain" />
           </Link>

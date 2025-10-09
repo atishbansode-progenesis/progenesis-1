@@ -22,7 +22,7 @@ const tabItems = [
     heading: 'Confirm your treatment & travel',
     description:
       'Once treatment and travel dates are confirmed, we issue a letter for your medical visa. Sharing your flight details with us is essential at this stage.',
-    image: '/InternationalPatients/visa.png',
+    image: '/InternationalPatients/Visa.png',
   },
   {
     storyNumber: '03',
@@ -110,7 +110,7 @@ const Journey: React.FC = () => {
               </div>
 
               {/* Info Box */}
-              <div className="flex flex-col justify-center gap-4 w-full lg:flex-1 lg:max-w-[440px] xl:max-w-[400px] pt-2.5 px-4">
+              <div className="flex flex-col justify-start gap-4 w-full lg:flex-1 lg:max-w-[440px] xl:max-w-[400px] pt-2.5 px-4">
                 <h3 className="text-[#94BA3D]">{tabItems[activeTab].storyNumber}</h3>
                 <h3 className="text-[#1656A5] font-medium text-3xl md:text-[28px] lg:text-[32px] leading-tight font-[Manrope]">
                 {tabItems[activeTab].heading}
