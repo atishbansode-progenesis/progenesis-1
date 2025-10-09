@@ -1946,7 +1946,7 @@ export default function Navbar() {
     <header className="w-full bg-white font-sans relative">
       {/* NAVBAR */}
       {!isSearchOpen && (
-        <div className="mx-auto flex items-center justify-between h-20 px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px]">
+        <div className="mx-auto flex items-center justify-between h-20 px-6   csLg:px-[120px]">
           <Link href="/" className="w-[150px] h-[40px] relative">
             <Image src="/logo1.png" alt="Logo" fill className="object-contain" />
           </Link>
