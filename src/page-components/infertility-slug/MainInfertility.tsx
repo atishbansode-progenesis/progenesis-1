@@ -80,7 +80,6 @@ export default function MainInfertility({ data }: { data: any }) {
         <StoriesSection />
       </section>
 
-      {/* Section 8: Consultation Form */}
       <ConsultationForm />
 
       {/* Section 9: Gradient Banner */}

@@ -169,6 +169,7 @@ const Infertility: React.FC = () => {
         buttonLink="/book-appointment"
         foregroundImage="/Infertility/Infertility_s1.png"
         overlayImage="/treatments/doctor-foreground.png"
+        contentClassName="justify-start"
       />
 
       {/* CATEGORY BUTTONS */}

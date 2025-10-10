@@ -18,6 +18,7 @@ interface HeroSectionProps {
   foregroundImage?: string;
   overlayImage?: string;
   overlayImageSmall?: string;
+  contentClassName?: string;
 }
 
 export default function HeroSection({
@@ -30,24 +31,25 @@ export default function HeroSection({
   overlayImage,
   overlayImageSmall,
   showBlurredShape = true,
+  contentClassName = ''
 }: HeroSectionProps) {
   return (
     <section
-      className="relative w-full min-h-[444px] lg:min-h-[647px] flex p-[16px] lg:p-[80px] overflow-hidden bg-cover bg-no-repeat bg-center bg-gray-400"
+      className="relative w-full min-h-[444px] lg:min-h-[647px] flex p-[16px] lg:p-[80px] overflow-hidden"
       style={{
-        backgroundImage: `url(${window.innerWidth >= 1024 ? overlayImage : overlayImageSmall})`,
+        backgroundImage: backgroundImage ? backgroundImage : "",
       }}
     >
       {/* Overlay Image (background layer) */}
-      {/* {overlayImage && (
+      {overlayImage && (
         <Image
-          src={overlayImage}
+          src={window.innerWidth >= 1024 ? overlayImage : overlayImageSmall || overlayImage}
           alt="Overlay"
           fill
           priority
           className="absolute inset-0 object-cover -z-20"
         />
-      )} */}
+      )}
 
       {/* Blurred gradient shape */}
       {showBlurredShape && (
@@ -62,7 +64,7 @@ export default function HeroSection({
       )}
 
       {/* Content (always above images) */}
-      <div className="relative z-10 w-full flex flex-col justify-end lg:justify-center items-start gap-6 lg:gap-[44px] pb-8 lg:pb-0">
+      <div className={`relative z-10 w-full flex flex-col justify-end lg:justify-center items-start gap-6 lg:gap-[44px] pb-8 lg:pb-0 ${contentClassName}`}>
         {/* Breadcrumbs */}
         <p className="text-[12px] lg:text-[18px] leading-[20px] lg:leading-[40px] font-medium flex flex-wrap items-center gap-2 lg:gap-[12px] ">
           {breadcrumbs.map((crumb, idx) => (
@@ -107,12 +109,12 @@ export default function HeroSection({
             {buttonLink ? (
               <Link
                 href={buttonLink}
-                className="p-[10px] bg-[#252525] text-white rounded-[8px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium"
+                className="p-[10px] lg:p-[20px] bg-[#252525] text-white rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium"
               >
                 {buttonText}
               </Link>
             ) : (
-              <button className="p-[10px] bg-[#252525] text-white rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium">
+              <button className="p-[10px] lg:p-[20px] bg-[#252525] text-white rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium">
                 {buttonText}
               </button>
             )}
