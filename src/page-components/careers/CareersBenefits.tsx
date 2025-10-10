@@ -46,12 +46,8 @@ const CareersBenefits = () => {
 			<div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-6  ">
 				{benefits.map((benefit, idx) => (
 					<div key={idx} className="rounded-2xl bg-[#F2F2F2] border border-gray-100 p-5">
-						<div className="flex flex-col items-start md:gap-3">
-							 <img
-          src={benefit.icon}
-          alt={benefit.title}
-          className="w-[19px] h-[19px]  md:w-8 md:h-8 object-contain"
-        />
+						<div className="flex flex-col items-start gap-3">
+							<img src={benefit.icon}></img>
 							<h3 className="font-manrope text-[20px] md:text-[22px] font-semibold text-gray-900">{benefit.title}</h3>
 							<p className="text-[14px] leading-6 text-[#606060]/70">{benefit.description}</p>
 						</div>

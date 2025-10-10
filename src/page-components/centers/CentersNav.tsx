@@ -79,7 +79,7 @@ const CentersNav: React.FC = () => {
   };
 
   return (
-    <section className="w-full section-spacing overflow-hidden bg-gradient-to-r from-white via-white to-blue-50">
+    <section className="w-full section-spacing overflow-hidden bg-[#F6F6F6]">
       {/* Badge and Title */}
       <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
           Our Expertise
@@ -91,28 +91,41 @@ const CentersNav: React.FC = () => {
       </div>
 
       {/* Filter Section */}
-      <div className="flex flex-wrap gap-4 md:gap-6 mb-6">
+      <div className="flex flex-wrap gap-6 md:gap-10 ">
         {/* State Dropdown */}
-        <div className="flex flex-col gap-2" ref={stateDropdownRef}>
-          <label className="text-sm text-gray-600">Select State</label>
+        <div className="flex items-center gap-3" ref={stateDropdownRef}>
+          <label className="text-sm text-gray-600 font-medium whitespace-nowrap">Select State</label>
           <div className="relative">
             <button
               onClick={() => setIsStateDropdownOpen(!isStateDropdownOpen)}
-              className="min-w-[180px] h-10 px-5 inline-flex items-center justify-between rounded-[12px] text-sm font-medium 
+              className="min-w-[160px] hover:cursor-pointer h-10 px-4 inline-flex items-center justify-between rounded-[8px] text-sm font-medium 
               bg-[#1656A5] text-white shadow"
             >
               {selectedState}
-              <span className={`ml-2 transition-transform duration-200 ${isStateDropdownOpen ? 'rotate-180' : ''}`}>▼</span>
+              <span className={`ml-2 transition-transform duration-200 ${isStateDropdownOpen ? 'rotate-180' : ''}`}>
+                <img src='/images/icons/Vector.svg' className="w-[10px] h-[10px] object-contain" />
+              </span>
             </button>
             
             {/* State Dropdown Menu */}
             {isStateDropdownOpen && (
-              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-xl shadow-lg border border-gray-100 z-20">
+              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20"
+                style={{
+                scrollbarWidth: 'none',       // Firefox
+                msOverflowStyle: 'none',      // IE/Edge
+                  }}
+              >
+                <style jsx>{`
+                    div::-webkit-scrollbar {
+                    display: none;
+                              }
+                          `}</style>
+              
                 {Object.keys(stateWithCities).map((state) => (
                   <button
                     key={state}
                     onClick={() => handleStateChange(state)}
-                    className={`w-full px-5 py-2.5 text-left text-sm hover:bg-gray-50 transition-colors
+                    className={`w-full px-4 py-2.5 text-left hover:cursor-pointer text-sm hover:bg-gray-50 transition-colors
                       ${selectedState === state ? 'text-[#1656A5] font-medium bg-[#1656A5]/5' : 'text-gray-700'}`}
                   >
                     {state}
@@ -124,26 +137,38 @@ const CentersNav: React.FC = () => {
         </div>
 
         {/* City Dropdown */}
-        <div className="flex flex-col gap-2" ref={cityDropdownRef}>
-          <label className="text-sm text-gray-600">Select City</label>
+        <div className="flex items-center gap-3" ref={cityDropdownRef}>
+          <label className="text-sm text-gray-600 font-medium whitespace-nowrap">Select City</label>
           <div className="relative">
             <button
               onClick={() => setIsCityDropdownOpen(!isCityDropdownOpen)}
-              className={`min-w-[180px] h-10 px-5 inline-flex items-center justify-between rounded-[12px] text-sm font-medium transition-colors
-                ${isCityDropdownOpen ? 'bg-[#1656A5] text-white' : 'bg-white text-[#1656A5] border border-[#1656A5]/60'}`}
+              className={`min-w-[160px] hover:cursor-pointer h-10 px-4 inline-flex items-center justify-between rounded-[8px] text-sm font-medium transition-colors
+                ${isCityDropdownOpen ? 'bg-[#1656A5] text-white' : 'bg-[#1656A5] text-white border border-[#1656A5]/60'}`}
             >
               {selectedCity}
-              <span className={`ml-2 transition-transform duration-200 ${isCityDropdownOpen ? 'rotate-180' : ''}`}>▼</span>
+              <span className={`ml-2 transition-transform duration-200 ${isCityDropdownOpen ? 'rotate-180' : ''}`}>
+                <img src='/images/icons/Vector.svg' className="w-[10px] h-[10px] object-contain" />
+              </span>
             </button>
 
             {/* City Dropdown Menu */}
             {isCityDropdownOpen && (
-              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-xl shadow-lg border border-gray-100 z-20">
+              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20"
+              style={{
+    scrollbarWidth: 'none',       // Firefox
+    msOverflowStyle: 'none',      // IE/Edge
+  }}
+>
+  <style jsx>{`
+    div::-webkit-scrollbar {
+      display: none;
+    }
+  `}</style>
                 {availableCities.map((city) => (
                   <button
                     key={city}
                     onClick={() => handleCityChange(city)}
-                    className={`w-full px-5 py-2.5 text-left text-sm hover:bg-gray-50 transition-colors
+                    className={`w-full hover:cursor-pointer px-4 py-2.5 text-left text-sm hover:bg-gray-50 transition-colors
                       ${selectedCity === city ? 'text-[#1656A5] font-medium bg-[#1656A5]/5' : 'text-gray-700'}`}
                   >
                     {city}
@@ -156,7 +181,7 @@ const CentersNav: React.FC = () => {
       </div>
 
       {/* Centers Count */}
-      <div className="text-sm text-gray-600 mb-8">
+      <div className="text-sm text-end text-[#2C2C2C] mb-10 lg:mb-20">
         Showing {Math.min(CENTERS_PER_PAGE, filteredCenters.length - (currentPage - 1) * CENTERS_PER_PAGE)} of {filteredCenters.length} Centers
       </div>
 
@@ -176,58 +201,77 @@ const CentersNav: React.FC = () => {
 
       {/* Pagination */}
       {filteredCenters.length > CENTERS_PER_PAGE && (
-        <div className="flex justify-center items-center mt-10 gap-2">
+        <div className="flex justify-center items-center mt-10 gap-4">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className={`h-10 w-10 flex items-center justify-center rounded-xl border ${
-              currentPage === 1
-                ? 'border-gray-200 text-gray-400 cursor-not-allowed'
-                : 'border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors'
-            }`}
+            className={`h-[56px] w-[56px] flex hover:cursor-pointer items-center justify-center rounded-xl border relative group
+             ${
+             currentPage === 1
+              ? 'border-[#1656A5] text-gray-400 cursor-not-allowed'
+              : 'border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors'
+              }`}
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
+              {/* white icon (hidden by default, shown on hover) */}
+                <img
+                    src="/icons/left-white.svg"
+                    alt="left-white"
+                    width={12}
+                    height={12}
+                    className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                />
+
+              {/* normal icon (shown by default, hidden on hover) */}
+                <img
+                   src="/icons/left.svg"
+                   alt="left"
+                   width={12}
+                   height={12}
+                   className="opacity-100 group-hover:opacity-0 transition-opacity duration-200"
+                />
           </button>
 
-          {/* Page Numbers */}
-          <div className="flex gap-2">
-            {Array.from(
-              { length: Math.ceil(filteredCenters.length / CENTERS_PER_PAGE) },
-              (_, i) => i + 1
-            ).map((pageNum) => (
-              <button
-                key={pageNum}
-                onClick={() => setCurrentPage(pageNum)}
-                className={`h-10 w-10 rounded-xl border text-sm font-medium transition-colors ${
-                  currentPage === pageNum
-                    ? 'bg-[#1656A5] text-white border-[#1656A5]'
-                    : 'border-gray-200 text-gray-600 hover:border-[#1656A5] hover:text-[#1656A5]'
-                }`}
-              >
-                {pageNum}
-              </button>
-            ))}
+
+          {/* Current Page of Total Pages */}
+          <div className="flex items-center h-[56px] w-[89px] gap-2 rounded-[12px] justify-center text-center px-4 py-4 bg-[#1656A5]">
+            <span className="text-sm text-center font-medium text-[#F2F2F2]">
+              {currentPage} of {Math.ceil(filteredCenters.length / CENTERS_PER_PAGE)}
+            </span>
           </div>
 
           <button
-            onClick={() => 
-              setCurrentPage((prev) => 
-                Math.min(prev + 1, Math.ceil(filteredCenters.length / CENTERS_PER_PAGE))
-              )
-            }
-            disabled={currentPage === Math.ceil(filteredCenters.length / CENTERS_PER_PAGE)}
-            className={`h-10 w-10 flex items-center justify-center rounded-xl border ${
-              currentPage === Math.ceil(filteredCenters.length / CENTERS_PER_PAGE)
-                ? 'border-gray-200 text-gray-400 cursor-not-allowed'
-                : 'border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors'
-            }`}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+              onClick={() =>
+              setCurrentPage((prev) =>
+              Math.min(prev + 1, Math.ceil(filteredCenters.length / CENTERS_PER_PAGE))
+                    )
+                      }       
+                  disabled={currentPage === Math.ceil(filteredCenters.length / CENTERS_PER_PAGE)}
+                  className={`h-[56px] w-[56px] hover:cursor-pointer flex items-center justify-center rounded-xl border relative group
+                  ${
+                    currentPage === Math.ceil(filteredCenters.length / CENTERS_PER_PAGE)
+                    ? 'border-[#1656A5] text-gray-400 cursor-not-allowed'
+                    : 'border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors'
+                   }`}
+            >
+              {/* white icon — hidden by default, shown on hover */}
+                <img
+                  src="/icons/right-white.svg"
+                  alt="right-white"
+                  width={12}
+                  height={12}
+                  className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer transition-opacity duration-200"
+                />
+
+              {/* normal icon — shown by default, hidden on hover */}
+                <img
+                  src="/icons/right.svg"
+                  alt="right"
+                  width={12}
+                  height={12}
+                  className="opacity-100 group-hover:opacity-0 hover:cursor-pointer transition-opacity duration-200"
+                />
+            </button>
+
         </div>
       )}
 

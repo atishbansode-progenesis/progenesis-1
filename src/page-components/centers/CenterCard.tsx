@@ -52,7 +52,7 @@ export const centersData: Center[] = [
     id: 2,
     slug: "thane",
     name: "Thane",
-    city: "Thane",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "16, First Floor, Dosti Imperia, Ghodbunder Road, Opp R Mall, Manpada, Thane West 400607",
     image: "/images/Thane.png",
@@ -178,7 +178,7 @@ export const centersData: Center[] = [
     id: 8,
     slug: "vashi",
     name: "Vashi",
-    city: "Navi Mumbai",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "Ground Floor, Bhumiraj Costarica, Palm Beach Service Road, Vashi, Navi Mumbai 400703",
     image: "/images/Vashi.png",
@@ -199,7 +199,7 @@ export const centersData: Center[] = [
     id: 9,
     slug: "virar",
     name: "Virar",
-    city: "Palghar",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "Virar Medical Complex, Near Virar Station, Virar West 401303",
     image: "/images/virar.jpg",
@@ -220,7 +220,7 @@ export const centersData: Center[] = [
     id: 10,
     slug: "kalyan",
     name: "Kalyan",
-    city: "Thane",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "Kalyan Health Clinic, Near Kalyan Station, Kalyan West 421301",
     image: "/images/kalyan.webp",
@@ -241,7 +241,7 @@ export const centersData: Center[] = [
     id: 11,
     slug: "panvel",
     name: "Panvel",
-    city: "Navi Mumbai",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "Panvel Medical Center, Near Panvel Station, Panvel 410206",
     image: "/images/Panvel.jpg",
@@ -403,29 +403,29 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
     <div onClick={() => {
               router.push(`/centers/${centerData.slug}`);
             }}
-     className="flex flex-col md:flex-row gap-4 bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+     className="flex flex-col hover:cursor-pointer md:flex-row gap-4 bg-[#FFFFFF] hover:bg-[#1656A50D] rounded-xl overflow-hidden transition-shadow">
       {/* Image Container */}
-      <div className="relative w-full md:w-[320px] h-[200px] md:h-[240px]">
+      <div className=" p-4 relative w-full  h-[100%] md:h-[444px]">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-2xl"
         />
       </div>
 
       {/* Content Container */}
       <div className="flex flex-col justify-between p-4 md:p-6 w-full">
         {/* Center Name and Address */}
-        <div>
-          <h3 className="text-xl md:text-2xl font-manrope text-[#1656A5] mb-2">
+        <div className='w-auto'>
+          <h3 className="text-[32px] md:text-[48px] font-normal font-manrope text-[#1656A5] mb-2">
             {name}
           </h3>
-          <p className="text-[#6B7280] text-sm md:text-base leading-relaxed mb-4">
+          <p className="text-[#6B7280] text-[14px] leading-[22px] font-normal md:text-[32px] md:leading-[40px] tracking-tight mb-4">
             {address}
           </p>
 
           {/* Timings */}
-          <div className="text-sm text-gray-600 mb-4">
+          <div className="text-sm md:text-xl text-gray-600 mb-4">
             <p><span className="font-medium">Weekdays:</span> {centerData.timings?.weekdays}</p>
             <p><span className="font-medium">Weekends:</span> {centerData.timings?.weekends}</p>
           </div>
@@ -439,7 +439,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col md:flex-row gap-3 mt-4">
+        <div className="flex items-start justify-between flex-col md:flex-row gap-3 mt-4">
           <button 
             onClick={() => {
               if (centerData.coordinates) {
@@ -450,21 +450,21 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
               }
             }}
             disabled={!centerData.coordinates && !centerData.address}
-            className={`h-10 px-4 text-sm font-medium flex items-center justify-center gap-2 ${
+            className={`h-10 text-sm font-medium hover:cursor-auto flex items-center underline decoration-[#2C2C2C] justify-center gap-2 ${
               !centerData.coordinates && !centerData.address
                 ? 'text-gray-400 cursor-not-allowed'
-                : 'text-[#1656A5] hover:text-[#1656A5]/80 transition-colors'
+                : 'text-[#2C2C2C] hover:text-[#1656A5] transition-colors'
             }`}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {/* <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+            </svg> */}
             {centerData.coordinates ? 'Get Location' : 'View on Map'}
           </button>
           <button 
           
-            className="h-10 px-4 rounded-xl text-sm font-medium text-white bg-[#1656A5] hover:bg-[#1656A5]/90 transition-colors flex items-center justify-center gap-2"
+            className="h-10 px-4 hover:cursor-auto rounded-xl text-sm font-medium text-[#1656A5] bg-white border border-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors flex items-center justify-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

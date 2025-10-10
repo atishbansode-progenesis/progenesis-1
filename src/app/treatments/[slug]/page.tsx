@@ -18,6 +18,7 @@ import {
 import StoriesSectionNew from "@/components/Storiescard-with-new-layout";
 import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import GradientBanner from "@/components/GradientBanner";
+import ParenthoodSection from "@/components/ParenthoodSection";
 
 interface TreatmentPageProps {
   params: Promise<{ slug: string }>;
@@ -65,13 +66,16 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
 
       {/* Tabs */}
       {treatment.categories && (
-        <div className="flex flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[80px] bg-[#fff]">
+        <div
+          className="flex flex-nowrap md:flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[40px] md:pb-[80px] bg-[#fff] overflow-x-auto scrollbar-hide"
+          style={{ WebkitOverflowScrolling: 'touch', minWidth: 0 }}
+        >
           {treatment.categories.map((cat) => (
             <button
               key={cat.id}
               type="button"
               onClick={() => setActiveTab(cat.id)}
-              className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
+              className={`flex-shrink-0 px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
               font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] 
               tracking-[-0.28px] transition 
               ${
@@ -308,6 +312,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
 
       <StoriesSection />
       <ConsultationForm />
+    
     </div>
   );
 }

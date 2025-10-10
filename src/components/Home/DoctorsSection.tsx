@@ -195,18 +195,18 @@ const DoctorsSection = () => {
   const doctor = doctors[currentIndex];
 
   return (
-    <section className="py-12 md:py-20 bg-gray-50 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
+    <section className="py-12 md:py-20 bg-[#FAFAFA] px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
       {/* Heading Section */}
       <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-12 mb-12 md:mb-20 lg:mb-32">
         {/* Left Side */}
         <div className="w-full lg:w-1/2 lg:max-w-2xl">
-          <span className="inline-block text-xs md:text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-4 md:mb-6">
+          <span className="inline-block text-xs md:text-sm font-medium text-[#1656a5] bg-[#1656a50d] px-3 py-1 rounded-full mb-4 md:mb-6">
             The Experts
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 md:mb-6 leading-tight">
             Meet the Experts <br /> Behind the Magic
           </h2>
-          <button className="px-6 md:px-10 lg:px-12 py-2.5 md:py-3 rounded-lg md:rounded-2xl text-xs md:text-sm font-medium border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
+          <button className="px-6 cursor-pointer md:px-10 lg:px-12 py-2.5 md:py-3 rounded-lg md:rounded-2xl text-xs md:text-sm font-medium border border-[#1656a5] text-[#1656a5] hover:bg-[#1656a5] hover:text-white transition-all duration-300">
             View all Doctors
           </button>
         </div>
@@ -229,10 +229,11 @@ const DoctorsSection = () => {
           <div
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-4"
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 pr-0"
             style={{
               scrollBehavior: "smooth",
               WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
             }}
           >
             {doctors.map((doc, idx) => (
@@ -240,7 +241,7 @@ const DoctorsSection = () => {
                 key={idx}
                 className="flex-shrink-0 w-[85%] snap-center"
               >
-                <div className="bg-white rounded-lg overflow-hidden">
+                <div className="rounded-lg bg-[#FFFFFF] h-[733px] overflow-hidden">
                   {/* Doctor Image */}
                   <div className="w-full p-2 flex items-center justify-center">
                     <div className="w-full aspect-[3/4] relative rounded-lg overflow-hidden h-[300px]">
@@ -307,7 +308,7 @@ const DoctorsSection = () => {
           {/* Navigation Buttons - Desktop */}
           <button
             onClick={prevDoctor}
-            className="hidden xl:flex absolute cursor-pointer left-0 top-1/2 -translate-y-1/2 -translate-x-20 2xl:-translate-x-24 w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-blue-600 text-blue-600 text-xl hover:bg-blue-50 transition-all duration-300 z-10"
+            className="hidden xl:flex absolute cursor-pointer left-0 top-1/2 -translate-y-1/2 -translate-x-20 2xl:-translate-x-24 w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-[#1656a5] text-[#1656a5] text-xl hover:bg-[rgba(22,86,165,0.05)] transition-all duration-300 z-10"
             aria-label="Previous doctor"
           >
             <img src="/icons/left.svg" alt="Previous" width={12} height={12} />
@@ -315,17 +316,17 @@ const DoctorsSection = () => {
 
           <button
             onClick={nextDoctor}
-            className="hidden xl:flex absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 translate-x-20 2xl:translate-x-24 w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-blue-600 text-blue-600 text-xl hover:bg-blue-50 transition-all duration-300 z-10"
+            className="hidden xl:flex absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 translate-x-20 2xl:translate-x-24 w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-[#1656a5] text-[#1656a5] text-xl hover:bg-blue-50 transition-all duration-300 z-10"
             aria-label="Next doctor"
           >
             <img src="/icons/right.svg" alt="Next" width={12} height={12} />
           </button>
 
           {/* Doctor Card */}
-          <div className="overflow-hidden">
+          <div className=" bg-[#FFFFFF] rounded-2xl">
             {/* Counter */}
             <div className="relative ">
-              <p className="absolute top-4 right-4 md:top-6 md:right-6 text-gray-600 text-xs md:text-sm font-semibold z-10">
+              <p className="absolute top-4 right-4 md:top-[-30px] md:right-6 text-gray-600 text-xs md:text-sm font-semibold z-10">
                 {String(currentIndex + 1).padStart(2, "0")} of{" "}
                 {String(doctors.length).padStart(2, "0")}
               </p>
@@ -362,7 +363,7 @@ const DoctorsSection = () => {
                   </div>
 
                   {/* Experience Tags */}
-                  <div className="flex flex-col gap-2.5 md:gap-3 mb-6 md:mb-8">
+                  <div className="flex flex-col gap-2.5 md:gap-3">
                     {doctor.experience.map((exp, idx) => (
                       <div
                         key={idx}
@@ -392,14 +393,14 @@ const DoctorsSection = () => {
           <div className="flex xl:hidden justify-center gap-4 mt-6">
             <button
               onClick={prevDoctor}
-              className="w-[56px] h-[56px] rounded-[16px] flex items-center cursor-pointer justify-center border border-blue-600 text-blue-600 text-xl hover:bg-blue-50 transition-all duration-300"
+              className="w-[56px] h-[56px] rounded-[16px] flex items-center cursor-pointer justify-center border border-blue-600 text-[#1656a5] text-xl hover:bg-blue-50 transition-all duration-300"
               aria-label="Previous doctor"
             >
               <img src="/icons/left.svg" alt="Previous" width={12} height={12} />
             </button>
             <button
               onClick={nextDoctor}
-              className="w-[56px] h-[56px] rounded-[16px] flex items-center cursor-pointer justify-center border border-blue-600 text-blue-600 text-xl hover:bg-blue-50 transition-all duration-300"
+              className="w-[56px] h-[56px] rounded-[16px] flex items-center cursor-pointer justify-center border border-blue-600 text-[#1656a5] text-xl hover:bg-blue-50 transition-all duration-300"
               aria-label="Next doctor"
             >
               <img src="/icons/right.svg" alt="Next" width={12} height={12} />

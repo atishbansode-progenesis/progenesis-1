@@ -69,7 +69,7 @@ export default function StoriesSection() {
           <div className="flex items-center gap-3">
             <Link
               href="/resources"
-              className="hidden md:inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              className="hidden md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition"
             >
               See all
             </Link>
@@ -77,7 +77,7 @@ export default function StoriesSection() {
             <button
               onClick={prevSlide}
               aria-label="Previous"
-              className="w-10 h-10 rounded-lg border border-blue-600 text-blue-600 bg-white hover:bg-blue-50 flex items-center justify-center"
+              className="w-10 h-10 rounded-lg border border-[#1656a5] text-[#1656a5] bg-white hover:bg-blue-50 flex items-center justify-center"
             >
           <img src="/icons/left.svg" alt="right" width={12} height={12} /> 
             </button>
@@ -85,7 +85,7 @@ export default function StoriesSection() {
             <button
               onClick={nextSlide}
               aria-label="Next"
-              className="w-10 h-10 rounded-lg border border-blue-600 text-blue-600 bg-white hover:bg-blue-50 flex items-center justify-center"
+              className="w-10 h-10 rounded-lg border border-[#1656a5] text-[#1656a5] bg-white hover:bg-blue-50 flex items-center justify-center"
             >
               <img src="/icons/right.svg" alt="right" width={12} height={12} />
             </button>
@@ -133,22 +133,22 @@ export default function StoriesSection() {
                     loading="lazy"
                   />
 
-                  <div className="absolute inset-x-0 top-0 flex items-center justify-between px-4 py-3 text-xs md:text-sm text-white bg-gradient-to-b from-black/60 via-black/10 to-transparent">
+                  {/* <div className="absolute inset-x-0 top-0 flex items-center justify-between px-4 py-3 text-xs md:text-sm text-white bg-gradient-to-b from-black/60 via-black/10 to-transparent">
                     <span>
                       {published}
                     </span>
                     {views && <span>{views}</span>}
-                  </div>
+                  </div> */}
 
-                  <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent text-white">
+                  {/* <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent text-white">
                     <h3 className="text-lg font-semibold leading-snug line-clamp-2">{title}</h3>
                     {description && (
                       <p className="mt-1 text-sm text-white/80 line-clamp-2">{description}</p>
                     )}
-                  </div>
+                  </div> */}
                 </div>
 
-                <div className="absolute left-4 bottom-4">
+                {/* <div className="absolute left-4 bottom-4">
                   <a
                     href={videoSrc}
                     target="_blank"
@@ -158,7 +158,7 @@ export default function StoriesSection() {
                     <Play className="w-4 h-4" />
                     Watch story
                   </a>
-                </div>
+                </div> */}
               </article>
             );
           })}
@@ -166,7 +166,7 @@ export default function StoriesSection() {
 
         {/* Mobile 'See all' button */}
         <div className="mt-4 md:hidden">
-          <Link href="/blog" className="px-4 py-2 bg-blue-600 text-white rounded-lg inline-flex w-28 items-center justify-center">
+          <Link href="/blog" className="px-4 py-2 bg-[#1656a5] text-white rounded-lg inline-flex w-28 items-center justify-center">
             See all
           </Link>
         </div>
