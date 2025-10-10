@@ -1086,16 +1086,54 @@ export default function Navbar() {
   const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(null);
   const [activeMobileSubmenuItem, setActiveMobileSubmenuItem] = useState<string | null>(null);
-
-
-
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   React.useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
   }, [isMobileMenuOpen]);
+  // ─── NAVBAR SHOW/HIDE ON SCROLL ─────────────────────────────
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(0);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    lastScrollY.current = window.scrollY || 0;
 
+    let ticking = false;
+    const SCROLL_THRESHOLD = 10;
+    const HIDE_AFTER = 100;
+
+    const handle = () => {
+      const currentY = window.scrollY || 0;
+      if (Math.abs(currentY - lastScrollY.current) < SCROLL_THRESHOLD) return;
+
+      if (
+        currentY > lastScrollY.current &&
+        currentY > HIDE_AFTER &&
+        !isMobileMenuOpen &&
+        !isSearchOpen
+      ) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handle();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isMobileMenuOpen, isSearchOpen]);
+  // ────────────────────────────────────────────────────────────
 
 
 
@@ -1122,7 +1160,10 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full bg-white font-sans relative">
+    <>
+    <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-300 will-change-transform bg-white font-sans ${
+    showHeader ? "translate-y-0 shadow-sm" : "-translate-y-full"
+  }`}>
       {/* NAVBAR */}
       {!isSearchOpen && (
         <div className="mx-auto flex items-center justify-between h-20 px-6   csLg:px-[120px]">
@@ -1540,7 +1581,7 @@ export default function Navbar() {
                border border-[#1656A5] text-[#1656A5] font-[Manrope] text-[12px] 
                font-medium leading-[20px] tracking-[-0.24px] whitespace-nowrap"
             >
-              Check My Fit
+              Find My Right Treatment
             </Link>
           </div>
 
@@ -1556,6 +1597,9 @@ export default function Navbar() {
 
 
     </header>
+     <div className="h-20" aria-hidden="true" />
+    </>
+    
   );
 }
 
