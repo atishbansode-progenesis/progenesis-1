@@ -80,12 +80,12 @@ export default function AwardsSection() {
   };
 
   return (
-    <section className="bg-gray-50 pt-[42px] md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
+    <section className=" pt-[42px] md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
       <div className="mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[80px] items-start">
           {/* Left column */}
           <div>
-            <span className="inline-block bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full">
+            <span className="inline-block  text-blue-700 text-xs px-3 py-1 rounded-full">
               Featured News & Media
             </span>
 
@@ -94,7 +94,7 @@ export default function AwardsSection() {
             </h2>
 
             {/* Tabs */}
-            <div className="mt-10 space-y-6">
+            <div className="mt-10 space-y-6 ">
               {tabs.map((tab) => (
                 <button
                   key={tab}
@@ -122,7 +122,7 @@ export default function AwardsSection() {
                 {data.map((item, idx) => (
                   <article
                     key={idx}
-                    className="bg-white rounded-2xl shadow-sm overflow-hidden transition hover:shadow-md p-[24px] flex flex-col h-[490px]"
+                    className="bg-white rounded-2xl  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col h-[490px]"
                   >
                     <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
                       <span>{item.year}</span>
@@ -141,7 +141,7 @@ export default function AwardsSection() {
                       />
                     </div>
 
-                    <div className="pt-5 flex flex-col justify-end flex-1">
+                    <div className="pt-5 flex flex-col justify-between   flex-1">
                       <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-medium leading-[28px] tracking-[-0.4px]">
                         {item.title}
                       </h3>
@@ -156,7 +156,7 @@ export default function AwardsSection() {
             </div>
 
             {/* Mobile view */}
-            <div className="lg:hidden mt-4">
+            <div className="lg:hidden  bg-white p-[19.3px] rounded-[12.96px]">
               <article className="overflow-hidden p-0">
                 <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
                   <span>{data[mobileIndex].year}</span>
@@ -175,7 +175,7 @@ export default function AwardsSection() {
                   />
                 </div>
 
-                <div className="pt-4 flex flex-col">
+                <div className="pt-4 flex flex-col justify-between">
                   <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-normal leading-[28px] tracking-[-0.4px]">
                     {data[mobileIndex].title}
                   </h3>
