@@ -81,7 +81,7 @@ const FaQ: React.FC = () => {
   const activeItems = tabs[activeTab].items;
 
   return (
-    <section className="bg-[#fafafa] pt-[42px] md:h-auto md:pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
+    <section className="bg-[#fafafa] pt-[42px] md:h[900px] lg:h-[840px] md:pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
       <div className="grid grid-cols-1 md:grid-cols-[360px_1fr] lg:grid-cols-[420px_1fr] gap-6 md:gap-8 lg:gap-10">
         {/* Left intro */}
         <div>

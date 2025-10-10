@@ -109,7 +109,18 @@ const CentersNav: React.FC = () => {
             
             {/* State Dropdown Menu */}
             {isStateDropdownOpen && (
-              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20">
+              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20"
+                style={{
+                scrollbarWidth: 'none',       // Firefox
+                msOverflowStyle: 'none',      // IE/Edge
+                  }}
+              >
+                <style jsx>{`
+                    div::-webkit-scrollbar {
+                    display: none;
+                              }
+                          `}</style>
+              
                 {Object.keys(stateWithCities).map((state) => (
                   <button
                     key={state}
@@ -142,7 +153,17 @@ const CentersNav: React.FC = () => {
 
             {/* City Dropdown Menu */}
             {isCityDropdownOpen && (
-              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20">
+              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20"
+              style={{
+    scrollbarWidth: 'none',       // Firefox
+    msOverflowStyle: 'none',      // IE/Edge
+  }}
+>
+  <style jsx>{`
+    div::-webkit-scrollbar {
+      display: none;
+    }
+  `}</style>
                 {availableCities.map((city) => (
                   <button
                     key={city}
