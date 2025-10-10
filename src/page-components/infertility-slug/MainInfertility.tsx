@@ -10,6 +10,7 @@ import CarouselSection from "@/page-components/infertility-slug/CarouselSection"
 import StatisticsVisual from "@/page-components/infertility-slug/StatisticsVisual";
 import StepsSection from "@/page-components/infertility-slug/StepsSection";
 import GradientBanner from "@/page-components/infertility-slug/GradientBanner";
+import SymptomSection from "@/page-components/infertility-slug/SymptomSection";
 
 export default function MainInfertility({data}: {data: any}) {
   const [activeTab, setActiveTab] = useState("journey");
@@ -60,7 +61,9 @@ export default function MainInfertility({data}: {data: any}) {
         blueCircleData={data.statistics.blueCircleData}
         greenCircleData={data.statistics.greenCircleData}
         skyCircleData={data.statistics.skyCircleData}
-      /> : null}
+      /> : <SymptomSection
+properties={data.cardStatistics}
+      />}
 
       {/* Section 6: Steps */}
       <StepsSection
