@@ -203,7 +203,7 @@ import OpenionMain from "@/page-components/second-op/OpenionMain";
 const page = () => {
   return (
     <div>
-      <OpenionMain />;
+      <OpenionMain />
     </div>
   );
 }
