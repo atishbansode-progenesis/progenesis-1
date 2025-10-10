@@ -10,8 +10,9 @@ import CarouselSection from "@/page-components/infertility-slug/CarouselSection"
 import StatisticsVisual from "@/page-components/infertility-slug/StatisticsVisual";
 import StepsSection from "@/page-components/infertility-slug/StepsSection";
 import GradientBanner from "@/page-components/infertility-slug/GradientBanner";
+import SymptomSection from "@/page-components/infertility-slug/SymptomSection";
 
-export default function MainInfertility({data}: {data: any}) {
+export default function MainInfertility({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("journey");
 
   const handleScroll = (id: string) => {
@@ -29,6 +30,7 @@ export default function MainInfertility({data}: {data: any}) {
         buttonText={data.hero.buttonText}
         buttonLink={data.hero.buttonLink}
         overlayImage={data.hero.overlayImage}
+        overlayImageSmall={data.hero.overlayImageSmall}
       />
 
       {/* Section 2: Navigation Tabs */}
@@ -60,7 +62,9 @@ export default function MainInfertility({data}: {data: any}) {
         blueCircleData={data.statistics.blueCircleData}
         greenCircleData={data.statistics.greenCircleData}
         skyCircleData={data.statistics.skyCircleData}
-      /> : null}
+      /> : <SymptomSection
+        properties={data.cardStatistics}
+      />}
 
       {/* Section 6: Steps */}
       <StepsSection
@@ -76,7 +80,6 @@ export default function MainInfertility({data}: {data: any}) {
         <StoriesSection />
       </section>
 
-      {/* Section 8: Consultation Form */}
       <ConsultationForm />
 
       {/* Section 9: Gradient Banner */}

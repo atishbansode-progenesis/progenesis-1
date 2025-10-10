@@ -25,10 +25,9 @@ const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
         className={`
           flex items-center gap-3 min-w-[320px] px-6 py-4 rounded-2xl shadow-2xl
           backdrop-blur-md border transform transition-all duration-300
-          ${
-            type === "success"
-              ? "bg-green-50 border-green-200 text-green-800"
-              : "bg-red-50 border-red-200 text-red-800"
+          ${type === "success"
+            ? "bg-green-50 border-green-200 text-green-800"
+            : "bg-red-50 border-red-200 text-red-800"
           }
         `}
       >
@@ -144,15 +143,15 @@ const ConsultationForm = () => {
         { fields: formData },
         { headers: { "Content-Type": "application/json" } }
       );
-      
+
       // Reset form data
       setFormData({});
-      
+
       // Reset the form element itself
       if (formRef.current) {
         formRef.current.reset();
       }
-      
+
       // Show success toast
       setToast({
         message: "Your appointment has been booked successfully!",
@@ -160,7 +159,7 @@ const ConsultationForm = () => {
       });
     } catch (error) {
       console.error(error);
-      
+
       // Show error toast
       setToast({
         message: "Failed to submit form. Please try again.",
@@ -172,7 +171,7 @@ const ConsultationForm = () => {
   // Group fields into rows of 2
   const groupedFields: any[][] = [];
   const nonCheckboxFields = formFields.filter(f => f.type !== "checkbox");
-  
+
   for (let i = 0; i < nonCheckboxFields.length; i += 2) {
     groupedFields.push(nonCheckboxFields.slice(i, i + 2));
   }
@@ -190,8 +189,20 @@ const ConsultationForm = () => {
         />
       )}
 
-      <section className="relative pt-[42px] md:pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px] flex justify-center bg-transparent">
-        <div className="bg-white rounded-2xl shadow-lg p-10 flex flex-col md:flex-row w-full max-w-6xl gap-10">
+      <section className="relative p-[16px] lg:p-[120px] py-14 flex justify-center bg-transparent">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          src="\video\babyvideo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+        </video>
+
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="bg-white rounded-2xl shadow-lg p-10 flex flex-col md:flex-row w-full max-w-6xl gap-10 z-20">
           {/* Left Form */}
           <div className="flex-1 text-center">
             <span className="inline-block text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-6">
@@ -337,6 +348,7 @@ const ConsultationForm = () => {
             <ScratchImage />
           </div>
         </div>
+
       </section>
 
       <style>{`

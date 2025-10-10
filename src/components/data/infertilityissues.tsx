@@ -11,6 +11,7 @@ export const repeatedIUIFailuresData = {
     buttonText: "Book Your Appointment",
     buttonLink: "/book-appointment",
     overlayImage: "/InfertilityIssues/s-1bg1.png",
+    overlayImageSmall: "/InfertilityIssues/s-1bg1-small.png",
   },
 
   categories: [
@@ -264,16 +265,16 @@ export const pregnancyAfterMenopauseData = {
     subText1: "Hormonal changes during menopause can affect metabolism,",
     subText2: "leading to weight gain and a slower metabolic rate, which may impact overall health and well-being",
     card1: {
-      title: "Irregular periods",
-      icon:null
+      title: "Irregular or missed cycles signaling hormonal.",
+      icon:"/images/icons/care-1.svg"
     },
     card2: {
-      title: "Vaginal dryness",
-      icon:null
+      title: "Reduced vaginal lubrication causing hormonal discomfort.",
+      icon:"/images/icons/care-1.svg"
     },
     card3: {
-      title: "Weight gain and slowed<br/>metabolism",
-      icon:null
+      title: "Weight gain and slowed metabolism",
+      icon: "/images/icons/care-1.svg"
     }
   },
 
