@@ -190,7 +190,7 @@ const ConsultationForm = () => {
         />
       )}
 
-      <section className="relative pt-[42px] md:pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px] flex justify-center bg-transparent">
+      <section className="relative p-[16px] lg:p-[120px] py-14 flex justify-center bg-transparent">
         <div className="bg-white rounded-2xl shadow-lg p-10 flex flex-col md:flex-row w-full max-w-6xl gap-10">
           {/* Left Form */}
           <div className="flex-1 text-center">

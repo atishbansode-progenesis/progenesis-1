@@ -14,7 +14,7 @@ interface NavigationTabsProps {
 
 export default function NavigationTabs({ categories, activeTab, onTabClick }: NavigationTabsProps) {
   return (
-    <div className="w-full bg-white pt-[50px] pb-[80px] px-[12px] md:px-[80px] xl:px-[120px]">
+    <div className="w-full bg-white p-[16px] lg:p-[120px] lg:pb-0">
       <div className="flex flex-wrap justify-start items-start gap-3 md:gap-4 text-left">
         {categories.map((cat) => (
           <button

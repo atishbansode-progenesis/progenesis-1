@@ -17,6 +17,7 @@ interface HeroSectionProps {
   showBlurredShape?: boolean;
   foregroundImage?: string;
   overlayImage?: string;
+  overlayImageSmall?: string;
 }
 
 export default function HeroSection({
@@ -27,17 +28,18 @@ export default function HeroSection({
   backgroundImage,
   foregroundImage,
   overlayImage,
+  overlayImageSmall,
   showBlurredShape = true,
 }: HeroSectionProps) {
   return (
     <section
-      className="relative w-full h-[500px] md:h-[600px] flex px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] bg-cover bg-center overflow-hidden"
+      className="relative w-full min-h-[444px] lg:min-h-[647px] flex p-[16px] lg:p-[80px] overflow-hidden bg-cover bg-no-repeat bg-center bg-gray-400"
       style={{
-        backgroundImage: backgroundImage ? `url('${backgroundImage}')` : "none",
+        backgroundImage: `url(${window.innerWidth >= 1024 ? overlayImage : overlayImageSmall})`,
       }}
     >
       {/* Overlay Image (background layer) */}
-      {overlayImage && (
+      {/* {overlayImage && (
         <Image
           src={overlayImage}
           alt="Overlay"
@@ -45,23 +47,7 @@ export default function HeroSection({
           priority
           className="absolute inset-0 object-cover -z-20"
         />
-      )}
-
-      {/* Foreground Image (responsive, above overlay & background) */}
-      {/* {foregroundImage && (
-        <Image
-          src={foregroundImage}
-          alt="Foreground"
-          // width={500}
-          // height={500}
-          fill
-          priority
-          className="absolute bottom-0 right-0 object-contain z-0 
-                     w-[180px] md:w-[350px] lg:w-[500px] h-auto"
-        />
       )} */}
-
-      
 
       {/* Blurred gradient shape */}
       {showBlurredShape && (
@@ -76,64 +62,34 @@ export default function HeroSection({
       )}
 
       {/* Content (always above images) */}
-      <div className="relative z-10 mt-2 md:mt-[85px] max-w-5xl">
+      <div className="relative z-10 w-full flex flex-col justify-end lg:justify-center items-start gap-6 lg:gap-[44px] pb-8 lg:pb-0">
         {/* Breadcrumbs */}
-        <p className="text-[18px] text-gray-600 mb-2 md:mb-[44px] flex items-center flex-wrap">
+        <p className="text-[12px] lg:text-[18px] leading-[20px] lg:leading-[40px] font-medium flex flex-wrap items-center gap-2 lg:gap-[12px] ">
           {breadcrumbs.map((crumb, idx) => (
-            <span key={idx} className="flex items-center">
-              {crumb.href ? (
-                <Link
-                  href={crumb.href}
-                  className={`${
-                    idx === breadcrumbs.length - 1
-                      ? "text-[#1656A5] font-medium"
-                      : "text-gray-600"
-                  } px-[6px]`}
-                >
-                  {crumb.label}
-                </Link>
-              ) : (
-                <span
-                  className={`${
-                    idx === breadcrumbs.length - 1
-                      ? "text-[#1656A5] font-medium"
-                      : "text-gray-600"
-                  } px-[6px]`}
-                >
-                  {crumb.label}
-                </span>
-              )}
+            <>
+              <span key={idx} className="flex items-center">
+                {crumb.href ? (
+                  <Link
+                    href={crumb.href}
+                    className={`${idx === breadcrumbs.length - 1
+                      ? "text-[#1656A5]"
+                      : "text-[#606060]"
+                      }`}
+                  >
+                    {crumb.label}
+                  </Link>
+                ) : null}
+              </span>
               {idx < breadcrumbs.length - 1 && (
-                <span className="px-[6px]">›</span>
+                <span>›</span>
               )}
-            </span>
+            </>
           ))}
         </p>
 
         {/* Title */}
-        <h1
-          className="
-    text-[var(--BG_Black,#252525)]
-    font-[Manrope]
-    font-semibold
-    text-[32px]
-    md:text-[40px]
-    xl:text-[80px]
-    leading-[40px]
-    md:leading-[40px]
-    xl:leading-[88px]
-    tracking-[-0.02em]
-    pb-[44px]
-    md:pb-[44px]
-    xl:pb-[80px]
-    max-w-full
-    sm:max-w-[500px]
-    md:max-w-[700px]
-    lg:max-w-[956px]
-  "
-        >
+        <h1 className="text-[32px] lg:text-[80px] leading-[40px] lg:leading-[88px] font-semibold">
           {typeof title === "string" ? (
-            // Allow passing a string with <br> or <br/> to force line breaks
             title.split(/<br\s*\/?>(?:\s*)/gi).map((part, idx, arr) => (
               <span key={idx}>
                 {part}
@@ -151,34 +107,34 @@ export default function HeroSection({
             {buttonLink ? (
               <Link
                 href={buttonLink}
-                className="mt-6 inline-block px-[20px] py-[16px] bg-black text-white rounded-[16px]"
+                className="p-[10px] bg-[#252525] text-white rounded-[8px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium"
               >
                 {buttonText}
               </Link>
             ) : (
-              <button className="mt-6 px-[20px] py-[16px] bg-black text-white rounded-[16px]">
+              <button className="p-[10px] bg-[#252525] text-white rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium">
                 {buttonText}
               </button>
             )}
           </div>
         )}
       </div>
-{foregroundImage && (
-  <div className="absolute right-0 lg:-right-[50px] xl:-right-[80px] 2xl:-right-[120px] bottom-0 top-[10%] z-0 pointer-events-none flex items-end justify-end">
-    <div className="relative w-[85vw] sm:w-[500px] md:w-[650px] lg:w-[800px] xl:w-[1042px] h-[500px] md:h-[600px] flex-shrink-0">
-      <Image
-        src={foregroundImage}
-        alt="Hero Foreground"
-        fill
-        priority
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1042px"
-        className="object-contain"
-        style={{ objectPosition: "right bottom" }}
-      />
-    </div>
-  </div>
-)}
 
+      {foregroundImage && (
+        <div className="absolute right-0 lg:-right-[50px] xl:-right-[80px] 2xl:-right-[120px] bottom-0 top-[10%] z-0 pointer-events-none flex items-end justify-end">
+          <div className="relative w-[85vw] sm:w-[500px] md:w-[650px] lg:w-[800px] xl:w-[1042px] h-[500px] md:h-[600px] flex-shrink-0">
+            <Image
+              src={foregroundImage}
+              alt="Hero Foreground"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1042px"
+              className="object-contain"
+              style={{ objectPosition: "right bottom" }}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

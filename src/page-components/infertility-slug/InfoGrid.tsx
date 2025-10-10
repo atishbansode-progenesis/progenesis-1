@@ -15,7 +15,7 @@ interface InfoGridProps {
 
 export default function InfoGrid({ tag, heading, items }: InfoGridProps) {
   return (
-    <section className="w-full px-[12px] md:px-[80px] xl:px-[120px] py-20 bg-[#FAFAFA]">
+    <section className="w-full p-[16px] lg:p-[120px] bg-[#FAFAFA]">
       {/* Small Tag */}
       <span
         className="inline-block px-3 py-1 mb-6 rounded-full text-[12px] font-medium leading-[20px] tracking-[-0.24px] text-[#1656A5] bg-[#F3F8FE]"

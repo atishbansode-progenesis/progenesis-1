@@ -11,6 +11,7 @@ export const repeatedIUIFailuresData = {
     buttonText: "Book Your Appointment",
     buttonLink: "/book-appointment",
     overlayImage: "/InfertilityIssues/s-1bg1.png",
+    overlayImageSmall: "/InfertilityIssues/s-1bg1-small.png",
   },
 
   categories: [

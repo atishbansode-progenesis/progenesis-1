@@ -22,7 +22,7 @@ export default function SymptomSection({ properties }: StatisticsVisualProps) {
   const cards = [properties.card1, properties.card2, properties.card3];
 
   return (
-    <section className="w-full bg-[#FAFAFA] px-[16px] lg:px-[80px] xl:px-[120px] py-10 md:py-20 ">
+    <section className="w-full bg-[#FAFAFA] p-[16px] lg:p-[120px]">
       <div className="relative flex flex-col gap-10 csLg:gap-[80px] items-start ">
         {/* Tag */}
         <div className="grid grid-cols-1 csLg:grid-cols-2  gap-4">
