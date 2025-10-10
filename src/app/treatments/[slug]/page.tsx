@@ -1,12 +1,12 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { use } from "react";
 import Image from "next/image";
 import { treatments } from "@/data/treatments";
 import HeroSection from "@/components/HeroSection/herosection";
-import React, { useState } from "react";
 import StoriesSection from "@/components/Home/StoriesSection";
+import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import {
   Search,
   Microscope,
@@ -15,13 +15,9 @@ import {
   HeartPulse,
   CheckCircle,
 } from "lucide-react";
-import StoriesSectionNew from "@/components/Storiescard-with-new-layout";
-import ConsultationForm from "@/components/Consultation/ConsultationForm";
-import GradientBanner from "@/components/GradientBanner";
-import ParenthoodSection from "@/components/ParenthoodSection";
 
 interface TreatmentPageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 const iconMap: Record<string, JSX.Element> = {
@@ -34,16 +30,27 @@ const iconMap: Record<string, JSX.Element> = {
 };
 
 export default function TreatmentPage({ params }: TreatmentPageProps) {
-  const { slug } = use(params);
+  const { slug } = params;
   const treatment = treatments.find((t) => t.slug === slug);
-
-  if (!treatment) {
-    return <h1 className="p-6 text-red-600">Treatment not found</h1>;
-  }
 
   const [activeTab, setActiveTab] = useState<string>(
     treatment?.categories?.[0]?.id || ""
   );
+
+  const [activePoint, setActivePoint] = useState<number>(0);
+  const [activeImage, setActiveImage] = useState<string>(
+    treatment?.points?.[0]?.image || "/treatments/imsi/rs1.png"
+  );
+
+  useEffect(() => {
+    if (treatment?.points?.length) {
+      setActiveImage(treatment.points[0].image);
+    }
+  }, [treatment]);
+
+  if (!treatment) {
+    return <h1 className="p-6 text-red-600">Treatment not found</h1>;
+  }
 
   return (
     <div className="w-full flex flex-col">
@@ -66,10 +73,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
 
       {/* Tabs */}
       {treatment.categories && (
-        <div
-          className="flex flex-nowrap md:flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[40px] md:pb-[80px] bg-[#fff] overflow-x-auto scrollbar-hide"
-          style={{ WebkitOverflowScrolling: 'touch', minWidth: 0 }}
-        >
+        <div className="flex flex-nowrap md:flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[40px] md:pb-[80px] bg-[#fff] overflow-x-auto scrollbar-hide">
           {treatment.categories.map((cat) => (
             <button
               key={cat.id}
@@ -96,11 +100,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
           <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
             Know the Basics
           </span>
-          <h2
-            className="text-[#2C2C2C] font-[Manrope] font-normal mb-[60px] 
-            text-[32px] leading-[40px] tracking-[-0.64px] 
-            md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]"
-          >
+          <h2 className="text-[#2C2C2C] font-[Manrope] font-normal mb-[60px] text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]">
             Precision sperm selection for <br /> healthier embryos and
             pregnancies
           </h2>
@@ -124,78 +124,85 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
         </section>
       )}
 
-      {treatment.points && (
-     <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[80px] bg-[#F5FAFF]">
-  {/* Tag */}
-  <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
-    Why Choose IMSI
-  </span>
+      {/* Why Choose IMSI Section */}
+      {treatment.points && treatment.points.length > 0 && (
+        <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[60px] bg-[#F5FAFF]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[50px] items-start">
+            {/* Left */}
+            <div className="flex flex-col md:pr-[40px]">
+              <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3 w-fit">
+                Why Choose IMSI
+              </span>
+              <h2 className="text-[#2C2C2C] font-manrope font-normal mb-[40px] text-[28px] leading-[36px] md:text-[44px] md:leading-[52px]">
+                Targeted Selection for <br /> Higher IVF Success
+              </h2>
 
-  {/* Heading */}
-  <h2
-    className="text-[#2C2C2C] font-manrope font-normal mb-[60px] 
-    text-[32px] leading-[40px] tracking-[-0.64px] 
-    md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]"
-  >
-    Targeted Selection for <br /> Higher IVF Success
-  </h2>
+              <div className="flex flex-col divide-[#A5A5A5]">
+                {treatment.points.map((point, idx) => (
+                  <div
+                    key={point.id}
+                    className="py-5 cursor-pointer"
+                    onClick={() => {
+                      setActivePoint(idx);
+                      setActiveImage(point.image);
+                    }}
+                  >
+                    <div className="w-full h-[2px] bg-[#D0D0D0] relative mb-3">
+                      <div
+                        className={`absolute top-0 left-0 h-[2px] bg-[#1656A5] transition-all duration-500 ease-in-out ${
+                          activePoint === idx ? "w-1/2" : "w-0"
+                        }`}
+                      ></div>
+                    </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-[60px] items-center">
-    {/* Left side - points */}
-    <div className="flex flex-col divide-y divide-[#A5A5A5] md:pr-[40px]">
-      {treatment.points.map((point, idx) => (
-        <div
-          key={point.id}
-          className="py-6 flex items-start justify-between"
-        >
-          <div>
-            <h3
-              className="text-[#2C2C2C] font-[Manrope]
-              text-[24px] md:text-[28px] leading-[36px] tracking-[-0.4px] font-normal"
-            >
-              {point.title}
-            </h3>
-            {point.description && (
-              <p className="mt-2 text-[#606060] font-[Manrope] text-[16px] leading-[24px] opacity-80">
-                {point.description}
-              </p>
-            )}
+                    <div className="flex items-start justify-between">
+                      <h3
+                        className={`text-[#2C2C2C] font-[Manrope] text-[22px] md:text-[26px] leading-[32px] ${
+                          activePoint === idx ? "text-[#1656A5]" : ""
+                        }`}
+                      >
+                        {point.title}
+                      </h3>
+                      <span className="text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[20px] font-medium">
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    {activePoint === idx && (
+                      <p className="mt-2 text-[#606060] font-[Manrope] text-[15px] leading-[22px] opacity-80">
+                        {point.description}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right */}
+            <div className="flex items-center justify-center h-full -mt-[60px] md:-mt-[25px]">
+              <img
+                src={activeImage}
+                alt="IMSI Point"
+                className="rounded-[16px] w-full max-w-[800px] h-[520px] md:h-[520px] object-cover object-center transition-all duration-500 ease-in-out"
+              />
+            </div>
           </div>
-          <span className="text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[20px] font-medium">
-            {String(idx + 1).padStart(2, "0")}
-          </span>
-        </div>
-      ))}
-    </div>
-
-    {/* Right side - Image */}
-    <div className="flex items-center justify-center h-full">
-      <img
-        src="/treatments/imsi/rs1.png"
-        className="rounded-[16px] w-full max-w-[800px] h-[500px] md:h-[600px] object-cover object-center"
-      />
-    </div>
-  </div>
-</section>
-
+        </section>
       )}
 
       {/* IMSI Procedure Section */}
       {((treatment as any)?.preservation ?? []).length > 0 && (
         <section className="px-[12px] md:px-[120px] py-[80px] bg-white font-[Manrope]">
-          {/* Label */}
           <div className="mb-4">
             <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
               The IMSI Procedure
             </span>
           </div>
 
-          {/* Heading */}
-          <h2 className="text-[#2C2C2C] text-[48px] md:text-[40px] font-normal leading-[36px] md:leading-[52px] tracking-[-0.64px] mb-12">
+          <h2 className="text-[#2C2C2C] text-[28px] md:text-[40px] font-normal leading-[36px] md:leading-[52px] tracking-[-0.64px] mb-12">
             Three steps closer to your <br /> parenthood journey
           </h2>
 
-          {/* Step Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {((treatment as any)?.preservation ?? []).map(
               (step: any, index: number) => (
@@ -211,22 +218,21 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
                       className="object-cover"
                     />
                   </div>
-                <div className="p-6 bg-[#F9FAFB] flex flex-col gap-[30px]">
-  <p className="text-[#1656A5] font-semibold text-[18px]">
-    {String(index + 1).padStart(2, "0")}
-  </p>
-  <div>
-    <h3 className="text-[#2C2C2C] font-medium text-[16px] mb-1">
-      {step.title}
-    </h3>
-    {step.description && (
-      <p className="text-[#6B7280] text-[14px] leading-[22px]">
-        {step.description}
-      </p>
-    )}
-  </div>
-</div>
-
+                  <div className="p-6 bg-[#F9FAFB] flex flex-col gap-[30px]">
+                    <p className="text-[#1656A5] font-semibold text-[18px]">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <div>
+                      <h3 className="text-[#2C2C2C] font-medium text-[16px] mb-1">
+                        {step.title}
+                      </h3>
+                      {step.description && (
+                        <p className="text-[#6B7280] text-[14px] leading-[22px]">
+                          {step.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </div>
               )
             )}
@@ -234,20 +240,15 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
         </section>
       )}
 
-      {/* Step-by-step selection of healthy sperm for stronger embryos */}
-      <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[80px] bg-[#F9FBFF]">
+      {/* Step-by-step selection */}
+      <section className="px-[12px] md:px-[80px] xl:px-[120px] pt-[20px] pb-[80px] bg-[#F9FBFF]">
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
           The PICSI Procedure
         </span>
-        <h2
-          className="text-[#2C2C2C] font-manrope font-normal mb-[60px] 
-          text-[32px] leading-[40px] tracking-[-0.64px] 
-          md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]"
-        >
+        <h2 className="text-[#2C2C2C] font-manrope font-normal mb-[60px] text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]">
           Step-by-step selection of healthy <br /> sperm for stronger embryos.
         </h2>
 
-        {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
@@ -312,7 +313,6 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
 
       <StoriesSection />
       <ConsultationForm />
-    
     </div>
   );
 }

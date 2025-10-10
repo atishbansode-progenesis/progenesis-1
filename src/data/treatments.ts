@@ -65,7 +65,7 @@ export const treatments: Treatment[] = [
         icon: "HeartPulse",
         title: "Benefits of IMSI",
         description:
-          "IMSI can improve fertilization rates, embryo quality, and pregnancy chances, especially in challenging cases.",
+          "IMSI improves the chances of healthy embryo development, successful implantation, and full-term pregnancy.",
       },
       {
         icon: "CheckCircle",
@@ -78,19 +78,15 @@ export const treatments: Treatment[] = [
       {
         title: "Egg collection process",
         description:
-          "Retrieving eggs for future fertility preservation.",
-        image: "/treatments/egg.png", 
+          "IMSI is a preferred method worldwide for couples struggling with severe male-factor infertility.",
+        image: "/treatments/egg.png", // replace with actual path
       },
       {
         title: "Healthy sperm selection",
-         description:
-          "Choosing optimal sperm for successful fertilization outcomes.",
         image: "/treatments/sperm.png",
       },
       {
         title: "Fertilization and transfer",
-         description:
-          "Combining eggs and sperm, implanting embryo.",
         image: "/treatments/Fertilization.png",
       },
     ],
