@@ -91,7 +91,7 @@ const CentersNav: React.FC = () => {
       </div>
 
       {/* Filter Section */}
-      <div className="flex flex-wrap gap-6 md:gap-10 mb-10 lg:mb-20">
+      <div className="flex flex-wrap gap-6 md:gap-10 ">
         {/* State Dropdown */}
         <div className="flex items-center gap-3" ref={stateDropdownRef}>
           <label className="text-sm text-gray-600 font-medium whitespace-nowrap">Select State</label>
@@ -109,7 +109,18 @@ const CentersNav: React.FC = () => {
             
             {/* State Dropdown Menu */}
             {isStateDropdownOpen && (
-              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20">
+              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20"
+                style={{
+                scrollbarWidth: 'none',       // Firefox
+                msOverflowStyle: 'none',      // IE/Edge
+                  }}
+              >
+                <style jsx>{`
+                    div::-webkit-scrollbar {
+                    display: none;
+                              }
+                          `}</style>
+              
                 {Object.keys(stateWithCities).map((state) => (
                   <button
                     key={state}
@@ -142,7 +153,17 @@ const CentersNav: React.FC = () => {
 
             {/* City Dropdown Menu */}
             {isCityDropdownOpen && (
-              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20">
+              <div className="absolute top-[calc(100%+4px)] left-0 w-full max-h-[240px] overflow-y-auto bg-white rounded-[8px] shadow-lg border border-gray-100 z-20"
+              style={{
+    scrollbarWidth: 'none',       // Firefox
+    msOverflowStyle: 'none',      // IE/Edge
+  }}
+>
+  <style jsx>{`
+    div::-webkit-scrollbar {
+      display: none;
+    }
+  `}</style>
                 {availableCities.map((city) => (
                   <button
                     key={city}
@@ -160,9 +181,9 @@ const CentersNav: React.FC = () => {
       </div>
 
       {/* Centers Count */}
-      {/* <div className="text-sm text-gray-600 mb-8">
+      <div className="text-sm text-end text-[#2C2C2C] mb-10 lg:mb-20">
         Showing {Math.min(CENTERS_PER_PAGE, filteredCenters.length - (currentPage - 1) * CENTERS_PER_PAGE)} of {filteredCenters.length} Centers
-      </div> */}
+      </div>
 
       {/* Centers List */}
       <div className="flex flex-col gap-6">

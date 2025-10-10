@@ -12,9 +12,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import HeroSection from "../../components/HeroSection/herosection";
 import Journey from '../../components/Journey'
-
 const InternationalPatientsPage: React.FC = () => {
   const categories = [
     { id: "start", label: "Start Your Journey Today" },
@@ -320,6 +318,7 @@ const InternationalPatientsPage: React.FC = () => {
       </section>
     );
   };
+
 
   return (
     <main className="">

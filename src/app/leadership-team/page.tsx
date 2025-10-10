@@ -4,7 +4,7 @@ import LeadershipTeam from "@/page-components/our-team/OurLeaderShip";
 const page = () => {
   return (
     <div>
-      <LeadershipTeam />;
+      <LeadershipTeam />
     </div>
   );
 }
