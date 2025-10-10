@@ -11,6 +11,7 @@ import { centersData } from "@/page-components/centers/CenterCard";
 
 
 /* -------------------- SEARCH SECTION -------------------- */
+
 export function SearchSection({ onClose }: { onClose: () => void }) {
   const [activeStep, setActiveStep] = useState<"what" | "where" | "who" | null>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -68,7 +69,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     const el = buttonRefs.current[step];
     if (el) {
       const rect = el.getBoundingClientRect();
-      const isMobileView = window.innerWidth < 768;
+      const isMobileView = window.innerWidth < 1200;
       setIsMobile(isMobileView);
 
       setPopupPosition({
@@ -83,32 +84,22 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     updatePopupPosition(step);
   };
 
-  // ✅ Click outside closes dropdown
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1200);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setActiveStep(null);
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
+    if (!isMobile) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  useLayoutEffect(() => {
-    if (activeStep) updatePopupPosition(activeStep);
-  }, [activeStep]);
-
-  useEffect(() => {
-    const handleResizeOrScroll = () => {
-      if (activeStep) updatePopupPosition(activeStep);
-    };
-    window.addEventListener("resize", handleResizeOrScroll);
-    window.addEventListener("scroll", handleResizeOrScroll);
-    return () => {
-      window.removeEventListener("resize", handleResizeOrScroll);
-      window.removeEventListener("scroll", handleResizeOrScroll);
-    };
-  }, [activeStep]);
+  }, [isMobile]);
 
   const filteredTreatments = treatments.filter((t) =>
     t.toLowerCase().includes(inputs.what.toLowerCase())
@@ -120,135 +111,205 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     d.name.toLowerCase().includes(inputs.who.toLowerCase())
   );
 
+  // ========================
+  // DESKTOP VIEW (UNCHANGED)
+  // ========================
+  if (!isMobile) {
+    return (
+      <section className="relative w-full bg-white" ref={containerRef}>
+        <div className="flex flex-col md:flex-row items-start md:items-center w-full max-w-[1600px] mx-auto py-4  px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] gap-4 relative">
+          {/* Logo */}
+          <Link href="/" className="w-[150px] h-[40px] relative md:mt-0 mt-2">
+            <Image src="/logo1.png" alt="Logo" fill className="object-contain" />
+          </Link>
+
+          {/* WHAT */}
+          <div
+            ref={(el) => { buttonRefs.current.what = el; }}
+            className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
+              ${activeStep === "what" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
+          >
+            <span className="text-[#000000] font-medium text-[16px] mr-3 whitespace-nowrap">
+              What
+            </span>
+            <input
+              type="text"
+              placeholder="Search Treatments or Concerns..."
+              value={inputs.what}
+              onChange={(e) => setInputs({ ...inputs, what: e.target.value })}
+              onFocus={() => handleInputFocus("what")}
+              onBlur={() => setActiveStep(null)}
+              className="w-[200px] bg-transparent border-none outline-none px-2 placeholder-[#9CA3AF] text-[16px] text-[#4B5563] focus:ring-0 focus:outline-none"
+            />
+            <Search className={`absolute right-4 text-gray-400 pointer-events-none`} size={18} />
+          </div>
+
+          {/* WHERE */}
+          <div
+            ref={(el) => { buttonRefs.current.where = el; }}
+            className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
+              ${activeStep === "where" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
+          >
+            <span className="text-[#000000] font-medium text-[16px] mr-3 whitespace-nowrap">
+              Where
+            </span>
+            <input
+              type="text"
+              placeholder="Select City"
+              value={inputs.where}
+              onChange={(e) => setInputs({ ...inputs, where: e.target.value })}
+              onFocus={() => handleInputFocus("where")}
+              onBlur={() => setActiveStep(null)}
+              className="w-full bg-transparent border-none outline-none placeholder-[#9CA3AF] text-[16px] text-[#4B5563] focus:ring-0 focus:outline-none"
+            />
+            <ChevronDown className="absolute right-4 text-gray-400 pointer-events-none" size={18} />
+          </div>
+
+          {/* WHO */}
+          <div
+            ref={(el) => { buttonRefs.current.who = el; }}
+            className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
+              ${activeStep === "who" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
+          >
+            <span className="text-[#000000] font-medium text-[16px] mr-3 whitespace-nowrap">
+              Who
+            </span>
+            <input
+              type="text"
+              placeholder="Choose Doctor / Specialist"
+              value={inputs.who}
+              onChange={(e) => setInputs({ ...inputs, who: e.target.value })}
+              onFocus={() => handleInputFocus("who")}
+              onBlur={() => setActiveStep(null)}
+              className="w-full bg-transparent border-none outline-none placeholder-[#9CA3AF] text-[16px] text-[#4B5563] focus:ring-0 focus:outline-none"
+            />
+            <ChevronDown className="absolute right-4 text-gray-400 pointer-events-none" size={18} />
+          </div>
+
+          {/* Close */}
+          <button
+            onClick={onClose}
+            className="h-[44px] w-[44px] rounded-xl bg-[#1656A5] flex items-center justify-center self-end md:self-center"
+          >
+            <X size={20} color="#fff" />
+          </button>
+        </div>
+
+        {/* DROPDOWNS */}
+        {activeStep && popupPosition && (
+          <div
+            className="absolute z-50 bg-white rounded-2xl shadow-xl p-4 w-[90%] lg:w-[300px] xl:w-[350px] 2xl:w-[400px] max-h-[400px] overflow-y-auto transition-all duration-200 animate-fadeIn"
+            style={{
+              left: popupPosition.left,
+              top: popupPosition.top,
+              transform: "translateX(-50%)",
+            }}
+          >
+            {activeStep === "what" && (
+              <div className="flex flex-wrap gap-3">
+                {filteredTreatments.map((t, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setInputs({ ...inputs, what: t });
+                      setActiveStep(null);
+                    }}
+                    className="inline-flex px-3 py-2 rounded-[16px] border border-[#1656A5] text-[#1656A5] text-[14px] font-medium hover:bg-[#1656A5] hover:text-white"
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {activeStep === "where" && (
+              <div className="space-y-3">
+                {filteredLocations.map((l, i) => (
+                  <div
+                    key={i}
+                    onClick={() => {
+                      setInputs({ ...inputs, where: l.name });
+                      setActiveStep(null);
+                    }}
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
+                  >
+                    <div className="w-[70px] h-[70px] rounded-[16px] overflow-hidden bg-gray-100">
+                      <Image src={l.icon} alt={l.name} width={70} height={70} className="object-cover w-full h-full" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-900">{l.name}</p>
+                      <p className="text-sm text-gray-600">{l.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {activeStep === "who" && (
+              <div className="space-y-3">
+                {filteredDoctors.map((d, i) => (
+                  <div
+                    key={i}
+                    onClick={() => {
+                      setInputs({ ...inputs, who: d.name });
+                      setActiveStep(null);
+                    }}
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
+                  >
+                    <Image src={d.img} alt={d.name} width={48} height={48} className="rounded-full object-cover" />
+                    <div>
+                      <p className="font-medium text-gray-900">{d.name}</p>
+                      <p className="text-sm text-gray-600">{d.role}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </section>
+    );
+  }
+
+  // ========================
+  // MOBILE VIEW (FULL HEIGHT + SLIDE-UP)
+  // ========================
   return (
-    <section className="relative w-full bg-white" ref={containerRef}>
-      <div className="flex flex-col md:flex-row items-start md:items-center w-full max-w-[1600px] mx-auto py-4  px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] gap-4 relative">
-        {/* Logo */}
-        <Link href="/" className="w-[150px] h-[40px] relative md:mt-0 mt-2">
-          <Image src="/logo1.png" alt="Logo" fill className="object-contain" />
-        </Link>
+    <section className="fixed inset-0 bg-white z-[1000] flex flex-col h-screen animate-[slideUp_0.35s_ease-out]">
+      <style jsx>{`
+        @keyframes slideUp {
+          from {
+            transform: translateY(100%);
+          }
+          to {
+            transform: translateY(0);
+          }
+        }
+      `}</style>
 
+      {/* Header */}
+      <div className="flex items-center justify-between px-5 py-4 border-b bg-white">
+        <h2 className="text-[18px] font-semibold text-[#000]">Search</h2>
+        <button onClick={onClose}>
+          <X size={22} />
+        </button>
+      </div>
+
+      {/* Scrollable content */}
+      <div className="flex-1 overflow-y-auto px-5 py-5 space-y-6">
         {/* WHAT */}
-        <div
-          ref={(el) => { buttonRefs.current.what = el; }}
-          className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
-    ${activeStep === "what" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
-        >
-          {/* Label */}
-          <span className="text-[#000000] font-medium text-[16px] mr-3 whitespace-nowrap">
-            What
-          </span>
-
-          {/* Input */}
+        <div className="flex flex-col bg-[#F8FAFC] rounded-2xl p-4 shadow-sm">
+          <label className="text-gray-900 font-medium mb-2">What</label>
           <input
             type="text"
             placeholder="Search Treatments or Concerns..."
             value={inputs.what}
             onChange={(e) => setInputs({ ...inputs, what: e.target.value })}
-            onFocus={() => handleInputFocus("what")}
-            onBlur={() => setActiveStep(null)}
-            className="
-      w-[200px] bg-transparent border-none outline-none px-2
-      placeholder-[#9CA3AF] text-[16px] text-[#4B5563]
-      focus:ring-0 focus:outline-none
-    "
+            onFocus={() => setActiveStep("what")}
+            className="border border-gray-200 rounded-xl px-3 py-2 outline-none text-[15px]"
           />
-
-          {/* Search Icon */}
-          <Search
-            className={`absolute right-4 text-gray-400 pointer-events-none  ${activeStep === "what" ? "bg-[#EAF1F8]" : "bg-white"}`}
-            size={18}
-          />
-        </div>
-
-        {/* WHERE */}
-        <div
-          ref={(el) => { buttonRefs.current.where = el; }}
-          className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
-    ${activeStep === "where" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
-        >
-          {/* Label */}
-          <span className="text-[#000000] font-medium text-[16px] mr-3 whitespace-nowrap">
-            Where
-          </span>
-
-          {/* Input */}
-          <input
-            type="text"
-            placeholder="Select City"
-            value={inputs.where}
-            onChange={(e) => setInputs({ ...inputs, where: e.target.value })}
-            onFocus={() => handleInputFocus("where")}
-            onBlur={() => setActiveStep(null)}
-            className="
-      w-full bg-transparent border-none outline-none
-      placeholder-[#9CA3AF] text-[16px] text-[#4B5563]
-      focus:ring-0 focus:outline-none
-    "
-          />
-
-          {/* Chevron Icon */}
-          <ChevronDown
-            className="absolute right-4 text-gray-400 pointer-events-none"
-            size={18}
-          />
-        </div>
-
-        {/* WHO */}
-        <div
-          ref={(el) => { buttonRefs.current.who = el; }}
-          className={`relative flex items-center flex-1 rounded-2xl px-5 py-3  transition-all duration-200 
-    ${activeStep === "who" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
-        >
-          {/* Label */}
-          <span className="text-[#000000] font-medium text-[16px] mr-3 whitespace-nowrap">
-            Who
-          </span>
-
-          {/* Input */}
-          <input
-            type="text"
-            placeholder="Choose Doctor / Specialist"
-            value={inputs.who}
-            onChange={(e) => setInputs({ ...inputs, who: e.target.value })}
-            onFocus={() => handleInputFocus("who")}
-            onBlur={() => setActiveStep(null)}
-            className="
-      w-full bg-transparent border-none outline-none
-      placeholder-[#9CA3AF] text-[16px] text-[#4B5563]
-      focus:ring-0 focus:outline-none
-    "
-          />
-
-          {/* Chevron Icon */}
-          <ChevronDown
-            className="absolute right-4 text-gray-400 pointer-events-none"
-            size={18}
-          />
-        </div>
-
-
-        {/* Close */}
-        <button
-          onClick={onClose}
-          className="h-[44px] w-[44px] rounded-xl bg-[#1656A5] flex items-center justify-center self-end md:self-center"
-        >
-          <X size={20} color="#fff" />
-        </button>
-      </div>
-
-      {/* DROPDOWN POPUPS */}
-      {activeStep && popupPosition && (
-        <div
-          className="absolute z-50 bg-white rounded-2xl shadow-xl p-4 w-[90%] lg:w-[300px] xl:w-[350px] 2xl:w-[400px] max-h-[400px] overflow-y-auto transition-all duration-200 animate-fadeIn"
-          style={{
-            left: popupPosition.left,
-            top: popupPosition.top,
-            transform: "translateX(-50%)",
-          }}
-        >
           {activeStep === "what" && (
-            <div className="flex flex-wrap gap-3">
+            <div className="mt-3 max-h-[250px] overflow-y-auto flex flex-wrap gap-2">
               {filteredTreatments.map((t, i) => (
                 <button
                   key={i}
@@ -256,16 +317,32 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                     setInputs({ ...inputs, what: t });
                     setActiveStep(null);
                   }}
-                  className="inline-flex px-3 py-2 rounded-[16px] border border-[#1656A5] text-[#1656A5] text-[14px] font-medium leading-[24px] tracking-[-0.28px] font-[Manrope] backdrop-blur-[7.5px] transition-all duration-200 hover:bg-[#1656A5] hover:text-white"
+                  className={`px-3 py-2 rounded-[14px] border text-[14px] font-medium ${
+                    inputs.what === t
+                      ? "bg-[#1656A5] text-white border-[#1656A5]"
+                      : "border-[#1656A5] text-[#1656A5]"
+                  }`}
                 >
                   {t}
                 </button>
               ))}
             </div>
           )}
+        </div>
 
+        {/* WHERE */}
+        <div className="flex flex-col bg-[#F8FAFC] rounded-2xl p-4 shadow-sm">
+          <label className="text-gray-900 font-medium mb-2">Where</label>
+          <input
+            type="text"
+            placeholder="Select Clinic Location..."
+            value={inputs.where}
+            onChange={(e) => setInputs({ ...inputs, where: e.target.value })}
+            onFocus={() => setActiveStep("where")}
+            className="border border-gray-200 rounded-xl px-3 py-2 outline-none text-[15px]"
+          />
           {activeStep === "where" && (
-            <div className="space-y-3">
+            <div className="mt-3 space-y-3 max-h-[240px] overflow-y-auto">
               {filteredLocations.map((l, i) => (
                 <div
                   key={i}
@@ -273,17 +350,15 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                     setInputs({ ...inputs, where: l.name });
                     setActiveStep(null);
                   }}
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
+                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
                 >
-                  <div className="w-[70px] h-[70px] flex-shrink-0 rounded-[16px] bg-[lightgray] overflow-hidden">
-                    <Image
-                      src={l.icon}
-                      alt={l.name}
-                      width={70}
-                      height={70}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <Image
+                    src={l.icon}
+                    alt={l.name}
+                    width={48}
+                    height={48}
+                    className="rounded-lg object-cover"
+                  />
                   <div>
                     <p className="font-medium text-gray-900">{l.name}</p>
                     <p className="text-sm text-gray-600">{l.desc}</p>
@@ -292,9 +367,21 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
               ))}
             </div>
           )}
+        </div>
 
+        {/* WHO */}
+        <div className="flex flex-col bg-[#F8FAFC] rounded-2xl p-4 shadow-sm">
+          <label className="text-gray-900 font-medium mb-2">Who</label>
+          <input
+            type="text"
+            placeholder="Choose Doctor / Specialist..."
+            value={inputs.who}
+            onChange={(e) => setInputs({ ...inputs, who: e.target.value })}
+            onFocus={() => setActiveStep("who")}
+            className="border border-gray-200 rounded-xl px-3 py-2 outline-none text-[15px]"
+          />
           {activeStep === "who" && (
-            <div className="space-y-3">
+            <div className="mt-3 space-y-3 max-h-[240px] overflow-y-auto">
               {filteredDoctors.map((d, i) => (
                 <div
                   key={i}
@@ -302,9 +389,15 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                     setInputs({ ...inputs, who: d.name });
                     setActiveStep(null);
                   }}
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
+                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
                 >
-                  <Image src={d.img} alt={d.name} width={48} height={48} className="rounded-full object-cover" />
+                  <Image
+                    src={d.img}
+                    alt={d.name}
+                    width={48}
+                    height={48}
+                    className="rounded-full object-cover"
+                  />
                   <div>
                     <p className="font-medium text-gray-900">{d.name}</p>
                     <p className="text-sm text-gray-600">{d.role}</p>
@@ -314,10 +407,24 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
             </div>
           )}
         </div>
-      )}
+      </div>
+
+      {/* Footer */}
+      <div className="flex justify-between items-center px-6 py-4 bg-white border-t shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+        <button
+          onClick={() => setInputs({ what: "", where: "", who: "" })}
+          className="text-[#1656A5] font-medium underline"
+        >
+          Clear All
+        </button>
+        <button className="flex items-center gap-2 bg-[#1656A5] text-white px-5 py-2.5 rounded-xl text-[16px] font-medium">
+          <Search size={18} /> Search
+        </button>
+      </div>
     </section>
   );
 }
+
 
 
 // /* -------------------- MEGA MENU DATA -------------------- */
