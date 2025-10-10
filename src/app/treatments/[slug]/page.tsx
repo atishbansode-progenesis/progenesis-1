@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { treatments } from "@/data/treatments";
 import HeroSection from "@/components/HeroSection/herosection";
@@ -37,16 +36,12 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
     treatment?.categories?.[0]?.id || ""
   );
 
+  const points = treatment?.points || [];
   const [activePoint, setActivePoint] = useState<number>(0);
-  const [activeImage, setActiveImage] = useState<string>(
-    treatment?.points?.[0]?.image || "/treatments/imsi/rs1.png"
-  );
 
   useEffect(() => {
-    if (treatment?.points?.length) {
-      setActiveImage(treatment.points[0].image);
-    }
-  }, [treatment]);
+    if (points.length > 0) setActivePoint(0);
+  }, [points]);
 
   if (!treatment) {
     return <h1 className="p-6 text-red-600">Treatment not found</h1>;
@@ -70,7 +65,6 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
         buttonLink={treatment?.hero_button_link || "/book-appointment"}
         overlayImage={treatment?.hero_image || "/default-hero-bg.png"}
       />
-
       {/* Tabs */}
       {treatment.categories && (
         <div className="flex flex-nowrap md:flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[40px] md:pb-[80px] bg-[#fff] overflow-x-auto scrollbar-hide">
@@ -80,20 +74,19 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
               type="button"
               onClick={() => setActiveTab(cat.id)}
               className={`flex-shrink-0 px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
-              font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] 
-              tracking-[-0.28px] transition 
-              ${
-                activeTab === cat.id
-                  ? "bg-[#1656A5] text-white"
-                  : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-              }`}
+                font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] 
+                tracking-[-0.28px] transition 
+                ${
+                  activeTab === cat.id
+                    ? "bg-[#1656A5] text-white"
+                    : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+                }`}
             >
               {cat.label}
             </button>
           ))}
         </div>
       )}
-
       {/* Know the Basics */}
       {treatment.basics && (
         <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[80px] bg-[#F9FBFF]">
@@ -123,38 +116,27 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
           </div>
         </section>
       )}
-
       {/* Why Choose IMSI Section */}
-      {treatment.points && treatment.points.length > 0 && (
-        <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[60px] bg-[#F5FAFF]">
+      {points.length > 0 && (
+        <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[60px] bg-[#F5FAFF] hidden lg:block">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[50px] items-start">
-            {/* Left */}
+            {/* Left Side */}
             <div className="flex flex-col md:pr-[40px]">
               <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3 w-fit">
                 Why Choose IMSI
               </span>
+
               <h2 className="text-[#2C2C2C] font-manrope font-normal mb-[40px] text-[28px] leading-[36px] md:text-[44px] md:leading-[52px]">
                 Targeted Selection for <br /> Higher IVF Success
               </h2>
 
-              <div className="flex flex-col divide-[#A5A5A5]">
-                {treatment.points.map((point, idx) => (
+              <div className="flex flex-col divide-y divide-[#A5A5A5]">
+                {points.map((point, idx) => (
                   <div
                     key={point.id}
                     className="py-5 cursor-pointer"
-                    onClick={() => {
-                      setActivePoint(idx);
-                      setActiveImage(point.image);
-                    }}
+                    onClick={() => setActivePoint(idx)}
                   >
-                    <div className="w-full h-[2px] bg-[#D0D0D0] relative mb-3">
-                      <div
-                        className={`absolute top-0 left-0 h-[2px] bg-[#1656A5] transition-all duration-500 ease-in-out ${
-                          activePoint === idx ? "w-1/2" : "w-0"
-                        }`}
-                      ></div>
-                    </div>
-
                     <div className="flex items-start justify-between">
                       <h3
                         className={`text-[#2C2C2C] font-[Manrope] text-[22px] md:text-[26px] leading-[32px] ${
@@ -178,140 +160,329 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
               </div>
             </div>
 
-            {/* Right */}
-            <div className="flex items-center justify-center h-full -mt-[60px] md:-mt-[25px]">
-              <img
-                src={activeImage}
-                alt="IMSI Point"
-                className="rounded-[16px] w-full max-w-[800px] h-[520px] md:h-[520px] object-cover object-center transition-all duration-500 ease-in-out"
+            {/* Right Side */}
+            <div className="flex items-center justify-center h-full -mt-[70px] md:-mt-[20px]">
+              <Image
+                key={activePoint} // triggers re-render
+                src={points[activePoint].image}
+                alt={points[activePoint].title}
+                width={800}
+                height={520}
+                className="rounded-[16px] w-full h-[520px] object-cover object-center transition-all duration-500 ease-in-out"
               />
             </div>
           </div>
         </section>
       )}
+      {/* for mmobile screen  */}
+      {/* Why Choose IMSI Section - Mobile Slider Style */}
+      {points.length > 0 && (
+        <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[60px] bg-[#F5FAFF] lg:hidden">
+          {/* Desktop View - Keep Original Layout */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-[50px] items-start">
+            {/* Left Side */}
+            <div className="flex flex-col md:pr-[40px]">
+              <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3 w-fit">
+                Why Choose IMSI
+              </span>
 
-      {/* IMSI Procedure Section */}
-      {((treatment as any)?.preservation ?? []).length > 0 && (
-        <section className="px-[12px] md:px-[120px] py-[80px] bg-white font-[Manrope]">
-          <div className="mb-4">
-            <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
-              The IMSI Procedure
-            </span>
+              <h2 className="text-[#2C2C2C] font-manrope font-normal mb-[40px] text-[28px] leading-[36px] md:text-[44px] md:leading-[52px]">
+                Targeted Selection for <br /> Higher IVF Success
+              </h2>
+
+              <div className="flex flex-col divide-y divide-[#A5A5A5]">
+                {points.map((point, idx) => (
+                  <div
+                    key={point.id}
+                    className="py-5 cursor-pointer"
+                    onClick={() => setActivePoint(idx)}
+                  >
+                    <div className="flex items-start justify-between">
+                      <h3
+                        className={`text-[#2C2C2C] font-[Manrope] text-[22px] md:text-[26px] leading-[32px] ${
+                          activePoint === idx ? "text-[#1656A5]" : ""
+                        }`}
+                      >
+                        {point.title}
+                      </h3>
+                      <span className="text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[20px] font-medium">
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    {activePoint === idx && (
+                      <p className="mt-2 text-[#606060] font-[Manrope] text-[15px] leading-[22px] opacity-80">
+                        {point.description}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Side */}
+            <div className="flex items-center justify-center h-full -mt-[70px] md:-mt-[20px]">
+              <img
+                key={activePoint}
+                src={points[activePoint].image}
+                alt={points[activePoint].title}
+                className="rounded-[16px] w-full h-[520px] object-cover object-center transition-all duration-500 ease-in-out"
+              />
+            </div>
           </div>
 
-          <h2 className="text-[#2C2C2C] text-[28px] md:text-[40px] font-normal leading-[36px] md:leading-[52px] tracking-[-0.64px] mb-12">
-            Three steps closer to your <br /> parenthood journey
-          </h2>
+          {/* Mobile View - Slider Cards */}
+          <div className="lg:hidden">
+            <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3">
+              Why Choose IMSI
+            </span>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {((treatment as any)?.preservation ?? []).map(
-              (step: any, index: number) => (
-                <div
-                  key={index}
-                  className="rounded-[12px] overflow-hidden shadow-sm bg-[#F9FAFB] hover:shadow-md transition-shadow duration-300"
-                >
-                  <div className="h-[260px] w-full relative">
-                    <Image
-                      src={step.image}
-                      alt={step.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6 bg-[#F9FAFB] flex flex-col gap-[30px]">
-                    <p className="text-[#1656A5] font-semibold text-[18px]">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <div>
-                      <h3 className="text-[#2C2C2C] font-medium text-[16px] mb-1">
-                        {step.title}
-                      </h3>
-                      {step.description && (
-                        <p className="text-[#6B7280] text-[14px] leading-[22px]">
-                          {step.description}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )
-            )}
+            <h2 className="text-[#2C2C2C] font-manrope font-normal mb-8 text-[28px] leading-[36px]">
+              Targeted Selection for Higher IVF Success
+            </h2>
+
+            {/* Slider Card */}
+            <div className="relative bg-white rounded-[16px] border border-[#E6E6E6] overflow-hidden shadow-sm">
+              {/* Card Content */}
+              <div className="p-6">
+                <span className="text-[#1656A5] font-[Manrope] text-[16px] font-medium">
+                  {String(activePoint + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-[#1656A5] font-[Manrope] text-[20px] md:text-[24px] font-medium mt-2 mb-3">
+                  {points[activePoint].title}
+                </h3>
+                <p className="text-[#606060] font-[Manrope] text-[14px] leading-[22px] mb-4">
+                  {points[activePoint].description}
+                </p>
+              </div>
+
+              {/* Image */}
+              <div className="w-full h-[280px] overflow-hidden">
+                <img
+                  key={activePoint}
+                  src={points[activePoint].image}
+                  alt={points[activePoint].title}
+                  className="w-full h-full object-cover transition-all duration-500 ease-in-out"
+                />
+              </div>
+
+              {/* Navigation Dots */}
+              <div className="flex justify-center items-center gap-2 py-4">
+                {points.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActivePoint(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      activePoint === idx
+                        ? "w-8 bg-[#1656A5]"
+                        : "w-2 bg-[#D9D9D9]"
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       )}
-
       {/* Step-by-step selection */}
-      <section className="px-[12px] md:px-[80px] xl:px-[120px] pt-[20px] pb-[80px] bg-[#F9FBFF]">
+      <section className="w-full bg-[#FAFAFA] px-6 md:px-12 lg:px-24 py-20">
+        {/* Tag */}
+        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+          The IMSI Procedure
+        </span>
+
+        {/* Heading */}
+        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] mb-12">
+          Three steps closer to your parenthood journey
+        </h2>
+
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Step 01 */}
+          <div className="flex flex-col bg-white rounded-[16px] overflow-hidden shadow-sm transition ">
+            <div className="h-[260px] md:h-[300px]">
+              <Image
+                src="/treatments/egg.png"
+                alt="Egg collection process"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="bg-[#F7FAFC] p-6 ">
+              <span className="text-[#1656A5] font-manrope text-[18px] lg:gap[30px]  font-semibold block mb-2">
+                01
+              </span>
+              <h3 className="text-[#2C2C2C] font-manrope text-[18px] md:text-[20px] font-semibold mb-1">
+                Egg collection process
+              </h3>
+              <p className="text-[#2C2C2C] text-[14px] md:text-[16px] opacity-80 leading-[24px]">
+                Retrieving eggs for future fertility preservation.
+              </p>
+            </div>
+          </div>
+
+          {/* Step 02 */}
+          <div className="flex flex-col bg-white rounded-[16px] overflow-hidden shadow-sm transition ">
+            <div className="h-[260px] md:h-[300px]">
+              <Image
+                src="/treatments/sperm.png" // replace with your image path
+                alt="Healthy sperm selection"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="bg-[#F7FAFC] p-6">
+              <span className="text-[#1656A5] font-manrope text-[18px] font-semibold block mb-2">
+                02
+              </span>
+              <h3 className="text-[#2C2C2C] font-manrope text-[18px] md:text-[20px] font-semibold mb-1">
+                Healthy sperm selection
+              </h3>
+              <p className="text-[#2C2C2C] text-[14px] md:text-[16px] opacity-80 leading-[24px]">
+                Choosing optimal sperm for successful fertilization outcomes.
+              </p>
+            </div>
+          </div>
+
+          {/* Step 03 */}
+          <div className="flex flex-col bg-white rounded-[16px] overflow-hidden shadow-sm transition ">
+            <div className="h-[260px] md:h-[300px]">
+              <Image
+                src="/treatments/Fertilization.png"
+                alt="Fertilization and transfer"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="bg-[#F7FAFC] p-6">
+              <span className="text-[#1656A5] font-manrope text-[18px] font-semibold block mb-2">
+                03
+              </span>
+              <h3 className="text-[#2C2C2C] font-manrope text-[18px] md:text-[20px] font-semibold mb-1">
+                Fertilization and transfer
+              </h3>
+              <p className="text-[#2C2C2C] text-[14px] md:text-[16px] opacity-80 leading-[24px]">
+                Combining eggs and sperm, implanting embryo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Step-by-step selection section */}
+      <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[80px] bg-[#F9FBFF]">
+        {/* Tag */}
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
           The PICSI Procedure
         </span>
-        <h2 className="text-[#2C2C2C] font-manrope font-normal mb-[60px] text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]">
+
+        {/* Heading */}
+        <h2
+          className="text-[#2C2C2C] font-manrope font-normal mb-[60px] 
+    text-[32px] leading-[40px] tracking-[-0.64px] 
+    md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]"
+        >
           Step-by-step selection of healthy <br /> sperm for stronger embryos.
         </h2>
 
+        {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              num: "01",
-              title: "Collection & Preparation",
-              desc: "Semen samples are collected and processed to separate motile sperm.",
-            },
-            {
-              num: "02",
-              title: "Accurate Diagnosis",
-              desc: "Sperm are placed in an HA dish, where only mature, DNA-intact ones bind naturally.",
-            },
-            {
-              num: "03",
-              title: "Selection For Injection",
-              desc: "Bound sperm are carefully picked and injected into the eggs (oocytes) through ICSI.",
-            },
-            {
-              num: "04",
-              title: "Fertilization & Embryo Transfer",
-              desc: "Resulting embryos are cultured, and the best-quality ones are transferred into the uterus.",
-            },
-          ].map((step, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col gap-3 bg-[#F5FAFF] border border-[#E6E6E6] rounded-[16px] p-6 transition"
-            >
-              <span className="text-[#1656A5] font-manrope text-[32px] font-medium">
-                {step.num}
-              </span>
-              <h3 className="text-[#2C2C2C] font-manrope lg:mt-[120px] lg:gap-[8px] text-[16px] md:text-[20px] font-semibold">
-                {step.title}
-              </h3>
-              <p className="text-[#2C2C2C] font-manrope text-[16px] leading-[24px] opacity-80">
-                {step.desc}
-              </p>
-            </div>
-          ))}
+          {/* Step 01 */}
+          <div className="flex flex-col gap-3 bg-[#F5FAFF] border border-[#E6E6E6] rounded-[16px] p-6 transition">
+            <span className="text-[#1656A5] font-manrope text-[32px] font-medium">
+              01
+            </span>
+            <h3 className="text-[#2C2C2C] font-manrope text-[16px]  lg:pt-[120px] md:text-[20px] font-semibold">
+              Collection & Preparation
+            </h3>
+            <p className="text-[#606060] font-manrope text-[16px] leading-[24px] opacity-80">
+              Semen samples are collected and processed to separate motile
+              sperm.
+            </p>
+          </div>
+
+          {/* Step 02 */}
+          <div className="flex flex-col gap-3 bg-[#F5FAFF] border border-[#E6E6E6] rounded-[16px] p-6  transition">
+            <span className="text-[#1656A5] font-manrope text-[32px] font-medium">
+              02
+            </span>
+            <h3 className="text-[#2C2C2C]  lg:pt-[120px]  font-manrope text-[16px] md:text-[20px] font-semibold">
+              Accurate Diagnosis
+            </h3>
+            <p className="text-[#606060] font-manrope text-[16px] leading-[24px] opacity-80">
+              Sperm are placed in an HA dish, where only mature, DNA-intact ones
+              bind naturally.
+            </p>
+          </div>
+
+          {/* Step 03 */}
+          <div className="flex flex-col gap-3 bg-[#F5FAFF] border border-[#E6E6E6] rounded-[16px] p-6  transition">
+            <span className="text-[#1656A5] font-manrope text-[32px] font-medium">
+              03
+            </span>
+            <h3 className="text-[#2C2C2C]  lg:pt-[120px] font-manrope text-[16px] md:text-[20px] font-semibold">
+              Selection for Injection
+            </h3>
+            <p className="text-[#606060] font-manrope text-[16px] leading-[24px] opacity-80">
+              Bound sperm are carefully picked and injected into the eggs
+              (oocytes) through ICSI.
+            </p>
+          </div>
+
+          {/* Step 04 */}
+          <div className="flex flex-col gap-3 bg-[#F5FAFF] border border-[#E6E6E6] rounded-[16px] p-6  transition">
+            <span className="text-[#1656A5] font-manrope text-[32px] font-medium">
+              04
+            </span>
+            <h3 className="text-[#2C2C2C]  lg:pt-[120px]  font-manrope text-[16px] md:text-[20px] font-semibold">
+              Fertilization & Embryo Transfer
+            </h3>
+            <p className="text-[#606060] font-manrope text-[16px] leading-[24px] opacity-80">
+              Resulting embryos are cultured, and the best-quality ones are
+              transferred into the uterus.
+            </p>
+          </div>
         </div>
       </section>
-
-      {/* Success Rate */}
+            {/* Success Rate */}     {" "}
       <section className="relative w-full flex justify-center items-center overflow-hidden px-6 md:px-12 lg:px-[120px] py-20">
+               {" "}
         <div
           className="absolute left-[-100px] bottom-[-50px] rounded-full bg-[#94BA3D] blur-[250px]"
-          style={{ width: "348px", height: "280px", transform: "rotate(-2deg)" }}
+          style={{
+            width: "348px",
+            height: "280px",
+            transform: "rotate(-2deg)",
+          }}
         ></div>
         <div
           className="absolute right-[-200px] top-[-150px] rounded-full bg-[#1656A5] blur-[250px]"
-          style={{ width: "222px", height: "203px", transform: "rotate(-2deg)" }}
+          style={{
+            width: "222px",
+            height: "203px",
+            transform: "rotate(-2deg)",
+          }}
         ></div>
-
+               {" "}
         <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between w-full">
+                   {" "}
           <h2 className="text-[#94BA3D] font-manrope text-[80px] md:text-[120px] font-normal leading-none tracking-[-2.4px] mb-6 md:mb-0">
-            {treatment?.gradient_data}
+                        {treatment?.gradient_data}         {" "}
           </h2>
+                   {" "}
           <p className="text-[#94BA3D] font-manrope text-[32px] md:text-[48px] font-normal leading-[40px] md:leading-[56px] tracking-[-0.64px] md:tracking-[-0.96px] text-left md:text-right max-w-3xl">
-            {treatment?.gradient_text}
+                        {treatment?.gradient_text}         {" "}
           </p>
+                 {" "}
         </div>
+             {" "}
       </section>
-
+      {/* Stories Section */}
       <StoriesSection />
+      {/* Consultation Form */}
       <ConsultationForm />
     </div>
   );

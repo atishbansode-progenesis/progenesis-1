@@ -93,32 +93,37 @@ export const treatments: Treatment[] = [
     gradient_data: "78%",
     gradient_text: "Couples achieve successful embryo development with IMSI",
 
-    points: [
-      {
-        id: "01",
-        title: "Poor Sperm Morphology",
-        description:
-          "IMSI helps doctors select healthy sperm, improving fertilization when abnormal shapes hinder success.",
-      },
-      {
-        id: "02",
-        title: "High DNA Fragmentation",
-        description:
-          "Better sperm selection reduces DNA fragmentation and increases the likelihood of viable embryos.",
-      },
-      {
-        id: "03",
-        title: "Failed IVF/IUI Cycles",
-        description:
-          "For couples who have experienced failed cycles, IMSI offers a more precise method of sperm selection.",
-      },
-      {
-        id: "04",
-        title: "Benefits & Success Rates",
-        description:
-          "Targeted sperm selection enhances IVF outcomes, boosting confidence in long-term fertility success.",
-      },
-    ],
+   points: [
+  {
+    id: "01",
+    title: "Poor Sperm Morphology",
+    description:
+      "IMSI helps doctors select healthy sperm, improving fertilization when abnormal shapes hinder success.",
+    image: "/treatments/image1.png", // <-- add your image path here
+  },
+  {
+    id: "02",
+    title: "High DNA Fragmentation",
+    description:
+      "Better sperm selection reduces DNA fragmentation and increases the likelihood of viable embryos.",
+    image: "/treatments/image2.png", // <-- add your image path here
+  },
+  {
+    id: "03",
+    title: "Failed IVF/IUI Cycles",
+    description:
+      "For couples who have experienced failed cycles, IMSI offers a more precise method of sperm selection.",
+    image: "/treatments/image3.png", // <-- add your image path here
+  },
+  {
+    id: "04",
+    title: "Benefits & Success Rates",
+    description:
+      "Targeted sperm selection enhances IVF outcomes, boosting confidence in long-term fertility success.",
+    image: "/treatments/image4.png", // <-- add your image path here
+  },
+],
+
   },
   {
     slug: "icsi",
