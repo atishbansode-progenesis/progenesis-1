@@ -410,9 +410,9 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         {isFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md z-50">
             {/* Desktop View (1024px and above) */}
-            <div className="hidden md:hidden lg:block w-[90%] md:w-[800px] shadow-lg">
+            <div className="hidden lg:block w-[90%] md:w-[800px] shadow-lg">
               {isLoading ? (
-                <div className="bg-white rounded-lg p-6 flex items-center justify-center h-[500px] relative">
+                <div className="bg-white rounded-2xl p-10 flex flex-row items-center justify-between relative overflow-y-auto max-h-[90vh]">
                   {/* Close Button - Visible during loading */}
                   <button
                     onClick={onClose}
@@ -420,7 +420,19 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
                   >
                     ✕
                   </button>
-                  <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5]"></div>
+                  <div className="flex-1 text-center pr-6">
+                    <span className="inline-block text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-4">
+                      Schedule a Consultation
+                    </span>
+                    <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[32px] font-normal leading-[40px] tracking-[-0.64px] text-center mb-3">
+                      Just focus on your fertility journey, <br /> We got the rest
+                      covered!
+                    </h2>
+                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5] mx-auto"></div>
+                  </div>
+                  <div className="flex-1 relative">
+                    <ScratchImage />
+                  </div>
                 </div>
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg p-10 flex flex-row items-center justify-between relative overflow-y-auto max-h-[90vh]">
@@ -448,25 +460,14 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
               )}
             </div>
 
-            {/* Medium View (768px to 1023px) */}
-            <div className="hidden md:block lg:hidden xl:hidden w-[90%] md:w-[600px] shadow-lg">
+            {/* Mobile View (up to 767px) */}
+            <div className="block md:hidden w-[90%] md:w-[300px] shadow-lg">
               {isLoading ? (
-                <div className="bg-white rounded-lg p-4 flex items-center justify-center h-[400px] relative">
+                <div className="bg-white rounded-2xl p-3 flex flex-col items-center relative overflow-y-auto max-h-[90vh]">
                   {/* Close Button - Visible during loading */}
                   <button
                     onClick={onClose}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold"
-                  >
-                    ✕
-                  </button>
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-[#1656A5]"></div>
-                </div>
-              ) : (
-                <div className="bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center relative overflow-y-auto max-h-[90vh]">
-                  {/* Close Button */}
-                  <button
-                    onClick={onClose}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold"
+                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-lg font-bold"
                   >
                     ✕
                   </button>
@@ -478,27 +479,11 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
                       Just focus on your fertility journey, <br /> We got the rest
                       covered!
                     </h2>
-                    {renderFormContent(false, true)}
-                    <div className="w-full relative mt-4">
+                    <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-b-4 border-[#1656A5] mx-auto"></div>
+                    <div className="w-full relative mt-3">
                       <ScratchImage />
                     </div>
                   </div>
-                </div>
-              )}
-            </div>
-
-            {/* Mobile View (up to 767px) */}
-            <div className="block md:hidden w-[90%] md:w-[300px] shadow-lg">
-              {isLoading ? (
-                <div className="bg-white rounded-lg p-3 flex items-center justify-center h-[300px] relative">
-                  {/* Close Button - Visible during loading */}
-                  <button
-                    onClick={onClose}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-lg font-bold"
-                  >
-                    ✕
-                  </button>
-                  <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-b-4 border-[#1656A5]"></div>
                 </div>
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg p-3 flex flex-col items-center relative overflow-y-auto max-h-[90vh]">
@@ -583,31 +568,32 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
       )}
 
       <section className="relative py-4 px-4 md:py-[60px] lg:py-[80px] mx-0  md:px-[60px] lg:px-[120px]  flex justify-center bg-transparent">
-        <div className={`bg-white rounded-2xl shadow-lg p-10 flex flex-col md:flex-row w-full max-w-6xl gap-10 ${isLoading ? 'justify-center items-center min-h-[400px]' : ''}`}>
-          {isLoading ? (
-            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5]"></div>
-          ) : (
-            <>
-              {/* Left Form */}
-              <div className="flex-1 text-center">
-                <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mb-6">
-                  Schedule a Consultation
-                </span>
+        <div className="bg-white rounded-2xl shadow-lg p-10 flex flex-col md:flex-row w-full max-w-6xl gap-10">
+          {/* Left Form Section - Always Visible */}
+          <div className="flex-1 text-center">
+            <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mb-6">
+              Schedule a Consultation
+            </span>
 
-                <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[32px] font-normal leading-6 md:leading-[40px] tracking-[-0.64px] text-center mb-3">
-                  Just focus on your fertility journey, <br /> We got the rest
-                  covered!
-                </h2>
+            <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[32px] font-normal leading-6 md:leading-[40px] tracking-[-0.64px] text-center mb-6">
+              Just focus on your fertility journey, <br /> We got the rest
+              covered!
+            </h2>
 
-                {renderFormContent(false, false)}
+            {/* Form Area - Shows loader or form content */}
+            {isLoading ? (
+              <div className="flex justify-center items-center py-8">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5]"></div>
               </div>
+            ) : (
+              renderFormContent(false, false)
+            )}
+          </div>
 
-              {/* Right Image with Scratch Effect */}
-              <div className="flex-1 relative">
-                <ScratchImage />
-              </div>
-            </>
-          )}
+          {/* Right Image with Scratch Effect - Always Visible */}
+          <div className="flex-1 relative">
+            <ScratchImage />
+          </div>
         </div>
       </section>
 
