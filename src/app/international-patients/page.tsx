@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
@@ -21,15 +21,51 @@ const InternationalPatientsPage: React.FC = () => {
     { id: "news", label: "Featured News & Media" },
   ];
 
-  const [activeTab, setActiveTab] = useState("path");
-  const [isOpen, setIsOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("start");
+
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
       setActiveTab(id);
     }
   };
+
+  // Detect which section is in view and update active tab
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveTab(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    categories.forEach((cat) => {
+      const element = document.getElementById(cat.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      categories.forEach((cat) => {
+        const element = document.getElementById(cat.id);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
 
   const steps = [
     {
@@ -144,14 +180,17 @@ const InternationalPatientsPage: React.FC = () => {
       {
         text: "After years of failed attempts, Progenesis helped us find the cause, treated us with care, and blessed us with twins. Highly recommend them.",
         author: "– Gulelat Biamesh, Couple from Ethiopia",
+        image: "/InternationalPatients/testimonial.png"
       },
       {
         text: "The team was so supportive throughout my journey. Their care and expertise gave me hope again.",
         author: "– Priya Sharma, Progenesis Mom, Pune",
+        image: "/InternationalPatients/testimonial.png"
       },
       {
-        text: "Every visit gave me more confidence. Today, I’m blessed with the family I always dreamed of.",
+        text: "Every visit gave me more confidence. Today, I'm blessed with the family I always dreamed of.",
         author: "– Anjali Mehta, Progenesis Mom, Mumbai",
+        image: "/InternationalPatients/testimonial.png"
       },
     ];
 
@@ -160,27 +199,21 @@ const InternationalPatientsPage: React.FC = () => {
     return (
       <section
         id="testimonial"
-        className="w-full bg-[#1656A5] text-white py-[82px] h-[700px]"
+        className="w-full bg-[#1656A5] text-white py-12 csLg:py-[82px] csLg:h-[700px] min-h-screen csLg:min-h-0"
       >
-        <div className="flex flex-col md:flex-row items-center gap-[2rem] mx-auto px-6 md:px-[120px]">
-          <div className="flex flex-col justify-between w-full md:w-[350px]">
+        <div className="flex flex-col csLg:flex-row items-center mx-auto px-6 md:px-[120px] gap-8 csLg:gap-0">
+          {/* Header Section */}
+          <div className="flex flex-col justify-between w-full csLg:w-[350px]">
             <h2
-              style={{
-                color: 'var(--Text_White, #F9F9F9)',
-                fontFamily: 'Manrope',
-                fontSize: '48px',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                lineHeight: '56px',
-                marginBottom: '2rem',
-                letterSpacing: '-0.96px',
-              }}
-              className="mb-8"
+              className="text-[#F9F9F9] font-[Manrope] 
+             text-[32px] csLg:text-[48px] font-normal leading-[40px] csLg:leading-[56px] 
+             tracking-[-0.64px] csLg:tracking-[-0.96px] mb-6 csLg:mb-8 text-center csLg:text-left"
             >
               What our international patients are saying
             </h2>
 
-            <div className="w-[200px] h-1 bg-white/30 rounded-full mb-4">
+            {/* Progress Bar */}
+            <div className="w-full csLg:w-[200px] h-1 bg-white/30 rounded-full mb-4 mx-auto csLg:mx-0">
               <div
                 className="h-1 bg-white rounded-full transition-all duration-500"
                 style={{
@@ -189,7 +222,8 @@ const InternationalPatientsPage: React.FC = () => {
               ></div>
             </div>
 
-            <div className="flex items-center space-x-4 mt-6">
+            {/* Navigation Buttons - Hidden on Mobile */}
+            <div className="hidden csLg:flex items-center space-x-4 mt-6">
               <button
                 ref={prevRef}
                 className="w-14 h-14 flex items-center justify-center border border-white rounded-lg hover:bg-white hover:text-blue-700 transition"
@@ -205,59 +239,80 @@ const InternationalPatientsPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-8 items-center w-full md:w-auto justify-center">
-            <div
-              className="flex flex-col justify-between flex-shrink-0 bg-white text-gray-800 rounded-2xl shadow-lg"
-              style={{
-                display: 'flex',
-                width: '549px',
-                height: '536px',
-                padding: '96px 83px',
-                justifyContent: 'center',
-                alignItems: 'center',
+          {/* Swiper Container */}
+          <div className="w-full csLg:w-[509px] csLg:mr-[16px]">
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={24}
+              slidesPerView={1}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
               }}
+              onBeforeInit={(swiper) => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }}
+              onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
+              className="testimonial-swiper"
             >
-              <Swiper
-                modules={[Navigation, Pagination]}
-                spaceBetween={24}
-                slidesPerView={1}
-                navigation={{
-                  prevEl: prevRef.current,
-                  nextEl: nextRef.current,
-                }}
-                onBeforeInit={(swiper) => {
-                  swiper.params.navigation.prevEl = prevRef.current;
-                  swiper.params.navigation.nextEl = nextRef.current;
-                }}
-                onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
-                style={{ width: '100%', height: '100%' }}
-              >
-                {testimonials.map((t, i) => (
-                  <SwiperSlide key={i}>
-                    <div className="flex flex-col justify-between w-full h-full">
-                      <p className="text-[#1656A5] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
+              {testimonials.map((t, i) => (
+                <SwiperSlide key={i}>
+                  {/* Mobile Layout */}
+                  <div className="csLg:hidden flex flex-col gap-6">
+                    {/* Image on Mobile */}
+                    <div className="w-full">
+                      <img
+                        src={t.image}
+                        alt="Happy Family"
+                        className="rounded-xl w-full h-auto object-cover shadow-lg"
+                      />
+                    </div>
+
+                    {/* Testimonial Card on Mobile */}
+                    <div className="flex flex-col justify-between 
+                                  w-full min-h-[300px]
+                                  px-6 py-8 
+                                  bg-white text-gray-800 rounded-2xl shadow-lg">
+                      <p className="text-[#1656A5] font-[Manrope] 
+                                text-[18px] leading-[28px] tracking-[-0.36px] font-normal">
                         {t.text}
                       </p>
-                      <span className="mt-[80px] text-[rgba(44,44,44,0.5)] font-[Manrope] text-[16px] leading-[24px] tracking-[-0.32px]">
+
+                      <span className="mt-6 text-[rgba(44,44,44,0.5)] 
+                                    font-[Manrope] text-[14px] leading-[20px] tracking-[-0.28px]">
                         {t.author}
                       </span>
                     </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+                  </div>
 
-            <div
-              className="flex-shrink-0 hidden md:block"
-              style={{ width: '786px', height: '536px' }}
-            >
-              <img
-                src="/InternationalPatients/testimonial.png"
-                alt="Happy Family"
-                className="rounded-xl h-full w-full object-cover shadow-lg"
-                style={{ width: '786px', height: '536px' }}
-              />
-            </div>
+                  {/* Desktop Layout */}
+                  <div className="hidden csLg:flex flex-col justify-between 
+                                w-[509px] h-[536px] flex-shrink-0 
+                                px-[43px] py-[96px] 
+                                bg-white text-gray-800 rounded-2xl shadow-lg">
+                    <p className="text-[#1656A5] font-[Manrope] 
+                              text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
+                      {t.text}
+                    </p>
+
+                    <span className="mt-[80px] text-[rgba(44,44,44,0.5)] 
+                                  font-[Manrope] text-[16px] leading-[24px] tracking-[-0.32px]">
+                      {t.author}
+                    </span>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Image - Desktop Only */}
+          <div className="hidden csLg:block w-[750px]">
+            <img
+              src="/InternationalPatients/testimonial.png"
+              alt="Happy Family"
+              className="rounded-xl h-[536px] shadow-lg"
+            />
           </div>
         </div>
       </section>
@@ -271,16 +326,16 @@ const InternationalPatientsPage: React.FC = () => {
         {/* Background images: mobile and desktop */}
         <div
           className="absolute inset-0 md:hidden bg-cover bg-center"
-          style={{ backgroundImage: "url('/InternationalPatients/ipmbbg.png')" }}
+          style={{ backgroundImage: "url('/InternationalPatients/ip-bg-mob.png')" }}
           aria-hidden
         />
         <div
           className="absolute inset-0 hidden md:block bg-cover bg-center"
-          style={{ backgroundImage: "url('/InternationalPatients/ipbg.png')" }}
+          style={{ backgroundImage: "url('/images/hero-bg.png')" }}
           aria-hidden
         />
 
-        <img className=" csLg:block hidden absolute csLg:right-0 bottom-0 h-[80%] w-[50%]" src="/InternationalPatients/iph2.png" alt="" />
+        <img className=" csLg:block hidden absolute csLg:right-[10%] bottom-0 h-[100%] w-[30%]" src="/InternationalPatients/hero_person.png" alt="" />
 
         <div className='relative w-full'>
           {/* Left: Content block */}
@@ -297,14 +352,12 @@ const InternationalPatientsPage: React.FC = () => {
               <div>
                 <h1 className='font-manrope font-semibold csLg:text-[80px] text-[32px] csLg:leading-[88px] leading-[48px] tracking-[-0.02em] csLg:max-w-[60%]'>
                   IVF Treatment for
-                  International Patient
-                </h1>
+                  International Patient              </h1>
               </div>
 
               {/* CTA */}
               <div className=''>
                 <button
-                  onClick={() => setIsOpen(true)}
                   className='bg-[#252525] text-[14px] h-[56px] px-6  text-[#F9F9F9] rounded-[16px] hover:bg-[#333] transition'
                 >
                   Book Your Appointment
@@ -315,14 +368,9 @@ const InternationalPatientsPage: React.FC = () => {
 
           {/* Right column removed; background image now covers entire section */}
         </div>
-        {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
       </section>
-
-
-
-
       <div
-        className="w-full bg-white pt-[50px] pb-[80px] px-[12px] md:px-[80px] xl:px-[120px]"
+        className="w-full bg-white pt-[50px] px-[12px] md:px-[80px] xl:px-[120px]"
       >
         <div className="flex flex-wrap justify-start items-start gap-3 md:gap-4 text-left">
           {categories.map((cat) => (
@@ -330,9 +378,9 @@ const InternationalPatientsPage: React.FC = () => {
               key={cat.id}
               type="button"
               onClick={() => handleScroll(cat.id)}
-              className={`px-[10px] cursor-pointer py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition-all duration-200 ${activeTab === cat.id
-                  ? "bg-[#1656A5] text-white shadow-md"
-                  : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+              className={`cursor-pointer px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition-all duration-200 ${activeTab === cat.id
+                ? "bg-[#1656A5] text-white shadow-md"
+                : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
                 }`}
             >
               {cat.label}
@@ -341,15 +389,31 @@ const InternationalPatientsPage: React.FC = () => {
         </div>
       </div>
 
-      <section className="px-[120px] py-[80px] bg-white">
+      <section id="start" className="csLg:px-[120px] px-[16px] py-[80px] bg-white">
         <Journey />
       </section>
 
-      <GradientBanner text="Our specialists address your concerns, explain treatment steps, ensure safe care, and arrange hassle-free accommodation with comfort, transport, and support." />
 
+      <section className="relative bg-center bg-cover flex justify-center items-center min-h-[312px]">
+        {/* Mobile Background */}
+        <div
+          className="absolute inset-0 md:hidden bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/gradient-banner-mob.png')" }}
+          aria-hidden
+        />
+        {/* Desktop Background */}
+        <div
+          className="absolute inset-0 hidden md:block bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/gradient-banner.png')" }}
+          aria-hidden
+        />
+
+        <p className="text-[#94BA3D] max-w-[90%] text-[28px] csLg:text-[48px] text-center font-normal font-[Manrope] relative z-10">
+          Our specialists address your concerns, explain treatment steps, ensure safe care, and arrange hassle-free accommodation with comfort, transport, and support.          </p>
+      </section>
       <section id="fertility" className="bg-white pt-[80px] pb-[60px]">
         <div className="px-4 md:px-[80px] lg:px-[120px]">
-          <div className="flex flex-col xl:flex-row justify-between gap-8">
+          <div className="flex flex-col xl:flex-row justify-between gap-10">
             <div className="w-full xl:w-[45%]">
               <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
                 Advanced Fertility Solutions
@@ -389,8 +453,26 @@ const InternationalPatientsPage: React.FC = () => {
         </div>
       </section>
       <TestimonialsSection />
-      <AwardsSection />
-      <ConsultationForm />
+      <section id="news">
+        <AwardsSection />
+      </section>
+      <section className="relative overflow-hidden">
+          {/* Video Background */}
+
+          <div className="relative z-10">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/video/baby.mp4" type="video/mp4" />
+          </video>
+          <ConsultationForm />
+
+          </div>
+        </section>
     </main>
   );
 };

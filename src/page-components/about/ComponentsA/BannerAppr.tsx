@@ -390,6 +390,53 @@ const BannerOfApproach: React.FC = () => {
     ))}
   </div>
 </div>
+          {/* Prev / Next buttons */}
+      <div className='hidden lg:block'>
+      <div className="w-full flex items-center justify-center mt-6 gap-4" style={{paddingTop:'20px'}}>
+        <button
+          aria-label="Previous slide"
+          onClick={() => {
+            setActiveTab((prev) => {
+              const next = Math.max(prev - 1, 0);
+              if (typeof window !== 'undefined') {
+                requestAnimationFrame(() => {
+                  mobileSlideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                  desktopSlideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                });
+              }
+              return next;
+            });
+          }}
+          disabled={activeTab === 0}
+          className={`hover:cursor-pointer h-[56px] w-[56px] font-bold rounded-[16px] border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100 ${
+            activeTab === 0 ? 'opacity-40 cursor-not-allowed hover:bg-transparent' : ''
+          }`}
+        >
+          <img src="/icons/left.svg" alt="left" width={12} height={12} />
+        </button>
+        <button
+          aria-label="Next slide"
+          onClick={() => {
+            setActiveTab((prev) => {
+              const next = Math.min(prev + 1, slides.length - 1);
+              if (typeof window !== 'undefined') {
+                requestAnimationFrame(() => {
+                  mobileSlideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                  desktopSlideRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                });
+              }
+              return next;
+            });
+          }}
+          disabled={activeTab === slides.length - 1}
+          className={`hover:cursor-pointer h-[56px] w-[56px] font-bold rounded-[16px] border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100 ${
+            activeTab === slides.length - 1 ? 'opacity-40 cursor-not-allowed hover:bg-transparent' : ''
+          }`}
+        >
+          <img src="/icons/right.svg" alt="right" width={12} height={12} />
+        </button>
+      </div>
+      </div>
 
     </div>
   );

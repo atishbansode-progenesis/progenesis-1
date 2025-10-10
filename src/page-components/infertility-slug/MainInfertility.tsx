@@ -53,11 +53,14 @@ export default function MainInfertility({data}: {data: any}) {
       />
 
       {/* Section 5: Statistics Visual */}
-      <StatisticsVisual
+      {data.statistics ? <StatisticsVisual
         tag={data.statistics.tag}
         heading={data.statistics.heading}
-        circles={data.statistics.circles}
-      />
+        staticsData={data.statistics}
+        blueCircleData={data.statistics.blueCircleData}
+        greenCircleData={data.statistics.greenCircleData}
+        skyCircleData={data.statistics.skyCircleData}
+      /> : null}
 
       {/* Section 6: Steps */}
       <StepsSection

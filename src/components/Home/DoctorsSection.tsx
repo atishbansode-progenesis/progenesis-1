@@ -241,7 +241,7 @@ const DoctorsSection = () => {
                 key={idx}
                 className="flex-shrink-0 w-[85%] snap-center"
               >
-                <div className="rounded-lg overflow-hidden">
+                <div className="rounded-lg bg-[#FFFFFF] h-[733px] overflow-hidden">
                   {/* Doctor Image */}
                   <div className="w-full p-2 flex items-center justify-center">
                     <div className="w-full aspect-[3/4] relative rounded-lg overflow-hidden h-[300px]">
@@ -323,7 +323,7 @@ const DoctorsSection = () => {
           </button>
 
           {/* Doctor Card */}
-          <div className="">
+          <div className=" bg-[#FFFFFF] rounded-2xl">
             {/* Counter */}
             <div className="relative ">
               <p className="absolute top-4 right-4 md:top-[-30px] md:right-6 text-gray-600 text-xs md:text-sm font-semibold z-10">
