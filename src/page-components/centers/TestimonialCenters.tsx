@@ -92,17 +92,37 @@ const TestimonialsSection = () => {
           {/* Arrows (Hidden on mobile) */}
           <div className="hidden md:flex space-x-4">
             <button
-              ref={prevRef}
-              className="w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
-            >
-              ←
-            </button>
+  ref={prevRef}
+  className="group w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
+>
+  <img
+    src="/icons/left-white.svg"
+    alt="left"
+    className="block group-hover:hidden"
+  />
+  <img
+    src="/icons/left.svg"
+    alt="left-hover"
+    className="hidden group-hover:block"
+  />
+</button>
+
             <button
-              ref={nextRef}
-              className="w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
-            >
-              →
-            </button>
+  ref={nextRef}
+  className="group w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border bg-[#1656A5] border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
+>
+  <img
+    src="/icons/right-white.svg"
+    alt="right"
+    className="block group-hover:hidden"
+  />
+  <img
+    src="/icons/right.svg"
+    alt="right-hover"
+    className="hidden group-hover:block"
+  />
+</button>
+
           </div>
         </div>
 
