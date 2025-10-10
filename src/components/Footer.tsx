@@ -447,7 +447,7 @@ const Footer: React.FC = () => {
               <button
                 type="button"
                 onClick={() => toggleDropdown("femaleInf")}
-                className="flex justify-between items-center w-full text-left hover:opacity-90"
+                className="flex cursor-pointer justify-between items-center w-full text-left hover:opacity-90"
               >
                 <span>Female Infertility</span>
                 <ArrowDown open={openDropdown === "femaleInf"} />
@@ -469,7 +469,7 @@ const Footer: React.FC = () => {
               <button
                 type="button"
                 onClick={() => toggleDropdown("maleInf")}
-                className="flex justify-between items-center w-full text-left hover:opacity-90"
+                className="flex cursor-pointer justify-between items-center w-full text-left hover:opacity-90"
               >
                 <span>Male Infertility</span>
                 <ArrowDown open={openDropdown === "maleInf"} />
@@ -543,7 +543,7 @@ const Footer: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => toggleDropdown(section.key)}
-                  className="flex justify-between items-center w-full text-left hover:opacity-90"
+                  className="flex cursor-pointer justify-between items-center w-full text-left hover:opacity-90"
                 >
                   <span>{section.label}</span>
                   <ArrowDown open={openDropdown === section.key} />
