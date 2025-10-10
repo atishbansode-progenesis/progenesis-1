@@ -52,7 +52,7 @@ export const centersData: Center[] = [
     id: 2,
     slug: "thane",
     name: "Thane",
-    city: "Thane",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "16, First Floor, Dosti Imperia, Ghodbunder Road, Opp R Mall, Manpada, Thane West 400607",
     image: "/images/Thane.png",
@@ -178,7 +178,7 @@ export const centersData: Center[] = [
     id: 8,
     slug: "vashi",
     name: "Vashi",
-    city: "Navi Mumbai",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "Ground Floor, Bhumiraj Costarica, Palm Beach Service Road, Vashi, Navi Mumbai 400703",
     image: "/images/Vashi.png",
@@ -199,7 +199,7 @@ export const centersData: Center[] = [
     id: 9,
     slug: "virar",
     name: "Virar",
-    city: "Palghar",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "Virar Medical Complex, Near Virar Station, Virar West 401303",
     image: "/images/virar.jpg",
@@ -220,7 +220,7 @@ export const centersData: Center[] = [
     id: 10,
     slug: "kalyan",
     name: "Kalyan",
-    city: "Thane",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "Kalyan Health Clinic, Near Kalyan Station, Kalyan West 421301",
     image: "/images/kalyan.webp",
@@ -241,7 +241,7 @@ export const centersData: Center[] = [
     id: 11,
     slug: "panvel",
     name: "Panvel",
-    city: "Navi Mumbai",
+    city: "Mumbai",
     state: "MAHARASHTRA",
     address: "Panvel Medical Center, Near Panvel Station, Panvel 410206",
     image: "/images/Panvel.jpg",
@@ -416,7 +416,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
       {/* Content Container */}
       <div className="flex flex-col justify-between p-4 md:p-6 w-full">
         {/* Center Name and Address */}
-        <div className='w-[600px]'>
+        <div className='w-auto'>
           <h3 className="text-[32px] md:text-[48px] font-normal font-manrope text-[#1656A5] mb-2">
             {name}
           </h3>
