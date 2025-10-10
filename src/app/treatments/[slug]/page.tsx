@@ -118,66 +118,67 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
       )}
       {/* Why Choose IMSI Section */}
       {points.length > 0 && (
-        <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[60px] bg-[#F5FAFF] hidden lg:block">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[50px] items-start">
-            {/* Left Side */}
-            <div className="flex flex-col md:pr-[40px]">
-              <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3 w-fit">
-                Why Choose IMSI
+      <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[60px] bg-transparent hidden lg:block">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-[50px] items-start">
+    {/* Left Side */}
+    <div className="flex flex-col md:pr-[40px]">
+      <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3 w-fit">
+        Why Choose IMSI
+      </span>
+
+      <h2 className="text-[#2C2C2C] font-manrope font-normal mb-[40px] text-[28px] leading-[36px] md:text-[44px] md:leading-[52px]">
+        Targeted Selection for <br /> Higher IVF Success
+      </h2>
+
+      <div className="flex flex-col divide-y divide-[#A5A5A5]">
+        {points.map((point, idx) => (
+          <div
+            key={point.id}
+            className="py-5 cursor-pointer"
+            onClick={() => setActivePoint(idx)}
+          >
+            <div className="flex items-start justify-between">
+              <h3
+                className={`text-[#2C2C2C] font-[Manrope] text-[32px] md:text-[26px] leading-[32px] ${
+                  activePoint === idx ? "text-[#2C2C2C]" : ""
+                }`}
+              >
+                {point.title}
+              </h3>
+              <span className="text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[20px] font-medium">
+                {String(idx + 1).padStart(2, "0")}
               </span>
-
-              <h2 className="text-[#2C2C2C] font-manrope font-normal mb-[40px] text-[28px] leading-[36px] md:text-[44px] md:leading-[52px]">
-                Targeted Selection for <br /> Higher IVF Success
-              </h2>
-
-              <div className="flex flex-col divide-y divide-[#A5A5A5]">
-                {points.map((point, idx) => (
-                  <div
-                    key={point.id}
-                    className="py-5 cursor-pointer"
-                    onClick={() => setActivePoint(idx)}
-                  >
-                    <div className="flex items-start justify-between">
-                      <h3
-                        className={`text-[#2C2C2C] font-[Manrope] text-[22px] md:text-[26px] leading-[32px] ${
-                          activePoint === idx ? "text-[#1656A5]" : ""
-                        }`}
-                      >
-                        {point.title}
-                      </h3>
-                      <span className="text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[20px] font-medium">
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-
-                    {activePoint === idx && (
-                      <p className="mt-2 text-[#606060] font-[Manrope] text-[15px] leading-[22px] opacity-80">
-                        {point.description}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
             </div>
 
-            {/* Right Side */}
-            <div className="flex items-center justify-center h-full -mt-[70px] md:-mt-[20px]">
-              <Image
-                key={activePoint} // triggers re-render
-                src={points[activePoint].image}
-                alt={points[activePoint].title}
-                width={800}
-                height={520}
-                className="rounded-[16px] w-full h-[520px] object-cover object-center transition-all duration-500 ease-in-out"
-              />
-            </div>
+            {activePoint === idx && (
+              <p className="mt-2 text-[#606060] font-[Manrope] text-[15px] leading-[22px] opacity-80">
+                {point.description}
+              </p>
+            )}
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+
+    {/* Right Side */}
+    <div className="flex items-center justify-center h-full -mt-[70px] md:-mt-[20px]">
+      <Image
+        key={activePoint} // triggers re-render
+        src={points[activePoint].image}
+        alt={points[activePoint].title}
+        width={800}
+        height={520}
+        className="rounded-[14.5px] w-full h-[520px] object-cover object-center transition-all duration-500 ease-in-out"
+      />
+    </div>
+  </div>
+</section>
+
       )}
       {/* for mmobile screen  */}
       {/* Why Choose IMSI Section - Mobile Slider Style */}
       {points.length > 0 && (
-        <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[60px] bg-[#F5FAFF] lg:hidden">
+        <section className="px-[12px] md:px-[80px] xl:px-[120px] -mt-[90px] rounded-[16px] py-[60px] bg-[#F5FAFF] lg:hidden">
           {/* Desktop View - Keep Original Layout */}
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-[50px] items-start">
             {/* Left Side */}
@@ -211,7 +212,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
                     </div>
 
                     {activePoint === idx && (
-                      <p className="mt-2 text-[#606060] font-[Manrope] text-[15px] leading-[22px] opacity-80">
+                      <p className="mt-2 text-[#] font-[Manrope] text-[15px] leading-[22px] opacity-80">
                         {point.description}
                       </p>
                     )}
@@ -221,12 +222,12 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
             </div>
 
             {/* Right Side */}
-            <div className="flex items-center justify-center h-full -mt-[70px] md:-mt-[20px]">
+            <div className="flex items-center justify-center h-full -mt-[90px] md:-mt-[10px]">
               <img
                 key={activePoint}
                 src={points[activePoint].image}
                 alt={points[activePoint].title}
-                className="rounded-[16px] w-full h-[520px] object-cover object-center transition-all duration-500 ease-in-out"
+                className="!rounded-[16px] w-full h-[520px] object-cover object-center transition-all duration-500 ease-in-out"
               />
             </div>
           </div>
@@ -237,15 +238,15 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
               Why Choose IMSI
             </span>
 
-            <h2 className="text-[#2C2C2C] font-manrope font-normal mb-8 text-[28px] leading-[36px]">
+            <h2 className="text-[#2C2C2C] font-manrope font-normal text-[28px] leading-[36px]">
               Targeted Selection for Higher IVF Success
             </h2>
 
             {/* Slider Card */}
-            <div className="relative bg-white rounded-[16px] border border-[#E6E6E6] overflow-hidden shadow-sm">
+            <div className="relative rounded-[16px] overflow-hidden ">
               {/* Card Content */}
-              <div className="p-6">
-                <span className="text-[#1656A5] font-[Manrope] text-[16px] font-medium">
+              <div className="">
+                <span className="text-[#94BA3D] font-[Manrope] text-[16px] font-medium">
                   {String(activePoint + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[#1656A5] font-[Manrope] text-[20px] md:text-[24px] font-medium mt-2 mb-3">
@@ -257,7 +258,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
               </div>
 
               {/* Image */}
-              <div className="w-full h-[280px] overflow-hidden">
+              <div className="w-full h-[280px] overflow-hidden rounded-[14.5px] overflow-hidden">
                 <img
                   key={activePoint}
                   src={points[activePoint].image}
@@ -285,8 +286,10 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
           </div>
         </section>
       )}
+
+      
       {/* Step-by-step selection */}
-      <section className="w-full bg-[#FAFAFA] px-6 md:px-12 lg:px-24 py-20">
+      <section className="w-full bg-[#FAFAFA] px-6 md:px-12 lg:px-24 py-20 lg:mt-[40px] -mt-[90px]">
         {/* Tag */}
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
           The IMSI Procedure
@@ -311,7 +314,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
               />
             </div>
             <div className="bg-[#F7FAFC] p-6 ">
-              <span className="text-[#1656A5] font-manrope text-[18px] lg:gap[30px]  font-semibold block mb-2">
+              <span className="text-[#1656A5] font-manrope text-[18px] lg:gap[30px]  font-semibold block mb-5">
                 01
               </span>
               <h3 className="text-[#2C2C2C] font-manrope text-[18px] md:text-[20px] font-semibold mb-1">
@@ -335,7 +338,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
               />
             </div>
             <div className="bg-[#F7FAFC] p-6">
-              <span className="text-[#1656A5] font-manrope text-[18px] font-semibold block mb-2">
+              <span className="text-[#1656A5] font-manrope text-[18px] font-semibold block mb-5">
                 02
               </span>
               <h3 className="text-[#2C2C2C] font-manrope text-[18px] md:text-[20px] font-semibold mb-1">
@@ -359,7 +362,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
               />
             </div>
             <div className="bg-[#F7FAFC] p-6">
-              <span className="text-[#1656A5] font-manrope text-[18px] font-semibold block mb-2">
+              <span className="text-[#1656A5] font-manrope text-[18px] font-semibold block mb-5">
                 03
               </span>
               <h3 className="text-[#2C2C2C] font-manrope text-[18px] md:text-[20px] font-semibold mb-1">
@@ -372,8 +375,11 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
           </div>
         </div>
       </section>
+
+
       {/* Step-by-step selection section */}
-      <section className="px-[12px] md:px-[80px] xl:px-[120px] py-[80px] bg-[#F9FBFF]">
+      <section className="px-[12px] md:px-[80px] xl:px-[120px] lg:pt-[40px] py-[40px] bg-[#F9FBFF] -mt-[70px]">
+
         {/* Tag */}
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
           The PICSI Procedure
@@ -398,10 +404,13 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
             <h3 className="text-[#2C2C2C] font-manrope text-[16px]  lg:pt-[120px] md:text-[20px] font-semibold">
               Collection & Preparation
             </h3>
-            <p className="text-[#606060] font-manrope text-[16px] leading-[24px] opacity-80">
-              Semen samples are collected and processed to separate motile
-              sperm.
-            </p>
+           <p className="text-[#606060] font-manrope text-[16px] leading-[24px] opacity-80">
+  Semen samples are  <br />
+  collected and processed <br />
+  to separate motile <br />
+   sperm.
+</p>
+
           </div>
 
           {/* Step 02 */}
@@ -412,9 +421,9 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
             <h3 className="text-[#2C2C2C]  lg:pt-[120px]  font-manrope text-[16px] md:text-[20px] font-semibold">
               Accurate Diagnosis
             </h3>
-            <p className="text-[#606060] font-manrope text-[16px] leading-[24px] opacity-80">
-              Sperm are placed in an HA dish, where only mature, DNA-intact ones
-              bind naturally.
+            <p className="text-[#2C2C2C] font-manrope text-[16px] leading-[24px] opacity-80">
+              Sperm are placed in an HA <br/> dish, where only mature,<br/>  DNA-intact ones
+              bind ,<br/> naturally.
             </p>
           </div>
 
@@ -426,8 +435,8 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
             <h3 className="text-[#2C2C2C]  lg:pt-[120px] font-manrope text-[16px] md:text-[20px] font-semibold">
               Selection for Injection
             </h3>
-            <p className="text-[#606060] font-manrope text-[16px] leading-[24px] opacity-80">
-              Bound sperm are carefully picked and injected into the eggs
+            <p className="text-[#2C2C2C] font-manrope text-[16px] leading-[24px] opacity-80">
+              Bound sperm are <br/> carefully picked and <br/>  injected into the eggs<br/> 
               (oocytes) through ICSI.
             </p>
           </div>
@@ -440,16 +449,16 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
             <h3 className="text-[#2C2C2C]  lg:pt-[120px]  font-manrope text-[16px] md:text-[20px] font-semibold">
               Fertilization & Embryo Transfer
             </h3>
-            <p className="text-[#606060] font-manrope text-[16px] leading-[24px] opacity-80">
-              Resulting embryos are cultured, and the best-quality ones are
-              transferred into the uterus.
+            <p className="text-[#2C2C2C] font-manrope text-[16px] leading-[24px] opacity-80">
+              Resulting embryos are <br/> cultured, and the best-quality <br/>  ones are
+              transferred into the <br/> uterus.
             </p>
           </div>
         </div>
       </section>
-            {/* Success Rate */}     {" "}
+      {/* Success Rate */}{" "}
       <section className="relative w-full flex justify-center items-center overflow-hidden px-6 md:px-12 lg:px-[120px] py-20">
-               {" "}
+        {" "}
         <div
           className="absolute left-[-100px] bottom-[-50px] rounded-full bg-[#94BA3D] blur-[250px]"
           style={{
@@ -466,19 +475,19 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
             transform: "rotate(-2deg)",
           }}
         ></div>
-               {" "}
+        {" "}
         <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between w-full">
-                   {" "}
+         {" "}
           <h2 className="text-[#94BA3D] font-manrope text-[80px] md:text-[120px] font-normal leading-none tracking-[-2.4px] mb-6 md:mb-0">
-                        {treatment?.gradient_data}         {" "}
+             {treatment?.gradient_data}{" "}
           </h2>
-                   {" "}
+         {" "}
           <p className="text-[#94BA3D] font-manrope text-[32px] md:text-[48px] font-normal leading-[40px] md:leading-[56px] tracking-[-0.64px] md:tracking-[-0.96px] text-left md:text-right max-w-3xl">
-                        {treatment?.gradient_text}         {" "}
+            {treatment?.gradient_text}{" "}
           </p>
-                 {" "}
+    {" "}
         </div>
-             {" "}
+       {" "}
       </section>
       {/* Stories Section */}
       <StoriesSection />

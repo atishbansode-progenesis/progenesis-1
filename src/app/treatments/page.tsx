@@ -653,8 +653,9 @@ const [activeTab, setActiveTab] = useState<string>("path");
           ))}
         </div>
       </section>
-<ResourceStories />
-      {/* <StoriesSectionNew /> */}
+
+     <StoriesSection />
+
       <ConsultationForm />
       <GradientBanner text="Every journey to parenthood is unique — with the right care, hope finds its way." />
 
