@@ -130,7 +130,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 
         {/* WHAT */}
         <div
-    ref={(el) => { buttonRefs.current.what = el; }}
+          ref={(el) => { buttonRefs.current.what = el; }}
           className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
     ${activeStep === "what" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
         >
@@ -163,7 +163,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 
         {/* WHERE */}
         <div
-    ref={(el) => { buttonRefs.current.where = el; }}
+          ref={(el) => { buttonRefs.current.where = el; }}
           className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
     ${activeStep === "where" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
         >
@@ -196,7 +196,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 
         {/* WHO */}
         <div
-    ref={(el) => { buttonRefs.current.who = el; }}
+          ref={(el) => { buttonRefs.current.who = el; }}
           className={`relative flex items-center flex-1 rounded-2xl px-5 py-3  transition-all duration-200 
     ${activeStep === "who" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
         >
@@ -1009,56 +1009,33 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                         </svg>
                       </Link>
                     ) : (
-                      // ✅ DEFAULT LINK + INLINE SUBMENU
-                      <Link href={link.path} onMouseEnter={() => setExpandedLink(link.label)}
-                        onMouseLeave={() => setExpandedLink(null)}>
-                        <button
-
-                          className="
-                  text-left
-    text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-    hover:text-[#1656A5] w-full
-    flex items-center justify-start gap-2
-     rounded-[8px]
-    transition-all duration-200
-    hover:bg-[rgba(22,86,165,0.10)]
-    hover:px-4 hover:py-[10px]
-            "
+                      <div
+                        className="relative"
+                        onMouseEnter={() => setExpandedLink(link.label)}
+                        onMouseLeave={() => setExpandedLink(null)}
+                        className="transition-all duration-150"
+                      >
+                        <Link
+                          href={link.path}
+                          className="block text-[#2C2C2C] font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] 
+     hover:text-[#1656A5] w-full flex items-center gap-2 rounded-[8px] 
+     transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
                         >
                           {link.label}
-                          {/* {link.submenu && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                className={`transition-transform ${
-                  expandedLink === link.label ? "rotate-90" : ""
-                }`}
-              >
-                <path
-                  d="M8 5L16 12L8 19"
-                  stroke="#252525"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            )} */}
-                        </button>
+                        </Link>
 
-                        {/* Nested submenu (inline, like Figma) */}
+
+
+
+                        {/* ✅ Submenu opens below on hover, no overlap */}
                         {link.submenu && expandedLink === link.label && (
-                          <ul className="ml-4 mt-2 space-y-1 animate-fadeIn">
+                          <ul className="pl-4 mt-2 space-y-1 transition-all duration-200 ease-in-out">
                             {link.submenu.map((sublink: any, subIdx: number) => (
                               <li key={subIdx}>
                                 <Link
                                   href={sublink.path}
-                                  className="
-                                    block text-[#969696] font-[Manrope] text-[13px] leading-[22px] tracking-[-0.26px]
-                                    hover:text-[#1656A5] transition
-                                  "
+                                  className="block text-[#555] font-[Manrope] text-[14px] leading-[22px]
+                     hover:text-[#1656A5] transition-all duration-150"
                                 >
                                   {sublink.label}
                                 </Link>
@@ -1066,7 +1043,13 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                             ))}
                           </ul>
                         )}
-                      </Link>
+
+
+
+
+
+                      </div>
+
                     )}
                   </li>
                 ))}
@@ -1175,26 +1158,47 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* SEARCH BUTTON (mobile-styled) */}
-          <button
-            type="button"
-            onClick={() => setIsSearchOpen(true)}
-            aria-label="Open search"
-            className="w-[24px] h-[24px] flex-shrink-0 aspect-[1/1] flex items-center justify-center md:mr-4 lg:mr-0"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M19 11.5C19 12.9834 18.5601 14.4334 17.736 15.6668C16.9119 16.9001 15.7406 17.8614 14.3701 18.4291C12.9997 18.9967 11.4917 19.1453 10.0368 18.8559C8.58197 18.5665 7.2456 17.8522 6.1967 16.8033C5.14781 15.7544 4.4335 14.418 4.14411 12.9632C3.85472 11.5083 4.00325 10.0003 4.57091 8.62987C5.13856 7.25943 6.09986 6.08809 7.33323 5.26398C8.56659 4.43987 10.0166 4 11.5 4C13.4891 4 15.3968 4.79018 16.8033 6.1967C18.2098 7.60322 19 9.51087 19 11.5V11.5Z" stroke="#606060" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M20 20L19 19" stroke="#606060" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          {/* HAMBURGER BUTTON (visible only below lg) */}
-          <button
-            className="lg:hidden h-10 w-10 flex items-center justify-center rounded-lg bg-gray-100"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          {/* RIGHT ICONS: SEARCH + MENU */}
+          <div className="flex items-center gap-2">
+            {/* SEARCH BUTTON */}
+            {/* ✅ SEARCH BUTTON (Visible on all screen sizes) */}
+            <button
+              type="button"
+              onClick={() => setIsSearchOpen(true)}
+              aria-label="Open search"
+              className="flex items-center justify-center h-10 w-10 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M19 11.5C19 12.9834 18.5601 14.4334 17.736 15.6668C16.9119 16.9001 15.7406 17.8614 14.3701 18.4291C12.9997 18.9967 11.4917 19.1453 10.0368 18.8559C8.58197 18.5665 7.2456 17.8522 6.1967 16.8033C5.14781 15.7544 4.4335 14.418 4.14411 12.9632C3.85472 11.5083 4.00325 10.0003 4.57091 8.62987C5.13856 7.25943 6.09986 6.08809 7.33323 5.26398C8.56659 4.43987 10.0166 4 11.5 4C13.4891 4 15.3968 4.79018 16.8033 6.1967C18.2098 7.60322 19 9.51087 19 11.5V11.5Z"
+                  stroke="#606060"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M20 20L19 19"
+                  stroke="#606060"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
 
+
+            {/* MENU BUTTON */}
+            <button
+              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-lg bg-gray-100"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
 
 
 
@@ -1210,7 +1214,7 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed top-0 left-0 w-full h-screen bg-white z-50 flex flex-col">
           {/* HEADER */}
-          <div className="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+          <div className="flex justify-between items-center px-6 py-4 shadow-[0_4px_4px_rgba(0,0,0,0.03)]">
             {/* ✅ LEFT SIDE: Logo OR Back button */}
             {!activeMobileSubmenu ? (
               // Show Logo when no submenu
@@ -1277,18 +1281,18 @@ export default function Navbar() {
                 viewBox="0 0 24 24"
                 fill="none"
               >
-                  <mask
-                    id="mask_close_mobile"
-                    style={{ maskType: "alpha" }}
-                    maskUnits="userSpaceOnUse"
-                    x="0"
-                    y="0"
-                    width="24"
-                    height="24"
-                  >
-                    <rect width="24" height="24" fill="#D9D9D9" />
-                  </mask>
-                  <g mask="url(#mask_close_mobile)">
+                <mask
+                  id="mask_close_mobile"
+                  style={{ maskType: "alpha" }}
+                  maskUnits="userSpaceOnUse"
+                  x="0"
+                  y="0"
+                  width="24"
+                  height="24"
+                >
+                  <rect width="24" height="24" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask_close_mobile)">
                   <path
                     d="M17.1961 17.6922L11.9988 12.495L6.80158 17.6922L6.30661 17.1972L11.5038 12L6.30661 6.80277L6.80158 6.30779L11.9988 11.505L17.1961 6.30779L17.691 6.80276L12.4938 12L17.691 17.1972L17.1961 17.6922Z"
                     fill="#1C1B1F"
@@ -1371,121 +1375,132 @@ export default function Navbar() {
                         return (
                           <div
                             key={i}
-                            className={`p-[16px] rounded-[8px] mb-6 ${isHighlighted ? "bg-[#F3F8FF]" : "bg-transparent"
+                            className={`p-[16px] rounded-[8px] mb-6 ${col.title === "Quick Links"
+                              ? "bg-transparent p-0" // No background, no padding
+                              : isHighlighted
+                                ? "bg-[#F3F8FF]"
+                                : "bg-transparent"
                               }`}
                           >
                             {col.title && (
                               <h3
-                                className={`font-[Manrope] mb-4 ${isHighlighted
+                                className={`font-[Manrope] mb-4 ${col.title === "Quick Links"
                                   ? "text-[#7E7E7E] text-[20px] font-medium tracking-[-0.4px]"
-                                  : "text-[#2C2C2C] text-[18px] font-semibold"
+                                  : isHighlighted
+                                    ? "text-[#7E7E7E] text-[20px] font-medium tracking-[-0.4px]"
+                                    : "text-[#2C2C2C] text-[18px] font-semibold"
                                   }`}
                               >
                                 {col.title}
                               </h3>
+
                             )}
 
                             <ul className="space-y-3">
-                             {col.links.map((link: any, j: number) => (
-  <li key={j}>
-    {/* BOOK APPOINTMENT BUTTON */}
-    {link.isButton ? (
-      <Link
-        href={link.path}
-        onClick={() => setIsMobileMenuOpen(false)}
-        className="flex items-center justify-center gap-2 w-full px-4 py-[10px] rounded-[8px] bg-[#1656A5] text-white font-[Manrope] text-[14px] font-semibold leading-[24px] tracking-[-0.28px] hover:bg-[#12498C] transition"
-      >
-        {link.label}
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path
-            d="M1.37624 5.5498L10.0103 5.6986M10.0103 5.6986L5.56228 1.36376M10.0103 5.6986L5.76761 9.94124"
-            stroke="white"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </Link>
-    ) : 
-    link.isPhone ? (
-      /* 📞 PHONE LINK */
-      <a
-        href={link.path}
-        className="flex items-center gap-3 w-full bg-[rgba(22,86,165,0.10)] rounded-[8px] px-4 py-[10px]
-                   text-[#252525] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-                   hover:bg-[rgba(22,86,165,0.15)] transition"
-      >
-        {/* Phone SVG (same as desktop) */}
-        <span className="w-[24px] h-[24px] shrink-0 flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M20.675 21.3417C18.9778 21.3417 17.2128 20.8948 15.3802 20.001C13.5476 19.1073 11.8323 17.8569 10.2344 16.25C8.63646 14.643 7.39062 12.9278 6.49687 11.1042C5.60313 9.28055 5.15625 7.52013 5.15625 5.82291C5.15625 5.49014 5.26458 5.2129 5.48125 4.99118C5.69792 4.76928 5.96875 4.65833 6.29375 4.65833H8.46042C8.76736 4.65833 9.03368 4.75312 9.25937 4.9427C9.48507 5.13228 9.64305 5.38055 9.73333 5.68749L10.2208 7.90832C10.275 8.21527 10.266 8.4861 10.1937 8.72082C10.1215 8.95555 9.99514 9.14513 9.81458 9.28958L7.5125 11.375C7.98194 12.2236 8.49201 13.0045 9.04271 13.7177C9.5934 14.4309 10.1757 15.1035 10.7896 15.7354C11.4396 16.3854 12.1437 16.9903 12.9021 17.55C13.6604 18.1097 14.5 18.6424 15.4208 19.1479L17.6687 16.8458C17.8493 16.6472 18.0434 16.5208 18.251 16.4667C18.4587 16.4125 18.6979 16.4035 18.9687 16.4396L20.8104 16.8187C21.1174 16.891 21.3656 17.0444 21.5552 17.2792C21.7448 17.5139 21.8396 17.7847 21.8396 18.0917V20.2042C21.8396 20.5292 21.7286 20.8 21.5067 21.0167C21.285 21.2333 21.0078 21.3417 20.675 21.3417Z"
-              fill="#1C1B1F"
-            />
-          </svg>
-        </span>
-        {link.label}
-      </a>
-    ) : link.isWhatsapp ? (
-      /* 💬 WHATSAPP LINK */
-      <a
-        href={link.path}
-        className="flex items-center gap-3 w-full bg-[rgba(22,86,165,0.10)] rounded-[8px] px-4 py-[10px]
-                   text-[#252525] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-                   hover:bg-[rgba(22,86,165,0.15)] transition"
-      >
-        {/* WhatsApp SVG */}
-        <span className="w-[24px] h-[24px] shrink-0 flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 27 26" fill="none">
-            <path
-              d="M21.5497 9.57082C21.0872 8.54894 20.4234 7.63148 19.5805 6.84082C18.7376 6.05763 17.7605 5.43853 16.6715 5.00591C15.5452 4.55837 14.3517 4.33459 13.121 4.33459C11.8902 4.33459 10.6968 4.55837 9.57048 5.00591C8.48146 5.43853 7.50433 6.05017 6.66146 6.84082C5.81859 7.63148 5.15475 8.54894 4.69229 9.57082C4.21491 10.63 3.96875 11.7638 3.96875 12.9274C3.96875 14.9637 4.72956 16.918 6.1244 18.4694L5.3785 22.5346L9.34671 20.7668C10.5327 21.274 11.7933 21.5276 13.1135 21.5276C14.3442 21.5276 15.5377 21.3039 16.664 20.8563C17.753 20.4237 18.7302 19.8121 19.573 19.0214C20.4159 18.2307 21.0797 17.3133 21.5422 16.2914C22.0196 15.2322 22.2657 14.0984 22.2657 12.9348C22.2732 11.7638 22.027 10.6375 21.5497 9.57082Z"
-              stroke="black"
-              strokeWidth="0.7"
-            />
-            <path
-              d="M16.8348 14.6452C16.4469 14.4513 16.1635 14.3319 15.9621 14.2574C15.8353 14.2126 15.5369 14.0783 15.4325 14.1604C15.1043 14.4289 14.7537 15.1897 14.3808 15.3315C13.4558 15.1524 12.5981 14.5184 11.9268 13.8695C11.6284 13.586 11.0764 12.7805 10.9571 12.5642C10.9347 12.3404 11.3375 12.042 11.427 11.8705C11.8894 11.3483 11.5389 11.0201 11.4792 10.8038C11.3748 10.5801 11.1958 10.1773 11.0391 9.84908C10.9049 9.63277 10.875 9.31203 10.6363 9.19268C9.6219 8.67055 9.04012 9.71482 8.80143 10.2593C7.36184 13.7278 16.0143 20.329 17.7746 15.779C17.8641 15.3837 17.8268 15.2345 17.6926 15.0555C17.424 14.869 17.1108 14.7869 16.8348 14.6452Z"
-              stroke="black"
-              strokeWidth="0.7"
-            />
-          </svg>
-        </span>
-        {link.label}
-      </a>
-    ) : link.isarrow ? (
-      /* ➤ ARROW LINK */
-      <Link
-        href={link.path}
-        onClick={() => setIsMobileMenuOpen(false)}
-        className="flex items-center justify-between w-full text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] transition"
-      >
-        {link.label}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M7.37624 11.5498L16.0103 11.6986M16.0103 11.6986L11.5623 7.36376M16.0103 11.6986L11.7676 15.9412"
-            stroke="#252525"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </Link>
-    ) : (
-      /* Default */
-      <Link
-        href={link.path}
-        onClick={() => setIsMobileMenuOpen(false)}
-        className="block text-[#4B5563] text-[13px] font-[Manrope] hover:text-[#1656A5] transition"
-      >
-        {link.label}
-      </Link>
-    )}
-  </li>
-))}
+                              {col.links.map((link: any, j: number) => (
+                                <li key={j}>
+                                  {/* BOOK APPOINTMENT BUTTON */}
+                                  {link.isButton ? (
+                                    <Link
+                                      href={link.path}
+                                      onClick={() => setIsMobileMenuOpen(false)}
+                                      className="flex items-center justify-center gap-2 w-full px-4 py-[10px] rounded-[8px] bg-[#1656A5] text-white font-[Manrope] text-[14px] font-semibold leading-[24px] tracking-[-0.28px] hover:bg-[#12498C] transition"
+                                    >
+                                      {link.label}
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path
+                                          d="M1.37624 5.5498L10.0103 5.6986M10.0103 5.6986L5.56228 1.36376M10.0103 5.6986L5.76761 9.94124"
+                                          stroke="white"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                        />
+                                      </svg>
+                                    </Link>
+                                  ) :
+                                    link.isPhone ? (
+                                      /* 📞 PHONE LINK */
+                                      <a
+                                        href={link.path}
+                                        className="inline-flex items-center gap-2 px-3 py-[6px] rounded-[8px]
+             bg-[rgba(22,86,165,0.10)]
+             text-[#252525] font-[Manrope] text-[14px] font-medium leading-[20px] tracking-[-0.28px]
+             hover:bg-[rgba(22,86,165,0.15)] transition"
+                                      >
+
+                                        {/* Phone SVG (same as desktop) */}
+                                        <span className="w-[24px] h-[24px] shrink-0 flex items-center justify-center">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path
+                                              d="M20.675 21.3417C18.9778 21.3417 17.2128 20.8948 15.3802 20.001C13.5476 19.1073 11.8323 17.8569 10.2344 16.25C8.63646 14.643 7.39062 12.9278 6.49687 11.1042C5.60313 9.28055 5.15625 7.52013 5.15625 5.82291C5.15625 5.49014 5.26458 5.2129 5.48125 4.99118C5.69792 4.76928 5.96875 4.65833 6.29375 4.65833H8.46042C8.76736 4.65833 9.03368 4.75312 9.25937 4.9427C9.48507 5.13228 9.64305 5.38055 9.73333 5.68749L10.2208 7.90832C10.275 8.21527 10.266 8.4861 10.1937 8.72082C10.1215 8.95555 9.99514 9.14513 9.81458 9.28958L7.5125 11.375C7.98194 12.2236 8.49201 13.0045 9.04271 13.7177C9.5934 14.4309 10.1757 15.1035 10.7896 15.7354C11.4396 16.3854 12.1437 16.9903 12.9021 17.55C13.6604 18.1097 14.5 18.6424 15.4208 19.1479L17.6687 16.8458C17.8493 16.6472 18.0434 16.5208 18.251 16.4667C18.4587 16.4125 18.6979 16.4035 18.9687 16.4396L20.8104 16.8187C21.1174 16.891 21.3656 17.0444 21.5552 17.2792C21.7448 17.5139 21.8396 17.7847 21.8396 18.0917V20.2042C21.8396 20.5292 21.7286 20.8 21.5067 21.0167C21.285 21.2333 21.0078 21.3417 20.675 21.3417Z"
+                                              fill="#1C1B1F"
+                                            />
+                                          </svg>
+                                        </span>
+                                        {link.label}
+                                      </a>
+                                    ) : link.isWhatsapp ? (
+                                      /* 💬 WHATSAPP LINK */
+                                      <a
+                                        href={link.path}
+                                        className="inline-flex items-center gap-2 px-3 py-[6px] rounded-[8px]
+             bg-[rgba(22,86,165,0.10)]
+             text-[#252525] font-[Manrope] text-[14px] font-medium leading-[20px] tracking-[-0.28px]
+             hover:bg-[rgba(22,86,165,0.15)] transition"
+                                      >
+
+                                        {/* WhatsApp SVG */}
+                                        <span className="w-[24px] h-[24px] shrink-0 flex items-center justify-center">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 27 26" fill="none">
+                                            <path
+                                              d="M21.5497 9.57082C21.0872 8.54894 20.4234 7.63148 19.5805 6.84082C18.7376 6.05763 17.7605 5.43853 16.6715 5.00591C15.5452 4.55837 14.3517 4.33459 13.121 4.33459C11.8902 4.33459 10.6968 4.55837 9.57048 5.00591C8.48146 5.43853 7.50433 6.05017 6.66146 6.84082C5.81859 7.63148 5.15475 8.54894 4.69229 9.57082C4.21491 10.63 3.96875 11.7638 3.96875 12.9274C3.96875 14.9637 4.72956 16.918 6.1244 18.4694L5.3785 22.5346L9.34671 20.7668C10.5327 21.274 11.7933 21.5276 13.1135 21.5276C14.3442 21.5276 15.5377 21.3039 16.664 20.8563C17.753 20.4237 18.7302 19.8121 19.573 19.0214C20.4159 18.2307 21.0797 17.3133 21.5422 16.2914C22.0196 15.2322 22.2657 14.0984 22.2657 12.9348C22.2732 11.7638 22.027 10.6375 21.5497 9.57082Z"
+                                              stroke="black"
+                                              strokeWidth="0.7"
+                                            />
+                                            <path
+                                              d="M16.8348 14.6452C16.4469 14.4513 16.1635 14.3319 15.9621 14.2574C15.8353 14.2126 15.5369 14.0783 15.4325 14.1604C15.1043 14.4289 14.7537 15.1897 14.3808 15.3315C13.4558 15.1524 12.5981 14.5184 11.9268 13.8695C11.6284 13.586 11.0764 12.7805 10.9571 12.5642C10.9347 12.3404 11.3375 12.042 11.427 11.8705C11.8894 11.3483 11.5389 11.0201 11.4792 10.8038C11.3748 10.5801 11.1958 10.1773 11.0391 9.84908C10.9049 9.63277 10.875 9.31203 10.6363 9.19268C9.6219 8.67055 9.04012 9.71482 8.80143 10.2593C7.36184 13.7278 16.0143 20.329 17.7746 15.779C17.8641 15.3837 17.8268 15.2345 17.6926 15.0555C17.424 14.869 17.1108 14.7869 16.8348 14.6452Z"
+                                              stroke="black"
+                                              strokeWidth="0.7"
+                                            />
+                                          </svg>
+                                        </span>
+                                        {link.label}
+                                      </a>
+                                    ) : link.isarrow ? (
+                                      /* ➤ ARROW LINK */
+                                      <Link
+                                        href={link.path}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="flex items-center justify-between w-full text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] transition"
+                                      >
+                                        {link.label}
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                        >
+                                          <path
+                                            d="M7.37624 11.5498L16.0103 11.6986M16.0103 11.6986L11.5623 7.36376M16.0103 11.6986L11.7676 15.9412"
+                                            stroke="#252525"
+                                            strokeWidth="1.5"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                          />
+                                        </svg>
+                                      </Link>
+                                    ) : (
+                                      /* Default */
+                                      <Link
+                                        href={link.path}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="block text-[#4B5563] text-[13px] font-[Manrope] hover:text-[#1656A5] transition"
+                                      >
+                                        {link.label}
+                                      </Link>
+                                    )}
+                                </li>
+                              ))}
 
 
                             </ul>
@@ -1505,7 +1520,7 @@ export default function Navbar() {
 
 
           {/* FOOTER BUTTONS */}
-          <div className="flex justify-between items-center px-[16px] py-[16px] border-t border-gray-200">
+          <div className="flex justify-between items-center px-[16px] py-[16px] ">
             {/* Book Appointment Button */}
             <Link
               href="/appointment"
