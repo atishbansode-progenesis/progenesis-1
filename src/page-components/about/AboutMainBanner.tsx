@@ -6,7 +6,7 @@ const AboutMainBanner = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className='bg-gradient-to-r from-green-100 via-white to-sky-200 grid bg-[url("/images/aboutBanner.png")] bg-cover overflow-hidden  bg-center'>
+        <div className='bg-gradient-to-r grid bg-[url("/images/AboutbannerM.png")] h-[520px] md:h-auto md:bg-[url("/images/aboutBanner.png")] bg-cover overflow-hidden  bg-center'>
             <div className='section-spacing'>
                 <div className='flex flex-col'>
                     <div className='lg:pb-[44px] pb-[16px]'>
@@ -32,9 +32,7 @@ const AboutMainBanner = () => {
                 </div>
             </div>
 
-            <div className='lg:hidden md:hidden md:col-span-4 csLg:col-span-4 pr-0'>
-                <img src="/images/about-banner-img.png" alt="" className='h-[100%] w-full' />
-            </div>
+
 
             {/* Modal */}
             {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
