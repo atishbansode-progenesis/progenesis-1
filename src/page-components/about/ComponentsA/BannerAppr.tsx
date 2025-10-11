@@ -8,6 +8,7 @@ const slides = [
   {
     tab: 'Care That Fits You',
     image: "/images/banner1.png", // existing image path; replace as needed
+    image1:"/images/Abanner1.png",
     heading:
       "We provide fertility care that’s personal and flexible, designed to fit your unique journey to parenthood.",
     ctaPrimary: 'Book Your Appointment',
@@ -38,6 +39,7 @@ const slides = [
   {
     tab: 'Science with Heart',
     image: "/images/banner2.png", // dummy image
+    image1:'/images/Abanner2.png',
     heading:
       'Every journey deserves honesty, compassion, and guidance. We help you choose with confidence through care.',
     ctaPrimary: 'Book Your Appointment',
@@ -68,6 +70,7 @@ const slides = [
   {
     tab: 'Clear & Complete',
     image: "/images/banner3.png", // dummy image
+    image1: '/images/Abanner3.png',
     heading:
       'Transparent plans, clear pricing, and complete support designed for peace of mind.',
     ctaPrimary: 'Book Your Appointment',
@@ -185,7 +188,7 @@ const BannerOfApproach: React.FC = () => {
         }}
         className={`relative snap-start shrink-0 w-[100%] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10`}
         style={{
-          backgroundImage: `url(${s.image})`,
+          backgroundImage: `url(${s.image1})`,
           // 👉 Add right padding only to the last slide
           paddingRight: index === slides.length - 1 ? "16px" : "0px",
         }}
