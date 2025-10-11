@@ -41,7 +41,7 @@ export default function HeroSection({
       }}
     >
       {/* Overlay Image (background layer) */}
-      {overlayImage && (
+      {typeof window !== 'undefined' && overlayImage && (
         <Image
           src={window.innerWidth >= 1024 ? overlayImage : overlayImageSmall || overlayImage}
           alt="Overlay"

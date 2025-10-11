@@ -13,6 +13,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Journey from '../../components/Journey'
+import { useRouter } from "next/navigation";
 const InternationalPatientsPage: React.FC = () => {
   const categories = [
     { id: "start", label: "Start Your Journey Today" },
@@ -22,6 +23,8 @@ const InternationalPatientsPage: React.FC = () => {
   ];
 
   const [activeTab, setActiveTab] = useState("start");
+
+  const router = useRouter()
 
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -344,7 +347,7 @@ const InternationalPatientsPage: React.FC = () => {
               {/* Breadcrumb-like line */}
               <div >
                 <h2 className='font-manrope csLg:text-[18px] font-semibold text-[12px] leading-[26px] tracking-[-0.02em]'>
-                  <button onClick={() => window.location.href = '/'} className='hover:cursor-pointer'> Home </button> <span className="px-[12px]">›</span> <span className="text-[#1656A5]"> International Patient </span>
+                  <button onClick={() => router.push('/')} className='hover:cursor-pointer'> Home </button> <span className="px-[12px]">›</span> <span className="text-[#1656A5]"> International Patient </span>
                 </h2>
               </div>
 
