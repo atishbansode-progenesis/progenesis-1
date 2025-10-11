@@ -21,7 +21,7 @@ const DoctorsPart = () => {
         <div className="absolute inset-0 bg-black opacity-20 lg:opacity-0"></div>
 
         {/* Top-right heading */}
-        <h2 className="absolute top-[60px] right-[40px]  lg:left-[1221px] text-[#1656A5]  text-right font-semibold text-[28px] md:text-[40px] leading-[1.2] tracking-[-0.02em] z-10">
+        <h2 className="absolute top-[60px] right-[40px] text-[#1656A5]  text-right font-semibold text-[28px] md:text-[40px] leading-[1.2] tracking-[-0.02em] z-10">
           <span className="block">Book your appointment</span>
           <span className="block">with our experts today.</span>
         </h2>
