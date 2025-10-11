@@ -13,6 +13,7 @@ const slides = [
       "We provide fertility care that’s personal and flexible, designed to fit your unique journey to parenthood.",
     ctaPrimary: 'Book Your Appointment',
     ctaSecondary: 'Check My Fit',
+    ctaThird: 'Take A Quiz',
     features: [
       { title: 'In-Depth Diagnosis First', desc: 'Finding real causes before treatment begins.', icon: '/images/icons/1.svg' },
       { title: 'Tailored Protocols', desc: 'Plans made for your body’s unique needs.', icon: '/images/icons/2.svg' },
@@ -28,6 +29,7 @@ const slides = [
       'Every journey deserves honesty, compassion, and guidance. We help you choose with confidence through care.',
     ctaPrimary: 'Book Your Appointment',
     ctaSecondary: 'Check My Fit',
+    ctaThird: 'Take A Quiz',
     features: [
       { title: 'Certified ART Lab', desc: 'Accredited labs for reliable fertility treatments.', icon: '/images/icons/5.svg' },
       { title: 'Advanced Techniques', desc: 'Modern methods for higher success rates.', icon: '/images/icons/6.svg' },
@@ -43,6 +45,7 @@ const slides = [
       'Transparent plans, clear pricing, and complete support designed for peace of mind.',
     ctaPrimary: 'Book Your Appointment',
     ctaSecondary: 'Check My Fit',
+    ctaThird: 'Take A Quiz',
     features: [
       { title: 'Transparent costs & timelines', desc: 'Clear estimates and timelines to help you plan confidently.', icon: '/images/icons/9.svg' },
       { title: 'Success rates by age & treatment', desc: 'Realistic expectations based on age and treatment.', icon: '/images/icons/10.svg' },
@@ -179,7 +182,7 @@ const BannerOfApproach: React.FC = () => {
                       (ctaActive[index] ?? "primary") === "secondary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
                     } h-[40px] px-4 rounded-[12px] hover:cursor-pointer text-xs font-medium`}
                   >
-                    {s.ctaSecondary}
+                    {s.ctaThird}
                   </button>
 
                   {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
