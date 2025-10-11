@@ -5,8 +5,11 @@ import Image from "next/image";
 import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import GradientBanner from "@/components/GradientBanner";
 import StoriesSectionNew from "@/components/Storiescard-with-new-layout";
+import ResourceStories from "@/page-components/resources/ResourceStories";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
+import StoriesSection from "@/components/Home/StoriesSection"; //
+
 
 
 
@@ -651,8 +654,8 @@ const [activeTab, setActiveTab] = useState<string>("path");
         </div>
       </section>
 
+     <StoriesSection />
 
-      <StoriesSectionNew />
       <ConsultationForm />
       <GradientBanner text="Every journey to parenthood is unique — with the right care, hope finds its way." />
 
