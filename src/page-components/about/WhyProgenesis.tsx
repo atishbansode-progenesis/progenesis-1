@@ -65,21 +65,21 @@ const WhyProgenesis: React.FC = () => {
             <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] px-3 py-1 rounded-[8px]">
               Why choose us
             </span>
-            <h2 className="mt-3 text-[36px] lg:text-[48px] leading-10 font-normal text-[#2C2C2C]">
+            <h2 className="mt-3 text-[36px] lg:text-[48px] leading-10 font-normal text-[#2C2C2C] pb-6">
               Why Progenesis?
             </h2>
           </div>
 
           {/* Image — visible here only on mobile */}
-          <div className="block lg:hidden relative w-full rounded-2xl overflow-hidden min-h-[250px] flex items-center justify-center">
+          <div className="block lg:hidden relative w-full rounded-2xl overflow-hidden min-h-[220px] flex items-center justify-center">
             <div
-              className="absolute inset-0 bg-contain bg-center rounded-2xl bg-no-repeat"
+              className="absolute inset-0 bg-cover bg-center rounded-2xl bg-no-repeat"
               style={{ backgroundImage: `url(${current.image})` }}
             />
           </div>
 
           {/* Tabs */}
-          <div className="mt-6 space-y-4 pt-2 md:pt-8">
+          <div className="lg:mt-6 space-y-4 pt-8 md:pt-8">
             {slides.map((s, idx) => {
               const activeRow = idx === active;
               return (
