@@ -1,13 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import ConsultationForm from "@/components/Consultation/ConsultationForm";
-import GradientBanner from "@/components/GradientBanner";
-import StoriesSectionNew from "@/components/Storiescard-with-new-layout";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
-import StoriesSection from "../../components/Home/StoriesSection";
+import StoriesSection from "@/components/StoriesSection";
 
 interface FeatureCardProps {
   title: string;
@@ -68,7 +65,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
   return href ? <Link href={href}>{cardContent}</Link> : cardContent;
 }
 
-const Infertility: React.FC = () => {
+const Infertility: React.FC<{ category: string }> = ({ category }) => {
   const categories = [
     { id: "path", label: "What is Infertility" },
     { id: "fertility-section", label: "Female Infertility Causes" },
@@ -78,73 +75,73 @@ const Infertility: React.FC = () => {
 
   const femaleInfertilityIssues: InfertilityIssue[] = [
     {
-      id: 1,
+      id: "1",
       title: "Repeated IUI Failures",
       slug: "repeated-iui-failures",
-      image: "/infertility/infertility1.png",
+      image: "/Infertility/infertility1.png",
     },
     {
-      id: 2,
+      id: "2",
       title: "Repeated IVF Failures",
       slug: "repeated-ivf-failures",
-      image: "/infertility/infertility2.png",
+      image: "/Infertility/infertility2.png",
     },
     {
-      id: 3,
+      id: "3",
       title: "Pregnancy after Menopause",
       slug: "pregnancy-after-menopause",
-      image: "/infertility/infertility3.png",
+      image: "/Infertility/infertility3.png",
     },
     {
-      id: 4,
+      id: "4",
       title: "Low AMH",
       slug: "low-amh",
-      image: "/infertility/infertility4.png",
+      image: "/Infertility/infertility4.png",
     },
     {
-      id: 5,
+      id: "5",
       title: "PCOS",
       slug: "pcos",
-      image: "/infertility/infertility5.png",
+      image: "/Infertility/infertility5.png",
     },
     {
-      id: 6,
+      id: "6",
       title: "Tubal Blockage",
       slug: "tubal-blockage",
-      image: "/infertility/infertility6.png",
+      image: "/Infertility/infertility6.png",
     },
     {
-      id: 7,
+      id: "7",
       title: "Fibroids",
       slug: "fibroids",
-      image: "/infertility/infertility7.png",
+      image: "/Infertility/infertility7.png",
     },
     {
-      id: 8,
+      id: "8",
       title: "Endometriosis",
       slug: "endometriosis",
-      image: "/infertility/infertility8.png",
+      image: "/Infertility/infertility8.png",
     },
   ];
 
   const maleInfertilityIssues: MaleInfertilityIssue[] = [
     {
-      id: 1,
+      id: "1",
       title: "Azoospermia",
       slug: "azoospermia",
-      image: "/infertility/Azoospermia.png",
+      image: "/Infertility/Azoospermia.png",
     },
     {
-      id: 2,
+      id: "2",
       title: "Low Sperm Count",
       slug: "low-sperm-count",
-      image: "/infertility/LowSpermCount.png",
+      image: "/Infertility/LowSpermCount.png",
     },
     {
-      id: 3,
+      id: "3",
       title: "Erectile Dysfunction (ED)",
       slug: "erectile-dysfunction",
-      image: "/infertility/ErectileDysfunction.png",
+      image: "/Infertility/ErectileDysfunction.png",
     },
   ];
 
@@ -155,6 +152,7 @@ const Infertility: React.FC = () => {
     if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
     setActiveTab(id);
   };
+
 
   return (
     <div className="w-full flex flex-col">
@@ -262,7 +260,7 @@ const Infertility: React.FC = () => {
             {femaleInfertilityIssues.map((issue) => (
               <Link
                 key={issue.id}
-                href={`/infertility/${issue.slug}`}
+                href={`/infertility/female/${issue.slug}`}
                 className="
                   flex flex-col items-center justify-between
                   w-full
@@ -283,7 +281,7 @@ const Infertility: React.FC = () => {
       </section>
 
       {/* SECTION 3: Male Infertility (3 CARDS) */}
-      <section id="fertility-mini-section" className="bg-[#FAFAFA] pt-[80px] pb-[60px]">
+      <section id="fertility-mini-section" className="bg-[#FAFAFA] pt-[80px] pb-[60px] scroll-mt-[120px]">
         <div className="px-4 md:px-[80px] lg:px-[120px]">
           <div className="flex flex-col xl:flex-row justify-between gap-8">
             <div className="w-full xl:w-[45%]">
@@ -318,7 +316,7 @@ const Infertility: React.FC = () => {
             {maleInfertilityIssues.map((item) => (
               <Link
                 key={item.id}
-                href={`/infertility/${item.slug}`}
+                href={`/infertility/male/${item.slug}`}
                 className="
                   flex flex-col items-center justify-between
                   w-[100%]

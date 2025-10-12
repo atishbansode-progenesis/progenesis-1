@@ -13,11 +13,20 @@ import GradientBanner from "@/page-components/infertility-slug/GradientBanner";
 import SymptomSection from "@/page-components/infertility-slug/SymptomSection";
 
 export default function MainInfertility({ data }: { data: any }) {
-  const [activeTab, setActiveTab] = useState("journey");
+  const [activeTab, setActiveTab] = useState("about");
 
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
-    if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (section) {
+      const headerOffset = 120; // adjust if your sticky header height differs
+      const elementPosition = section.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      // update hash without causing an abrupt jump
+      if (typeof history !== "undefined") {
+        history.replaceState(null, "", `#${id}`);
+      }
+    }
     setActiveTab(id);
   };
 
@@ -31,6 +40,11 @@ export default function MainInfertility({ data }: { data: any }) {
         buttonLink={data.hero.buttonLink}
         overlayImage={data.hero.overlayImage}
         overlayImageSmall={data.hero.overlayImageSmall}
+        breadcrumbColor={data.hero.breadcrumbColor}
+        breadcrumbActiveColor={data.hero.breadcrumbActiveColor}
+        titleColor={data.hero.titleColor}
+        buttonBgColor={data.hero.buttonBgColor}
+        buttonTextColor={data.hero.buttonTextColor}
       />
 
       {/* Section 2: Navigation Tabs */}
@@ -76,7 +90,7 @@ export default function MainInfertility({ data }: { data: any }) {
       />
 
       {/* Section 7: Stories */}
-      <section id="stories-section">
+      <section id="stories-section" className="scroll-mt-[120px]">
         <StoriesSection />
       </section>
 

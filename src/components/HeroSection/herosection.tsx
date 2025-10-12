@@ -19,6 +19,12 @@ interface HeroSectionProps {
   overlayImage?: string;
   overlayImageSmall?: string;
   contentClassName?: string;
+  // New color props
+  breadcrumbColor?: string;
+  breadcrumbActiveColor?: string;
+  titleColor?: string;
+  buttonBgColor?: string;
+  buttonTextColor?: string;
 }
 
 export default function HeroSection({
@@ -31,7 +37,12 @@ export default function HeroSection({
   overlayImage,
   overlayImageSmall,
   showBlurredShape = true,
-  contentClassName = ''
+  contentClassName = '',
+  breadcrumbColor = '#606060',
+  breadcrumbActiveColor = '#1656A5',
+  titleColor = '#000000',
+  buttonBgColor = '#252525',
+  buttonTextColor = '#FFFFFF',
 }: HeroSectionProps) {
   return (
     <section
@@ -66,31 +77,35 @@ export default function HeroSection({
       {/* Content (always above images) */}
       <div className={`relative z-10 w-full flex flex-col justify-end lg:justify-center items-start gap-6 lg:gap-[44px] pb-8 lg:pb-0 ${contentClassName}`}>
         {/* Breadcrumbs */}
-        <p className="text-[12px] lg:text-[18px] leading-[20px] lg:leading-[40px] font-medium flex flex-wrap items-center gap-2 lg:gap-[12px] ">
+        <p className="text-[12px] lg:text-[18px] leading-[20px] lg:leading-[40px] font-medium flex flex-wrap items-center gap-2 lg:gap-[12px]">
           {breadcrumbs.map((crumb, idx) => (
             <>
               <span key={idx} className="flex items-center">
                 {crumb.href ? (
                   <Link
                     href={crumb.href}
-                    className={`${idx === breadcrumbs.length - 1
-                      ? "text-[#1656A5]"
-                      : "text-[#606060]"
-                      }`}
+                    style={{
+                      color: idx === breadcrumbs.length - 1 
+                        ? breadcrumbActiveColor 
+                        : breadcrumbColor
+                    }}
                   >
                     {crumb.label}
                   </Link>
                 ) : null}
               </span>
               {idx < breadcrumbs.length - 1 && (
-                <span>›</span>
+                <span key={idx} style={{ color: breadcrumbColor }}>›</span>
               )}
             </>
           ))}
         </p>
 
         {/* Title */}
-        <h1 className="text-[32px] lg:text-[80px] leading-[40px] lg:leading-[88px] font-semibold">
+        <h1 
+          className="text-[32px] lg:text-[80px] leading-[40px] lg:leading-[88px] font-semibold"
+          style={{ color: titleColor }}
+        >
           {typeof title === "string" ? (
             title.split(/<br\s*\/?>(?:\s*)/gi).map((part, idx, arr) => (
               <span key={idx}>
@@ -102,19 +117,29 @@ export default function HeroSection({
             title
           )}
         </h1>
-
+        
         {/* Button */}
         {buttonText && (
           <div>
             {buttonLink ? (
               <Link
                 href={buttonLink}
-                className="p-[10px] lg:p-[20px] bg-[#252525] text-white rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium"
+                className="p-[10px] lg:p-[20px] rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium inline-block"
+                style={{
+                  backgroundColor: buttonBgColor,
+                  color: buttonTextColor
+                }}
               >
                 {buttonText}
               </Link>
             ) : (
-              <button className="p-[10px] lg:p-[20px] bg-[#252525] text-white rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium">
+              <button 
+                className="p-[10px] lg:p-[20px] rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium"
+                style={{
+                  backgroundColor: buttonBgColor,
+                  color: buttonTextColor
+                }}
+              >
                 {buttonText}
               </button>
             )}

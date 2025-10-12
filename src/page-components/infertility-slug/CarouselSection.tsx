@@ -18,7 +18,7 @@ export default function CarouselSection({ tag, heading, slides }: CarouselSectio
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="w-full p-[16px] lg:p-[120px] bg-[#F1F7FC] font-[Manrope]">
+    <section className="w-full p-[16px] lg:p-[120px] bg-[#F1F7FC] font-[Manrope] scroll-mt-[120px]" id="causes">
       <div >
         {/* Two-column wrapper */}
         <div className="flex flex-col items-start justify-between ">

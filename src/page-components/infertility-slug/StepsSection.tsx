@@ -37,7 +37,7 @@ export default function StepsSection({
   }, [autoRotate, rotateInterval, steps.length]);
 
   return (
-    <section className="w-full p-[16px] lg:p-[120px] bg-white font-[Manrope]">
+    <section id="treatment" className="w-full p-[16px] lg:p-[120px] bg-white font-[Manrope] scroll-mt-[120px]">
       <div>
         <div className="flex flex-col items-start justify-between">
           {/* Header */}
