@@ -33,8 +33,8 @@ const OurStories: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
-    <section id="why-1" className="w-full bg-white">
-  <div className="section-spacing max-w-[2500px] max-h-[1300px]  mx-auto px-4 lg:px-8">
+    <section id="why-1" className="w-full bg-white overflow-hidden">
+  <div className="section-spacing max-w-[2500px] md:max-h-[1500px]  mx-auto px-4 lg:px-8">
     {/* Desktop layout */}
     <div className="hidden lg:grid lg:grid-cols-[400px_1fr] csLg:grid-cols-[400px_1fr] gap-6 lg:gap-10 xl:gap-x-32">
           {/* Left Column: Heading + Tab List */}
@@ -95,7 +95,7 @@ const OurStories: React.FC = () => {
             {/* Image + Info Box */}
             <div className="flex flex-col csLg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden">
               {/* Image */}
-              <div className="w-full bg-[#E8EFF6] max-w-[300px] max-h-[300px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <div className="w-full bg-[#E8EFF6] max-w-[300px] lg:min-h-[300px] max-h-[300px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
                 <img
                   src={tabItems[activeTab].image}
                   alt={tabItems[activeTab].title}

@@ -34,7 +34,7 @@ const EmiOverview = () => {
       <div className="section-spacing w-full px-6 md:px-8 lg:px-16 py-10 md:py-14">
         {/* Badge */}
         <div className="mb-4">
-          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
+          <span className="inline-block bg-[#1656A50D] text-[#1656A5] font-medium text-[12px] leading-[20px] md:text-[13px] px-3 py-1 rounded-[8px]">
             We Take Care of You
           </span>
         </div>
@@ -49,7 +49,7 @@ const EmiOverview = () => {
           {items.map((it, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#E3ECF7] rounded-[16px] h-[124px] md:h-[188px] px-5 py-4 flex items-center"
+              className="bg-white border border-[#E3ECF7] rounded-[16px] h-[124px] md:h-auto px-5 py-4 flex items-start"
             >
               <div className="flex flex-col items-start justify-center gap-3">
                 {/* Icon */}
@@ -59,7 +59,7 @@ const EmiOverview = () => {
                   className="w-[22px] h-[22px] md:w-8 md:h-8 object-contain"
                 />
                 {/* Text */}
-                <p className="text-[#2C2C2C] text-[16px] md:text-[18px] leading-[1.6] font-medium">
+                <p className="text-[#2C2C2C] text-[16px] md:text-[32px] leading-[24px] md:leading-[40px] tracking-tight font-normal">
                   {it.text}
                 </p>
               </div>
