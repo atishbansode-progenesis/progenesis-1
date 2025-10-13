@@ -1,4 +1,5 @@
 import { artificialInseminationData, blastocystTransferData, class1000ModularLabData, cryopreservationData, imsiTreatmentData, ivfTreatmentData, lahTreatmentData, ovulationInductionData, pgdTreatmentData, picsiTreatmentData, sequentialEmbryoTransferData, trigasIncubatorsData, witnessSystemData } from "@/components/data/treatments";
+import { eggEmbryoFreezingData, femaleAnalysisData, maleFertilityPreservationData, semenAnalysisData } from "@/components/data/treatmentsnew";
 import MainTreatment from "@/page-components/treatment-slug/MainTreatment";
 
 type TreatmentPageProps = {
@@ -52,6 +53,18 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
       break;
     case "ivf-treatment":
       data = ivfTreatmentData;
+      break;
+    case "male-fertility-preservation":
+      data = maleFertilityPreservationData;
+      break;
+    case "egg-embryo-freezing":
+      data = eggEmbryoFreezingData;
+      break;
+    case "female-analysis-complete-reproductive-health-check":
+      data = femaleAnalysisData;
+      break;
+    case "male-analysis":
+      data = semenAnalysisData;
       break;
     default:
       data = null;

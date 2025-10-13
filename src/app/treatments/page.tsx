@@ -222,7 +222,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
     {
       title: "Embryo Preservation",
       image: "/treatments/14.png",
-      slug: "embryo-preservation",
+      slug: "egg-embryo-freezing",
       category: "preservation",
     },
   ];
@@ -235,7 +235,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
       description:
         "A detailed evaluation of hormone levels, ovarian reserve, fallopian tubes, and uterine health. This testing helps identify fertility issues and guides a personalized treatment plan for better outcomes.",
       highlighted: true,
-      slug: "female-analysis",
+      slug: "female-analysis-complete-reproductive-health-check",
       category: "evaluation",
     },
     {
