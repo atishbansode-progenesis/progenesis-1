@@ -592,7 +592,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
 
       {/* 7️⃣ Future Parenthood */}
-      <section id="preservation" className="w-full bg-[#FAFAFA] px-4 py-4 md:px-[120px]  py-4 md:py-20">
+      <section id="preservation" className="w-full bg-[#FAFAFA] px-4 py-4 md:px-[120px]  md:py-20">
 
 
         {/* Tag */}

@@ -64,12 +64,12 @@ const TreatmentsSection = () => {
     <section className="w-full bg-blue-50 py-[80px]">
       {/* Header Section (Static) */}
       <div className="px-6 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px]  mb-[60px]">
-        <div className="flex flex-col xl:flex-row items-start justify-between gap-8">
-          <div className="w-full max-w-full sm:max-w-xl md:max-w-xl   lg:max-w-lg xl:max-w-3xl">
-            <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+          <div className="w-full max-w-full sm:max-w-xl md:max-w-xl  space-y-10">
+            <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full ">
               Our Expertise
             </span>
-            <h2 className="text-[48px] md:text-5xl font-light text-[#2c2c2c] mb-6">
+            <h2 className="text-[48px] md:text-5xl font-light text-[#2c2c2c] ">
               Being India’s Best Fertility & IVF Center. We Specialize in:
             </h2>
             <button className="px-[14px] cursor-pointer md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] text-[12px] md:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
