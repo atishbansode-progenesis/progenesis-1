@@ -1,21 +1,4 @@
-import React, { JSX } from "react";
-import {
-  Search,
-  Microscope,
-  Syringe,
-  Lightbulb,
-  HeartPulse,
-  CheckCircle,
-} from "lucide-react";
-
-const iconMap: Record<string, JSX.Element> = {
-  Search: <Search className="w-6 h-6 text-[#1656A5]" />,
-  Microscope: <Microscope className="w-6 h-6 text-[#1656A5]" />,
-  Syringe: <Syringe className="w-6 h-6 text-[#1656A5]" />,
-  Lightbulb: <Lightbulb className="w-6 h-6 text-[#1656A5]" />,
-  HeartPulse: <HeartPulse className="w-6 h-6 text-[#1656A5]" />,
-  CheckCircle: <CheckCircle className="w-6 h-6 text-[#1656A5]" />,
-};
+import React from "react";
 
 interface TreatmentBasicsProps {
   tag?: string;
@@ -45,7 +28,7 @@ export default function TreatmentBasics({ tag, heading, items }: TreatmentBasics
             key={idx}
             className="flex flex-col gap-2 rounded-[12px] bg-[#EEF5FF] border border-[#E6E6E6] p-6 hover:shadow-md transition"
           >
-            {iconMap[item.icon] || null}
+            <img src={item.icon} alt={item.title} className="w-[50px] h-[50px]" />
             <h3 className="text-[#2C2C2C] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
               {item.title}
             </h3>

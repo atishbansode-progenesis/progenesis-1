@@ -141,7 +141,7 @@ export default function LocationsSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-8">
           <div className="md:flex-1">
-            <span className="inline-block text-xs md:text-sm font-medium text-[#1656a5] bg-blue-100 px-3 py-1 rounded-full mb-4">
+            <span className="inline-block text-xs md:text-sm font-medium text-[#1656a5] bg-[#1656A50D] px-3 py-1 rounded-[8px] mb-2 md:mb-0">
               Trusted Guidance Everywhere.
             </span>
 
@@ -193,7 +193,7 @@ export default function LocationsSection() {
                           rotate: isOpen ? 180 : 0
                         }}
                         transition={{ duration: 0.3 }}
-                        className={`flex items-center justify-center w-10 h-10 rounded-full border`}
+                        className={`flex items-center justify-center w-14 h-10 rounded-full border`}
                       >
                         {/* Arrow DOWN */}
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
