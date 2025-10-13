@@ -12,23 +12,27 @@ interface TreatmentBasicsProps {
 
 export default function TreatmentBasics({ tag, heading, items }: TreatmentBasicsProps) {
   return (
-    <section id="basics" className="px-[12px] md:px-[80px] xl:px-[120px] py-[80px] bg-[#F9FBFF] scroll-mt-[120px]">
+    <section id="basics" className="px-4 py-4 md:px-[120px]  md:py-[80px] bg-[#F9FBFF] scroll-mt-[120px]">
       {tag && (
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
           {tag}
         </span>
       )}
-      <h2 className="text-[#2C2C2C] font-[Manrope] font-normal mb-[60px] text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]">
+      <h2 className="text-[#2C2C2C] font-[Manrope] font-normal mb-[32px] md:mb-[60px] text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]">
         {heading}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
         {items.map((item, idx) => (
           <div
             key={idx}
-            className="flex flex-col gap-2 rounded-[12px] bg-[#EEF5FF] border border-[#E6E6E6] p-6 hover:shadow-md transition"
+            className="flex flex-col gap-2 rounded-[12px] bg-[#EEF5FF] border border-[#E6E6E6] p-6 "
           >
-            <img src={item.icon} alt={item.title} className="w-[50px] h-[50px]" />
+            		 <img
+          src={item.icon}
+          alt={item.title}
+          className="w-[19px] h-[19px] md:w-8 md:h-8 object-contain"
+        />
             <h3 className="text-[#2C2C2C] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
               {item.title}
             </h3>
