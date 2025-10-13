@@ -31,7 +31,7 @@ export const OvulationCards: React.FC<OvulationCardsProps> = ({ tag, heading, ca
          key={idx}
          className="flex flex-col gap-2 rounded-[12px] bg-[#F2F2F2]  p-6"
        >
-          <img
+         	 <img
           src={card.icon}
           alt={card.title}
           className="w-[19px] h-[19px] md:w-8 md:h-8 object-contain"
