@@ -16,7 +16,7 @@ export const OvulationCards: React.FC<OvulationCardsProps> = ({ tag, heading, ca
   return (
     <section className="px-4 md:px-20 xl:px-32 py-20 w-full bg-white">
       {tag && (
-        <span className="inline-block text-xs font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-4">
+        <span className="inline-block text-xs font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mb-4">
           {tag}
         </span>
       )}
@@ -29,10 +29,14 @@ export const OvulationCards: React.FC<OvulationCardsProps> = ({ tag, heading, ca
         {cards.map((card, idx) => (
          <div
          key={idx}
-         className="flex flex-col gap-2 rounded-[12px] bg-[#EEF5FF] border border-[#E6E6E6] p-6 hover:shadow-md transition"
+         className="flex flex-col gap-2 rounded-[12px] bg-[#F2F2F2]  p-6"
        >
-         <img src={card.icon} alt={card.title} className="w-[50px] h-[50px]" />
-         <h3 className="text-[#2C2C2C] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
+          <img
+          src={card.icon}
+          alt={card.title}
+          className="w-[19px] h-[19px] md:w-8 md:h-8 object-contain"
+        />
+         <h3 className="text-[#2C2C2C] font-[Manrope] text-[16px] md:text-[22px]   font-normal">
            {card.title}
          </h3>
        </div>
