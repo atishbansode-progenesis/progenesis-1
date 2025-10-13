@@ -21,7 +21,7 @@ const EmiLanding = () => {
       />
       
 
-      <div className='relative grid grid-cols-12 gap-4 min-h-[300px] md:min-h-[420px] lg:min-h-[500px]'>
+      <div className='relative grid grid-cols-12 gap-4 min-h-[400px] md:min-h-[420px] lg:min-h-[500px]'>
         {/* Left: Content block */}
         <div className='col-span-12 csLg:col-span-8 section-spacing'>
           <div className='flex flex-col'>
@@ -34,7 +34,7 @@ const EmiLanding = () => {
 
             {/* Title */}
             <div>
-              <h1 className='font-manrope font-semibold csLg:text-[80px] text-[32px] csLg:leading-[88px] leading-[48px] tracking-[-0.02em]'>
+              <h1 className='font-manrope font-semibold csLg:text-[80px] text-[32px] csLg:leading-[88px] leading-[40px] tracking-[-0.02em]'>
                 EMI Options
               </h1>
             </div>
@@ -43,7 +43,7 @@ const EmiLanding = () => {
             <div className='pt-11'>
                         <button 
                             onClick={() => setIsOpen(true)} 
-                            className='bg-[#252525] csLg:text-[24px] px-6 py-3 text-[#F9F9F9] rounded-lg hover:bg-[#333] transition'
+                            className='bg-[#252525] csLg:text-[24px] text-[12px] md:px-6 px-3 py-3 md:py-4 text-[#F9F9F9] rounded-lg hover:bg-[#333] transition'
                         >
                             Book Your Appointment
                         </button>

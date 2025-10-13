@@ -34,7 +34,7 @@ const EmiOverview = () => {
       <div className="section-spacing w-full px-6 md:px-8 lg:px-16 py-10 md:py-14">
         {/* Badge */}
         <div className="mb-4">
-          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
+          <span className="inline-block bg-[#1656A50D] text-[#1656A5] font-medium text-[12px] leading-[20px] md:text-[13px] px-3 py-1 rounded-[8px]">
             We Take Care of You
           </span>
         </div>

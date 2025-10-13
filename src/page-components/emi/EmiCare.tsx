@@ -5,7 +5,7 @@ const EmiCare: React.FC = () => {
   return (
     <section id='financial' className="w-full section-spacing overflow-hidden bg-gradient-to-r from-white via-white to-blue-50">
       {/* Badge and Title */}
-      <span className="inline-block w-auto bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
+      <span className="inline-block w-auto bg-[#1656A50D] font-medium text-[#1656A5] text-[12px] md:text-[13px] leading-[20px] px-3 py-1 rounded-[8px]">
           Financial support
         </span>
       <div className="flex flex-col gap-4 mb-8 md:mb-12">
