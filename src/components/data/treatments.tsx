@@ -1299,7 +1299,7 @@ export const ovulationInductionData = {
   ],
   basics_heading: "What Is Ovulation Induction?",
   points_tag: "Why Choose Ovulation Induction at Progenesis",
-  points_heading: "Regulate cycles naturally and improve conception chances.",
+  points_heading: "Safe. Personalized. Proven results you can trust.",
   procedure_tag: "Guided stimulation for natural conception success",
   procedure_heading: "Safe, personalized, and proven treatment trusted by fertility experts.",
   description:
@@ -1346,31 +1346,24 @@ export const ovulationInductionData = {
   points: [
     {
       id: "01",
-      title: "Women with Irregular or Absent Ovulation",
+      title: "Expert Monitoring",
       description:
-        "Helps women who struggle with inconsistent ovulation or long cycles achieve regular egg release.",
+        "Fertility specialists track follicle growth and hormones to ensure optimal egg release and minimize risks.",
       image: "/treatments/ovulation-induction/ovulation_c1.png",
     },
     {
       id: "02",
-      title: "Women with PCOS",
+      title: "Personalized Medication",
       description:
-        "Improves ovulatory function in women with Polycystic Ovary Syndrome (PCOS), enhancing fertility outcomes.",
+        "Treatment is customized to your cycle and hormonal profile for best results.",
       image: "/treatments/ovulation-induction/ovulation_c2.png",
     },
     {
       id: "03",
-      title: "Preparing for IUI or IVF",
+      title: "Holistic Care",
       description:
-        "Used to synchronize ovulation with fertility treatments like IUI or IVF for better success rates.",
+        "We combine medical precision with nutrition and stress guidance to support healthy ovulation.",
       image: "/treatments/ovulation-induction/ovulation_c3.png",
-    },
-    {
-      id: "04",
-      title: "Unexplained Infertility",
-      description:
-        "Provides controlled ovulation cycles to improve timing and chances of natural conception.",
-      image: "/treatments/ovulation-induction/ovulation_c4.png",
     },
   ],
   procedure_steps: null,
