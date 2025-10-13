@@ -40,7 +40,7 @@ export default function ProcedureSteps({ tag, heading, steps }: ProcedureStepsPr
               <span className="text-[#1656A5] font-manrope text-[18px] font-semibold block mb-5">
                 {String(idx + 1).padStart(2, "0")}
               </span>
-              <h3 className="text-[#2C2C2C] font-manrope text-[18px] md:text-[20px] font-semibold mb-1">
+              <h3 className="text-[#2C2C2C]  text-[18px] md:text-[20px] font-normal mb-1">
                 {step.title}
               </h3>
               <p className="text-[#2C2C2C] text-[14px] md:text-[16px] opacity-80 leading-[24px]">
