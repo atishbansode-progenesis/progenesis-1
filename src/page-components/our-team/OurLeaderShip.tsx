@@ -121,7 +121,7 @@ const LeadershipTeam: React.FC = () => {
 
           {/* Desktop / tablet heading (original) */}
           <h2 className="hidden sm:block lg:text-[48px] text-[32px] md:text-4xl font-[400] text-[#2C2C2C] mb-4">
-            Our directors lead with vision <br /> and dedication.
+             <br /> and dedication.
           </h2>
 
 
