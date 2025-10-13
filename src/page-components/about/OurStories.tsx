@@ -87,7 +87,7 @@ const OurStories: React.FC = () => {
           {/* Right Column: Paragraph + Image + Info Box */}
           <div className="flex flex-col gap-10">
             {/* Paragraph (top of right column) */}
-            <p className="text-[16px] line-height-[24px] tracking-tight text-[#2C2C2C] lg:line-height-[40px] lg:text-[32px]">
+            <p className="text-[16px] line-height-[24px] tracking-tight text-[#2C2C2C] lg:leading-[40px] lg:text-[32px]">
               We believe every hopeful parent deserves a team that listens, cares, and fights to make
               dreams a reality — with science, empathy, and unwavering support.
             </p>

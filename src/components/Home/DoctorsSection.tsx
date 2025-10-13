@@ -195,7 +195,7 @@ const DoctorsSection = () => {
   const doctor = doctors[currentIndex];
 
   return (
-    <section className="py-12 md:py-20 bg-[#FAFAFA] px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
+    <section className="py-12 md:py-20 bg-[#FAFAFA] px-4 sm:px-6 lg:px-30 xl:px-30 2xl:px-32">
       {/* Heading Section */}
       <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-12 mb-12 md:mb-20 lg:mb-32">
         {/* Left Side */}
