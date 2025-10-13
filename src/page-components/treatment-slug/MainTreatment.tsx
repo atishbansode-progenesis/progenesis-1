@@ -10,6 +10,7 @@ import WhyChooseSection from "@/page-components/treatment-slug/WhyChooseSection"
 import ProcedureSteps from "@/page-components/treatment-slug/ProcedureSteps";
 import SuccessRateSection from "@/page-components/treatment-slug/SuccessRateSection";
 import ProcedureStepsNoImage from "./ProcedureNoImageSteps";
+import GeneticTestingCards from "./GeneticTestingCards";
 
 export default function MainTreatment({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("basics");
@@ -70,8 +71,16 @@ export default function MainTreatment({ data }: { data: any }) {
           points={data.points}
         />
       )}
+      {/* Section 5: Genetic Testing Cards */}
+      {data.genetic_testing_cards && (
+        <GeneticTestingCards
+          tag={data.genetic_testing_cards.tag}
+          heading={data.genetic_testing_cards.heading}
+          cards={data.genetic_testing_cards.cards}
+        />
+      )}
 
-      {/* Section 5: Procedure Steps */}
+      {/* Section 6: Procedure Steps */}
       {data.procedure_steps ? (
         <ProcedureSteps
           tag={data.procedure_tag}
@@ -86,7 +95,7 @@ export default function MainTreatment({ data }: { data: any }) {
         />
       ) : null}
 
-      {/* Section 6: Success Rate */}
+      {/* Section 7: Success Rate */}
       {data.gradient_data && (
         <SuccessRateSection
           percentage={data.gradient_data}
@@ -94,12 +103,12 @@ export default function MainTreatment({ data }: { data: any }) {
         />
       )}
 
-      {/* Section 7: Stories */}
+      {/* Section 8: Stories */}
       <section id="stories" className="scroll-mt-[120px]">
         <StoriesSection />
       </section>
 
-      {/* Section 8: Consultation Form */}
+      {/* Section 9: Consultation Form */}
       <ConsultationForm />
     </div>
   );
