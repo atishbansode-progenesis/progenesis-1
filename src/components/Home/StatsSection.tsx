@@ -227,7 +227,7 @@ const StatsSection = () => {
             color: "var(--Blue, #1656A5)",
             fontFamily: "Manrope",
             fontSize: "12px",
-            fontStyle: "normal",
+            fontStyle: "semibold",
             fontWeight: 500,
             lineHeight: "20px",
             letterSpacing: "-0.24px",

@@ -57,7 +57,7 @@ const TestimonialsSection = () => {
     <img
       src="/TestimonialsSection/google.png"
       alt="Google"
-      className="w-10 h-11 rounded-[5px] hidden md:block"
+      className="w-10 h-10 rounded-[5px] hidden md:block mr-2"
     />
 
     {/* Mobile star + rating inline */}
@@ -108,7 +108,7 @@ const TestimonialsSection = () => {
   {/* Prev Button */}
   <button
     ref={prevRef}
-    className="group w-12 h-12 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
+    className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
   >
     {/* Default white icon */}
     <img
@@ -127,7 +127,7 @@ const TestimonialsSection = () => {
   {/* Next Button */}
   <button
     ref={nextRef}
-    className="group w-12 h-12 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
+    className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
   >
     {/* Default white icon */}
     <img

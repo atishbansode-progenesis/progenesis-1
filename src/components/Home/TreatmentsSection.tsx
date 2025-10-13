@@ -133,14 +133,14 @@ const TreatmentsSection = () => {
                 {/* Arrow Button (Clickable Link) */}
                 <Link href={item.link} passHref>
                   <div
-                    className={`absolute top-4 left-4 w-8 h-8 flex items-center justify-center rounded-lg transition ${
+                    className={`absolute top-4 left-4 w-8 md:w-14 md:h-14 h-8 flex items-center justify-center rounded-lg transition ${
                       selected === index
                         ? "bg-[#1656A5]"
                         : "bg-gray-100 hover:bg-[#1656A5]"
                     }`}
                   >
                     <ArrowRight
-                      className={`w-4 h-4 ${
+                      className={`w-4 h-4 md:w-5 md:h-5 ${
                         selected === index
                           ? "text-white"
                           : "text-gray-600 hover:text-white"

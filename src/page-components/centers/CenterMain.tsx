@@ -9,7 +9,7 @@ const CenterMain = () => {
     <div className="w-full [&>*:not([class*='bg-'])]:bg-[#F6F6F6]">
       <CentersLanding />  
       <CentersNav />
-      <AppointmentForm />
+     
 
        <section className="relative overflow-hidden">
           {/* Video Background */}
