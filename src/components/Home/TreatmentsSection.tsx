@@ -90,8 +90,8 @@ const TreatmentsSection = () => {
           {treatments.map((item, index) => {
             const isSmall = index === 2 || index === 3;
             const widthClass = isSmall
-              ? "2xl:w-[31%] lg:w-[48.5%] sm:w-[30%] min-w-[280px]"
-              : "2xl:w-[32%] lg:w-[48.5%] sm:w-[30%] min-w-[280px]";
+              ? "lg:w-[27.5%] sm:w-[30%] min-w-[280px]"
+              : "lg:w-[34%] sm:w-[30%] min-w-[280px]";
 
             return (
               <div
