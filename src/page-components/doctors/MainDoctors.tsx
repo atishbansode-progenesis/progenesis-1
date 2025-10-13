@@ -10,7 +10,23 @@ const MainDoctors = () => {
         <DoctorBanner/>
         <DoctorsInfo />
         <DoctorsPart />
-        <AppointmentForm />
+        <section className="relative overflow-hidden">
+          {/* Video Background */}
+
+          <div className="relative z-10">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/video/baby.mp4" type="video/mp4" />
+          </video>
+          
+            <AppointmentForm />
+          </div>
+        </section>
        
     </div>
   )
