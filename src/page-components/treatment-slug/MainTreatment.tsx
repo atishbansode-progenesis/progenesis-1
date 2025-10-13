@@ -12,6 +12,7 @@ import SuccessRateSection from "@/page-components/treatment-slug/SuccessRateSect
 import ProcedureStepsNoImage from "./ProcedureNoImageSteps";
 import GeneticTestingCards from "./GeneticTestingCards";
 import { OvulationCards } from "./OvulationCards";
+import { PathSection } from "./PathSection";
 
 export default function MainTreatment({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("basics");
@@ -54,7 +55,15 @@ export default function MainTreatment({ data }: { data: any }) {
         activeTab={activeTab}
         onTabClick={handleScroll}
       />
-
+      {data.path_section && (
+      <PathSection
+        tag={data.path_section.tag}
+        mainHeading={data.path_section.mainHeading}
+        subHeading={data.path_section.subHeading}
+        description1={data.path_section.description1}
+        description2={data.path_section.description2}
+      />
+      )}
       {data.who_can_benefit && (
         <OvulationCards
           tag={data.who_can_benefit.tag}

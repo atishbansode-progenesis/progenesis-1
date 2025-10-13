@@ -1297,6 +1297,13 @@ export const ovulationInductionData = {
     { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
     { label: "Ovulation Induction", href: "/treatments/fertility-treatments/ovulation-induction", id: "ovulation-induction" },
   ],
+  path_section :{
+    tag:"Know the Basics",
+    mainHeading: "What Is Ovulation Induction?",
+    subHeading:"Regulate cycles naturally.",
+    description1:"Ovulation Induction is a fertility treatment that uses oral medications or hormone injections to stimulate egg development and release during a woman’s menstrual cycle.",
+    description2:"It helps women who experience irregular or absent ovulation achieve natural conception or prepare for assisted fertility treatments such as IUI or IVF."
+  },
   basics_heading: "What Is Ovulation Induction?",
   points_tag: "Why Choose Ovulation Induction at Progenesis",
   points_heading: "Safe. Personalized. Proven results you can trust.",
@@ -1372,24 +1379,20 @@ export const ovulationInductionData = {
     main_tag: "Step-by-Step Treatment Process",
     data: [
       {
-        title: "Initial Consultation & Hormonal Evaluation",
-        description:
-          "Fertility specialists assess hormone levels, cycle history, and ovarian function.",
+        title: "Baseline Evaluation",
+        description:"Ultrasound and hormone testing are performed to assess the ovaries and rule out existing conditions."
       },
       {
-        title: "Personalized Medication Plan",
-        description:
-          "Ovulation-inducing medications are prescribed and adjusted based on individual response.",
+        title: "Medication Phase",
+        description:"Fertility medications are administered during the early days of your menstrual cycle to stimulate egg production."
       },
       {
-        title: "Monitoring & Ultrasound Scans",
-        description:
-          "Regular scans monitor follicle growth and hormonal levels to determine optimal timing for ovulation.",
+        title: "Monitoring & Ovulation Trigger",
+        description:"Ultrasound and hormone tracking help determine the ideal time for egg release; an ovulation trigger injection may be given for precision."
       },
       {
-        title: "Triggering Ovulation",
-        description:
-          "An injection triggers the release of mature eggs, enabling natural conception or timed intercourse/IUI.",
+        title: "Timed Intercourse or IUI",
+        description:"Once ovulation is confirmed, couples are guided on the best time for conception or IUI scheduling."
       },
     ],
   },
