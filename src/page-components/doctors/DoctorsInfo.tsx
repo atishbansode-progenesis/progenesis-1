@@ -213,7 +213,7 @@ const DoctorsInfo: React.FC = () => {
                 <h3 className="text-[26px] md:text-[32px] text-[#1656A5] gap-[8px] font-semibold tracking-[-0.02em]">
                   {d.name}
                 </h3>
-                <p className="mt-2 text-[14px] md:text-[15px] text-[#6B7280]  max-w-[780px]">
+                <p className="mt-2 text-[14px] md:text-[15px] text-[#606060]  max-w-[780px]">
                   {d.bio}
                 </p>
 
@@ -230,11 +230,11 @@ const DoctorsInfo: React.FC = () => {
               <div className="w-full flex xsm:flex-row md:flex-col justify-between  lg:justify lg:gap-[24px]">
                 <div className="min-w-[188px] lg:gap-[8px] lg:text-right">
                   <div className="text-[16px] lg:text-[32px] text-[#1656A5]">Hospital</div>
-                  <div className="text-[16px] text-[#2C2C2C] font-medium">{d.hospital}</div>
+                  <div className="text-[16px] text-[#606060] font-medium">{d.hospital}</div>
                 </div>
                 <div className="min-w-[188px] lg:gap-[8px] lg:text-right">
                   <div className="text-[16px] lg:text-[32px] text-[#1656A5]">Specialty</div>
-                  <div className="text-[16px]   text-[#2C2C2C] font-medium">
+                  <div className="text-[16px]   text-[#606060] font-medium">
                     {d.specialty}
                   </div>
                 </div>

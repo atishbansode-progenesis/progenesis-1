@@ -13,11 +13,9 @@ const DoctorBanner: React.FC = () => {
         {/* Content */}
         <div className="section-spacing relative w-full p-5 sm:p-6 md:p-10 lg:p-14 h-[340px] sm:h-[380px] md:h-[500px] lg:h-[567px] flex items-end md:items-center">
           <h1
-            className="text-[#2C2C2C] font-[Manrope] font-semibold tracking-[-0.02em] text-left max-w-[760px]
-                       text-[28px] leading-[36px]
-                       sm:text-[32px] sm:leading-[40px]
-                       md:text-[44px] md:leading-[52px]
-                       lg:text-[48px] lg:leading-[56px]"
+            className="text-[#2C2C2C] font-[Manrope] font-semibold tracking-[-0.02em] text-left csLg:max-w-[70%]
+                       text-[32px] leading-[40px]
+csLg:text-[80px] csLg:leading-[88px]"
           >
             Because of Their Expertise & Care, Dreams Have Found Life.
           </h1>
