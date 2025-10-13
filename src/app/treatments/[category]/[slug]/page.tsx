@@ -1,16 +1,37 @@
-import { artificialInseminationData, blastocystTransferData, class1000ModularLabData, cryopreservationData, imsiTreatmentData, ivfTreatmentData, lahTreatmentData, ovulationInductionData, pgdTreatmentData, picsiTreatmentData, sequentialEmbryoTransferData, trigasIncubatorsData, witnessSystemData } from "@/components/data/treatments";
-import { eggEmbryoFreezingData, femaleAnalysisData, maleFertilityPreservationData, semenAnalysisData } from "@/components/data/treatmentsnew";
+import React from "react";
+import {
+  artificialInseminationData,
+  blastocystTransferData,
+  class1000ModularLabData,
+  cryopreservationData,
+  imsiTreatmentData,
+  ivfTreatmentData,
+  lahTreatmentData,
+  ovulationInductionData,
+  pgdTreatmentData,
+  picsiTreatmentData,
+  sequentialEmbryoTransferData,
+  trigasIncubatorsData,
+  witnessSystemData,
+} from "@/components/data/treatments";
+import {
+  eggEmbryoFreezingData,
+  femaleAnalysisData,
+  maleFertilityPreservationData,
+  semenAnalysisData,
+} from "@/components/data/treatmentsnew";
 import MainTreatment from "@/page-components/treatment-slug/MainTreatment";
 
 type TreatmentPageProps = {
-  params: {
+  params: Promise<{
     category: string;
     slug: string;
-  };
+  }>;
 };
 
 export default function TreatmentPage({ params }: TreatmentPageProps) {
-  const { category, slug } = params;
+  // ✅ Unwrap params
+  const { category, slug } = React.use(params);
 
   let data;
 

@@ -1,14 +1,28 @@
-import { repeatedIUIFailuresData, pregnancyAfterMenopauseData, repeatedIVFFailuresData, lowAMHData, polycysticOvarianSyndromeData, tubalBlockageData, azoospermiaData, lowSpermCountData, uterineFibroidsData, endometriosisData, erectileDysfunctionData } from "@/components/data/infertilityissues";
+import React from "react";
+import {
+  repeatedIUIFailuresData,
+  pregnancyAfterMenopauseData,
+  repeatedIVFFailuresData,
+  lowAMHData,
+  polycysticOvarianSyndromeData,
+  tubalBlockageData,
+  azoospermiaData,
+  lowSpermCountData,
+  uterineFibroidsData,
+  endometriosisData,
+  erectileDysfunctionData,
+} from "@/components/data/infertilityissues";
 import MainInfertility from "@/page-components/infertility-slug/MainInfertility";
 
 type InfertilityIssuesProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export default function InfertilityIssues({ params }: InfertilityIssuesProps) {
-  const { slug } = params;
+  // ✅ Unwrap params Promise using React.use()
+  const { slug } = React.use(params);
 
   let data;
 
@@ -51,7 +65,7 @@ export default function InfertilityIssues({ params }: InfertilityIssuesProps) {
   }
 
   if (!data) {
-    return <div>Page not found</div>;
+    return <div className="p-6 text-red-600">Page not found for slug: {slug}</div>;
   }
 
   return <MainInfertility data={data} />;
