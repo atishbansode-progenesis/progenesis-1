@@ -93,15 +93,15 @@ export default function StepsSection({
           {/* Content + Image */}
           <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-stretch gap-8">
             {/* Left Card */}
-            <div className="w-[349px] bg-[#F1F7FC] rounded-2xl flex justify-between flex-col p-5 gap-6">
-              <div className="text-[28px] text-[#2C2C2C] font-normal">
+            <div className="w-[349px] bg-[#F1F7FC] justify-between rounded-2xl flex  flex-col p-5 gap-6">
+              <div className="text-[28px] text-[#2C2C2C] font-normal lg:mb-6">
                 {steps[activeStep].title}
               </div>
               <div className="flex flex-col gap-4">
                 {steps[activeStep].items.map((item, idx) => (
                   <div key={idx} className="flex flex-col gap-[2px]">
-                    <div className="text-xs text-[#2C2C2C] font-normal">{`0${idx + 1}`}</div>
-                    <div className="text-xs text-[#2C2C2C] font-normal">{item}</div>
+                    <div className="text-[16px] leading-[24px] tracking-tight text-[#606060] font-normal">{`0${idx + 1}`}</div>
+                    <div className="text-[16px] leading-[24px] tracking-tight text-[#2C2C2C] font-normal">{item}</div>
                   </div>
                 ))}
               </div>
