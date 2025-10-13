@@ -1,4 +1,3 @@
-// data/treatments.ts
 export interface Treatment {
   slug: string;
   category: "basic" | "advanced"; // optional grouping
@@ -39,11 +38,12 @@ export const imsiTreatmentData = {
       At our center, IMSI has shown better outcomes in severe male infertility cases.
     </p>
   `,
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "IMSI", label: "Why Choose IMSI" },
-    { id: "Why", label: "Why Choose IMSI" },
-    { id: "Stories", label: "Success Stories" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Why Choose IMSI" },
+    { id: "procedure", label: "The IMSI Procedure" },
+    { id: "stories", label: "Success Stories" },
   ],
   basics: [
     {
@@ -197,11 +197,12 @@ export const picsiTreatmentData = {
   procedure_heading: "Three Steps Closer to Your Parenthood Journey",
   description: "PICSI enhances IVF by selecting the most mature and healthy sperm using hyaluronic acid binding, improving embryo development and pregnancy rates.",
   content: "<p>PICSI is an advanced form of ICSI that uses hyaluronic acid to identify mature sperm with better DNA integrity, increasing the chances of successful fertilization.</p><p>Our center has seen improved outcomes with PICSI, especially for couples facing challenges with sperm quality.</p>",
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "PICSI", label: "Why Choose PICSI" },
-    { id: "Why", label: "Why Choose PICSI" },
-    { id: "Stories", label: "Success Stories" }
+    { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Why Choose PICSI" },
+    { id: "procedure", label: "The PICSI Procedure" },
+    { id: "stories", label: "Success Stories" }
   ],
   basics: [
     {
@@ -235,9 +236,9 @@ export const picsiTreatmentData = {
       description: "PICSI is widely recognized for enhancing IVF success in cases of male infertility."
     }
   ],
-  procedure_steps : null,
+  procedure_steps: null,
   procedure_no_image_steps: {
-    main_heading:  "Step-by-step selection of healthy sperm for stronger embryos.",
+    main_heading: "Step-by-step selection of healthy sperm for stronger embryos.",
     main_tag: "The PICSI Procedure",
     data: [
       {
@@ -318,11 +319,12 @@ export const lahTreatmentData = {
       This method has been shown to improve pregnancy rates, especially for women with thicker zona pellucida or repeated implantation failures.
     </p>
   `,
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "LAH", label: "Why Choose LAH" },
-    { id: "Why", label: "Why Choose LAH" },
-    { id: "Stories", label: "Success Stories" }
+    { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Why Choose LAH" },
+    { id: "procedure", label: "The LAH Procedure" },
+    { id: "stories", label: "Success Stories" }
   ],
   basics: [
     {
@@ -422,11 +424,12 @@ export const blastocystTransferData = {
   procedure_heading: "A journey nurturing just embryo from creation to conception",
   description: "Blastocyst transfer involves transferring embryos at a more advanced stage of development (Day 5), improving implantation rates and pregnancy success.",
   content: "<p>Blastocyst transfer is an advanced IVF technique where embryos are cultured for 5-6 days until they reach the blastocyst stage before being transferred to the uterus.</p><p>This approach allows for better embryo selection and higher implantation rates, making it ideal for patients seeking optimal IVF outcomes.</p>",
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Blastocyst", label: "Why Blastocyst Transfer" },
-    { id: "Why", label: "Why Choose Blastocyst Transfer" },
-    { id: "Stories", label: "Success Stories" }
+    { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Why Blastocyst Transfer" },
+    { id: "procedure", label: "The Blastocyst Transfer" },
+    { id: "stories", label: "Success Stories" }
   ],
   basics: [
     {
@@ -529,11 +532,12 @@ export const sequentialEmbryoTransferData = {
   procedure_heading: "Two-stage transfer boosting implantation and pregnancy.",
   description: "Sequential Embryo Transfer (SET) involves transferring embryos at two different stages to optimize uterine receptivity and improve implantation rates.",
   content: "<p>Sequential Embryo Transfer is an innovative IVF technique where embryos are transferred in two stages - first at the cleavage stage (Day 2-3) and then at the blastocyst stage (Day 5-6).</p><p>This dual-transfer approach mimics natural conception more closely and can enhance implantation success for patients with previous IVF failures.</p>",
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Sequential", label: "Why Sequential Transfer" },
-    { id: "Why", label: "Why Choose Sequential Transfer" },
-    { id: "Stories", label: "Success Stories" }
+    { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Why Sequential Transfer" },
+    { id: "procedure", label: "Steps of Sequential Embryo Transfer" },
+    { id: "stories", label: "Success Stories" }
   ],
   basics: [
     {
@@ -648,11 +652,12 @@ export const pgdTreatmentData = {
       reduced the risk of genetic disorders in newborns.
     </p>
   `,
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Testing", label: "Types of Testing" },
-    { id: "Why", label: "Why Choose Genetic Testing" },
-    { id: "Stories", label: "Success Stories" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "types-of-testing", label: "Types of Testing" },
+    { id: "why-choose", label: "Why Choose Genetic Testing" },
+    { id: "stories", label: "Success Stories" },
   ],
   
   // New section for genetic testing cards
@@ -794,11 +799,12 @@ export const class1000ModularLabData = {
       improving fertilization and pregnancy success rates.
     </p>
   `,
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Features", label: "Lab Features" },
-    { id: "Why", label: "Why It Matters" },
-    { id: "Stories", label: "Success Stories" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "procedure", label: "Lab Features" }, // Maps to procedure steps
+    { id: "why-choose", label: "Why It Matters" }, // Maps to why section
+    { id: "stories", label: "Success Stories" },
   ],
   basics: [
     {
@@ -870,7 +876,7 @@ export const class1000ModularLabData = {
       },
       {
         title: "Embryo Culture Environment",
-        description:"Temperature, humidity, and air purity are carefully regulated for stable embryo growth.",      },
+        description:"Temperature, humidity, and air purity are carefully regulated for stable embryo growth.",    },
       {
         title: "Ongoing Quality Checks",
         description:"Regular monitoring ensures zero contamination and compliance with ISO cleanroom standards."
@@ -919,11 +925,12 @@ export const trigasIncubatorsData = {
       improve embryo quality and development rates, leading to higher pregnancy success.
     </p>
   `,
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Features", label: "Incubator Features" },
-    { id: "Why", label: "Why It Matters" },
-    { id: "Stories", label: "Success Stories" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "procedure", label: "Incubator Features" }, // Maps to procedure steps
+    { id: "why-choose", label: "Why It Matters" }, // Maps to why section
+    { id: "stories", label: "Success Stories" },
   ],
   basics: [
     {
@@ -1051,11 +1058,12 @@ export const witnessSystemData = {
       giving patients complete confidence and peace of mind throughout their IVF journey.
     </p>
   `,
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Features", label: "System Features" },
-    { id: "Why", label: "Why It Matters" },
-    { id: "Stories", label: "Success Stories" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "procedure", label: "System Features" }, // Maps to procedure steps
+    { id: "why-choose", label: "Why It Matters" }, // Maps to why section
+    { id: "stories", label: "Success Stories" },
   ],
   basics: [
     {
@@ -1185,11 +1193,12 @@ export const cryopreservationData = {
       future family building, whether due to medical treatments, career planning, or personal choice.
     </p>
   `,
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Process", label: "Preservation Process" },
-    { id: "Why", label: "Why It Matters" },
-    { id: "Stories", label: "Success Stories" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "procedure", label: "Preservation Process" }, // Maps to procedure steps
+    { id: "why-choose", label: "Why It Matters" }, // Maps to why section
+    { id: "stories", label: "Success Stories" },
   ],
   basics: [
     {
@@ -1249,8 +1258,8 @@ export const cryopreservationData = {
   ],
   procedure_steps: null,
   procedure_no_image_steps: {
-    main_heading: "Smart tracking ensures zero human error.",
-    main_tag: "Steps of Lab Operation Process",
+    main_heading: "Safely freezing life for future possibilities.",
+    main_tag: "Steps of Cryopreservation Process",
     data: [
       {
         title: "Gamete Collection",
@@ -1314,11 +1323,12 @@ export const ovulationInductionData = {
       of conception with minimal intervention and side effects.
     </p>
   `,
+  // Updated categories for consistent and unique navigation IDs
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who It Helps" },
-    { id: "Process", label: "Treatment Process" },
-    { id: "Success", label: "Success Rate" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Who It Helps" }, // Maps to "Who Can Benefit?" section
+    { id: "procedure", label: "Treatment Process" }, // Maps to procedure steps
+    { id: "success-rate", label: "Success Rate" }, // Unique tab for this treatment
   ],
   who_can_benefit:{
     tag:"Who Can Benefit?",
