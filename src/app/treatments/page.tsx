@@ -172,7 +172,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
       title: "IUI – Assisted Intrauterine Insemination Treatment",
       description:
         "Prepared sperm is placed into the uterus during ovulation, boosting fertilization chances.",
-      slug: "iui",
+      slug: "artificial-insemination-iui-treatment",
       category: "infertility",
     },
     {

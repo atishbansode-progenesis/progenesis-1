@@ -1400,3 +1400,236 @@ export const ovulationInductionData = {
   gradient_text:
     "Success in Regulating Ovulation: Most women at Progenesis achieve regular cycles within few treatments, improving conception chances.",
 };
+
+
+
+
+// Artificial Insemination (IUI) Treatment Data
+export const artificialInseminationData = {
+  slug: "artificial-insemination-iui-treatment",
+  category: "fertility-treatments",
+  title: "Artificial Insemination – IUI Treatment",
+  hero_title: "Artificial Insemination – IUI Treatment",
+  hero_button_text: "Book Your Appointment",
+  hero_button_link: "/book-appointment",
+  hero_image: "/treatments/iui/iui-bg.png",
+  breadcrumbs: [
+    { label: "Home", href: "/", id: "home" },
+    { label: "Treatments", href: "/treatments", id: "treatments" },
+    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    { label: "Artificial Insemination – IUI Treatment", href: "/treatments/fertility-treatments/artificial-insemination-iui-treatment", id: "artificial-insemination-iui-treatment" },
+  ],
+  path_section: {
+    tag: "Overview",
+    mainHeading: "What Is IUI Treatment?",
+    subHeading: "Simple. Targeted. Effective.",
+    description1:
+      "Intrauterine Insemination (IUI) is a simple and minimally invasive fertility treatment that involves placing processed sperm directly into the uterus around the time of ovulation.",
+    description2:
+      "This technique increases the chances of sperm reaching the egg, making fertilization more likely, especially for couples facing mild fertility issues.",
+  },
+  basics_heading: "What Is IUI Treatment?",
+  points_tag: "Why Choose IUI at Progenesis",
+  points_heading: "Expert care. Proven success. Real results.",
+  procedure_tag: "Steps of the IUI Procedure",
+  procedure_heading: "Precise process for natural conception success.",
+  description:
+    "Artificial Insemination (IUI) at Progenesis helps couples conceive naturally through a simple, well-timed, and medically supervised procedure. The process involves preparing and placing healthy sperm into the uterus, ensuring the best chances for fertilization and pregnancy in a natural cycle or with mild stimulation.",
+  content: `
+    <p>
+      IUI is often the first-line treatment for couples experiencing unexplained infertility, mild male factor infertility, or issues related to cervical mucus. It is a safe, targeted, and effective fertility solution that helps many couples achieve pregnancy without complex procedures.
+    </p>
+    <p>
+      At Progenesis, we use advanced monitoring and precision timing to maximize IUI success rates while ensuring the utmost comfort and care throughout your journey.
+    </p>
+  `,
+  categories: [
+    { id: "Basics", label: "Know the Basics" },
+    { id: "Who", label: "Who It Helps" },
+    { id: "Process", label: "Treatment Process" },
+    { id: "Success", label: "Success Rate" },
+  ],
+  who_can_benefit: {
+    tag: "Who Can Benefit?",
+    title: "Helping couples overcome common fertility barriers.",
+    cards: [
+      {
+        icon: "/treatments/iui/icon1.png",
+        title: "Women with ovulation issues or mild infertility",
+      },
+      {
+        icon: "/treatments/iui/icon2.png",
+        title: "Men with low sperm count or mild motility problems",
+      },
+      {
+        icon: "/treatments/iui/icon3.png",
+        title: "Couples with unexplained infertility",
+      },
+      {
+        icon: "/treatments/iui/icon4.png",
+        title: "Women with cervical mucus abnormalities",
+      },
+    ],
+  },
+  basics: null,
+  points: [
+    {
+      id: "01",
+      title: "Personalized Fertility Care",
+      description:"Customized treatment plans designed by expert fertility specialists.",
+      image: "/treatments/iui/iui_c1.png",
+    },
+    {
+      id: "02",
+      title: "Advanced Lab Techniques",
+      description:"State-of-the-art sperm preparation and insemination methods.",
+      image: "/treatments/iui/iui_c2.png",
+    },
+    {
+      id: "03",
+      title: "Safe & Painless Procedure",
+      description:"Quick and comfortable, with minimal side effects or downtime.",
+      image: "/treatments/iui/iui_c3.png",
+    },
+  ],
+  procedure_no_image_steps: null,
+  procedure_steps: [
+    {
+      image:"/treatments/iui/iui_t1.png",
+      title: "Ovulation Monitoring",
+      description:"The woman’s menstrual cycle is tracked using scans and hormone tests to identify the fertile window."
+    },
+    {
+      image:"/treatments/iui/iui_t2.png",
+      title: "Sperm Preparation",
+      description:"The semen sample is washed and processed to isolate the healthiest, most motile sperm."
+    },
+    {
+      image:"/treatments/iui/iui_t3.png",
+      title: "Insemination Process",
+      description:"The prepared sperm is gently placed into the uterus using a fine catheter at the optimal time for conception."
+    },
+  ],
+  gradient_data: "20%",
+  gradient_text:
+    "Pregnancy success per cycle — achieved through advanced monitoring, precise timing, and expert sperm selection at Progenesis.",
+};
+
+
+
+// IVF Treatment Data
+export const ivfTreatmentData = {
+  slug: "ivf-treatment",
+  category: "fertility-treatments",
+  title: "IVF – Comprehensive In Vitro Fertilization Treatment",
+  hero_title: "IVF – Comprehensive In Vitro Fertilization Treatment",
+  hero_button_text: "Book Your Appointment",
+  hero_button_link: "/book-appointment",
+  hero_image: "/treatments/ivf/ivf-bg.png",
+  breadcrumbs: [
+    { label: "Home", href: "/", id: "home" },
+    { label: "Treatments", href: "/treatments", id: "treatments" },
+    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    { label: "IVF Treatment", href: "/treatments/fertility-treatments/ivf-treatment", id: "ivf-treatment" },
+  ],
+  path_section: {
+    tag: "Know the Basics",
+    mainHeading: "What is IVF Treatment?",
+    subHeading: "Advanced. Precise. Hopeful.",
+    description1:
+      "In Vitro Fertilization (IVF) is a comprehensive assisted reproductive technology where eggs are retrieved from the ovaries and fertilized with sperm in a controlled laboratory environment.",
+    description2:
+      "The resulting embryos are carefully monitored and cultured, then transferred to the uterus to achieve pregnancy. IVF is the most effective fertility treatment for a wide range of infertility challenges.",
+  },
+  basics_heading: "What is IVF Treatment?",
+  points_tag: "Why Choose IVF at Progenesis",
+  points_heading: "Innovation, expertise, and empathy, all in one place.",
+  procedure_tag: "Steps of IVF Process",
+  procedure_heading: "Science meets precision for successful conception.",
+  description:
+    "IVF at Progenesis offers couples the most advanced and comprehensive fertility treatment available. Through expert care, cutting-edge technology, and personalized protocols, we help overcome complex fertility challenges and bring hope to families worldwide.",
+  content: `
+    <p>
+      IVF is recommended for couples facing male or female infertility, advanced maternal age, blocked fallopian tubes,
+      endometriosis, or unexplained infertility. With decades of research and innovation, IVF has become the gold standard
+      in assisted reproduction.
+    </p>
+    <p>
+      At Progenesis, we combine state-of-the-art laboratories, experienced embryologists, and compassionate care to maximize
+      your chances of success while ensuring safety and comfort throughout your journey.
+    </p>
+  `,
+  categories: [
+    { id: "Basics", label: "Know the Basics" },
+    { id: "Who", label: "Who It Helps" },
+    { id: "Process", label: "Treatment Process" },
+    { id: "Success", label: "Success Rate" },
+  ],
+  who_can_benefit: {
+    tag: "Who Can Benefit?",
+    title: "Expanding possibilities for every parenthood journey.",
+    cards: [
+      {
+        icon: "/treatments/ivf/icon1.png",
+        title: "Women with blocked or damaged fallopian tubes",
+      },
+      {
+        icon: "/treatments/ivf/icon2.png",
+        title: "Men with low sperm count or motility issues",
+      },
+      {
+        icon: "/treatments/ivf/icon3.png",
+        title: "Women with endometriosis or ovarian disorders",
+      },
+      {
+        icon: "/treatments/ivf/icon4.png",
+        title: "Couples who have had failed IUI or other treatments",
+      },
+    ],
+  },
+  basics: null,
+  points: [
+    {
+      id: "01",
+      title: "Advanced Labs",
+      description:"Equipped with advanced embryology and culture systems.",
+      image: "/treatments/ivf/ivf_c1.png",
+    },
+    {
+      id: "02",
+      title: "High Success Rates",
+      description:"Personalized protocols and skilled embryologists ensure optimal outcomes.",
+      image: "/treatments/ivf/ivf_c2.png",
+    },
+    {
+      id: "03",
+      title: "Expert Team",
+      description:"Fertility specialists with years of IVF expertise and patient-centered care.",
+      image: "/treatments/ivf/ivf_c3.png",
+    },
+  ],
+  procedure_no_image_steps: null,
+  procedure_steps: [
+    {
+      image: "/treatments/ivf/ivf_t1.png",
+      title: "Ovarian Stimulation & Monitoring",
+      description:"Hormonal medications are administered to stimulate egg production, and regular ultrasounds track follicle growth."
+    },
+    {
+      image: "/treatments/ivf/ivf_t2.png",
+      title: "Egg Retrieval & Fertilization",
+      description:"Mature eggs are collected and fertilized with sperm in a controlled lab environment."
+    },
+    {
+      image: "/treatments/ivf/ivf_t3.png",
+      title: "Embryo Culture & Transfer",
+      description:"Healthy embryos are cultured for 3–5 days and then transferred into the uterus for implantation.",
+    },
+  ],
+  gradient_data: "60%",
+  gradient_text:
+    "Success in IVF cycles: Progenesis combines personalized protocols, advanced labs, and expert embryologists for top results in India.",
+};
+
+
+
