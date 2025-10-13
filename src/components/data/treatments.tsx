@@ -1149,3 +1149,273 @@ export const witnessSystemData = {
   gradient_text:
     "Accuracy ensures all samples and embryos verified, with zero errors and full patient confidence.",
 };
+
+
+
+// Cryopreservation Data
+export const cryopreservationData = {
+  slug: "cryopreservation",
+  category: "advanced",
+  title: "Cryopreservation of Human Gametes",
+  hero_title: "Cryopreservation of Human Gametes",
+  hero_button_text: "Book Your Appointment",
+  hero_button_link: "/book-appointment",
+  hero_image: "/treatments/cryopreservation/cryo-bg.png",
+  breadcrumbs: [
+    { label: "Home", href: "/", id: "home" },
+    { label: "Treatments", href: "/treatments", id: "treatments" },
+    { label: "Advanced", href: "/treatments/advanced", id: "advanced" },
+    { label: "Cryopreservation", href: "/treatments/advanced/cryopreservation", id: "cryopreservation" },
+  ],
+  basics_heading: "Why Cryopreservation Is Important in Fertility Care",
+  points_tag: "Why Choose Cryopreservation",
+  points_heading: "Preserving fertility safely, effectively, and for longer.",
+  procedure_tag: "Steps of Cryopreservation Process",
+  procedure_heading: "Safely freezing life for future possibilities.",
+  description:
+    "Cryopreservation safely freezes and stores eggs, sperm, or embryos for future use, preserving fertility options for medical, personal, or family planning reasons.",
+  content: `
+    <p>
+      Cryopreservation uses advanced vitrification technology to rapidly freeze reproductive cells
+      and embryos at ultra-low temperatures (-196°C), preventing ice crystal formation and preserving
+      their viability for years or even decades.
+    </p>
+    <p>
+      This technique offers individuals and couples the flexibility to preserve their fertility for
+      future family building, whether due to medical treatments, career planning, or personal choice.
+    </p>
+  `,
+  categories: [
+    { id: "Basics", label: "Know the Basics" },
+    { id: "Process", label: "Preservation Process" },
+    { id: "Why", label: "Why It Matters" },
+    { id: "Stories", label: "Success Stories" },
+  ],
+  basics: [
+    {
+      icon: "/treatments/witness/witness_icon1.png",
+      title: "What It Is",
+      description:
+        "The Witness System digitally tracks all samples, gametes, and embryos during IVF.",
+    },
+    {
+      icon: "/treatments/witness/witness_icon2.png",
+      title: "Why It's Needed",
+      description:
+        "The gametes are cooled using advanced vitrification methods that prevent ice formation, maintaining their structure and viability for years.",
+    },
+    {
+      icon: "/treatments/witness/witness_icon3.png",
+      title: "How It Works",
+      description:
+        "Ideal for individuals or couples who want to delay pregnancy, preserve fertility before medical treatments, or use donor gametes later.",
+    },
+    {
+      icon: "/treatments/witness/witness_icon4.png",
+      title: "Who It Helps",
+      description:
+        "Men with low sperm counts, women with limited egg reserve, or couples undergoing IVF who wish to save embryos for future cycles.",
+    },
+    {
+      icon: "/treatments/witness/witness_icon5.png",
+      title: "Result",
+      description:"Cryopreserved samples retain their fertility potential even after thawing — offering flexibility, reassurance, and hope."    },
+    {
+      icon: "/treatments/witness/witness_icon6.png",
+      title: "Added Advantage",
+      description:"A proven, safe, and effective method for preserving reproductive cells without compromising quality or success rates."    },
+  ],
+  points: [
+    {
+      id: "01",
+      title: "Advanced Vitrification",
+      description:
+        "Rapid freezing prevents ice formation and preserves cell integrity.",
+      image: "/treatments/witness/witness_c1.png",
+    },
+    {
+      id: "02",
+      title: "Safe Long-Term Storage",
+      description:
+        "Samples are securely stored in liquid nitrogen under strict monitoring.",
+      image: "/treatments/witness/witness_c2.png",
+    },
+    {
+      id: "03",
+      title: "High Post-Thaw Survival",
+      description:"Ensures excellent quality and fertility potential for future use.",
+      image: "/treatments/witness/witness_c3.png",
+    },
+  ],
+  procedure_steps: null,
+  procedure_no_image_steps: {
+    main_heading: "Smart tracking ensures zero human error.",
+    main_tag: "Steps of Lab Operation Process",
+    data: [
+      {
+        title: "Gamete Collection",
+        description:
+          "Eggs or sperm are collected and evaluated for quality before freezing.",
+      },
+      {
+        title: "Vitrification (Freezing)",
+        description:
+          "Gametes are rapidly frozen using cryoprotectants to prevent ice damage.",
+      },
+      {
+        title: "Storage & Preservation",
+        description:
+          "Samples are stored in liquid nitrogen at -196°C, maintaining viability for years.",
+      },
+      {
+        title: "Thawing & Quality Assessment",
+        description:
+          "When ready, samples are carefully thawed and assessed for quality before being used in IVF or other fertility treatments.",
+      },
+    ],
+  },
+  gradient_data: "98%",
+  gradient_text:
+    "Post-thaw viability ensures cryopreserved eggs, sperm, and embryos retain quality for successful future IVF outcomes.",
+};
+
+
+
+
+// Ovulation Induction Data
+export const ovulationInductionData = {
+  slug: "ovulation-induction",
+  category: "fertility-treatments",
+  title: "Ovulation Induction – Stimulating Egg Release",
+  hero_title: "Ovulation Induction – Stimulating Egg Release",
+  hero_button_text: "Book Your Appointment",
+  hero_button_link: "/book-appointment",
+  hero_image: "/treatments/ovulation-induction/ovulation-bg.png",
+  breadcrumbs: [
+    { label: "Home", href: "/", id: "home" },
+    { label: "Treatments", href: "/treatments", id: "treatments" },
+    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    { label: "Ovulation Induction", href: "/treatments/fertility-treatments/ovulation-induction", id: "ovulation-induction" },
+  ],
+  basics_heading: "What Is Ovulation Induction?",
+  points_tag: "Ideal for those facing ovulation challenges",
+  points_heading: "Regulate cycles naturally and improve conception chances.",
+  procedure_tag: "Guided stimulation for natural conception success",
+  procedure_heading: "Safe, personalized, and proven treatment trusted by fertility experts.",
+  description:
+    "Ovulation Induction helps women who have irregular or absent ovulation to produce and release eggs naturally. Using mild hormonal medications, this treatment regulates menstrual cycles, increases ovulation frequency, and improves chances of conception — either naturally or with fertility treatments like IUI or IVF.",
+  content: `
+    <p>
+      Ovulation Induction is a carefully monitored treatment that stimulates the ovaries to release mature eggs.
+      It is ideal for women with irregular cycles, PCOS, or unexplained infertility who struggle with regular ovulation.
+    </p>
+    <p>
+      Through expert supervision and customized medication, ovulation is triggered naturally, improving the likelihood
+      of conception with minimal intervention and side effects.
+    </p>
+  `,
+  categories: [
+    { id: "Basics", label: "Know the Basics" },
+    { id: "Who", label: "Who It Helps" },
+    { id: "Process", label: "Treatment Process" },
+    { id: "Success", label: "Success Rate" },
+  ],
+  basics: [
+    {
+      icon: "/treatments/ovulation-induction/icon1.png",
+      title: "Regulate Cycles Naturally",
+      description:
+        "Helps restore natural ovulation patterns using safe hormonal stimulation.",
+    },
+    {
+      icon: "/treatments/ovulation-induction/icon2.png",
+      title: "Improved Egg Quality",
+      description:
+        "Encourages the release of healthy eggs, improving conception outcomes.",
+    },
+    {
+      icon: "/treatments/ovulation-induction/icon3.png",
+      title: "Non-Invasive Approach",
+      description:
+        "A simple and safe treatment that can be done without surgery or major procedures.",
+    },
+    {
+      icon: "/treatments/ovulation-induction/icon4.png",
+      title: "Personalized Medication",
+      description:
+        "Each cycle is tailored to your hormone levels and response to ensure safety and success.",
+    },
+    {
+      icon: "/treatments/ovulation-induction/icon5.png",
+      title: "Ideal Candidates",
+      description:
+        "Women with PCOS, irregular cycles, or unexplained infertility benefit the most from this treatment.",
+    },
+    {
+      icon: "/treatments/ovulation-induction/icons/icon6.png",
+      title: "Proven Results",
+      description:
+        "Regular ovulation restored within few cycles, improving conception rates naturally.",
+    },
+  ],
+  points: [
+    {
+      id: "01",
+      title: "Women with Irregular or Absent Ovulation",
+      description:
+        "Helps women who struggle with inconsistent ovulation or long cycles achieve regular egg release.",
+      image: "/treatments/ovulation-induction/ovulation_c1.png",
+    },
+    {
+      id: "02",
+      title: "Women with PCOS",
+      description:
+        "Improves ovulatory function in women with Polycystic Ovary Syndrome (PCOS), enhancing fertility outcomes.",
+      image: "/treatments/ovulation-induction/ovulation_c2.png",
+    },
+    {
+      id: "03",
+      title: "Preparing for IUI or IVF",
+      description:
+        "Used to synchronize ovulation with fertility treatments like IUI or IVF for better success rates.",
+      image: "/treatments/ovulation-induction/ovulation_c3.png",
+    },
+    {
+      id: "04",
+      title: "Unexplained Infertility",
+      description:
+        "Provides controlled ovulation cycles to improve timing and chances of natural conception.",
+      image: "/treatments/ovulation-induction/ovulation_c4.png",
+    },
+  ],
+  procedure_steps: null,
+  procedure_no_image_steps: {
+    main_heading: "Guided stimulation for natural conception success.",
+    main_tag: "Step-by-Step Treatment Process",
+    data: [
+      {
+        title: "Initial Consultation & Hormonal Evaluation",
+        description:
+          "Fertility specialists assess hormone levels, cycle history, and ovarian function.",
+      },
+      {
+        title: "Personalized Medication Plan",
+        description:
+          "Ovulation-inducing medications are prescribed and adjusted based on individual response.",
+      },
+      {
+        title: "Monitoring & Ultrasound Scans",
+        description:
+          "Regular scans monitor follicle growth and hormonal levels to determine optimal timing for ovulation.",
+      },
+      {
+        title: "Triggering Ovulation",
+        description:
+          "An injection triggers the release of mature eggs, enabling natural conception or timed intercourse/IUI.",
+      },
+    ],
+  },
+  gradient_data: "78%",
+  gradient_text:
+    "Success in Regulating Ovulation: Most women at Progenesis achieve regular cycles within few treatments, improving conception chances.",
+};
