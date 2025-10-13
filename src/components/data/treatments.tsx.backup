@@ -7,15 +7,26 @@ export interface Treatment {
   content: string; // full detail page content
 }
 
-export const treatments: Treatment[] = [
-  {
-    slug: "imsi",
-    category: "advanced",
-    title: "IMSI – Intracytoplasmic Morphologically Selected Sperm Injection",
-    hero_title: "IMSI Treatment",
-    hero_button_text: "Book Your Appointment",
-    hero_button_link: "/book-appointment",
-    hero_image: "/treatments/imsi/imsibg.png",
+// Individual treatment data exports
+export const imsiTreatmentData = {
+  slug: "imsi",
+  category: "advanced",
+  title: "IMSI – Intracytoplasmic Morphologically Selected Sperm Injection",
+  hero_title: "IMSI Treatment",
+  hero_button_text: "Book Your Appointment",
+  hero_button_link: "/book-appointment",
+  hero_image: "/treatments/imsi/imsibg.png",
+  breadcrumbs: [
+    { label: "Home", href: "/" },
+    { label: "Treatments", href: "/treatments" },
+    { label: "Advanced", href: "/treatments/advanced" },
+    { label: "IMSI", href: "/treatments/advanced/imsi" },
+  ],
+  basics_heading: "Precision sperm selection for healthier embryos and pregnancies",
+  points_tag: "Why Choose IMSI",
+  points_heading: "Targeted Selection for Higher IVF Success",
+  procedure_tag: "The IMSI Procedure",
+  procedure_heading: "Three steps closer to your parenthood journey",
 
     description:
       "IMSI allows embryologists to choose the healthiest sperm using high magnification, improving fertilization chances.",

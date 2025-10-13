@@ -4,7 +4,7 @@ import Link from "next/link";
 import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
-import StoriesSection from "@/components/StoriesSection";
+import StoriesSection from "@/components/Home/StoriesSection";
 
 interface FeatureCardProps {
   title: string;
@@ -350,7 +350,7 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
 
       {/* SECTION 4: STORIES */}
       <section id="stories-section">
-        <StoriesSection />
+        <StoriesSection/>
       </section>
 
       <ConsultationForm />
