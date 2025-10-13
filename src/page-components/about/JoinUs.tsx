@@ -2,34 +2,32 @@ import React from "react";
 
 const JoinUs: React.FC = () => {
   return (
-    <div className=" flex flex-col md:flex-row items-center bg-gradient-to-r  pt-5 md:py-20 px-4 lg:px-30 md:px-6  gap-4 md:gap-6">
-      {/* Left: Doctor Image (mobile: comes second) */}
-      <div className="order-2 md:order-1 relative bottom-0  flex-shrink-0 w-full md:w-[300px] csLg:w-[350px] flex justify-center md:justify-end">
-        <img
-          src="/images/doctor.png"
-          alt="Doctor"
+<div className="grid grid-cols-3  bg-gradient-to-r from-green-300 csLg:min-h-[500px] px-4 md:px-[120px]  ">
 
-          className="h-[260px] csLg:h-[340px] object-cover rounded-[12px] ]"
+  {/* Doctor Image */}
+  <div className="relative h-full csLg:max-w-[300px]  ">
+    <img
+      src="/images/doctor.png"
+      alt="Doctor"
+      className=" object-contain rounded-[12px] absolute bottom-0 "
+    />
+  </div>
 
-        />
-      </div>
+  {/* Content */}
+  <div className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-left text-white gap-6 ">
+    <h2 className="text-[28px] md:text-[40px] lg:text-[48px] text-[#94BA3D] font-normal leading-tight">
+      We’re looking for passionate people to help create life’s most precious journeys.
+    </h2>
 
-      {/* Right: Text and Button (mobile: text first, button last) */}
-      <div className="order-1 csLg:order-2 flex-1 text-center lg:text-start csLg:pl-10 lg:max-w-[1024px] w-full flex flex-col">
+    <button className="w-[120px] h-[44px] csLg:w-[150px] csLg:h-[48px] py-2.5 border border-[#1656A5] rounded-[8px] lg:rounded-[16px] bg-white text-[#1656A5] text-[14px] cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:bg-[#f4f4f4] transition">
+      Join Our Team
+    </button>
+  </div>
+</div>
 
-        <div className="text-center lg:text-start text-[32px] lg:text-[48px] text-[#94BA3D] font-normal lg:leading-[56px] mb-4 csLg:mb-8">
-          We’re looking for passionate people to help create life’s most precious journeys.
-        </div>
-        <div className="order-3 mt-2 csLg:order-2 justify-center text-center">
-        <div className="order-3 csLg:order-2 text-center lg:text-start">
-          <button className="w-[96px] h-[40px] csLg:w-[150px] csLg:h-[48px] py-2.5 border border-[#1656A5] rounded-[8px] lg:rounded-[16px] bg-[#FFFFFF] text-[#1656A5] text-[12px] csLg:text-[14px] cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-colors duration-200 hover:bg-[#f4f4f4]">
-              Join Our Team
-          </button>
-        </div>
 
-      </div>
-    </div>
-    </div>
+
+
   );
 };
 

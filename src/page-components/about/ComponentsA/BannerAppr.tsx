@@ -71,6 +71,8 @@ const BannerOfApproach: React.FC = () => {
       const parentRect = currentTab.parentElement!.getBoundingClientRect();
       const tabRect = currentTab.getBoundingClientRect();
       setUnderlineStyle({ left: tabRect.left - parentRect.left, width: tabRect.width });
+      // Auto-scroll tab into view
+      currentTab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     }
   }, [activeTab]);
 
@@ -78,6 +80,32 @@ const BannerOfApproach: React.FC = () => {
     mobileSlideRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     desktopSlideRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
   };
+
+  // ✅ Detect scroll on mobile slides and sync active tab
+  useEffect(() => {
+    const container = document.querySelector(".mobile-slide-scroll");
+    if (!container) return;
+
+    const handleScroll = () => {
+      let minDiff = Infinity;
+      let newIndex = activeTab;
+      mobileSlideRefs.current.forEach((slide, index) => {
+        if (slide) {
+          const diff = Math.abs(
+            slide.getBoundingClientRect().left - container.getBoundingClientRect().left
+          );
+          if (diff < minDiff) {
+            minDiff = diff;
+            newIndex = index;
+          }
+        }
+      });
+      if (newIndex !== activeTab) setActiveTab(newIndex);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [activeTab]);
 
   return (
     <div className="w-full bg-[#FAFAFA] pl-4 lg:pl-[120px] py-4 md:py-22" style={{ overflow: 'visible', margin: 0 }}>
@@ -148,7 +176,7 @@ const BannerOfApproach: React.FC = () => {
 
       {/* MOBILE SLIDES */}
       <div className="md:hidden py-5 pl-5" style={{ position: "relative", left: "-20px", width: "100%", zIndex: 10 }}>
-        <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+        <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory mobile-slide-scroll" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
           <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
           {slides.map((s, index) => (
             <div
@@ -191,7 +219,7 @@ const BannerOfApproach: React.FC = () => {
                 <div className="grid grid-cols-1 gap-2 max-w-[1100px] pt-5">
                   {s.features.map((item, idx) => (
                     <div key={idx} className="flex flex-col gap-2">
-                      <img src={item.icon} alt={item.title} className="w-[30px] h-[30px] object-contain" />
+                      <img src={item.icon} alt={item.title} className="w-[28px] h-[28px] object-contain" />
                       <h4 className="font-semibold text-[#F9F9F9] text-[15px]">{item.title}</h4>
                       <p className="text-[13px] text-gray-200 leading-[18px]">{item.desc}</p>
                     </div>
@@ -245,13 +273,15 @@ const BannerOfApproach: React.FC = () => {
                   {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px] pb-4">
-                  {s.features.map((item, idx) => (
-                    <div key={idx} className="flex flex-col gap-2">
-                      <img src={item.icon} alt={item.title} className="w-[30px] h-[30px] object-contain" />
-                      <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
-                      <p className="text-sm text-gray-200">{item.desc}</p>
-                    </div>
+<div className="grid grid-cols-2 md:grid-cols-4 gap-x-[150px] gap-y-8  max-w-[1100px] pb-4">
+  {s.features.map((item, idx) => (
+    <div key={idx} className="flex flex-col gap-2">
+      <img src={item.icon} alt={item.title} className="lg:w-[30px] lg:h-[30px]  object-contain" />
+      <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
+      <p className="text-sm text-gray-200">{item.desc}</p>
+    </div>
+
+
                   ))}
                 </div>
               </div>

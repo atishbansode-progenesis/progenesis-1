@@ -88,31 +88,42 @@ const [activeTab, setActiveTab] = useState<string>("path");
       description:
         "Uses advanced microscopy to identify the healthiest sperm for improved fertilization outcomes.",
       slug: "imsi",
+      category: "advanced",
     },
     {
       title: "PICSI – Physiological ICSI",
       description:
         "Selects mature sperm using hyaluronan binding, enhancing embryo quality.",
+      slug: "picsi",
+      category: "advanced",
     },
     {
       title: "LAH – Laser Assisted Hatching",
       description:
         "Helps embryos implant by gently thinning the outer shell with laser precision.",
+      slug: "lah",
+      category: "advanced",
     },
     {
       title: "Blastocyst Transfer – Stronger Embryo Transfer",
       description:
         "Transfers embryos at the blastocyst stage (day 5), increasing chances of pregnancy.",
+      slug: "blastocyst-transfer",
+      category: "advanced",
     },
     {
       title: "Sequential Embryo Transfer – Two-Stage Transfer",
       description:
         "Combines early and late-stage transfers for improved implantation.",
+      slug: "sequential-embryo-transfer",
+      category: "advanced",
     },
     {
       title: "PGD/PGS/PGT-A – Genetic Screening",
       description:
         "Detects genetic abnormalities in embryos, ensuring healthy pregnancies.",
+      slug: "pgd-pgs-pgt-a",
+      category: "advanced",
     },
   ];
 
@@ -121,21 +132,29 @@ const [activeTab, setActiveTab] = useState<string>("path");
       title: "Class-1000 Modular Lab – Ultra-Clean Environment",
       description:
         "Maintains sterile lab conditions, ensuring safe and contamination-free procedures.",
+      slug: "class-1000-modular-lab",
+      category: "advanced",
     },
     {
       title: "Trigas Incubators – Natural Growth Support",
       description:
         "Mimics womb-like conditions with precise oxygen, carbon dioxide, and nitrogen balance.",
+      slug: "trigas-incubators",
+      category: "advanced",
     },
     {
       title: "Witness System – Total Safety Assurance",
       description:
         "Uses RFID tracking to prevent errors in gamete and embryo handling.",
+      slug: "witness-system",
+      category: "advanced",
     },
     {
       title: "Cryopreservation – Secure Future Fertility",
       description:
         "Safely freezes and stores eggs, sperm, or embryos for future use.",
+      slug: "cryopreservation",
+      category: "advanced",
     },
   ];
 
@@ -146,31 +165,43 @@ const [activeTab, setActiveTab] = useState<string>("path");
       title: "Ovulation Induction – Stimulating Egg Release",
       description:
         "Medications regulate or trigger ovulation, improving natural conception or preparing for assisted treatments.",
+      slug: "ovulation-induction",
+      category: "infertility",
     },
     {
       title: "IUI – Assisted Intrauterine Insemination Treatment",
       description:
         "Prepared sperm is placed into the uterus during ovulation, boosting fertilization chances.",
+      slug: "iui",
+      category: "infertility",
     },
     {
       title: "IVF – Comprehensive In Vitro Fertilization Treatment",
       description:
         "Eggs and sperm are combined in a lab, and embryos are transferred to the uterus.",
+      slug: "ivf",
+      category: "infertility",
     },
     {
       title: "IVF-ICSI – Intracytoplasmic Sperm Injection",
       description:
         "A single sperm is injected into the egg, helpful in male infertility or failed fertilization cases.",
+      slug: "ivf-icsi",
+      category: "infertility",
     },
     {
       title: "Frozen Embryo Transfer – Preserved Embryo Implantation",
       description:
         "Frozen embryos are carefully thawed and transferred in a natural or medically prepared cycle.",
+      slug: "frozen-embryo-transfer",
+      category: "infertility",
     },
     {
       title: "Fertility Surgery – Corrective Reproductive Surgery",
       description:
         "Surgery for fibroids, endometriosis, or blocked tubes helps restore fertility and reproductive health.",
+      slug: "fertility-surgery",
+      category: "infertility",
     },
   ];
 
@@ -178,15 +209,21 @@ const [activeTab, setActiveTab] = useState<string>("path");
   const preservation = [
     {
       title: "Female Fertility Preservation",
-      image: "/treatments/12.png", // replace with actual path
+      image: "/treatments/12.png",
+      slug: "female-fertility-preservation",
+      category: "preservation",
     },
     {
       title: "Male Fertility Preservation",
       image: "/treatments/13.png",
+      slug: "male-fertility-preservation",
+      category: "preservation",
     },
     {
       title: "Embryo Preservation",
       image: "/treatments/14.png",
+      slug: "embryo-preservation",
+      category: "preservation",
     },
   ];
 
@@ -198,12 +235,16 @@ const [activeTab, setActiveTab] = useState<string>("path");
       description:
         "A detailed evaluation of hormone levels, ovarian reserve, fallopian tubes, and uterine health. This testing helps identify fertility issues and guides a personalized treatment plan for better outcomes.",
       highlighted: true,
+      slug: "female-analysis",
+      category: "evaluation",
     },
     {
       title: "Male Analysis – Advanced Sperm Testing",
       description:
         "Tests sperm count, motility, shape, and quality using advanced methods. These results help diagnose male infertility and guide the best treatment options.",
       highlighted: false,
+      slug: "male-analysis",
+      category: "evaluation",
     },
   ];
 
@@ -354,7 +395,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[80px]">
           {precisionMethods.map((item, idx) => (
-            <FeatureCard key={idx} title={item.title} description={item.description} href={`/treatments/${item.slug}`} />
+            <FeatureCard key={idx} title={item.title} description={item.description} href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : undefined} />
           ))}
         </div>
 
@@ -372,7 +413,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {advancedFacilities.map((item, idx) => (
-            <FeatureCard key={idx} title={item.title} description={item.description} />
+            <FeatureCard key={idx} title={item.title} description={item.description} href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : undefined} />
           ))}
         </div>
       </section>
@@ -521,9 +562,10 @@ const [activeTab, setActiveTab] = useState<string>("path");
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {treatments.map((item, idx) => (
-            <div
+            <Link
               key={idx}
-              className=" rounded-xl border-[#E6E6E6] p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF]"
+              href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
+              className=" rounded-xl border-[#E6E6E6] p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
             >
               <span
                 className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] hover:bg-black hover:text-white hover:border-transparent transition-all duration-300"
@@ -541,7 +583,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
               <p className="text-[#606060] font-manrope text-[16px] font-normal leading-[24px] tracking-[-0.32px] opacity-70">
                 {item.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -567,8 +609,9 @@ const [activeTab, setActiveTab] = useState<string>("path");
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {preservation.map((item, idx) => (
-            <div
+            <Link
               key={idx}
+              href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
               className="
               flex flex-col items-center
               relative
@@ -577,6 +620,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
               bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
               hover:bg-[rgba(22,86,165,0.12)] transition
               p-6
+              cursor-pointer
             "
             >
                {/* Title */}
@@ -603,7 +647,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
 
              
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -625,12 +669,14 @@ const [activeTab, setActiveTab] = useState<string>("path");
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {evaluations.map((item, idx) => (
-            <div
+            <Link
               key={idx}
+              href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
               className={`
               flex flex-col gap-3 rounded-[16px] p-6
               ${item.highlighted ? "bg-[#EEF5FF]" : "bg-[#EEF5FF]  border-[#E6E6E6]"}
               hover:bg-[#DDEBFF] transition
+              cursor-pointer
             `}
             >
               {/* Icon */}
@@ -649,7 +695,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
               <p className="text-[#606060] font-manrope text-[16px] font-normal leading-[24px] tracking-[-0.32px] opacity-70">
                 {item.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
