@@ -172,7 +172,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
       title: "IUI – Assisted Intrauterine Insemination Treatment",
       description:
         "Prepared sperm is placed into the uterus during ovulation, boosting fertilization chances.",
-      slug: "iui",
+      slug: "artificial-insemination-iui-treatment",
       category: "infertility",
     },
     {
@@ -257,11 +257,12 @@ const [activeTab, setActiveTab] = useState<string>("path");
           { label: "Home", href: "/" },
           { label: "Treatments", href: "/treatments" },
         ]}
-        title="Hope, Science & Parenthood Begin Here"
+        title="Hope, Science & Parenthood <br/> Begin Here"
         buttonText="Book Your Appointment"
         buttonLink="/book-appointment"
         foregroundImage="/treatments/bg-overlay.png"
         overlayImage="/treatments/doctor-foreground.png"
+        contentClassName="justify-start"
       />
 
 

@@ -30,13 +30,13 @@ const locations: City[] = [
         name: "Thane",
         address:
           "16, First Floor, Dosti Imperia Complex , Ghodbunder Road, Opp R Mall, Manpada, Thane (West) - 400607​",
-        image: "/LocationsSection/thane.png",
+        image: "/LocationsSection/Thane.jpg",
       },
       {
         name: "Andheri",
         address:
           "4th Durolite House, Off New Link Rd, Near Oshiwara Station, Opposite to Laxmi Industrial Complex, Andheri West, Mumbai",
-        image: "/LocationsSection/andheri.png",
+        image: "/LocationsSection/Andheri.jpg",
       },
       {
         name: "Borivali",
@@ -48,31 +48,31 @@ const locations: City[] = [
         name: "Ghatkopar",
         address:
           "1st Floor, Shop Zone Building, Mahatma Gandhi Rd, Ghatkopar West, Mumbai",
-        image: "/LocationsSection/ghatkopar.png",
+        image: "/LocationsSection/Ghatkopar.jpg",
       },
       {
         name: "Vashi",
         address:
           "Ground Floor, Bhumiraj Costarica, Palm Beach Service Road, Sector 18, Vashi, Navi Mumbai",
-        image: "/LocationsSection/vashi.png",
+        image: "/LocationsSection/Vashi.jpg",
       },
       {
         name: "Virar",
         address:
           "2nd Floor, A-Wing, Shreeram Complex, Tirupati Nagar, Virar West, Virar",
-        image: "/LocationsSection/virar.png",
+        image: "/LocationsSection/Virar.jpg",
       },
       {
         name: "Kalyan",
         address:
           "Diwadkar Complex, 302, Chatrapati Shivaji Maharaj Chowk, Kalyan(W), JijaMata Colony, Kalyan",
-        image: "/LocationsSection/kalyan.png",
+        image: "/LocationsSection/Kalyan.jpg",
       },
       {
         name: "Panvel",
         address:
           "1st Floor, Ganga Kalash, Gandhi Hospital Lane, Near Suruchi Restaurant, Vasudev Balwant Phadke Road, Panvel",
-        image: "/LocationsSection/panvel.png",
+        image: "/LocationsSection/Panvel.jpg",
       },
     ],
   },
@@ -80,49 +80,49 @@ const locations: City[] = [
     city: "Pune",
     address:
       "Kataria Chambers, ITI Road, Infront of Reliance Digital, Aundh, Pune, Maharashtra 411007",
-    image: "/LocationsSection/pune.png",
+    image: "/LocationsSection/Pune.jpg",
   },
   {
     city: "Nashik",
     address:
       "IKON, 3rd Floor, Above Westside, Opp. Sun Bird Building, Yeolekar Mala, College Road, Nashik -422 005, Maharashtra",
-    image: "/LocationsSection/nasik.png",
+    image: "/LocationsSection/Nashik.jpg",
   },
   {
     city: "Jalgaon",
     address:
       "1st Floor, Nayantara Arcade, Pimprala Rd, Pratap Nagar, Jalgaon",
-    image: "/LocationsSection/jalgaon.png",
+    image: "/LocationsSection/Jalgaon.jpg",
   },
   {
     city: "Ahilyanagar",
     address:
       "Shop No 2, First Floor, Diansh Plaza, opp. Mauli Sankul Road, Savedi, Ahilya Nagar, Maharashtra",
-    image: "/LocationsSection/ahilyanagar.png",
+    image: "/LocationsSection/Ahilyanagar.jpg",
   },
   {
     city: "Amravati",
     address:
       "3rd floor, Above Raghubir Food Zone, Sharda Vihar, Badnera Road, Amravati, Maharashtra 444605",
-    image: "/LocationsSection/amravati.png",
+    image: "/LocationsSection/Amravati.jpg",
   },
   {
     city: "Kolhapur",
     address:
       "Royal Mirage Arcade, A Wing, Railway Colony Rd, opp. Kolhapur railway station, Railway Colony, New Shahupuri, Kolhapur, Maharashtra 416001",
-    image: "/LocationsSection/kolhapur.png",
+    image: "/LocationsSection/Kolhapur.jpg",
   },
   {
     city: "Nagpur",
     address:
       "6th Floor, Tower 10, N Ambazari Rd, beside Alankar Theater, Shankar Nagar, Bhagwaghar, Dharampeth, Nagpur, Maharashtra 440002",
-    image: "/LocationsSection/nagpur.png",
+    image: "/LocationsSection/Nagpur.jpg",
   },
   {
     city: "Solapur",
     address:
       "KASTURE AGENCIES, 3rd Floor, Unit No 3-B, Kasture Business Centre, Railway lines, Dufferin Chowk, Solapur, Maharashtra 413001",
-    image: "/LocationsSection/solapur.png",
+    image: "/LocationsSection/Solapur.jpg",
   },
 ];
 
