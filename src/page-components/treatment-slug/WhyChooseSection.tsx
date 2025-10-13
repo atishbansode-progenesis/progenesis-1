@@ -78,7 +78,7 @@ export default function WhyChooseSection({ tag, heading, points }: WhyChooseSect
       </section>
 
       {/* Mobile Version */}
-      <section className="px-[12px] md:px-[80px] xl:px-[120px] -mt-[90px] rounded-[16px] py-[60px] bg-[#F5FAFF] lg:hidden scroll-mt-[120px]">
+      <section className="p-4  rounded-[16px]  bg-[#F5FAFF] lg:hidden scroll-mt-[120px]">
         <div className="lg:hidden">
           {tag && (
             <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3">
