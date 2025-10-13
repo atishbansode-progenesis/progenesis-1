@@ -1,4 +1,4 @@
-import { blastocystTransferData, class1000ModularLabData, cryopreservationData, imsiTreatmentData, lahTreatmentData, pgdTreatmentData, picsiTreatmentData, sequentialEmbryoTransferData, trigasIncubatorsData, witnessSystemData } from "@/components/data/treatments";
+import { blastocystTransferData, class1000ModularLabData, cryopreservationData, imsiTreatmentData, lahTreatmentData, ovulationInductionData, pgdTreatmentData, picsiTreatmentData, sequentialEmbryoTransferData, trigasIncubatorsData, witnessSystemData } from "@/components/data/treatments";
 import MainTreatment from "@/page-components/treatment-slug/MainTreatment";
 
 type TreatmentPageProps = {
@@ -43,6 +43,9 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
       break;
     case "cryopreservation":
       data = cryopreservationData;
+      break;
+    case "ovulation-induction":
+      data = ovulationInductionData;
       break;
     // Add more cases for other treatments here
     // case "ivf":

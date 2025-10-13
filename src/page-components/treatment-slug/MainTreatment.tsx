@@ -11,6 +11,7 @@ import ProcedureSteps from "@/page-components/treatment-slug/ProcedureSteps";
 import SuccessRateSection from "@/page-components/treatment-slug/SuccessRateSection";
 import ProcedureStepsNoImage from "./ProcedureNoImageSteps";
 import GeneticTestingCards from "./GeneticTestingCards";
+import { OvulationCards } from "./OvulationCards";
 
 export default function MainTreatment({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("basics");
@@ -53,6 +54,14 @@ export default function MainTreatment({ data }: { data: any }) {
         activeTab={activeTab}
         onTabClick={handleScroll}
       />
+
+      {data.who_can_benefit && (
+        <OvulationCards
+          tag={data.who_can_benefit.tag}
+          heading={data.who_can_benefit.title}
+          cards={data.who_can_benefit.cards}
+        />
+      )}
 
       {/* Section 3: Treatment Basics */}
       {data.basics && (

@@ -1298,7 +1298,7 @@ export const ovulationInductionData = {
     { label: "Ovulation Induction", href: "/treatments/fertility-treatments/ovulation-induction", id: "ovulation-induction" },
   ],
   basics_heading: "What Is Ovulation Induction?",
-  points_tag: "Ideal for those facing ovulation challenges",
+  points_tag: "Why Choose Ovulation Induction at Progenesis",
   points_heading: "Regulate cycles naturally and improve conception chances.",
   procedure_tag: "Guided stimulation for natural conception success",
   procedure_heading: "Safe, personalized, and proven treatment trusted by fertility experts.",
@@ -1320,44 +1320,29 @@ export const ovulationInductionData = {
     { id: "Process", label: "Treatment Process" },
     { id: "Success", label: "Success Rate" },
   ],
-  basics: [
-    {
-      icon: "/treatments/ovulation-induction/icon1.png",
-      title: "Regulate Cycles Naturally",
-      description:
-        "Helps restore natural ovulation patterns using safe hormonal stimulation.",
-    },
-    {
-      icon: "/treatments/ovulation-induction/icon2.png",
-      title: "Improved Egg Quality",
-      description:
-        "Encourages the release of healthy eggs, improving conception outcomes.",
-    },
-    {
-      icon: "/treatments/ovulation-induction/icon3.png",
-      title: "Non-Invasive Approach",
-      description:
-        "A simple and safe treatment that can be done without surgery or major procedures.",
-    },
-    {
-      icon: "/treatments/ovulation-induction/icon4.png",
-      title: "Personalized Medication",
-      description:
-        "Each cycle is tailored to your hormone levels and response to ensure safety and success.",
-    },
-    {
-      icon: "/treatments/ovulation-induction/icon5.png",
-      title: "Ideal Candidates",
-      description:
-        "Women with PCOS, irregular cycles, or unexplained infertility benefit the most from this treatment.",
-    },
-    {
-      icon: "/treatments/ovulation-induction/icons/icon6.png",
-      title: "Proven Results",
-      description:
-        "Regular ovulation restored within few cycles, improving conception rates naturally.",
-    },
-  ],
+  who_can_benefit:{
+    tag:"Who Can Benefit?",
+    title:"Ideal for those facing ovulation challenges.",
+    cards:[
+      {
+        icon: "/treatments/ovulation-induction/icon1.png",
+        title: "Women with irregular or absent ovulation",
+      },
+      {
+        icon: "/treatments/ovulation-induction/icon2.png",
+        title: "Those with polycystic ovary syndrome (PCOS)",
+      },
+      {
+        icon: "/treatments/ovulation-induction/icon3.png",
+        title: "Women preparing for IUI or IVF cycles",
+      },
+      {
+        icon: "/treatments/ovulation-induction/icon4.png",
+        title: "Couples struggling with unexplained infertility",
+      },
+    ]
+  },
+  basics: null,
   points: [
     {
       id: "01",
