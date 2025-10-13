@@ -1245,6 +1245,15 @@ export default function Navbar() {
 
 
   const pathname = usePathname();
+// Close mobile menu automatically on route change
+useEffect(() => {
+  setIsMobileMenuOpen(false);
+  setIsSearchOpen(false);
+  setOpenMenu(null);
+  document.body.style.overflow = "";
+}, [pathname]);
+
+
   const closeTimeoutRef = useRef<number | null>(null);
 
   const navigationItems = [
@@ -1735,4 +1744,65 @@ export default function Navbar() {
 
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
