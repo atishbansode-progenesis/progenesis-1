@@ -20,9 +20,12 @@ const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, 
           <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
             {tag}
           </span>
-          <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] mb-12">
-            {heading}
-          </h2>
+          <h2
+  className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] mb-12 whitespace-pre-line"
+>
+  {heading}
+</h2>
+
         </div>
 
         {/* Steps Grid */}
@@ -30,10 +33,10 @@ const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, 
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="bg-[#1656A50D]  rounded-2xl p-6 md:p-8 shadow-sm  transition-shadow duration-300"
             >
               {/* Step Number */}
-              <div className="text-[#1656A5] text-4xl md:text-5xl font-bold mb-8">
+              <div className="text-[#1656A5] text-4xl md:text-5xl font-bold mb-20">
                 {String(index + 1).padStart(2, '0')}
               </div>
 

@@ -237,7 +237,7 @@ export const picsiTreatmentData = {
   ],
   procedure_steps : null,
   procedure_no_image_steps: {
-    main_heading: "Step-by-step selection of healthy sperm for stronger embryos.",
+    main_heading:  "Step-by-step selection of healthy sperm for stronger embryos.",
     main_tag: "The PICSI Procedure",
     data: [
       {
