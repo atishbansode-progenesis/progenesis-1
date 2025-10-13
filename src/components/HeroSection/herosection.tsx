@@ -46,7 +46,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className="relative w-full min-h-[444px] lg:min-h-[647px] flex p-[16px] lg:p-[80px] overflow-hidden"
+      className="relative w-full min-h-[444px] lg:min-h-[620px] flex p-[16px] lg:p-[80px] overflow-hidden"
       style={{
         backgroundImage: backgroundImage ? backgroundImage : "",
       }}
@@ -75,7 +75,7 @@ export default function HeroSection({
       )}
 
       {/* Content (always above images) */}
-      <div className={`relative z-10 w-full flex flex-col justify-end lg:justify-center items-start gap-6 lg:gap-[44px] pb-8 lg:pb-0 ${contentClassName}`}>
+      <div className={`relative z-10 w-full flex flex-col justify-end lg:justify-start items-start gap-6 lg:gap-[44px] pb-8 lg:pb-0 ${contentClassName}`}>
         {/* Breadcrumbs */}
         <p className="text-[12px] lg:text-[18px] leading-[20px] lg:leading-[40px] font-medium flex flex-wrap items-center gap-2 lg:gap-[12px]">
           {breadcrumbs.map((crumb, idx) => (
