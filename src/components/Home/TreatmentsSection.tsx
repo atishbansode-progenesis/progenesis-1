@@ -19,42 +19,42 @@ const TreatmentsSection = () => {
       description:
         "We offer you more than a procedure. We offer a chance. A chance to hold, to cradle, to begin.",
       image: "/TreatmentsSection/IVF.png",
-      link: "/treatments/ivf",
+      link: "/treatments/infertility/ivf",
     },
     {
       title: "Egg Freezing and Preservation",
       description:
         "Your journey is uniquely yours. Whenever you feel ready, we’ll be right here waiting for you.",
       image: "/TreatmentsSection/eggfreezing.png",
-      link: "/treatments/egg-freezing",
+      link: "/treatments/preservation/female-fertility-preservation",
     },
     {
       title: "Multiple IVF & IUI Failures",
       description:
         "Advanced care and tailored treatments to give fresh hope after repeated failed attempts.",
       image: "/TreatmentsSection/multipleivf.png",
-      link: "/treatments/multiple-failures",
+      link: "/infertility/female/repeated-ivf-failures",
     },
     {
       title: "Intrauterine Insemination (IUI)",
       description:
         "For some, the gentlest nudge is all it takes. We guide you with care and precision.",
       image: "/TreatmentsSection/iui.png",
-      link: "/treatments/iui",
+      link: "/treatments/infertility/iui",
     },
     {
       title: "Male Fertility Solutions",
       description:
         "Fertility is not just a woman’s story. We’re here for every partner, every question, every step.",
       image: "/TreatmentsSection/malefertility.png",
-      link: "/treatments/male-fertility",
+      link: "/treatments/evaluation/male-analysis",
     },
     {
       title: "Pregnancy after Menopause",
       description:
         "Advanced techniques that make motherhood possible, even beyond menopause.",
       image: "/TreatmentsSection/menopause.png",
-      link: "/treatments/pregnancy-after-menopause",
+      link: "/infertility/female/pregnancy-after-menopause",
     },
   ];
 
