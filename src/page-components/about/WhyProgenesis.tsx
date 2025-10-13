@@ -73,7 +73,7 @@ const WhyProgenesis: React.FC = () => {
           {/* Image — visible here only on mobile */}
           <div className="block lg:hidden relative w-full rounded-2xl overflow-hidden min-h-[220px] flex items-center justify-center">
             <div
-              className="absolute inset-0 bg-cover bg-center rounded-2xl bg-no-repeat"
+              className="absolute inset-0 bg-cover bg-center rounded-2xl bg-no-repeat "
               style={{ backgroundImage: `url(${current.image})` }}
             />
           </div>
@@ -124,12 +124,9 @@ const WhyProgenesis: React.FC = () => {
         </div>
 
         {/* Right Column - Banner (only visible on desktop) */}
-        <div className="hidden lg:flex lg:mt-30 relative w-full rounded-2xl overflow-hidden min-h-[250px] md:min-h-[500px] items-center justify-center">
-          <div
-            className="absolute inset-0 bg-contain bg-center rounded-2xl bg-no-repeat"
-            style={{ backgroundImage: `url(${current.image})` }}
-          />
-        </div>
+        {/* <div className="hidden lg:flex relative w-full rounded-2xl overflow-hidden min-h-[250px] md:min-h-full md:w-full items-center justify-center bg-red-700"> */}
+         <img src={current.image} className=" hidden lg:block h-full"/>
+        {/* </div> */}
       </div>
     </section>
   );
