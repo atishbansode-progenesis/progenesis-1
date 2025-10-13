@@ -13,7 +13,7 @@ interface ProcedureStepsNoImageProps {
 
 const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, tag, steps }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-6 md:p-12">
+    <div className=" bg-gradient-to-br from-gray-50 to-blue-50 px-4 py-4 md:px-[120px] md:py-[80px]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">
@@ -29,14 +29,14 @@ const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, 
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {steps.map((step, index) => (
             <div
               key={index}
               className="bg-[#1656A50D]  rounded-2xl p-6 md:p-8 shadow-sm  transition-shadow duration-300"
             >
               {/* Step Number */}
-              <div className="text-[#1656A5] text-4xl md:text-5xl font-bold mb-20">
+              <div className="text-[#1656A5] text-[32px] md:text-5xl font-normal mb-20">
                 {String(index + 1).padStart(2, '0')}
               </div>
 
