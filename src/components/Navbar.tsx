@@ -317,11 +317,10 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                     setInputs({ ...inputs, what: t });
                     setActiveStep(null);
                   }}
-                  className={`px-3 py-2 rounded-[14px] border text-[14px] font-medium ${
-                    inputs.what === t
-                      ? "bg-[#1656A5] text-white border-[#1656A5]"
-                      : "border-[#1656A5] text-[#1656A5]"
-                  }`}
+                  className={`px-3 py-2 rounded-[14px] border text-[14px] font-medium ${inputs.what === t
+                    ? "bg-[#1656A5] text-white border-[#1656A5]"
+                    : "border-[#1656A5] text-[#1656A5]"
+                    }`}
                 >
                   {t}
                 </button>
@@ -425,237 +424,6 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
   );
 }
 
-
-
-// /* -------------------- MEGA MENU DATA -------------------- */
-// const megaMenuData: Record<string, any> = {
-//   "About Us": {
-//     image: "/Navbar/about-image.png",
-//     columns: [
-//       {
-//         title: "Discover Us",
-//         links: [
-//           { label: "Why Progenesis", path: "/about-us#why-1" },
-//           { label: "Our Approach", path: "/about-us#our-approach" },
-//           { label: "Our Vision & Mission", path: "/about-us#our-vision" },
-//           { label: "Why choose us", path: "/about-us#why-choose-us" },
-//           { label: "Leadership Team", path: "/leadership-team" },
-//           { label: "Impact & Growth", path: "/about-us#impact-growth" },
-//           { label: "FAQs", path: "/about-us#faqs" },
-//         ],
-//       },
-//       {
-//         title: "Quick Links",
-//         links: [
-//           { label: "Book Appointment", path: "/appointment", isButton: true },
-//           { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-//           { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
-//           { label: "Take a Quiz", path: "/quiz", isarrow: true },
-//           { label: "Online Consult", path: "/online-consult", isarrow: true },
-//           { label: "EMI Options", path: "/emi-options", isarrow: true },
-//         ],
-//       },
-//       {
-//         links: [
-//           { label: "Fellowship", path: "/fellowship", isarrow: true },
-//           { label: "Our Centers", path: "/centers", isarrow: true },
-//           { label: "Our Social Impact", path: "/social-impact", isarrow: true },
-//         ],
-//       },
-//     ],
-//   },
-//   "Infertility Issues": {
-//     image: "/Navbar/infertility-image.png",
-//     columns: [
-//       {
-//         title: "Know Infertility",
-//         links: [
-//           {
-//             label: "What is Infertility",
-//             path: "/infertility-issues#what",
-//             submenu: [
-//               { label: "Overview", path: "/infertility-issues/overview" },
-//               { label: "Symptoms", path: "/infertility-issues/symptoms" },
-//               { label: "Diagnosis", path: "/infertility-issues/diagnosis" },
-//               { label: "Treatment Options", path: "/infertility-issues/treatments" },
-//             ],
-//           },
-//           {
-//             label: "Female Infertility Causes",
-//             path: "/infertility-issues#female",
-//             submenu: [
-//               { label: "Repeated IUI Failures", path: "/infertility-issues/overview" },
-//               { label: "Repeated IVF Failures", path: "/infertility-issues/symptoms" },
-//               { label: "Pregnancy after Menopause", path: "/infertility-issues/diagnosis" },
-//               { label: "Low AMH", path: "/infertility-issues/treatments" },
-//               { label: "PCOS", path: "/infertility-issues/treatments" },
-//               { label: "Tubal Blockage", path: "/infertility-issues/treatments" },
-//               { label: "Fibroids", path: "/infertility-issues/treatments" },
-//               { label: "Endometriosis", path: "/infertility-issues/treatments" },
-//             ],
-//           },
-//           {
-//             label: "Male Infertility Causes",
-//             path: "/infertility-issues#male",
-//             submenu: [
-//               { label: "Azoospermia", path: "/infertility-issues/overview" },
-//               { label: "Low Sperm Count", path: "/infertility-issues/symptoms" },
-//               { label: "Erectile Dysfunction (ED)", path: "/infertility-issues/diagnosis" },
-//             ],
-//           },
-//           { label: "Real Stories. Real Miracles.", path: "/stories" },
-//         ],
-//       },
-//     ],
-//   },
-//   "Our Centers": {
-//     image: "/Navbar/infertility-image.png",
-//     columns: [
-//       {
-//         title: "Where We Are",
-//         links: centersData
-//           .map((center) => ({
-//             label: center.name,
-//             path: `/centers/${center.name.toLowerCase()}`,
-//           }))
-//           .slice(0, 9),
-//       },
-//     ],
-//   },
-//   Treatments: {
-//     image: "/Navbar/infertility-image.png",
-//     columns: [
-//       {
-//         title: "Fertility Solutions",
-//         links: [
-//           { label: "Your Path to Parenthood", path: "/treatments#ivf" },
-//           { label: "Advanced Infertility Treatments", path: "/treatments#iui" },
-//           { label: "Infertility Treatments", path: "/treatments#icsi" },
-//         ],
-//       },
-//     ],
-//   },
-// };
-
-
-// /* -------------------- MEGA MENU -------------------- */
-// const MegaMenu = ({ menu }: { menu: any }) => {
-//   const [expandedLink, setExpandedLink] = useState<string | null>(null);
-//   if (!menu) return null;
-
-//   return (
-//     <div className="fixed left-1/2 top-[100px] -translate-x-1/2 bg-white shadow-lg rounded-2xl z-50 w-[90vw] max-w-[1646px] flex gap-8 p-6">
-//       {/* Left Image */}
-//       {menu.image && (
-//         <div className="hidden lg:block w-[350px] max-h-[450px] flex-shrink-0">
-//           <Image
-//             src={menu.image}
-//             alt="menu-img"
-//             width={350}
-//             height={350}
-//             className="w-full h-full object-cover rounded-lg"
-//           />
-//         </div>
-//       )}
-
-//       {/* Divider */}
-//       <div
-//         className="w-[1px]"
-//         style={{ background: "rgba(22, 86, 165, 0.05)", height: "auto" }}
-//       />
-
-//       {/* Columns */}
-//       <div className="flex flex-1">
-//         {menu.columns.map((col: any, idx: number) => (
-//           <React.Fragment key={idx}>
-//             <div className="flex-1">
-//               {col.title && (
-//                 <h3 className="text-[28px] font-normal leading-normal tracking-[-0.56px] text-[#2C2C2C] font-[Manrope] mb-[30px]">
-//                   {col.title}
-//                 </h3>
-//               )}
-
-//               <ul className="space-y-2 w-[180px] text-left">
-//                 {col.links.map((link: any, i: number) => (
-//                   <li key={i} className="mb-4">
-//                     {link.isButton ? (
-//                       // BOOK APPOINTMENT
-//                       <Link
-//                         href={link.path}
-//                         className="flex items-center justify-center gap-2 w-full px-4 py-[10px] rounded-[8px] bg-[#1656A5] text-white font-[Manrope] text-[14px] font-semibold leading-[24px] tracking-[-0.28px] hover:bg-[#12498C] transition"
-//                       >
-//                         {link.label}
-//                         <svg
-//                           xmlns="http://www.w3.org/2000/svg"
-//                           width="12"
-//                           height="12"
-//                           viewBox="0 0 12 12"
-//                           fill="none"
-//                           className="shrink-0"
-//                         >
-//                           <path
-//                             d="M1.37624 5.5498L10.0103 5.6986M10.0103 5.6986L5.56228 1.36376M10.0103 5.6986L5.76761 9.94124"
-//                             stroke="white"
-//                             strokeLinecap="round"
-//                             strokeLinejoin="round"
-//                           />
-//                         </svg>
-//                       </Link>
-//                     ) : link.isarrow ? (
-//                       // SIMPLE ARROW LINK
-//                       <Link
-//                         href={link.path}
-//                         className="flex items-center justify-between w-full text-[#2C2C2C] font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
-//                       >
-//                         <span>{link.label}</span>
-//                         <ChevronDown size={14} />
-//                       </Link>
-//                     ) : (
-//                       // NORMAL LINK + INLINE SUBMENU
-//                       <div
-//                         onMouseEnter={() => setExpandedLink(link.label)}
-//                         onMouseLeave={() => setExpandedLink(null)}
-//                       >
-//                         <Link
-//                           href={link.path}
-//                           className="block text-[#2C2C2C] font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] w-full flex items-center gap-2 rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
-//                         >
-//                           {link.label}
-//                         </Link>
-//                         {link.submenu && expandedLink === link.label && (
-//                           <ul className="ml-4 mt-2 space-y-1 animate-fadeIn">
-//                             {link.submenu.map((sublink: any, subIdx: number) => (
-//                               <li key={subIdx}>
-//                                 <Link
-//                                   href={sublink.path}
-//                                   className="block text-[#969696] font-[Manrope] text-[13px] leading-[22px] tracking-[-0.26px] hover:text-[#1656A5] transition"
-//                                 >
-//                                   {sublink.label}
-//                                 </Link>
-//                               </li>
-//                             ))}
-//                           </ul>
-//                         )}
-//                       </div>
-//                     )}
-//                   </li>
-//                 ))}
-//               </ul>
-//             </div>
-
-//             {/* Divider */}
-//             {idx < menu.columns.length - 1 && (
-//               <div
-//                 className="w-[1px] mx-6"
-//                 style={{ background: "rgba(22, 86, 165, 0.05)" }}
-//               />
-//             )}
-//           </React.Fragment>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
 
 
 /* -------------------- DROPDOWN DATA -------------------- */
@@ -1089,13 +857,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                         className="
             flex items-center justify-between w-full
             text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-            hover:text-[#1656A5]
-
-                rounded-[8px]
-    transition-all duration-200
-    hover:bg-[rgba(22,86,165,0.10)]
-    hover:px-4 hover:py-[10px]
-          "
+            hover:text-[#1656A5] rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
                       >
                         <span>{link.label}</span>
                         <svg
@@ -1124,9 +886,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                       >
                         <Link
                           href={link.path}
-                          className="block text-[#2C2C2C] font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] 
-     hover:text-[#1656A5] w-full flex items-center gap-2 rounded-[8px] 
-     transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
+                          className="block text-[#2C2C2C] font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] w-full flex items-center gap-2 rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
                         >
                           {link.label}
                         </Link>
@@ -1141,8 +901,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                               <li key={subIdx}>
                                 <Link
                                   href={sublink.path}
-                                  className="block text-[#555] font-[Manrope] text-[14px] leading-[22px]
-                     hover:text-[#1656A5] transition-all duration-150"
+                                  className="block text-[#555] font-[Manrope] text-[14px] leading-[22px] hover:text-[#1656A5] transition-all duration-150"
                                 >
                                   {sublink.label}
                                 </Link>
@@ -1150,25 +909,12 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                             ))}
                           </ul>
                         )}
-
-
-
-
-
                       </div>
-
                     )}
                   </li>
                 ))}
               </ul>
-
-
-
-
-
-
             </div>
-
             {/* Divider (not after last column) */}
             {idx < menu.columns.length - 1 && (
               <div
@@ -1185,6 +931,10 @@ const MegaMenu = ({ menu }: { menu: any }) => {
     </div>
   );
 };
+
+
+
+
 
 /* -------------------- NAVBAR -------------------- */
 export default function Navbar() {
@@ -1245,13 +995,13 @@ export default function Navbar() {
 
 
   const pathname = usePathname();
-// Close mobile menu automatically on route change
-useEffect(() => {
-  setIsMobileMenuOpen(false);
-  setIsSearchOpen(false);
-  setOpenMenu(null);
-  document.body.style.overflow = "";
-}, [pathname]);
+  // Close mobile menu automatically on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsSearchOpen(false);
+    setOpenMenu(null);
+    document.body.style.overflow = "";
+  }, [pathname]);
 
 
   const closeTimeoutRef = useRef<number | null>(null);
@@ -1460,7 +1210,7 @@ useEffect(() => {
 
 
             {/* LINKS */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-3">
+            <div className="flex-1 overflow-y-auto px-6 py-4 divide-y divide-[#EDEDED]">
               {/* MAIN MENU */}
               {!activeMobileSubmenu ? (
                 <>
@@ -1655,16 +1405,66 @@ useEffect(() => {
                                             />
                                           </svg>
                                         </Link>
-                                      ) : (
-                                        /* Default */
-                                        <Link
-                                          href={link.path}
-                                          onClick={() => setIsMobileMenuOpen(false)}
-                                          className="block text-[#4B5563] text-[13px] font-[Manrope] hover:text-[#1656A5] transition"
-                                        >
-                                          {link.label}
-                                        </Link>
-                                      )}
+                                      ) /* Default / with submenu support for mobile */
+                                        : link.submenu ? (
+                                          // Render a button that toggles showing the submenu items in mobile
+                                          <div>
+                                            <button
+                                              type="button"
+                                              onClick={() =>
+                                                setActiveMobileSubmenuItem(
+                                                  activeMobileSubmenuItem === link.label ? null : link.label
+                                                )
+                                              }
+                                              className="w-full flex items-center justify-between px-0 py-2 text-left text-[#4B5563] text-[14px] font-[Manrope] hover:text-[#1656A5] transition"
+                                              aria-expanded={activeMobileSubmenuItem === link.label}
+                                              aria-controls={`mobile-submenu-${j}`}
+                                            >
+                                              <span>{link.label}</span>
+                                              <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="18"
+                                                height="18"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                className={`transform transition-transform duration-200 ${activeMobileSubmenuItem === link.label ? "rotate-90" : "rotate-0"}`}
+                                              >
+                                                <path d="M9 6L15 12L9 18" stroke="#7E7E7E" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                                              </svg>
+                                            </button>
+
+                                            {/* Collapsible submenu */}
+                                            {activeMobileSubmenuItem === link.label && (
+                                              <ul id={`mobile-submenu-${j}`} className="mt-2 pl-4 space-y-2">
+                                                {link.submenu.map((sublink: any, subIdx: number) => (
+                                                  <li key={subIdx}>
+                                                    <Link
+                                                      href={sublink.path}
+                                                      onClick={() => {
+                                                        setIsMobileMenuOpen(false);
+                                                        setActiveMobileSubmenu(null);
+                                                        setActiveMobileSubmenuItem(null);
+                                                      }}
+                                                      className="block text-[#4B5563] text-[13px] font-[Manrope] hover:text-[#1656A5] transition px-2 py-1"
+                                                    >
+                                                      {sublink.label}
+                                                    </Link>
+                                                  </li>
+                                                ))}
+                                              </ul>
+                                            )}
+                                          </div>
+                                        ) : (
+                                          // unchanged default link behavior for items without submenu
+                                          <Link
+                                            href={link.path}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                            className="block text-[#4B5563] text-[13px] font-[Manrope] hover:text-[#1656A5] transition"
+                                          >
+                                            {link.label}
+                                          </Link>
+                                        )
+                                    }
                                   </li>
                                 ))}
 
