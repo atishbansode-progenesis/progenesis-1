@@ -90,8 +90,8 @@ const TreatmentsSection = () => {
           {treatments.map((item, index) => {
             const isSmall = index === 2 || index === 3;
             const widthClass = isSmall
-              ? "2xl:w-[31%] lg:w-[48.5%] sm:w-[30%] min-w-[280px]"
-              : "2xl:w-[32%] lg:w-[48.5%] sm:w-[30%] min-w-[280px]";
+              ? "lg:w-[27.5%] sm:w-[30%] min-w-[280px]"
+              : "lg:w-[34%] sm:w-[30%] min-w-[280px]";
 
             return (
               <div
@@ -133,14 +133,14 @@ const TreatmentsSection = () => {
                 {/* Arrow Button (Clickable Link) */}
                 <Link href={item.link} passHref>
                   <div
-                    className={`absolute top-4 left-4 w-8 h-8 flex items-center justify-center rounded-lg transition ${
+                    className={`absolute top-4 left-4 w-8 md:w-14 md:h-14 h-8 flex items-center justify-center rounded-lg transition ${
                       selected === index
                         ? "bg-[#1656A5]"
                         : "bg-gray-100 hover:bg-[#1656A5]"
                     }`}
                   >
                     <ArrowRight
-                      className={`w-4 h-4 ${
+                      className={`w-4 h-4 md:w-5 md:h-5 ${
                         selected === index
                           ? "text-white"
                           : "text-gray-600 hover:text-white"

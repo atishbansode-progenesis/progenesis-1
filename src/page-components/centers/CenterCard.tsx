@@ -19,10 +19,7 @@ export interface Center {
     lat: number;
     lng: number;
   };
-  timings?: {
-    weekdays: string;
-    weekends: string;
-  };
+  
 }
 
 // Centers data
@@ -43,10 +40,7 @@ export const centersData: Center[] = [
       lat: 19.13711948,
       lng: 72.8323002
     },
-    timings: {
-      weekdays: "8:00 AM - 9:00 PM",
-      weekends: "9:00 AM - 5:00 PM"
-    }
+    
   },
   {
     id: 2,
@@ -64,10 +58,7 @@ export const centersData: Center[] = [
       lat: 19.2319173,
       lng: 72.97594
     },
-    timings: {
-      weekdays: "9:00 AM - 8:00 PM",
-      weekends: "9:00 AM - 2:00 PM"
-    }
+   
   },
   {
     id: 3,
@@ -85,10 +76,7 @@ export const centersData: Center[] = [
       lat: 19.2221387,
       lng: 72.8485524
     },
-    timings: {
-      weekdays: "9:00 AM - 7:00 PM",
-      weekends: "10:00 AM - 3:00 PM"
-    }
+   
   },
   {
     id: 4,
@@ -106,10 +94,7 @@ export const centersData: Center[] = [
       lat: 18.5542529,
       lng: 73.8092704
     },
-    timings: {
-      weekdays: "9:00 AM - 8:00 PM",
-      weekends: "9:00 AM - 4:00 PM"
-    }
+    
   },
   {
     id: 5,
@@ -127,10 +112,7 @@ export const centersData: Center[] = [
       lat: 20.0009439,
       lng: 73.7620231
     },
-    timings: {
-      weekdays: "9:00 AM - 7:00 PM",
-      weekends: "9:00 AM - 2:00 PM"
-    }
+   
   },
   {
     id: 6,
@@ -148,10 +130,7 @@ export const centersData: Center[] = [
       lat: 21.00143072,
       lng: 75.5610411
     },
-    timings: {
-      weekdays: "9:00 AM - 6:00 PM",
-      weekends: "10:00 AM - 2:00 PM"
-    }
+   
   },
   {
     id: 7,
@@ -169,10 +148,7 @@ export const centersData: Center[] = [
       lat: 19.0858784,
       lng: 72.9051982
     },
-    timings: {
-      weekdays: "9:00 AM - 8:00 PM",
-      weekends: "9:00 AM - 3:00 PM"
-    }
+   
   },
   {
     id: 8,
@@ -190,10 +166,7 @@ export const centersData: Center[] = [
       lat: 19.0565633,
       lng: 73.0035369
     },
-    timings: {
-      weekdays: "9:00 AM - 7:00 PM",
-      weekends: "10:00 AM - 2:00 PM"
-    }
+    
   },
   {
     id: 9,
@@ -211,10 +184,7 @@ export const centersData: Center[] = [
       lat: 19.4530572,
       lng: 72.7986412
     },
-    timings: {
-      weekdays: "9:00 AM - 6:00 PM",
-      weekends: "10:00 AM - 1:00 PM"
-    }
+    
   },
   {
     id: 10,
@@ -232,10 +202,7 @@ export const centersData: Center[] = [
       lat: 19.2406614,
       lng: 73.1296727
     },
-    timings: {
-      weekdays: "9:00 AM - 7:00 PM",
-      weekends: "9:00 AM - 2:00 PM"
-    }
+   
   },
   {
     id: 11,
@@ -253,10 +220,7 @@ export const centersData: Center[] = [
       lat: 18.9879311,
       lng: 73.1141176
     },
-    timings: {
-      weekdays: "9:00 AM - 6:00 PM",
-      weekends: "10:00 AM - 2:00 PM"
-    }
+    
   },
   {
     id: 12,
@@ -274,10 +238,7 @@ export const centersData: Center[] = [
       lat: 21.0143072,
       lng: 75.5610411
     },
-    timings: {
-      weekdays: "9:00 AM - 7:00 PM",
-      weekends: "9:00 AM - 1:00 PM"
-    }
+    
   },
   {
     id: 13,
@@ -295,10 +256,7 @@ export const centersData: Center[] = [
       lat: 18.9353097,
       lng: 73.2963966
     },
-    timings: {
-      weekdays: "9:00 AM - 8:00 PM",
-      weekends: "9:00 AM - 3:00 PM"
-    }
+   
   },
   {
     id: 14,
@@ -316,10 +274,7 @@ export const centersData: Center[] = [
       lat: 16.7034419,
       lng: 74.2377609
     },
-    timings: {
-      weekdays: "9:00 AM - 7:00 PM",
-      weekends: "10:00 AM - 2:00 PM"
-    }
+    
   },
   {
     id: 15,
@@ -337,10 +292,7 @@ export const centersData: Center[] = [
       lat: 20.9157935,
       lng: 77.7531131
     },
-    timings: {
-      weekdays: "9:00 AM - 6:00 PM",
-      weekends: "10:00 AM - 1:00 PM"
-    }
+    
   },
   {
     id: 16,
@@ -358,10 +310,7 @@ export const centersData: Center[] = [
       lat: 19.1151738,
       lng: 74.7296822
     },
-    timings: {
-      weekdays: "9:00 AM - 7:00 PM",
-      weekends: "9:00 AM - 2:00 PM"
-    }
+   
   },
   // Additional centers confirmed via official sources
 ];
@@ -403,7 +352,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
     <div onClick={() => {
               router.push(`/centers/${centerData.slug}`);
             }}
-     className="flex flex-col hover:cursor-pointer md:flex-row gap-4 bg-[#FFFFFF] hover:bg-[#1656A50D] rounded-xl overflow-hidden transition-shadow">
+     className="flex flex-col hover:cursor-pointer md:flex-row gap-4 bg-[#FFFFFF] hover:bg-[#1656A50D]  rounded-[16px] overflow-hidden transition-shadow">
       {/* Image Container */}
       <div className=" p-4 relative w-full  h-[100%] md:h-[444px]">
         <img
@@ -424,11 +373,6 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
             {address}
           </p>
 
-          {/* Timings */}
-          <div className="text-sm md:text-xl text-gray-600 mb-4">
-            <p><span className="font-medium">Weekdays:</span> {centerData.timings?.weekdays}</p>
-            <p><span className="font-medium">Weekends:</span> {centerData.timings?.weekends}</p>
-          </div>
 
           {/* Services */}
           {centerData.services && centerData.services.length > 0 && (
@@ -439,7 +383,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-start justify-between flex-col md:flex-row gap-3 mt-4">
+        <div className="flex items-start justify-between flex-col md:flex-row gap-3 mt-7">
           <button 
             onClick={() => {
               if (centerData.coordinates) {
@@ -453,7 +397,9 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
             className={`h-10 text-sm font-medium hover:cursor-auto flex items-center underline decoration-[#2C2C2C] justify-center gap-2 ${
               !centerData.coordinates && !centerData.address
                 ? 'text-gray-400 cursor-not-allowed'
-                : 'text-[#2C2C2C] hover:text-[#1656A5] transition-colors'
+                : 'text-[#2C2C2C] hover:text-[#1656A5] transition-colors'}
+                  lg:mt-4
+                
             }`}
           >
             {/* <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -462,15 +408,19 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
             </svg> */}
             {centerData.coordinates ? 'Get Location' : 'View on Map'}
           </button>
-          <button 
-          
-            className="h-10 px-4 hover:cursor-auto rounded-xl text-sm font-medium text-[#1656A5] bg-white border border-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors flex items-center justify-center gap-2"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            Book Appointment
-          </button>
+<button
+  className="flex items-center justify-center w-[121px] h-[40px] rounded-[8px] border border-[#1656A5] px-[10px] py-[10px] bg-white hover:bg-[#1656A5] hover:text-white transition-colors whitespace-nowrap
+             lg:w-[158px] lg:h-[56px] lg:rounded-[16px] lg:px-2 lg:py-2"
+>
+  <span className="font-manrope font-medium text-[12px] leading-[20px] text-[#1656A5] w-[101px] h-[20px] text-center lg:text-sm lg:leading-[24px]">
+    Book Appointment
+  </span>
+</button>
+
+
+
+
+
         </div>
       </div>
     </div>

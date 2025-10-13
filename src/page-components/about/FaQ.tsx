@@ -16,21 +16,51 @@ const tabs: Tab[] = [
         q: "What is infertility?",
         a: "Inability to get pregnant after a year under 35, or 6 months over 35, may indicate infertility. Consult a fertility specialist to determine the cause and get treatment.",
       },
-      { q: "What causes infertility?", a: "Infertility can be caused by ovulation issues, low sperm count or motility, blocked tubes, hormonal problems, age, lifestyle, or unexplained factors." },
-      { q: "What can cause infertility in Women?", a: "Common causes include PCOS, endometriosis, tubal blockage, ovulation disorders, thyroid imbalance, and age-related decline." },
-      { q: "How Common is infertility?", a: "Roughly 10–15% of couples experience infertility, and many benefit from timely evaluation and treatment." },
-      { q: "What can cause infertility in Men?", a: "Low sperm count, poor motility or morphology, infections, varicocele, hormonal issues, or lifestyle factors can contribute." },
-      { q: "When should I seek consultation for infertility?", a: "Seek consultation after 12 months of trying (or 6 months if over 35), or earlier if you have known medical concerns." },
-      { q: "What can cause infertility in Men?", a: "Evaluation by a specialist can identify causes and guide options like lifestyle changes, medication, IUI, or IVF." },
-      { q: "Can I improve my fertility?", a: "Yes, adopting a healthy lifestyle with balanced nutrition, regular exercise, avoiding tobacco and excessive alcohol, and managing stress can improve fertility outcomes for both men and women." },
+      {
+        q: "What causes infertility?",
+        a: "Infertility can be caused by ovulation issues, low sperm count or motility, blocked tubes, hormonal problems, age, lifestyle, or unexplained factors.",
+      },
+      {
+        q: "What can cause infertility in Women?",
+        a: "Common causes include PCOS, endometriosis, tubal blockage, ovulation disorders, thyroid imbalance, and age-related decline.",
+      },
+      {
+        q: "How Common is infertility?",
+        a: "Roughly 10–15% of couples experience infertility, and many benefit from timely evaluation and treatment.",
+      },
+      {
+        q: "What can cause infertility in Men?",
+        a: "Low sperm count, poor motility or morphology, infections, varicocele, hormonal issues, or lifestyle factors can contribute.",
+      },
+      {
+        q: "When should I seek consultation for infertility?",
+        a: "Seek consultation after 12 months of trying (or 6 months if over 35), or earlier if you have known medical concerns.",
+      },
+      {
+        q: "What can cause infertility in Men?",
+        a: "Evaluation by a specialist can identify causes and guide options like lifestyle changes, medication, IUI, or IVF.",
+      },
+      {
+        q: "Can I improve my fertility?",
+        a: "Yes, adopting a healthy lifestyle with balanced nutrition, regular exercise, avoiding tobacco and excessive alcohol, and managing stress can improve fertility outcomes for both men and women.",
+      },
     ],
   },
   {
     label: "Pricing & Packages",
     items: [
-      { q: "Do you offer packages?", a: "Yes, we offer transparent packages tailored to treatment needs. Contact our team for current details." },
-      { q: "Are there financing options?", a: "We can guide you to financing partners and flexible payment schedules where available." },
-      { q: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.", a: "Are there financing options available?" },
+      {
+        q: "Do you offer packages?",
+        a: "Yes, we offer transparent packages tailored to treatment needs. Contact our team for current details.",
+      },
+      {
+        q: "Are there financing options?",
+        a: "We can guide you to financing partners and flexible payment schedules where available.",
+      },
+      {
+        q: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.",
+        a: "Are there financing options available?",
+      },
     ],
   },
   {
@@ -69,56 +99,63 @@ const tabs: Tab[] = [
 
 const FaQ: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
-  // By default, no question is open
   const [openIndex, setOpenIndex] = useState(-1);
 
   const handleTab = (idx: number) => {
     setActiveTab(idx);
-    // reset open state, no question open by default
     setOpenIndex(-1);
   };
 
   const activeItems = tabs[activeTab].items;
 
   return (
-    <section id="faqs" className="section-spacing w-full csLg:h-[850px] bg-[#FAFAFA] px-6 md:px-10 lg:px-[90px] py-10 md:py-14 lg:py-16 font-[Manrope]" >
-      <div className="grid grid-cols-1 md:grid-cols-[360px_1fr] lg:grid-cols-[420px_1fr] gap-6 md:gap-8 lg:gap-10">
+    <section
+      id="faqs"
+      className="w-full bg-[#FAFAFA] px-6 md:px-10 lg:px-[120px] py-10 md:py-14 lg:py-20 font-[Manrope]"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] lg:grid-cols-[500px_1fr] gap-10 md:gap-[80px] lg:gap-[120px] items-start">
         {/* Left intro */}
         <div>
-          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px]">FAQ's</span>
-          <div style={{paddingBottom:'20px'}}>
-          <h2 className="text-[36px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
-            Quick answers to the
-            
-            <span className="text-[#94BA3D]"> most common</span>
-            <br />
-            <span className="text-[#94BA3D]">fertility-related</span>
-            <br />
-           <span className="text-[#94BA3D]">questions.</span> 
-          </h2></div>
-          <p className="mt-6 text-[13px] md:text-[16px] md:leading-6 font-normal text-[#2C2C2C]">
+          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px]">
+            FAQ's
+          </span>
+          <div className="pb-5">
+            <h2 className="lg:text-[48px] text-[32px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
+              Quick answers to  the
+              
+              <span className="text-[#94BA3D]"> most common</span>
+              <br />
+              <span className="text-[#94BA3D]">fertility-related</span>
+              <br />
+              <span className="text-[#94BA3D]">questions.</span>
+            </h2>
+          </div>
+          <p className="mt-6 text-[16px] md:text-[16px] md:leading-6 font-normal text-[#2C2C2C]">
             Didn’t find what you are looking for?
             <br />
-            Checkout <span className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px] ">Patient Resources</span> section to know more.
+            Checkout{" "}
+            <span className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px]">
+              Patient Resources
+            </span>{" "}
+            section to know more.
           </p>
         </div>
 
         {/* Right content */}
-        <div>
+        <div className="max-w-[832px] w-full">
           {/* Tabs */}
-          <div className="flex flex-wrap gap-2 mb-6" >
+          <div className="flex flex-wrap gap-2 mb-6">
             {tabs.map((t, idx) => {
               const active = idx === activeTab;
               return (
                 <button
                   key={t.label}
                   onClick={() => handleTab(idx)}
-                  className={`h-[56px] w-auto px-4 rounded-[16px] border text-sm font-medium hover:cursor-pointer transition-colors ${
+                  className={`lg:h-[56px] lg:w-auto h-[40px] w-auto lg:px-4 lg:rounded-[16px] rounded-[8px] px-3 border text-sm font-medium hover:cursor-pointer transition-colors ${
                     active
                       ? "bg-[#1656A5] text-white border-[#1656A5]"
-                      : "bg-[#FFFFFF] text-[#1656A5] border-[#1656A5] "
+                      : "bg-[#FFFFFF] text-[#1656A5] border-[#1656A5]"
                   }`}
-                  
                 >
                   {t.label}
                 </button>
@@ -133,20 +170,30 @@ const FaQ: React.FC = () => {
               return (
                 <div
                   key={i}
-                  className={`bg-[#FFFFFF] overflow-hidden rounded-[16px] ${
-                    open 
-                  }`}
+                  className={`bg-[#FFFFFF] overflow-hidden rounded-[16px]`}
                 >
                   <button
                     aria-expanded={open}
                     onClick={() => setOpenIndex(open ? -1 : i)}
-                    className="w-full flex items-center justify-between gap-3 hover:cursor-pointer text-left md:py-4 py-4 rounded-2xl  text-[14px] md:text-[15px] text-[#2C2C2C]"
+                    className="w-full flex items-center justify-between gap-3 hover:cursor-pointer text-left md:py-4 py-4 rounded-2xl text-[14px] md:text-[15px] text-[#2C2C2C]"
                   >
                     <span className="pl-4 pr-2">{item.q}</span>
-                    <span className="text-gray-500 pr-2">{open ? <img src='/images/icons/upward.svg' className="w-[10px] h-[10px] object-contain" /> : <img src='/images/icons/downward.svg' className="w-[10px] h-[10px] object-contain" />}</span>
+                    <span className="text-gray-500 pr-2">
+                      {open ? (
+                        <img
+                          src="/images/icons/upward.svg"
+                          className="w-[10px] h-[10px] object-contain"
+                        />
+                      ) : (
+                        <img
+                          src="/images/icons/downward.svg"
+                          className="w-[10px] h-[10px] object-contain"
+                        />
+                      )}
+                    </span>
                   </button>
                   {open && (
-                    <div className="pl-4 pb-4 pr-4  text-left md:text-[16px] md:leading-6 text-[14px] text-[#4B5563]" >
+                    <div className="pl-4 pb-4 pr-4 text-left md:text-[16px] md:leading-6 text-[14px] text-[#4B5563]">
                       {item.a}
                     </div>
                   )}

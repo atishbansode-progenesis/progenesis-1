@@ -219,7 +219,7 @@ const BannerOfApproach: React.FC = () => {
                 <div className="grid grid-cols-1 gap-2 max-w-[1100px] pt-5">
                   {s.features.map((item, idx) => (
                     <div key={idx} className="flex flex-col gap-2">
-                      <img src={item.icon} alt={item.title} className="w-[30px] h-[30px] object-contain" />
+                      <img src={item.icon} alt={item.title} className="w-[28px] h-[28px] object-contain" />
                       <h4 className="font-semibold text-[#F9F9F9] text-[15px]">{item.title}</h4>
                       <p className="text-[13px] text-gray-200 leading-[18px]">{item.desc}</p>
                     </div>
@@ -273,13 +273,15 @@ const BannerOfApproach: React.FC = () => {
                   {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-[1100px] pb-4">
-                  {s.features.map((item, idx) => (
-                    <div key={idx} className="flex flex-col gap-2">
-                      <img src={item.icon} alt={item.title} className="w-[30px] h-[30px] object-contain" />
-                      <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
-                      <p className="text-sm text-gray-200">{item.desc}</p>
-                    </div>
+<div className="grid grid-cols-2 md:grid-cols-4 gap-x-[150px] gap-y-8  max-w-[1100px] pb-4">
+  {s.features.map((item, idx) => (
+    <div key={idx} className="flex flex-col gap-2">
+      <img src={item.icon} alt={item.title} className="lg:w-[30px] lg:h-[30px]  object-contain" />
+      <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
+      <p className="text-sm text-gray-200">{item.desc}</p>
+    </div>
+
+
                   ))}
                 </div>
               </div>

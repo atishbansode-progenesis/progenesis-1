@@ -132,21 +132,29 @@ const [activeTab, setActiveTab] = useState<string>("path");
       title: "Class-1000 Modular Lab – Ultra-Clean Environment",
       description:
         "Maintains sterile lab conditions, ensuring safe and contamination-free procedures.",
+      slug: "class-1000-modular-lab",
+      category: "advanced",
     },
     {
       title: "Trigas Incubators – Natural Growth Support",
       description:
         "Mimics womb-like conditions with precise oxygen, carbon dioxide, and nitrogen balance.",
+      slug: "trigas-incubators",
+      category: "advanced",
     },
     {
       title: "Witness System – Total Safety Assurance",
       description:
         "Uses RFID tracking to prevent errors in gamete and embryo handling.",
+      slug: "witness-system",
+      category: "advanced",
     },
     {
       title: "Cryopreservation – Secure Future Fertility",
       description:
         "Safely freezes and stores eggs, sperm, or embryos for future use.",
+      slug: "cryopreservation",
+      category: "advanced",
     },
   ];
 
@@ -405,7 +413,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {advancedFacilities.map((item, idx) => (
-            <FeatureCard key={idx} title={item.title} description={item.description} />
+            <FeatureCard key={idx} title={item.title} description={item.description} href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : undefined} />
           ))}
         </div>
       </section>

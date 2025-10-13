@@ -33,8 +33,8 @@ const OurStories: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
-    <section id="why-1" className="w-full bg-white">
-  <div className="section-spacing max-w-[2000px] mx-auto px-4 lg:px-8">
+    <section id="why-1" className="w-full bg-white overflow-hidden">
+  <div className="section-spacing max-w-[2500px] md:max-h-[1500px]  mx-auto px-4 lg:px-8">
     {/* Desktop layout */}
     <div className="hidden lg:grid lg:grid-cols-[400px_1fr] csLg:grid-cols-[400px_1fr] gap-6 lg:gap-10 xl:gap-x-32">
           {/* Left Column: Heading + Tab List */}
@@ -48,10 +48,10 @@ const OurStories: React.FC = () => {
             </div>
 
             {/* Tab List */}
-            <div className="flex flex-col pt-4">
+            <div className="flex flex-col col-span-3 pt-4">
               {tabItems.map((item, index) => (
-                <div key={index}>
-                  <div className="h-[1px] w-full bg-[#A5A5A5] relative">
+                <div key={index} className=''>
+                  <div className="h-[1px] w-full bg-[#A5A5A5]  relative ">
                     {activeTab === index && (
                       <div className="absolute left-0 top-[-1px] h-[2px] w-32 bg-[#1656A5]" />
                     )}
@@ -87,15 +87,15 @@ const OurStories: React.FC = () => {
           {/* Right Column: Paragraph + Image + Info Box */}
           <div className="flex flex-col gap-10">
             {/* Paragraph (top of right column) */}
-            <p className="text-[16px] line-height-[24px] text-[#2C2C2C] lg:line-height-[40px] lg:text-[32px]">
+            <p className="text-[16px] line-height-[24px] tracking-tight text-[#2C2C2C] lg:line-height-[40px] lg:text-[32px]">
               We believe every hopeful parent deserves a team that listens, cares, and fights to make
               dreams a reality — with science, empathy, and unwavering support.
             </p>
 
             {/* Image + Info Box */}
-            <div className="flex flex-col lg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden">
+            <div className="flex flex-col csLg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden">
               {/* Image */}
-              <div className="w-full bg-[#E8EFF6] lg:max-w-[480px] csLg:h-[500px] xl:max-w-[520px] aspect-[4/3] rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <div className="w-full bg-[#E8EFF6] max-w-[300px] lg:min-h-[300px] max-h-[300px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
                 <img
                   src={tabItems[activeTab].image}
                   alt={tabItems[activeTab].title}
@@ -104,15 +104,15 @@ const OurStories: React.FC = () => {
               </div>
 
               {/* Info Box */}
-              <div className="flex flex-col justify-start gap-4 w-full lg:flex-1 lg:max-w-[440px] xl:max-w-[400px] pt-2.5 px-4">
+              <div className="flex flex-col justify-start min-w-[120px] gap-4 w-full lg:flex-1  pt-2.5 px-4">
                 <div>
                 <h3 className="text-[#94BA3D] mb-[4px]">{tabItems[activeTab].storyNumber}</h3>
-                <h3 className="text-[#1656A5] font-medium text-3xl md:text-[28px] lg:text-[32px] leading-tight font-[Manrope]">
+                <h3 className="text-[#1656A5] font-medium text-[16px] lg:text-[32px] lg:leading-[40px] tracking-tight font-[Manrope]">
                   {tabItems[activeTab].heading}
                 </h3>
                 </div>
                 
-                <p className="text-[16px] line-height-[24px] text-[#2C2C2C] tracking-tight font-[Manrope] lg:text-[16px] lg:line-height-[24px]">
+                <p className="text-[14px] line-height-[20px] text-[#2C2C2C] tracking-tight font-[Manrope] lg:text-[16px] lg:line-height-[24px]">
                   {tabItems[activeTab].description}
                 </p>
               </div>

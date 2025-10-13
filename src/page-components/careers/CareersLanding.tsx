@@ -20,7 +20,7 @@ const CareersLanding = () => {
                             Growth & Purpose
                         </h1>
                         <div>
-                            <button className="bg-[#252525] h-[40px] text-[#F9F9F9] font-manrope csLg:text-[18px] text-[14px] rounded-xl p-2">
+                            <button className="bg-[#252525] h-10 md:h-[56px] text-[#F9F9F9] font-manrope md:text-[14px] text-[12px] md:leading-[24px] font-medium rounded-[8px] md:rounded-[16px] px-2 md:px-4 py-2">
                                 See Open Positions
                             </button>
                         </div>

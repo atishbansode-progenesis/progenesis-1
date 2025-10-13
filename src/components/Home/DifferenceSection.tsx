@@ -262,7 +262,7 @@ const DifferenceSection = () => {
       <div className="sticky top-0 h-screen flex flex-col items-start">
         <div className="max-w-4xl mx-auto text-center px-4 md:px-[80px] relative">
           {/* Label */}
-          <span className="inline-block text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-6 mt-10">
+          <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mb-6 mt-10">
             The Progenesis Difference
           </span>
 

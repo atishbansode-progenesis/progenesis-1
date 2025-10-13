@@ -43,47 +43,63 @@ const TestimonialsSection = () => {
         <div className="bg-[#1656A5] text-white p-10 flex flex-col justify-between md:w-1/4 px-6 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px] pt-[80px] md:pt-[128px]">
           <div className="md:text-left text-center">
             {/* Google Rating */}
-            <div className="flex md:flex-row md:items-end items-center justify-center md:justify-start space-x-2 mb-2">
-  {/* Mobile image */}
-  <img
-    src="/images/google.png"
-    alt="Google"
-    className="w-[71px] h-[]34px rounded-[5px] block md:hidden"
-  />
+           <div className="flex flex-row md:flex-col md:items-start items-center justify-center md:justify-start space-x-2 mb-2"> 
+  <div className="flex md:flex-row items-center md:items-start justify-center md:justify-start space-x-2 md:space-x-0">
+    
+    {/* Mobile image */}
+    <img
+      src="/images/google.png"
+      alt="Google"
+      className="w-[65px] h-[34px] rounded-[5px] block md:hidden"
+    />
 
-  {/* Desktop image */}
-  <img
-    src="/TestimonialsSection/google.png"
-    alt="Google"
-    className="w-10 h-8 rounded-[5px] hidden md:block"
-  />
+    {/* Desktop image */}
+    <img
+      src="/TestimonialsSection/google.png"
+      alt="Google"
+      className="w-10 h-10 rounded-[5px] hidden md:block mr-2"
+    />
 
-  <span className="text-3xl md:text-5xl font-[Manrope] font-semibold text-[#F9F9F9]">
-    4.9
-  </span>
-  <span className="text-lg">/5</span>
+    {/* Mobile star + rating inline */}
+    <div className="flex items-center md:hidden space-x-1">
+      <span className="text-yellow-400 text-[16px]">★</span>
+      <span className="text-[14px] font-[Manrope] font-semibold text-[#F9F9F9]">
+        4.9
+      </span>
+      <span className="text-[14px] text-[#F9F9F9]">/5</span>
+      <span className="text-[14px] text-gray-200">
+        &nbsp;Based on <span className="font-bold">14,570</span> reviews
+      </span>
+    </div>
+
+    {/* Desktop rating (unchanged) */}
+    <div className="hidden md:flex md:flex-row md:items-center">
+      <span className="text-5xl font-[Manrope] font-semibold text-[#F9F9F9] pr-1">4.9</span>
+      <span className="text-[18px] text-[#F9F9F9] pr-2">/5</span>
+    </div>
+  </div>
+
+  {/* Desktop stars (unchanged) */}
+  <div className="hidden md:flex justify-center md:justify-start items-center text-yellow-400 text-xl mb-2">
+    {Array.from({ length: 5 }).map((_, i) => {
+      const full = i + 1 <= Math.floor(rating);
+      const half = rating - i === 0.5;
+      return <span key={i}>{full ? "★" : half ? "☆" : "☆"}</span>;
+    })}
+  </div>
+
+  {/* Desktop review count (unchanged) */}
+  <p className="hidden md:block text-sm text-gray-200 mb-6 text-center md:text-left">
+    Based on <span className="font-bold">14,570</span> reviews
+  </p>
 </div>
 
-            {/* public/images/google.png */}
-
-            {/* Stars */}
-            <div className="flex justify-center md:justify-start items-center text-yellow-400 text-xl mb-2">
-              {Array.from({ length: 5 }).map((_, i) => {
-                const full = i + 1 <= Math.floor(rating);
-                const half = rating - i === 0.5;
-                return <span key={i}>{full ? "★" : half ? "☆" : "☆"}</span>;
-              })}
-            </div>
-
-            {/* Review Count */}
-            <p className="text-sm text-gray-200 mb-6 text-center md:text-left">
-              Based on <span className="font-bold">14,570</span> reviews
-            </p>
 
             {/* Heading */}
-            <h2 className="text-3xl md:text-5xl font-[Manrope] font-normal text-[#F9F9F9] text-center md:text-left">
+            <h2 className="text-[32px] md:text-5xl font-[Manrope] md:leading-[56px] leading-[40px] tracking-tight font-normal text-[#F9F9F9] text-center md:text-left">
               What our patient's are saying
             </h2>
+            
           </div>
 
           {/* Arrows only (progress bar removed) */}
@@ -92,7 +108,7 @@ const TestimonialsSection = () => {
   {/* Prev Button */}
   <button
     ref={prevRef}
-    className="group w-12 h-12 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
+    className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
   >
     {/* Default white icon */}
     <img
@@ -111,7 +127,7 @@ const TestimonialsSection = () => {
   {/* Next Button */}
   <button
     ref={nextRef}
-    className="group w-12 h-12 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
+    className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
   >
     {/* Default white icon */}
     <img
@@ -133,7 +149,7 @@ const TestimonialsSection = () => {
 
         {/* RIGHT CAROUSEL */}
         <div
-          className="relative bg-cover bg-center h-full md:w-3/4 py-[42px] md:pt-[82px]"
+          className="relative bg-cover bg-center h-full  md:w-3/4 py-[42px] pl-4 md:pl-0 md:pt-[82px]"
           style={{
             backgroundImage: "url('/TestimonialsSection/testimonial.png')",
           }}
@@ -173,7 +189,7 @@ const TestimonialsSection = () => {
             {testimonials.map((t, i) => (
               <SwiperSlide
                 key={i}
-                className="!w-[280px] md:!w-[510px]"
+                className="!w-[280px] md:!w-[590px]"
               >
                 {({ isActive }) => (
                   <div

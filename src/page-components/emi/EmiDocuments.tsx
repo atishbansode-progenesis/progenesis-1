@@ -19,11 +19,11 @@ const EmiDocuments = () => {
       <div className="relative section-spacing w-full px-6 md:px-8 lg:px-16 py-10 md:py-14 pt-9">
         {/* Badge */}
         <div className="mb-3">
-          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">Stats and Metrics</span>
+          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] font-medium md:text-[13px] leading-[20px] px-3 py-1 rounded-[8px]">Stats and Metrics</span>
         </div>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-semibold tracking-tight text-[32px] sm:text-[32px] md:text-[48px] leading-[1.1] mb-8 md:pb-8">
+        <h2 className="text-[#2C2C2C] font-normal tracking-tight text-[32px] sm:text-[32px] md:text-[48px] leading-[40px] md:leading-[56px] mb-8 md:pb-8">
           Required Documents
           <br />
           During Application.

@@ -141,7 +141,7 @@ export default function LocationsSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-8">
           <div className="md:flex-1">
-            <span className="inline-block text-xs md:text-sm font-medium text-[#1656a5] bg-blue-100 px-3 py-1 rounded-full mb-4">
+            <span className="inline-block text-xs md:text-sm font-medium text-[#1656a5] bg-[#1656A50D] px-3 py-1 rounded-[8px] mb-2 md:mb-0">
               Trusted Guidance Everywhere.
             </span>
 
@@ -183,7 +183,7 @@ export default function LocationsSection() {
                       transition={{ duration: 0.3 }}
                       className={`w-full flex justify-between items-center rounded-xl px-5 py-4 cursor-pointer`}
                     >
-                      <span className="text-lg md:text-xl font-semibold">
+                      <span className="text-lg md:text-[32px] tracking-tight md:leading-[40px] font-normal">
                         {loc.city}
                       </span>
                       <motion.span
@@ -193,7 +193,7 @@ export default function LocationsSection() {
                           rotate: isOpen ? 180 : 0
                         }}
                         transition={{ duration: 0.3 }}
-                        className={`flex items-center justify-center w-10 h-10 rounded-full border`}
+                        className={`flex items-center justify-center w-14 h-10 rounded-full border`}
                       >
                         {/* Arrow DOWN */}
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -229,7 +229,7 @@ export default function LocationsSection() {
                             >
                               <div className="pr-3">
                                 <h4
-                                  className={`text-base font-semibold ${isActive
+                                  className={`text-[32px] font-normal tracking-tight leading-[40px] ${isActive
                                       ? "text-[#1656a5]"
                                       : "text-gray-900"
                                     }`}
@@ -276,7 +276,7 @@ export default function LocationsSection() {
                 >
                   <div className="pr-3">
                     <h3
-                      className={`text-lg md:text-xl font-semibold ${isActive ? "text-[#1656a5]" : "text-gray-900"
+                      className={`text-lg md:text-[32px] tracking-tight leading-[40px] font-normal ${isActive ? "text-[#1656a5]" : "text-[#2C2C2C]"
                         }`}
                     >
                       {loc.city}
