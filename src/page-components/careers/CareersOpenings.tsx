@@ -41,7 +41,7 @@ const CareersOpenings = () => {
             className="flex items-start justify-between gap-6 py-4 md:py-8 carr-opp-padd group"
           >
             <div className="">
-              <h3 className="font-manrope text-[16px] md:text-[28px] font-semibold text-[#2C2C2C]/70 md:text-[#2C2C2C] group-hover:text-black">
+              <h3 className="font-manrope text-[24px] md:text-[28px] font-semibold text-[#2C2C2C] group-hover:text-black">
                 {job.title}
               </h3>
               <div className="mt-3 flex flex-wrap items-center gap-2 text-sm text-gray-900 group-hover:text-black">
