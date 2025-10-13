@@ -71,6 +71,8 @@ const BannerOfApproach: React.FC = () => {
       const parentRect = currentTab.parentElement!.getBoundingClientRect();
       const tabRect = currentTab.getBoundingClientRect();
       setUnderlineStyle({ left: tabRect.left - parentRect.left, width: tabRect.width });
+      // Auto-scroll tab into view
+      currentTab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     }
   }, [activeTab]);
 
@@ -78,6 +80,32 @@ const BannerOfApproach: React.FC = () => {
     mobileSlideRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     desktopSlideRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
   };
+
+  // ✅ Detect scroll on mobile slides and sync active tab
+  useEffect(() => {
+    const container = document.querySelector(".mobile-slide-scroll");
+    if (!container) return;
+
+    const handleScroll = () => {
+      let minDiff = Infinity;
+      let newIndex = activeTab;
+      mobileSlideRefs.current.forEach((slide, index) => {
+        if (slide) {
+          const diff = Math.abs(
+            slide.getBoundingClientRect().left - container.getBoundingClientRect().left
+          );
+          if (diff < minDiff) {
+            minDiff = diff;
+            newIndex = index;
+          }
+        }
+      });
+      if (newIndex !== activeTab) setActiveTab(newIndex);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [activeTab]);
 
   return (
     <div className="w-full bg-[#FAFAFA] pl-4 lg:pl-[120px] py-4 md:py-22" style={{ overflow: 'visible', margin: 0 }}>
@@ -148,7 +176,7 @@ const BannerOfApproach: React.FC = () => {
 
       {/* MOBILE SLIDES */}
       <div className="md:hidden py-5 pl-5" style={{ position: "relative", left: "-20px", width: "100%", zIndex: 10 }}>
-        <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+        <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory mobile-slide-scroll" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
           <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
           {slides.map((s, index) => (
             <div
