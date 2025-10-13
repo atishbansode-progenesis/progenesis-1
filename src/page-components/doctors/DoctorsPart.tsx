@@ -21,20 +21,22 @@ const DoctorsPart = () => {
         <div className="absolute inset-0 bg-black opacity-20 lg:opacity-0"></div>
 
         {/* Top-right heading */}
-        <h2 className="absolute top-[60px] right-[40px] text-[#1656A5]  text-right font-semibold text-[28px] md:text-[40px] leading-[1.2] tracking-[-0.02em] z-10">
-          <span className="block">Book your appointment</span>
-          <span className="block">with our experts today.</span>
-        </h2>
+        <div className="absolute top-[60px] right-0 lg:right-[90px] w-full lg:w-auto text-center lg:text-right z-10">
+          <h2 className="text-[#1656A5] font-semibold text-[28px] md:text-[40px] lg:text-[46px] leading-[1.2] tracking-[-0.02em]">
+            <span className="block">Book your appointment</span>
+            <span className="block">with our experts today.</span>
+          </h2>
+        </div>
 
         {/* Paragraph text */}
-        <p className="absolute text-[14px] md:text-[16px] text-[#3B3B3B] text-center leading-[1.4] z-10
-          w-full px-6 top-[180px] lg:top-auto lg:bottom-10 lg:left-[90px] lg:right-auto lg:text-start lg:w-auto"
-        >
-          <span className="block">Connect with the specialists who </span>
-          <span className="block">combine world-class expertise with</span>
-         <span className="block">genuine care, and take your first step </span> 
-         <span className="block">toward parenthood.</span>
-        </p>
+        <div className="absolute top-[180px] w-full px-6 text-center lg:text-left lg:w-auto lg:bottom-10 lg:left-[90px] lg:right-auto z-10">
+          <p className="text-[14px] md:text-[16px] text-[#3B3B3B] leading-[1.4]">
+            <span className="block">Connect with the specialists who</span>
+            <span className="block">combine world-class expertise with</span>
+            <span className="block">genuine care, and take your first step</span>
+            <span className="block">toward parenthood.</span>
+          </p>
+        </div>
       </div>
     </section>
   );
