@@ -14,7 +14,7 @@ interface OvulationCardsProps {
 
 export const OvulationCards: React.FC<OvulationCardsProps> = ({ tag, heading, cards }) => {
   return (
-    <section className="px-4 md:px-20 xl:px-32 py-20 w-full">
+    <section className="px-4 md:px-20 xl:px-32 py-20 w-full bg-white">
       {tag && (
         <span className="inline-block text-xs font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-4">
           {tag}
