@@ -179,7 +179,7 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
           px-[12px] md:px-[80px] xl:px-[120px] " >
               <div
                 className="
-                  flex flex-wrap justify-start items-start gap-3 md:gap-4
+                  flex flex-wrap justify-start items-start lg:gap-[24px] gap-3 md:gap-4
                   text-left " >
           {categories.map((cat) => (
             <button
@@ -205,43 +205,57 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
 
 
       {/* SECTION 1: What is Infertility */}
-      <section id="path" className="px-4 md:px-[80px] lg:px-[120px] py-[80px] bg-[#F9F9F9]">
-        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
-          What is Infertility
-        </span>
-        <h2 className="text-[#2C2C2C] font-[Manrope] text-[28px] md:text-[48px] font-normal leading-[38px] md:leading-[56px]">
-          Understanding the Basics of Infertility
-        </h2>
-        <hr className="my-8 border-t border-[#E0E0E0]" />
-        <div className="flex flex-col md:flex-row justify-between gap-6">
-          <h3 className="text-[#2C2C2C] text-[22px] md:text-[32px] leading-[30px] md:leading-[40px] font-[Manrope] font-normal">
-            Know the Facts
-          </h3>
-          <p className="text-[#606060] text-[15px] md:text-[16px] leading-[24px] max-w-3xl font-[Manrope]">
-            Infertility is defined as the inability to achieve pregnancy after a year of regular, unprotected intercourse. It is a common condition that can affect both men and women, often linked to medical issues, lifestyle choices, or age-related factors. While the journey can feel overwhelming, it’s important to remember that many couples face similar challenges. By identifying the underlying causes and seeking timely medical support, individuals can explore a range of effective treatments and move closer to fulfilling their dream of parenthood.
-          </p>
-        </div>
-      </section>
+   <section 
+  id="path" 
+  className="px-4 md:px-[80px] lg:pt-[80px] -mt-[40px]  md:mt-0 bg-[#F9F9F9]"
+>
+  <span className="inline-block text-[12px]  font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+    What is Infertility
+  </span>
+
+  <h2 className="text-[#2C2C2C] font-[Manrope] text-[28px] md:text-[48px] font-normal leading-[38px] md:leading-[56px]">
+    Understanding the Basics of Infertility
+  </h2>
+
+  <hr className="my-8 border-t lg:mt-[80px] border-[#E0E0E0]" />
+
+  <div className="flex flex-col md:flex-row justify-between gap-3  ">
+    <h3 className="text-[#2C2C2C] text-[16px] md:text-[32px] leading-[30px] md:leading-[40px] font-[Manrope] font-normal">
+      Know the Facts
+    </h3>
+
+    <p className="text-[#606060] text-[16px] lg:text-[16px] md:text-[16px] leading-[24px] max-w-3xl font-[Manrope]">
+      Infertility is defined as the inability to achieve pregnancy after a year of regular, unprotected intercourse. It is a common condition that can affect both men and women, often linked to medical issues, lifestyle choices, or age-related factors. While the journey can feel overwhelming, it’s important to remember that many couples face similar challenges. By identifying the underlying causes and seeking timely medical support, individuals can explore a range of effective treatments and move closer to fulfilling their dream of parenthood.
+    </p>
+  </div>
+</section>
+
 
       {/* SECTION 2: Female Infertility (8 CARDS) */}
-      <section id="fertility-section" className="bg-white pt-[80px] pb-[60px]">
+<section
+  id="fertility-section"
+  className="bg-white pt-[30px] pb-[60px] lg:pt-[120px]"
+>
+
+
         <div className="px-4 md:px-[80px] lg:px-[120px]">
-          <div className="flex flex-col xl:flex-row justify-between gap-8">
+          <div className="flex flex-col xl:flex-row justify-between gap-[8px]">
             <div className="w-full xl:w-[45%]">
               <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
                 Female Infertility Causes
               </span>
-              <h2 className="text-[30px] md:text-[48px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">
+              <h2 className="text-[32px]  lg:text-[48px] md:text-[48px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">
                 Common Causes of Female Infertility You Should Know
               </h2>
             </div>
-            <div className="flex-1">
+           <div className="flex flex-col xl:flex-row justify-between xl:gap-[160px] gap-[8px]">
+
               <p
                 className="
                   font-[Manrope] font-normal text-[#2C2C2C]
-                  text-[18px] leading-[28px] tracking-[-0.36px]
+                  text-[16px] leading-[28px] tracking-[-0.36px]
                   md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
-                  lg:text-[28px] lg:leading-[36px] lg:tracking-[-0.56px]
+                  lg:text-[32px] lg:leading-[36px] lg:tracking-[-0.56px]
                   xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
                   max-w-[832px]
                 "
@@ -254,7 +268,7 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
           {/* GRID (Fully Responsive) */}
           <div
             className="
-              grid gap-6 mt-[80px]
+              grid gap-6  lg:pt-[120px] mt-[80px]
               grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4
               justify-items-center">
             {femaleInfertilityIssues.map((issue) => (
@@ -264,9 +278,9 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
                 className="
                   flex flex-col items-center justify-between
                   w-full
-                  px-6 pt-6 pb-[70px] gap-[40px]
-                  bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6] rounded-2xl transition hover:bg-[#1656A51F] " >
-                <h3 className="text-[#2C2C2C] text-[20px] md:text-[24px] font-normal leading-[28px] md:leading-[36px] text-start w-full font-[Manrope]">
+                  px-6 pt-6 pb-[70px] gap-[16px]
+                  bg-[#FFFFFF] border border-[#E6E6E6] rounded-[16px] transition  " >
+                <h3 className="text-[#2C2C2C] text-[32px] lg:text-[32px] md:text-[24px] font-normal lg:leading-[40px] leading-[40px] md:leading-[36px] text-start w-full font-[Manrope]">
                   {issue.title}
                 </h3>
                 <img
@@ -281,24 +295,32 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
       </section>
 
       {/* SECTION 3: Male Infertility (3 CARDS) */}
-      <section id="fertility-mini-section" className="bg-[#FAFAFA] pt-[80px] pb-[60px] scroll-mt-[120px]">
+  
+  <section
+  id="fertility-mini-section"
+  className="bg-[#FAFAFA] pt-[5px] pb-[60px] -mt-[20px] scroll-mt-[120px]  lg:pt-[120px]"
+>
+
+
+
         <div className="px-4 md:px-[80px] lg:px-[120px]">
-          <div className="flex flex-col xl:flex-row justify-between gap-8">
+          <div className="flex flex-col xl:flex-row justify-between gap-[8px]">
             <div className="w-full xl:w-[45%]">
               <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
                 Male Infertility Causes
               </span>
-              <h2 className="text-[30px] md:text-[48px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">
+              <h2 className="text-[32px] lg:text-[48px] md:text-[48px] font-weight:[400px] text-[#2C2C2C] mb-6 lg:leading-[56px] leading-[40px] md:leading-[56px]">
                 Understanding the Causes of Male Infertility
               </h2>
             </div>
-            <div className="flex-1">
+           <div className="flex flex-col xl:flex-row justify-between xl:gap-[160px] gap-[8px]">
+
               <p
                 className="
                   font-[Manrope] font-normal text-[#2C2C2C]
-                  text-[18px] leading-[28px] tracking-[-0.36px]
+                  text-[16px] leading-[28px] tracking-[-0.36px]
                   md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
-                  lg:text-[28px] lg:leading-[36px] lg:tracking-[-0.56px]
+                  lg:text-[32px] lg:leading-[40px] lg:tracking-[-0.56px]
                   xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
                   max-w-[832px]" >
                 Male infertility can result from issues like low sperm count, azoospermia, or erectile dysfunction.<span className="text-[#606060]"> Recognizing these causes early is the first step toward effective treatment and improving the chances of conception.</span>
@@ -309,10 +331,10 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
           {/* Responsive 3-Card Grid */}
           <div
             className="
-            grid mt-[80px]
-            gap-[21px]
+            grid mt-[40px]
+            gap-[21px] lg:pt-[120px]
             grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
-            justify-center xl:justify-start">
+            justify-center xl:justify-start lg:rounded-[16px]">
             {maleInfertilityIssues.map((item) => (
               <Link
                 key={item.id}
@@ -321,15 +343,15 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
                   flex flex-col items-center justify-between
                   w-[100%]
                   h-[444px]
-                  px-6 pt-6 pb-[70px] gap-[40px]
-                  bg-[rgba(22,86,165,0.05)] border border-[#E6E6E6]
-                  rounded-2xl transition hover:bg-[#1656A51F]
+                  px-6 pt-6 pb-[70px] gap-[16px] lg:gap-[40px]
+                  bg-[#FFFFFF] border border-[#E6E6E6]
+                  rounded-2xl transition 
                   flex-shrink-0 " >
                 <h3
                   className="
                   text-[#2C2C2C]
-                    text-[20px] md:text-[24px]
-                    leading-[28px] md:leading-[36px]
+                    text-[32px] md:text-[24px]
+                    leading-[40px] md:leading-[36px]
                     font-normal text-start w-full font-[Manrope] " >
                   {item.title}
                 </h3>
@@ -349,9 +371,13 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
       </section>
 
       {/* SECTION 4: STORIES */}
-      <section id="stories-section">
-        <StoriesSection/>
-      </section>
+     <section
+  id="stories-section"
+  className="mt-[-50px] md:mt-0 "
+>
+  <StoriesSection />
+</section>
+
 
       <ConsultationForm />
 
@@ -380,14 +406,15 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
       ></div>
 
       {/* 🔹 Text */}
-      <h2
-        className="relative w-[90%] md:w-[70%] lg:w-[50%] text-center font-[Manrope] 
-             text-[#94BA3D] text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] 
-             font-normal leading-[36px] sm:leading-[44px] md:leading-[52px] lg:leading-[56px] 
-             tracking-[-0.96px] px-4 z-10"
-      >
-        The road may be challenging, but with the right care, parenthood is within reach.
-      </h2>
+   <h2
+  className="relative w-[90%]   text-center font-[Manrope] 
+       text-[#94BA3D] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[48px] 
+       font-normal leading-[40px] sm:leading-[44px] md:leading-[52px] lg:leading-[56px] 
+       tracking-[-0.96px] px-4 z-10 mx-auto"
+>
+  The road may be challenging, but with the <br className="hidden lg:block"/> right care, parenthood is within reach.
+</h2>
+
     </section>
     </div>
   );
