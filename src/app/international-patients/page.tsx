@@ -418,7 +418,7 @@ const InternationalPatientsPage: React.FC = () => {
         <div className="px-4 md:px-[80px] lg:px-[120px]">
           <div className="flex flex-col xl:flex-row justify-between gap-10">
             <div className="w-full xl:w-[45%]">
-              <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+              <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-[8px] mb-4">
                 Advanced Fertility Solutions
               </span>
               <h2 className="text-[30px] md:text-[48px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">

@@ -46,7 +46,7 @@ const Journey: React.FC = () => {
           <div className="flex flex-col gap-8 lg:gap-12">
             {/* Heading */}
             <div>
-              <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" >Your Journey, Made Simple</span>
+              <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 mb-2 rounded-[8px]" >Your Journey, Made Simple</span>
               <h2 className="text-[32px] leading-[40px] lg:text-5xl font-normal text-[#2C2C2C] lg:leading-[56px] tracking-tight font-[Manrope]">
                 Your Steps to Begin
               </h2>
