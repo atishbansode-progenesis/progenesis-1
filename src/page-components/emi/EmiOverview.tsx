@@ -49,7 +49,7 @@ const EmiOverview = () => {
           {items.map((it, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#E3ECF7] rounded-[16px] h-[124px] md:h-auto px-5 py-4 flex items-start"
+              className="bg-white rounded-[16px] h-[124px] md:h-auto px-5 py-4 flex items-start"
             >
               <div className="flex flex-col items-start justify-center gap-3">
                 {/* Icon */}

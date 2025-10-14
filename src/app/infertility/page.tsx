@@ -188,7 +188,7 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
               onClick={() => handleScroll(cat.id)}
               className={`
               px-[10px] py-[10px] md:px-[20px] md:py-[16px]
-              rounded-[8px] md:rounded-[16px]
+              rounded-[8px] md:rounded-[16px] lg:rounded-[16px] 
               font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px]
               tracking-[-0.28px] transition-all duration-200
               ${activeTab === cat.id
