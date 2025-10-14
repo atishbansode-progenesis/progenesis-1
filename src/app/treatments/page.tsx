@@ -260,7 +260,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
           { label: "Home", href: "/" },
           { label: "Treatments", href: "/treatments" },
         ]}
-        title="Hope, Science & Parenthood <br/> Begin Here"
+        title="Hope, Science & <br/> Parenthood  Begin Here"
         buttonText="Book Your Appointment"
         buttonLink="/book-appointment"
         foregroundImage="/treatments/bg-overlay.png"

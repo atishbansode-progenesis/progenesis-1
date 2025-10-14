@@ -31,20 +31,20 @@ const GeneticTestingCards: React.FC<GeneticTestingCardsProps> = ({ tag, heading,
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-[#DDEBFF] rounded-3xl p-3 md:p-6  border border-blue-100"
+              className="bg-[#DDEBFF] rounded-[16px] p-3 md:p-6  border border-blue-100"
             >
               {/* Abbreviation */}
-              <div className="text-[#2C2C2C] text-2xl md:text-3xl font-bold mb-6">
+              <div className="text-[#2C2C2C] text-[16px] md:text-[32px] font-semibold mb-6">
                 {card.abbreviation}
               </div>
 
               {/* Title */}
-              <h3 className="text-[#2C2C2C] text-xl md:text-2xl font-semibold mb-4 leading-snug">
+              <h3 className="text-[#2C2C2C] text-[16px] md:text-[32px]  font-normal mb-4 leading-snug">
                 {card.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[#2C2C2C]/70 text-sm md:text-base leading-relaxed text-[16px]">
+              <p className="text-[#2C2C2C]/70 text-[16px] leading-relaxed">
                 {card.description}
               </p>
             </div>
