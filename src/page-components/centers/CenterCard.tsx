@@ -408,15 +408,16 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
             </svg> */}
             {centerData.coordinates ? 'Get Location' : 'View on Map'}
           </button>
+
+
 <button
-  className="flex items-center justify-center w-[121px] h-[40px] rounded-[8px] border border-[#1656A5] px-[10px] py-[10px] bg-white hover:bg-[#1656A5] hover:text-white transition-colors whitespace-nowrap
+  className="flex items-center justify-center w-[121px] h-[40px] rounded-[8px] border border-[#1656A5] px-[10px] py-[10px] bg-white  transition-colors whitespace-nowrap
              lg:w-[158px] lg:h-[56px] lg:rounded-[16px] lg:px-2 lg:py-2"
 >
-  <span className="font-manrope font-medium text-[12px] leading-[20px] text-[#1656A5] w-[101px] h-[20px] text-center lg:text-sm lg:leading-[24px]">
+  <span className="font-manrope font-medium text-[12px] leading-[20px] text-[#1656A5] text-center lg:text-sm lg:leading-[24px]">
     Book Appointment
   </span>
 </button>
-
 
 
 

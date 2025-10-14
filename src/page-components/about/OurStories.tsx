@@ -95,7 +95,7 @@ const OurStories: React.FC = () => {
             {/* Image + Info Box */}
             <div className="flex flex-col csLg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden">
               {/* Image */}
-              <div className="w-full bg-[#E8EFF6] max-w-[300px] lg:min-h-[300px] max-h-[300px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <div className="w-full bg-[#E8EFF6] max-w-[400px] lg:min-w-[400px] lg:min-h-[400px] max-h-[400px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
                 <img
                   src={tabItems[activeTab].image}
                   alt={tabItems[activeTab].title}

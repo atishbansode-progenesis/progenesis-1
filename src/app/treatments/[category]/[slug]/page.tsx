@@ -1,15 +1,37 @@
-import { blastocystTransferData, class1000ModularLabData, cryopreservationData, imsiTreatmentData, lahTreatmentData, ovulationInductionData, pgdTreatmentData, picsiTreatmentData, sequentialEmbryoTransferData, trigasIncubatorsData, witnessSystemData } from "@/components/data/treatments";
+import React from "react";
+import {
+  artificialInseminationData,
+  blastocystTransferData,
+  class1000ModularLabData,
+  cryopreservationData,
+  imsiTreatmentData,
+  ivfTreatmentData,
+  lahTreatmentData,
+  ovulationInductionData,
+  pgdTreatmentData,
+  picsiTreatmentData,
+  sequentialEmbryoTransferData,
+  trigasIncubatorsData,
+  witnessSystemData,
+} from "@/components/data/treatments";
+import {
+  eggEmbryoFreezingData,
+  femaleAnalysisData,
+  maleFertilityPreservationData,
+  semenAnalysisData,
+} from "@/components/data/treatmentsnew";
 import MainTreatment from "@/page-components/treatment-slug/MainTreatment";
 
 type TreatmentPageProps = {
-  params: {
+  params: Promise<{
     category: string;
     slug: string;
-  };
+  }>;
 };
 
 export default function TreatmentPage({ params }: TreatmentPageProps) {
-  const { category, slug } = params;
+  // ✅ Unwrap params
+  const { category, slug } = React.use(params);
 
   let data;
 
@@ -47,16 +69,24 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
     case "ovulation-induction":
       data = ovulationInductionData;
       break;
-    // Add more cases for other treatments here
-    // case "ivf":
-    //   data = ivfTreatmentData;
-    //   break;
-    // case "icsi":
-    //   data = icsiTreatmentData;
-    //   break;
-    // case "iui":
-    //   data = iuiTreatmentData;
-    //   break;
+    case "artificial-insemination-iui-treatment":
+      data = artificialInseminationData;
+      break;
+    case "ivf-treatment":
+      data = ivfTreatmentData;
+      break;
+    case "male-fertility-preservation":
+      data = maleFertilityPreservationData;
+      break;
+    case "egg-embryo-freezing":
+      data = eggEmbryoFreezingData;
+      break;
+    case "female-analysis-complete-reproductive-health-check":
+      data = femaleAnalysisData;
+      break;
+    case "male-analysis":
+      data = semenAnalysisData;
+      break;
     default:
       data = null;
   }
