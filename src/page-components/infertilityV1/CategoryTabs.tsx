@@ -1,18 +1,17 @@
-// components/InfertilityIssues/NavigationTabs.tsx
 import React from "react";
+import { Category } from "./types";
 
-interface Category {
-  id: string;
-  label: string;
-}
-
-interface NavigationTabsProps {
+interface CategoryTabsProps {
   categories: Category[];
   activeTab: string;
   onTabClick: (id: string) => void;
 }
 
-export default function NavigationTabs({ categories, activeTab, onTabClick }: NavigationTabsProps) {
+export const CategoryTabs: React.FC<CategoryTabsProps> = ({
+  categories,
+  activeTab,
+  onTabClick,
+}) => {
   return (
     <div className="w-full bg-white pt-[50px] pb-[40px] md:pb-[80px] px-[12px] md:px-[80px] xl:px-[120px]">
       <div className="flex flex-wrap justify-start items-start lg:gap-[24px] gap-3 md:gap-4 text-left">
@@ -20,11 +19,9 @@ export default function NavigationTabs({ categories, activeTab, onTabClick }: Na
           <button
             key={cat.id}
             type="button"
-            onClick={() => {
-              onTabClick(cat.id);
-            }}
+            onClick={() => onTabClick(cat.id)}
             className={`
-              cursor-pointer px-[10px] py-[10px] md:px-[20px] md:py-[16px]
+              px-[10px] py-[10px] md:px-[20px] md:py-[16px]
               rounded-[8px] md:rounded-[16px]
               font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px]
               tracking-[-0.28px] transition-all duration-200
@@ -40,4 +37,4 @@ export default function NavigationTabs({ categories, activeTab, onTabClick }: Na
       </div>
     </div>
   );
-}
+};

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 const revalidate = 60 * 60 * 24; // 24 hours
 
 const fetchBlogBySlug = async (slug) => {
-  const res = await fetch(`${process.env.API_DOMAIN}/api/blogs/${slug}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${slug}`, {
     next: { revalidate },
   });
 

@@ -13,7 +13,7 @@ import ProcedureStepsNoImage from "./ProcedureNoImageSteps";
 import GeneticTestingCards from "./GeneticTestingCards";
 import { OvulationCards } from "./OvulationCards";
 import { PathSection } from "./PathSection";
-import ParenthoodBanner from "@/page-components/treatment-slug/ParenthoodBanner";
+import AppointmentForm from "../about/AppointmentForm";
 
 export default function MainTreatment({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("basics");
@@ -127,10 +127,8 @@ export default function MainTreatment({ data }: { data: any }) {
         <StoriesSection />
       </section>
 
-      <ParenthoodBanner/>
-
       {/* Section 9: Consultation Form */}
-      <ConsultationForm />
+      <AppointmentForm />
     </div>
   );
 }

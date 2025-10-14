@@ -42,10 +42,10 @@ export default function StepsSection({
         <div className="flex flex-col items-start justify-between">
           {/* Header */}
           <div className="mb-10 md:mb-20">
-            <span className="inline-block mb-2 px-2 py-1 bg-[rgba(22,86,165,0.05)] text-[#1656A5] text-xs font-medium rounded-md w-fit tracking-tight">
+            <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
               {tag}
-            </span>
-            <h2 className="text-[#2C2C2C] text-[28px] sm:text-[36px] lg:text-[48px] leading-[36px] sm:leading-[44px] lg:leading-[56px] font-normal tracking-[-0.96px]">
+            </button>
+            <h2 className="max-w-2xl text-[#2C2C2C] text-[28px] sm:text-[36px] lg:text-[48px] leading-[36px] sm:leading-[44px] lg:leading-[56px] font-normal tracking-[-0.96px]">
               {heading}
             </h2>
           </div>

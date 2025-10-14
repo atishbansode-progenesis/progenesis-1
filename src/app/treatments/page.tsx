@@ -9,6 +9,7 @@ import ResourceStories from "@/page-components/resources/ResourceStories";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
 import StoriesSection from "@/components/Home/StoriesSection"; //
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 
 
@@ -579,7 +580,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
 
               {/* Title */}
-              <h3 className="text-[#2C2C2C] font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[32px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
+              <h3 className="text-[#2C2C2C] font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[28px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
                 {item.title}
               </h3>
 
@@ -706,7 +707,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
      <StoriesSection />
 
-      <ConsultationForm />
+      <AppointmentForm />
       <GradientBanner text="Every journey to parenthood is unique — with the right care, hope finds its way." />
 
       {/* </div> */}

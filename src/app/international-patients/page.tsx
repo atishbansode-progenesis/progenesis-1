@@ -13,7 +13,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Journey from '../../components/Journey'
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 const InternationalPatientsPage: React.FC = () => {
   const categories = [
     { id: "start", label: "Start Your Journey Today" },
@@ -459,23 +460,8 @@ const InternationalPatientsPage: React.FC = () => {
       <section id="news">
         <AwardsSection />
       </section>
-      <section className="relative overflow-hidden">
-          {/* Video Background */}
-
-          <div className="relative z-10">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/video/baby.mp4" type="video/mp4" />
-          </video>
-          <ConsultationForm />
-
-          </div>
-        </section>
+          
+          <AppointmentForm />
     </main>
   );
 };
