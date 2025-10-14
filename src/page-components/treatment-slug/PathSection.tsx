@@ -23,7 +23,7 @@ export const PathSection: React.FC<PathSectionProps> = ({
   return (
     <section 
       id="path" 
-      className="px-[12px] md:px-[120px] py-[80px]"
+      className="px-4 py-4 md:px-[120px] md:py-[80px]"
       style={{ backgroundColor }}
     >
       {/* Label */}
