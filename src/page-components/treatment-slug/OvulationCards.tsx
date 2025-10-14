@@ -21,7 +21,7 @@ export const OvulationCards: React.FC<OvulationCardsProps> = ({ tag, heading, ca
         </span>
       )}
       
-      <h2 className="text-gray-900 font-normal mb-12 text-3xl leading-tight tracking-tight md:text-4xl md:leading-tight">
+      <h2 className="text-gray-900 font-normal mb-[32px] md:mb-12 text-3xl leading-tight tracking-tight md:text-4xl md:leading-tight">
         {heading}
       </h2>
 
