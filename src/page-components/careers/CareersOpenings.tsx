@@ -24,7 +24,7 @@ const openings: Opening[] = [
 
 const CareersOpenings = () => {
   return (
-    <section className="section-spacing mx-auto px-4 py-16 bg-[#FFFFFF]">
+    <section className="section-spacing mx-auto px-4 py-16">
       <div className="max-w-5xl md:pb-10">
         <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
           Current Openings

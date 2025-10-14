@@ -69,7 +69,7 @@ const CareersValues = () => {
       className=" md:bg-transparent p-1 md:p-0 rounded-xl md:pb-8 border-b border-[#1656A50D]"
     >
       {/* Icon + Title */}
-<div className="flex items-center gap-[20px] md:gap-[32px]">
+<div className="flex items-center gap-2 md:gap-4">
         <img
           src={item.icon}
           alt={item.title}

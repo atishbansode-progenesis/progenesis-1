@@ -43,7 +43,7 @@ const CareersBenefits = () => {
 				</h2>
 			</div>
 
-			<div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4  ">
+			<div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-6  ">
 				{benefits.map((benefit, idx) => (
 					<div key={idx} className="rounded-2xl bg-[#F2F2F2] border border-gray-100 p-5">
 						<div className="flex flex-col items-start gap-3">

@@ -37,7 +37,7 @@ export default function ProcedureSteps({ tag, heading, steps }: ProcedureStepsPr
               />
             </div>
             <div className="bg-[#F7FAFC] p-6 ">
-              <span className="text-[#1656A5] font-manrope text-[18px] font-semibold block mb-5">
+              <span className="text-[#1656A5]  text-[18px] font-normal block mb-5">
                 {String(idx + 1).padStart(2, "0")}
               </span>
               <h3 className="text-[#2C2C2C]  text-[18px] md:text-[20px] font-normal mb-1">

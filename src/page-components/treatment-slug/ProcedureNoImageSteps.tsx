@@ -33,19 +33,19 @@ const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, 
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-[#1656A50D]  rounded-2xl p-6 md:p-8 shadow-sm  transition-shadow duration-300"
+              className="bg-[#1656A50D]  rounded-2xl p-4 md:p-6  shadow-sm  transition-shadow duration-300"
             >
               {/* Step Number */}
-              <div className="text-[#1656A5] text-[32px] md:text-5xl font-normal mb-20">
+              <div className="text-[#1656A5] text-[16px] md:text-[32px] md:text-5xl font-normal mb-10 md:mb-20">
                 {String(index + 1).padStart(2, '0')}
               </div>
 
               {/* Step Content */}
-              <div>
-                <h3 className="text-gray-900 text-lg md:text-xl font-semibold mb-3">
+              <div className='max-w-[200px]'>
+                <h3 className="text-[#2C2C2C] text-lg md:text-[16px] font-semibold mb-[8px]">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                <p className="text-[#2C2C2C]/70 text-sm md:text-[16px] leading-relaxed">
                   {step.description}
                 </p>
               </div>
