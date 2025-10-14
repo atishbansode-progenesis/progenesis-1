@@ -42,14 +42,14 @@ const CareersOpenings = () => {
         </h2>
       </div>
 
-      <div className="divide-y divide-gray-200/60 rounded-2xl overflow-hidden relative">
+      <div className="divide-y divide-gray-200/60 rounded-2xl lg:mt-[10px] mt-[20px] overflow-hidden relative">
         {openings.map((job, idx) => (
           <div key={idx} className="relative">
             <div
-              className="flex lg:text-[32px] text-[16px] items-start justify-between gap-6 py-4 md:py-8 carr-opp-padd group font-manrope font-medium"
+              className="flex lg:text-[32px]   text-[16px] items-start justify-between gap-6 py-4 md:py-8 carr-opp-padd group font-manrope font-medium"
             >
               <div>
-                <h3 className="font-manrope lg:text-[32px] text-[16px] md:text-[28px] font-medium text-[#2C2C2C]">
+                <h3 className="font-manrope mt-[20px] lg:mt-[5px] lg:text-[32px] text-[16px] md:text-[28px] font-medium text-[#2C2C2C]">
                   {job.title}
                 </h3>
                 <div className="mt-3 flex flex-wrap items-center gap-2 text-sm text-gray-900">

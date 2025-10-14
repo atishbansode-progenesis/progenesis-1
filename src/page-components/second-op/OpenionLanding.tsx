@@ -34,7 +34,7 @@ const OpenionLanding = () => {
 
             {/* Title */}
             <div>
-              <h1 className='font-manrope font-semibold csLg:text-[80px] text-[32px] csLg:leading-[88px] leading-[48px] tracking-[-0.02em] csLg:max-w-[60%]'>
+              <h1 className='font-manrope font-semibold csLg:text-[80px] text-[32px] csLg:leading-[88px] leading-[40px] tracking-[-0.02em] csLg:max-w-[60%]'>
                 IVF & Fertility Second Opinion
               </h1>
             </div>
@@ -43,7 +43,7 @@ const OpenionLanding = () => {
             <div className=''>
                         <button 
                             onClick={() => setIsOpen(true)} 
-                            className='bg-[#252525] text-[14px] h-[56px] px-6  text-[#F9F9F9] rounded-[16px] hover:bg-[#333] transition'
+                            className='bg-[#252525] text-[12px] tracking-tight md:text-[14px] h-10 md:h-[56px] px-3 py-[10px]  text-[#F9F9F9] rounded-[8px] md:rounded-[16px] hover:bg-[#333] transition'
                         >
                             Book Your Appointment
                         </button>

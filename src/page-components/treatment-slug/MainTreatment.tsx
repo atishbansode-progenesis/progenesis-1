@@ -45,7 +45,7 @@ export default function MainTreatment({ data }: { data: any }) {
           { label: "Home", href: "/" },
           { label: "Treatments", href: "/treatments" },
         ]}
-        title={data?.hero_title || "Hope, Science & Parenthood Begin Here"}
+        title={data?.hero_title || "Hope, Science & <br/> Parenthood Begin Here"}
         buttonText={data?.hero_button_text || "Book Your Appointment"}
         buttonLink={data?.hero_button_link || "/book-appointment"}
         overlayImage={data?.hero_image || "/default-hero-bg.png"}
