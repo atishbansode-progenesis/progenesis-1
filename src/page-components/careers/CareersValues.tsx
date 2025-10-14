@@ -52,7 +52,7 @@ const items: ValueItem[] = [
 
 const CareersValues = () => {
   return (
-    <section className="section-spacing bg-[#FAFAFA]">
+    <section className="section-spacing bg-[#FEFEFE]">
       <div className="max-w-5xl md:pb-14">
         <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
           What Defines Us
