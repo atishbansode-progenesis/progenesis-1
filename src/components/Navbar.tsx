@@ -460,7 +460,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                     setInputs({ ...inputs, what: t.name });
                     setActiveStep(null);
                   }}
-                  className={`px-3 py-2 rounded-[14px] border text-[14px] font-medium ${inputs.what === t
+                  className={`px-3 py-2 rounded-[14px] border text-[14px] font-medium ${inputs.what === t.name
                     ? "bg-[#1656A5] text-white border-[#1656A5]"
                     : "border-[#1656A5] text-[#1656A5]"
                     }`}
@@ -675,7 +675,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultion", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
 
         ],
       },
@@ -737,7 +737,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultion", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
         ],
       },
     ],
@@ -797,7 +797,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultion", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
         ],
       },
     ],
@@ -887,7 +887,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultion", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
         ],
       },
     ],
