@@ -383,7 +383,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-start justify-between flex-col md:flex-row gap-3 mt-7">
+        <div className="flex items-start justify-between flex-col md:flex-row gap-3 -mt-5 lg:mt-7 ">
           <button 
             onClick={() => {
               if (centerData.coordinates) {
@@ -394,7 +394,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
               }
             }}
             disabled={!centerData.coordinates && !centerData.address}
-            className={`h-10 text-sm font-medium hover:cursor-auto flex items-center underline decoration-[#2C2C2C] justify-center gap-2 ${
+            className={`h-10 lg:text-[16px] text-[14px] font-medium hover:cursor-auto flex items-center underline decoration-[#2C2C2C] justify-center gap-2 ${
               !centerData.coordinates && !centerData.address
                 ? 'text-gray-400 cursor-not-allowed'
                 : 'text-[#2C2C2C] hover:text-[#1656A5] transition-colors'}

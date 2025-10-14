@@ -25,7 +25,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
   const cardContent = (
     <div
       className="
-        flex flex-col gap-3 rounded-[16px] p-6 bg-[#F2F2F2]
+        flex flex-col gap-3 rounded-[16px] p-6 bg-[#F9FAFB]
         transition-colors duration-300
         hover:bg-[#F1F7FC] cursor-pointer h-full
       "
@@ -38,7 +38,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
         </span>
         <h4
           className="
-    text-[#606060]
+    text-[var(--Text_Black,#2C2C2C)]
     font-[Manrope]
     text-[16px] leading-[24px] tracking-[-0.32px] font-semibold
     md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
@@ -172,21 +172,21 @@ const [activeTab, setActiveTab] = useState<string>("path");
       title: "IUI – Assisted Intrauterine Insemination Treatment",
       description:
         "Prepared sperm is placed into the uterus during ovulation, boosting fertilization chances.",
-      slug: "artificial-insemination-iui-treatment",
+      slug: "iui",
       category: "infertility",
     },
     {
       title: "IVF – Comprehensive In Vitro Fertilization Treatment",
       description:
         "Eggs and sperm are combined in a lab, and embryos are transferred to the uterus.",
-      slug: "ivf",
+      slug: "ivf-icsi-intracytoplasmic-sperm-injection",
       category: "infertility",
     },
     {
       title: "IVF-ICSI – Intracytoplasmic Sperm Injection",
       description:
         "A single sperm is injected into the egg, helpful in male infertility or failed fertilization cases.",
-      slug: "ivf-icsi",
+      slug: "male-fertility-preservation",
       category: "infertility",
     },
     {
@@ -222,7 +222,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
     {
       title: "Embryo Preservation",
       image: "/treatments/14.png",
-      slug: "egg-embryo-freezing",
+      slug: "embryo-preservation",
       category: "preservation",
     },
   ];
@@ -235,7 +235,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
       description:
         "A detailed evaluation of hormone levels, ovarian reserve, fallopian tubes, and uterine health. This testing helps identify fertility issues and guides a personalized treatment plan for better outcomes.",
       highlighted: true,
-      slug: "female-analysis-complete-reproductive-health-check",
+      slug: "female-analysis",
       category: "evaluation",
     },
     {
@@ -257,17 +257,16 @@ const [activeTab, setActiveTab] = useState<string>("path");
           { label: "Home", href: "/" },
           { label: "Treatments", href: "/treatments" },
         ]}
-        title="Hope, Science & Parenthood <br/> Begin Here"
+        title="Hope, Science & Parenthood Begin Here"
         buttonText="Book Your Appointment"
         buttonLink="/book-appointment"
         foregroundImage="/treatments/bg-overlay.png"
         overlayImage="/treatments/doctor-foreground.png"
-        contentClassName="justify-start"
       />
 
 
       {/* 2️⃣ Category Tabs */}
-      <div className="flex flex-wrap gap-4 px-[16px] py-[16px]  md:py-[50px] md:px-[120px]  bg-[#fff]">
+      <div className="flex flex-wrap gap-4 pt-[50px] px-[12px] md:px-[80px] xl:px-[120px] pb-[80px] bg-[#fff]">
         {categories.map((cat) => (
 //  <button
 //   key={cat.id}
@@ -309,7 +308,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
       </div>
 
       {/* 3️⃣ Personalized Treatments */}
-      <section id="path" className="px-4 py-4 md:px-[120px] md:py-[80px] bg-[#F9F9F9]">
+      <section id="path" className="px-[12px] md:px-[120px] py-[80px] bg-[#F9F9F9]">
         {/* Label */}
         <div className="mb-4">
 
@@ -364,7 +363,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
       </section>
 
       {/* 4️⃣ Cutting Edge Techniques */}
-      <section id="advanced" className="px-4 py-4 md:px-[120px] md:py-[80px] bg-[#fff]">
+      <section id="advanced" className="px-[12px] md:px-[120px] py-[80px] bg-[#fff]">
 
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
           Advanced Infertility Treatments
@@ -373,7 +372,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
         <h2
           className="
-    text-[#2C2C2C] font-[Manrope] font-normal mb-[12px] md:mb-[80px]
+    text-[#2C2C2C] font-[Manrope] font-normal mb-[80px]
     text-[32px] leading-[40px] tracking-[-0.64px]   /* mobile */
     md:text-[48px] md:leading-[56px] md:tracking-[-0.96px] /* desktop */
   "
@@ -394,7 +393,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
           Precision Methods for Better Outcomes
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-2 my-4 md:my-[80px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[80px]">
           {precisionMethods.map((item, idx) => (
             <FeatureCard key={idx} title={item.title} description={item.description} href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : undefined} />
           ))}
@@ -405,14 +404,14 @@ const [activeTab, setActiveTab] = useState<string>("path");
           className="
           text-[#2C2C2C] font-[Manrope]
           text-[16px] leading-[24px] tracking-[-0.32px] font-normal
-          md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] mb-4
-          md:mb-8
+          md:text-[32px] md:leading-[40px] md:tracking-[-0.64px]
+          mb-8
         "
         >
           Advanced Facilities for Trusted Care
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {advancedFacilities.map((item, idx) => (
             <FeatureCard key={idx} title={item.title} description={item.description} href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : undefined} />
           ))}
@@ -536,7 +535,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
       
 
       {/* 6️⃣ Proven Treatments */}
-      <section id="infertility" className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20">
+      <section id="infertility" className="w-full bg-[#F5FAFF] px-6 md:px-12 lg:px-24 py-20">
         {/* Tag */}
 
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
@@ -550,8 +549,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
     text-[var(--Text_Black,#2C2C2C)]
     font-[Manrope]
     font-normal
-    text-[32px]
-    md:text-[48px]
+    text-[48px]
     leading-[56px]
     tracking-normal
     max-w-[790px]
@@ -562,7 +560,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
         </h2>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {treatments.map((item, idx) => (
             <Link
               key={idx}
@@ -592,7 +590,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
 
       {/* 7️⃣ Future Parenthood */}
-      <section id="preservation" className="w-full bg-[#FAFAFA] px-4 py-4 md:px-[120px]  md:py-20">
+      <section id="preservation" className="w-full bg-[#FAFAFA] px-6 md:px-12 lg:px-24 py-20">
 
 
         {/* Tag */}
@@ -657,7 +655,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
 
       {/* 8️⃣ Diagnostic Section */}
-      <section id="evaluation" className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20">
+      <section id="evaluation" className="w-full bg-[#F5FAFF] px-6 md:px-12 lg:px-24 py-20">
         {/* Tag */}
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
           Fertility Evaluation
