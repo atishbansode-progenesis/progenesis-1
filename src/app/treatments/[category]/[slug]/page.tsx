@@ -5,6 +5,7 @@ import {
   class1000ModularLabData,
   cryopreservationData,
   imsiTreatmentData,
+  ivfIcsiTreatmentData,
   ivfTreatmentData,
   lahTreatmentData,
   ovulationInductionData,
@@ -74,6 +75,9 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
       break;
     case "ivf-treatment":
       data = ivfTreatmentData;
+      break;
+    case "ivf-icsi-intracytoplasmic-sperm-injection":
+      data = ivfIcsiTreatmentData;
       break;
     case "male-fertility-preservation":
       data = maleFertilityPreservationData;

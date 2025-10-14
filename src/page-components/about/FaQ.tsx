@@ -111,7 +111,7 @@ const FaQ: React.FC = () => {
   return (
     <section
       id="faqs"
-      className="w-full bg-[#FAFAFA] px-6 md:px-10 lg:px-[120px] py-10 md:py-14 lg:py-20 font-[Manrope]"
+      className="w-full bg-[#FAFAFA] px-4 csLg:px-[120px] py-10 md:py-14 lg:py-20 font-[Manrope]"
     >
       <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] lg:grid-cols-[500px_1fr] gap-10 md:gap-[80px] lg:gap-[120px] items-start">
         {/* Left intro */}
@@ -119,7 +119,7 @@ const FaQ: React.FC = () => {
           <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px]">
             FAQ's
           </span>
-          <div className="pb-5">
+          <div className="pb-5">  
             <h2 className="lg:text-[48px] text-[32px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
               Quick answers to  the
               
@@ -130,7 +130,7 @@ const FaQ: React.FC = () => {
               <span className="text-[#94BA3D]">questions.</span>
             </h2>
           </div>
-          <p className="mt-6 text-[16px] md:text-[16px] md:leading-6 font-normal text-[#2C2C2C]">
+          <p className="mt-1 text-[16px] md:text-[16px] md:leading-6 font-normal text-[#2C2C2C]">
             Didn’t find what you are looking for?
             <br />
             Checkout{" "}

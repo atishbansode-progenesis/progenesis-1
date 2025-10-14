@@ -8,7 +8,7 @@ const slides = [
   {
     tab: 'Care That Fits You',
     image: "/images/banner1.png",
-    image1:"/images/Abanner1.png",
+    image1: "/images/Abanner1.png",
     heading:
       "We provide fertility care that’s personal and flexible, designed to fit your unique journey to parenthood.",
     ctaPrimary: 'Book Your Appointment',
@@ -24,7 +24,7 @@ const slides = [
   {
     tab: 'Science with Heart',
     image: "/images/banner2.png",
-    image1:'/images/Abanner2.png',
+    image1: '/images/Abanner2.png',
     heading:
       'Every journey deserves honesty, compassion, and guidance. We help you choose with confidence through care.',
     ctaPrimary: 'Book Your Appointment',
@@ -126,9 +126,8 @@ const BannerOfApproach: React.FC = () => {
             <button
               key={s.tab}
               onClick={() => { setActiveTab(index); scrollToSlide(index); }}
-              className={`relative flex-1 text-center hover:cursor-pointer text-[15px] md:text-[16px] font-medium font-[Manrope] transition-colors ${
-                activeTab === index ? 'text-[#1656A5]' : 'text-[#606060] hover:text-[#1656A5]'
-              }`}
+              className={`relative flex-1 text-center hover:cursor-pointer text-[15px] md:text-[16px] font-medium font-[Manrope] transition-colors ${activeTab === index ? 'text-[#1656A5]' : 'text-[#606060] hover:text-[#1656A5]'
+                }`}
             >
               {s.tab}
             </button>
@@ -138,9 +137,8 @@ const BannerOfApproach: React.FC = () => {
           {slides.map((_, index) => (
             <span
               key={`separator-${index}`}
-              className={`transition-colors duration-300 ${
-                activeTab === index ? 'bg-[#1656A5]' : 'bg-gray-200'
-              }`}
+              className={`transition-colors duration-300 ${activeTab === index ? 'bg-[#1656A5]' : 'bg-gray-200'
+                }`}
             />
           ))}
         </div>
@@ -158,9 +156,8 @@ const BannerOfApproach: React.FC = () => {
                 key={`mobile-tab-${s.tab}`}
                 ref={(el) => (mobileTabRefs.current[index] = el)}
                 onClick={() => { setActiveTab(index); scrollToSlide(index); }}
-                className={`inline-block text-[15px] font-medium font-[Manrope] whitespace-nowrap transition-colors pb-3 ${
-                  activeTab === index ? 'text-[#1656A5]' : 'text-[#606060] hover:text-[#1656A5]'
-                }`}
+                className={`inline-block text-[15px] font-medium font-[Manrope] whitespace-nowrap transition-colors pb-3 ${activeTab === index ? 'text-[#1656A5]' : 'text-[#606060] hover:text-[#1656A5]'
+                  }`}
               >
                 {s.tab}
               </button>
@@ -197,18 +194,16 @@ const BannerOfApproach: React.FC = () => {
                 <div className="flex flex-wrap gap-4 mt-5" style={{ paddingBottom: "20px" }}>
                   <button
                     onClick={() => { setCtaActive((prev) => ({ ...prev, [index]: "primary" })); setIsOpen(true); }}
-                    className={`hover:cursor-pointer ${
-                      (ctaActive[index] ?? "primary") === "primary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
-                    } h-[40px] px-4 rounded-[12px] text-xs font-semibold shadow-sm`}
+                    className={`hover:cursor-pointer ${(ctaActive[index] ?? "primary") === "primary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
+                      } h-[40px] px-4 rounded-[12px] text-xs font-semibold shadow-sm`}
                   >
                     {s.ctaPrimary}
                   </button>
 
                   <button
                     onClick={() => setCtaActive((prev) => ({ ...prev, [index]: "secondary" }))}
-                    className={`${
-                      (ctaActive[index] ?? "primary") === "secondary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
-                    } h-[40px] px-4 rounded-[12px] hover:cursor-pointer text-xs font-medium`}
+                    className={`${(ctaActive[index] ?? "primary") === "secondary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
+                      } h-[40px] px-4 rounded-[12px] hover:cursor-pointer text-xs font-medium`}
                   >
                     {s.ctaThird}
                   </button>
@@ -216,7 +211,7 @@ const BannerOfApproach: React.FC = () => {
                   {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
                 </div>
 
-                <div className="grid grid-cols-1 gap-2 max-w-[1100px] pt-5">
+                <div className="grid grid-cols-1 gap-6 max-w-[1100px] pt-5">
                   {s.features.map((item, idx) => (
                     <div key={idx} className="flex flex-col gap-2">
                       <img src={item.icon} alt={item.title} className="w-[28px] h-[28px] object-contain" />
@@ -239,9 +234,8 @@ const BannerOfApproach: React.FC = () => {
             <div
               key={s.tab}
               ref={(el) => (desktopSlideRefs.current[index] = el)}
-              className={`relative snap-start shrink-0 min-h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10 transition-all duration-500 ${
-                index === slides.length - 1 ? "mr-[120px]" : "mr-0"
-              } w-[calc(100%-120px)]`}
+              className={`relative snap-start shrink-0 min-h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10 transition-all duration-500 ${index === slides.length - 1 ? "mr-[120px]" : "mr-0"
+                } w-[calc(100%-120px)]`}
               style={{ backgroundImage: `url(${s.image})` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-0" />
@@ -254,18 +248,16 @@ const BannerOfApproach: React.FC = () => {
                 <div className="flex flex-wrap gap-3 md:gap-4 mb-10" style={{ paddingTop: "30px", paddingBottom: "100px" }}>
                   <button
                     onClick={() => { setCtaActive((prev) => ({ ...prev, [index]: "primary" })); setIsOpen(true); }}
-                    className={`${
-                      (ctaActive[index] ?? "primary") === "primary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
-                    } w-auto h-[56px] px-5 py-2.5 rounded-[16px] text-sm hover:cursor-pointer font-medium shadow-sm`}
+                    className={`${(ctaActive[index] ?? "primary") === "primary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
+                      } w-auto h-[56px] px-5 py-2.5 rounded-[16px] text-sm hover:cursor-pointer font-medium shadow-sm`}
                   >
                     {s.ctaPrimary}
                   </button>
 
                   <button
                     onClick={() => setCtaActive((prev) => ({ ...prev, [index]: "secondary" }))}
-                    className={`${
-                      (ctaActive[index] ?? "primary") === "secondary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
-                    } w-[128px] h-[56px] px-5 py-2.5 rounded-[16px] hover:cursor-pointer text-sm font-medium`}
+                    className={`${(ctaActive[index] ?? "primary") === "secondary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
+                      } w-[128px] h-[56px] px-5 py-2.5 rounded-[16px] hover:cursor-pointer text-sm font-medium`}
                   >
                     {s.ctaSecondary}
                   </button>
@@ -273,13 +265,13 @@ const BannerOfApproach: React.FC = () => {
                   {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
                 </div>
 
-<div className="grid grid-cols-2 md:grid-cols-4 gap-x-[150px] gap-y-8  max-w-[1100px] pb-4">
-  {s.features.map((item, idx) => (
-    <div key={idx} className="flex flex-col gap-2">
-      <img src={item.icon} alt={item.title} className="lg:w-[30px] lg:h-[30px]  object-contain" />
-      <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
-      <p className="text-sm text-gray-200">{item.desc}</p>
-    </div>
+                <div className="grid grid-cols-2 csLg:grid-cols-4">
+                  {s.features.map((item, idx) => (
+                    <div key={idx} className="flex flex-col gap-2 mt-2 csLg:mt-0">
+                      <img src={item.icon} alt={item.title} className="lg:w-[30px] lg:h-[30px]  object-contain" />
+                      <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
+                      <p className="text-sm text-gray-200 csLg:max-w-[200px]">{item.desc}</p>
+                    </div>
 
 
                   ))}
@@ -292,7 +284,7 @@ const BannerOfApproach: React.FC = () => {
 
       {/* PREV / NEXT BUTTONS */}
       <div className='hidden lg:block'>
-        <div className="w-full flex items-center justify-center mt-6 gap-4" style={{ paddingTop:'20px' }}>
+        <div className="w-full flex items-center justify-center mt-6 gap-4" style={{ paddingTop: '20px' }}>
           <button
             aria-label="Previous slide"
             onClick={() => {
