@@ -38,7 +38,6 @@ export default function SuccessRateSection({ percentage, text }: SuccessRateSect
         text-[120px] md:text-[120px]
         leading-none tracking-[-2.4px]
         mb-[80px] md:mb-0
-
         px-6 md:px-0
       "
     >

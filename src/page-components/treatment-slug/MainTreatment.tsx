@@ -81,7 +81,7 @@ export default function MainTreatment({ data }: { data: any }) {
           heading={data.basics_heading || "Understanding the Treatment"}
           items={data.basics}
         />
-      )}
+      )} 
 
       {/* Section 4: Why Choose */}
       {data.points && data.points.length > 0 && (
