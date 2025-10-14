@@ -85,7 +85,7 @@ export default function AwardsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[80px] items-start">
           {/* Left column */}
           <div>
-            <span className="inline-block  text-blue-700 text-xs px-3 py-1 rounded-full">
+            <span className="inline-block bg-[#1656A50D]  text-blue-700 text-xs px-3 py-1 rounded-full">
               Featured News & Media
             </span>
 
