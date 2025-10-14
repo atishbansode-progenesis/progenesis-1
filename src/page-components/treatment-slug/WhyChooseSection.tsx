@@ -13,25 +13,33 @@ interface WhyChooseSectionProps {
   }>;
 }
 
-export default function WhyChooseSection({ tag, heading, points }: WhyChooseSectionProps) {
+export default function WhyChooseSection({
+  tag,
+  heading,
+  points,
+}: WhyChooseSectionProps) {
   const [activePoint, setActivePoint] = useState<number>(0);
 
   return (
     <>
       {/* Desktop Version */}
-      <section id="why-choose" className="px-[12px] md:px-[80px] xl:px-[120px] py-[60px] bg-transparent hidden lg:block scroll-mt-[120px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[50px] items-start">
-          {/* Left Side */}
-          <div className="flex flex-col md:pr-[40px]">
-            {tag && (
-              <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3 w-fit">
-                {tag}
-              </span>
-            )}
+      <section
+        id="why-choose"
+        className="px-[120px] py-[80px] bg-transparent hidden lg:block scroll-mt-[120px]"
+      >
+        <div className="grid grid-cols-[40%_60%]  w-full items-center">
+          <div className="flex flex-col  justify-between h-full ">
+            <div>
+              {tag && (
+                <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3 w-fit">
+                  {tag}
+                </span>
+              )}
 
-            <h2 className="text-[#2C2C2C] font-manrope font-normal mb-[40px] text-[28px] leading-[36px] md:text-[44px] md:leading-[52px]">
-              {heading}
-            </h2>
+              <h2 className="text-[#2C2C2C] font-manrope font-normal text-[28px] leading-[36px] md:text-[44px] md:leading-[52px]">
+                {heading}
+              </h2>
+            </div>
 
             <div className="flex flex-col divide-y divide-[#A5A5A5]">
               {points.map((point, idx) => (
@@ -42,7 +50,7 @@ export default function WhyChooseSection({ tag, heading, points }: WhyChooseSect
                 >
                   <div className="flex items-start justify-between">
                     <h3
-                      className={`text-[#2C2C2C] font-[Manrope] text-[32px] md:text-[26px] leading-[32px] ${
+                      className={`text-[#2C2C2C] font-[Manrope] text-[32px] md:text-[26px] leading-[32px]max-w-[379px] ${
                         activePoint === idx ? "text-[#2C2C2C]" : ""
                       }`}
                     >
@@ -54,7 +62,7 @@ export default function WhyChooseSection({ tag, heading, points }: WhyChooseSect
                   </div>
 
                   {activePoint === idx && (
-                    <p className="mt-2 text-[#606060] font-[Manrope] text-[15px] leading-[22px] opacity-80">
+                    <p className="mt-2 text-[#606060] font-[Manrope] max-w-[379px] text-[15px] leading-[22px] opacity-80">
                       {point.description}
                     </p>
                   )}
@@ -63,15 +71,14 @@ export default function WhyChooseSection({ tag, heading, points }: WhyChooseSect
             </div>
           </div>
 
-          {/* Right Side */}
-          <div className="flex items-center justify-center h-full -mt-[70px] md:-mt-[20px]">
+          <div className=" h-full pl-[77px]">
             <Image
               key={activePoint}
               src={points[activePoint].image}
               alt={points[activePoint].title}
-              width={800}
-              height={520}
-              className="rounded-[14.5px] w-full h-[520px] object-cover object-center transition-all duration-500 ease-in-out"
+              width={100}
+              height={100}
+              className="w-full h-full object-cover overflow-hidden rounded-[14.5px]"
             />
           </div>
         </div>
