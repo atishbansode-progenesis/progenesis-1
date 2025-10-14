@@ -14,7 +14,7 @@ interface ProcedureStepsNoImageProps {
 const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, tag, steps }) => {
   return (
     <div className=" bg-gradient-to-br from-gray-50 to-blue-50 px-4 py-4 md:px-[120px] md:py-[80px]">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         {/* Header */}
         <div className="mb-12">
           <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
