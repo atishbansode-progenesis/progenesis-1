@@ -14,7 +14,7 @@ interface OvulationCardsProps {
 
 export const OvulationCards: React.FC<OvulationCardsProps> = ({ tag, heading, cards }) => {
   return (
-    <section className="px-4 md:px-20 xl:px-32 py-20 w-full bg-white">
+    <section className="px-4 py-4 md:px-[120px] md:py-[80px] w-full bg-white">
       {tag && (
         <span className="inline-block text-xs font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mb-4">
           {tag}
@@ -25,7 +25,7 @@ export const OvulationCards: React.FC<OvulationCardsProps> = ({ tag, heading, ca
         {heading}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 w-full">
         {cards.map((card, idx) => (
          <div
          key={idx}
