@@ -1,32 +1,21 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
 import StoriesSection from "@/components/Home/StoriesSection";
-
-interface FeatureCardProps {
-  title: string;
-  description: string;
-  href?: string;
-  foregroundImage?: string;
-  overlayImage?: string;
-}
-
-interface InfertilityIssue {
-  id: string;
-  title: string;
-  slug: string;
-  image: string;
-}
-
-interface MaleInfertilityIssue {
-  id: string;
-  title: string;
-  slug: string;
-  image: string;
-}
+import {
+  CategoryTabs,
+  WhatIsInfertility,
+  FemaleInfertilitySection,
+  MaleInfertilitySection,
+  GradientBanner,
+  CATEGORIES,
+  FEMALE_INFERTILITY_ISSUES,
+  MALE_INFERTILITY_ISSUES,
+  FeatureCardProps,
+} from "@/page-components/infertilityV1";
+import NewConstaltentForm from "@/page-components/infertilityV1/NewConstaltentForm";
 
 export function FeatureCard({ title, description, href }: FeatureCardProps) {
   const cardContent = (
@@ -66,85 +55,6 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
 }
 
 const Infertility: React.FC<{ category: string }> = ({ category }) => {
-  const categories = [
-    { id: "path", label: "What is Infertility" },
-    { id: "fertility-section", label: "Female Infertility Causes" },
-    { id: "fertility-mini-section", label: "Male Infertility Causes" },
-    { id: "stories-section", label: "Real Stories. Real Miracles." },
-  ];
-
-  const femaleInfertilityIssues: InfertilityIssue[] = [
-    {
-      id: "1",
-      title: "Repeated IUI Failures",
-      slug: "repeated-iui-failures",
-      image: "/Infertility/infertility1.png",
-    },
-    {
-      id: "2",
-      title: "Repeated IVF Failures",
-      slug: "repeated-ivf-failures",
-      image: "/Infertility/infertility2.png",
-    },
-    {
-      id: "3",
-      title: "Pregnancy after Menopause",
-      slug: "pregnancy-after-menopause",
-      image: "/Infertility/infertility3.png",
-    },
-    {
-      id: "4",
-      title: "Low AMH",
-      slug: "low-amh",
-      image: "/Infertility/infertility4.png",
-    },
-    {
-      id: "5",
-      title: "PCOS",
-      slug: "pcos",
-      image: "/Infertility/infertility5.png",
-    },
-    {
-      id: "6",
-      title: "Tubal Blockage",
-      slug: "tubal-blockage",
-      image: "/Infertility/infertility6.png",
-    },
-    {
-      id: "7",
-      title: "Fibroids",
-      slug: "fibroids",
-      image: "/Infertility/infertility7.png",
-    },
-    {
-      id: "8",
-      title: "Endometriosis",
-      slug: "endometriosis",
-      image: "/Infertility/infertility8.png",
-    },
-  ];
-
-  const maleInfertilityIssues: MaleInfertilityIssue[] = [
-    {
-      id: "1",
-      title: "Azoospermia",
-      slug: "azoospermia",
-      image: "/Infertility/Azoospermia.png",
-    },
-    {
-      id: "2",
-      title: "Low Sperm Count",
-      slug: "low-sperm-count",
-      image: "/Infertility/LowSpermCount.png",
-    },
-    {
-      id: "3",
-      title: "Erectile Dysfunction (ED)",
-      slug: "erectile-dysfunction",
-      image: "/Infertility/ErectileDysfunction.png",
-    },
-  ];
-
   const [activeTab, setActiveTab] = useState<string>("path");
 
   const handleScroll = (id: string) => {
@@ -153,10 +63,8 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
     setActiveTab(id);
   };
 
-
   return (
     <div className="w-full flex flex-col">
-      {/* HERO SECTION */}
       <HeroSection
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -170,252 +78,25 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
         contentClassName="justify-start"
       />
 
-      {/* CATEGORY BUTTONS */}
-      {/* 2️⃣ Category Tabs */}
-      <div
-        className="
-          w-full bg-white 
-          pt-[50px] pb-[80px]
-          px-[12px] md:px-[80px] xl:px-[120px] " >
-              <div
-                className="
-                  flex flex-wrap justify-start items-start lg:gap-[24px] gap-3 md:gap-4
-                  text-left " >
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => handleScroll(cat.id)}
-              className={`
-              px-[10px] py-[10px] md:px-[20px] md:py-[16px]
-              rounded-[8px] md:rounded-[16px]
-              font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px]
-              tracking-[-0.28px] transition-all duration-200
-              ${activeTab === cat.id
-                      ? "bg-[#1656A5] text-white shadow-md"
-                      : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-                    }
-            `}
-                >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-      </div>
+      <CategoryTabs
+        categories={CATEGORIES}
+        activeTab={activeTab}
+        onTabClick={handleScroll}
+      />
 
+      <WhatIsInfertility />
 
-      {/* SECTION 1: What is Infertility */}
-   <section 
-  id="path" 
-  className="px-4 md:px-[80px] lg:pt-[80px] -mt-[40px]  md:mt-0 bg-[#F9F9F9]"
->
-  <span className="inline-block text-[12px]  font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
-    What is Infertility
-  </span>
+      <FemaleInfertilitySection issues={FEMALE_INFERTILITY_ISSUES} />
 
-  <h2 className="text-[#2C2C2C] font-[Manrope] text-[28px] md:text-[48px] font-normal leading-[38px] md:leading-[56px]">
-    Understanding the Basics of Infertility
-  </h2>
+      <MaleInfertilitySection issues={MALE_INFERTILITY_ISSUES} />
 
-  <hr className="my-8 border-t lg:mt-[80px] border-[#E0E0E0]" />
-
-  <div className="flex flex-col md:flex-row justify-between gap-3  ">
-    <h3 className="text-[#2C2C2C] text-[16px] md:text-[32px] leading-[30px] md:leading-[40px] font-[Manrope] font-normal">
-      Know the Facts
-    </h3>
-
-    <p className="text-[#606060] text-[16px] lg:text-[16px] md:text-[16px] leading-[24px] max-w-3xl font-[Manrope]">
-      Infertility is defined as the inability to achieve pregnancy after a year of regular, unprotected intercourse. It is a common condition that can affect both men and women, often linked to medical issues, lifestyle choices, or age-related factors. While the journey can feel overwhelming, it’s important to remember that many couples face similar challenges. By identifying the underlying causes and seeking timely medical support, individuals can explore a range of effective treatments and move closer to fulfilling their dream of parenthood.
-    </p>
-  </div>
-</section>
-
-
-      {/* SECTION 2: Female Infertility (8 CARDS) */}
-<section
-  id="fertility-section"
-  className="bg-white pt-[30px] pb-[60px] lg:pt-[120px]"
->
-
-
-        <div className="px-4 md:px-[80px] lg:px-[120px]">
-          <div className="flex flex-col xl:flex-row justify-between gap-[8px]">
-            <div className="w-full xl:w-[45%]">
-              <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
-                Female Infertility Causes
-              </span>
-              <h2 className="text-[32px]  lg:text-[48px] md:text-[48px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">
-                Common Causes of Female Infertility You Should Know
-              </h2>
-            </div>
-           <div className="flex flex-col xl:flex-row justify-between xl:gap-[160px] gap-[8px]">
-
-              <p
-                className="
-                  font-[Manrope] font-normal text-[#2C2C2C]
-                  text-[16px] leading-[28px] tracking-[-0.36px]
-                  md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
-                  lg:text-[32px] lg:leading-[36px] lg:tracking-[-0.56px]
-                  xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
-                  max-w-[832px]
-                "
-              >
-                Female infertility can arise from various health conditions that affect ovulation, egg quality, or the reproductive system. Understanding these causes—such as PCOS, low AMH, fibroids, or repeated treatment failures—helps in taking timely steps toward the right medical care and treatment options.
-              </p>
-            </div>
-          </div>
-
-          {/* GRID (Fully Responsive) */}
-          <div
-            className="
-              grid gap-6  lg:pt-[120px] mt-[80px]
-              grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4
-              justify-items-center">
-            {femaleInfertilityIssues.map((issue) => (
-              <Link
-                key={issue.id}
-                href={`/infertility/female/${issue.slug}`}
-                className="
-                  flex flex-col items-center justify-between
-                  w-full
-                  px-6 pt-6 pb-[70px] gap-[16px]
-                  bg-[#FFFFFF] border border-[#E6E6E6] rounded-[16px] transition  " >
-                <h3 className="text-[#2C2C2C] text-[32px] lg:text-[32px] md:text-[24px] font-normal lg:leading-[40px] leading-[40px] md:leading-[36px] text-start w-full font-[Manrope]">
-                  {issue.title}
-                </h3>
-                <img
-                  src={issue.image}
-                  alt={issue.title}
-                  className="w-[200px] h-[180px] md:w-[260px] md:h-[240px] object-contain mix-blend-multiply"
-                />
-              </Link>
-            ))}
-          </div>
-        </div>
+      <section id="stories-section" className="mt-[-50px] md:mt-0">
+        <StoriesSection />
       </section>
 
-      {/* SECTION 3: Male Infertility (3 CARDS) */}
-  
-  <section
-  id="fertility-mini-section"
-  className="bg-[#FAFAFA] pt-[5px] pb-[60px] -mt-[20px] scroll-mt-[120px]  lg:pt-[120px]"
->
+      <NewConstaltentForm />
 
-
-
-        <div className="px-4 md:px-[80px] lg:px-[120px]">
-          <div className="flex flex-col xl:flex-row justify-between gap-[8px]">
-            <div className="w-full xl:w-[45%]">
-              <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
-                Male Infertility Causes
-              </span>
-              <h2 className="text-[32px] lg:text-[48px] md:text-[48px] font-weight:[400px] text-[#2C2C2C] mb-6 lg:leading-[56px] leading-[40px] md:leading-[56px]">
-                Understanding the Causes of Male Infertility
-              </h2>
-            </div>
-           <div className="flex flex-col xl:flex-row justify-between xl:gap-[160px] gap-[8px]">
-
-              <p
-                className="
-                  font-[Manrope] font-normal text-[#2C2C2C]
-                  text-[16px] leading-[28px] tracking-[-0.36px]
-                  md:text-[24px] md:leading-[32px] md:tracking-[-0.48px]
-                  lg:text-[32px] lg:leading-[40px] lg:tracking-[-0.56px]
-                  xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px]
-                  max-w-[832px]" >
-                Male infertility can result from issues like low sperm count, azoospermia, or erectile dysfunction.<span className="text-[#606060]"> Recognizing these causes early is the first step toward effective treatment and improving the chances of conception.</span>
-              </p>
-            </div>
-          </div>
-
-          {/* Responsive 3-Card Grid */}
-          <div
-            className="
-            grid mt-[40px]
-            gap-[21px] lg:pt-[120px]
-            grid-cols-1 sm:grid-cols-2 xl:grid-cols-3
-            justify-center xl:justify-start lg:rounded-[16px]">
-            {maleInfertilityIssues.map((item) => (
-              <Link
-                key={item.id}
-                href={`/infertility/male/${item.slug}`}
-                className="
-                  flex flex-col items-center justify-between
-                  w-[100%]
-                  h-[444px]
-                  px-6 pt-6 pb-[70px] gap-[16px] lg:gap-[40px]
-                  bg-[#FFFFFF] border border-[#E6E6E6]
-                  rounded-2xl transition 
-                  flex-shrink-0 " >
-                <h3
-                  className="
-                  text-[#2C2C2C]
-                    text-[32px] md:text-[24px]
-                    leading-[40px] md:leading-[36px]
-                    font-normal text-start w-full font-[Manrope] " >
-                  {item.title}
-                </h3>
-
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="
-                  w-[200px] h-[180px]
-                  md:w-[280px] md:h-[240px]
-                  object-contain mix-blend-multiply" />
-              </Link>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* SECTION 4: STORIES */}
-     <section
-  id="stories-section"
-  className="mt-[-50px] md:mt-0 "
->
-  <StoriesSection />
-</section>
-
-
-      <ConsultationForm />
-
-      {/* SECTION 6: GradientBanner */}
-      <section className="relative w-full h-[475px] flex items-center justify-center overflow-hidden">
-      {/* 🔹 Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-green-50 via-white to-blue-50" />
-
-      {/* 🔹 Background Blur Gradients */}
-      <div
-        className="absolute left-[-50px] bottom-[-50px] w-[322px] h-[443px] rounded-full opacity-70"
-        style={{
-          background: "#94BA3D",
-          filter: "blur(250px)",
-          transform: "rotate(-2deg)",
-        }}
-      ></div>
-
-      <div
-        className="absolute right-[-150px] top-[-200px] w-[350px] h-[350px] rounded-full opacity-90"
-        style={{
-          background: "#1656A5",
-          filter: "blur(250px)",
-          transform: "rotate(-2deg)",
-        }}
-      ></div>
-
-      {/* 🔹 Text */}
-   <h2
-  className="relative w-[90%]   text-center font-[Manrope] 
-       text-[#94BA3D] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[48px] 
-       font-normal leading-[40px] sm:leading-[44px] md:leading-[52px] lg:leading-[56px] 
-       tracking-[-0.96px] px-4 z-10 mx-auto"
->
-  The road may be challenging, but with the <br className="hidden lg:block"/> right care, parenthood is within reach.
-</h2>
-
-    </section>
+      <GradientBanner />
     </div>
   );
 };

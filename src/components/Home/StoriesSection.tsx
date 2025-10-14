@@ -53,15 +53,15 @@ export default function StoriesSection() {
   const cardStyle = getCardStyle();
 
   return (
-    <section className="bg-white p-[16px] lg:p-[120px]">
+    <section className="px-[12px] py-[80px] md:px-[80px] xl:px-[120px] bg-[#F1F7FC]">
       <div className="mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-[80px]">
           <div>
-            <span className="inline-block  text-xs md:text-sm bg-blue-100 text-[#1656A5] px-3 py-1 rounded-full">
+            <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
               Real Stories. Real Miracles.
-            </span>
-            <h2 className="mt-4 text-[32px] md:text-4xl font-light text-[#2c2c2c] leading-tight">
+            </button>
+            <h2 className="mt-2 text-[20px] md:text-4xl font-medium text-[#2C2C2C] leading-[28px] md:leading-[56px]">
               Inspiring stories of strength & Victories
             </h2>
           </div>
@@ -79,7 +79,7 @@ export default function StoriesSection() {
               aria-label="Previous"
               className="w-10 h-10 rounded-lg border border-[#1656a5] text-[#1656a5] bg-white hover:bg-blue-50 flex items-center justify-center"
             >
-          <img src="/icons/left.svg" alt="right" width={12} height={12} /> 
+              <img src="/icons/left.svg" alt="right" width={12} height={12} />
             </button>
 
             <button
