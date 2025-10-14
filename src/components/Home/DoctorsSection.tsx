@@ -377,7 +377,7 @@ const DoctorsSection = () => {
 
                 <div className="flex flex-col justify-end border-l h-full border-gray-200 pl-4 md:pl-6 min-h-full w-[40%] md:w-[35%]">
                   <div className="h-[80px] md:h-[100px] lg:h-[120px] flex flex-col justify-end">
-                    <h4 className="text-[#2C2C2C] text-2xl mb-2 md:text-3xl lg:text-4xl font-normal leading-tight line-clamp-1">
+                    <h4 className="text-[#2C2C2C] text-[32px]  mb-2 md:text-3xl lg:text-4xl font-normal leading-tight line-clamp-1">
                       {doctor.location}
                     </h4>
                     <span className="text-[#2C2C2C] text-[16px] opacity-50 whitespace-nowrap line-clamp-1">
