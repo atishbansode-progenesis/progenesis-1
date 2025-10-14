@@ -4,18 +4,18 @@ import React from "react";
 const ParenthoodBanner = () => {
   return (
     <section
-      className="relative flex items-center justify-end bg-cover bg-center min-h-[400px] px-10"
+      className="relative flex items-center justify-end bg-cover bg-center min-h-[605px] px-10"
       style={{
         backgroundImage: "url('/treatments/bg baner.png')", 
       }}
     >
       {/* Overlay Gradient (optional subtle fade like in the image) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/80 to-transparent"></div>
+      <div className="absolute inset-0 "></div>
 
       {/* Text Content */}
-      <div className="relative z-10 max-w-2xl text-right">
+      <div className="relative z-10 max-w-7xl text-right ">
         <p
-          className="font-[Manrope] text-[#94BA3D]"
+          className="font-[Manrope] text-[#94BA3D] lg:text-[48px] "
           style={{
             fontWeight: 400,
             fontSize: "48px",
