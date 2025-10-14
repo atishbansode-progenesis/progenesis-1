@@ -1672,7 +1672,7 @@ export const ivfIcsiTreatmentData = {
   },
   basics_heading: "What is ICSI Treatment?",
   points_tag: "Why Choose ICSI at Progenesis",
-  points_heading: "Tailored solutions for complex fertility challenges.",
+  points_heading: "Where science transforms possibilities into parenthood.",
   procedure_tag: "Steps of ICSI Process",
   procedure_heading: "High precision meets advanced embryology.",
   description:
@@ -1695,24 +1695,24 @@ export const ivfIcsiTreatmentData = {
     { id: "Success", label: "Success Rate" },
   ],
   who_can_benefit: {
-    tag: "Who Can Benefit?",
-    title: "Where science transforms possibilities into parenthood.",
+    tag: "Who Can Benefit from ICSI",
+    title: "Tailored solutions for complex fertility challenges.",
     cards: [
       {
         icon: "/treatments/ivf-icsi/icon1.png",
-        title: "Men with low sperm count or motility issues",
+        title: "Cases of poor sperm morphology or function",
       },
       {
         icon: "/treatments/ivf-icsi/icon2.png",
-        title: "Couples with failed IVF or poor fertilization history",
+        title: "Couples with failed fertilization in previous IVF cycles",
       },
       {
         icon: "/treatments/ivf-icsi/icon3.png",
-        title: "Men requiring surgical sperm retrieval (TESA, PESA, Micro-TESE)",
+        title: "Men with ejaculatory or duct blockages",
       },
       {
         icon: "/treatments/ivf-icsi/icon4.png",
-        title: "Cases of unexplained infertility or genetic abnormalities",
+        title: "Couples seeking treatment for severe male infertility",
       },
     ],
   },
@@ -1721,47 +1721,410 @@ export const ivfIcsiTreatmentData = {
     {
       id: "01",
       title: "Expert Embryologists",
-      description: "Specialized in precision sperm selection and microinjection techniques for optimal results.",
-      image: "/treatments/ivf-icsi/ivf-icsi_c1.png",
+      description: "Skilled specialists with advanced micromanipulation expertise.",
+      image: "/treatments/ivf-icsi/c1.png",
     },
     {
       id: "02",
-      title: "Cutting-edge Micromanipulation Technology",
-      description: "Advanced microscopes and tools ensure accuracy and minimize fertilization failure.",
-      image: "/treatments/ivf-icsi/ivf-icsi_c2.png",
+      title: "Custom Treatment Plans",
+      description: "Each cycle is customized to the couple’s unique fertility profile.",
+      image: "/treatments/ivf-icsi/c2.png",
     },
     {
       id: "03",
-      title: "Personalized Fertility Care",
-      description: "Tailored treatment plans designed around each couple’s medical and emotional needs.",
-      image: "/treatments/ivf-icsi/ivf-icsi_c3.png",
+      title: "Holistic Care",
+      description: "Emotional and medical support at every stage of your journey.",
+      image: "/treatments/ivf-icsi/c3.png",
     },
   ],
-  procedure_no_image_steps: null,
-  procedure_steps: [
-    {
-      image: "/treatments/ivf-icsi/ivf-icsi_t1.png",
-      title: "Sperm Selection",
-      description:
-        "Motile and morphologically normal sperm are selected using high-magnification microscopes for injection.",
-    },
-    {
-      image: "/treatments/ivf-icsi/ivf-icsi_t2.png",
-      title: "Sperm Injection",
-      description:
-        "A single healthy sperm is injected directly into a mature egg using micromanipulation tools for fertilization.",
-    },
-    {
-      image: "/treatments/ivf-icsi/ivf-icsi_t3.png",
-      title: "Embryo Culture & Transfer",
-      description:
-        "The fertilized egg develops into an embryo, which is monitored and then transferred to the uterus for implantation.",
-    },
-  ],
+  procedure_no_image_steps: {
+    main_heading: "High precision meets advanced embryology.",
+    main_tag: "Steps of the ICSI Procedure",
+    data: [
+      {
+        title: "Ovarian Stimulation & Egg Retrieval",
+        description:"The female partner undergoes hormonal stimulation to produce mature eggs, which are then retrieved for fertilization."
+      },
+      {
+        title: "Sperm Collection & Selection",
+        description:"Sperm are collected from the partner (or retrieved surgically if needed). The healthiest, most active sperm are selected under a microscope."
+      },
+      {
+        title: "Sperm Injection & Fertilization",
+        description:"A single sperm is injected directly into the egg using micromanipulation technology to achieve fertilization."
+      },
+      {
+        title: "Embryo Transfer",
+        description:"Once fertilization occurs, healthy embryos are cultured and transferred to the uterus for implantation."
+      },
+    ],
+  },
+  procedure_steps: null,
   gradient_data: "70%",
   gradient_text:
     "Fertilization success with ICSI – advanced lab precision and expert embryology ensure high embryo quality and pregnancy success.",
 };
+
+
+
+
+
+
+
+// Frozen Embryo Transfer Treatment Data
+export const frozenEmbryoTransferTreatmentData = {
+  slug: "frozen-embryo-transfer",
+  category: "fertility-treatments",
+  title: "Frozen Embryo Transfer",
+  hero_title: "Frozen Embryo Transfer",
+  hero_button_text: "Book Your Appointment",
+  hero_button_link: "/book-appointment",
+  hero_image: "/treatments/frozen-embryo-transfer/frozen-embryo-transfer-bg.png",
+  breadcrumbs: [
+    { label: "Home", href: "/", id: "home" },
+    { label: "Treatments", href: "/treatments", id: "treatments" },
+    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    {
+      label: "Frozen Embryo Transfer",
+      href: "/treatments/fertility-treatments/frozen-embryo-transfer",
+      id: "frozen-embryo-transfer",
+    },
+  ],
+  path_section: {
+    tag: "Know the Basics",
+    mainHeading: "Precise. Planned. Promising.",
+    subHeading: "Precision. Expertise. Innovation.",
+    description1:"Frozen Embryo Transfer (FET) is an advanced IVF procedure in which previously frozen embryos are carefully thawed and then transferred into the woman’s uterus, offering a higher chance of successful implantation and pregnancy.",
+    description2:"It allows couples to use high-quality embryos from earlier IVF cycles, optimizing success without needing a new egg retrieval. FET provides flexibility, cost efficiency, and excellent pregnancy outcomes — especially when the uterine environment is perfectly prepared.",
+  },
+  basics_heading: "What is Frozen Embryo Transfer?",
+  points_tag: "Why Choose FET at Progenesis",
+  points_heading: "Cutting-edge science with compassionate care.",
+  procedure_tag: "Steps of Frozen Embryo Transfer Process",
+  procedure_heading: "High precision meets advanced embryology.",
+  description:
+    "Frozen Embryo Transfer at Progenesis offers a breakthrough in male infertility treatment. With expert embryologists, state-of-the-art micromanipulation tools, and advanced laboratory precision, we help couples overcome fertilization barriers and achieve parenthood with confidence.",
+  content: `
+    <p>
+      ICSI is recommended for couples where sperm motility, morphology, or count is compromised, or in cases where
+      previous IVF attempts have resulted in poor fertilization. It is also beneficial when sperm must be surgically
+      retrieved or in cases of unexplained infertility.
+    </p>
+    <p>
+      Using advanced micromanipulation techniques, a single healthy sperm is carefully injected into a mature egg.
+      This process significantly increases fertilization rates and improves embryo quality for higher pregnancy success.
+    </p>
+  `,
+  categories: [
+    { id: "Basics", label: "Know the Basics" },
+    { id: "Who", label: "Who It Helps" },
+    { id: "Process", label: "Treatment Process" },
+    { id: "Success", label: "Success Rate" },
+  ],
+  who_can_benefit: {
+    tag: "Who Can Benefit from FET",
+    title: "Tailored solutions for complex fertility challenges.",
+    cards: [
+      {
+        icon: "/treatments/ivf-icsi/icon1.png",
+        title: "Couples with surplus embryos from a prior IVF cycle",
+      },
+      {
+        icon: "/treatments/ivf-icsi/icon2.png",
+        title: "Women with hormone-related implantation delays",
+      },
+      {
+        icon: "/treatments/ivf-icsi/icon3.png",
+        title: "Patients with medically cancelled fresh transfers",
+      },
+      {
+        icon: "/treatments/ivf-icsi/icon4.png",
+        title: "Couples undergoing genetic testing (PGT-A/PGS)",
+      },
+    ],
+  },
+  basics: null,
+  points: [
+    {
+      id: "01",
+      title: "High-Tech Cryopreservation",
+      description: "Uses rapid vitrification techniques to safely protect embryo viability.",
+      image: "/treatments/frozen-embryo-transfer/c1.png",
+    },
+    {
+      id: "02",
+      title: "Low Hormonal Stress",
+      description: "Natural or medicated cycles carefully and precisely tailored to your body.",
+      image: "/treatments/frozen-embryo-transfer/c2.png",
+    },
+    {
+      id: "03",
+      title: "Expert Fertility Team",
+      description: "Decades of extensive experience in IVF and advanced embryology techniques.",
+      image: "/treatments/frozen-embryo-transfer/c3.png",
+    },
+  ],
+  procedure_no_image_steps: {
+    main_heading: "Every step synchronized for higher success.",
+    main_tag: "Steps of the Frozen Embryo Transfer Process",
+    data: [
+      {
+        title: "Endometrial Preparation",
+        description:"Medications and hormonal support prepare the uterine lining to receive the embryo. Regular scans ensure optimal thickness and blood flow."
+      },
+      {
+        title: "Embryo Thawing",
+        description:"Embryos are carefully thawed using specialized vitrification techniques to preserve cell integrity."
+      },
+      {
+        title: "Embryo Transfer",
+        description:"The healthiest thawed embryo is gently placed into the uterus under ultrasound guidance."
+      },
+      {
+        title: "Post-Transfer Support",
+        description:"Hormonal medications continue to support implantation and early pregnancy development."
+      },
+    ],
+  },
+  procedure_steps: null,
+  gradient_data: "75%",
+  gradient_text:
+    "pregnancy success with FET — Progenesis transfers embryos in optimal conditions for better implantation and pregnancy.",
+};
+
+
+
+
+// Fertility Surgery Treatment Data
+export const fertilitySurgeryTreatmentData = {
+  slug: "fertility-surgery",
+  category: "fertility-treatments",
+  title: "Fertility Surgery",
+  hero_title: "Fertility Surgery",
+  hero_button_text: "Book Your Appointment",
+  hero_button_link: "/book-appointment",
+  hero_image: "/treatments/fertility-surgery/fertility-surgery-bg.png",
+  breadcrumbs: [
+    { label: "Home", href: "/", id: "home" },
+    { label: "Treatments", href: "/treatments", id: "treatments" },
+    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    {
+      label: "Fertility Surgery",
+      href: "/treatments/fertility-treatments/fertility-surgery",
+      id: "fertility-surgery",
+    },
+  ],
+  path_section: {
+    tag: "Know the Basics",
+    mainHeading: "Restoring Health. Renewing Hope.",
+    subHeading: "Restoring Health. Renewing Hope.",
+    description1:"Fertility surgery helps treat anatomical or structural conditions that interfere with conception. It’s performed to correct issues such as fibroids, endometriosis, blocked fallopian tubes, uterine septum, adhesions, or cysts — restoring the reproductive organs to normal function.",
+    description2:"Both men and women can benefit from fertility surgery, which is often a minimally invasive, daycare procedure using laparoscopy or hysteroscopy.",
+  },
+  basics_heading: "What is Fertility Surgery?",
+  points_tag: "Why Choose Fertility Surgery at Progenesis",
+  points_heading: "Precision care that promotes natural conception.",
+  procedure_tag: "Steps of Frozen Embryo Transfer Process",
+  procedure_heading: "High precision meets advanced embryology.",
+  description:
+    "Frozen Embryo Transfer at Progenesis offers a breakthrough in male infertility treatment. With expert embryologists, state-of-the-art micromanipulation tools, and advanced laboratory precision, we help couples overcome fertilization barriers and achieve parenthood with confidence.",
+  content: `
+    <p>
+      ICSI is recommended for couples where sperm motility, morphology, or count is compromised, or in cases where
+      previous IVF attempts have resulted in poor fertilization. It is also beneficial when sperm must be surgically
+      retrieved or in cases of unexplained infertility.
+    </p>
+    <p>
+      Using advanced micromanipulation techniques, a single healthy sperm is carefully injected into a mature egg.
+      This process significantly increases fertilization rates and improves embryo quality for higher pregnancy success.
+    </p>
+  `,
+  categories: [
+    { id: "Basics", label: "Know the Basics" },
+    { id: "Who", label: "Who It Helps" },
+    { id: "Process", label: "Treatment Process" },
+    { id: "Success", label: "Success Rate" },
+  ],
+  who_can_benefit: {
+    tag: "Who Can Benefit from Fertility Surgery",
+    title: "Personalized correction. Enhanced conception potential.",
+    cards: [
+      {
+        icon: "/treatments/ivf-icsi/icon1.png",
+        title: "Women with fibroids, endometriosis, or ovarian cysts",
+      },
+      {
+        icon: "/treatments/ivf-icsi/icon2.png",
+        title: "Those with blocked or damaged fallopian tubes",
+      },
+      {
+        icon: "/treatments/ivf-icsi/icon3.png",
+        title: "Patients with uterine septum or adhesions",
+      },
+      {
+        icon: "/treatments/ivf-icsi/icon4.png",
+        title: "Men with varicocele or vasectomy reversal needs",
+      },
+    ],
+  },
+  basics: null,
+  points: [
+    {
+      id: "01",
+      title: "Expert Surgeons",
+      description: "Highly experienced fertility and laparoscopic specialists.",
+      image: "/treatments/fertility-surgery/c1.png",
+    },
+    {
+      id: "02",
+      title: "Advanced Technology",
+      description: "Precision surgical instruments and high-definition imaging technology.",
+      image: "/treatments/fertility-surgery/c2.png",
+    },
+    {
+      id: "03",
+      title: "Daycare Procedures",
+      description: "Most patients are safely discharged the same day after treatment.",
+      image: "/treatments/fertility-surgery/c3.png",
+    },
+  ],
+  procedure_no_image_steps: {
+    main_heading: "Every step synchronized for higher success.",
+    main_tag: "Steps of the Frozen Embryo Transfer Process",
+    data: [
+      {
+        title: "Laparoscopic Surgery",
+        description:"A keyhole procedure used to treat endometriosis, ovarian cysts, fibroids, or blocked tubes."
+      },
+      {
+        title: "Hysteroscopic Surgery",
+        description:"A minimally invasive technique via the cervix to remove polyps, fibroids, or uterine septum."
+      },
+      {
+        title: "Tubal Recanalization",
+        description:"Reopens blocked fallopian tubes to safely restore natural fertility and improve chances of conception."
+      },
+      {
+        title: "Varicocele Repair",
+        description:"Improves sperm count and motility by treating enlarged veins in the scrotum."
+      },
+    ],
+  },
+  procedure_steps: null,
+  gradient_data: "75%",
+  gradient_text:
+    "improvement in fertility — Progenesis surgeries restore function and boost conception with expert care.",
+};
+
+
+
+
+// Female Fertility Preservation Data
+export const femaleFertilityPreservationData = {
+  slug: "female-fertility-preservation",
+  category: "fertility-preservation",
+  title: "Female Fertility Preservation",
+  hero_title: "Female Fertility Preservation",
+  hero_button_text: "Book Your Appointment",
+  hero_button_link: "/book-appointment",
+  hero_image: "/treatments/male-fertility-preservation/malepreservationbg.png",
+  breadcrumbs: [
+    { label: "Home", href: "/", id: "home" },
+    { label: "Treatments", href: "/treatments", id: "treatments" },
+    { label: "Fertility Preservation", href: "/treatments/fertility-preservation", id: "fertility-preservation" },
+    { label: "Female Fertility Preservation", href: "/treatments/fertility-preservation/female-fertility-preservation", id: "female-fertility-preservation" }
+  ],
+  basics_heading: "Why Female Fertility Preservation Matters",
+  points_tag: "Why Choose Fertility Preservation at Progenesis",
+  points_heading: "Ensuring Fertility for a Confident Tomorrow",
+  description:"Safe. Smart. Secure. Always Protected.",
+  content:
+    "<p>At our center, we specialize in preserving male fertility through cutting-edge sperm banking and cryostorage techniques. Whether due to medical treatments, lifestyle choices, or age-related factors, men can take proactive steps to protect their ability to father children in the future.</p><p>Our expert team ensures each sample is processed and stored under precise conditions, maintaining high viability for use in assisted reproduction whenever needed.</p>",
+  categories: [
+    { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Why Preservation Matters" },
+    { id: "procedure", label: "The Preservation Process" },
+    { id: "stories", label: "Success Stories" }
+  ],
+  basics: [
+    {
+      icon: "/treatments/male-fertility-preservation/icon1.png",
+      title: "What It Is",
+      description: "Fertility preservation allows women to freeze eggs, embryos, or ovarian tissue to maintain their ability to conceive later in life."
+    },
+    {
+      icon: "/treatments/male-fertility-preservation/icon2.png",
+      title: "Why It’s Important",
+      description: "It helps women undergoing medical treatments like chemotherapy or those delaying pregnancy due to personal or professional reasons."
+    },
+    {
+      icon: "/treatments/male-fertility-preservation/icon3.png",
+      title: "Who It Work",
+      description: "Eggs are collected, frozen using advanced vitrification, and safely stored for future use — maintaining quality and reproductive potential."
+    },
+    {
+      icon: "/treatments/male-fertility-preservation/icon4.png",
+      title: "When It’s Recommended",
+      description:"Ideal for women facing surgeries, cancer therapies, or genetic conditions that may affect fertility."
+    },
+    {
+      icon: "/treatments/male-fertility-preservation/icon4.png",
+      title: "Result",
+      description:"Enables women to conceive with their own healthy eggs or embryos, even years after preservation."
+    },
+    {
+      icon: "/treatments/male-fertility-preservation/icon4.png",
+      title: "Added Advantage",
+      description:"Provides emotional assurance, flexibility, and reproductive independence for women planning motherhood on their own terms."
+    }
+  ],
+  procedure_no_image_steps: {
+    main_heading: "Ensuring stable, safe, and precise embryo growth.",
+    main_tag: "Steps of the Fertility Preservation Process",
+    data: [
+      {
+        title: "Hormonal Stimulation & Egg Retrieval",
+        description: "Fertility hormones are used to produce mature eggs, which are then collected from the ovaries."
+      },
+      {
+        title: "Vitrification (Freezing)",
+        description: "The collected eggs or embryos are frozen at sub-zero temperatures using advanced vitrification technology.",
+      },
+      {
+        title: "Storage & Future Use",
+        description: "Preserved samples are stored in liquid nitrogen and thawed when the patient is ready for conception through IVF.",
+      },
+      {
+        title: "Varicocele Repair",
+        description: "Each sample is regularly monitored to ensure temperature stability and long-term viability."      }
+    ]
+  },
+  gradient_data: "95%",
+  gradient_text:
+    "post-thaw survival rate ensures preserved eggs and embryos retain quality for successful IVF outcomes.",
+  points: [
+    {
+      id: "01",
+      title: "High-Tech Freezing",
+      description:"Ultra-rapid vitrification keeps eggs and embryos healthy and viable for future use.",
+      image: "/treatments/male-fertility-preservation/point1.png"
+    },
+    {
+      id: "02",
+      title: "Expert Fertility Care",
+      description:"Our specialists design personalized preservation plans for every woman’s unique needs.",
+      image: "/treatments/male-fertility-preservation/point2.png"
+    },
+    {
+      id: "03",
+      title: "Secure Long-Term Storage",
+      description:"Samples are safely stored under constant monitoring, ensuring maximum protection and stability.",
+      image: "/treatments/male-fertility-preservation/point3.png"
+    },
+  ]
+}
+
+
 
 
 

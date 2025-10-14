@@ -4,6 +4,8 @@ import {
   blastocystTransferData,
   class1000ModularLabData,
   cryopreservationData,
+  fertilitySurgeryTreatmentData,
+  frozenEmbryoTransferTreatmentData,
   imsiTreatmentData,
   ivfIcsiTreatmentData,
   ivfTreatmentData,
@@ -73,11 +75,17 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
     case "artificial-insemination-iui-treatment":
       data = artificialInseminationData;
       break;
-    case "ivf-treatment":
+    case "ivf-comprehensive-in-vitro-fertilization-treatment":
       data = ivfTreatmentData;
       break;
     case "ivf-icsi-intracytoplasmic-sperm-injection":
       data = ivfIcsiTreatmentData;
+      break;
+    case "frozen-embryo-transfer":
+      data = frozenEmbryoTransferTreatmentData;
+      break;
+    case "fertility-surgery":
+      data = fertilitySurgeryTreatmentData;
       break;
     case "male-fertility-preservation":
       data = maleFertilityPreservationData;
