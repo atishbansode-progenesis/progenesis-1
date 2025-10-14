@@ -23,40 +23,40 @@ export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }
 
               {/* Middle: Content */}
               <div className="font-[Manrope]">
-                <h3 className="text-[26px] md:text-[32px] text-[#1656A5] font-semibold tracking-[-0.02em]">
+                <h3 className="text-[26px] csLg:text-[48px] text-[#1656A5] font-normal tracking-[-0.02em]">
                   {selectedDoctor.name}
                 </h3>
-                <p className="mt-2 text-[14px] md:text-[15px] text-[#6B7280] max-w-[780px]">{selectedDoctor.bio}</p>
+                <p className="mt-2 text-[14px] md:text-[16px] text-[#606060] max-w-[780px]">{selectedDoctor.bio}</p>
 
                 {/* Meta row: Hospital | Specialty | Languages */}
                 <div className="mt-6 flex flex-row items-start gap-8 lg:gap-[135px] pb-4">
                   <div className="min-w-[68px] lg:min-w-[90px]">
-                    <div className="text-[16px] lg:text-[32px] text-[#1656A5]">Hospital</div>
-                    <div className="text-[16px] text-[#2C2C2C] font-medium">{selectedDoctor.hospital}</div>
+                    <div className="text-[16px] lg:text-[32px] font-normal text-[#1656A5]">Hospital</div>
+                    <div className="text-[16px] text-[#2C2C2C] font-normal">{selectedDoctor.hospital}</div>
                   </div>
                   <div className="min-w-[98px] lg:min-w-[130px]">
-                    <div className="text-[16px] lg:text-[32px] text-[#1656A5]">Specialty</div>
-                    <div className="text-[16px] text-[#2C2C2C] font-medium max-w-[260px]">{selectedDoctor.specialty}</div>
+                    <div className="text-[16px] lg:text-[32px] font-normal text-[#1656A5]">Specialty</div>
+                    <div className="text-[16px] text-[#2C2C2C] font-normal max-w-[260px]">{selectedDoctor.specialty}</div>
                   </div>
                   {selectedDoctor.languages && (
                     <div className="min-w-[98px] lg:min-w-[160px]">
-                      <div className="text-[16px] lg:text-[32px] text-[#1656A5]">Languages</div>
-                      <div className="text-[16px] text-[#2C2C2C] font-medium max-w-[300px]">
+                      <div className="text-[16px] lg:text-[32px] font-normal text-[#1656A5]">Languages</div>
+                      <div className="text-[16px] text-[#2C2C2C] font-normal max-w-[300px]">
                         {selectedDoctor.languages}
                       </div>
                     </div>
                   )}
                 </div>
                 {/* CTA buttons under meta: row on mobile, column on desktop */}
-                <div className="mt-5 flex flex-row lg:flex-col items-start lg:gap-[8px]  justify-between">
+                <div className="mt-5 flex flex-row lg:flex-col items-start gap-[16px]  justify-between">
                   <button
-                    className="h-[40px]  rounded-[8px]  lg:w-[194px] bg-white text-[#606060] border border-[#606060] text-sm font-semibold shadow-sm hover:bg-white hover:text-black hover:border-black p-[10px]"
+                    className="h-[56px]  rounded-[16px]  lg:w-[194px] bg-white text-[#606060] border border-[#606060] text-sm font-normal shadow-sm hover:bg-white hover:text-black hover:border-black p-[10px]"
                   >
                     Call Our Team
                   </button>
                   <button
                     onClick={() => setIsOpen(true)}
-                    className="h-[40px] p-[10px]  lg:w-[194px] rounded-[8px] bg-[#252525] text-white text-sm  lg:text-[14px] font-semibold shadow-sm hover:bg-[#000000]"
+                    className="h-[56px] p-[10px]  lg:w-[194px] rounded-[16px] bg-[#252525] text-white text-sm  lg:text-[14px] font-normal shadow-sm hover:bg-[#000000]"
                   >
                     Book Your Appointment
                   </button>
