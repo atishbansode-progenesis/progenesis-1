@@ -79,16 +79,18 @@ const CentersNav: React.FC = () => {
   };
 
   return (
-    <section className="w-full section-spacing overflow-hidden bg-[#F6F6F6]">
-      {/* Badge and Title */}
-      <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
-          Our Expertise
-        </span>
-      <div className="flex flex-col gap-4 mb-8 md:mb-12">
-        <h1 className="text-3xl md:text-4xl lg:text-[48px] font-manrope font-normal text-[#2C2C2C] leading-tight md:leading-[1.2]">
-          Our Locations
-        </h1>
-      </div>
+  <section className="w-full section-spacing overflow-hidden bg-[#F6F6F6]">
+  {/* Badge and Title */}
+  <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
+    Our Expertise
+  </span>
+
+  {/* Added margin-top here */}
+  <div className="flex flex-col gap-4 mt-6 mb-8 md:mt-8 md:mb-12">
+    <h1 className="text-3xl md:text-4xl lg:text-[48px] font-manrope font-normal text-[#2C2C2C] leading-tight md:leading-[1.2]">
+      Our Locations
+    </h1>
+  </div>
 
       {/* Filter Section */}
       <div className="flex flex-wrap gap-6 md:gap-10 ">
@@ -276,8 +278,8 @@ const CentersNav: React.FC = () => {
       )}
 
       {/* Background Shapes - Similar to other sections */}
-      <div className="absolute top-0 right-0 w-[320px] md:w-[420px] lg:w-[522px] h-[280px] md:h-[360px] lg:h-[442px] rounded-full blur-[250px] bg-[#1656A5] opacity-10 -rotate-2" />
-      <div className="absolute bottom-0 left-0 w-[240px] md:w-[300px] lg:w-[348px] h-[200px] md:h-[240px] lg:h-[280px] rounded-full blur-[250px] bg-[#94BA3D] opacity-10 -rotate-2" />
+      {/* <div className="absolute top-0 right-0 w-[320px] md:w-[420px] lg:w-[522px]  md:h-[360px] lg:h-[442px] rounded-full blur-[250px] bg-[#1656A5] opacity-10 -rotate-2" /> */}
+      {/* <div className="absolute bottom-0 left-0 w-[240px] md:w-[300px] lg:w-[348px] h-[200px] md:h-[240px] lg:h-[280px] rounded-full blur-[250px] bg-[#94BA3D] opacity-10 -rotate-2" /> */}
     </section>
   );
 };
