@@ -22,17 +22,17 @@ const OpinionNav: React.FC = () => {
   return (
     <nav className="w-full bg-[#FFFFFF]">
       <div className="section-spacing w-full px-6 md:px-8 lg:px-14 py-6">
-        <div className="flex flex-wrap items-center gap-4 md:gap-6">
+        <div className="flex flex-wrap items-center gap-3 md:gap-6">
           {tabs.map((t) => {
             const isActive = t.id === active;
             return (
               <button
                 key={t.id}
                 type="button"
-                style={{padding:'8px'}}
+                
                 onClick={() => handleScroll(t.id)}
                 className={[
-                  "min-w-[251px] h-[56px] rounded-[18px]  inline-flex items-center justify-center text-[14px] font-medium transition-colors",
+                  "w-fit h-10 lg:h-[56px] rounded-[8px] lg:rounded-[16px]  inline-flex items-center justify-center text-[12px] lg:text-[14px] font-medium transition-colors px-3 md:px-4 py-[10px]",
                   isActive
                     ? "bg-[#1656A5] text-[#F9F9F9] shadow"
                     : "bg-[#F9F9F9] text-[#1656A5] border border-[#1656A5]/60 hover:bg-[#1656A5]/5",

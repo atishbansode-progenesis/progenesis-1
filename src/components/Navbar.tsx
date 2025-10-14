@@ -1418,15 +1418,20 @@ export default function Navbar() {
                 <>
                   {navigationItems.map((item, idx) => (
                     <div key={idx}>
-                      <button
-                        onClick={() => {
-                          if (item.hasMegaMenu) setActiveMobileSubmenu(item.label);
-                          else setIsMobileMenuOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between py-3 font-[Manrope] text-[20px] font-normal tracking-[-0.4px] 
-                          ${activeMobileSubmenu === item.label ? "text-[#1656A5]" : "text-[#7E7E7E]"} 
-                          hover:text-[#1656A5] transition-colors duration-200`}
-                      >
+ <button
+  onClick={() => {
+    if (item.hasMegaMenu) {
+      setActiveMobileSubmenu(item.label);
+    } else {
+      setIsMobileMenuOpen(false);
+      window.location.href = item.path; // ✅ instant redirect
+    }
+  }}
+  className={`w-full flex items-center justify-between py-3 font-[Manrope] text-[20px] font-normal tracking-[-0.4px]
+    ${activeMobileSubmenu === item.label ? "text-[#1656A5]" : "text-[#7E7E7E]"}
+    hover:text-[#1656A5] transition-colors duration-200`}
+>
+
                         {item.label}
 
                         {item.hasMegaMenu && (
