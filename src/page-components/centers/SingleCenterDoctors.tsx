@@ -39,7 +39,7 @@ const CenterDoctorsSection = () => {
         </div>
 
         {/* Doctor Cards Container - Full width with centered content */}
-       <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-8 w-full p-2">
+       <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-8 w-full ">
   {doctors.map((doctor, index) => (
     <div
       key={index}
