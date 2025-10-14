@@ -34,7 +34,7 @@ export default function StoriesSection() {
     if (winWidth < 1024) {
       return { minWidth: 240, height: 300 };
     }
-    return { minWidth: 360, height: 420 };
+    return { minWidth: 380, height: 420 };
   };
 
   const scrollByOne = (dir = 1) => {
@@ -53,10 +53,10 @@ export default function StoriesSection() {
   const cardStyle = getCardStyle();
 
   return (
-    <section className="px-[12px] py-[80px] md:px-[80px] xl:px-[120px] bg-[#F1F7FC]">
+    <section className=" pl-4 py- md:py-[80px]  md:px-[120px] bg-[#F1F7FC]">
       <div className="mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-[80px]">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-[26px] md:mb-[80px]">
           <div>
             <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
               Real Stories. Real Miracles.
@@ -66,29 +66,13 @@ export default function StoriesSection() {
             </h2>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center ">
             <Link
               href="/resources"
-              className="hidden md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition"
+              className=" md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition"
             >
               See all
             </Link>
-
-            <button
-              onClick={prevSlide}
-              aria-label="Previous"
-              className="w-10 h-10 rounded-lg border border-[#1656a5] text-[#1656a5] bg-white hover:bg-blue-50 flex items-center justify-center"
-            >
-              <img src="/icons/left.svg" alt="right" width={12} height={12} />
-            </button>
-
-            <button
-              onClick={nextSlide}
-              aria-label="Next"
-              className="w-10 h-10 rounded-lg border border-[#1656a5] text-[#1656a5] bg-white hover:bg-blue-50 flex items-center justify-center"
-            >
-              <img src="/icons/right.svg" alt="right" width={12} height={12} />
-            </button>
           </div>
         </div>
 
@@ -162,13 +146,6 @@ export default function StoriesSection() {
               </article>
             );
           })}
-        </div>
-
-        {/* Mobile 'See all' button */}
-        <div className="mt-4 md:hidden">
-          <Link href="/blog" className="px-4 py-2 bg-[#1656a5] text-white rounded-lg inline-flex w-28 items-center justify-center">
-            See all
-          </Link>
         </div>
       </div>
     </section>
