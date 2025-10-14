@@ -103,7 +103,7 @@ export default function HeroSection({
 
         {/* Title */}
         <h1 
-          className="text-[32px] lg:text-[80px] leading-[40px] lg:leading-[88px] font-semibold"
+          className="text-[32px] lg:text-[70px] leading-[40px] lg:leading-[88px] font-semibold"
           style={{ color: titleColor }}
         >
           {typeof title === "string" ? (
@@ -124,7 +124,7 @@ export default function HeroSection({
             {buttonLink ? (
               <Link
                 href={buttonLink}
-                className="p-[10px] lg:p-[20px] rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium inline-block"
+                className="p-[10px] lg:p-[20px] rounded-[8px] lg:rounded-[50px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium inline-block"
                 style={{
                   backgroundColor: buttonBgColor,
                   color: buttonTextColor
