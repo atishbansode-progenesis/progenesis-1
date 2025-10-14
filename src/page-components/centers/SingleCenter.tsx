@@ -39,19 +39,19 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           backgroundSize: 'cover'
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-[90px] w-full">
-          <h1 className="text-white text-4xl md:text-6xl font-[Manrope] font-semibold mb-4">
+        <div className="section-spacing max-w-7xl w-full">
+          <h1 className="text-white text-[32px] md:text-[48px] leading-[40px] md:leading-[56px] lg:text-[80px] lg:leading-[88px] font-[Manrope] tracking-tight font-semibold mb-4">
             Progenesis IVF,
           </h1>
-          <h2 className="text-white text-3xl md:text-5xl font-[Manrope] mb-6">
+          <h2 className="text-white text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] lg:text-[80px] lg:leading-[88px] font-semibold font-[Manrope] mb-6">
             {selectedCenter.name}
           </h2>
         </div>
       </section>
 
       {/* Center Details Section */}
-      <section className="section-spacing w-full bg-white px-6 md:px-12 lg:px-[90px] py-10 md:py-14">
-        <div className="max-w-7xl mx-auto lg:flex lg:flex-row">
+      <section className="section-spacing w-full bg-white ">
+        <div className=" lg:flex lg:flex-row">
           <div className="w-full ">
             <p className="w-fit rounded-[8px] py-[4px] px-[8px] text-sm text-[#1656A5] bg-[#1656A5]/10 mb-2">Our Centers</p>
             <h1 className="text-[#2C2C2C] text-[32px] md:text-[48px] font-[Manrope] leading-[40px] md:leading-[56px] tracking-tight font-semibold mb-6 lg:mb-12 md:pb-6">
@@ -82,7 +82,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                   </div>
-                  <div className="ml-12 items-center gap-3 mb-3">
+                  <div className="lg:ml-12  items-center gap-3 mb-3">
                     <div className='mb-3'>
                           <span className="text-base text-[#606060]">Reach Out to us at</span>
                     </div>
@@ -101,8 +101,8 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                       </svg>
                     </div>
                   
-                  <div className="ml-12">
-                    <div className=" mb-3">
+                  <div className="lg:ml-12 ml-2">
+                    <div className=" lg:mb-3">
                     
                       <span className="text-base text-[#606060]">Visit the Center</span>
                     </div>
@@ -113,7 +113,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-4 pb-8">
+                <div className="flex flex-row flex-wrap gap-4 pt-4 pb-8">
                   <button
                     onClick={() => {
                       if (selectedCenter.mapUri) {
@@ -121,13 +121,13 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                       }
                     }}
                     disabled={!selectedCenter.mapUri}
-                    className="px-8 py-3 rounded-lg border hover:cursor-pointer border-[#1656A5] text-white bg-[#1656A5] text-sm font-medium hover:bg-white hover:text-[#1656A5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="lg:px-8 lg:py-3 p-[10px] h-10 lg:h-14 w-fit rounded-lg border hover:cursor-pointer border-[#1656A5] text-white bg-[#1656A5] text-sm font-medium hover:bg-white hover:text-[#1656A5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Get Location
                   </button>
                   <button
                     onClick={() => setIsOpen(true)}
-                    className="px-8 py-3 rounded-lg border hover:cursor-pointer border-[#1656A5] bg-white text-[#1656A5] text-sm font-medium hover:bg-[#1656A5] hover:text-white transition-colors"
+                    className="lg:px-8 lg:py-3 p-[10px] h-10 lg:h-14 w-fit rounded-lg border hover:cursor-pointer border-[#1656A5] bg-white text-[#1656A5] text-sm font-medium hover:bg-[#1656A5] hover:text-white transition-colors"
                   >
                     Book an Appointment
                   </button>

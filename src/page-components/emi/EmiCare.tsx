@@ -16,13 +16,13 @@ const EmiCare: React.FC = () => {
       </div>
 
       {/* Separator Line */}
-      <div className="w-full h-[1px] bg-gray-200"></div>
+      <div className="w-full h-[1px] bg-gray-200 md:mb-auto mb-4"></div>
 
       {/* How It Works Section */}
-      <div className="mt-1 md:mt-2 lg:mt-3 flex flex-col md:flex-row justify-between items-start gap-6 md:gap-10">
+      <div className="mt-1 md:mt-2 lg:mt-3 flex flex-col md:flex-row justify-between items-start ">
   {/* Left Title */}
   <div className="md:w-[35%] lg:w-[30%]">
-    <h2 className="text-[32px] md:text-3xl lg:text-[36px] font-manrope font-normal text-[#2C2C2C] mb-4 md:mb-0">
+    <h2 className="text-[16px] leading-[24px] lg:text-[32px] lg:leading-[40px] font-manrope font-normal text-[#2C2C2C] mb-2 md:mb-0 ">
       How It Works
     </h2>
   </div>
