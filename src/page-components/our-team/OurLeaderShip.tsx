@@ -83,7 +83,7 @@ const LeadershipTeam: React.FC = () => {
           {/* Heading */}
           {/* Mobile-only heading (3 lines) */}
           <h1
-            className="block md:hidden text-[32px] leading-[40px] tracking-tight font-semibold "
+            className="block md:hidden text-[32px] csLg:text-[80px] leading-[40px] csLg:leading-[88px] tracking-tight font-semibold "
             style={{ color: "#252525", fontFamily: "Manrope" }}
           >
             The Team Leading <br />
@@ -118,7 +118,7 @@ const LeadershipTeam: React.FC = () => {
           </h2>
 
           {/* Desktop / tablet heading (original) */}
-          <h2 className="hidden sm:block lg:text-[48px] text-[32px] md:text-4xl font-[400] tracking-tight text-[#2C2C2C] mb-4">
+          <h2 className="hidden sm:block csLg:text-[48px] text-[32px] csLg:leading-[56px] leasing-[40px] font-[400] tracking-tight text-[#2C2C2C] mb-4">
              Our directors lead with vision
              <br /> and dedication.
           </h2>
@@ -158,7 +158,7 @@ const LeadershipTeam: React.FC = () => {
           {teamMembers.map((member) => (
             <article
               key={member.id}
-              className={`bg-[#FFFFFF] rounded-lg overflow-hidden transition cursor-pointer hover:bg-[#F3F6FA]
+              className={`${isGridView ? "bg-[#ffffff]" : "bg-[#F3F6FA]"} rounded-lg overflow-hidden transition cursor-pointer hover:bg-[#F3F6FA]
                 ${isGridView ? "text-center p-2 md:p-6" : "flex items-center lg:max-w-fit gap-4 p-4"}`}
               onClick={() => alert(`Clicked on ${member.name}`)}
             >
@@ -182,12 +182,12 @@ const LeadershipTeam: React.FC = () => {
                   {member.name}
                 </h3>
                 ):(
-                  <h3 className="text-[16px] leading-[24px] font-normal justify-content-center text-[#1656A5] tracking-tight lg:text-[32px] lg:leading-[40px] pb-2">
+                  <h3 className="text-[16px] leading-[24px] font-normal justify-content-center text-[#1656A5] tracking-tight csLg:text-[32px] csLg:leading-[40px] pb-2">
                   {member.name}
                 </h3>
                 )}
                 
-                <p className="text-sm text-[#606060]">{member.role}</p>
+                <p className="text-sm text-[#2c2c2c]">{member.role}</p>
               </div>
             </article>
           ))}

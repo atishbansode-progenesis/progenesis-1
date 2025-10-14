@@ -44,7 +44,7 @@ const ResourceStories = () => {
   {resourceStoriesData.slice(0, 3).map((s, i) => (
     <article
       key={i}
-      className="rounded-2xl w-[287px] h-[340px]  overflow-hidden flex-none md:w-auto p-2 bg-[#FFFFFF]"
+      className="rounded-2xl w-[287px] h-[340px]  overflow-hidden flex-none md:w-auto px-2 bg-[#FFFFFF]"
     >
       {/* Views */}
       <div className="px-3 pt-3">
@@ -67,7 +67,7 @@ const ResourceStories = () => {
 
       {/* Title */}
  <div className="">
- <h4 className="mt-2 text-[16px] sm:text-[20px] md:text-[24px] lg:text-[20px] xl:text-[20px] font-medium text-[#2C2C2C] leading-snug break-words">
+ <h4 className="mt-2 text-[16px] sm:text-[20px] md:text-[20px] lg:text-[24px] xl:text-[24px] font-medium text-[#2C2C2C] leading-snug break-words">
   {s.title}
 </h4>
 
