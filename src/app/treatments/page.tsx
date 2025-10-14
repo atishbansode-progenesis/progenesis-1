@@ -9,6 +9,7 @@ import ResourceStories from "@/page-components/resources/ResourceStories";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
 import StoriesSection from "@/components/Home/StoriesSection"; //
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 
 
@@ -707,7 +708,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
      <StoriesSection />
 
-      <ConsultationForm />
+      <AppointmentForm />
       <GradientBanner text="Every journey to parenthood is unique — with the right care, hope finds its way." />
 
       {/* </div> */}

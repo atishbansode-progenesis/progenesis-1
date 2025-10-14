@@ -13,6 +13,7 @@ import ProcedureStepsNoImage from "./ProcedureNoImageSteps";
 import GeneticTestingCards from "./GeneticTestingCards";
 import { OvulationCards } from "./OvulationCards";
 import { PathSection } from "./PathSection";
+import AppointmentForm from "../about/AppointmentForm";
 
 export default function MainTreatment({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("basics");
@@ -127,7 +128,7 @@ export default function MainTreatment({ data }: { data: any }) {
       </section>
 
       {/* Section 9: Consultation Form */}
-      <ConsultationForm />
+      <AppointmentForm />
     </div>
   );
 }

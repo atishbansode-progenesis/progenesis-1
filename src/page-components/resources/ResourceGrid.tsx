@@ -1,7 +1,7 @@
 'use client'
-import { API_DOMAIN } from '@/utils/constent/constent';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 interface BlogCard {
   uid?: string;
@@ -47,7 +47,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
         setError(null);
 
         const response = await fetch(
-          `${API_DOMAIN}/api/blogs/?page=${currentPage}&page_size=${PAGE_SIZE}`,
+          `${apiUrl}/api/blogs/?page=${currentPage}&page_size=${PAGE_SIZE}`,
           { signal: controller.signal }
         );
         if (!response.ok) {
@@ -83,32 +83,32 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
   if (error) return <p className="text-center py-10 text-red-500">{error}</p>;
 
   return (
-    <section className="section-spacing bg-white px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 py-10 md:py-14">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-[#FAFAFA] p-4 lg:p-[120px]">
+      <div className="space-y-4 lg:space-y-[80px]">
         {(showEyebrow || (showHeading && heading)) && (
-          <div className="space-y-3">
+          <div className="space-y-2">
             {showEyebrow && (
-              <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
+              <span className='w-fit rounded-[8px] bg-[#1656A50D] py-1 px-2 font-medium text-[12px] leading-[20px] text-[#1656A5]'>
                 {eyebrowLabel}
               </span>
             )}
             {showHeading && heading && (
-              <h3 className="text-[22px] sm:text-[26px] md:text-[34px] lg:text-[38px] font-semibold text-gray-900 leading-snug max-w-3xl">
+              <h3 className="text-[32px] lg:text-[48px] leading-[40px] lg:leading-[56px] max-w-[691px] font-normal">
                 {heading}
               </h3>
             )}
           </div>
         )}
 
-        <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map((card) => {
             const formattedDate = card.created
               ? new Intl.DateTimeFormat('en-IN', {
-                  month: 'long',
-                  year: 'numeric',
-                }).format(new Date(card.created))
+                month: 'long',
+                year: 'numeric',
+              }).format(new Date(card.created))
               : card.posted || 'Recently';
-            const previewImage = card.image || card.img || '/images/Rstory1.png';
+            const previewImage = card.image || '/images/Rstory1.png';
             const previewDescription = card.description || card.desc || 'Discover more about this story.';
             const views = typeof card.views === 'number' ? `${card.views}` : card.views;
 
@@ -116,10 +116,10 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
               <Link
                 key={card.uid || card.slug}
                 href={`/blog/${card.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-transparent bg-white p-2 transition-shadow hover:border-[#1656A5]/20 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1656A5]"
+                className="group flex h-full flex-col rounded-2xl border border-transparent transition-shadow"
               >
-                <article className="flex h-full flex-col">
-                  <p className="text-gray-400 text-[12px] md:text-[13px] mb-2">
+                <article className="flex h-full flex-col gap-2">
+                  <p className="text-[12px] leading-[20px] font-normal text-[#606060]/50">
                     {card.author ? `${card.author} • ` : ''}{formattedDate}
                     {views ? ` • ${views} views` : ''}
                   </p>
@@ -131,12 +131,14 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                       loading="lazy"
                     />
                   </div>
-                  <h4 className="mt-3 md:mt-4 text-[16px] md:text-[18px] font-semibold text-gray-900">
-                    {card.title}
-                  </h4>
-                  <p className="mt-2 text-[12px] md:text-[13px] text-gray-600 leading-relaxed line-clamp-2">
-                    {previewDescription}
-                  </p>
+                  <div className='space-y-2'>
+                    <h4 className="text-[16px] leading-[22px] font-normal text-[#2C2C2C] line-clamp-1">
+                      {card.title}
+                    </h4>
+                    <p className="text-[13px] text-[#606060]/50 leading-[19.29px] line-clamp-2">
+                      {previewDescription}
+                    </p>
+                  </div>
                 </article>
               </Link>
             );
@@ -160,11 +162,10 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                   key={pageNumber}
                   type="button"
                   onClick={() => setCurrentPage(pageNumber)}
-                  className={`min-w-[40px] rounded-full px-4 py-2 text-sm font-semibold ${
-                    currentPage === pageNumber
+                  className={`min-w-[40px] rounded-full px-4 py-2 text-sm font-semibold ${currentPage === pageNumber
                       ? 'bg-[#1656A5] text-white shadow-md'
                       : 'border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors'
-                  }`}
+                    }`}
                 >
                   {pageNumber}
                 </button>
