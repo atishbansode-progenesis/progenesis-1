@@ -174,15 +174,15 @@ const LeadershipTeam: React.FC = () => {
                 />
               </div>
               <div
-                className={isGridView ? "" : "lg:max-w-[190px]"}
+                className={isGridView ? "" : "lg:max-w-[190px] gap-2"}
                 style={{ textAlign: "left" }}
               >
                 {isGridView?(
-                  <h3 className="text-[32px] leading-[40px] font-normal tracking-tight justify-content-center text-[#1656A5]">
+                  <h3 className="text-[32px] leading-[40px] font-normal tracking-tight justify-content-center text-[#1656A5] pb-2">
                   {member.name}
                 </h3>
                 ):(
-                  <h3 className="text-[16px] leading-[24px] font-normal justify-content-center text-[#1656A5] tracking-tight lg:text-[32px] lg:leading-[40px]">
+                  <h3 className="text-[16px] leading-[24px] font-normal justify-content-center text-[#1656A5] tracking-tight lg:text-[32px] lg:leading-[40px] pb-2">
                   {member.name}
                 </h3>
                 )}
