@@ -78,7 +78,7 @@ const TreatmentsSection = () => {
               </h2>
             </div>
 
-            <button className="px-[14px] w-fit cursor-pointer md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] text-[12px] md:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
+            <button className="px-[14px] csLg:mt-[40px] w-fit cursor-pointer md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] text-[12px] md:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
               View all treatments
             </button>
                           </div>
