@@ -181,7 +181,7 @@ const CentersNav: React.FC = () => {
       </div>
 
       {/* Centers Count */}
-      <div className="text-sm text-end text-[#2C2C2C] mb-10 lg:mb-20">
+      <div className="text-sm text-start text-[#2C2C2C] lg:text-end mt-[32px]  mb-10 lg:mb-20">
         Showing {Math.min(CENTERS_PER_PAGE, filteredCenters.length - (currentPage - 1) * CENTERS_PER_PAGE)} of {filteredCenters.length} Centers
       </div>
 
