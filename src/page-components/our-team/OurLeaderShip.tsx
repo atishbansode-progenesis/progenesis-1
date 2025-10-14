@@ -104,7 +104,8 @@ const LeadershipTeam: React.FC = () => {
       </section>
 
       {/* 2️⃣ Team Members Section */}
-      <section className="w-full px-6 md:px-24 py-16 bg-[#FAFAFA]">
+      <section className="w-full md:px-24 lg:py-16 bg-[#FAFAFA]">
+        <div className="px-4 md:px-0 py-4 md:py-0">
         <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-[8px] mb-2">
          Meet The Experts
         </span>
@@ -125,42 +126,59 @@ const LeadershipTeam: React.FC = () => {
 
 
           {/* 🔘 Toggle Button */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsGridView(true)}
-              className={`p-2 rounded-md cursor-pointer ${isGridView
-                  ? "bg-[#1656A5] text-white"
-                  : "bg-gray-200 text-[#606060]"
-                }`}
-            >
-              <FaThLarge />
-            </button>
-            <button
-              onClick={() => setIsGridView(false)}
-              className={`p-2 rounded-md cursor-pointer ${!isGridView
-                  ? "bg-[#1656A5] text-white"
-                  : "bg-gray-200 text-[#606060]"
-                }`}
-            >
-              <FaList />
-            </button>
-          </div>
-        </div>
+          <div className="flex items-center gap-2">
+  {/* Grid View Button */}
+  <button
+    onClick={() => setIsGridView(true)}
+    className={` rounded-md cursor-pointer transition ${
+      isGridView ? " text-white" : " text-[#606060]"
+    }`}
+  >
+    <img
+      src={
+        isGridView
+          ? "/images/icons/GridBlue.svg"  // active blue icon
+          : "/images/icons/GridGray.svg"  // inactive gray icon
+      }
+      alt="Grid View"
+      className="lg:w-13 w-9 h-7 lg:h-12"
+    />
+  </button>
+
+  {/* List View Button */}
+  <button
+    onClick={() => setIsGridView(false)}
+    className={` rounded-md cursor-pointer transition ${
+      !isGridView ? " text-white" : " text-[#606060]"
+    }`}
+  >
+    <img
+      src={
+        !isGridView
+          ? "/images/icons/ListBlue.svg"  // active blue icon
+          : "/images/icons/ListGray.svg"  // inactive gray icon
+      }
+      alt="List View"
+      className="lg:w-13 w-9 h-7 lg:h-12"
+    />
+  </button>
+</div>
+
+        </div></div>
 
         {/* 👥 Team Members */}
         <div
           className={
             isGridView
               ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
-              : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+              : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[50px]"
           }
         >
           {teamMembers.map((member) => (
             <article
               key={member.id}
               className={`bg-[#FFFFFF] rounded-lg overflow-hidden transition cursor-pointer hover:bg-[#F3F6FA]
-                ${isGridView ? "text-center p-2 md:p-6" : "flex items-center lg:max-w-fit gap-4 p-4"}`}
-              onClick={() => alert(`Clicked on ${member.name}`)}
+                ${isGridView ? "text-center p-4 md:p-6" : "flex items-center lg:max-w-full gap-4 p-4"}`}
             >
               <div
                 className={`relative ${isGridView ? "w-full h-60 mb-4" : "lg:w-32 w-24 h-24 lg:h-40 flex-shrink-0"
@@ -192,6 +210,7 @@ const LeadershipTeam: React.FC = () => {
             </article>
           ))}
         </div>
+        
       </section>
     </div>
   );
