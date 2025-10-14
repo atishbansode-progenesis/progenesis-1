@@ -40,109 +40,109 @@ const TestimonialsSection = () => {
     <section className="w-full bg-white overflow-hidden">
       <div className="flex flex-col md:flex-row h-auto md:h-[700px]">
         {/* LEFT PANEL */}
-        <div className="bg-[#1656A5] text-white p-10 flex flex-col justify-between md:w-1/4 px-6 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px] pt-[80px] md:pt-[128px]">
+        <div className="bg-[#1656A5] text-white py-10 flex flex-col justify-between md:w-1/4 px-4 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px] pt-[80px] md:pt-[128px]">
           <div className="md:text-left text-center">
             {/* Google Rating */}
-           <div className="flex flex-row md:flex-col md:items-start items-center justify-center md:justify-start space-x-2 mb-2"> 
-  <div className="flex md:flex-row items-center md:items-start justify-center md:justify-start space-x-2 md:space-x-0">
-    
-    {/* Mobile image */}
-    <img
-      src="/images/google.png"
-      alt="Google"
-      className="w-[65px] h-[34px] rounded-[5px] block md:hidden"
-    />
+            <div className="flex flex-row md:flex-col md:items-start items-center justify-center md:justify-start space-x-2 mb-2">
+              <div className="flex md:flex-row items-center md:items-start justify-center md:justify-start space-x-2 md:space-x-0">
 
-    {/* Desktop image */}
-    <img
-      src="/TestimonialsSection/google.png"
-      alt="Google"
-      className="w-10 h-10 rounded-[5px] hidden md:block mr-2"
-    />
+                {/* Mobile image */}
+                <img
+                  src="/images/google.png"
+                  alt="Google"
+                  className="w-[65px] h-[34px] rounded-[5px] block md:hidden"
+                />
 
-    {/* Mobile star + rating inline */}
-    <div className="flex items-center md:hidden space-x-1">
-      <span className="text-yellow-400 text-[16px]">★</span>
-      <span className="text-[14px] font-[Manrope] font-semibold text-[#F9F9F9]">
-        4.9
-      </span>
-      <span className="text-[14px] text-[#F9F9F9]">/5</span>
-      <span className="text-[14px] text-gray-200">
-        &nbsp;Based on <span className="font-bold">14,570</span> reviews
-      </span>
-    </div>
+                {/* Desktop image */}
+                <img
+                  src="/TestimonialsSection/google.png"
+                  alt="Google"
+                  className="w-10 h-10 rounded-[5px] hidden md:block mr-2"
+                />
 
-    {/* Desktop rating (unchanged) */}
-    <div className="hidden md:flex md:flex-row md:items-center">
-      <span className="text-5xl font-[Manrope] font-semibold text-[#F9F9F9] pr-1">4.9</span>
-      <span className="text-[18px] text-[#F9F9F9] pr-2">/5</span>
-    </div>
-  </div>
+                {/* Mobile star + rating inline */}
+                <div className="flex items-center md:hidden space-x-1">
+                  <span className="text-yellow-400 text-[16px]">★</span>
+                  <span className="text-[14px] font-[Manrope] font-semibold text-[#F9F9F9]">
+                    4.9
+                  </span>
+                  <span className="text-[14px] text-[#F9F9F9]">/5</span>
+                  <span className="text-[14px] text-gray-200">
+                    &nbsp;Based on <span className="font-bold">14,570</span> reviews
+                  </span>
+                </div>
 
-  {/* Desktop stars (unchanged) */}
-  <div className="hidden md:flex justify-center md:justify-start items-center text-yellow-400 text-xl mb-2">
-    {Array.from({ length: 5 }).map((_, i) => {
-      const full = i + 1 <= Math.floor(rating);
-      const half = rating - i === 0.5;
-      return <span key={i}>{full ? "★" : half ? "☆" : "☆"}</span>;
-    })}
-  </div>
+                {/* Desktop rating (unchanged) */}
+                <div className="hidden md:flex md:flex-row md:items-center">
+                  <span className="text-5xl font-[Manrope] font-semibold text-[#F9F9F9] pr-1">4.9</span>
+                  <span className="text-[18px] text-[#F9F9F9] pr-2">/5</span>
+                </div>
+              </div>
 
-  {/* Desktop review count (unchanged) */}
-  <p className="hidden md:block text-sm text-gray-200 mb-6 text-center md:text-left">
-    Based on <span className="font-bold">14,570</span> reviews
-  </p>
-</div>
+              {/* Desktop stars (unchanged) */}
+              <div className="hidden md:flex justify-center md:justify-start items-center text-yellow-400 text-xl mb-2">
+                {Array.from({ length: 5 }).map((_, i) => {
+                  const full = i + 1 <= Math.floor(rating);
+                  const half = rating - i === 0.5;
+                  return <span key={i}>{full ? "★" : half ? "☆" : "☆"}</span>;
+                })}
+              </div>
+
+              {/* Desktop review count (unchanged) */}
+              <p className="hidden md:block text-sm text-gray-200 mb-6 text-center md:text-left">
+                Based on <span className="font-bold">14,570</span> reviews
+              </p>
+            </div>
 
 
             {/* Heading */}
             <h2 className="text-[32px] md:text-5xl font-[Manrope] md:leading-[56px] leading-[40px] tracking-tight font-normal text-[#F9F9F9] text-center md:text-left">
               What our patient's are saying
             </h2>
-            
+
           </div>
 
           {/* Arrows only (progress bar removed) */}
           <div className="hidden md:flex flex-col mt-10 mb-[100px]">
-          <div className="flex space-x-4">
-  {/* Prev Button */}
-  <button
-    ref={prevRef}
-    className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
-  >
-    {/* Default white icon */}
-    <img
-      src="/icons/left-white.svg"
-      alt="left"
-      className="block group-hover:hidden"
-    />
-    {/* Hover icon */}
-    <img
-      src="/icons/left.svg"
-      alt="left-hover"
-      className="hidden group-hover:block"
-    />
-  </button>
+            <div className="flex space-x-4">
+              {/* Prev Button */}
+              <button
+                ref={prevRef}
+                className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
+              >
+                {/* Default white icon */}
+                <img
+                  src="/icons/left-white.svg"
+                  alt="left"
+                  className="block group-hover:hidden"
+                />
+                {/* Hover icon */}
+                <img
+                  src="/icons/left.svg"
+                  alt="left-hover"
+                  className="hidden group-hover:block"
+                />
+              </button>
 
-  {/* Next Button */}
-  <button
-    ref={nextRef}
-    className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
-  >
-    {/* Default white icon */}
-    <img
-      src="/icons/right-white.svg"
-      alt="right"
-      className="block group-hover:hidden"
-    />
-    {/* Hover icon */}
-    <img
-      src="/icons/right.svg"
-      alt="right-hover"
-      className="hidden group-hover:block"
-    />
-  </button>
-</div>
+              {/* Next Button */}
+              <button
+                ref={nextRef}
+                className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition"
+              >
+                {/* Default white icon */}
+                <img
+                  src="/icons/right-white.svg"
+                  alt="right"
+                  className="block group-hover:hidden"
+                />
+                {/* Hover icon */}
+                <img
+                  src="/icons/right.svg"
+                  alt="right-hover"
+                  className="hidden group-hover:block"
+                />
+              </button>
+            </div>
 
           </div>
         </div>
@@ -193,11 +193,10 @@ const TestimonialsSection = () => {
               >
                 {({ isActive }) => (
                   <div
-                    className={`flex flex-col justify-between transition-all duration-500 rounded-2xl bg-[#F9F9F9] p-6 md:p-[80px_60px] ml-0 mr-0 md:ml-[40px] md:mr-[40px] h-auto md:h-[520px] min-h-[280px] ${
-                      isActive
+                    className={`flex flex-col justify-between transition-all duration-500 rounded-2xl bg-[#F9F9F9] p-6 md:p-[80px_60px] ml-0 mr-0 md:ml-[40px] md:mr-[40px] h-auto md:h-[520px] min-h-[280px] ${isActive
                         ? "opacity-100"
                         : "opacity-70"
-                    }`}
+                      }`}
                   >
                     <div className="flex flex-col justify-center h-full text-left">
                       <p

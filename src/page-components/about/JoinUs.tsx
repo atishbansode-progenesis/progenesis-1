@@ -2,19 +2,17 @@ import React from "react";
 
 const JoinUs: React.FC = () => {
   return (
-<div className="grid grid-cols-3  bg-gradient-to-r from-green-300 csLg:min-h-[500px] px-4 md:px-[120px]  ">
+<div className="flex bg-[url('/images/gradient-mob-bg.png')] bg-cover bg-center flex-col pt-[40px] csLg:flex-row justify-between csLg:justify-end w-full relative csLg:min-h-[500px] min-h-[515px]   ">
 
   {/* Doctor Image */}
-  <div className="relative h-full csLg:max-w-[300px]  ">
     <img
       src="/images/doctor.png"
       alt="Doctor"
-      className=" object-contain rounded-[12px] absolute bottom-0 "
+      className=" object-contain h-[300px] rounded-[12px] absolute bottom-0 csLg:left-[120px] csLg:h-[80%] hidden csLg:block"
     />
-  </div>
 
   {/* Content */}
-  <div className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-left text-white gap-6 ">
+  <div className="csLg:max-w-[70%] flex flex-col justify-center items-center csLg:items-start text-center csLg:text-left text-white gap-6 ">
     <h2 className="text-[28px] md:text-[40px] lg:text-[48px] text-[#94BA3D] font-normal leading-tight">
       We’re looking for passionate people to help create life’s most precious journeys.
     </h2>
@@ -23,6 +21,13 @@ const JoinUs: React.FC = () => {
       Join Our Team
     </button>
   </div>
+
+  <img
+      src="/images/doctor.png"
+      alt="Doctor"
+      className=" object-contain h-[300px] block csLg:hidden"
+    />
+
 </div>
 
 
