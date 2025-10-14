@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                { label: "About Us", href: "/about" },
+                { label: "About Us", href: "/about-us" },
                 { label: "Our Centers", href: "/centers" },
                 { label: "Doctors", href: "/doctors" },
                 { label: "Careers", href: "/careers" },
