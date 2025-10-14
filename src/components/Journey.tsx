@@ -8,11 +8,11 @@ const tabItems = [
     title: 'Connect With Us',
     heading: 'Begin your treatment journey',
     description: [
-    'Fill the form and our team will guide you',
-    'Clear answers to your doubts',
-    'A personalized treatment plan',
-    'Duration with checklist',
-    'Pre & post-treatment guidance',
+    'Fill the form and our team will guide you ',
+    'Clear answers to your doubts ',
+    'A personalized treatment plan ',
+    'Duration with checklist ',
+    'Pre & post-treatment guidance ',
   ],
     image: '/InternationalPatients/connect.png',
   },
@@ -41,13 +41,13 @@ const Journey: React.FC = () => {
     <section id='why-1' className="w-full bg-white">
       <div className="section-spacing">
         {/* Desktop layout: visible on large screens and above */}
-        <div className="hidden lg:grid lg:grid-cols-[400px_1fr] csLg:grid-cols-[400px_1fr] gap-6 lg:gap-10 xl:gap-x-32">
+        <div className="hidden lg:grid lg:grid-cols-[400px_1fr] csLg:grid-cols-[400px_1fr] gap-6 lg:gap-10 justify-between">
           {/* Left Column: Heading + Tab List */}
           <div className="flex flex-col gap-8 lg:gap-12">
             {/* Heading */}
             <div>
               <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" >Your Journey, Made Simple</span>
-              <h2 className="text-4xl lg:text-5xl font-normal text-[#2C2C2C] leading-[56px] tracking-tight font-[Manrope]">
+              <h2 className="text-[32px] leading-[40px] lg:text-5xl font-normal text-[#2C2C2C] lg:leading-[56px] tracking-tight font-[Manrope]">
                 Your Steps to Begin
               </h2>
             </div>
@@ -66,7 +66,7 @@ const Journey: React.FC = () => {
               className="flex items-center justify-between cursor-pointer py-3 lg:flex-nowrap lg:gap-4"
               >
               <span
-              className={`text-lg md:text-[24px] lg:text-[28px] font-medium font-[Manrope] tracking-tight lg:whitespace-nowrap ${
+              className={`text-[16px] leading-[24px] md:text-[24px] lg:text-[32px] lg:leading-[40px] font-medium font-[Manrope] tracking-tight lg:whitespace-nowrap ${
               activeTab === index ? "text-[#1656A5]" : "text-[#606060]"
               }`}
               >
@@ -94,14 +94,14 @@ const Journey: React.FC = () => {
           {/* Right Column: Paragraph + Image + Info Box */}
           <div className="flex flex-col gap-10">
             {/* Paragraph (top of right column) */}
-            <p className="text-lg lg:text-[32px] leading-[36px] text-[#2C2C2C] tracking-tight font-[Manrope]">
+            <p className="text-[16px] leading-[24px] lg:text-[32px] lg:leading-[40px] text-[#2C2C2C] tracking-tight font-[Manrope]">
              A clear, step-by-step process to make your fertility treatment in India smooth, transparent, and stress-free.
             </p>
 
             {/* Image + Info Box */}
             <div className="flex flex-col lg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden">
                 {/* Image */}
-              <div className="w-full bg-[#E8EFF6] lg:max-w-[480px] csLg:h-[500px] xl:max-w-[520px] aspect-[4/3] rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <div className="w-full bg-[#E8EFF6] lg:max-w-[480px] csLg:h-[450px] xl:max-w-[520px] aspect-[4/3] rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
                <img
                 src={tabItems[activeTab].image}
                 alt={tabItems[activeTab].title}

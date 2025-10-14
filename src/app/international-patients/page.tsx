@@ -206,7 +206,7 @@ const InternationalPatientsPage: React.FC = () => {
       >
         <div className="flex flex-col csLg:flex-row items-center mx-auto px-6 md:px-[120px] gap-8 csLg:gap-0">
           {/* Header Section */}
-          <div className="flex flex-col justify-between w-full csLg:w-[350px]">
+          <div className="flex flex-col justify-between w-full csLg:w-[350px] mr-8">
             <h2
               className="text-[#F9F9F9] font-[Manrope] 
              text-[32px] csLg:text-[48px] font-normal leading-[40px] csLg:leading-[56px] 
@@ -243,7 +243,7 @@ const InternationalPatientsPage: React.FC = () => {
           </div>
 
           {/* Swiper Container */}
-          <div className="w-full csLg:w-[509px] csLg:mr-[16px]">
+          <div className="w-full csLg:w-[400px] csLg:mr-[16px]">
             <Swiper
               modules={[Navigation, Pagination]}
               spaceBetween={24}
@@ -291,7 +291,7 @@ const InternationalPatientsPage: React.FC = () => {
 
                   {/* Desktop Layout */}
                   <div className="hidden csLg:flex flex-col justify-between 
-                                w-[509px] h-[536px] flex-shrink-0 
+                                w-[400px] h-[536px] flex-shrink-0 
                                 px-[43px] py-[96px] 
                                 bg-white text-gray-800 rounded-2xl shadow-lg">
                     <p className="text-[#1656A5] font-[Manrope] 
@@ -397,7 +397,7 @@ const InternationalPatientsPage: React.FC = () => {
       </section>
 
 
-      <section className="relative bg-center bg-cover flex justify-center items-center min-h-[312px]">
+      <section className="relative bg-center bg-cover flex justify-center items-center min-h-[472px]">
         {/* Mobile Background */}
         <div
           className="absolute inset-0 md:hidden bg-cover bg-center"
