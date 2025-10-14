@@ -27,7 +27,7 @@ export const FemaleInfertilitySection: React.FC<FemaleInfertilitySectionProps> =
           <div className="w-full">
             <p className="text-[#2C2C2C] font-light text-[20px] md:text-[32px] leading-[28px] md:leading-[40px]">
               Female infertility can arise from various health conditions that affect ovulation, egg quality, or the reproductive system. Understanding these causes—
-              <span className="text-[#606060]">
+              <span className="">
                 such as PCOS, low AMH, fibroids, or repeated treatment failures—helps in taking timely steps toward the right medical care and treatment options.
               </span>
             </p>
