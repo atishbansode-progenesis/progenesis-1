@@ -103,7 +103,7 @@ export default function HeroSection({
 
         {/* Title */}
         <h1 
-          className="text-[32px] lg:text-[70px] leading-[40px] lg:leading-[88px] font-semibold"
+          className="text-[32px] lg:text-[80px] leading-[40px] lg:leading-[88px] font-semibold"
           style={{ color: titleColor }}
         >
           {typeof title === "string" ? (
