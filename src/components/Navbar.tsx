@@ -594,13 +594,17 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 
 
       {/* Footer */}
-      <div className="flex justify-between items-center px-6 py-4 bg-white border-t shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+      <div className="flex justify-between items-center px-6 py-6 ">
         <button
-          onClick={() => setInputs({ what: "", where: "", who: "" })}
-          className="text-[#1656A5] font-medium underline"
+          onClick={() => {
+            setInputs({ what: "", where: "", who: "" });
+            setActiveStep(null);
+          }}
+          className="text-[#606060] font-semibold underline underline-offset-2 hover:opacity-80"
         >
           Clear All
         </button>
+
         <button
           onClick={() => {
             if (inputs.what) {
@@ -614,22 +618,22 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
               const selected = locations.find(
                 (l) => l.name.toLowerCase() === inputs.where.toLowerCase()
               );
-              if (selected) return router.push(`/locations/${l.name.toLowerCase()}`);
+              if (selected) return router.push(selected.link);
             }
 
             if (inputs.who) {
               const selected = doctors.find(
                 (d) => d.name.toLowerCase() === inputs.who.toLowerCase()
               );
-              if (selected) return router.push(`/doctors/${encodeURIComponent(d.name)}`);
+              if (selected) return router.push(selected.link);
             }
           }}
-          className="flex items-center gap-2 bg-[#1656A5] text-white px-5 py-2.5 rounded-xl text-[16px] font-medium"
+          className="flex items-center justify-center gap-2 bg-[#1656A5] text-white px-6 py-3 rounded-xl text-[16px] font-semibold shadow-sm hover:opacity-90 transition-all"
         >
-          <Search size={18} /> Search
+          <Search size={20} /> Search
         </button>
-
       </div>
+
     </section>
   );
 }
