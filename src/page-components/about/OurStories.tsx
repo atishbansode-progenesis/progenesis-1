@@ -34,7 +34,7 @@ const OurStories: React.FC = () => {
 
   return (
     <section id="why-1" className="w-full bg-white overflow-hidden">
-  <div className="section-spacing max-w-[2500px] md:max-h-[1500px]  mx-auto px-4 lg:px-8">
+  <div className="section-spacing max-w-[2500px] md:max-h-[1500px]  mx-auto px-4 csLg:px-8">
     {/* Desktop layout */}
     <div className="hidden lg:grid lg:grid-cols-[400px_1fr] csLg:grid-cols-[400px_1fr] gap-6 lg:gap-10 xl:gap-x-32">
           {/* Left Column: Heading + Tab List */}
