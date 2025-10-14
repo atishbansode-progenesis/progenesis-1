@@ -22,7 +22,7 @@ const EmiNav: React.FC = () => {
   return (
     <nav className="w-full bg-white relative z-[20]">
       <div className="px-4 py-4 md:px-[120px] md:py-[60px]">
-        <div className="flex flex-wrap items-center gap-3 md:gap-6 relative z-[30]">
+        <div className="flex flex-wrap items-center gap-3 lg:gap-6 relative z-[30]">
           {tabs.map((t) => {
             const isActive = t.key === active;
 
@@ -31,8 +31,8 @@ const EmiNav: React.FC = () => {
                 key={t.key}
                 type="button"
                 onClick={() => handleScroll(t.key)}
-                className={`rounded-[12px] font-medium h-10 md:h-[56px] transition-all duration-200 
-                  text-sm md:text-base px-4 md:px-6 py-2 md:py-3 
+                className={`lg:rounded-[16px] rounded-[8px] font-medium h-10 md:h-[56px] transition-all duration-200 
+                  text-[12px] leading-[20px] md:text-[14px] md:leading-[24px] px-[10px] tracking-tight md:px-5 py-[10px] md:py-4 
                   border cursor-pointer
                   ${
                     isActive
