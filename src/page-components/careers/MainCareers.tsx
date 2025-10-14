@@ -10,10 +10,18 @@ const MainCareers = () => {
     <div>
       <CareersLanding />
       <CareersValues />
-      <CareersBenefits />
-      <CareersOpenings />
+
+      {/* Shift Benefits closer to Values */}
+      <div className="-mt-12">
+        <CareersBenefits />
+      </div>
+
+      {/* Add gap between Benefits and Openings */}
+      <div className="mt-12">
+        <CareersOpenings />
+      </div>
     </div>
   )
 }
 
-export default MainCareers 
+export default MainCareers
