@@ -29,7 +29,7 @@ const CareersLanding = () => {
             </section>
 
             {/* Image Gallery Section */}
-       <section className="relative w-full py-8 md:py-[80px]">
+       <section className="relative w-full py-8 md:py-[80px] bg-[#FAFAFA]">
   {/* Carousel + buttons container */}
   <div className="relative flex items-center">
     {/* Previous button */}

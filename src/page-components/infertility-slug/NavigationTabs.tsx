@@ -15,7 +15,7 @@ interface NavigationTabsProps {
 export default function NavigationTabs({ categories, activeTab, onTabClick }: NavigationTabsProps) {
   return (
     <div className="w-full  px-[16px] py-[16px] md:px-[120px] md:py-[50px]  bg-[#FFFFFF]">
-      <div className="flex flex-wrap justify-start items-start gap-3 md:gap-4 text-left ">
+      <div className="flex flex-wrap justify-start items-start gap-3 md:gap-6 text-left ">
         {categories.map((cat) => (
           <button
             key={cat.id}

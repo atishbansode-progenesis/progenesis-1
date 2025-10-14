@@ -6,7 +6,7 @@ import AppointmentForm from '../about/AppointmentForm'
 import DoctorsPart from './DoctorsPart'
 const MainDoctors = () => {
   return (
-    <div >
+    <div className= "w-full overflow-x-hidden">
         <DoctorBanner/>
         <DoctorsInfo />
         <DoctorsPart />
