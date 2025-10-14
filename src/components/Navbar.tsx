@@ -2,9 +2,11 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Search, X, ChevronDown, Menu } from "lucide-react";
 import { centersData } from "@/page-components/centers/CenterCard";
+
+
 
 
 
@@ -13,6 +15,7 @@ import { centersData } from "@/page-components/centers/CenterCard";
 /* -------------------- SEARCH SECTION -------------------- */
 
 export function SearchSection({ onClose }: { onClose: () => void }) {
+  const router = useRouter();
   const [activeStep, setActiveStep] = useState<"what" | "where" | "who" | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const buttonRefs = useRef<{ [key: string]: HTMLDivElement | null }>({
@@ -30,39 +33,53 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
   });
 
   const treatments = [
-    "IVF Treatment",
-    "IUI Procedure",
-    "PCOS",
-    "Irregular Periods",
-    "Repeated Miscarriages",
-    "Infertility Issues",
-    "Pregnancy after Menopause",
-    "Ovulation Induction",
-    "Low AMH",
-    "Fibroids",
-    "Endometriosis",
+    { name: "IVF Treatment", link: "/treatments" },
+    { name: "IMSI", link: "/treatments/ivf-treatment" },
+    { name: "IUI Procedure", link: "/treatments/ivf-treatment" },
+    { name: "PCOS", link: "/treatments/ivf-treatment" },
+    { name: "Irregular Periods", link: "/treatments/ivf-treatment" },
+    { name: "Tubal", link: "/treatments/ivf-treatment" },
+    { name: "Repeated Miscarriages", link: "/treatments/ivf-treatment" },
+    { name: "Infertility Issues", link: "/treatments/ivf-treatment" },
+    { name: "LAH", link: "/treatments/ivf-treatment" },
+    { name: "Blastocyst Transfer", link: "/treatments/ivf-treatment" },
+    { name: "Pregnancy after Menopaus", link: "/treatments/ivf-treatment" },
+    { name: "Ovulation Induction", link: "/treatments/ivf-treatment" },
+    { name: "Low AMH", link: "/treatments/ivf-treatment" },
+    { name: "Sequential Embryo Transfer", link: "/treatments/ivf-treatment" },
+    { name: "Fibroids", link: "/treatments/ivf-treatment" },
+    { name: "PGD/PGS/PGT-A", link: "/treatments/ivf-treatment" },
+    { name: "Witness System", link: "/treatments/ivf-treatment" },
   ];
 
   const locations = [
-    { name: "Mumbai", desc: "(Aundh – ITI Rd)", icon: "/LocationsSection/mumbai.png" },
-    { name: "Thane", desc: "(College Rd)", icon: "/LocationsSection/thane.png" },
-    { name: "Pune", desc: "(Ghodhbunder Rd)", icon: "/LocationsSection/pune.png" },
-    { name: "Nashik", desc: "(College Rd)", icon: "/LocationsSection/nasik.png" },
-    { name: "Jalgaon", desc: "(College Rd)", icon: "/LocationsSection/jalgaon.png" },
-    { name: "Navi Mumbai", desc: "(Ghodhbunder Rd)", icon: "/LocationsSection/navimumbai.png" },
-    { name: "Palghar", desc: "(Aundh – ITI Rd)", icon: "/LocationsSection/palghar.png" },
-    { name: "Solapur", desc: "(College Rd)", icon: "/LocationsSection/solapur.png" },
-    { name: "Nagpur", desc: "(Ghodhbunder Rd)", icon: "/LocationsSection/nagpur.png" },
-    { name: "Kolhapur", desc: "(Ghodhbunder Rd)", icon: "/LocationsSection/kholapur.png" },
-    { name: "Amravati", desc: "(Ghodhbunder Rd)", icon: "/LocationsSection/amravati.png" },
-    { name: "Ahilyanagar", desc: "(Ghodhbunder Rd)", icon: "/LocationsSection/ahilyanagar.png" },
+    { name: "Mumbai", desc: "(Aundh – ITI Rd)", icon: "/LocationsSection/mumbai.png", link: "/treatments" },
+    { name: "Thane", desc: "(College Rd)", icon: "/LocationsSection/thane.png", link: "/treatments" },
+    { name: "Pune", desc: "(Ghodhbunder Rd)", icon: "/LocationsSection/pune.png", },
+    { name: "Nashik", desc: "(College Rd)", icon: "/LocationsSection/nasik.png", },
+    { name: "Jalgaon", desc: "(College Rd)", icon: "/LocationsSection/jalgaon.png", },
+    { name: "Solapur", desc: "(Dufferin Chowk, Solapur)", icon: "/LocationsSection/solapur.png", link: "/treatments" },
+    { name: "Nagpur", desc: "(Dharampeth, Nagpur)", icon: "/LocationsSection/nagpur.png", link: "/treatments" },
+    { name: "Kolhapur", desc: "(New Shahupuri, Kolhapur)", icon: "/LocationsSection/kolhapur.png", link: "/treatments" },
+    { name: "Amravati", desc: "(Ghodhbunder Rd)", icon: "/LocationsSection/amravati.png", link: "/treatments" },
+    { name: "Ahilyanagar", desc: "(Ghodhbunder Rd)", icon: "/LocationsSection/ahilyanagar.png", link: "/treatments" },
   ];
 
   const doctors = [
-    { name: "Dr. Dinesh Wade", role: "Fertility Consultant, Pune", img: "/DoctorsSection/DrDinesh.png" },
-    { name: "Dr. Unnati Mamtora", role: "Fertility Consultant, Borivali", img: "/DoctorsSection/DrUnnati.png" },
-    { name: "Dr. Darshna Wahane", role: "Fertility Consultant, Panvel", img: "/DoctorsSection/DrDarshna.png" },
-    { name: "Dr. Priti Pardeshi", role: "Fertility Consultant, Kalyan", img: "/DoctorsSection/DrPriti.png" },
+    { name: "Dr. Narhari S. Malgaonkar", role: "Chief Fertility Consultant, Mumbai", img: "/DoctorsSection/doctorimage.png", link: "/treatments" },
+    { name: "Dr. Sonali Malgonkar", role: "Sr. Fertility Consultant, Mumbai", img: "/DoctorsSection/DrSonali.png", link: "/treatments" },
+    { name: "Dr. Dinesh Wade", role: "Fertility Consultant, Pune", img: "/DoctorsSection/DrDinesh.png", link: "/treatments" },
+    { name: "Dr. Unnati Mamtora", role: "Fertility Consultant, Borivali", img: "/DoctorsSection/DrUnnati.png", link: "/treatments" },
+    { name: "Dr. Shital Sonone", role: "Fertility Consultant, Nashik", img: "/DoctorsSection/DrShital.png", link: "/treatments" },
+    { name: "Dr. Rajashree Patil", role: "Fertility Consultant, Virar", img: "/DoctorsSection/DrRajashree.png", link: "/treatments" },
+    { name: "Dr. Darshna Wahane", role: "Fertility Consultant, Panvel", img: "/DoctorsSection/DrDarshna.png", link: "/treatments" },
+    { name: "Dr. Priti Pardeshi", role: "Fertility Consultant, Kalyan", img: "/DoctorsSection/DrPriti.png", link: "/treatments" },
+    { name: "Dr. Teena Desai", role: "Fertility Consultant, Andheri", img: "/DoctorsSection/DrTeena.png", link: "/treatments" },
+    { name: "Dr. Bhavika Sane", role: "Fertility Consultant, Vashi", img: "/DoctorsSection/DrBhavika.png", link: "/treatments" },
+    { name: "Dr. Prerna Khandelwal", role: "Fertility Consultant, Thane", img: "/DoctorsSection/DrPrerna.png", link: "/treatments" },
+    { name: "Dr. Shradha Pol", role: "Fertility Consultant, Thane", img: "/DoctorsSection/DrShraddha.png", link: "/treatments" },
+    { name: "Dr. Dr. Vivek Bagul", role: "Fertility Consultant, Jalgaon.", img: "/DoctorsSection/DrVivek.png", link: "/treatments" },
+
   ];
 
   const updatePopupPosition = (step: "what" | "where" | "who") => {
@@ -74,7 +91,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 
       setPopupPosition({
         left: isMobileView ? window.innerWidth / 2 : rect.left + rect.width / 2,
-        top: rect.bottom + window.scrollY + 10,
+        top: rect.bottom + window.scrollY + 20,
       });
     }
   };
@@ -102,7 +119,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
   }, [isMobile]);
 
   const filteredTreatments = treatments.filter((t) =>
-    t.toLowerCase().includes(inputs.what.toLowerCase())
+    t.name.toLowerCase().includes(inputs.what.toLowerCase())
   );
   const filteredLocations = locations.filter((l) =>
     l.name.toLowerCase().includes(inputs.where.toLowerCase())
@@ -129,7 +146,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
             className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
               ${activeStep === "what" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
           >
-            <span className="text-[#000000] font-medium text-[16px] mr-3 whitespace-nowrap">
+            <span className="text-[#000000] font-normal text-[16px] mr-3 whitespace-nowrap">
               What
             </span>
             <input
@@ -139,9 +156,9 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
               onChange={(e) => setInputs({ ...inputs, what: e.target.value })}
               onFocus={() => handleInputFocus("what")}
               onBlur={() => setActiveStep(null)}
-              className="w-[200px] bg-transparent border-none outline-none px-2 placeholder-[#9CA3AF] text-[16px] text-[#4B5563] focus:ring-0 focus:outline-none"
+              className="w-[200px] bg-transparent border-none outline-none px-2 placeholder-[#9CA3AF] text-[16px] text-[#606060] focus:ring-0 focus:outline-none"
             />
-            <Search className={`absolute right-4 text-gray-400 pointer-events-none`} size={18} />
+            {/* <Search className={`absolute right-4 text-gray-400 pointer-events-none`} size={18} /> */}
           </div>
 
           {/* WHERE */}
@@ -150,7 +167,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
             className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
               ${activeStep === "where" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
           >
-            <span className="text-[#000000] font-medium text-[16px] mr-3 whitespace-nowrap">
+            <span className="text-[#000000] font-normal text-[16px] mr-3 whitespace-nowrap">
               Where
             </span>
             <input
@@ -160,9 +177,9 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
               onChange={(e) => setInputs({ ...inputs, where: e.target.value })}
               onFocus={() => handleInputFocus("where")}
               onBlur={() => setActiveStep(null)}
-              className="w-full bg-transparent border-none outline-none placeholder-[#9CA3AF] text-[16px] text-[#4B5563] focus:ring-0 focus:outline-none"
+              className="w-full bg-transparent border-none outline-none placeholder-[#9CA3AF] text-[16px] text-[#606060] focus:ring-0 focus:outline-none"
             />
-            <ChevronDown className="absolute right-4 text-gray-400 pointer-events-none" size={18} />
+            {/* <ChevronDown className="absolute right-4 text-gray-400 pointer-events-none" size={18} /> */}
           </div>
 
           {/* WHO */}
@@ -171,7 +188,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
             className={`relative flex items-center flex-1 rounded-2xl px-5 py-3 transition-all duration-200 
               ${activeStep === "who" ? "bg-[#EAF1F8] shadow-sm" : "bg-white"}`}
           >
-            <span className="text-[#000000] font-medium text-[16px] mr-3 whitespace-nowrap">
+            <span className="text-[#000000] font-normal text-[16px] mr-3 whitespace-nowrap">
               Who
             </span>
             <input
@@ -181,9 +198,9 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
               onChange={(e) => setInputs({ ...inputs, who: e.target.value })}
               onFocus={() => handleInputFocus("who")}
               onBlur={() => setActiveStep(null)}
-              className="w-full bg-transparent border-none outline-none placeholder-[#9CA3AF] text-[16px] text-[#4B5563] focus:ring-0 focus:outline-none"
+              className="w-full bg-transparent border-none outline-none placeholder-[#9CA3AF] text-[16px] text-[#606060] focus:ring-0 focus:outline-none"
             />
-            <ChevronDown className="absolute right-4 text-gray-400 pointer-events-none" size={18} />
+            {/* <ChevronDown className="absolute right-4 text-gray-400 pointer-events-none" size={18} /> */}
           </div>
 
           {/* Close */}
@@ -197,43 +214,83 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 
         {/* DROPDOWNS */}
         {activeStep && popupPosition && (
+          // <div
+          //   className="absolute z-50 bg-white rounded-2xl shadow-xl p-4 w-[90%] lg:w-[300px] xl:w-[350px] 2xl:w-[400px] max-h-[400px] overflow-y-auto transition-all duration-200 animate-fadeIn"
+          //   style={{
+          //     left: popupPosition.left,
+          //     top: popupPosition.top,
+          //     transform: "translateX(-50%)",
+          //   }}
+          // >
+
+
           <div
-            className="absolute z-50 bg-white rounded-2xl shadow-xl p-4 w-[90%] lg:w-[300px] xl:w-[350px] 2xl:w-[400px] max-h-[400px] overflow-y-auto transition-all duration-200 animate-fadeIn"
+            className="absolute z-50 bg-white rounded-2xl shadow-xl pl-4 py-4 w-[90%] lg:w-[300px] xl:w-[350px] 2xl:w-[400px]
+             max-h-[400px] overflow-hidden transition-all duration-200 animate-fadeIn"
             style={{
               left: popupPosition.left,
               top: popupPosition.top,
               transform: "translateX(-50%)",
             }}
           >
+
             {activeStep === "what" && (
-              <div className="flex flex-wrap gap-3">
+              <div
+                className="flex flex-wrap gap-3 rounded-2xl overflow-y-auto"
+                style={{
+                  maxHeight: "360px",
+                  scrollbarGutter: "stable",
+                  overflow: "overlay",
+                  borderRadius: "1rem",
+                }}
+              >
+          
+
                 {filteredTreatments.map((t, i) => (
                   <button
                     key={i}
-                    onClick={() => {
-                      setInputs({ ...inputs, what: t });
+                    onMouseDown={(e) => {
+                      e.preventDefault(); 
+                      e.stopPropagation();
+                      setInputs((prev) => ({ ...prev, what: t.name }));
                       setActiveStep(null);
+                      router.push(t.link);
+
                     }}
-                    className="inline-flex px-3 py-2 rounded-[16px] border border-[#1656A5] text-[#1656A5] text-[14px] font-medium hover:bg-[#1656A5] hover:text-white"
+                    className="inline-flex px-3 py-2 rounded-[16px] border border-[#1656A5] text-[#1656A5] text-[14px] font-medium hover:bg-[#1656A5] hover:text-white transition"
                   >
-                    {t}
+                    {t.name}
                   </button>
                 ))}
+
+
               </div>
             )}
-
             {activeStep === "where" && (
-              <div className="space-y-3">
+              <div
+                // className="space-y-3  rounded-2xl"
+
+                className="space-y-3 overflow-y-auto "
+                style={{
+                  maxHeight: "360px",           // ensures internal scroll area
+                  scrollbarGutter: "stable",    // keeps space for scrollbar
+                  overflow: "overlay",          // prevents scrollbar clipping radius
+                  borderRadius: "1rem",         // matches outer rounded-2xl
+                }}
+              >
                 {filteredLocations.map((l, i) => (
                   <div
                     key={i}
-                    onClick={() => {
+                    onMouseDown={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
                       setInputs({ ...inputs, where: l.name });
                       setActiveStep(null);
+                      router.push(l.link);
                     }}
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
+                    className="flex items-center gap-3 p-3 rounded-[16px] hover:bg-gray-50 cursor-pointer"
                   >
-                    <div className="w-[70px] h-[70px] rounded-[16px] overflow-hidden bg-gray-100">
+                    <div className="w-[75px] h-[70px] rounded-[16px] overflow-hidden bg-gray-100">
                       <Image src={l.icon} alt={l.name} width={70} height={70} className="object-cover w-full h-full" />
                     </div>
                     <div>
@@ -246,17 +303,29 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
             )}
 
             {activeStep === "who" && (
-              <div className="space-y-3">
+              <div
+
+                className="flex flex-wrap rounded-2xl overflow-y-auto "
+                style={{
+                  maxHeight: "360px",           // ensures internal scroll area
+                  scrollbarGutter: "stable",    // keeps space for scrollbar
+                  overflow: "overlay",          // prevents scrollbar clipping radius
+                  borderRadius: "1rem",         // matches outer rounded-2xl
+                }}
+              >
                 {filteredDoctors.map((d, i) => (
                   <div
                     key={i}
-                    onClick={() => {
+                    onMouseDown={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
                       setInputs({ ...inputs, who: d.name });
                       setActiveStep(null);
+                      router.push(d.link);
                     }}
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
                   >
-                    <Image src={d.img} alt={d.name} width={48} height={48} className="rounded-full object-cover" />
+                    <Image src={d.img} alt={d.name} width={75} height={70} className="rounded-[16px] object-cover" />
                     <div>
                       <p className="font-medium text-gray-900">{d.name}</p>
                       <p className="text-sm text-gray-600">{d.role}</p>
@@ -265,6 +334,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                 ))}
               </div>
             )}
+            {/* </div> */}
           </div>
         )}
       </section>
@@ -275,7 +345,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
   // MOBILE VIEW (FULL HEIGHT + SLIDE-UP)
   // ========================
   return (
-    <section className="fixed inset-0 bg-white z-[1000] flex flex-col h-screen animate-[slideUp_0.35s_ease-out]">
+    <section className="fixed inset-0 bg-[#EBF4FF] z-[1000] flex flex-col h-screen animate-[slideUp_0.35s_ease-out]">
       <style jsx>{`
         @keyframes slideUp {
           from {
@@ -288,33 +358,96 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
       `}</style>
 
       {/* Header */}
-      <div className="flex items-center justify-between px-5 py-4 border-b bg-white">
-        <h2 className="text-[18px] font-semibold text-[#000]">Search</h2>
+      <div className="flex items-center justify-between px-5 py-4 bg-white">
+        <button
+          className={`
+      flex items-center gap-2 text-[#1656A5] font-[Manrope]
+      text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+    `}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            className="w-[24px] h-[24px] aspect-[1/1]"
+          >
+            <mask
+              id="mask0_1958_3935"
+              style={{ maskType: "alpha" }}
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="0"
+              width="24"
+              height="24"
+            >
+              <rect
+                width="24"
+                height="24"
+                transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 24 24)"
+                fill="#D9D9D9"
+              />
+            </mask>
+            <g mask="url(#mask0_1958_3935)">
+              <path
+                d="M8 12L16.1964 20L17 19.2157L9.60714 12L17 4.78431L16.1964 4L8 12Z"
+                fill="#1656A5"
+              />
+            </g>
+          </svg>
+          Back
+        </button>
+
         <button onClick={onClose}>
           <X size={22} />
         </button>
       </div>
 
+
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-5 py-5 space-y-6">
+
         {/* WHAT */}
-        <div className="flex flex-col bg-[#F8FAFC] rounded-2xl p-4 shadow-sm">
-          <label className="text-gray-900 font-medium mb-2">What</label>
-          <input
-            type="text"
-            placeholder="Search Treatments or Concerns..."
-            value={inputs.what}
-            onChange={(e) => setInputs({ ...inputs, what: e.target.value })}
-            onFocus={() => setActiveStep("what")}
-            className="border border-gray-200 rounded-xl px-3 py-2 outline-none text-[15px]"
-          />
+        <div
+          className={`flex flex-col rounded-2xl transition-all duration-200 ${activeStep === "what"
+            ? "bg-white p-4 shadow-sm"
+            : "bg-[rgba(255,255,255,1)] p-0"
+            }`}
+        >
+
+          {activeStep === "what" ? (
+            <>
+              <label className="text-gray-900 font-medium mb-2">What</label>
+
+              <input
+                type="text"
+                placeholder="Search Treatments or Concerns..."
+                value={inputs.what}
+                onChange={(e) => setInputs({ ...inputs, what: e.target.value })}
+                onFocus={() => setActiveStep("what")}
+                className="border border-gray-200 rounded-xl px-3 py-2 outline-none text-[15px]"
+              />
+            </>
+          ) : (
+            <button
+              onClick={() => setActiveStep("what")}
+              className="w-full flex items-center justify-between border border-gray-200 rounded-xl px-3 py-2 bg-white cursor-pointer hover:bg-gray-50 transition"
+            >
+              <span className="text-[#94A3B8]">What</span>
+              <span className="text-[#94A3B8]">
+                {inputs.what || "Search Treatments or Concerns..."}
+              </span>
+            </button>
+          )}
+
           {activeStep === "what" && (
             <div className="mt-3 max-h-[250px] overflow-y-auto flex flex-wrap gap-2">
               {filteredTreatments.map((t, i) => (
                 <button
                   key={i}
                   onClick={() => {
-                    setInputs({ ...inputs, what: t });
+                    setInputs({ ...inputs, what: t.name });
                     setActiveStep(null);
                   }}
                   className={`px-3 py-2 rounded-[14px] border text-[14px] font-medium ${inputs.what === t
@@ -322,7 +455,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                     : "border-[#1656A5] text-[#1656A5]"
                     }`}
                 >
-                  {t}
+                  {t.name}
                 </button>
               ))}
             </div>
@@ -330,16 +463,37 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* WHERE */}
-        <div className="flex flex-col bg-[#F8FAFC] rounded-2xl p-4 shadow-sm">
-          <label className="text-gray-900 font-medium mb-2">Where</label>
-          <input
-            type="text"
-            placeholder="Select Clinic Location..."
-            value={inputs.where}
-            onChange={(e) => setInputs({ ...inputs, where: e.target.value })}
-            onFocus={() => setActiveStep("where")}
-            className="border border-gray-200 rounded-xl px-3 py-2 outline-none text-[15px]"
-          />
+        <div
+          className={`flex flex-col rounded-2xl transition-all duration-200 ${activeStep === "where"
+            ? "bg-white p-4 shadow-sm"
+            : "bg-transparent p-0"
+            }`}
+        >
+
+          {activeStep === "where" ? (
+            <>
+              <label className="text-gray-900 font-medium mb-2">Where</label>
+
+              <input
+                type="text"
+                placeholder="Select Clinic Location..."
+                value={inputs.where}
+                onChange={(e) => setInputs({ ...inputs, where: e.target.value })}
+                onFocus={() => setActiveStep("where")}
+                className="border border-gray-200 rounded-xl px-3 py-2 outline-none text-[15px]"
+              /> </>
+          ) : (
+            <button
+              onClick={() => setActiveStep("where")}
+              className="w-full flex items-center justify-between border border-gray-200 rounded-xl px-3 py-2 bg-white cursor-pointer hover:bg-gray-50 transition"
+            >
+              <span className="text-[#94A3B8]">Where</span>
+              <span className="text-[#94A3B8]">
+                {inputs.where || "Select Clinic Location..."}
+              </span>
+            </button>
+          )}
+
           {activeStep === "where" && (
             <div className="mt-3 space-y-3 max-h-[240px] overflow-y-auto">
               {filteredLocations.map((l, i) => (
@@ -349,14 +503,14 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                     setInputs({ ...inputs, where: l.name });
                     setActiveStep(null);
                   }}
-                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
+                  className="flex items-center gap-3 p-2 rounded-none hover:bg-gray-50 cursor-pointer"
                 >
                   <Image
                     src={l.icon}
                     alt={l.name}
                     width={48}
                     height={48}
-                    className="rounded-lg object-cover"
+                    className="rounded-[12px] object-cover"
                   />
                   <div>
                     <p className="font-medium text-gray-900">{l.name}</p>
@@ -369,16 +523,34 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* WHO */}
-        <div className="flex flex-col bg-[#F8FAFC] rounded-2xl p-4 shadow-sm">
-          <label className="text-gray-900 font-medium mb-2">Who</label>
-          <input
-            type="text"
-            placeholder="Choose Doctor / Specialist..."
-            value={inputs.who}
-            onChange={(e) => setInputs({ ...inputs, who: e.target.value })}
-            onFocus={() => setActiveStep("who")}
-            className="border border-gray-200 rounded-xl px-3 py-2 outline-none text-[15px]"
-          />
+        <div
+          className={`flex flex-col rounded-2xl transition-all duration-200 ${activeStep === "who"
+            ? "bg-white p-4 shadow-sm"
+            : "bg-transparent p-0"
+            }`}
+        >
+
+          {activeStep === "who" ? (
+            <input
+              type="text"
+              placeholder="Choose Doctor / Specialist..."
+              value={inputs.who}
+              onChange={(e) => setInputs({ ...inputs, who: e.target.value })}
+              onFocus={() => setActiveStep("who")}
+              className="border border-gray-200 rounded-xl px-3 py-2 outline-none text-[15px]"
+            />
+          ) : (
+            <button
+              onClick={() => setActiveStep("who")}
+              className="w-full flex items-center justify-between border border-gray-200 rounded-xl px-3 py-2 bg-white cursor-pointer hover:bg-gray-50 transition"
+            >
+              <span className="text-[#94A3B8]">Who</span>
+              <span className="text-[#94A3B8]">
+                {inputs.who || "Choose Doctor / Specialist..."}
+              </span>
+            </button>
+          )}
+
           {activeStep === "who" && (
             <div className="mt-3 space-y-3 max-h-[240px] overflow-y-auto">
               {filteredDoctors.map((d, i) => (
@@ -388,15 +560,17 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                     setInputs({ ...inputs, who: d.name });
                     setActiveStep(null);
                   }}
-                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
+                  className="flex items-center gap-3 p-2 rounded-none hover:bg-gray-50 cursor-pointer"
                 >
-                  <Image
+                  <div className="w-[48px] h-[48px] overflow-hidden rounded-[12px] bg-gray-100 flex-shrink-0">
+                    <Image
                     src={d.img}
                     alt={d.name}
                     width={48}
                     height={48}
-                    className="rounded-full object-cover"
+                    className="rounded-[12px] object-cover"
                   />
+                  </div>
                   <div>
                     <p className="font-medium text-gray-900">{d.name}</p>
                     <p className="text-sm text-gray-600">{d.role}</p>
@@ -408,6 +582,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
         </div>
       </div>
 
+
       {/* Footer */}
       <div className="flex justify-between items-center px-6 py-4 bg-white border-t shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
         <button
@@ -416,9 +591,34 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
         >
           Clear All
         </button>
-        <button className="flex items-center gap-2 bg-[#1656A5] text-white px-5 py-2.5 rounded-xl text-[16px] font-medium">
+        <button
+          onClick={() => {
+            if (inputs.what) {
+              const selected = treatments.find(
+                (t) => t.name.toLowerCase() === inputs.what.toLowerCase()
+              );
+              if (selected) return router.push(selected.link);
+            }
+
+            if (inputs.where) {
+              const selected = locations.find(
+                (l) => l.name.toLowerCase() === inputs.where.toLowerCase()
+              );
+              if (selected) return router.push(`/locations/${l.name.toLowerCase()}`);
+            }
+
+            if (inputs.who) {
+              const selected = doctors.find(
+                (d) => d.name.toLowerCase() === inputs.who.toLowerCase()
+              );
+              if (selected) return router.push(`/doctors/${encodeURIComponent(d.name)}`);
+            }
+          }}
+          className="flex items-center gap-2 bg-[#1656A5] text-white px-5 py-2.5 rounded-xl text-[16px] font-medium"
+        >
           <Search size={18} /> Search
         </button>
+
       </div>
     </section>
   );
@@ -692,12 +892,22 @@ const MegaMenu = ({ menu }: { menu: any }) => {
 
       {/* Left Image */}
       {menu.image && (
-        <div className="hidden lg:block w-[350px] max-h-[450px] flex-shrink-0">
+        <div
+          className="
+      hidden sm:block
+      w-[200px] sm:w-[250px] md:w-[300px] lg:w-[300px]
+      max-h-[400px] sm:max-h-[400px] xl:max-h-[450px]
+      flex-shrink-0
+      transition-all duration-300
+      [@media(min-width:1920px)]:w-[500px] 
+      [@media(min-width:1920px)]:max-h-[600px]
+    "
+        >
           <Image
             src={menu.image}
-            alt="menu-img"
-            width={350}
-            height={350}
+            alt='menu-img'
+            width={500}
+            height={500}
             className="w-full h-full object-cover rounded-lg"
           />
         </div>
@@ -768,36 +978,14 @@ const MegaMenu = ({ menu }: { menu: any }) => {
             flex items-center gap-3 w-full
             bg-[rgba(22,86,165,0.10)] rounded-[8px]
             px-4 py-[10px]
-            text-[#252525] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+            text-[#606060] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
             hover:bg-[rgba(22,86,165,0.15)] transition
           "
                       >
                         <span className="flex items-center justify-center w-[24px] h-[24px] shrink-0">
                           {/* YOUR ORIGINAL PHONE SVG */}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="26"
-                            height="26"
-                            viewBox="0 0 27 26"
-                            fill="none"
-                          >
-                            <mask
-                              id={`mask_${i}`}
-                              style={{ maskType: "alpha" }}
-                              maskUnits="userSpaceOnUse"
-                              x="0"
-                              y="0"
-                              width="27"
-                              height="26"
-                            >
-                              <rect x="0.5" width="26" height="26" fill="#D9D9D9" />
-                            </mask>
-                            <g mask={`url(#mask_${i})`}>
-                              <path
-                                d="M20.675 21.3417C18.9778 21.3417 17.2128 20.8948 15.3802 20.001C13.5476 19.1073 11.8323 17.8569 10.2344 16.25C8.63646 14.643 7.39062 12.9278 6.49687 11.1042C5.60313 9.28055 5.15625 7.52013 5.15625 5.82291C5.15625 5.49014 5.26458 5.2129 5.48125 4.99118C5.69792 4.76928 5.96875 4.65833 6.29375 4.65833H8.46042C8.76736 4.65833 9.03368 4.75312 9.25937 4.9427C9.48507 5.13228 9.64305 5.38055 9.73333 5.68749L10.2208 7.90832C10.275 8.21527 10.266 8.4861 10.1937 8.72082C10.1215 8.95555 9.99514 9.14513 9.81458 9.28958L7.5125 11.375C7.98194 12.2236 8.49201 13.0045 9.04271 13.7177C9.5934 14.4309 10.1757 15.1035 10.7896 15.7354C11.4396 16.3854 12.1437 16.9903 12.9021 17.55C13.6604 18.1097 14.5 18.6424 15.4208 19.1479L17.6687 16.8458C17.8493 16.6472 18.0434 16.5208 18.251 16.4667C18.4587 16.4125 18.6979 16.4035 18.9687 16.4396L20.8104 16.8187C21.1174 16.891 21.3656 17.0444 21.5552 17.2792C21.7448 17.5139 21.8396 17.7847 21.8396 18.0917V20.2042C21.8396 20.5292 21.7286 20.8 21.5067 21.0167C21.285 21.2333 21.0078 21.3417 20.675 21.3417Z"
-                                fill="#1C1B1F"
-                              />
-                            </g>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                            <path d="M15.675 17.3415C13.9778 17.3415 12.2128 16.8947 10.3802 16.0009C8.54757 15.1072 6.83229 13.8568 5.23437 12.2499C3.63646 10.6429 2.39062 8.92765 1.49687 7.10404C0.603125 5.28043 0.15625 3.52001 0.15625 1.82279C0.15625 1.49002 0.264583 1.21278 0.48125 0.991057C0.697917 0.769154 0.96875 0.658203 1.29375 0.658203H3.46042C3.76736 0.658203 4.03368 0.752995 4.25937 0.942578C4.48507 1.13216 4.64305 1.38043 4.73333 1.68737L5.22083 3.9082C5.275 4.21515 5.26597 4.48598 5.19375 4.7207C5.12153 4.95543 4.99514 5.14501 4.81458 5.28945L2.5125 7.37487C2.98194 8.22348 3.49201 9.00438 4.04271 9.71758C4.5934 10.4308 5.17569 11.1033 5.78958 11.7353C6.43958 12.3853 7.14375 12.9901 7.90208 13.5499C8.66042 14.1096 9.5 14.6422 10.4208 15.1478L12.6687 12.8457C12.8493 12.6471 13.0434 12.5207 13.251 12.4665C13.4587 12.4124 13.6979 12.4033 13.9687 12.4395L15.8104 12.8186C16.1174 12.8908 16.3656 13.0443 16.5552 13.279C16.7448 13.5138 16.8396 13.7846 16.8396 14.0915V16.204C16.8396 16.529 16.7286 16.7999 16.5067 17.0165C16.285 17.2332 16.0078 17.3415 15.675 17.3415ZM2.16042 6.6707L4.32708 4.7207C4.41736 4.64848 4.47604 4.54918 4.50313 4.42279C4.53021 4.2964 4.52569 4.17904 4.48958 4.0707L4.00208 1.84987C3.96597 1.70543 3.90278 1.59709 3.8125 1.52487C3.72222 1.45265 3.60486 1.41654 3.46042 1.41654H1.29375C1.18542 1.41654 1.09514 1.45265 1.02292 1.52487C0.950694 1.59709 0.914583 1.68737 0.914583 1.7957C0.914583 2.53598 1.02743 3.3214 1.25312 4.15195C1.47882 4.98251 1.78125 5.82209 2.16042 6.6707ZM11.1521 15.4999C11.8924 15.879 12.6913 16.1544 13.549 16.3259C14.4066 16.4974 15.1243 16.5832 15.7021 16.5832C15.8104 16.5832 15.9007 16.5471 15.9729 16.4749C16.0451 16.4026 16.0812 16.3124 16.0812 16.204V14.0915C16.0812 13.9471 16.0451 13.8297 15.9729 13.7395C15.9007 13.6492 15.7924 13.586 15.6479 13.5499L13.8062 13.1707C13.6979 13.1346 13.6031 13.1301 13.5219 13.1572C13.4406 13.1842 13.3549 13.2429 13.2646 13.3332L11.1521 15.4999Z" fill="#1C1B1F" />
                           </svg>
                         </span>
                         {link.label}
@@ -810,7 +998,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                             flex items-center gap-3 w-full
                             bg-[rgba(22,86,165,0.10)] rounded-[8px]
                             px-4 py-[10px]
-                            text-[#252525] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+                            text-[#606060] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
                             hover:bg-[rgba(22,86,165,0.15)] transition
                           "
                       >
@@ -870,7 +1058,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                         >
                           <path
                             d="M7.37624 11.5498L16.0103 11.6986M16.0103 11.6986L11.5623 7.36376M16.0103 11.6986L11.7676 15.9412"
-                            stroke="#252525"
+                            stroke="#606060"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -879,10 +1067,10 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                       </Link>
                     ) : (
                       <div
-                        className="relative"
+                        className="relative transition-all duration-150"
                         onMouseEnter={() => setExpandedLink(link.label)}
                         onMouseLeave={() => setExpandedLink(null)}
-                        className="transition-all duration-150"
+
                       >
                         <Link
                           href={link.path}
@@ -1201,7 +1389,7 @@ export default function Navbar() {
                   <g mask="url(#mask_close_mobile)">
                     <path
                       d="M17.1961 17.6922L11.9988 12.495L6.80158 17.6922L6.30661 17.1972L11.5038 12L6.30661 6.80277L6.80158 6.30779L11.9988 11.505L17.1961 6.30779L17.691 6.80276L12.4938 12L17.691 17.1972L17.1961 17.6922Z"
-                      fill="#1C1B1F"
+                      fill="#D9D9D9"
                     />
                   </g>
                 </svg>
@@ -1339,7 +1527,7 @@ export default function Navbar() {
                                           href={link.path}
                                           className="inline-flex items-center gap-2 px-3 py-[6px] rounded-[8px]
              bg-[rgba(22,86,165,0.10)]
-             text-[#252525] font-[Manrope] text-[14px] font-medium leading-[20px] tracking-[-0.28px]
+             text-[#606060] font-[Manrope] text-[14px] font-medium leading-[20px] tracking-[-0.28px]
              hover:bg-[rgba(22,86,165,0.15)] transition"
                                         >
 
@@ -1348,7 +1536,7 @@ export default function Navbar() {
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                               <path
                                                 d="M20.675 21.3417C18.9778 21.3417 17.2128 20.8948 15.3802 20.001C13.5476 19.1073 11.8323 17.8569 10.2344 16.25C8.63646 14.643 7.39062 12.9278 6.49687 11.1042C5.60313 9.28055 5.15625 7.52013 5.15625 5.82291C5.15625 5.49014 5.26458 5.2129 5.48125 4.99118C5.69792 4.76928 5.96875 4.65833 6.29375 4.65833H8.46042C8.76736 4.65833 9.03368 4.75312 9.25937 4.9427C9.48507 5.13228 9.64305 5.38055 9.73333 5.68749L10.2208 7.90832C10.275 8.21527 10.266 8.4861 10.1937 8.72082C10.1215 8.95555 9.99514 9.14513 9.81458 9.28958L7.5125 11.375C7.98194 12.2236 8.49201 13.0045 9.04271 13.7177C9.5934 14.4309 10.1757 15.1035 10.7896 15.7354C11.4396 16.3854 12.1437 16.9903 12.9021 17.55C13.6604 18.1097 14.5 18.6424 15.4208 19.1479L17.6687 16.8458C17.8493 16.6472 18.0434 16.5208 18.251 16.4667C18.4587 16.4125 18.6979 16.4035 18.9687 16.4396L20.8104 16.8187C21.1174 16.891 21.3656 17.0444 21.5552 17.2792C21.7448 17.5139 21.8396 17.7847 21.8396 18.0917V20.2042C21.8396 20.5292 21.7286 20.8 21.5067 21.0167C21.285 21.2333 21.0078 21.3417 20.675 21.3417Z"
-                                                fill="#1C1B1F"
+                                                fill="#606060"
                                               />
                                             </svg>
                                           </span>
@@ -1360,7 +1548,7 @@ export default function Navbar() {
                                           href={link.path}
                                           className="inline-flex items-center gap-2 px-3 py-[6px] rounded-[8px]
              bg-[rgba(22,86,165,0.10)]
-             text-[#252525] font-[Manrope] text-[14px] font-medium leading-[20px] tracking-[-0.28px]
+             text-[#606060] font-[Manrope] text-[14px] font-medium leading-[20px] tracking-[-0.28px]
              hover:bg-[rgba(22,86,165,0.15)] transition"
                                         >
 
@@ -1369,12 +1557,12 @@ export default function Navbar() {
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 27 26" fill="none">
                                               <path
                                                 d="M21.5497 9.57082C21.0872 8.54894 20.4234 7.63148 19.5805 6.84082C18.7376 6.05763 17.7605 5.43853 16.6715 5.00591C15.5452 4.55837 14.3517 4.33459 13.121 4.33459C11.8902 4.33459 10.6968 4.55837 9.57048 5.00591C8.48146 5.43853 7.50433 6.05017 6.66146 6.84082C5.81859 7.63148 5.15475 8.54894 4.69229 9.57082C4.21491 10.63 3.96875 11.7638 3.96875 12.9274C3.96875 14.9637 4.72956 16.918 6.1244 18.4694L5.3785 22.5346L9.34671 20.7668C10.5327 21.274 11.7933 21.5276 13.1135 21.5276C14.3442 21.5276 15.5377 21.3039 16.664 20.8563C17.753 20.4237 18.7302 19.8121 19.573 19.0214C20.4159 18.2307 21.0797 17.3133 21.5422 16.2914C22.0196 15.2322 22.2657 14.0984 22.2657 12.9348C22.2732 11.7638 22.027 10.6375 21.5497 9.57082Z"
-                                                stroke="black"
+                                                stroke="#606060"
                                                 strokeWidth="0.7"
                                               />
                                               <path
                                                 d="M16.8348 14.6452C16.4469 14.4513 16.1635 14.3319 15.9621 14.2574C15.8353 14.2126 15.5369 14.0783 15.4325 14.1604C15.1043 14.4289 14.7537 15.1897 14.3808 15.3315C13.4558 15.1524 12.5981 14.5184 11.9268 13.8695C11.6284 13.586 11.0764 12.7805 10.9571 12.5642C10.9347 12.3404 11.3375 12.042 11.427 11.8705C11.8894 11.3483 11.5389 11.0201 11.4792 10.8038C11.3748 10.5801 11.1958 10.1773 11.0391 9.84908C10.9049 9.63277 10.875 9.31203 10.6363 9.19268C9.6219 8.67055 9.04012 9.71482 8.80143 10.2593C7.36184 13.7278 16.0143 20.329 17.7746 15.779C17.8641 15.3837 17.8268 15.2345 17.6926 15.0555C17.424 14.869 17.1108 14.7869 16.8348 14.6452Z"
-                                                stroke="black"
+                                                stroke="#606060"
                                                 strokeWidth="0.7"
                                               />
                                             </svg>
@@ -1398,7 +1586,7 @@ export default function Navbar() {
                                           >
                                             <path
                                               d="M7.37624 11.5498L16.0103 11.6986M16.0103 11.6986L11.5623 7.36376M16.0103 11.6986L11.7676 15.9412"
-                                              stroke="#252525"
+                                              stroke="#606060"
                                               strokeWidth="1.5"
                                               strokeLinecap="round"
                                               strokeLinejoin="round"
@@ -1416,7 +1604,7 @@ export default function Navbar() {
                                                   activeMobileSubmenuItem === link.label ? null : link.label
                                                 )
                                               }
-                                              className="w-full flex items-center justify-between px-0 py-2 text-left text-[#4B5563] text-[14px] font-[Manrope] hover:text-[#1656A5] transition"
+                                              className="w-full flex items-center justify-between px-0 py-2 text-left text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition"
                                               aria-expanded={activeMobileSubmenuItem === link.label}
                                               aria-controls={`mobile-submenu-${j}`}
                                             >
@@ -1445,7 +1633,7 @@ export default function Navbar() {
                                                         setActiveMobileSubmenu(null);
                                                         setActiveMobileSubmenuItem(null);
                                                       }}
-                                                      className="block text-[#4B5563] text-[13px] font-[Manrope] hover:text-[#1656A5] transition px-2 py-1"
+                                                      className="block text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition px-2 py-1"
                                                     >
                                                       {sublink.label}
                                                     </Link>
@@ -1459,7 +1647,7 @@ export default function Navbar() {
                                           <Link
                                             href={link.path}
                                             onClick={() => setIsMobileMenuOpen(false)}
-                                            className="block text-[#4B5563] text-[13px] font-[Manrope] hover:text-[#1656A5] transition"
+                                            className="block text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition"
                                           >
                                             {link.label}
                                           </Link>
