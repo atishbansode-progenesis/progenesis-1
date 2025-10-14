@@ -36,19 +36,36 @@ const OurStories: React.FC = () => {
     <section id="why-1" className="w-full bg-white overflow-hidden">
   <div className="section-spacing max-w-[2500px] md:max-h-[1500px]  mx-auto px-4 csLg:px-8">
     {/* Desktop layout */}
-    <div className="hidden lg:grid lg:grid-cols-[400px_1fr] csLg:grid-cols-[400px_1fr] gap-6 lg:gap-10 xl:gap-x-32">
-          {/* Left Column: Heading + Tab List */}
-          <div className="flex flex-col gap-8 lg:gap-12">
-            {/* Heading */}
-            <div>
+    <div className="hidden csLg:flex flex-col ">
+          
+
+          {/* Right Column: Paragraph + Image + Info Box */}
+          <div className="flex flex-col gap-10">
+
+            <div className='grid grid-cols-2'>
+
+            {/* Paragraph (top of right column) */}
+            <div className=''>
               <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" >Why choose us</span>
               <h2 className="text-4xl lg:text-5xl font-normal text-[#2C2C2C] leading-[56px] tracking-tight font-[Manrope]">
                 Our Story
               </h2>
             </div>
+            <p className="text-[16px] line-height-[24px] tracking-tight text-[#2C2C2C] lg:line-height-[40px] lg:text-[32px]">
+              We believe every hopeful parent deserves a team that listens, cares, and fights to make
+              dreams a reality — with science, empathy, and unwavering support.
+            </p>
+</div>
+            {/* Image + Info Box */}
+            <div className='grid grid-cols-2'>
+
+          {/* Left Column: Heading + Tab List */}
+          <div className="flex flex-col gap-8 lg:gap-12 ">
+            {/* Heading */}
+            
 
             {/* Tab List */}
-            <div className="flex flex-col col-span-3 pt-4">
+            <div className="flex flex-col col-span-3 pt-4 max-w-[444px]">
               {tabItems.map((item, index) => (
                 <div key={index} className=''>
                   <div className="h-[1px] w-full bg-[#A5A5A5]  relative ">
@@ -83,17 +100,7 @@ const OurStories: React.FC = () => {
             </div>
 
           </div>
-
-          {/* Right Column: Paragraph + Image + Info Box */}
-          <div className="flex flex-col gap-10">
-            {/* Paragraph (top of right column) */}
-            <p className="text-[16px] line-height-[24px] tracking-tight text-[#2C2C2C] lg:line-height-[40px] lg:text-[32px]">
-              We believe every hopeful parent deserves a team that listens, cares, and fights to make
-              dreams a reality — with science, empathy, and unwavering support.
-            </p>
-
-            {/* Image + Info Box */}
-            <div className="flex flex-col csLg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden">
+            <div className="flex flex-col csLg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden ">
               {/* Image */}
               <div className="w-full bg-[#E8EFF6] max-w-[400px] lg:min-w-[400px] lg:min-h-[400px] max-h-[400px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
                 <img
@@ -117,8 +124,9 @@ const OurStories: React.FC = () => {
                 </p>
               </div>
             </div>
-
+</div>
           </div>
+
         </div>
 
         {/* Mobile & tablet layout: visible below large screens */}
@@ -145,7 +153,7 @@ const OurStories: React.FC = () => {
               {/* Info Box */}
               <div className="flex flex-col gap-2">
                 <h3 className='text-[#94BA3D]'>{item.storyNumber}</h3>
-                <h3 className="text-[#1656A5] font-medium text-2xl leading-tight font-[Manrope]">
+                <h3 className="text-[#2C2C2C] font-medium text-2xl leading-tight font-[Manrope]">
                   {item.heading}
                 </h3>
                 <p className="text-base text-gray-700 leading-6 tracking-tight font-[Manrope]">
