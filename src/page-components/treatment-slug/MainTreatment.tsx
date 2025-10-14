@@ -14,6 +14,7 @@ import GeneticTestingCards from "./GeneticTestingCards";
 import { OvulationCards } from "./OvulationCards";
 import { PathSection } from "./PathSection";
 import AppointmentForm from "../about/AppointmentForm";
+import ParenthoodBanner from "./ParenthoodBanner";
 
 export default function MainTreatment({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("basics");
@@ -126,6 +127,7 @@ export default function MainTreatment({ data }: { data: any }) {
       <section id="stories" className="scroll-mt-[120px]">
         <StoriesSection />
       </section>
+      <ParenthoodBanner/>
 
       {/* Section 9: Consultation Form */}
       <AppointmentForm />

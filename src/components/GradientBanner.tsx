@@ -24,7 +24,8 @@ const GradientBanner: React.FC<GradientBannerProps> = ({ text }) => {
     text-center font-[Manrope] font-normal text-[#94BA3D]
     tracking-[-0.96px]
     px-4 z-10 relative
-    w-[90%] md:w-[70%] mx-auto
+    w-full
+     md:w-[70%] mx-auto
     text-[28px] leading-[36px]   /* 📱 mobile base */
     sm:text-[34px] sm:leading-[42px]  /* 📱+ */
     md:text-[40px] md:leading-[50px]  /* 💻 tablets */
