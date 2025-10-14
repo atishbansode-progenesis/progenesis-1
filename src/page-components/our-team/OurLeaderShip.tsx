@@ -57,35 +57,33 @@ const LeadershipTeam: React.FC = () => {
     <div className="w-full flex flex-col">
       {/* 1️⃣ Hero Section */}
       <section
-        className="relative w-full h-[250px] md:h-[550px] flex  px-6 md:px-24 pt-6 lg:pt-20 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/leadership-bg.png')",
-        }}
+        className="relative w-full h-[400px] md:h-[550px] flex lg:bg-[url('/images/leadership-bg.png')] bg-[url('/images/leadership-bg_M.png')]  px-6 md:px-24 pt-6 lg:pt-20 bg-cover bg-center"
+       
       >
         <div className="relative z-10 w-[80%]" >
           {/* Breadcrumb */}
-          <nav className="text-sm text-[#606060] mb-6 md:mb-11">
+          <nav className="text-sm text-[#606060] mt-5 mb-6 md:mb-11">
             <button
               onClick={() => (window.location.href = "/")}
               className="hover:cursor-pointer"
             >
               Home
             </button>
-            <span className="mx-1">›</span>
+            <span className="mx-2">›</span>
             <button
               onClick={() => (window.location.href = "/about-us")}
               className="hover:cursor-pointer"
             >
               About Us
             </button>
-            <span className="mx-1">›</span>{" "}
+            <span className="mx-2">›</span>{" "}
             <span className="text-[#1656A5] font-medium">Leadership Team</span>
           </nav>
 
           {/* Heading */}
           {/* Mobile-only heading (3 lines) */}
           <h1
-            className="block sm:hidden text-[32px]  font-semibold leading-snug"
+            className="block md:hidden text-[32px] leading-[40px] tracking-tight font-semibold "
             style={{ color: "#252525", fontFamily: "Manrope" }}
           >
             The Team Leading <br />
@@ -95,7 +93,7 @@ const LeadershipTeam: React.FC = () => {
 
           {/* Desktop / tablet heading (2 lines) */}
           <h1
-            className="hidden  sm:block lg:text-[80px] md:text-5xl leading-[88px]  font-semibold"
+            className="hidden  md:block  md:leading-[56px] lg:text-[80px] md:text-5xl lg:leading-[88px] tracking-tight  font-semibold"
             style={{ color: "#252525" }}
           >
             The Team Leading With <br />
@@ -107,20 +105,21 @@ const LeadershipTeam: React.FC = () => {
 
       {/* 2️⃣ Team Members Section */}
       <section className="w-full px-6 md:px-24 py-16 bg-[#FAFAFA]">
-        <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-[8px] mb-6">
+        <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-[8px] mb-2">
          Meet The Experts
         </span>
 
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-10">
 
           {/* Mobile-only heading (2 lines) */}
-          <h2 className="block sm:hidden text-[24px] font-[400] text-[#2C2C2C] leading-snug mb-2">
+          <h2 className="block sm:hidden text-[32px] font-[400] text-[#2C2C2C] tracking-tight leading-[40px] mb-2">
             Our directors lead with <br />
             vision and dedication.
           </h2>
 
           {/* Desktop / tablet heading (original) */}
-          <h2 className="hidden sm:block lg:text-[48px] text-[32px] md:text-4xl font-[400] text-[#2C2C2C] mb-4">
+          <h2 className="hidden sm:block lg:text-[48px] text-[32px] md:text-4xl font-[400] tracking-tight text-[#2C2C2C] mb-4">
+             Our directors lead with vision
              <br /> and dedication.
           </h2>
 
@@ -164,7 +163,7 @@ const LeadershipTeam: React.FC = () => {
               onClick={() => alert(`Clicked on ${member.name}`)}
             >
               <div
-                className={`relative ${isGridView ? "w-full h-60 mb-4" : "w-24 h-full flex-shrink-0"
+                className={`relative ${isGridView ? "w-full h-60 mb-4" : "lg:w-32 w-24 h-24 lg:h-40 flex-shrink-0"
                   }`}
               >
                 <Image
@@ -175,15 +174,15 @@ const LeadershipTeam: React.FC = () => {
                 />
               </div>
               <div
-                className={isGridView ? "" : "lg:max-w-[190px]"}
+                className={isGridView ? "" : "lg:max-w-[190px] gap-2"}
                 style={{ textAlign: "left" }}
               >
                 {isGridView?(
-                  <h3 className="text-[32px] leading-[40px] font-normal tracking-tight justify-content-center text-[#1656A5]">
+                  <h3 className="text-[32px] leading-[40px] font-normal tracking-tight justify-content-center text-[#1656A5] pb-2">
                   {member.name}
                 </h3>
                 ):(
-                  <h3 className="text-[16px] font-normal justify-content-center text-[#1656A5] tracking-tight lg:text-[24px] lg:line-height-[25px]">
+                  <h3 className="text-[16px] leading-[24px] font-normal justify-content-center text-[#1656A5] tracking-tight lg:text-[32px] lg:leading-[40px] pb-2">
                   {member.name}
                 </h3>
                 )}
