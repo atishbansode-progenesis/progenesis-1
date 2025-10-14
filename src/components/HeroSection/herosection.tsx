@@ -46,7 +46,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className="relative w-full min-h-[444px] lg:min-h-[620px] flex p-[16px] lg:p-[80px] overflow-hidden"
+      className="relative w-full min-h-[444px] lg:min-h-[620px] flex px-4 py-4 md:px-[120px] md:py-[80px] overflow-hidden"
       style={{
         backgroundImage: backgroundImage ? backgroundImage : "",
       }}
