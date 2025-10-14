@@ -185,7 +185,7 @@ const DoctorsInfo: React.FC = () => {
     <section className="section-spacing w-full bg-white px-6 md:px-12  lg:px-[90px] py-10 md:py-14">
       {/* Top breadcrumb tag */}
       <span className="inline-block bg-[#1656A50D] text-[#1656A5] lg:gap-[8px] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" >Our Doctors</span>
-      <h2 className="text-[32px] gap-[46px] md:text-[40px] font-semibold leading-tight text-[#2C2C2C] mb-2 font-[Manrope]" >
+      <h2 className="text-[32px] gap-[46px] md:text-[40px] font-normal leading-tight text-[#2C2C2C] mb-2 font-[Manrope]" >
         Meet our Experts
       </h2>
 
@@ -210,20 +210,20 @@ const DoctorsInfo: React.FC = () => {
 
               {/* Middle: Content */}
               <div className="font-[Manrope]" >
-                <h3 className="text-[26px] md:text-[32px] text-[#1656A5] gap-[8px] font-semibold tracking-[-0.02em]">
+                <h3 className="text-[26px] csLg:text-[48px] text-[#1656A5] gap-[8px] font-normal tracking-[-0.02em]">
                   {d.name}
                 </h3>
-                <p className="mt-2 text-[14px] md:text-[15px] text-[#606060]  max-w-[780px]">
+                <p className="mt-2 text-[14px] csLg:text-[16px] text-[#606060]  max-w-[780px]">
                   {d.bio}
                 </p>
 
-                <div className="mt-4 hidden csLg:flex flex-col gap-[8px] text-[13px] md:text-[14px] font-medium text-[#1656A5]">
+                <div className="mt-4 hidden csLg:flex flex-col gap-[8px] text-[13px] md:text-[14px] font-normal text-[#1656A5]">
                   <span>{d.experience}</span>
                   <span>{d.qualifications}</span>
                   <span>{d.fellowship}</span>
                 </div>
                 
-                <div className="mt-4 flex flex-wrap csLg:hidden gap-[8px] text-[13px] md:text-[14px] font-medium text-[#1656A5]">
+                <div className="mt-4 flex flex-wrap csLg:hidden gap-[8px] text-[13px] md:text-[14px] font-normal text-[#1656A5]">
                   <span>{d.experience} |</span>
                   <span>{d.qualifications} | </span>
                   <span>{d.fellowship}</span>
@@ -235,26 +235,26 @@ const DoctorsInfo: React.FC = () => {
                 {/* Hospital | Specialty */}
                 <div className="w-full grid grid-cols-2 csLg:flex flex-col   justify-end  lg:gap-[24px]">
                   <div className="min-w-[150px] csLg:flex flex-col justify-end items-end">
-                    <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-semibold">
+                    <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-normal">
                       Hospital
                     </div>
-                    <div className="text-[14px] text-[#606060] font-medium">
+                    <div className="text-[14px] text-[#606060] font-normal">
                       {d.hospital}
                     </div>
                   </div>
 
                   <div className="min-w-[150px] csLg:flex flex-col justify-end items-end">
-                    <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-semibold">
+                    <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-normal">
                       Specialty
                     </div>
-                    <div className="text-[14px] text-[#606060] font-medium">
+                    <div className="text-[14px] text-[#606060] font-normal">
                       {d.specialty}
                     </div>
                   </div>
                 </div>
 
                 {/* CTA Button */}
-                <button className=" w-fit csLg:w-full sm:w-auto h-[48px] px-5 rounded-[12px] bg-[#252525] text-white text-sm font-semibold shadow-sm hover:bg-[#000000] transition">
+                <button className=" w-fit csLg:w-full sm:w-auto h-[48px] px-5 rounded-[12px] bg-[#252525] text-white text-sm font-normal shadow-sm hover:bg-[#000000] transition">
                   Book Your Appointment
                 </button>
 

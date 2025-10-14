@@ -15,19 +15,14 @@ const DoctorBanner: React.FC = () => {
 
         {/* Content */}
         <div className="section-spacing relative w-full p-5 sm:p-6 md:p-10 lg:p-14 h-[340px] sm:h-[380px] md:h-[500px] lg:h-[567px] flex items-end md:items-center">
-          <div className="w-full lg:max-w-[980px]"> {/* constrain width on large screens like design */}
+          <div className="w-full lg:max-w-[70%]"> {/* constrain width on large screens like design */}
             <h1
               className="text-[#2C2C2C] font-[Manrope] font-semibold tracking-[-0.02em] text-left
-                         text-[32px] leading-[40px]
-                         sm:text-[36px] sm:leading-[44px]
-                         md:text-[56px] md:leading-[64px]
-                         lg:text-[80px] lg:leading-[88px]"
+                         text-[32px] csLg:text-[80px] leading-[40px] csLg:leading-[88px]
+                         "
             >
-              {/* two spans: inline on small screens (stays as single line if it fits), but block on large screens to force a newline */}
-              <span className="inline lg:block">Because of Their Expertise &amp; Care,</span>
-              <span className="inline lg:block"> Dreams Have </span>
-                            <span className="inline lg:block"> Found Life. </span>
-
+              Because of Their Expertise &amp;  Care,
+              Dreams Have Found Life.
             </h1>
           </div>
         </div>

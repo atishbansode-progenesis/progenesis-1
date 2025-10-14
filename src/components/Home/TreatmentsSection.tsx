@@ -71,14 +71,18 @@ const TreatmentsSection = () => {
               <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 w-fit py-1 rounded-full ">
                 Our Expertise
               </span>
-              <h2 className="text-[48px] md:text-5xl font-light text-[#2c2c2c] ">
+              <div>
+                
+              <h2 className="text-[32px] csLg:text-[48px] leading-[40px] font-light text-[#2c2c2c] leading-[56px] ">
                 Being India’s Best Fertility & IVF Center. We Specialize in:
               </h2>
             </div>
 
-            <button className="px-[14px] w-fit cursor-pointer md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] text-[12px] md:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
+            <button className="px-[14px] csLg:mt-[40px] w-fit cursor-pointer md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] text-[12px] md:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
               View all treatments
             </button>
+                          </div>
+
           </div>
           <div className="flex-1">
             {text.split("").map((char, i) => (
@@ -114,7 +118,7 @@ const TreatmentsSection = () => {
               >
                 {/* Left Side (Text) */}
                 <div className="flex flex-col  md:w-[350px]  md:pt-[100px] ">
-                  <h3 className="text-[#2c2c2c] font-semibold font-[Manrope] md:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2">
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] md:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2">
                     {item.title}
                   </h3>
                   <p className="text-[#606060] text-[16px] leading-6">
