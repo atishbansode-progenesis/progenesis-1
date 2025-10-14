@@ -179,14 +179,14 @@ const [activeTab, setActiveTab] = useState<string>("path");
       title: "IVF – Comprehensive In Vitro Fertilization Treatment",
       description:
         "Eggs and sperm are combined in a lab, and embryos are transferred to the uterus.",
-      slug: "ivf-icsi-intracytoplasmic-sperm-injection",
+      slug: "ivf",
       category: "infertility",
     },
     {
       title: "IVF-ICSI – Intracytoplasmic Sperm Injection",
       description:
         "A single sperm is injected into the egg, helpful in male infertility or failed fertilization cases.",
-      slug: "male-fertility-preservation",
+      slug: "ivf-icsi-intracytoplasmic-sperm-injection",
       category: "infertility",
     },
     {
