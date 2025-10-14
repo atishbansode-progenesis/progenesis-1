@@ -79,7 +79,7 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
     case "ivf-icsi-intracytoplasmic-sperm-injection":
       data = ivfIcsiTreatmentData;
       break;
-    case "ivf-icsi":
+    case "male-fertility-preservation":
       data = maleFertilityPreservationData;
       break;
     case "egg-embryo-freezing":

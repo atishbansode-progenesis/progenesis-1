@@ -1809,8 +1809,8 @@ export const maleFertilityPreservationData = {
     { label: "Male Fertility Preservation", href: "/treatments/fertility-preservation/male-fertility-preservation", id: "male-fertility-preservation" }
   ],
   basics_heading: "Preserving Parenthood Options for the Future",
-  points_tag: "Why Male Fertility Preservation Matters",
-  points_heading: "Ensuring Fertility for a Confident Tomorrow",
+  points_tag: "Why Choose ICSI at Progenesis",
+  points_heading: "Where science transforms possibilities into parenthood.",
   description:
     "Male fertility preservation provides a reliable solution for men who wish to safeguard their reproductive potential for future parenthood. Through advanced cryopreservation techniques, sperm cells are stored safely and securely, maintaining quality for years.",
   content:
@@ -1821,38 +1821,37 @@ export const maleFertilityPreservationData = {
     { id: "procedure", label: "The Preservation Process" },
     { id: "stories", label: "Success Stories" }
   ],
-  basics: [
-    {
-      icon: "/treatments/male-fertility-preservation/icon1.png",
-      title: "What It Is",
-      description: "Male fertility preservation collects and freezes sperm in liquid nitrogen for future assisted reproductive use."
-    },
-    {
-      icon: "/treatments/male-fertility-preservation/icon2.png",
-      title: "Why It’s Important",
-      description: "Helps men preserve fertility before treatments affecting sperm production."
-    },
-    {
-      icon: "/treatments/male-fertility-preservation/icon3.png",
-      title: "Who It Helps",
-      description: "Ideal for men with cancer, genetic disorders, low sperm count, or those planning delayed parenthood."
-    },
-    {
-      icon: "/treatments/male-fertility-preservation/icon4.png",
-      title: "How It Works",
-      description:"Sperm is collected, analyzed for quality, and cryopreserved at extremely low temperatures using advanced freezing techniques."
-    },
-    {
-      icon: "/treatments/male-fertility-preservation/icon4.png",
-      title: "Outcome",
-      description:"Ensures the ability to conceive biologically in the future — providing peace of mind and flexibility."
-    },
-    {
-      icon: "/treatments/male-fertility-preservation/icon4.png",
-      title: "Added Advantage",
-      description:"A safe, non-invasive, and proven method with excellent sperm survival rates post-thaw."
-    }
-  ],
+  path_section: {
+    tag: "Know the Basics",
+    mainHeading: "What Is ICSI Treatment?",
+    subHeading: "Precision. Expertise. Possibility.",
+    description1:
+      "Intracytoplasmic Sperm Injection (ICSI) is an advanced fertility treatment designed for couples struggling with male-factor infertility. In this procedure, a single healthy sperm is directly injected into an egg to achieve fertilization.",
+    description2:
+      "ICSI offers new hope for men with low sperm count, poor motility, or abnormal morphology, helping couples achieve biological parenthood.",
+  },
+  who_can_benefit: {
+    tag: "Who Can Benefit from ICSI",
+    title: "Tailored solutions for complex fertility challenges.",
+    cards: [
+      {
+        icon: "/treatments/ivf-icsi/icon1.png",
+        title: "Cases of poor sperm morphology or function",
+      },
+      {
+        icon: "/treatments/ivf-icsi/icon2.png",
+        title: "Couples with failed fertilization in previous IVF cycles",
+      },
+      {
+        icon: "/treatments/ivf-icsi/icon3.png",
+        title: "Men with ejaculatory or duct blockages",
+      },
+      {
+        icon: "/treatments/ivf-icsi/icon4.png",
+        title: "Couples seeking treatment for severe male infertility",
+      },
+    ],
+  },
   procedure_no_image_steps: {
     main_heading: "Ensuring stable, safe, and precise embryo growth.",
     main_tag: "Steps of the Preservation Process",
@@ -1881,20 +1880,20 @@ export const maleFertilityPreservationData = {
   points: [
     {
       id: "01",
-      title: "High-Tech Freezing",
-      description:"Modern cryopreservation and vitrification methods maintain sperm quality, motility, and viability for years.",
+      title: "Expert Embryologists",
+      description:"Skilled specialists with advanced micromanipulation expertise.",
       image: "/treatments/male-fertility-preservation/point1.png"
     },
     {
       id: "02",
-      title: "High Success Rate",
-      description:"Stored sperm shows excellent fertilization results when used for IVF or ICSI procedures.",
+      title: "Custom Treatment Plans",
+      description:"Each cycle is customized to the couple’s unique fertility profile.",
       image: "/treatments/male-fertility-preservation/point2.png"
     },
     {
       id: "03",
-      title: "Safe & Long-Term Storage",
-      description:"Sperm samples are stored in liquid nitrogen at –196°C under 24/7 monitoring.",
+      title: "Holistic Care",
+      description:"Emotional and medical support at every stage of your journey.",
       image: "/treatments/male-fertility-preservation/point3.png"
     },
   ]
