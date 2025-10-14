@@ -7,7 +7,7 @@ interface GradientBannerProps {
 const GradientBanner: React.FC<GradientBannerProps> = ({ text }) => {
   return (
     <section className="relative w-full h-[350px] md:h-[475px] flex items-center justify-center overflow-hidden px-4 md:px-8">
-      <div className="absolute inset-0 bg-gradient-to-r from-green-50 via-white to-blue-50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-green-50 via-white to-blue-50" ></div>
 
       <div
         className="absolute left-[-100px] bottom-[-100px] w-[250px] h-[300px] md:w-[322px] md:h-[443px] rounded-full opacity-70"
@@ -24,7 +24,7 @@ const GradientBanner: React.FC<GradientBannerProps> = ({ text }) => {
     text-center font-[Manrope] font-normal text-[#94BA3D]
     tracking-[-0.96px]
     px-4 z-10 relative
-    w-[90%] md:w-[75%] lg:w-[60%] xl:w-[50%] mx-auto
+    w-[90%] md:w-[70%] mx-auto
     text-[28px] leading-[36px]   /* 📱 mobile base */
     sm:text-[34px] sm:leading-[42px]  /* 📱+ */
     md:text-[40px] md:leading-[50px]  /* 💻 tablets */
