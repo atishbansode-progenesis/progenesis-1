@@ -35,15 +35,16 @@ const benefits: Benefit[] = [
 
 const CareersBenefits = () => {
 	return (
-		<section className="section-spacing mx-auto px-4 py-16 bg-[#FAFAFA]">
-			<div className="max-w-4xl pb-5 md:pb-20">
+		<section className="section-spacing mx-auto  px-4 py-16 bg-[#FAFAFA] ">
+			<div className="max-w-4xl pb-5 md:pb-20 gap-[32px] ">
 				<span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">We Take Care of You</span>
-				<h2 className="mt-4 font-manrope font-semibold csLg:text-[56px] text-[32px] leading-tight text-[#2C2C2C] tracking-[-0.02em]">
-					Grow personally, professionally, purposefully.
-				</h2>
+				<h2 className="mt-4 font-manrope font-normal lg:text-[48px]   text-[32px] lg:leading-[56px] leading-tight text-[#2C2C2C] tracking-[-0.02em]">
+  Grow personally, professionally, purposefully.
+</h2>
+
 			</div>
 
-			<div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-6  ">
+			<div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-6 lg:mt[0px] mt-[20px] ">
 				{benefits.map((benefit, idx) => (
 					<div key={idx} className="rounded-2xl bg-[#F2F2F2] border border-gray-100 p-5">
 						<div className="flex flex-col items-start gap-3">
@@ -52,8 +53,10 @@ const CareersBenefits = () => {
           alt={benefit.title}
           className="w-[19px] h-[19px] md:w-8 md:h-8 object-contain"
         />
-							<h3 className="font-manrope text-[20px] md:text-[22px] font-semibold text-gray-900">{benefit.title}</h3>
-							<p className="text-[14px] leading-6 text-[#606060]/70">{benefit.description}</p>
+<h3 className="font-manrope font-normal lg:text-[32px] text-[16px] md:text-[22px] lg:leading-[40px] leading-[24px] tracking-[-0.02em] text-gray-900">
+  {benefit.title}
+</h3>
+							<p className="text-[16px] leading-6 text-[#606060]/70">{benefit.description}</p>
 						</div>
 					</div>
 				))}

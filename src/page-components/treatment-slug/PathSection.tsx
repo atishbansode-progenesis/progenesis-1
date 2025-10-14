@@ -22,7 +22,7 @@ export const PathSection: React.FC<PathSectionProps> = ({
 }) => {
   return (
     <section 
-      id="path" 
+      id="basics" 
       className="px-4 py-4 md:px-[120px] md:py-[80px]"
       style={{ backgroundColor }}
     >
