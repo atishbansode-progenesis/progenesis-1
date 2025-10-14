@@ -398,7 +398,7 @@ const InternationalPatientsPage: React.FC = () => {
       </section>
 
 
-      <section className="relative bg-center bg-cover flex justify-center items-center min-h-[472px]">
+      <section className="px-4 py-4 lg:px-30 lg:py-20 relative bg-center bg-cover flex justify-center items-center max-h-[478px]">
         {/* Mobile Background */}
         <div
           className="absolute inset-0 md:hidden bg-cover bg-center"
@@ -417,25 +417,25 @@ const InternationalPatientsPage: React.FC = () => {
       </section>
       <section id="fertility" className="bg-white pt-[80px] pb-[60px]">
         <div className="px-4 md:px-[80px] lg:px-[120px]">
-          <div className="flex flex-col xl:flex-row justify-between gap-10">
+          <div className="flex flex-col xl:flex-row justify-between md:gap-10">
             <div className="w-full xl:w-[45%]">
               <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-[8px] mb-4">
                 Advanced Fertility Solutions
               </span>
-              <h2 className="text-[30px] md:text-[48px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">
+              <h2 className="text-[32px] md:text-[48px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">
                 Personalized fertility care for,<br /> every parenthood journey
               </h2>
             </div>
             <div className="flex-1">
               <p
-                className="font-[Manrope] font-normal text-[#2C2C2C] text-[18px] leading-[28px] tracking-[-0.36px] md:text-[24px] md:leading-[32px] md:tracking-[-0.48px] lg:text-[28px] lg:leading-[36px] lg:tracking-[-0.56px] xl:text-[32px] xl:leading-[40px] xl:tracking-[-0.64px] max-w-[832px]"
+                className="font-[Manrope] font-normal text-[#2C2C2C] text-[16px] leading-[28px] tracking-[-0.36px] md:text-[24px] md:leading-[32px] md:tracking-[-0.48px] lg:text-[32px] lg:leading-[40px] lg:tracking-[-0.56px] max-w-[832px]"
               >
-                At Progenesis, we offer all advanced fertility treatments under one roof — from IVF and ICSI to embryo donation, genetic screening, and cryopreservation. Our global-standard care ensures international patients receive safe, personalized solutions to achieve their dream of parenthood.
+                At Progenesis, we offer all advanced fertility treatments under one roof — from IVF and ICSI to embryo donation, genetic screening, and cryopreservation. <span className="text-[#606060]"> Our global-standard care ensures international patients receive safe, personalized solutions to achieve their dream of parenthood.</span>
               </p>
             </div>
           </div>
           <div
-            className="grid gap-6 mt-[80px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center"
+            className="grid gap-4 md:gap-6 mt-[80px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center"
           >
             {femaleInfertilityIssues.map((issue) => (
               <Link
