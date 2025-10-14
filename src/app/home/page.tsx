@@ -1,5 +1,6 @@
 "use client";
 
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 import ConsultationForm from "../../components/Consultation/ConsultationForm";
 import AwardsSection from "../../components/Home/AwardsSection";
 import DifferenceSection from "../../components/Home/DifferenceSection";
@@ -29,7 +30,7 @@ export default function Home() {
       <FaqSection />
       <AwardsSection />
        <VideoSection />
-      <ConsultationForm />
+      <AppointmentForm />
       <GradientBanner text="Striving to set a new standard for <br/> reproductive health care services." />
     </>
   );
