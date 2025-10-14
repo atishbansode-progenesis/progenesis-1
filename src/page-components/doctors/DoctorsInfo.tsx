@@ -118,18 +118,24 @@ const DoctorsInfo: React.FC = () => {
                   {d.bio}
                 </p>
 
-                <div className="mt-4 flex flex-col gap-[8px] text-[13px] md:text-[14px] font-medium text-[#1656A5]">
+                <div className="mt-4 hidden csLg:flex flex-col gap-[8px] text-[13px] md:text-[14px] font-medium text-[#1656A5]">
                   <span>{d.experience}</span>
                   <span>{d.qualifications}</span>
+                  <span>{d.fellowship}</span>
+                </div>
+                
+                <div className="mt-4 flex flex-wrap csLg:hidden gap-[8px] text-[13px] md:text-[14px] font-medium text-[#1656A5]">
+                  <span>{d.experience} |</span>
+                  <span>{d.qualifications} | </span>
                   <span>{d.fellowship}</span>
                 </div>
               </div>
 
               {/* Right: Hospital + Specialty + CTA */}
-              <div className="flex flex-col items-start lg:items-end gap-4 lg:gap-[60px] font-[Manrope] w-full">
+              <div className=" flex flex-col items-start justify-end csLg:items-end gap-4 lg:gap-[60px] font-[Manrope] w-full">
                 {/* Hospital | Specialty */}
-                <div className="w-full flex flex-col sm:flex-row lg:flex-col justify-between lg:gap-[24px]">
-                  <div className="min-w-[150px]">
+                <div className="w-full grid grid-cols-2 csLg:flex flex-col   justify-end  lg:gap-[24px]">
+                  <div className="min-w-[150px] csLg:flex flex-col justify-end items-end">
                     <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-semibold">
                       Hospital
                     </div>
@@ -138,7 +144,7 @@ const DoctorsInfo: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="min-w-[150px]">
+                  <div className="min-w-[150px] csLg:flex flex-col justify-end items-end">
                     <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-semibold">
                       Specialty
                     </div>
@@ -149,7 +155,7 @@ const DoctorsInfo: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full sm:w-auto h-[48px] px-5 rounded-[12px] bg-[#252525] text-white text-sm font-semibold shadow-sm hover:bg-[#000000] transition">
+                <button className=" w-fit csLg:w-full sm:w-auto h-[48px] px-5 rounded-[12px] bg-[#252525] text-white text-sm font-semibold shadow-sm hover:bg-[#000000] transition">
                   Book Your Appointment
                 </button>
               </div>
