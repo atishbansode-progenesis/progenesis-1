@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import React from "react";
 import ConsultationForm from "../../components/Consultation/ConsultationForm";
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 
 
@@ -286,7 +287,7 @@ export default function InfertilityIssues() {
   
 
       {/* Section 4: Form */}
-      <ConsultationForm />
+      <AppointmentForm />
     </div>
   );
 };

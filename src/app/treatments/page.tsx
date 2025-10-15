@@ -9,6 +9,7 @@ import ResourceStories from "@/page-components/resources/ResourceStories";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
 import StoriesSection from "@/components/Home/StoriesSection"; //
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 
 
@@ -259,7 +260,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
           { label: "Home", href: "/" },
           { label: "Treatments", href: "/treatments" },
         ]}
-        title="Hope, Science & Parenthood <br/> Begin Here"
+        title="Hope, Science & <br/> Parenthood  Begin Here"
         buttonText="Book Your Appointment"
         buttonLink="/book-appointment"
         foregroundImage="/treatments/bg-overlay.png"
@@ -510,6 +511,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
         text-[120px] md:text-[120px]
         leading-none tracking-[-2.4px]
         mb-[80px] md:mb-0
+
         px-6 md:px-0
       "
     >
@@ -524,7 +526,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
         leading-[40px] md:leading-[56px]
         tracking-[-0.64px] md:tracking-[-0.96px]
         text-left md:text-right
-        max-w-3xl
+      m
         px-6 md:px-0
       "
     >
@@ -579,7 +581,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
 
               {/* Title */}
-              <h3 className="text-[#2C2C2C] font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[32px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
+              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[28px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
                 {item.title}
               </h3>
 
@@ -691,7 +693,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
               </span>
 
               {/* Title */}
-              <h3 className="text-[#2C2C2C] font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[32px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
+              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[32px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
                 {item.title}
               </h3>
 
@@ -706,7 +708,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
      <StoriesSection />
 
-      <ConsultationForm />
+      <AppointmentForm />
       <GradientBanner text="Every journey to parenthood is unique — with the right care, hope finds its way." />
 
       {/* </div> */}

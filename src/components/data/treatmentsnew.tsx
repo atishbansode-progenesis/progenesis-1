@@ -329,10 +329,11 @@ export const semenAnalysisData = {
     slug: "male-analysis",
     category: "fertility-evaluation",
     title: "Semen Analysis – The First Step to Male Fertility Insight",
-    hero_title: "Semen Analysis – The First Step to Male Fertility Insight",
+    hero_title: "Semen Analysis – The First <br/> Step to Male Fertility Insight",
     hero_button_text: "Book Your Appointment",
     hero_button_link: "/book-appointment",
     hero_image: "/treatments/semen-analysis/semen-analysis-hero.png",
+    contentClass: "justify-start",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Treatments", href: "/treatments" },

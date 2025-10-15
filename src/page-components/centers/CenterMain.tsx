@@ -6,7 +6,7 @@ import AppointmentForm from "../about/AppointmentForm";
 
 const CenterMain = () => {
   return (
-    <div className="w-full [&>*:not([class*='bg-'])]:bg-[#F6F6F6]">
+    <div className="w-full bg-[#F6F6F6] !overflow-x-hidden">
       <CentersLanding />  
       <CentersNav />
      

@@ -189,8 +189,8 @@ const Footer: React.FC = () => {
                 items: [
                   { label: "Ovulation Induction", href: "/treatments/infertility/ovulation-induction/" },
                   { label: "IUI", href: "/treatments/infertility/artificial-insemination-iui-treatment/" },
-                  { label: "IVF", href: "/treatments/infertility/ivf/" },
-                  { label: "IVF–ICSI", href: "/treatmentsinfertility/ivf-icsi/" },
+                  { label: "IVF", href: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/" },
+                  { label: "IVF–ICSI", href: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/" },
                   { label: "Frozen Embryo Transfer", href: "/treatments/infertility/frozen-embryo-transfer/" },
                   { label: "Fertility Surgery", href: "/treatments/infertility/fertility-surgery/" },
                 ],

@@ -17,16 +17,12 @@ export default function InfoGrid({ tag, heading, items }: InfoGridProps) {
   return (
     <section className="w-full p-[16px] lg:p-[120px] bg-[#FAFAFA] scroll-mt-[120px]" id="about">
       {/* Small Tag */}
-      <span
-        className="inline-block px-3 py-1 mb-6 rounded-full text-[12px] font-medium leading-[20px] tracking-[-0.24px] text-[#1656A5] bg-[#F3F8FE]"
-        style={{ fontFamily: "Manrope" }}
-      >
+      <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
         {tag}
-      </span>
-
+      </button>
       {/* Main Heading */}
       <h2
-        className="w-full text-[32px] md:text-[48px] font-normal leading-[56px] tracking-[-0.96px] text-[#2C2C2C] mb-12 md:mb-20"
+        className="md:max-w-2lg text-[32px] md:text-[48px] font-normal md:leading-[56px] leading-[40px] tracking-[-0.96px] text-[#2C2C2C] mb-[40px] md:mb-[80px]"
         style={{ fontFamily: "Manrope" }}
         dangerouslySetInnerHTML={{ __html: heading }}
       />
@@ -44,7 +40,7 @@ export default function InfoGrid({ tag, heading, items }: InfoGridProps) {
               </div>
             </div>
             <hr className="border-[#1656A50D] border-[1px] w-[80%]" />
-            <div className="text-[16px] text-[#606060]">{item.description}</div>
+            <div className="text-[16px] text-[#606060]/70">{item.description}</div>
           </div>
         ))}
       </div>

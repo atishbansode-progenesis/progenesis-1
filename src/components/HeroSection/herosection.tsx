@@ -3,6 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 interface Breadcrumb {
   label: string;
@@ -45,9 +47,10 @@ export default function HeroSection({
   buttonBgColor = '#252525',
   buttonTextColor = '#FFFFFF',
 }: HeroSectionProps) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <section
-      className="relative w-full min-h-[444px] lg:min-h-[620px] flex p-[16px] lg:p-[80px] overflow-hidden"
+      className="relative w-full min-h-[444px] lg:min-h-[620px] flex px-4 py-4 md:px-[120px] md:py-[80px] overflow-hidden"
       style={{
         backgroundImage: backgroundImage ? backgroundImage : "",
       }}
@@ -134,8 +137,8 @@ export default function HeroSection({
         {buttonText && (
           <div>
             {buttonLink ? (
-              <Link
-                href={buttonLink}
+              <button
+                onClick={() => setIsOpen(true)}
                 className="p-[10px] lg:p-[20px] rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium inline-block"
                 style={{
                   backgroundColor: buttonBgColor,
@@ -143,7 +146,7 @@ export default function HeroSection({
                 }}
               >
                 {buttonText}
-              </Link>
+              </button>
             ) : (
               <button 
                 className="p-[10px] lg:p-[20px] rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium"
@@ -174,6 +177,7 @@ export default function HeroSection({
           </div>
         </div>
       )}
+      {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
     </section>
   );
 }

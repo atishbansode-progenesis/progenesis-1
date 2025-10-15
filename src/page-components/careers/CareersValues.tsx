@@ -54,15 +54,23 @@ const CareersValues = () => {
   return (
     <section className="section-spacing bg-[#FEFEFE]">
       <div className="max-w-5xl md:pb-14">
-        <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
-          What Defines Us
-        </span>
-        <h2 className="mt-4 font-manrope font-normal csLg:text-[48px] text-[32px] leading-tight text-[#2C2C2C] tracking-[-0.02em]">
-          Every company has its unique <br /> DNA. Here’s ours
-        </h2>
-      </div>
+  <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
+    What Defines Us
+  </span>
 
-   <div className=" mt-4 gap-y-4 md:mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-x-16 md:gap-y-12">
+  {/* Desktop version */}
+  <h2 className="hidden md:block mt-4 font-manrope font-normal csLg:text-[48px] text-[32px] leading-tight text-[#2C2C2C] tracking-[-0.02em]">
+    Every company has its unique <br /> DNA. Here’s ours
+  </h2>
+
+  {/* Mobile version */}
+  <h2 className="block md:hidden mt-4 font-manrope font-normal csLg:text-[48px] text-[32px] leading-tight text-[#2C2C2C] tracking-[-0.02em]">
+    Every company has its unique DNA. Here’s <br /> ours
+  </h2>
+</div>
+
+
+   <div className=" mt-4 gap-y-4 md:mt-14 grid grid-cols-1 gap-[20px] md:grid-cols-2 xl:grid-cols-3 md:gap-x-16 md:gap-y-12">
   {items.map((item, idx) => (
     <div
       key={idx}
@@ -75,7 +83,7 @@ const CareersValues = () => {
           alt={item.title}
           className="w-[19px] h-[19px] md:w-8 md:h-8 object-contain"
         />
-        <h3 className="font-normal text-[16px] md:text-[25px] text-gray-900 ">
+        <h3 className="font-normal lg:text-[32px] text-[16px] md:text-[25px] text-gray-900 ">
           {item.title}
         </h3>
       </div>

@@ -25,7 +25,7 @@ const AboutNav: React.FC = () => {
 
   return (
     <nav className="bg-[#FFFFFF]">
-      <div className="section-spacing flex flex-wrap lg:gap-6 gap-3">
+      <div className="px-4 py-4 md:py-[50px] md:px-[120px] flex flex-wrap md::gap-6 gap-3">
            {sections.map((section) => (
         <button
           key={section.id}

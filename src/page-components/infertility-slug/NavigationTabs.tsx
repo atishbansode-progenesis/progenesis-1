@@ -14,8 +14,8 @@ interface NavigationTabsProps {
 
 export default function NavigationTabs({ categories, activeTab, onTabClick }: NavigationTabsProps) {
   return (
-    <div className="w-full  px-[16px] py-[16px] md:px-[120px] md:py-[50px]  bg-[#FFFFFF]">
-      <div className="flex flex-wrap justify-start items-start gap-3 md:gap-6 text-left ">
+    <div className="w-full bg-white p-[50px] pb-[40px] md:py-[50px]  md:px-[120px] ">
+      <div className="flex flex-wrap justify-start items-start lg:gap-[24px] gap-3 md:gap-4 text-left">
         {categories.map((cat) => (
           <button
             key={cat.id}
@@ -28,10 +28,9 @@ export default function NavigationTabs({ categories, activeTab, onTabClick }: Na
               rounded-[8px] md:rounded-[16px]
               font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px]
               tracking-[-0.28px] transition-all duration-200
-              ${
-                activeTab === cat.id
-                  ? "bg-[#1656A5] text-white shadow-md"
-                  : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+              ${activeTab === cat.id
+                ? "bg-[#1656A5] text-white shadow-md"
+                : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
               }
             `}
           >

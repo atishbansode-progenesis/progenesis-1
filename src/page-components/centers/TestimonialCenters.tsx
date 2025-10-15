@@ -65,9 +65,9 @@ const TestimonialsSection = () => {
     <section className="w-full bg-[#1656A5] overflow-hidden">
       <div className="flex flex-col md:flex-row  lg:h-[600px]">
         {/* Left Panel (Blue) */}
-        <div className="bg-[#1656A5] text-[#F9F9F9] flex flex-col justify-center md:w-[400px] px-6 md:px-10 py-10">
+        <div className="bg-[#1656A5] text-[#F9F9F9] flex flex-col justify-center md:w-[400px] lg:pl-30  pl-4 pt-10">
           <div>
-            <h2 className="text-2xl lg:text-4xl font-bold mb-6">
+            <h2 className="text-[32px] leading-[40px] lg:text-[48px] lg:leading-[56px] font-normal mb-6">
               What Our Visitors Are Saying
             </h2>
 
@@ -131,7 +131,7 @@ const TestimonialsSection = () => {
           
           
           {/* Desktop & Tablet Swiper */}
-          <div className="hidden md:block w-full max-w-[900px] lg:max-w-[900px] mx-auto">
+          <div className="hidden md:block w-full max-w-[900px] lg:max-w-[1000px] mx-auto">
             {navReady && (
               <Swiper
                 modules={[Navigation]}
@@ -184,15 +184,15 @@ const TestimonialsSection = () => {
           {/* Mobile View */}
           <div
             id="mobile-scroll-container"
-            className="md:hidden flex space-x-4 overflow-x-auto px-6 scrollbar-hide snap-x snap-mandatory scroll-smooth py-6"
+            className="md:hidden flex overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth px-2 py-2"
           >
             {videoTestimonials.map((t, i) => (
               <div
                 key={i}
-                className="flex flex-col bg-transparent rounded-[16px] overflow-hidden min-w-[85%] snap-center p-4 gap-4"
+                className="flex flex-col bg-transparent rounded-[16px] overflow-hidden min-w-[85%] snap-center p-2 gap-4"
               >
                 {/* Description First */}
-                <div className="p-4 bg-white h-[250px] justify-center rounded-[16px]">
+                <div className="p-4 bg-white h-[300px] justify-center rounded-[16px] py-[66px] gap-6 lg:pt-auto px-[34px]">
                   <p className="text-[#1656A5] font-[Manrope] text-[16px] font-normal tracking-tight leading-[24px]">
                     {t.text}
                   </p>
@@ -202,7 +202,7 @@ const TestimonialsSection = () => {
                 </div>
 
                 {/* Video Second */}
-                <div className="w-full h-[200px] rounded-[16px] overflow-hidden">
+                <div className="w-full h-[250px] rounded-[16px] overflow-hidden">
                   {t.videoUrl ? (
                     <iframe
                       src={t.videoUrl}

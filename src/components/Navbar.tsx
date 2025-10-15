@@ -460,7 +460,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                     setInputs({ ...inputs, what: t.name });
                     setActiveStep(null);
                   }}
-                  className={`px-3 py-2 rounded-[14px] border text-[14px] font-medium ${inputs.what === t
+                  className={`px-3 py-2 rounded-[14px] border text-[14px] font-medium ${inputs.what === t.name
                     ? "bg-[#1656A5] text-white border-[#1656A5]"
                     : "border-[#1656A5] text-[#1656A5]"
                     }`}
@@ -675,7 +675,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultion", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
 
         ],
       },
@@ -737,7 +737,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultion", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
         ],
       },
     ],
@@ -797,7 +797,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultion", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
         ],
       },
     ],
@@ -887,7 +887,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultion", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
         ],
       },
     ],
@@ -1418,15 +1418,20 @@ export default function Navbar() {
                 <>
                   {navigationItems.map((item, idx) => (
                     <div key={idx}>
-                      <button
-                        onClick={() => {
-                          if (item.hasMegaMenu) setActiveMobileSubmenu(item.label);
-                          else setIsMobileMenuOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between py-3 font-[Manrope] text-[20px] font-normal tracking-[-0.4px] 
-                          ${activeMobileSubmenu === item.label ? "text-[#1656A5]" : "text-[#7E7E7E]"} 
-                          hover:text-[#1656A5] transition-colors duration-200`}
-                      >
+ <button
+  onClick={() => {
+    if (item.hasMegaMenu) {
+      setActiveMobileSubmenu(item.label);
+    } else {
+      setIsMobileMenuOpen(false);
+      window.location.href = item.path; // ✅ instant redirect
+    }
+  }}
+  className={`w-full flex items-center justify-between py-3 font-[Manrope] text-[20px] font-normal tracking-[-0.4px]
+    ${activeMobileSubmenu === item.label ? "text-[#1656A5]" : "text-[#7E7E7E]"}
+    hover:text-[#1656A5] transition-colors duration-200`}
+>
+
                         {item.label}
 
                         {item.hasMegaMenu && (

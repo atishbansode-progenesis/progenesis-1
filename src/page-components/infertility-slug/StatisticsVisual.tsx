@@ -22,9 +22,9 @@ export default function StatisticsVisual({ tag, heading, blueCircleData, greenCi
     <section className="w-full bg-[#FAFAFA] p-[16px] lg:px-[120px] lg:py-[80px]">
       <div className="relative flex flex-col gap-2 items-start">
         {/* Tag */}
-        <span className="py-2 px-4 rounded-[8px] text-[#1656A5] bg-[#1656A50D] text-[12px] leading-[18px] font-medium lg:leading-[20px]">
-          {tag}
-        </span>
+         <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
+           {tag}
+         </button>
 
         {/* Heading */}
         <h2 className="text-[32px] lg:text-[48px] leading-[40px] lg:leading-[56px] tracking-tighter font-normal max-w-[650px]">{heading}</h2>

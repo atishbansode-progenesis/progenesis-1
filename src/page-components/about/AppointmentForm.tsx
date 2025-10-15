@@ -1,8 +1,8 @@
 'use client'
 import React, { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
-import { API_DOMAIN } from '@/utils/constent/constent';
-
+import { SelectFieldArrowDown } from './icons';
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 interface AppointmentFormProps {
   onClose?: () => void;
 }
@@ -29,10 +29,9 @@ const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
         className={`
           flex items-center gap-3 min-w-[320px] px-6 py-4 rounded-2xl shadow-2xl
           backdrop-blur-md border transform transition-all duration-300
-          ${
-            type === "success"
-              ? "bg-green-50 border-green-200 text-green-800"
-              : "bg-red-50 border-red-200 text-red-800"
+          ${type === "success"
+            ? "bg-green-50 border-green-200 text-green-800"
+            : "bg-red-50 border-red-200 text-red-800"
           }
         `}
       >
@@ -103,15 +102,6 @@ const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
   );
 };
 
-const ScratchImage = () => {
-  return (
-    <img
-      src="/images/appointment.jpg"
-      alt="Consultation"
-      className="w-full h-full object-cover rounded-2xl"
-    />
-  );
-};
 
 const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const isPopupMode = !!onClose;
@@ -137,7 +127,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     const fetchFields = async () => {
       try {
         const response = await timeoutPromise(
-          axios.get(API_DOMAIN + "api/forms/", {
+          axios.get(apiUrl + "/api/forms/", {
             headers: {
               "Content-Type": "application/json",
             },
@@ -181,24 +171,24 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     try {
       await timeoutPromise(
         axios.post(
-          API_DOMAIN + "api/form/save/",
+          apiUrl + "/api/form/save/",
           { fields: formData },
           { headers: { "Content-Type": "application/json" } }
         ),
         6000
       );
-      
+
       // Reset form data
       setFormData({});
-      
+
       // Reset the form element itself
       if (formRef.current) {
         formRef.current.reset();
       }
-      
+
       if (isPopupMode) {
         setIsFormOpen(false); // Close the form
-        
+
         // Show success toast after form closes
         setTimeout(() => {
           setToast({
@@ -215,10 +205,10 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
       }
     } catch (error: any) {
       console.error(error);
-      
+
       // Show error toast
       setToast({
-        message: error.message === 'Timeout' 
+        message: error.message === 'Timeout'
           ? "We are unable to book appointment at this moment. Please try again later."
           : "Failed to submit form. Please try again.",
         type: "error",
@@ -268,20 +258,27 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
 
     if (field.type === "select") {
       return (
-        <select
-          required={field.required}
-          className={containerClass}
-          onChange={(e) => handleChange(field.name, e.target.value)}
-          value={formData[field.name] || ""}
-          disabled={isSubmitLoading}
-        >
-          <option value="">{field.title}</option>
-          {field.options?.map((opt: any, i: number) => (
-            <option key={i} value={opt.value}>
-              {opt.label}
-            </option>
-          ))}
-        </select>
+        <div className="relative w-full">
+          <select
+            required={field.required}
+            className={`${containerClass} appearance-none focus:outline-none focus:ring-0 pr-8`}
+            onChange={(e) => handleChange(field.name, e.target.value)}
+            value={formData[field.name] || ""}
+            disabled={isSubmitLoading}
+          >
+            <option value="">{field.title}</option>
+            {field.options?.map((opt: any, i: number) => (
+              <option key={i} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
+          </select>
+
+          {/* Custom SVG Arrow */}
+          <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
+            <SelectFieldArrowDown />
+          </div>
+        </div>
       );
     }
 
@@ -309,47 +306,45 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   };
 
   const renderCheckbox = (field: any, idx: number) => (
-    <div key={idx} className="flex items-center justify-center space-x-2">
+    <label htmlFor={field.name} key={idx} className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] ">
       <input
         type="checkbox"
         id={field.name}
-        className="h-4 w-4"
+        className="h-4 w-4 cursor-pointer mr-2"
         onChange={(e) => handleChange(field.name, e.target.checked)}
         checked={formData[field.name] || false}
         required={field.required}
         disabled={isSubmitLoading}
       />
-      <label htmlFor={field.name} className="text-sm text-gray-600">
-        {field.options && field.options.length > 0 ? (
-          <>
-            {field.options[0].label.split(/(\bPrivacy Policy\b|\bT&C\b)/g).map((part: string, i: number) => {
-              if (part === "Privacy Policy" || part === "T&C") {
-                return (
-                  <a key={i} href="#" className="text-blue-600 underline">
-                    {part}
-                  </a>
-                );
-              }
-              return part;
-            })}
-          </>
-        ) : (
-          <>
-            Clicking means you agree to our{" "}
-            <a href="#" className="text-blue-600 underline">
-              Privacy Policy
-            </a>{" "}
-            and{" "}
-            <a href="#" className="text-blue-600 underline">
-              T&C.
-            </a>
-          </>
-        )}
-      </label>
-    </div>
+      {field.options && field.options.length > 0 ? (
+        <>
+          {field.options[0].label.split(/(\bPrivacy Policy\b|\bT&C\b)/g).map((part: string, i: number) => {
+            if (part === "Privacy Policy" || part === "T&C") {
+              return (
+                <a key={i} href="#">
+                  {part}
+                </a>
+              );
+            }
+            return part;
+          })}
+        </>
+      ) : (
+        <>
+          Clicking means you agree to our{" "}
+          <a href="#">
+            Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a href="#">
+            T&C.
+          </a>
+        </>
+      )}
+    </label>
   );
 
-  const renderFormContent = (isMobile: boolean, isTablet: boolean) => {
+  const renderFormContent = () => {
     if (apiError) {
       return (
         <div className="space-y-6 w-full">
@@ -361,44 +356,30 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     }
 
     return (
-      <form ref={formRef} className={`space-y-6 ${isMobile ? 'w-full' : ''}`} onSubmit={handleSubmit}>
-        {/* Grouped fields in 2-column grid for desktop */}
-        {groupedFields.map((row, rowIdx) => (
-          <div key={rowIdx} className="grid grid-flow-row md:grid-cols-2 gap-4">
-            {row.map((field, idx) => (
-              <div key={idx} className="w-full">
-                {renderField(field, "w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 text-gray-700")}
-              </div>
-            ))}
-          </div>
-        ))}
+      <form ref={formRef} className={`flex flex-col gap-4 justify-between h-full`} onSubmit={handleSubmit}>
+        <ul className='flex flex-col gap-4 flex-1 max-h-[250px] lg:max-h-[400px] overflow-y-auto'>
+          {groupedFields.map((row, rowIdx) => (
+            <li key={rowIdx} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {row.map((field, idx) => (
+                <div key={idx} className="w-full">
+                  {renderField(field, "w-full border border-[#00000026] p-4 rounded-[16px] focus:ring-0 focus:outline-none")}
+                </div>
+              ))}
+            </li>
+          ))}
+        </ul>
 
-        {/* Single fields for mobile/tablet */}
-        {!isMobile && !isTablet && nonCheckboxFields.slice(groupedFields.flat().length).map((field, idx) => (
-          <div key={idx} className="w-full">
-            {renderField(field, "w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 text-gray-700")}
-          </div>
-        ))}
-
-        {/* Checkboxes */}
         {checkboxFields.map((field, idx) => renderCheckbox(field, idx))}
 
         <button
           type="submit"
           disabled={isSubmitLoading || apiError}
-          className="px-6 py-3 rounded-[16px] bg-[#1656A5] text-[#F9F9F9] 
-            font-[Manrope] text-[14px] font-medium leading-[24px] 
-            tracking-[-0.28px] backdrop-blur-[7.5px] transition 
-            hover:bg-[#134a91] block mx-auto disabled:opacity-50 disabled:cursor-not-allowed w-auto"
+          className="cursor-pointer rounded-[16px] h-[56px] overflow-hidden p-2 bg-[#1656A5] text-white min-w-[158px] disabled:cursor-not-allowed disabled:bg-[#1656A5] disabled:text-[#F9F9F9] text-[14px] leading-[24px] font-medium flex items-center gap-1 justify-center mx-auto"
         >
-          {isSubmitLoading ? (
-            <div className="flex items-center justify-center">
-              <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white mr-2"></div>
-              Booking...
-            </div>
-          ) : (
-            "Book Appointment"
+          {isSubmitLoading && (
+            <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white mr-2"></div>
           )}
+          {isSubmitLoading ? "Booking..." : "Book Appointment"}
         </button>
       </form>
     );
@@ -408,112 +389,33 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     return (
       <>
         {isFormOpen && (
-          <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md z-50">
-            {/* Desktop View (1024px and above) */}
-            <div className="hidden lg:block w-[90%] md:w-[800px] shadow-lg">
-              {isLoading ? (
-                <div className="bg-white rounded-2xl p-10 flex flex-row items-center justify-between relative overflow-y-auto max-h-[90vh]">
-                  {/* Close Button - Visible during loading */}
-                  <button
-                    onClick={onClose}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold"
-                  >
-                    ✕
-                  </button>
-                  <div className="flex-1 text-center pr-6">
-                    <span className="inline-block text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-4">
-                      Schedule a Consultation
-                    </span>
-                    <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[32px] font-normal leading-[40px] tracking-[-0.64px] text-center mb-3">
-                      Just focus on your fertility journey, <br /> We got the rest
-                      covered!
-                    </h2>
-                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5] mx-auto"></div>
-                  </div>
-                  <div className="flex-1 relative">
-                    <ScratchImage />
+          <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md z-50 ">
+            <div className="w-[90%] lg:w-[800px] shadow-lg">
+              <div className="bg-white rounded-2xl shadow-lg py-10 px-6 flex flex-row items-center justify-between relative max-h-[90vh]">
+                <button
+                  onClick={onClose}
+                  disabled={isLoading}
+                  className="absolute cursor-pointer top-4 right-6 text-gray-600 hover:text-black text-xl font-bold"
+                >
+                  ✕
+                </button>
+                <div className="flex flex-col text-center gap-2 flex-1">
+                  <span className="inline-block text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full w-fit mx-auto">
+                    Schedule a Consultation
+                  </span>
+                  <h2 className="text-[#2C2C2C] font-[Manrope] text-[16px] lg:text-[32px] font-normal leading-[20px] lg:leading-[40px] tracking-[-0.64px] text-center">
+                    Just focus on your fertility journey, <br className='hidden lg:block' /> We got the rest
+                    covered!
+                  </h2>
+                  <div className='flex-1 mt-4'>
+                    {!isLoading ? renderFormContent() : <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5] mx-auto"></div>}
                   </div>
                 </div>
-              ) : (
-                <div className="bg-white rounded-2xl shadow-lg p-10 flex flex-row items-center justify-between relative overflow-y-auto max-h-[90vh]">
-                  {/* Close Button */}
-                  <button
-                    onClick={onClose}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold"
-                  >
-                    ✕
-                  </button>
-                  <div className="flex-1 text-center pr-6">
-                    <span className="inline-block text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-4">
-                      Schedule a Consultation
-                    </span>
-                    <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[32px] font-normal leading-[40px] tracking-[-0.64px] text-center mb-3">
-                      Just focus on your fertility journey, <br /> We got the rest
-                      covered!
-                    </h2>
-                    {renderFormContent(false, false)}
-                  </div>
-                  <div className="flex-1 relative">
-                    <ScratchImage />
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Mobile View (up to 767px) */}
-            <div className="block md:hidden w-[90%] md:w-[300px] shadow-lg">
-              {isLoading ? (
-                <div className="bg-white rounded-2xl p-3 flex flex-col items-center relative overflow-y-auto max-h-[90vh]">
-                  {/* Close Button - Visible during loading */}
-                  <button
-                    onClick={onClose}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-lg font-bold"
-                  >
-                    ✕
-                  </button>
-                  <div className="flex-1 text-center w-full">
-                    <span className="inline-block text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-6">
-                      Schedule a Consultation
-                    </span>
-                    <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[32px] font-normal leading-[40px] tracking-[-0.64px] text-center mb-3">
-                      Just focus on your fertility journey, <br /> We got the rest
-                      covered!
-                    </h2>
-                    <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-b-4 border-[#1656A5] mx-auto"></div>
-                    <div className="w-full relative mt-3">
-                      <ScratchImage />
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="bg-white rounded-2xl shadow-lg p-3 flex flex-col items-center relative overflow-y-auto max-h-[90vh]">
-                  {/* Close Button */}
-                  <button
-                    onClick={onClose}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-lg font-bold"
-                  >
-                    ✕
-                  </button>
-                  <div className="flex-1 text-center w-full">
-                    <span className="inline-block text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full mb-6">
-                      Schedule a Consultation
-                    </span>
-                    <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[32px] font-normal leading-[40px] tracking-[-0.64px] text-center mb-3">
-                      Just focus on your fertility journey, <br /> We got the rest
-                      covered!
-                    </h2>
-                    {renderFormContent(true, false)}
-                    <div className="w-full relative mt-3">
-                      <ScratchImage />
-                    </div>
-                  </div>
-                </div>
-              )}
+              </div>
             </div>
           </div>
         )}
 
-        {/* Toast Notification (appears after form closes) */}
         {toast && (
           <Toast
             message={toast.message}
@@ -555,10 +457,47 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     );
   }
 
-  // Inline mode
   return (
-    <>
-      {/* Toast Notification */}
+    <div className="relative w-full">
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src="\video\babyvideo.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      ></video>
+
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      <section className="relative p-4 lg:p-[120px] py-[80px] flex justify-center bg-transparent">
+        <div className="bg-white rounded-[10px] lg:rounded-[16px] p-4 grid grid-cols-1 lg:grid-cols-2 lg:h-[626px] max-w-[1200px]">
+          <div className="h-full flex flex-col gap-8 justify-between lg:p-8">
+            <div className="space-y-2 text-center">
+              <div className="text-[12px] w-fit font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mx-auto">
+                Schedule a Consultation
+              </div>
+
+              <h2 className="text-[19px] font-normal text-[#2C2C2C] leading-[23px] lg:text-[32px] lg:leading-[40px] ">
+                Just focus on your fertility journey, <br className="lg:hidden" /> We got the rest
+                covered!
+              </h2>
+            </div>
+
+            {isLoading ? (
+              <div className="flex justify-center items-center py-8">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5]"></div>
+              </div>
+            ) : (
+              renderFormContent()
+            )}
+          </div>
+
+          <div className="flex-1 relative bg-[url('/images/appointment.jpg')] bg-cover bg-center rounded-[16px]">
+          </div>
+        </div>
+      </section>
+
       {toast && (
         <Toast
           message={toast.message}
@@ -566,36 +505,6 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
           onClose={() => setToast(null)}
         />
       )}
-
-      <section className="relative py-4 px-4 md:py-[60px] lg:py-[80px] mx-0  md:px-[60px] lg:px-[120px]  flex justify-center bg-transparent">
-        <div className="bg-white rounded-2xl shadow-lg p-10 flex flex-col md:flex-row w-full max-w-6xl gap-10">
-          {/* Left Form Section - Always Visible */}
-          <div className="flex-1 text-center">
-            <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mb-6">
-              Schedule a Consultation
-            </span>
-
-            <h2 className="mt-4 text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[32px] font-normal leading-6 md:leading-[40px] tracking-[-0.64px] text-center mb-6">
-              Just focus on your fertility journey, <br /> We got the rest
-              covered!
-            </h2>
-
-            {/* Form Area - Shows loader or form content */}
-            {isLoading ? (
-              <div className="flex justify-center items-center py-8">
-                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5]"></div>
-              </div>
-            ) : (
-              renderFormContent(false, false)
-            )}
-          </div>
-
-          {/* Right Image with Scratch Effect - Always Visible */}
-          <div className="flex-1 relative">
-            <ScratchImage />
-          </div>
-        </div>
-      </section>
 
       <style>{`
         @keyframes slideIn {
@@ -626,7 +535,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
           animation: spin 1s linear infinite;
         }
       `}</style>
-    </>
+    </div>
   );
 };
 
