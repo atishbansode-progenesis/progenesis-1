@@ -656,7 +656,6 @@ const TreatmentsPage: React.FC = () => {
     text-[24px] leading-[32px] tracking-[-0.64px]
     md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
     max-w-[200px] md:max-w-full
-    bg-blue-900
           "
               >
                 {item.title}
