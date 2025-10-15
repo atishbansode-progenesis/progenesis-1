@@ -16,6 +16,7 @@ import {
   FeatureCardProps,
 } from "@/page-components/infertilityV1";
 import NewConstaltentForm from "@/page-components/infertilityV1/NewConstaltentForm";
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 export function FeatureCard({ title, description, href }: FeatureCardProps) {
   const cardContent = (
@@ -90,11 +91,12 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
 
       <MaleInfertilitySection issues={MALE_INFERTILITY_ISSUES} />
 
-      <section id="stories-section" className="mt-[-50px] md:mt-0">
+      <section id="stories-section" className="">
         <StoriesSection />
       </section>
 
-      <NewConstaltentForm />
+      {/* <NewConstaltentForm /> */}
+      <AppointmentForm />
 
       <GradientBanner />
     </div>

@@ -13,7 +13,7 @@ export const CategoryTabs: React.FC<CategoryTabsProps> = ({
   onTabClick,
 }) => {
   return (
-    <div className="w-full bg-white pt-[50px] pb-[40px] md:pb-[80px] px-[12px] md:px-[80px] xl:px-[120px]">
+    <div className="w-full bg-white pt-[20px] md:pt-[50px] pb-[20px] md:pb-[80px] px-[12px] md:px-[80px] xl:px-[120px]">
       <div className="flex flex-wrap justify-start items-start lg:gap-[24px] gap-3 md:gap-4 text-left">
         {categories.map((cat) => (
           <button

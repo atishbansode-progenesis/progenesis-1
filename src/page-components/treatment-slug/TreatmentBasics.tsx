@@ -26,12 +26,12 @@ export default function TreatmentBasics({ tag, heading, items }: TreatmentBasics
         {items.map((item, idx) => (
           <div
             key={idx}
-            className="flex flex-col gap-2 rounded-[12px] bg-[#EEF5FF] border border-[#E6E6E6] p-6 "
+            className="flex flex-col gap-2 rounded-[12px] px-4 py-4 md:py-6 md:px-6 "
           >
             		 <img
           src={item.icon}
           alt={item.title}
-          className="w-[19px] h-[19px] md:w-8 md:h-8 object-contain"
+          className="w-[20px] h-[20px] md:w-8 md:h-8 object-contain mb-3 md:mb-4"
         />
             <h3 className="text-[#2C2C2C] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
               {item.title}
