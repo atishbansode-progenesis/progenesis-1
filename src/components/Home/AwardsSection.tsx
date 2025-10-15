@@ -102,11 +102,10 @@ export default function AwardsSection() {
                     setActiveTab(tab);
                     setMobileIndex(0);
                   }}
-                  className={`block text-left font-[Manrope] text-[20px] md:text-[32px] leading-[40px] font-normal tracking-[-0.64px] pb-2 border-b-2 transition-all duration-200 ${
-                    activeTab === tab
+                  className={`block text-left font-[Manrope] text-[20px] md:text-[32px] leading-[40px] font-normal tracking-[-0.64px] pb-2 border-b-2 transition-all duration-200 ${activeTab === tab
                       ? "text-[#1656A5] border-[#1656A5]"
                       : "text-gray-400 border-gray-200 hover:text-gray-600"
-                  }`}
+                    }`}
                 >
                   {tab}
                 </button>
@@ -122,7 +121,7 @@ export default function AwardsSection() {
                 {data.map((item, idx) => (
                   <article
                     key={idx}
-                    className="bg-white rounded-2xl  csLg:min-w-[409px] csLg:max-w-[409px]  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col csLg:min-h-[496px] "
+                    className="bg-white rounded-2xl  csLg:min-w-[395px] csLg:max-w-[395px]  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col csLg:min-h-[496px] "
                   >
                     {/* <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
                       <span>{item.year}</span>
@@ -133,20 +132,20 @@ export default function AwardsSection() {
                       </span>
                     </div> */}
                     <div className="flex items-center gap-1.5 mb-3 text-[#606060]/70 font-[Manrope] text-[14px] font-medium leading-[22px] tracking-[-0.3px]">
-  {activeTab === "Awards & Certifications" ? (
-    <>
-      <span>{item.year}</span>
-      <span>•</span>
-      <span>Awards</span>
-    </>
-  ) : (
-    <>
-      <span>{item.views}</span>
-      <span>•</span>
-      <span>{item.year}</span>
-    </>
-  )}
-</div>
+                      {activeTab === "Awards & Certifications" ? (
+                        <>
+                          <span>{item.year}</span>
+                          <span>•</span>
+                          <span>Awards</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>{item.views}</span>
+                          <span>•</span>
+                          <span>{item.year}</span>
+                        </>
+                      )}
+                    </div>
 
 
 
