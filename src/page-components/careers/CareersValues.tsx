@@ -81,9 +81,9 @@ const CareersValues = () => {
         <img
           src={item.icon}
           alt={item.title}
-          className="w-[19px] h-[19px] md:w-8 md:h-8 object-contain"
+          className="w-7 h-7 md:w-11 md:h-11 object-contain"
         />
-        <h3 className="font-normal lg:text-[32px] text-[16px] md:text-[25px] text-gray-900 ">
+        <h3 className="font-normal lg:text-[24px] text-[16px] md:text-[18px] text-[#2C2C2C] ">
           {item.title}
         </h3>
       </div>
