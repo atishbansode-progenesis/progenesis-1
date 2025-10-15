@@ -44,7 +44,7 @@ export default function HeroSection({
   breadcrumbColor = '#606060',
   breadcrumbActiveColor = '#1656A5',
   titleColor = '#000000',
-  buttonBgColor = '#252525',
+  buttonBgColor = '#1656A5',
   buttonTextColor = '#FFFFFF',
 }: HeroSectionProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -107,7 +107,7 @@ export default function HeroSection({
 
         {/* Title */}
         <h1 
-          className="text-[32px] lg:text-[60px] csxl:text-[80px] leading-[40px] lg:leading-[88px] font-semibold"
+          className="text-[32px] lg:text-[3.125vw] csxl:text-[4.17vw] leading-[40px] lg:leading-[4vw] font-semibold"
           style={{ color: titleColor }}
         >
           {typeof title === "string" ? (
