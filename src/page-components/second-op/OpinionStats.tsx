@@ -91,7 +91,7 @@ const OpinionStats: React.FC = () => {
 
               {/* Horizontal Line (except for last item) */}
               {index < stats.length - 1 && (
-                <div className="w-full h-px bg-gray-200 mt-[16px] csLg:mt-[48px]" ></div>
+                <div className="w-full h-px bg-gray-200 mt-[16px] mb-4 csLg:mt-[48px]" ></div>
               )}
             </div>
           ))}

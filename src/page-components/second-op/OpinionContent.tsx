@@ -15,7 +15,7 @@ const OpinionContent: React.FC = () => {
 
           {/* Main Heading */}
           <h1 className="text-[32px] csLg:text-[48px] font-normal text-[#2C2C2C] leading-[40px] csLg:leading-[56px] tracking-tight font-[Manrope] csLg:pb-8">
-            Clearer Choices, Better Outcomes
+            Clearer Choices,<br className="csLg:hidden" /> Better Outcomes
           </h1>
         </div>
 
