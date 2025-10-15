@@ -117,7 +117,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
               >
                 <article className="flex h-full flex-col gap-2">
                   <p className="text-[12px] leading-[20px] font-normal text-[#606060]/50">
-                    {card.author ? `${card.author} • ` : ""}
+                    
                     {formattedDate}
                     {views ? ` • ${views} views` : ""}
                   </p>
