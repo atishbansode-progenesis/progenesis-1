@@ -43,12 +43,20 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     { name: "Trigas Incubators", link: "/treatments/advanced/trigas-incubators/" },
     { name: "Witness System", link: "/treatments/advanced/witness-system/" },
     { name: "Cryopreservation", link: "/treatments/advanced/cryopreservation/" },
+
+    
     { name: "Ovulation Induction", link: "/treatments/infertility/ovulation-induction/" },
+
     { name: "IUI", link: "/treatments/infertility/artificial-insemination-iui-treatment/" },
-    { name: "IVF", link: "/treatments/infertility/ivf/" },
-    { name: "IVF-ICSI", link: "/treatmentsinfertility/ivf-icsi/" },
+    
+    { name: "IVF", link: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/" },
+
+    { name: "IVF-ICSI", link: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/" },
+
     { name: "Frozen Embryo Transfer", link: "/treatments/infertility/frozen-embryo-transfer/" },
-    { name: "Fertility Surgery", link: "/treatments/infertility/fertility-surgery/" },
+
+    // { name: "Fertility Surgery", link: "/treatments/infertility/fertility-surgery/" },
+
     { name: "Female Fertility Preservation", link: "/treatments/preservation/female-fertility-preservation/" },
     { name: "Male Fertility Preservation", link: "/treatments/preservation/male-fertility-preservation/" },
     { name: "Embryo Preservation", link: "/treatments/preservation/egg-embryo-freezing/" },
