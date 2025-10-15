@@ -322,10 +322,10 @@ const [activeTab, setActiveTab] = useState<string>("path");
       {/* 3️⃣ Personalized Treatments */}
       <section id="path" className="px-4 py-4 md:px-[120px] md:py-[80px] bg-[#F9F9F9]">
         {/* Label */}
-        <div className="mb-4">
+        <div className="">
 
 
-          <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+          <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[8px] ">
             Your Path to Parenthood
           </span>
         </div>
@@ -342,7 +342,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
         </h2>
 
         {/* Divider */}
-        <hr className="my-8 border-t border-[#E0E0E0]" />
+        <hr className="mt-[12px] mb-[12px] csLg:mt-[80px] csLg:mb-[16px] border-t border-[#E0E0E0]" />
 
         {/* Subheading + Description */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
@@ -377,7 +377,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
       {/* 4️⃣ Cutting Edge Techniques */}
       <section id="advanced" className="px-4 py-4 md:px-[120px] md:py-[80px] bg-[#fff]">
 
-        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[12px] lg:mb-[8px]">
           Advanced Infertility Treatments
         </span>
 
@@ -399,13 +399,13 @@ const [activeTab, setActiveTab] = useState<string>("path");
           text-[#2C2C2C] font-[Manrope]
           text-[16px] leading-[24px] tracking-[-0.32px] font-normal
           md:text-[32px] md:leading-[40px] md:tracking-[-0.64px]
-          mb-8
+          mb-[32px] lg:mb-[40px]
         "
         >
           Precision Methods for Better Outcomes
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 my-4 md:my-[80px] ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 ">
           {precisionMethods.map((item, idx) => (
             <FeatureCard key={idx} title={item.title} description={item.description} href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : undefined} />
           ))}
@@ -551,7 +551,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
       <section id="infertility" className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20">
         {/* Tag */}
 
-        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[8px]">
           Infertility Treatments
         </span>
 
@@ -567,7 +567,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
     leading-[56px]
     tracking-normal
     max-w-[790px]
-    mb-10
+    mb-[32px] md:mb-[80px]
   "
         >
           Where Trusted Treatments Lead to Proven Results
@@ -579,7 +579,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
             <Link
               key={idx}
               href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
-              className=" group rounded-xl border-[#E6E6E6] p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
+              className=" group rounded-xl border-[#E6E6E6] p-4 md:p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
             >
               <span
                 className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] group-hover:bg-black group-hover:text-white group-hover:border-transparent transition-all duration-300"
@@ -615,7 +615,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-12">
+        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-[32px]  lg:mb-[80px]">
           Future Parenthood Made Possible
         </h2>
 
@@ -633,7 +633,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
               rounded-[16px]
               bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
               hover:bg-[rgba(22,86,165,0.12)] transition
-              p-6
+               p-4 lg:p-6
               cursor-pointer
             "
             >
@@ -643,7 +643,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
     font-[Manrope] font-normal
     text-[24px] leading-[32px] tracking-[-0.64px]
     md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
-    max-w-[300px] md:max-w-auto
+    max-w-[200px] md:max-w-auto
           ">
                 {item.title}
               </h3>
@@ -672,12 +672,12 @@ const [activeTab, setActiveTab] = useState<string>("path");
       {/* 8️⃣ Diagnostic Section */}
       <section id="evaluation" className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20">
         {/* Tag */}
-        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[8px]">
           Fertility Evaluation
         </span>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-12">
+        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-[32px] lg:mb-[80px]">
           Know, Understand & Take Action
         </h2>
 

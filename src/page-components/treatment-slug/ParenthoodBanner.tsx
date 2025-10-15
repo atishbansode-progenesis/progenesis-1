@@ -4,7 +4,7 @@ import React from "react";
 const ParenthoodBanner = () => {
   return (
     <section
-      className="relative flex items-center justify-end bg-cover bg-center min-h-[500px] px-[120px] py-[80px]"
+      className="relative flex items-center justify-end bg-cover bg-center min-h-[500px] csLg:px-[120px] csLg:py-[80px]"
       style={{
         backgroundImage: "url('/treatments/bg baner.png')", 
       }}
