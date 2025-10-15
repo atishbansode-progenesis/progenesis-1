@@ -46,7 +46,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
 
     <h4
       className="
-        text-[#2C2C2C]
+        text-[#2C2C2C]/70
         font-[Manrope]
         text-[16px] leading-[24px] tracking-[-0.32px] font-semibold
         md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
@@ -412,12 +412,14 @@ const [activeTab, setActiveTab] = useState<string>("path");
         </div>
 
         {/* Block 2 */}
+       
         <h3
           className="
           text-[#2C2C2C] font-[Manrope]
           text-[16px] leading-[24px] tracking-[-0.32px] font-normal
-          md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] mb-4
-          md:mb-8
+          md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] mb-8
+          lg:mb-8 lg:mt-[80px] mt-4
+          
         "
         >
           Advanced Facilities for Trusted Care
@@ -428,6 +430,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
             <FeatureCard key={idx} title={item.title} description={item.description} href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : undefined} />
           ))}
         </div>
+        
       </section>
 
       {/* <section className="w-full bg-[#FAFAFA] px-6 md:px-12 lg:px-24 py-20 relative overflow-hidden">
