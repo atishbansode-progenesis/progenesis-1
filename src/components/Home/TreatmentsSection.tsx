@@ -62,7 +62,7 @@ title2: "Fertilization (IVF)",
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-blue-50 xl:py-[80px] py-4 px-[90px]">
+    <section className="w-full bg-blue-50 xl:py-[80px] py-4 px-4 csLg:px-[90px]">
       {/* Header Section (Static) */}
       <div className=" mb-6 xl:mb-[76px]  ">
     <div className="grid grid-cols-1  csLg:grid-cols-2 items-start gap-8 justify-between ">

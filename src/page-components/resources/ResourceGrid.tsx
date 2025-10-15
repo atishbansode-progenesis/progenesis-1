@@ -74,7 +74,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
     );
 
   return (
-    <section className="bg-[#FAFAFA] p-4 lg:p-[120px]">
+    <section className="bg-[#FAFAFA] p-4 lg:px-[120px] lg:py-[80px]">
       <div className="space-y-4 lg:space-y-[80px]">
         {(showEyebrow || (showHeading && heading)) && (
           <div className="space-y-2">
@@ -117,7 +117,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
               >
                 <article className="flex h-full flex-col gap-2">
                   <p className="text-[12px] leading-[20px] font-normal text-[#606060]/50">
-                    {card.author ? `${card.author} • ` : ""}
+                    
                     {formattedDate}
                     {views ? ` • ${views} views` : ""}
                   </p>

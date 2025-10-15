@@ -51,7 +51,7 @@ const OurStories: React.FC = () => {
                   Our Story
                 </h2>
               </div>
-              <p className="text-[16px] line-height-[24px] tracking-tight text-[#2C2C2C] lg:line-height-[40px] lg:text-[32px]">
+              <p className="text-[16px] line-height-[24px] tracking-tight text-[#2C2C2C] lg:line-height-[40px] lg:text-[24px]">
                 We believe every hopeful parent deserves a team that listens, cares, and fights to make
                 dreams a reality — with science, empathy, and unwavering support.
               </p>

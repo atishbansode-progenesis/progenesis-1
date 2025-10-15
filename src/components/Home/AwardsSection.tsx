@@ -121,7 +121,7 @@ export default function AwardsSection() {
                 {data.map((item, idx) => (
                   <article
                     key={idx}
-                    className="bg-white rounded-2xl  csLg:min-w-[395px] csLg:max-w-[395px]  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col csLg:min-h-[496px] "
+                  className="bg-white rounded-2xl  csLg:min-w-[370px] csLg:max-w-[370px]  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col csLg:min-h-[496px] "
                   >
                     {/* <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
                       <span>{item.year}</span>
