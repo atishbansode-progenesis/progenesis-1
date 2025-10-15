@@ -13,7 +13,7 @@ export const MaleInfertilitySection: React.FC<MaleInfertilitySectionProps> = ({
   return (
     <section
       id="fertility-mini-section"
-      className="bg-[#FAFAFA] pt-[5px] pb-[60px] -mt-[20px] pt-[80px]"
+      className="bg-[#FAFAFA] pb-[20px] md:pb-[60px] pt-[20px] md:pt-[80px]"
     >
       <div className="px-4 md:px-[80px] lg:px-[120px]">
         <div className="w-full flex flex-col xl:flex-row justify-between gap-[8px]">
