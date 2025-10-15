@@ -198,7 +198,7 @@ const DoctorsInfo: React.FC = () => {
 >
 
 
-            <div onClick={() => router.push(`/doctors/${d.slug}`)} className="grid  grid-cols-1 lg:grid-cols-[320px_1fr_260px] gap-10 items-start lg:hover:bg-[#1656A50D] lg:p-4 rounded-[16px] cursor-pointer">
+            <div onClick={() => router.push(`/doctors/${d.slug}`)} className="grid  grid-cols-1 lg:grid-cols-[320px_1fr_260px] lg:gap-10 items-start lg:hover:bg-[#1656A50D] lg:p-4 rounded-[16px] cursor-pointer">
               {/* Left: Image */}
               <div className="w-full h-full md:h-full lg:h-full overflow-hidden rounded-[16px] bg-gray-100">
                 <img
@@ -210,7 +210,7 @@ const DoctorsInfo: React.FC = () => {
 
               {/* Middle: Content */}
               <div className="font-[Manrope]" >
-                <h3 className="text-[26px] csLg:text-[36px] text-[#1656A5] gap-[8px] font-normal tracking-[-0.02em]">
+                <h3 className="text-[26px] csLg:text-[36px] text-[#1656A5] gap-[8px] mt-4 font-normal tracking-[-0.02em]">
                   {d.name}
                 </h3>
                 <p className="mt-2 text-[14px] csLg:text-[16px] text-[#606060]  max-w-[780px]">
@@ -247,7 +247,7 @@ const DoctorsInfo: React.FC = () => {
                     <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-normal">
                       Specialty
                     </div>
-                    <div className="text-[14px] text-[#606060] font-normal text-end">
+                    <div className="text-[14px] text-[#606060] font-normal text-start lg:text-end">
                       {d.specialty}
                     </div>
                   </div>
