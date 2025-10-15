@@ -836,8 +836,9 @@ const BannerOfApproach: React.FC = () => {
           {slides.map((s, index) => (
             <div
               key={s.tab}
-              ref={(el) => (mobileSlideRefs.current[index] = el)}
-              className={`snap-start shrink-0`}
+              ref={(el) => { mobileSlideRefs.current[index] = el; }}
+
+                className={`snap-start shrink-0`}
               style={{ 
                 width: 'calc(100vw - 80px)', 
                 minWidth: 'calc(100vw - 80px)' 
@@ -847,7 +848,7 @@ const BannerOfApproach: React.FC = () => {
               <div className="mb-[30px] relative">
                 <button
                   key={`mobile-tab-${s.tab}`}
-                  ref={(el) => (mobileTabRefs.current[index] = el)}
+                  ref={(el) => { mobileTabRefs.current[index] = el; }}
                   onClick={() => { setActiveTab(index); scrollToSlide(index); }}
                   className={`inline-block text-[15px] font-medium pl-4 whitespace-nowrap transition-colors pb-3 ${activeTab === index ? 'text-[#1656A5]' : 'text-[#606060]'
                     }`}
@@ -915,7 +916,7 @@ const BannerOfApproach: React.FC = () => {
           {slides.map((s, index) => (
             <div
               key={s.tab}
-              ref={(el) => (desktopSlideRefs.current[index] = el)}
+              ref={(el) => { desktopSlideRefs.current[index] = el; }}
               className={`relative snap-start shrink-0 min-h-[520px] rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10 transition-all duration-500 ${index === slides.length - 1 ? "mr-[120px]" : "mr-0"
                 } w-[calc(100%-120px)]`}
               style={{ backgroundImage: `url(${s.image})` }}
