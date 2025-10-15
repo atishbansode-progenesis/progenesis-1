@@ -145,17 +145,17 @@ const StatItem = ({ item }) => {
       className="flex flex-col md:grid md:grid-cols-3 gap-4 py-8 "
     >
       {/* Label + mobile value */}
-      <div className="flex justify-between items-start md:block">
-        <h3 className="text-[48px] font-manrope font-normal text-[#2c2c2c]">
+      <div className="flex justify-between items-center md:block ">
+        <h3 className="text-[32px] csLg:text-[48px] font-manrope font-normal text-[#2c2c2c]">
   {item.label}
 </h3>
-        <div className="typo-H1-Heading text-[#2c2c2c] md:hidden">
+        <h3 className="text-[32px] font-manrope font-normal text-[#2c2c2c] md:hidden">
   {item.value}
-</div>
+</h3>
       </div>
 
       {/* Description */}
-      <p className="typo-H4-body-copy text-[#2c2c2c] md:col-span-1 max-w-md mt-4">
+      <p className="text-[16px] text-[#2c2c2c] md:col-span-1 max-w-md csLg:mt-4">
   {item.description}
 </p>
 
@@ -196,28 +196,9 @@ const StatsSection = () => {
 
   return (
     <section
-      className="relative w-full bg-gradient-to-r from-white via-white to-blue-50 overflow-hidden pb-[60px]"
+      className="relative bg-[url('/images/stats-bg-mob.png')] csLg:bg-[url('/images/stats-bg-desk.png')] bg-cover bg-center w-full bg-gradient-to-r from-white via-white to-blue-50 overflow-hidden pb-[60px]"
       style={{ paddingTop: "84px" }}
     >
-      {/* Background Shapes */}
-      <div
-        className="absolute top-0 right-0 rounded-[522.265px] blur-[250px]"
-        style={{
-          background: "#1656A5",
-          width: "522.265px",
-          height: "442.756px",
-          transform: "rotate(-2deg)",
-        }}
-      />
-      <div
-        className="absolute bottom-0 left-0 rounded-[348.282px] blur-[250px]"
-        style={{
-          background: "#94BA3D",
-          width: "348.282px",
-          height: "279.542px",
-          transform: "rotate(-2deg)",
-        }}
-      />
 
       <div className="relative mx-0 px-6 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px]">
         {/* Badge */}
@@ -238,7 +219,7 @@ const StatsSection = () => {
         </span>
 
         {/* Title */}
-        <h2 className="text-[48px] font-manrope font-normal text-[#2c2c2c] mb-12 max-w-3xl leading-snug">
+        <h2 className="text-[32px] csLg:text-[48px] font-manrope font-normal text-[#2c2c2c] mb-10 csLg:mb-12 max-w-3xl leading-snug">
   Let the numbers <br className="hidden md:block" /> reassure your heart.
 </h2>
 
