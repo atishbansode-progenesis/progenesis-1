@@ -37,7 +37,7 @@ const OpinionCare: React.FC = () => {
           </span>
           
           {/* Main Heading */}
-          <h1 className="text-4xl csLg:text-5xl font-semibold text-black leading-[56px] csLg:leading-[64px] tracking-tight font-[Manrope]" style={{paddingBottom:'32px'}}>
+          <h1 className="text-[32px] csLg:text-5xl font-normal text-[#2C2C2C] leading-[40px] csLg:leading-[56px] tracking-tight font-[Manrope] csLg:pb-8" >
             Grow personally, professionally,<br/> purposefully.
           </h1>
         </div>
@@ -48,22 +48,22 @@ const OpinionCare: React.FC = () => {
             <div
               key={index}
     
-              className="bg-white rounded-[16px] p-5 csLg:p-[20px] flex flex-col gap-[18px] "
+              className="bg-white rounded-[16px] p-4 csLg:p-[20px] flex flex-col csLg:gap-4 "
             >
               {/* Icon */}
-              <div className="w-12 h-12 csLg:w-14 csLg:h-14 flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium rounded-[8px]">
+              <div className="w-7 h-7 csLg:w-[50px] csLg:h-[56px] flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium rounded-[8px]">
                 {item.icon}
               </div>
 
               {/* Content */}
               <div className="flex flex-col gap-3">
                 {/* Title */}
-                <h3 className="text-lg csLg:text-[32px] font-normal text-[#2c2c2c] leading-tight tracking-tight font-[Manrope]">
+                <h3 className="text-[16px] csLg:text-[32px] font-semibold csLg:font-normal text-[#2c2c2c] leading-[24px] csLg:leading-[40px] tracking-tight font-[Manrope]">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[16px] font-normal leading-6 text-[#606060] opacity-[70%] tracking-tight font-[Manrope]">
+                <p className="text-[16px] font-normal leading-6 text-[#606060]  tracking-tight font-[Manrope]">
                   {item.description}
                 </p>
               </div>
