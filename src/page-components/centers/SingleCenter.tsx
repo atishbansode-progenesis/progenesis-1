@@ -14,6 +14,7 @@ interface SingleCenterProps {
 
 export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   const router = useRouter();
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const selectedCenter = useMemo(() => {
