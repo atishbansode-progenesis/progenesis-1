@@ -213,7 +213,7 @@ const HeroCarousel = () => {
       title: "Your parenthood journey starts with us",
       buttons: [
         { label: "Get Started", href: "/get-started" },
-        { label: "Meet Our Experts", href: "/experts" },
+        { label: "Meet Our Experts", href: "/doctors" },
       ],
     },
     {
