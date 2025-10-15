@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Letter = ({ char }) => (
-  <span className="text-sm xl:text-[32px] xl:leading-[40px] leading-8 tracking-[-0.32px] xl:tracking-[-0.64px] font-[Manrope] font-normal text-[#2C2C2C]">
+  <span className="text-sm xl:text-[24px] xl:leading-[40px] leading-8 tracking-[-0.32px] xl:tracking-[-0.64px] font-[Manrope] font-normal text-[#2C2C2C]">
     {char}
   </span>
 );
@@ -15,42 +15,48 @@ const TreatmentsSection = () => {
 
   const treatments = [
     {
-      title: "In-Vitro Fertilization (IVF)",
+      title: "In-Vitro",
+title2: "Fertilization (IVF)",
       description:
         "We offer you more than a procedure. We offer a chance. A chance to hold, to cradle, to begin.",
       image: "/TreatmentsSection/IVF.png",
       link: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/",
     },
     {
-      title: "Egg Freezing and Preservation",
+      title: "Egg Freezing",
+      title2:"and Preservation",
       description:
         "Your journey is uniquely yours. Whenever you feel ready, we’ll be right here waiting for you.",
       image: "/TreatmentsSection/eggfreezing.png",
       link: "/treatments/preservation/female-fertility-preservation/",
     },
     {
-      title: "Multiple IVF & IUI Failures",
+      title: "Multiple IVF &",
+      title2:"IUI Failures",
       description:
         "Advanced care and tailored treatments to give fresh hope after repeated failed attempts.",
       image: "/TreatmentsSection/multipleivf.png",
       link: "/infertility/female/repeated-iui-failures/",
     },
     {
-      title: "Intrauterine Insemination (IUI)",
+      title: "Intrauterine ",
+      title2:"Insemination (IUI)",
       description:
         "For some, the gentlest nudge is all it takes. We guide you with care and precision.",
       image: "/TreatmentsSection/iui.png",
       link: "/treatments/infertility/artificial-insemination-iui-treatment/",
     },
     {
-      title: "Male Fertility Solutions",
+      title: "Male Fertility",
+      title2:"Solutions",
       description:
         "Fertility is not just a woman’s story. We’re here for every partner, every question, every step.",
       image: "/TreatmentsSection/malefertility.png",
       link: "/treatments/preservation/male-fertility-preservation/",
     },
     {
-      title: "Pregnancy after Menopause",
+      title: "Pregnancy",
+      title2:"after Menopause",
       description:
         "Advanced techniques that make motherhood possible, even beyond menopause.",
       image: "/TreatmentsSection/menopause.png",
@@ -73,7 +79,7 @@ const TreatmentsSection = () => {
               </span>
               <div>
                 
-              <h2 className="text-[32px] xl:text-[48px] leading-[40px] font-light text-[#2c2c2c] leading-[56px] ">
+              <h2 className="text-[32px] xl:text-[40px] leading-[40px] font-light text-[#2c2c2c] leading-[56px] ">
                 Being India’s Best Fertility & IVF Center. We Specialize in:
               </h2>
             </div>
@@ -120,8 +126,15 @@ const TreatmentsSection = () => {
                 <div className=" h-full flex flex-col xl:flex-col-reverse justify-between">
 
                 <div className="xl:max-w-[80%] flex flex-col justify-between ">
-                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 xl:max-w-[68%]" >
-                    {item.title}
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] " >
+              
+                      {item.title}
+                  
+                  </h3>
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 " >
+              
+                      {item.title2}
+                  
                   </h3>
                   <p className="text-[#606060] text-[16px] leading-6">
                     {item.description}
@@ -188,8 +201,11 @@ const TreatmentsSection = () => {
                 <div className=" h-full flex flex-col  xl:flex-col-reverse justify-between">
 
                 <div className="xl:max-w-[80%] flex flex-col justify-between ">
-                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 xl:max-w-[68%]" >
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 " >
                     {item.title}
+                  </h3>
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 " >
+                    {item.title2}
                   </h3>
                   <p className="text-[#606060] text-[16px] leading-6">
                     {item.description}

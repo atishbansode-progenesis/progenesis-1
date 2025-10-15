@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
     <section className="w-full bg-white overflow-hidden">
       <div className="flex flex-col md:flex-row h-auto md:h-[700px]">
         {/* LEFT PANEL */}
-        <div className="bg-[#1656A5] text-white py-10 flex flex-col justify-between md:w-1/4 px-4 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px] pt-[80px] md:pt-[128px]">
+        <div className="bg-[#1656A5] text-white py-10 flex flex-col justify-between md:w-[528px] px-4 csLg:px-[120px]  pt-[80px] md:pt-[128px]">
           <div className="md:text-left text-center">
             {/* Google Rating */}
             <div className="flex flex-row md:flex-col md:items-start items-center justify-center md:justify-start space-x-2 mb-2">
@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
 
 
             {/* Heading */}
-            <h2 className="text-[32px] md:text-5xl font-[Manrope] md:leading-[56px] leading-[40px] tracking-tight font-normal text-[#F9F9F9] text-center md:text-left">
+        <h2 className="text-[32px] md:text-[48px] font-[Manrope] md:leading-[56px] leading-[40px] tracking-tight font-normal text-[#F9F9F9] text-center md:text-left">
               What our patient's are saying
             </h2>
 
@@ -149,7 +149,7 @@ const TestimonialsSection = () => {
 
         {/* RIGHT CAROUSEL */}
         <div
-          className="relative bg-cover bg-center h-full  md:w-3/4 py-[42px] pl-4 md:pl-0 md:pt-[82px]"
+          className="relative bg-cover bg-center h-full  csLg:w-[70%] py-[42px] pl-4 md:pl-0 md:pt-[82px]"
           style={{
             backgroundImage: "url('/TestimonialsSection/testimonial.png')",
           }}
@@ -202,7 +202,7 @@ const TestimonialsSection = () => {
                       <p
                         className="
                           text-[#1656A5] line-height-[24px]
-                          text-[16px] lg:text-[32px]
+                          text-[16px] lg:text-[30px]
                           lg:leading-[40px]
                           text-left
                         "
