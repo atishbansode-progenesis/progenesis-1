@@ -35,7 +35,7 @@ const OpenionMain = () => {
           </div>
         </section>
 
-        <section className="relative bg-center bg-cover flex justify-center items-center min-h-[312px]">
+        <section className="relative bg-center bg-cover flex justify-center items-center min-h-[360px] csLg:min-h-[312px]">
           {/* Mobile Background */}
           <div 
             className="absolute inset-0 md:hidden bg-cover bg-center"
