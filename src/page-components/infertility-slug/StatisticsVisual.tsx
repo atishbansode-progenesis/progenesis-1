@@ -19,7 +19,7 @@ interface StatisticsVisualProps {
 
 export default function StatisticsVisual({ tag, heading, blueCircleData, greenCircleData, skyCircleData, staticsData }: StatisticsVisualProps) {
   return (
-    <section className="w-full bg-[#FAFAFA] p-[16px] lg:px-[120px] lg:py-[80px]">
+    <section className="w-full bg-[#FAFAFA] p-[16px] lg:px-[120px] lg:pt-[80px] pb-12 md:pb-0">
       <div className="relative flex flex-col gap-2 items-start">
         {/* Tag */}
          <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">

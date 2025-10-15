@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 type Slide = {
   title: string;
@@ -49,7 +49,31 @@ const slides: Slide[] = [
 
 const WhyProgenesis: React.FC = () => {
   const [active, setActive] = useState<number>(0);
+  const [progress, setProgress] = useState<number>(0);
   const current = slides[active];
+  const INTERVAL_DURATION = 5000; // 5 seconds
+
+  // Auto-play functionality - cycles through tabs every 5 seconds
+  useEffect(() => {
+    setProgress(0); // Reset progress when tab changes
+    
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % slides.length);
+    }, INTERVAL_DURATION);
+
+    // Update progress bar smoothly
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) return 0;
+        return prev + (100 / (INTERVAL_DURATION / 50)); // Update every 50ms
+      });
+    }, 50);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(progressInterval);
+    };
+  }, [active]);
 
   return (
     <section
@@ -65,7 +89,7 @@ const WhyProgenesis: React.FC = () => {
             <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] px-3 py-1 rounded-[8px]">
               Why choose us
             </span>
-            <h2 className="mt-3 text-[36px] lg:text-[48px] leading-10 font-normal text-[#2C2C2C] pb-6">
+            <h2 className="mt-3 text-[36px] lg:text-[40px] leading-10 font-normal text-[#2C2C2C] pb-6">
               Why Progenesis?
             </h2>
           </div>
@@ -79,7 +103,7 @@ const WhyProgenesis: React.FC = () => {
           </div>
 
           {/* Tabs */}
-          <div className="lg:mt-6 space-y-4 pt-8 md:pt-8">
+          <div className=" space-y-4 pt-8 md:pt-2">
             {slides.map((s, idx) => {
               const activeRow = idx === active;
               return (
@@ -91,13 +115,16 @@ const WhyProgenesis: React.FC = () => {
                   {/* Top separator */}
                   <div className="h-[1px] w-full bg-[#A5A5A5] relative">
                     {activeRow && (
-                      <div className="absolute left-0 top-[-1px] h-[2px] w-60 bg-[#1656A5]" />
+                      <div 
+                        className="absolute left-0 top-[-1px] h-[2px] bg-[#1656A5] transition-all duration-100 ease-linear"
+                        style={{ width: `${progress}%` }}
+                      />
                     )}
                   </div>
 
                   <div className="flex items-center justify-between pt-3">
                     <div
-                      className={`text-[16px] lg:leading-10 lg:text-[32px] font-medium ${
+                      className={`text-[16px] lg:leading-10 lg:text-[24px] font-medium ${
                         activeRow ? "text-[#1a1a1a]" : "text-[#2C2C2C]"
                       }`}
                     >
@@ -125,7 +152,7 @@ const WhyProgenesis: React.FC = () => {
 
         {/* Right Column - Banner (only visible on desktop) */}
         {/* <div className="hidden lg:flex relative w-full rounded-2xl overflow-hidden min-h-[250px] md:min-h-full md:w-full items-center justify-center bg-red-700"> */}
-         <img src={current.image} className=" hidden lg:block h-full"/>
+         <img src={current.image} className=" hidden lg:block  h-full"/>
         {/* </div> */}
       </div>
     </section>

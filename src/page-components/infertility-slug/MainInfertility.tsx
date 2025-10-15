@@ -11,6 +11,7 @@ import StatisticsVisual from "@/page-components/infertility-slug/StatisticsVisua
 import StepsSection from "@/page-components/infertility-slug/StepsSection";
 import GradientBanner from "@/page-components/infertility-slug/GradientBanner";
 import SymptomSection from "@/page-components/infertility-slug/SymptomSection";
+import AppointmentForm from "../about/AppointmentForm";
 
 export default function MainInfertility({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("about");
@@ -94,7 +95,8 @@ export default function MainInfertility({ data }: { data: any }) {
         <StoriesSection />
       </section>
 
-      <ConsultationForm />
+      {/* <ConsultationForm /> */}
+      <AppointmentForm />
 
       {/* Section 9: Gradient Banner */}
       <GradientBanner

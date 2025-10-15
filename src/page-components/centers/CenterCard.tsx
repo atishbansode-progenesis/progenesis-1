@@ -320,11 +320,11 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
       {/* Content Container */}
       <div className="flex flex-col justify-between p-4 relative lg:p-4 md:p-6 w-full">
         {/* Center Name and Address */}
-        <div className='w-auto'>
-          <h3 className="text-[32px] md:text-[48px] font-normal font-manrope text-[#1656A5] mb-2">
+        <div className='w-auto lg:max-w-[400px] lg:h-[196px]'>
+          <h3 className="text-[24px] md:text-[30px] font-normal font-manrope text-[#1656A5] mb-2">
             {name}
           </h3>
-          <div className='max-w-[535px]'><p className="text-[#6B7280] text-[14px] lg:text-[32px] leading-[22px] lg:leading-[40px]  font-normal md:text-[32px] md:leading-[40px] tracking-tight mb-4">
+          <div className='max-w-[535px]'><p className="text-[#6B7280] text-[14px] lg:text-[24px] leading-[22px] lg:leading-[40px]  font-normal md:text-[32px] md:leading-[40px] tracking-tight mb-4">
             {address}
           </p></div>
 

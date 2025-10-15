@@ -47,7 +47,7 @@ const OurStories: React.FC = () => {
               {/* Paragraph (top of right column) */}
               <div className=''>
       <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" >The Journey</span>
-                <h2 className="text-4xl lg:text-5xl font-normal text-[#2C2C2C] leading-[56px] tracking-tight font-[Manrope]">
+                <h2 className="text-4xl lg:text-[40px] font-normal text-[#2C2C2C] leading-[56px] tracking-tight font-[Manrope]">
                   Our Story
                 </h2>
               </div>
@@ -102,7 +102,7 @@ const OurStories: React.FC = () => {
               </div>
               <div className="flex flex-col csLg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden ">
                 {/* Image */}
-                <div className="w-full bg-[#E8EFF6] max-w-[400px] lg:min-w-[400px] lg:min-h-[400px] max-h-[400px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
+                <div className="w-full bg-[#E8EFF6] max-w-[300px] lg:min-w-[300px] lg:min-h-[300px] max-h-[300px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
                   <img
                     src={tabItems[activeTab].image}
                     alt={tabItems[activeTab].title}
@@ -111,10 +111,10 @@ const OurStories: React.FC = () => {
                 </div>
 
                 {/* Info Box */}
-                <div className="flex flex-col justify-start min-w-[120px] gap-4 w-full lg:flex-1  pt-2.5 px-4">
+                <div className="flex flex-col justify-start min-w-[120px] gap-4 w-full lg:flex-1  pt-2.5 px-2     ">
                   <div>
                     <h3 className="text-[#94BA3D] mb-[4px]">{tabItems[activeTab].storyNumber}</h3>
-                    <h3 className="text-[#1656A5] font-medium text-[16px] lg:text-[32px] lg:leading-[40px] tracking-tight font-[Manrope]">
+                    <h3 className="text-[#1656A5] font-medium text-[16px] lg:text-[24px] lg:leading-[40px] tracking-tight font-[Manrope]">
                       {tabItems[activeTab].heading}
                     </h3>
                   </div>

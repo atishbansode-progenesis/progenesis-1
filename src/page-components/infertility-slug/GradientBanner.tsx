@@ -39,7 +39,7 @@ export default function GradientBanner({
       />
 
       <h2
-        className="relative w-[90%] md:w-[70%] lg:w-[50%] text-center font-[Manrope] 
+        className="relative w-[90%] md:w-[70%] lg:w-[60%] text-center font-[Manrope] 
           text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] 
           font-normal leading-[36px] sm:leading-[44px] md:leading-[52px] lg:leading-[56px] 
           tracking-[-0.96px] px-4 z-10"

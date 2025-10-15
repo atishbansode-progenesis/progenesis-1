@@ -1,25 +1,157 @@
 'use client'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 
-const CareersLanding = () => {
+const CareersLanding: React.FC = () => {
   const scrollerRef = useRef<HTMLDivElement | null>(null)
+  const intervalRef = useRef<number | null>(null)
+  const stepRef = useRef<number>(0)
+  const indexRef = useRef<number>(0)
+  const [isPaused, setIsPaused] = useState(false)
 
-  // Scroll to middle image on mount
+  // compute step (distance between successive cards)
+  const computeStep = () => {
+    const el = scrollerRef.current
+    if (!el) return 0
+    const cards = Array.from(el.querySelectorAll<HTMLDivElement>('div.snap-center'))
+    if (cards.length >= 2) {
+      // step = distance from left of card0 to left of card1 (handles gaps & responsive widths)
+      const step = cards[1].offsetLeft - cards[0].offsetLeft
+      return step
+    }
+    // fallback: approximate with first card width
+    const first = cards[0]
+    return first ? first.offsetWidth : Math.round(el.clientWidth * 0.5)
+  }
+
+  // set up auto-scroll interval
   useEffect(() => {
-    if (scrollerRef.current) {
-      const scrollElement = scrollerRef.current
-      const scrollWidth = scrollElement.scrollWidth
-      const clientWidth = scrollElement.clientWidth
-      const centerPosition = (scrollWidth - clientWidth) / 2
-      scrollElement.scrollLeft = centerPosition
+    const el = scrollerRef.current
+    if (!el) return
+
+    const cardCount = el.querySelectorAll<HTMLDivElement>('div.snap-center').length
+    if (cardCount === 0) return
+
+    // compute initial step and reset index
+    stepRef.current = computeStep()
+    indexRef.current = 0
+
+    const scrollToIndex = (idx: number) => {
+      if (!el) return
+      const left = Math.round(idx * stepRef.current)
+      el.scrollTo({ left, behavior: 'smooth' })
+    }
+
+    const startInterval = () => {
+      // clear existing first
+      if (intervalRef.current) {
+        window.clearInterval(intervalRef.current)
+        intervalRef.current = null
+      }
+      intervalRef.current = window.setInterval(() => {
+        if (isPaused) return
+        // advance index
+        indexRef.current = (indexRef.current + 1) % cardCount
+        scrollToIndex(indexRef.current)
+      }, 3000) // 3000ms between moves
+    }
+
+    startInterval()
+
+    // Recompute step on resize (and re-align to current index)
+    const onResize = () => {
+      stepRef.current = computeStep()
+      // re-align current index to ensure exact stop
+      const left = Math.round(indexRef.current * stepRef.current)
+      el.scrollTo({ left, behavior: 'instant' as any }) // instant alignment
+    }
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      if (intervalRef.current) {
+        window.clearInterval(intervalRef.current)
+        intervalRef.current = null
+      }
+      window.removeEventListener('resize', onResize)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPaused])
+
+  // Pause on user interaction (hover / touch)
+  useEffect(() => {
+    const el = scrollerRef.current
+    if (!el) return
+
+    const handleMouseEnter = () => setIsPaused(true)
+    const handleMouseLeave = () => setIsPaused(false)
+    const handleTouchStart = () => setIsPaused(true)
+    const handleTouchEnd = () => {
+      // give a small delay to avoid immediate resume while touch momentum continues
+      setTimeout(() => setIsPaused(false), 300)
+    }
+
+    el.addEventListener('mouseenter', handleMouseEnter)
+    el.addEventListener('mouseleave', handleMouseLeave)
+    el.addEventListener('touchstart', handleTouchStart, { passive: true })
+    el.addEventListener('touchend', handleTouchEnd)
+
+    return () => {
+      el.removeEventListener('mouseenter', handleMouseEnter)
+      el.removeEventListener('mouseleave', handleMouseLeave)
+      el.removeEventListener('touchstart', handleTouchStart)
+      el.removeEventListener('touchend', handleTouchEnd)
+    }
+  }, [])
+
+  // Helper for manual nav buttons: scroll one card left/right
+  const scrollByCard = (dir: 'next' | 'prev') => {
+    const el = scrollerRef.current
+    if (!el) return
+    const cards = el.querySelectorAll<HTMLDivElement>('div.snap-center')
+    if (cards.length === 0) return
+    stepRef.current = computeStep()
+    if (dir === 'next') {
+      indexRef.current = Math.min(indexRef.current + 1, cards.length - 1)
+    } else {
+      indexRef.current = Math.max(indexRef.current - 1, 0)
+    }
+    const left = Math.round(indexRef.current * stepRef.current)
+    el.scrollTo({ left, behavior: 'smooth' })
+  }
+
+  // ensure index stays in-range if user manually drags (snap will handle alignment)
+  useEffect(() => {
+    const el = scrollerRef.current
+    if (!el) return
+    let timeout: number | null = null
+    const onScroll = () => {
+      // clear previous
+      if (timeout) {
+        window.clearTimeout(timeout)
+        timeout = null
+      }
+      // wait for scroll to settle then re-calc current index precisely
+      timeout = window.setTimeout(() => {
+        const step = computeStep()
+        stepRef.current = step || stepRef.current
+        const scrollLeft = el.scrollLeft
+        const idx = Math.round(scrollLeft / (stepRef.current || 1))
+        indexRef.current = idx
+      }, 150)
+    }
+    el.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      el.removeEventListener('scroll', onScroll)
+      if (timeout) window.clearTimeout(timeout)
     }
   }, [])
 
   return (
     <div className="w-full bg-[#FAFAFA]">
       {/* Hero Section */}
-      <section className="section-spacing bg-gradient-to-r from-green-100 via-white to-sky-200 relative w-full h-[340px] sm:h-[380px] md:h-[500px] lg:h-[567px] overflow-hidden bg-no-repeat bg-cover bg-center flex items-start
-                  bg-[url('/images/Carrer-mobile.png')] h-[444px] csLg:h-full sm:bg-[url('/images/Carrer.png')]">
+      <section
+        className="section-spacing bg-gradient-to-r from-green-100 via-white to-sky-200 relative w-full h-[340px] sm:h-[380px] md:h-[500px] lg:h-[567px] overflow-hidden bg-no-repeat bg-cover bg-center flex items-start
+                  bg-[url('/images/Carrer-mobile.png')] h-[444px] csLg:h-full sm:bg-[url('/images/Carrer.png')]"
+      >
         <div className="container md:pr-0 grid grid-cols-12 items-start">
           <div className="col-span-12 csLg:col-span-8 flex flex-col gap-10">
             <p className="font-manrope csLg:text-[18px] text-[12px] leading-[26px] tracking-[-0.02em] text-gray-700">
@@ -29,13 +161,15 @@ const CareersLanding = () => {
               <span className="px-[12px]">›</span>
               <span className="text-[#1656A5]"> Careers</span>
             </p>
+
             <h1 className="font-manrope font-semibold csLg:text-[64px] text-[32px] csLg:leading-[72px] leading-[40px] tracking-[-0.02em] text-[#111827]">
               What We Offer: Care,
               <br className="hidden csLg:block" />
               Growth & Purpose
             </h1>
+
             <div>
-              <button className="bg-[#252525] h-10 md:h-[56px] text-[#F9F9F9] font-manrope md:text-[14px] text-[12px] md:leading-[24px] font-medium rounded-[8px] md:rounded-[16px] px-2 md:px-4 py-2">
+              <button className="bg-[#1656A5] h-10 md:h-[56px] text-[#F9F9F9] font-manrope md:text-[14px] text-[12px] md:leading-[24px] font-medium rounded-[8px] md:rounded-[16px] px-2 md:px-4 py-2">
                 See Open Positions
               </button>
             </div>
@@ -43,59 +177,37 @@ const CareersLanding = () => {
         </div>
       </section>
 
-      {/* Image Gallery Section */}
-      <section className="relative w-full py-8 md:py-[80px] bg-[#FAFAFA]">
-        {/* Carousel container - full width, no padding */}
+      {/* 🖼️ Image Gallery Section (Auto-Scrolling Carousel) */}
+      <section className="relative w-full py-8 md:py-[80px] bg-[#FAFAFA] overflow-hidden">
+        {/* Carousel container */}
         <div
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth w-full md:gap-6 [&::-webkit-scrollbar]:hidden"
           ref={scrollerRef}
           style={{ scrollSnapType: 'x mandatory' }}
         >
-          <div className="snap-center flex-none w-[80%] sm:w-[90%] md:w-[45%] lg:w-[834px] rounded-xl overflow-hidden">
-            <img
-              src="/images/ReBanner1.png"
-              alt="Clinic 1"
-              className="w-full h-[260px] sm:h-[300px] md:h-[560px] object-cover rounded-xl"
-            />
-          </div>
-          <div className="snap-center flex-none w-[80%] sm:w-[90%] md:w-[45%] lg:w-[834px] rounded-xl overflow-hidden">
-            <img
-              src="/images/ReBanner2.png"
-              alt="Clinic 2"
-              className="w-full h-[260px] sm:h-[300px] md:h-[560px] object-cover rounded-xl"
-            />
-          </div>
-          <div className="snap-center flex-none w-[80%] sm:w-[90%] md:w-[45%] lg:w-[834px] rounded-xl overflow-hidden">
-            <img
-              src="/images/ReBanner3.png"
-              alt="Clinic 3"
-              className="w-full h-[260px] sm:h-[300px] md:h-[560px] object-cover rounded-xl"
-            />
-          </div>
+          {['/images/ReBanner1.png', '/images/ReBanner2.png', '/images/ReBanner3.png'].map((src, i) => (
+            <div
+              key={i}
+              className="snap-center flex-none w-[90%] sm:w-[80%] md:w-[45%] lg:w-[834px] rounded-xl overflow-hidden"
+            >
+              <img src={src} alt={`Clinic ${i + 1}`} className="w-full h-[260px] sm:h-[300px] md:h-[560px] object-cover rounded-xl" />
+            </div>
+          ))}
         </div>
 
         {/* Navigation buttons - visible only on desktop */}
         <div className="hidden md:flex justify-center gap-4 mt-8">
           <button
             aria-label="Previous"
-            onClick={() => {
-              const el = scrollerRef.current
-              if (!el) return
-              const delta = Math.round(el.clientWidth * 0.5)
-              el.scrollBy({ left: -delta, behavior: 'smooth' })
-            }}
+            onClick={() => scrollByCard('prev')}
             className="h-[56px] w-[56px] rounded-[16px] font-bold border border-[#1656A5] flex items-center justify-center text-[#1656A5]"
           >
             <img src="/icons/left.svg" alt="left" width={12} height={12} />
           </button>
+
           <button
             aria-label="Next"
-            onClick={() => {
-              const el = scrollerRef.current
-              if (!el) return
-              const delta = Math.round(el.clientWidth * 0.5)
-              el.scrollBy({ left: delta, behavior: 'smooth' })
-            }}
+            onClick={() => scrollByCard('next')}
             className="h-[56px] w-[56px] rounded-[16px] font-bold border border-[#1656A5] flex items-center justify-center text-[#1656A5]"
           >
             <img src="/icons/right.svg" alt="right" width={12} height={12} />
