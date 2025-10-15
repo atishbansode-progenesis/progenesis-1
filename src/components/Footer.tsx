@@ -192,7 +192,7 @@ const Footer: React.FC = () => {
                   { label: "IVF", href: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/" },
                   { label: "IVF–ICSI", href: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/" },
                   { label: "Frozen Embryo Transfer", href: "/treatments/infertility/frozen-embryo-transfer/" },
-                  { label: "Fertility Surgery", href: "/treatments/infertility/fertility-surgery/" },
+                  // { label: "Fertility Surgery", href: "/treatments/infertility/fertility-surgery/" },
                 ],
               },
               {
