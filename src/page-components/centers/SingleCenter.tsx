@@ -6,6 +6,7 @@ import FaQ from '../about/FaQ';
 import CenterDoctorsSection from './SingleCenterDoctors';
 import TestimonialsCenters from './TestimonialCenters';
 import AppointmentForm from '../about/AppointmentForm';
+import CenterCarousel from './CenterCarousel';
 
 interface SingleCenterProps {
   selectedSlug?: string;
@@ -157,9 +158,12 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         </div>
       </ section>
 
-      <div className="w-fit h-fit">
-        <img src="/images/CenterFixed.png" alt="fixed" className="max-w-full h-auto" />
-      </div>
+     <div className="w-full h-fit">
+  <CenterCarousel
+    gallery={selectedCenter.gallery}
+    fallbackImage={selectedCenter.image}
+  />
+</div>
 
 
       <CenterDoctorsSection />
