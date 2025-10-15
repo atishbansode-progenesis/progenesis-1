@@ -107,12 +107,14 @@ export default function MainTreatment({ data }: { data: any }) {
           heading={data.procedure_heading || "Steps of the Procedure"}
           steps={data.procedure_steps}
         />
+        
       ) : data.procedure_no_image_steps ? (
         <ProcedureStepsNoImage
           tag={data.procedure_no_image_steps.main_tag}
           heading={data.procedure_no_image_steps.main_heading || "Steps of the Procedure"}
           steps={data.procedure_no_image_steps.data}
         />
+        
       ) : null}
 
       {/* Section 7: Success Rate */}

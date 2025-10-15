@@ -14,7 +14,7 @@ interface GeneticTestingCardsProps {
 
 const GeneticTestingCards: React.FC<GeneticTestingCardsProps> = ({ tag, heading, cards }) => {
   return (
-    <div className="bg-[#FFFFFF] px-4 py-4 md:px-[120px] md:py-[80px]">
+    <div className="bg-[#FFFFFF] px-4 py-4 csLg:px-[120px] csLg:py-[80px]">
       <div className="mx-auto">
         {/* Header */}
         <div className=" mb-[32px] md:mb-[60px]">
