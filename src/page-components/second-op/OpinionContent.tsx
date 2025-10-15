@@ -14,9 +14,21 @@ const OpinionContent: React.FC = () => {
           </span>
 
           {/* Main Heading */}
-          <h1 className="text-[32px] csLg:text-[48px] font-normal text-black leading-[56px] csLg:leading-[72px] tracking-tight font-[Manrope]" style={{ paddingBottom: '32px' }}>
-            Clearer Choices, Better Outcomes
-          </h1>
+          <h1
+  className="text-[32px] csLg:text-[40px] font-normal text-black leading-[56px] csLg:leading-[72px] tracking-tight font-[Manrope]"
+ 
+>
+  {/* Mobile: with line break */}
+  <span className="block csLg:hidden">
+    Clearer Choices,<br />Better Outcomes
+  </span>
+
+  {/* Desktop / large screens: single line */}
+  <span className="hidden csLg:block">
+    Clearer Choices, Better Outcomes
+  </span>
+</h1>
+
         </div>
 
         {/* Horizontal Line */}

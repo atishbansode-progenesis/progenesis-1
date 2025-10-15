@@ -37,7 +37,7 @@ const OpinionStats: React.FC = () => {
           </span>
           
           {/* Main Heading */}
-          <h1 className="text-[32px] csLg:text-5xl  csLg:max-w-[60%] font-normal text-[#2C2C2C] leading-[24pxpx] csLg:leading-[64px] tracking-tight font-[Manrope]" >
+          <h1 className="text-[32px] lg:text-[40px]  csLg:max-w-[60%] font-normal text-[#2C2C2C] leading-[40px] csLg:leading-[64px] tracking-tight font-[Manrope]" >
             Benefits, corrections, and successes through second opinions.
           </h1>
         </div>
@@ -53,7 +53,7 @@ const OpinionStats: React.FC = () => {
                 <div className="csLg:hidden space-y-4" style={{paddingBottom:'12px'}}>
                   {/* Title and Metric Row */}
                   <div className="flex justify-between items-center">
-                    <h3 className="text-[32px] font-semibold text-black leading-tight tracking-tight font-[Manrope] whitespace-nowrap">
+                    <h3 className="text-[32px]  text-black leading-tight tracking-tight font-[Manrope] whitespace-nowrap">
                       {stat.title}
                     </h3>
                     <span className="text-[32px] text-[#2C2C2C] leading-none tracking-tight font-[Manrope]">
@@ -69,7 +69,7 @@ const OpinionStats: React.FC = () => {
                 {/* Desktop: Original Layout */}
                 {/* Left: Title */}
                 <div className="hidden csLg:block">
-                  <h3 className="text-[48px]  font-normal text-[#2c2c2c] leading-tight tracking-tight font-[Manrope] whitespace-nowrap">
+                  <h3 className="text-[40px]  font-normal text-[#2c2c2c] leading-tight tracking-tight font-[Manrope] whitespace-nowrap">
                     {stat.title}
                   </h3>
                 </div>
