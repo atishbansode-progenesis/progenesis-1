@@ -231,30 +231,30 @@ export const pregnancyAfterMenopauseData = {
     slides: [
       {
         id: "01",
-        title: "Egg Donation",
+        title: "Oocyte (Egg) Donation",
         description:
-          "Since natural egg reserves are depleted, donor eggs make conception possible after menopause.",
+          "Healthy eggs donated by younger women are fertilized with the partner’s sperm and transferred into the uterus, making pregnancy achievable even after menopause.",
         image: "/PregnancyMenopauseIssue/Causes1.png",
       },
       {
         id: "02",
-        title: "Hormone Support",
+        title: "Hormone Replacement Therapy (HRT)",
         description:
-          "Hormonal treatments prepare the uterus for implantation and support early pregnancy.",
+          "Carefully managed HRT helps prepare the uterus by restoring hormonal balance, ensuring the endometrial lining is ready for embryo implantation.",
         image: "/PregnancyMenopauseIssue/Causes2.png",
       },
       {
         id: "03",
-        title: "IVF Technology",
+        title: "IVF (In-Vitro Fertilization) Technology",
         description:
-          "IVF using donor eggs and advanced reproductive technologies makes conception possible.",
+          "State-of-the-art IVF techniques provide high success rates by combining donor eggs with sperm and transferring healthy embryos.",
         image: "/PregnancyMenopauseIssue/Causes3.png",
       },
       {
         id: "04",
-        title: "Medical Guidance",
+        title: "Uterine Health & Preparation",
         description:
-          "Regular health assessments and medical monitoring are critical for safety and successful outcomes.",
+          "With proper medical evaluation and treatment, the uterus can remain capable of carrying a pregnancy, even after natural menstruation stops.",
         image: "/PregnancyMenopauseIssue/Causes4.png",
       },
     ],
@@ -285,34 +285,36 @@ export const pregnancyAfterMenopauseData = {
     steps: [
       {
         id: 1,
-        label: "Consultation",
-        title: "Specialist Evaluation & Tests",
+        label: "Comprehensive Re-Evaluation",
+        title: "Reassessing your journey helps uncover new possibilities for success.",
         items: [
-          "Detailed health and hormone assessment.",
-          "Understanding risks related to late pregnancy.",
-          "Customized treatment planning.",
+          "Analyze what worked well and what challenges were faced in earlier cycles.",
+          "Assess hormonal balance, uterine health, and overall wellness to identify gaps.",
+          "Consider advanced tests (genetic, endometrial receptivity, etc.) for deeper insights.",
+          "Tailor medication protocols or stimulation methods based on findings.",
         ],
         image: "/PregnancyMenopauseIssue/step1.png",
       },
       {
         id: 2,
-        label: "Treatment Options",
-        title: "Exploring Assisted Reproductive Techniques",
+        label: "Explore Advanced Options",
+        title: "Newer medical approaches can open doors to parenthood after setbacks.",
         items: [
-          "IVF with donor eggs.",
-          "Hormone replacement support.",
-          "Lifestyle guidance for safety and well-being.",
+          "Using both donor eggs and sperm to improve chances of conception.",
+          "Options like blastocyst transfer, genetic screening (PGT), or assisted hatching.",
+          "Explore regenerative therapies or other evolving fertility solutions.",
         ],
         image: "/PregnancyMenopauseIssue/step2.png",
       },
       {
         id: 3,
-        label: "Monitoring",
-        title: "Ongoing Support & Checkups",
+        label: "Emotional & Wellness Support",
+        title: "Caring for the mind and heart is just as vital as medical treatment.",
         items: [
-          "Regular checkups during pregnancy.",
-          "Nutritional and emotional counseling.",
-          "Advanced maternal care for safety.",
+          "One-on-one or couple sessions to process emotions and reduce stress.",
+          "Connect with others who share similar experiences for encouragement and strength.",
+          "Yoga, meditation, and relaxation therapies to boost resilience.",
+          "Nutrition, lifestyle changes, and stress management to support fertility health.",
         ],
         image: "/PregnancyMenopauseIssue/step3.png",
       },
@@ -413,7 +415,7 @@ export const repeatedIVFFailuresData = {
       },
       {
         id: "04",
-        title: "Genetic Abnormalities",
+        title: "Hormonal & Immune Imbalances",
         description:
           "Conditions such as thyroid disorders, PCOS, or abnormal immune responses can interfere with proper embryo acceptance, disrupting the conception process.",
         image: "/InfertilityIssues/ivf-genetic.png",
@@ -444,34 +446,37 @@ export const repeatedIVFFailuresData = {
     steps: [
       {
         id: 1,
-        label: "Advanced Testing",
-        title: "Deeper Diagnosis for Root Causes",
+        label: "Advanced Testing & Diagnosis",
+        title: "Diagnosing Critical Barriers to Successful Implantation",
         items: [
-          "Genetic testing for embryos.",
-          "Hormone evaluations.",
-          "Detailed uterine and immune system assessments.",
+          "Genetic testing screens embryos for chromosomal abnormalities, reducing miscarriage risks.",
+          "Sperm DNA fragmentation analysis detects hidden issues affecting embryo quality.",
+          "Uterine evaluation using hysteroscopy or ultrasound identifies polyps, fibroids, or scarring.",
+          "Immune profiling checks for autoimmune or inflammatory factors that may hinder implantation.",
         ],
         image: "/InfertilityIssues/ivf-testing.png",
       },
       {
         id: 2,
-        label: "Tailored Treatments",
-        title: "Personalized Plans to Improve Success",
+        label: "Personalized Treatment Plan",
+        title: "Designing a Customized Treatment Approach",
         items: [
-          "Adjusting medication protocols.",
-          "Exploring donor eggs/sperm.",
-          "Lifestyle and diet modifications.",
+          "Incorporate advanced sperm selection (MACS, microfluidics) to boost fertilization potential.",
+          "Use endometrial receptivity testing (ERA) to pinpoint the optimal transfer window.",
+          "Implement corrective uterine procedures to enhance the uterine environment.",
+          "Adjust medication protocols based on individual ovarian response and immune status.",
         ],
         image: "/InfertilityIssues/ivf-treatment.png",
       },
       {
         id: 3,
-        label: "Emotional & Holistic Support",
-        title: "Supporting Couples Beyond Medical Care",
+        label: "Holistic & Emotional Support",
+        title: "Nurturing Your Well-being for Success",
         items: [
-          "Therapy and counseling.",
-          "Stress management techniques.",
-          "Support groups and fertility coaching.",
+          "Lifestyle optimization includes diet, exercise, and avoiding harmful substances for better outcomes.",
+          "Stress management tools like yoga, meditation, and mindfulness reduce emotional burden.",
+          "Counseling and support groups foster psychological well-being and shared experiences.",
+          "Nutritional and supplement guidance boosts overall health and reproductive potential.",
         ],
         image: "/InfertilityIssues/ivf-support.png",
       },
@@ -547,27 +552,27 @@ export const lowAMHData = {
 
   carousel: {
     tag: "Causes",
-    heading: "Understanding the Key Factors That Cause Low AMH",
+    heading: "Understanding the Key Factors That Cause Low AMH Levels",
     slides: [
       {
         id: "01",
-        title: "Age & Egg Reserve",
+        title: "Natural Factors",
         description:
-          "AMH naturally declines with age, especially after 35, lowering fertility potential.",
+          "Age and genetics are the most common reasons behind low AMH, as both directly affect the number and quality of eggs available over time.",
         image: "/InfertilityIssues/lowamh-lifestyle-step.png",
       },
       {
         id: "02",
-        title: "Genetic & Medical Conditions",
+        title: "Medical Conditions & Treatments",
         description:
-          "Genetics, endometriosis, or autoimmune conditions can reduce ovarian reserve.",
+          "Certain health issues such as ovarian disorders, past surgeries, or treatments like chemotherapy and radiation can significantly impact ovarian reserve and lower AMH levels.",
         image: "/InfertilityIssues/lowamh-medicine.png",
       },
       {
         id: "03",
-        title: "Lifestyle Factors",
+        title: "Lifestyle & Environmental Influences",
         description:
-          "Smoking, poor diet, and stress negatively impact AMH and fertility health.",
+          "Everyday habits and environmental exposures, including stress, smoking, poor nutrition, or contact with toxins, can speed up the decline of AMH and overall fertility health.",
         image: "/InfertilityIssues/lowamh-advanced.png",
       },
     ],
@@ -592,38 +597,41 @@ export const lowAMHData = {
 
   steps: {
     tag: "Fast Facts",
-    heading: "Recommended Next Steps for Low AMH",
+    heading: "Recommended Steps for Low AMH",
     steps: [
       {
         id: 1,
-        label: "Lifestyle & Support",
-        title: "Boosting Fertility Naturally",
+        label: "Lifestyle Modifications",
+        title: "Small changes that help preserve ovarian health",
         items: [
-          "Healthy diet rich in antioxidants.",
-          "Regular exercise and stress reduction.",
-          "Avoid smoking and alcohol.",
+          "Maintain a balanced diet rich in proteins, vitamins, and antioxidants.",
+          "Exercise regularly but avoid excessive physical strain.",
+          "Quit smoking and reduce alcohol consumption.",
+          "Manage stress through yoga, meditation, or relaxation techniques.",
         ],
         image: "/InfertilityIssues/lowamh-lifestyle-step-1.png",
       },
       {
         id: 2,
-        label: "Medical Support",
-        title: "Personalized Treatment Plans",
+        label: "Medical & Nutritional Support",
+        title: "Treatments and supplements to improve egg quality",
         items: [
-          "Ovarian stimulation protocols.",
-          "IVF with advanced techniques.",
-          "Consideration of donor eggs when needed.",
+          "Consider supplements like CoQ10, Vitamin D3, and DHEA (as advised by a doctor).",
+          "Regular monitoring of hormone levels and ovarian reserves.",
+          "Explore mild ovarian stimulation protocols under medical guidance.",
+          "Address underlying conditions like PCOS, endometriosis, or thyroid imbalance.",
         ],
         image: "/InfertilityIssues/lowamh-medicine-1.png",
       },
       {
         id: 3,
-        label: "Advanced Options",
-        title: "Cutting-Edge Fertility Care",
+        label: "Advanced Fertility Options",
+        title: "Medical interventions for better conception chances",
         items: [
-          "PRP therapy for ovarian rejuvenation.",
-          "Egg freezing at an earlier age.",
-          "Continuous monitoring with a fertility expert.",
+          "IVF with self-eggs using specialized stimulation protocols.",
+          "Use of donor eggs when ovarian response is very low.",
+          "Consider egg freezing (if planning for pregnancy later).",
+          "Explore newer therapies like PRP or stem cell approaches where suitable."
         ],
         image: "/InfertilityIssues/lowamh-advanced-1.png",
       },
@@ -705,21 +713,21 @@ export const polycysticOvarianSyndromeData = {
         id: "01",
         title: "Genetic Influence",
         description:
-          "PCOS often runs in families, with certain genes linked to hormonal and metabolic changes.",
+          "A strong family history and inherited traits significantly raise the likelihood of developing PCOS, often influencing hormonal regulation across generations.",
         image: "/InfertilityIssues/pcos-genetic.png",
       },
       {
         id: "02",
-        title: "Insulin Resistance",
+        title: "Hormonal Imbalance",
         description:
-          "High insulin levels lead to increased androgen production, disrupting ovulation.",
+          "Elevated androgens and disrupted ovulation patterns are key drivers behind most PCOS symptoms, affecting fertility, metabolism, and overall reproductive health.",
         image: "/InfertilityIssues/pcos-insulin.png",
       },
       {
         id: "03",
-        title: "Hormonal Imbalance",
+        title: "Lifestyle & Metabolism",
         description:
-          "Elevated male hormones (androgens) cause irregular cycles, acne, and hair growth.",
+          "Poor diet, obesity, sedentary habits, and insulin resistance together intensify the condition, making long-term management and treatment more challenging for women.",
         image: "/InfertilityIssues/pcos-hormone.png",
       },
     ],
@@ -743,39 +751,42 @@ export const polycysticOvarianSyndromeData = {
   },
 
   steps: {
-    tag: "Essential Steps",
+    tag: "Fast Facts",
     heading: "Essential Recommended Steps for PCOS Care",
     steps: [
       {
         id: 1,
-        label: "Lifestyle Management",
-        title: "Balanced Diet & Regular Exercise",
+        label: "Balanced Nutrition",
+        title: "Eat wholesome meals to balance hormones and energy levels.",
         items: [
-          "Adopt a healthy, balanced diet rich in fiber and lean proteins.",
-          "Engage in 30–45 minutes of moderate exercise daily.",
-          "Maintain a healthy BMI to improve hormone balance.",
+          "Include fiber-rich vegetables and whole grains in every meal.",
+          "Add lean protein sources daily for stronger metabolic support.",
+          "Limit processed sugars and refined carbohydrate intake for balance.",
+          "Stay hydrated with sufficient clean water throughout the day.",
         ],
         image: "/InfertilityIssues/pcos-diet.png",
       },
       {
         id: 2,
-        label: "Medical Treatment",
-        title: "Hormonal Balance & Fertility Support",
+        label: "Regular Movement",
+        title: "Exercise consistently to improve insulin sensitivity and mood.",
         items: [
-          "Medications to regulate menstrual cycles and control symptoms.",
-          "Fertility treatments like ovulation induction or IVF if necessary.",
-          "Regular follow-ups to monitor hormonal and metabolic health.",
+          "Aim for 30 minutes of daily activity to maintain overall health.",
+          "Try yoga or pilates for stress relief and enhanced body flexibility.",
+          "Add strength training for muscle growth, metabolism, and bone strength.",
+          "Keep workouts enjoyable with dance, walking, swimming, or cycling sessions."
         ],
         image: "/InfertilityIssues/pcos-treatment.png",
       },
       {
         id: 3,
-        label: "Emotional Wellbeing",
-        title: "Restoring Mental & Emotional Strength",
+        label: "Mindful Lifestyle",
+        title: "Prioritize rest, self-care, and stress management daily.",
         items: [
-          "Therapy and support groups to reduce stress and anxiety.",
-          "Adequate sleep and mindfulness practices.",
-          "Encouragement to maintain positive lifestyle habits.",
+          "Get 7–8 hours of quality restful sleep to restore body functions.",
+          "Practice mindfulness using meditation or breathing techniques for calming mental clarity.",
+          "Manage stress through journaling, hobbies, or nature to maintain emotional stability.",
+          "Schedule regular health check-ups and medical guidance for proactive overall wellness."
         ],
         image: "/InfertilityIssues/pcos-rest.png",
       },
@@ -855,16 +866,16 @@ export const tubalBlockageData = {
     slides: [
       {
         id: "01",
-        title: "Infections & Inflammation",
+        title: "Infections and Inflammation",
         description:
-          "Pelvic inflammatory disease (PID) or past infections can damage and scar the tubes.",
+          "Pelvic infections, tuberculosis, or untreated sexually transmitted diseases can inflame fallopian tubes, leading to scarring, adhesions, and eventual tubal blockage.",
         image: "/InfertilityIssues/tubal-infection.png",
       },
       {
         id: "02",
-        title: "Post-Surgical Scarring",
+        title: "Surgeries and Conditions",
         description:
-          "Abdominal or pelvic surgeries can cause adhesions that obstruct the fallopian tubes.",
+          "Past abdominal or pelvic surgeries, fibroids, or endometriosis may cause internal damage or scar tissue, restricting normal tubal function.",
         image: "/InfertilityIssues/tubal-surgery.png",
       },
     ],
@@ -894,23 +905,25 @@ export const tubalBlockageData = {
     steps: [
       {
         id: 1,
-        label: "Diagnosis & Testing",
-        title: "Accurate Detection for Effective Care",
+        label: "Diagnosis First",
+        title: "Accurate evaluation is crucial to identify blockage severity.",
         items: [
-          "Hysterosalpingography (HSG) to visualize tube blockage.",
-          "Laparoscopy to identify and treat adhesions.",
-          "Ultrasound or MRI for detailed pelvic assessment.",
+          "Ultrasound scans for pelvic health assessment, ensuring no hidden complications remain undetected.",
+          "Hysterosalpingography (HSG) to check tube blockage using detailed imaging and contrast dye.",
+          "Laparoscopy for precise internal examination, offering a clear view of reproductive organs.",
+          "Identifying related conditions like fibroids or endometriosis that may further impact fertility."
         ],
         image: "/InfertilityIssues/tubal-diagnosis.png",
       },
       {
         id: 2,
-        label: "Personalized Treatment",
-        title: "Restoring Fertility Through Expert Interventions",
+        label: "Treatment Options",
+        title: "Personalized therapies help restore fertility and reproductive health.",
         items: [
-          "Microsurgery to remove blockages and repair tubes.",
-          "In vitro fertilization (IVF) if natural conception isn’t possible.",
-          "Lifestyle modifications to support reproductive health.",
+          "Laparoscopic surgery for blocked tube correction, restoring natural pathways for conception.",
+          "Removal of scar tissue or adhesions that may restrict egg movement naturally.",
+          "IVF as an alternative when surgery isn’t effective, increasing chances of successful pregnancy.",
+          "Lifestyle and diet support for better outcomes, improving reproductive health holistically."
         ],
         image: "/InfertilityIssues/tubal-treatment.png",
       },
@@ -987,20 +1000,20 @@ export const uterineFibroidsData = {
 
   carousel: {
     tag: "Causes",
-    heading: "Understanding the Key Factors That Cause Uterine Fibroids",
+    heading: "Understanding the Key Factors That Cause Uterine fibroids",
     slides: [
       {
         id: "01",
-        title: "Genetic Predisposition",
+        title: "Hormonal Imbalance",
         description:
-          "A family history of fibroids increases the likelihood of developing them due to inherited hormonal sensitivities.",
+          "Estrogen and progesterone play a key role in fibroid growth: Higher levels of these hormones, especially during reproductive years, can stimulate the development and enlargement of fibroids.",
         image: "/InfertilityIssues/fibroids-genetic.png",
       },
       {
         id: "02",
-        title: "Hormonal Imbalance",
+        title: "Genetic Predisposition",
         description:
-          "Elevated estrogen and progesterone levels can stimulate the growth of fibroid tissue within the uterus.",
+          "Family history increases your risk: Women with a close relative who had fibroids are more likely to develop them, indicating a strong hereditary link.",
         image: "/InfertilityIssues/fibroids-hormonal.png",
       },
     ],
@@ -1025,27 +1038,29 @@ export const uterineFibroidsData = {
 
   steps: {
     tag: "Treatment",
-    heading: "Key Treatment Steps for Uterine Fibroids",
+    heading: "Key Treatment Steps for Uterine fibroids",
     steps: [
       {
         id: 1,
-        label: "Diagnosis & Assessment",
-        title: "Comprehensive Evaluation for Targeted Care",
+        label: "Initial Evaluation",
+        title: "Understanding your condition through proper diagnosis and tests.",
         items: [
-          "Ultrasound and MRI scans to identify size and location of fibroids.",
-          "Hysteroscopy for internal examination of the uterus.",
-          "Blood tests to check for anemia or hormonal imbalance.",
+          "A physical exam to feel for abnormalities in the shape or size of the uterus.",
+          "A non-invasive scan that helps confirm the presence, number, and location of fibroids.",
+          "Magnetic resonance imaging provides high-resolution images for complex cases or surgical planning.",
+          "Evaluates blood loss impact, especially in cases of heavy menstrual bleeding caused by fibroids.",
         ],
         image: "/InfertilityIssues/fibroids-diagnosis.png",
       },
       {
         id: 2,
-        label: "Treatment & Recovery",
-        title: "Personalized Solutions for Lasting Relief",
+        label: "Personalized Treatment Plan",
+        title: "Choosing the best option based on symptoms and goals.",
         items: [
-          "Medication to regulate hormones and manage symptoms.",
-          "Myomectomy or minimally invasive procedures to remove fibroids.",
-          "Lifestyle modifications for long-term reproductive wellness.",
+          "Hormonal or non-hormonal drugs may help control bleeding, pain, or reduce fibroid size temporarily.",
+          "A targeted treatment that blocks blood flow to fibroids, causing them to shrink without major surgery.",
+          "Myomectomy removes fibroids and preserves the uterus; hysterectomy removes the uterus if needed.",
+          "Specialized approaches that treat fibroids while protecting or enhancing fertility for future conception."
         ],
         image: "/InfertilityIssues/fibroids-treatment.png",
       },
@@ -1128,14 +1143,14 @@ export const azoospermiaData = {
         id: "01",
         title: "Obstructive Azoospermia",
         description:
-          "Blockages in the reproductive tract prevent sperm from mixing with semen despite normal sperm production.",
+          "Blockages in the reproductive tract prevent sperm from reaching the semen. Causes include infections, injury, surgery, or congenital absence of the vas deferens.",
         image: "/InfertilityIssues/azoospermia-obstructive.png",
       },
       {
         id: "02",
         title: "Non-Obstructive Azoospermia",
         description:
-          "Caused by problems in sperm production due to genetic, hormonal, or testicular conditions.",
+          "Sperm production is impaired due to hormonal imbalances, genetic conditions, or testicular failure. Often more complex, it requires advanced diagnostics and individualized treatment options.",
         image: "/InfertilityIssues/azoospermia-nonobstructive.png",
       },
     ],
@@ -1161,28 +1176,30 @@ export const azoospermiaData = {
   },
 
   steps: {
-    tag: "Treatment",
+    tag: "Fast Facts",
     heading: "Key Treatment Steps for Azoospermia",
     steps: [
       {
         id: 1,
-        label: "Diagnosis & Evaluation",
-        title: "Accurate Diagnosis for Personalized Treatment",
+        label: "Initial Diagnosis Phase",
+        title: "Identify the underlying cause with proper clinical evaluation.",
         items: [
-          "Semen analysis to confirm absence of sperm.",
-          "Hormonal testing (FSH, LH, Testosterone) to identify underlying causes.",
-          "Ultrasound or biopsy to evaluate reproductive tract health.",
+          "Semen analysis to confirm azoospermia and assess sperm volume and quality.",
+          "Hormonal blood tests (FSH, LH, testosterone) to evaluate reproductive hormone levels.",
+          "Genetic screening to detect chromosomal abnormalities or Y-chromosome microdeletions.",
+          "Scrotal ultrasound to check for physical blockages, varicocele, or testicular damage."
         ],
         image: "/InfertilityIssues/azoospermia-diagnosis.png",
       },
       {
         id: 2,
-        label: "Treatment & Recovery",
-        title: "Targeted Solutions Based on Cause and Severity",
+        label: "Personalized Treatment Plan",
+        title: "Targeted solutions based on type and root cause.",
         items: [
-          "Microsurgical procedures (e.g., Vasoepididymostomy) to remove obstructions.",
-          "Hormone therapy for restoring sperm production.",
-          "Sperm retrieval techniques (TESE, PESA) combined with IVF-ICSI.",
+          "Hormonal therapy to stimulate sperm production if hormonal imbalance is present.",
+          "Hormonal therapy to stimulate sperm production if hormonal imbalance is present.",
+          "Testicular sperm extraction (TESE) or micro-TESE for IVF or ICSI procedures.",
+          "Emotional support and counseling to help couples cope with stress and uncertainty.",
         ],
         image: "/InfertilityIssues/azoospermia-treatment.png",
       },
@@ -1263,16 +1280,16 @@ export const lowSpermCountData = {
     slides: [
       {
         id: "01",
-        title: "Lifestyle & Environmental Factors",
+        title: "Lifestyle & Environment",
         description:
-          "Stress, obesity, alcohol, smoking, or exposure to toxins can significantly reduce sperm quality and count.",
+          "Poor diet, smoking, alcohol, stress, and exposure to toxins can reduce sperm quality and count, impacting male fertility and overall reproductive health.",
         image: "/InfertilityIssues/low-sperm-lifestyle.png",
       },
       {
         id: "02",
         title: "Medical & Genetic Factors",
         description:
-          "Varicocele, hormonal deficiencies, or inherited genetic conditions can affect sperm production and function.",
+          "Infections, hormonal imbalances, genetic disorders, varicocele, and chronic illnesses can disrupt sperm production, leading to low sperm count and infertility.",
         image: "/InfertilityIssues/low-sperm-medical.png",
       },
     ],
@@ -1298,28 +1315,30 @@ export const lowSpermCountData = {
   },
 
   steps: {
-    tag: "Treatment",
+    tag: "Fast Facts",
     heading: "Key Treatment Steps for Low Sperm Count",
     steps: [
       {
         id: 1,
-        label: "Medical Evaluation",
-        title: "Identifying the Root Cause of Low Sperm Count",
+        label: "Diagnosis & Evaluation",
+        title: "Identify causes through thorough testing and analysis.",
         items: [
-          "Semen analysis to measure sperm concentration, motility, and morphology.",
-          "Hormonal tests (Testosterone, FSH, LH) to detect imbalances.",
-          "Ultrasound to identify varicocele or other testicular abnormalities.",
+          "Semen analysis to evaluate sperm count, motility, and shape, identifying potential fertility issues.",
+          "Hormonal tests to assess testosterone, FSH, and LH levels that regulate sperm production.",
+          "Genetic screening to detect chromosomal abnormalities or Y-chromosome deletions affecting fertility.",
+          "Physical exam to identify varicocele, blockages, or testicular abnormalities that impact sperm flow."
         ],
         image: "/InfertilityIssues/low-sperm-diagnosis.png",
       },
       {
         id: 2,
-        label: "Treatment & Lifestyle Changes",
-        title: "Personalized Treatment Plans for Optimal Results",
+        label: "Treatment & Support",
+        title: "Personalized therapies to improve sperm health and fertility.",
         items: [
-          "Medication to balance hormones and improve sperm production.",
-          "Surgical correction of varicocele or obstructions.",
-          "Nutritional therapy, exercise, and stress management for sperm health.",
+          "Lifestyle changes like healthy diet, regular exercise, quitting smoking, and limiting alcohol or heat exposure.",
+          "Medications to treat infections, correct hormonal imbalances, or stimulate sperm production.",
+          "Surgery to repair varicocele or remove blockages in the reproductive tract.",
+          "Assisted reproductive techniques like IUI, IVF, or ICSI when natural conception is difficult."
         ],
         image: "/InfertilityIssues/low-sperm-treatment.png",
       },
@@ -1399,16 +1418,16 @@ export const erectileDysfunctionData = {
     slides: [
       {
         id: "01",
-        title: "Psychological & Lifestyle Factors",
+        title: "Physical Health Conditions",
         description:
-          "Stress, anxiety, obesity, smoking, alcohol, and lack of exercise can interfere with normal erectile function.",
+          "Chronic issues like diabetes, heart disease, obesity, and hormonal imbalances can reduce blood flow or nerve function, directly impacting the ability to maintain an erection.",
         image: "/InfertilityIssues/ed-lifestyle.png",
       },
       {
         id: "02",
-        title: "Physical & Hormonal Factors",
+        title: "Psychological & Lifestyle Factors",
         description:
-          "Diabetes, hypertension, low testosterone, or nerve damage can directly impact erection quality and duration.",
+          "Stress, anxiety, depression, smoking, alcohol use, and lack of exercise can interfere with sexual function by disrupting hormonal balance, mood, and overall energy levels.",
         image: "/InfertilityIssues/ed-medical.png",
       },
     ],
@@ -1434,28 +1453,30 @@ export const erectileDysfunctionData = {
   },
 
   steps: {
-    tag: "Treatment",
+    tag: "Fast Facts",
     heading: "Key Treatment Steps for Erectile Dysfunction (ED)",
     steps: [
       {
         id: 1,
-        label: "Diagnosis & Assessment",
-        title: "Evaluating the Root Cause of Erectile Dysfunction",
+        label: "Lifestyle & Behavioral Changes",
+        title: "Improve overall health and support natural erectile function.",
         items: [
-          "Comprehensive medical history and physical examination.",
-          "Blood tests to check testosterone, cholesterol, and sugar levels.",
-          "Penile Doppler or ultrasound to evaluate blood flow.",
+          "Quit smoking and reduce alcohol to improve blood flow.",
+          "Maintain a balanced, heart-healthy diet for circulation.",
+          "Exercise regularly to boost stamina, testosterone, and mood.",
+          "Manage stress and anxiety through relaxation techniques or therapy."
         ],
         image: "/InfertilityIssues/ed-diagnosis.png",
       },
       {
         id: 2,
-        label: "Treatment & Lifestyle Changes",
-        title: "Personalized Solutions for Restoring Confidence",
+        label: "Medical & Advanced Therapies",
+        title: "Treat underlying causes with expert-guided medical solutions.",
         items: [
-          "Oral medications (PDE5 inhibitors) or hormone replacement therapy.",
-          "Psychological counseling or therapy to address performance anxiety.",
-          "Dietary changes, quitting smoking, and regular physical activity.",
+          "Use prescribed oral medications like Viagra, Cialis, or Levitra.",
+          "Seek psychological counseling for anxiety, depression, or relationship issues.",
+          "Consider hormone therapy if testosterone levels are low.",
+          "Opt for advanced fertility treatments like IUI, IVF-ICSI, or TESA."
         ],
         image: "/InfertilityIssues/ed-treatment.png",
       },
@@ -1576,27 +1597,27 @@ export const endometriosisData = {
 
   carousel: {
     tag: "Causes",
-    heading: "Understanding the Key Factors That<br/> Cause Endometriosis",
+    heading: "Understanding the Key Factors That Cause Endometriosis",
     slides: [
       {
         id: "01",
-        title: "Genetic Predisposition",
+        title: "Retrograde Menstruation Explained",
         description:
-          "Women with a family history of endometriosis are more likely to develop the condition due to inherited risk factors.",
+          "During menstruation, some uterine tissue flows backward into the pelvic cavity instead of leaving the body, potentially implanting and growing outside the uterus.",
         image: "/InfertilityIssues/endometriosis-1.png",
       },
       {
         id: "02",
-        title: "Retrograde Menstruation",
+        title: "Genetic Predisposition Role",
         description:
-          "When menstrual blood flows backward through the fallopian tubes, endometrial cells may implant outside the uterus.",
+          "Family history increases the risk, suggesting genes may influence immune response and tissue growth, making some women more susceptible to developing endometriosis.",
         image: "/InfertilityIssues/endometriosis-2.png",
       },
       {
         id: "03",
-        title: "Immune & Hormonal Factors",
+        title: "Immunological Factors Impact",
         description:
-          "Imbalance in estrogen or immune dysfunction can cause tissue to grow outside the uterus and resist the body’s control.",
+          "An impaired immune system may fail to eliminate misplaced uterine cells, allowing them to implant and cause inflammation, pain, and tissue damage.",
         image: "/InfertilityIssues/endometriosis-3.png",
       },
     ],
@@ -1627,37 +1648,37 @@ export const endometriosisData = {
     steps: [
       {
         id: 1,
-        label: "Accurate Diagnosis",
-        title: "Confirming Endometriosis Through Advanced Evaluation",
+        label: "Personalized Treatment Approach",
+        title: "Treatment varies by age, symptom severity, and fertility goals.",
         items: [
-          "Pelvic examination and ultrasound imaging.",
-          "MRI scans for deep endometriosis mapping.",
-          "Laparoscopy for visual and biopsy confirmation.",
-          "Comprehensive hormonal testing.",
+          "Comprehensive evaluation through imaging, laparoscopy, and hormonal assessment.",
+          "Tailored treatment strategies based on age, severity, and fertility goals.",
+          "Options designed to preserve or enhance chances of conception.",
+          "Regular follow-ups to track progress and adjust treatment if needed.",
         ],
         image: "/InfertilityIssues/endometriosis-step1.png",
       },
       {
         id: 2,
-        label: "Effective Medical & Surgical Treatment",
-        title: "Combining Precision Medicine with Minimally Invasive Surgery",
+        label: "Medical & Surgical Options",
+        title: "Combining medical and surgical treatments optimizes symptom relief and fertility chances.",
         items: [
-          "Hormone therapy to manage or suppress endometrial growth.",
-          "Laparoscopic excision or ablation of lesions.",
-          "Pain management with targeted medications.",
-          "Post-surgery fertility support for conception planning.",
+          "Hormonal therapies reduce pain and control lesion growth effectively.",
+          "Minimally invasive laparoscopic surgery removes lesions with faster recovery.",
+          "IVF and ICSI assist conception when fertility is significantly affected.",
+          "IUI provides a less invasive fertility option for mild endometriosis.",
         ],
         image: "/InfertilityIssues/endometriosis-step2.png",
       },
       {
         id: 3,
-        label: "Lifestyle & Nutritional Care",
-        title: "Improving Long-Term Health and Preventing Recurrence",
+        label: "Lifestyle and Care",
+        title: "Healthy habits and self-care improve treatment results and overall well-being.",
         items: [
-          "Anti-inflammatory diet rich in omega-3 and fiber.",
-          "Regular exercise and stress management techniques.",
-          "Adequate sleep and hydration for hormonal balance.",
-          "Supplements to support reproductive health.",
+          "Regular exercise improves physical health and reduces stress.",
+          "Avoiding alcohol helps minimize symptom severity and inflammation.",
+          "Drinking plenty of water supports body functions and detoxification.",
+          "Maintaining a balanced diet and proper sleep promotes healing and energy.",
         ],
         image: "/InfertilityIssues/endometriosis-step3.png",
       },
