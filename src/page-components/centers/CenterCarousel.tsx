@@ -39,7 +39,7 @@ const CenterCarousel: React.FC<CenterCarouselProps> = ({ gallery, fallbackImage 
       : 40; // fallback initial width
 
   return (
-    <div className="relative w-full h-80 lg:h-200 overflow-hidden">
+    <div className="relative w-full h-80 lg:h-[700px] overflow-hidden">
       {/* Carousel Images */}
       {images.map((src, i) => (
         <img

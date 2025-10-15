@@ -408,7 +408,7 @@ const TreatmentsPage: React.FC = () => {
 
         {/* Block 2 */}
 
-        <div className="bg-[#F5FAFF] p-4 lg:p-0 lg:bg-transparent">
+        <div className="bg-[#F5FAFF] px-4 pb-4 lg:p-0 lg:bg-transparent">
           
           <h3
             className="

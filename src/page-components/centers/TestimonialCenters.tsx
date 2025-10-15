@@ -62,12 +62,12 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="w-full bg-[#1656A5] overflow-hidden">
+    <section className="w-full bg-[#1656A5] overflow-hidden p-4 lg:px-[115px] py-[80px]">
       <div className="flex flex-col md:flex-row  lg:h-[600px]">
         {/* Left Panel (Blue) */}
-        <div className="bg-[#1656A5] text-[#F9F9F9] flex flex-col justify-center md:w-[400px] lg:pl-30  pl-4 pt-10">
+        <div className="bg-[#1656A5] text-[#F9F9F9] flex flex-col justify-center md:w-[268px] ">
           <div>
-            <h2 className="text-[32px] leading-[40px] lg:text-[48px] lg:leading-[56px] font-normal mb-6">
+            <h2 className="text-[32px] leading-[40px] lg:text-[40px] lg:leading-[53px] font-normal mb-6">
               What Our Visitors Are Saying
             </h2>
 
@@ -145,37 +145,38 @@ const TestimonialsSection = () => {
                 className="w-full"
               >
                 {videoTestimonials.map((t, i) => (
-                  <SwiperSlide key={i}>
-                    <div className="flex flex-row items-stretch bg-transparent rounded-[16px] overflow-hidden w-full h-[500px] gap-4 p-4 lg:flex-row">
-                      {/* Description First */}
-                      <div className="flex flex-col justify-center lg:justify-between p-8 lg:p-12 bg-white rounded-[16px] md:h-[300px] lg:h-full md:w-[300px] lg:w-1/2 order-1">
-                        <p className="text-[#1656A5] font-[Manrope] text-[16px] md:text-[16px] lg:text-[32px] tracking-tight leading-6 lg:leading-[40px]">
-                          {t.text}
-                        </p>
-                        <span className="mt-6 text-[#606060] text-sm md:text-base">
-                          ~ {t.author}
-                        </span>
-                      </div>
+                 <SwiperSlide key={i}>
+  <div className="flex flex-row items-stretch bg-transparent rounded-[16px] overflow-hidden w-full gap-4 p-4 lg:flex-row">
+    {/* Description Box */}
+    <div className="flex flex-col justify-center p-8 bg-white rounded-[16px] w-[536px] h-[536px]">
+      <p className="text-[#1656A5] font-[Manrope] text-[32px] tracking-tight leading-[40px]">
+        {t.text}
+      </p>
+      <span className="mt-6 text-[#606060] text-base">
+        ~ {t.author}
+      </span>
+    </div>
 
-                      {/* Video Second */}
-                      <div className="rounded-[16px] overflow-hidden md:w-[300px] lg:w-1/2 order-2 h-full md:h-[300px] lg:h-full">
-                        {t.videoUrl ? (
-                          <iframe
-                            src={t.videoUrl}
-                            title={t.storyTitle || t.author}
-                            className="w-full h-full rounded-[16px]"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            loading="lazy"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400 rounded-[16px]">
-                            Video unavailable
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </SwiperSlide>
+    {/* Video Box */}
+    <div className="rounded-[16px] overflow-hidden w-[832px] h-[536px]">
+      {t.videoUrl ? (
+        <iframe
+          src={t.videoUrl}
+          title={t.storyTitle || t.author}
+          className="w-full h-full rounded-[16px]"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          loading="lazy"
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400 rounded-[16px]">
+          Video unavailable
+        </div>
+      )}
+    </div>
+  </div>
+</SwiperSlide>
+
                 ))}
               </Swiper>
             )}
