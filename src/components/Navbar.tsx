@@ -803,7 +803,7 @@ const megaMenuData: Record<string, any> = {
     ],
   },
   "Treatments": {
-    image: "/Navbar/infertility-image.png",
+    image: "/Navbar/treatments.png",
     columns: [
       {
         title: "Fertility Solutions",
