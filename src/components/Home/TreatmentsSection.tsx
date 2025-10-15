@@ -19,42 +19,42 @@ const TreatmentsSection = () => {
       description:
         "We offer you more than a procedure. We offer a chance. A chance to hold, to cradle, to begin.",
       image: "/TreatmentsSection/IVF.png",
-      link: "/treatments/infertility/ivf",
+      link: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/",
     },
     {
       title: "Egg Freezing and Preservation",
       description:
         "Your journey is uniquely yours. Whenever you feel ready, we’ll be right here waiting for you.",
       image: "/TreatmentsSection/eggfreezing.png",
-      link: "/treatments/preservation/female-fertility-preservation",
+      link: "/treatments/preservation/female-fertility-preservation/",
     },
     {
       title: "Multiple IVF & IUI Failures",
       description:
         "Advanced care and tailored treatments to give fresh hope after repeated failed attempts.",
       image: "/TreatmentsSection/multipleivf.png",
-      link: "/infertility/female/repeated-ivf-failures",
+      link: "/infertility/female/repeated-iui-failures/",
     },
     {
       title: "Intrauterine Insemination (IUI)",
       description:
         "For some, the gentlest nudge is all it takes. We guide you with care and precision.",
       image: "/TreatmentsSection/iui.png",
-      link: "/treatments/infertility/iui",
+      link: "/treatments/infertility/artificial-insemination-iui-treatment/",
     },
     {
       title: "Male Fertility Solutions",
       description:
         "Fertility is not just a woman’s story. We’re here for every partner, every question, every step.",
       image: "/TreatmentsSection/malefertility.png",
-      link: "/treatments/evaluation/male-analysis",
+      link: "/treatments/preservation/male-fertility-preservation/",
     },
     {
       title: "Pregnancy after Menopause",
       description:
         "Advanced techniques that make motherhood possible, even beyond menopause.",
       image: "/TreatmentsSection/menopause.png",
-      link: "/infertility/female/pregnancy-after-menopause",
+      link: "/infertility/female/pregnancy-after-menopause/",
     },
   ];
 
@@ -78,7 +78,7 @@ const TreatmentsSection = () => {
               </h2>
             </div>
 
-            <button className="px-[14px] xl:mt-[40px] w-fit cursor-pointer xl:px-12 py-[12px] xl:py-3 xl:rounded-[16px] rounded-[8px] text-[12px] xl:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
+            <button onClick={() => window.open("/treatments", "_blank")} className="px-[14px] xl:mt-[40px] w-fit cursor-pointer xl:px-12 py-[12px] xl:py-3 xl:rounded-[16px] rounded-[8px] text-[12px] xl:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
               View all treatments
             </button>
                           </div>
@@ -139,7 +139,7 @@ const TreatmentsSection = () => {
                   />
                 </div>
                 </div>
-                <button onClick={() => window.open(item.link, "_blank")} className="bg-[#00000026] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
+                <button onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
 
                 {/* Arrow Button (Clickable Link) */}
                 <Link href={item.link} passHref>
@@ -207,7 +207,7 @@ const TreatmentsSection = () => {
                   />
                 </div>
                 </div>
-                <button onClick={() => window.open(item.link, "_blank")} className="bg-[#00000026] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
+                <button onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
 
                 {/* Arrow Button (Clickable Link) */}
                 <Link href={item.link} passHref>
