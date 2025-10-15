@@ -37,7 +37,7 @@ const CareersOpenings = () => {
         <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
           Current Openings
         </span>
-        <h2 className="mt-4 font-manrope font-normal lg:text-[60px] lg:leading-[70px] leading-[40px] text-[32px]  text-[#2C2C2C] tracking-[-0.02em]">
+        <h2 className="mt-4 font-manrope font-normal lg:text-[48px]   text-[32px] lg:leading-[56px]  text-[#2C2C2C] tracking-[-0.02em]">
           Find the right role and begin your journey at Progenesis.
         </h2>
       </div>
