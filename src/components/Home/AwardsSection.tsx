@@ -80,7 +80,7 @@ export default function AwardsSection() {
   };
 
   return (
-    <section className=" pt-[42px] md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
+    <section className=" pt-[42px] md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] csLg:pb-[60px]">
       <div className="mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[80px] items-start">
           {/* Left column */}

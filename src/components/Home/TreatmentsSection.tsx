@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Letter = ({ char }) => (
-  <span className="text-sm csLg:text-[32px] csLg:leading-[40px] leading-8 tracking-[-0.32px] csLg:tracking-[-0.64px] font-[Manrope] font-normal text-[#2C2C2C]">
+  <span className="text-sm xl:text-[32px] xl:leading-[40px] leading-8 tracking-[-0.32px] xl:tracking-[-0.64px] font-[Manrope] font-normal text-[#2C2C2C]">
     {char}
   </span>
 );
@@ -19,53 +19,53 @@ const TreatmentsSection = () => {
       description:
         "We offer you more than a procedure. We offer a chance. A chance to hold, to cradle, to begin.",
       image: "/TreatmentsSection/IVF.png",
-      link: "/treatments/infertility/ivf",
+      link: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/",
     },
     {
       title: "Egg Freezing and Preservation",
       description:
         "Your journey is uniquely yours. Whenever you feel ready, we’ll be right here waiting for you.",
       image: "/TreatmentsSection/eggfreezing.png",
-      link: "/treatments/preservation/female-fertility-preservation",
+      link: "/treatments/preservation/female-fertility-preservation/",
     },
     {
       title: "Multiple IVF & IUI Failures",
       description:
         "Advanced care and tailored treatments to give fresh hope after repeated failed attempts.",
       image: "/TreatmentsSection/multipleivf.png",
-      link: "/infertility/female/repeated-ivf-failures",
+      link: "/infertility/female/repeated-iui-failures/",
     },
     {
       title: "Intrauterine Insemination (IUI)",
       description:
         "For some, the gentlest nudge is all it takes. We guide you with care and precision.",
       image: "/TreatmentsSection/iui.png",
-      link: "/treatments/infertility/iui",
+      link: "/treatments/infertility/artificial-insemination-iui-treatment/",
     },
     {
       title: "Male Fertility Solutions",
       description:
         "Fertility is not just a woman’s story. We’re here for every partner, every question, every step.",
       image: "/TreatmentsSection/malefertility.png",
-      link: "/treatments/evaluation/male-analysis",
+      link: "/treatments/preservation/male-fertility-preservation/",
     },
     {
       title: "Pregnancy after Menopause",
       description:
         "Advanced techniques that make motherhood possible, even beyond menopause.",
       image: "/TreatmentsSection/menopause.png",
-      link: "/infertility/female/pregnancy-after-menopause",
+      link: "/infertility/female/pregnancy-after-menopause/",
     },
   ];
 
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-blue-50 csLg:py-[80px] py-4">
+    <section className="w-full bg-blue-50 xl:py-[80px] py-4">
       {/* Header Section (Static) */}
-      <div className="csLg:px-[120px] px-4 mb-6 csLg:mb-[76px]">
+      <div className="xl:px-[120px] px-4 mb-6 xl:mb-[76px]">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-          <div className="w-full max-w-full sm:max-w-xl csLg:max-w-xl flex flex-col gap-[24px] csLg:gap-[40px] ">
+          <div className="w-full max-w-full sm:max-w-xl xl:max-w-xl flex flex-col gap-[24px] xl:gap-[40px] ">
             <div className="flex flex-col gap-2">
 
               <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 w-fit py-1 rounded-full ">
@@ -73,12 +73,12 @@ const TreatmentsSection = () => {
               </span>
               <div>
                 
-              <h2 className="text-[32px] csLg:text-[48px] leading-[40px] font-light text-[#2c2c2c] leading-[56px] ">
+              <h2 className="text-[32px] xl:text-[48px] leading-[40px] font-light text-[#2c2c2c] leading-[56px] ">
                 Being India’s Best Fertility & IVF Center. We Specialize in:
               </h2>
             </div>
 
-            <button className="px-[14px] csLg:mt-[40px] w-fit cursor-pointer csLg:px-12 py-[12px] csLg:py-3 csLg:rounded-[16px] rounded-[8px] text-[12px] csLg:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
+            <button onClick={() => window.open("/treatments", "_blank")} className="px-[14px] xl:mt-[40px] w-fit cursor-pointer xl:px-12 py-[12px] xl:py-3 xl:rounded-[16px] rounded-[8px] text-[12px] xl:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
               View all treatments
             </button>
                           </div>
@@ -93,13 +93,13 @@ const TreatmentsSection = () => {
       </div>
 
       {/* Treatments Cards (Normal Flow, No Overlap) */}
-      <div className="px-4 csLg:px-[120px]   csLg:mb-[76px] ">
-        <div className="flex flex-wrap gap-6 w-full justify-start ">
-          {treatments.map((item, index) => {
-            const isSmall = index === 2 || index === 3;
-            const widthClass = isSmall
-              ? "lg:w-[27.5%] sm:w-[30%] min-w-[280px]"
-              : "lg:w-[34%] sm:w-[30%] min-w-[280px]";
+      <div className="px-4 xl:px-[120px] xl:mb-[76px] flex flex-col gap-6">
+        {/* First 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[35%_35%_30%] gap-6 w-full justify-start">
+          {treatments.slice(0, 3).map((item, index) => {
+            const widthClass = index === 0 
+              ? " w-full sm:w-auto md:w-auto min-w-[280px]"
+              : "w-full sm:w-auto md:w-auto min-w-[280px]";
 
             return (
               <div
@@ -107,8 +107,8 @@ const TreatmentsSection = () => {
                 onMouseEnter={() => setSelected(index)}
                 onMouseLeave={() => setSelected(null)}
                 className={`
-                  relative cursor-pointer rounded-2xl p-6 csLg:h-[350px]
-                  flex flex-col gap-[8px] csLg:gap-0 csLg:flex-row items-center justify-between transition-all duration-300
+                  relative cursor-pointer rounded-2xl p-6 xl:min-h-[350px]
+                  flex flex-col gap-[8px] xl:gap-0 xl:flex-row items-center justify-between  transition-all duration-300
                   ${selected === index
                     ? "border border-[#1656A5] bg-white shadow-md"
                     : "border border-transparent bg-white"
@@ -117,8 +117,10 @@ const TreatmentsSection = () => {
                 `}
               >
                 {/* Left Side (Text) */}
-                <div className="flex flex-col  csLg:w-[350px]  csLg:pt-[100px] ">
-                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] csLg:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2">
+                <div className=" h-full flex flex-col xl:flex-col-reverse justify-between">
+
+                <div className="xl:max-w-[80%] flex flex-col justify-between ">
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 xl:max-w-[68%]" >
                     {item.title}
                   </h3>
                   <p className="text-[#606060] text-[16px] leading-6">
@@ -127,37 +129,102 @@ const TreatmentsSection = () => {
                 </div>
 
                 {/* Right Side (Image with Next.js) */}
-                <div className="flex-shrink-0 csLg:-mt-[150px] ">
+                <div className="flex-shrink-0 flex justify-center xl:justify-end  items-center xl:items-end ">
                   <Image
                     src={item.image}
                     alt={item.title}
-                    width={150}
-                    height={180}
+                    width={280}
+                    height={240}
                     className="object-cover"
                   />
-                                   
                 </div>
-                <button onClick={() => window.open(item.link, "_blank")} className="bg-[#00000026] mt-2 block csLg:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
+                </div>
+                <button onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
 
                 {/* Arrow Button (Clickable Link) */}
-                <Link  href={item.link} passHref>
+                <Link href={item.link} passHref>
                   <div
-                  className={`absolute top-4 csLg:flex hidden left-4 w-8 csLg:w-14 csLg:h-14 h-8 flex items-center justify-center rounded-lg transition ${selected === index
+                    className={`absolute top-4 xl:flex hidden left-4 w-8 xl:w-14 xl:h-14 h-8 flex items-center justify-center rounded-lg transition ${selected === index
                         ? "bg-[#1656A5]"
                         : "bg-gray-100 hover:bg-[#1656A5]"
                       }`}
                   >
                     <ArrowRight
-                      className={`w-4 h-4 csLg:w-5 csLg:h-5 ${selected === index
+                      className={`w-4 h-4 xl:w-5 xl:h-5 ${selected === index
                           ? "text-white"
                           : "text-gray-600 hover:text-white"
                         }`}
                     />
                   </div>
                 </Link>
+              </div>
+            );
+          })}
+        </div>
 
+        {/* Last 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[30%_35%_35%] gap-6 w-full justify-start">
+          {treatments.slice(3, 6).map((item, index) => {
+            const actualIndex = index + 3;
+            const widthClass = "w-full sm:w-auto md:w-auto min-w-[280px]";
 
+            return (
+              <div
+                key={actualIndex}
+                onMouseEnter={() => setSelected(actualIndex)}
+                onMouseLeave={() => setSelected(null)}
+                className={`
+                  relative cursor-pointer rounded-2xl p-6 xl:min-h-[350px]
+                  flex flex-col gap-[8px] xl:gap-0 xl:flex-row items-center justify-between transition-all duration-300
+                  ${selected === actualIndex
+                    ? "border border-[#1656A5] bg-white shadow-md"
+                    : "border border-transparent bg-white"
+                  }
+                  w-full ${widthClass}
+                `}
+              >
+                
+                {/* Left Side (Text) */}
+                <div className=" h-full flex flex-col  xl:flex-col-reverse justify-between">
 
+                <div className="xl:max-w-[80%] flex flex-col justify-between ">
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 xl:max-w-[68%]" >
+                    {item.title}
+                  </h3>
+                  <p className="text-[#606060] text-[16px] leading-6">
+                    {item.description}
+                  </p>
+                </div>
+
+                {/* Right Side (Image with Next.js) */}
+                <div className="flex-shrink-0 flex justify-center xl:justify-end items-center xl:items-end ">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={280}
+                    height={240}
+                    className="object-cover"
+                  />
+                </div>
+                </div>
+                <button onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
+
+                {/* Arrow Button (Clickable Link) */}
+                <Link href={item.link} passHref>
+                  <div
+                    className={`absolute top-4 xl:flex hidden left-4 w-8 xl:w-14 xl:h-14 h-8 flex items-center justify-center rounded-lg transition ${selected === actualIndex
+                        ? "bg-[#1656A5]"
+                        : "bg-gray-100 hover:bg-[#1656A5]"
+                      }`}
+                  >
+                    <ArrowRight
+                      className={`w-4 h-4 xl:w-5 xl:h-5 ${selected === actualIndex
+                          ? "text-white"
+                          : "text-gray-600 hover:text-white"
+                        }`}
+                    />
+                  </div>
+                </Link>
               </div>
             );
           })}

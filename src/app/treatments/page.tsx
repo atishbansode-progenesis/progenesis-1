@@ -11,9 +11,6 @@ import { ArrowUpRight } from "lucide-react";
 import StoriesSection from "@/components/Home/StoriesSection"; //
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 
-
-
-
 interface FeatureCardProps {
   title: string;
   description: string;
@@ -26,49 +23,53 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
   const cardContent = (
     <div
       className="
-        flex flex-col gap-3 rounded-[16px]  md:p-5 md:bg-[#F2F2F2]
-        transition-colors duration-300
-        hover:bg-[#F1F7FC] cursor-pointer h-full
-      "
+    group
+    flex flex-col gap-3 rounded-[16px] md:p-5 md:bg-[#F2F2F2]
+    transition-colors duration-300
+    lg:hover:bg-[#F1F7FC] cursor-pointer h-full
+  "
     >
       <div className="flex flex-col items-start gap-3">
         <span
-          className="flex h-8 w-16 items-center justify-center rounded-full bg-white text-black border border-[#2C2C2C] hover:bg-black hover:text-white hover:border-transparent transition-all duration-300"
+          className="
+        flex h-8 w-16 items-center justify-center rounded-full 
+        bg-white text-black border border-[#2C2C2C] 
+        transition-all duration-300
+        group-hover:bg-black group-hover:text-white group-hover:border-transparent
+      "
         >
           <ArrowUpRight className="w-4 h-4" />
         </span>
+
         <h4
           className="
-    text-[#606060]
-    font-[Manrope]
-    text-[16px] leading-[24px] tracking-[-0.32px] font-semibold
-    md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
-  "
+        text-[#2C2C2C]/70
+        font-[Manrope]
+        text-[16px] leading-[24px] tracking-[-0.32px] font-semibold
+        md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
+      "
         >
           {title}
         </h4>
-
       </div>
+
       <p
         className="
-          text-[#606060] font-[Manrope] opacity-70
-          text-[16px] leading-[24px] tracking-[-0.32px] font-normal
-        "
+      text-[#606060] font-[Manrope] opacity-70
+      text-[16px] leading-[24px] tracking-[-0.32px] font-normal
+    "
       >
         {description}
       </p>
 
-      <hr className="md:hidden text-[#1656A50D] "/>
+      <hr className="md:hidden text-[#1656A50D]" />
     </div>
   );
 
   return href ? <Link href={href}>{cardContent}</Link> : cardContent;
 }
 
-
 const TreatmentsPage: React.FC = () => {
-
-
   const categories = [
     { id: "path", label: "Your Path to Parenthood" },
     { id: "advanced", label: "Advanced Infertility Treatments" },
@@ -78,12 +79,7 @@ const TreatmentsPage: React.FC = () => {
     { id: "stories", label: "Real Stories. Real Miracles." },
   ];
 
-
-
-const [activeTab, setActiveTab] = useState<string>("path");
-
-
-
+  const [activeTab, setActiveTab] = useState<string>("path");
 
   const precisionMethods = [
     {
@@ -161,8 +157,6 @@ const [activeTab, setActiveTab] = useState<string>("path");
     },
   ];
 
-
-
   const treatments = [
     {
       title: "Ovulation Induction – Stimulating Egg Release",
@@ -208,7 +202,6 @@ const [activeTab, setActiveTab] = useState<string>("path");
     },
   ];
 
-
   const preservation = [
     {
       title: "Female Fertility Preservation",
@@ -230,8 +223,6 @@ const [activeTab, setActiveTab] = useState<string>("path");
     },
   ];
 
-
-
   const evaluations = [
     {
       title: "Female Analysis – Complete Reproductive Health Check",
@@ -251,8 +242,6 @@ const [activeTab, setActiveTab] = useState<string>("path");
     },
   ];
 
-
-
   return (
     <div className="w-full flex flex-col">
       <HeroSection
@@ -268,56 +257,55 @@ const [activeTab, setActiveTab] = useState<string>("path");
         contentClassName="justify-start"
       />
 
-
       {/* 2️⃣ Category Tabs */}
       <div className="flex flex-wrap gap-4 px-[16px] py-[16px]  md:py-[50px] md:px-[120px]  bg-[#fff]">
         {categories.map((cat) => (
-//  <button
-//   key={cat.id}
-//   type="button"
-//   onClick={() => setActiveTab(cat.id)}
-//   className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
-//     font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px] 
-//     transition-colors duration-200
-//     ${activeTab === cat.id
-//       ? "bg-[#1656A5] text-white"
-//       : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-//     }`}
-// >
-//   {cat.label}
-// </button>
-<button
-  key={cat.id}
-  type="button"
-  onClick={() => {
-    setActiveTab(cat.id);
-    document.getElementById(cat.id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }}
-  className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
+          //  <button
+          //   key={cat.id}
+          //   type="button"
+          //   onClick={() => setActiveTab(cat.id)}
+          //   className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px]
+          //     font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px]
+          //     transition-colors duration-200
+          //     ${activeTab === cat.id
+          //       ? "bg-[#1656A5] text-white"
+          //       : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+          //     }`}
+          // >
+          //   {cat.label}
+          // </button>
+          <button
+            key={cat.id}
+            type="button"
+            onClick={() => {
+              setActiveTab(cat.id);
+              document.getElementById(cat.id)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+            className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
     font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px] 
     transition-colors duration-200
-    ${activeTab === cat.id
-      ? "bg-[#1656A5] text-white"
-      : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
+    ${
+      activeTab === cat.id
+        ? "bg-[#1656A5] text-white"
+        : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
     }`}
->
-  {cat.label}
-</button>
-
-
+          >
+            {cat.label}
+          </button>
         ))}
       </div>
 
       {/* 3️⃣ Personalized Treatments */}
-      <section id="path" className="px-4 py-4 md:px-[120px] md:py-[80px] bg-[#F9F9F9]">
+      <section
+        id="path"
+        className="px-4 py-4 md:px-[120px] md:py-[80px] bg-[#F9F9F9]"
+      >
         {/* Label */}
-        <div className="mb-4">
-
-
-          <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+        <div className="">
+          <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[8px] ">
             Your Path to Parenthood
           </span>
         </div>
@@ -330,14 +318,15 @@ const [activeTab, setActiveTab] = useState<string>("path");
           md:text-[48px] md:leading-[56px] md:tracking-normal
         "
         >
-          Personalized Fertility Treatments for <br />Every Journey
+          Personalized Fertility Treatments for <br />
+          Every Journey
         </h2>
 
         {/* Divider */}
-        <hr className="my-8 border-t border-[#E0E0E0]" />
+        <hr className="mt-[12px] mb-[12px] csLg:mt-[80px] csLg:mb-[16px] border-t border-[#E0E0E0]" />
 
         {/* Subheading + Description */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 ">
           {/* Subheading */}
           <h3
             className="
@@ -357,33 +346,36 @@ const [activeTab, setActiveTab] = useState<string>("path");
     max-w-3xl
   "
           >
-            From initial evaluation to the most advanced fertility treatments, Progenesis walks beside you at every step.
-            We combine medical excellence with compassionate guidance to provide holistic fertility solutions tailored to
-            your unique health needs, personal lifestyle, and emotional journey. Whether you are just beginning to explore
-            your options or seeking advanced interventions, we are here to turn hope into reality with care, clarity, and confidence.
+            From initial evaluation to the most advanced fertility treatments,
+            Progenesis walks beside you at every step. We combine medical
+            excellence with compassionate guidance to provide holistic fertility
+            solutions tailored to your unique health needs, personal lifestyle,
+            and emotional journey. Whether you are just beginning to explore
+            your options or seeking advanced interventions, we are here to turn
+            hope into reality with care, clarity, and confidence.
           </p>
-
         </div>
       </section>
 
       {/* 4️⃣ Cutting Edge Techniques */}
-      <section id="advanced" className="px-4 py-4 md:px-[120px] md:py-[80px] bg-[#fff]">
-
-        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+      <section
+        id="advanced"
+        className="md:px-[120px] md:py-[80px] bg-[#fff]"
+      >
+        <div className="p-4 lg:p-0 ">
+          <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[12px] lg:mb-[8px]">
           Advanced Infertility Treatments
         </span>
 
-
         <h2
           className="
-    text-[#2C2C2C] font-[Manrope] font-normal mb-[12px] md:mb-[80px]
-    text-[32px] leading-[40px] tracking-[-0.64px]   /* mobile */
-    md:text-[48px] md:leading-[56px] md:tracking-[-0.96px] /* desktop */
-  "
+            text-[#2C2C2C] font-[Manrope] font-normal mb-[12px] md:mb-[80px]
+            text-[32px] leading-[40px] tracking-[-0.64px]   /* mobile */
+            md:text-[48px] md:leading-[56px] md:tracking-[-0.96px] /* desktop */
+          "
         >
           Cutting-Edge Techniques for Better Success
         </h2>
-
 
         {/* Block 1 */}
         <h3
@@ -391,34 +383,59 @@ const [activeTab, setActiveTab] = useState<string>("path");
           text-[#2C2C2C] font-[Manrope]
           text-[16px] leading-[24px] tracking-[-0.32px] font-normal
           md:text-[32px] md:leading-[40px] md:tracking-[-0.64px]
-          mb-8
+          mb-[32px] lg:mb-[40px]
         "
         >
           Precision Methods for Better Outcomes
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 my-4 md:my-[80px] ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 ">
           {precisionMethods.map((item, idx) => (
-            <FeatureCard key={idx} title={item.title} description={item.description} href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : undefined} />
+            <FeatureCard
+              key={idx}
+              title={item.title}
+              description={item.description}
+              href={
+                item.slug && item.category
+                  ? `/treatments/${item.category}/${item.slug}`
+                  : undefined
+              }
+            />
           ))}
         </div>
+                </div>
+
 
         {/* Block 2 */}
-        <h3
-          className="
+
+        <div className="bg-[#F5FAFF] p-4 lg:p-0 lg:bg-transparent">
+          
+          <h3
+            className="
           text-[#2C2C2C] font-[Manrope]
           text-[16px] leading-[24px] tracking-[-0.32px] font-normal
-          md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] mb-4
-          md:mb-8
-        "
-        >
-          Advanced Facilities for Trusted Care
-        </h3>
+          md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] mb-8
+          lg:mb-8 lg:mt-[80px] mt-4
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4">
-          {advancedFacilities.map((item, idx) => (
-            <FeatureCard key={idx} title={item.title} description={item.description} href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : undefined} />
-          ))}
+          
+        "
+          >
+            Advanced Facilities for Trusted Care
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4">
+            {advancedFacilities.map((item, idx) => (
+              <FeatureCard
+                key={idx}
+                title={item.title}
+                description={item.description}
+                href={
+                  item.slug && item.category
+                    ? `/treatments/${item.category}/${item.slug}`
+                    : undefined
+                }
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -478,34 +495,33 @@ const [activeTab, setActiveTab] = useState<string>("path");
         </div>
       </section> */}
 
-
       {/* 5️⃣ Success Rate */}
-    <section className="relative w-full flex justify-center items-center overflow-hidden px-6 md:px-12 lg:px-[120px] py-20">
-  {/* 🔹 Left Green Blur Ellipse */}
-  <div
-    className="absolute left-[-100px] bottom-[-50px] rounded-full bg-[#94BA3D] blur-[250px]"
-    style={{
-      width: "348px",
-      height: "280px",
-      transform: "rotate(-2deg)",
-    }}
-  ></div>
+      <section className="relative w-full flex justify-center items-center overflow-hidden px-6 md:px-12 lg:px-[120px] py-20">
+        {/* 🔹 Left Green Blur Ellipse */}
+        <div
+          className="absolute left-[-100px] bottom-[-50px] rounded-full bg-[#94BA3D] blur-[250px]"
+          style={{
+            width: "348px",
+            height: "280px",
+            transform: "rotate(-2deg)",
+          }}
+        ></div>
 
-  {/* 🔹 Right Blue Blur Ellipse */}
-  <div
-    className="absolute right-[-200px] top-[-150px] rounded-full bg-[#1656A5] blur-[250px]"
-    style={{
-      width: "222px",
-      height: "203px",
-      transform: "rotate(-2deg)",
-    }}
-  ></div>
+        {/* 🔹 Right Blue Blur Ellipse */}
+        <div
+          className="absolute right-[-200px] top-[-150px] rounded-full bg-[#1656A5] blur-[250px]"
+          style={{
+            width: "222px",
+            height: "203px",
+            transform: "rotate(-2deg)",
+          }}
+        ></div>
 
-  {/* 🔹 Content */}
-  <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between w-full">
-    {/* Percentage */}
-    <h2
-      className="
+        {/* 🔹 Content */}
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between w-full">
+          {/* Percentage */}
+          <h2
+            className="
         text-[#94BA3D] font-manrope font-normal
         text-right md:text-left
         text-[120px] md:text-[120px]
@@ -514,39 +530,39 @@ const [activeTab, setActiveTab] = useState<string>("path");
 
         px-6 md:px-0
       "
-    >
-      95%
-    </h2>
+          >
+            95%
+          </h2>
 
-    {/* Heading Text */}
-    <p
-      className="
+          {/* Heading Text */}
+          <p
+            className="
         text-[#94BA3D] font-manrope font-normal
         text-[32px] md:text-[48px]
         leading-[40px] md:leading-[56px]
         tracking-[-0.64px] md:tracking-[-0.96px]
         text-left md:text-right
-      m
-        px-6 md:px-0
+        lg:px-6 md:px-0
+        md:max-w-[70%]
+        max-w-[312px]
       "
-    >
-      Success Rate in Personalized Fertility Care, Delivering Unmatched Results
-    </p>
-  </div>
-</section>
-
-
-
-      
+          >
+            Success Rate in Personalized Fertility Care, Delivering Unmatched
+            Results
+          </p>
+        </div>
+      </section>
 
       {/* 6️⃣ Proven Treatments */}
-      <section id="infertility" className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20">
+      <section
+        id="infertility"
+        className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20"
+      >
         {/* Tag */}
 
-        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[8px]">
           Infertility Treatments
         </span>
-
 
         {/* Heading */}
         <h2
@@ -559,26 +575,27 @@ const [activeTab, setActiveTab] = useState<string>("path");
     leading-[56px]
     tracking-normal
     max-w-[790px]
-    mb-10
+    mb-[32px] md:mb-[80px]
   "
         >
           Where Trusted Treatments Lead to Proven Results
         </h2>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {treatments.map((item, idx) => (
             <Link
               key={idx}
-              href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
-              className=" rounded-xl border-[#E6E6E6] p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
+              href={
+                item.slug && item.category
+                  ? `/treatments/${item.category}/${item.slug}`
+                  : "#"
+              }
+              className=" group rounded-xl border-[#E6E6E6] p-4 md:p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
             >
-              <span
-                className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] hover:bg-black hover:text-white hover:border-transparent transition-all duration-300"
-              >
+              <span className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] group-hover:bg-black group-hover:text-white group-hover:border-transparent transition-all duration-300">
                 <ArrowUpRight className="w-4 h-4" />
               </span>
-
 
               {/* Title */}
               <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[28px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
@@ -594,48 +611,53 @@ const [activeTab, setActiveTab] = useState<string>("path");
         </div>
       </section>
 
-
       {/* 7️⃣ Future Parenthood */}
-      <section id="preservation" className="w-full bg-[#FAFAFA] px-4 py-4 md:px-[120px]  md:py-20">
-
-
+      <section
+        id="preservation"
+        className="w-full bg-[#FAFAFA] px-4 py-4 md:px-[120px]  md:py-20"
+      >
         {/* Tag */}
 
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
           Fertility Preservation
         </span>
 
-
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-12">
+        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-[32px]  lg:mb-[80px]">
           Future Parenthood Made Possible
         </h2>
-
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {preservation.map((item, idx) => (
             <Link
               key={idx}
-              href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
+              href={
+                item.slug && item.category
+                  ? `/treatments/${item.category}/${item.slug}`
+                  : "#"
+              }
               className="
               flex flex-col items-center
+              justify-between
               relative
               rounded-[16px]
-              h-[370px] md:h-[444px]
               bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
               hover:bg-[rgba(22,86,165,0.12)] transition
-              p-6
+               p-4 lg:p-6
               cursor-pointer
             "
             >
-               {/* Title */}
-              <h3 className="
+              {/* Title */}
+              <h3
+                className="
     text-[var(--Text_Black,#2C2C2C)]
     font-[Manrope] font-normal
     text-[24px] leading-[32px] tracking-[-0.64px]
     md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
-          pt-[24px] pl-[24px]">
+    max-w-[200px] md:max-w-full
+          "
+              >
                 {item.title}
               </h3>
               {/* Image */}
@@ -644,31 +666,27 @@ const [activeTab, setActiveTab] = useState<string>("path");
                 alt={item.title}
                 width={238} // desktop size
                 height={240}
-                className="mt-[56px] w-[180px] h-[180px] md:w-[238px] md:h-[240px] object-contain"
+                className="mt-[26px] lg:mt-[56px] w-[180px] h-[180px] md:w-[238px] md:h-[240px] object-contain"
                 style={{ mixBlendMode: "multiply" }}
                 priority={false} // optional: use priority for above-the-fold images
               />
-
-
-
-
-             
             </Link>
           ))}
         </div>
-
       </section>
 
-
       {/* 8️⃣ Diagnostic Section */}
-      <section id="evaluation" className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20">
+      <section
+        id="evaluation"
+        className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20"
+      >
         {/* Tag */}
-        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+        <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[8px]">
           Fertility Evaluation
         </span>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-12">
+        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-[32px] lg:mb-[80px]">
           Know, Understand & Take Action
         </h2>
 
@@ -677,18 +695,24 @@ const [activeTab, setActiveTab] = useState<string>("path");
           {evaluations.map((item, idx) => (
             <Link
               key={idx}
-              href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
+              href={
+                item.slug && item.category
+                  ? `/treatments/${item.category}/${item.slug}`
+                  : "#"
+              }
               className={`
-              flex flex-col gap-3 rounded-[16px] p-6
-              ${item.highlighted ? "bg-[#EEF5FF]" : "bg-[#EEF5FF]  border-[#E6E6E6]"}
+              flex flex-col gap-3 rounded-[16px] p-6 group
+              ${
+                item.highlighted
+                  ? "bg-[#EEF5FF]"
+                  : "bg-[#EEF5FF]  border-[#E6E6E6]"
+              }
               hover:bg-[#DDEBFF] transition
               cursor-pointer
             `}
             >
               {/* Icon */}
-             <span
-                className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] hover:bg-black hover:text-white hover:border-transparent transition-all duration-300"
-              >
+              <span className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] group-hover:bg-black group-hover:text-white group-hover:border-transparent transition-all duration-300">
                 <ArrowUpRight className="w-4 h-4" />
               </span>
 
@@ -706,13 +730,12 @@ const [activeTab, setActiveTab] = useState<string>("path");
         </div>
       </section>
 
-     <StoriesSection />
+      <StoriesSection />
 
       <AppointmentForm />
       <GradientBanner text="Every journey to parenthood is unique — with the right care, hope finds its way." />
 
       {/* </div> */}
-
     </div>
   );
 };

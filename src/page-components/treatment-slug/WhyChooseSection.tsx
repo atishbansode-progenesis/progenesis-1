@@ -25,13 +25,13 @@ export default function WhyChooseSection({
       {/* Desktop Version */}
       <section
         id="why-choose"
-        className="px-[120px] py-[80px] bg-transparent hidden lg:block scroll-mt-[120px]"
+        className="csLg:px-[120px] csLg:py-[80px] bg-transparent hidden lg:block scroll-mt-[120px]"
       >
         <div className="grid grid-cols-[40%_60%]  w-full items-center">
           <div className="flex flex-col  justify-between h-full ">
             <div>
               {tag && (
-                <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3 w-fit">
+                <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-2 w-fit">
                   {tag}
                 </span>
               )}
@@ -78,7 +78,7 @@ export default function WhyChooseSection({
               alt={points[activePoint].title}
               width={100}
               height={100}
-              className="w-full h-full object-cover overflow-hidden rounded-[14.5px]"
+              className="w-full min-h-[660px] h-full object-cover overflow-hidden rounded-[14.5px]"
             />
           </div>
         </div>
@@ -88,12 +88,12 @@ export default function WhyChooseSection({
       <section className="p-4  rounded-[16px]  bg-[#F5FAFF] lg:hidden scroll-mt-[120px]">
         <div className="lg:hidden">
           {tag && (
-            <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-3">
+            <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-2">
               {tag}
             </span>
           )}
 
-          <h2 className="text-[#2C2C2C] font-manrope font-normal text-[28px] leading-[36px] mb-4">
+          <h2 className="text-[#2C2C2C] font-manrope font-normal text-[28px] leading-[36px] mb-[32px]">
             {heading}
           </h2>
 
