@@ -17,6 +17,7 @@ module.exports = {
                 primary: "var(--font-manrope)",
             },
             screens: {
+                csxl:"1600px",
                 csLg: '1100px',
                 xsm: '350px',
             },
