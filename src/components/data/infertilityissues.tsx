@@ -91,14 +91,14 @@ export const repeatedIUIFailuresData = {
         id: "03",
         title: "Hormonal Imbalance",
         description:
-          "Irregular hormone levels can disrupt ovulation or affect the uterine environment, making conception difficult.",
+          "Conditions like irregular ovulation or low progesterone levels can affect egg release, implantation, and overall conception success.",
         image: "/InfertilityIssues/crRght 3.png",
       },
       {
         id: "04",
-        title: "Uterine Abnormalities",
+        title: "Uterine or Tubal Problems",
         description:
-          "Conditions like fibroids or polyps can interfere with implantation, lowering the success rate of IUI.",
+          "Blocked fallopian tubes, uterine polyps, or an irregular uterine lining can make it harder for the sperm to meet the egg or for the embryo to implant.",
         image: "/InfertilityIssues/rght 4.png",
       },
     ],
