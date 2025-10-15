@@ -36,7 +36,7 @@ export const PathSection: React.FC<PathSectionProps> = ({
       )}
 
       {/* Main Heading */}
-      <h2 className="text-[#2C2C2C] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal md:text-[48px] md:leading-[56px] md:tracking-normal">
+      <h2 className="text-[#2C2C2C] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal md:text-[40px] md:leading-[56px] md:tracking-normal">
         {mainHeading}
       </h2>
 

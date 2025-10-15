@@ -18,7 +18,7 @@ export default function TreatmentBasics({ tag, heading, items }: TreatmentBasics
           {tag}
         </span>
       )}
-      <h2 className="text-[#2C2C2C] font-[Manrope] font-normal mb-[32px] md:mb-[80px] text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]">
+      <h2 className="text-[#2C2C2C] font-[Manrope] font-normal mb-[32px] md:mb-[80px] text-[32px] leading-[40px] tracking-[-0.64px] md:text-[40px] md:leading-[56px] md:tracking-[-0.96px]">
         {heading}
       </h2>
 
@@ -33,7 +33,7 @@ export default function TreatmentBasics({ tag, heading, items }: TreatmentBasics
           alt={item.title}
           className="w-[20px] h-[20px] csLg:w-[32px] csLg:h-[32px] object-contain csLg:mb-4"
         />
-            <h3 className="text-[#2C2C2C] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
+            <h3 className="text-[#2C2C2C] font-[Manrope] text-[24px] leading-[40px] tracking-[-0.64px] font-normal">
               {item.title}
             </h3>
             <p className="text-[#606060] font-[Manrope] text-[16px] leading-[24px] opacity-80">

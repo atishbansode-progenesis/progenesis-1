@@ -21,7 +21,7 @@ const GeneticTestingCards: React.FC<GeneticTestingCardsProps> = ({ tag, heading,
           <span className="inline-block text-xs font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full mb-4">
             {tag}
           </span>
-          <h2 className="text-gray-900 text-3xl md:text-5xl font-normal leading-tight max-w-2xl">
+          <h2 className="text-gray-900 text-[24px] md:text-[40px] md:text-5xl font-normal leading-tight max-w-2xl">
             {heading}
           </h2>
         </div>
@@ -34,12 +34,13 @@ const GeneticTestingCards: React.FC<GeneticTestingCardsProps> = ({ tag, heading,
               className="bg-[#DDEBFF] rounded-[16px] p-3 md:p-6  border border-blue-100"
             >
               {/* Abbreviation */}
-              <div className="text-[#2C2C2C] text-[16px] md:text-[32px] font-semibold mb-6">
+              <div className="text-[#2C2C2C] text-[16px] md:text-[24px] font-normal mb-6">
                 {card.abbreviation}
               </div>
 
+
               {/* Title */}
-              <h3 className="text-[#2C2C2C] text-[16px] md:text-[32px]  font-normal mb-4 leading-snug">
+              <h3 className="text-[#2C2C2C] text-[16px] md:text-[24px]  font-normal mb-4 leading-snug">
                 {card.title}
               </h3>
 
