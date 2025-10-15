@@ -21,12 +21,12 @@ export const MaleInfertilitySection: React.FC<MaleInfertilitySectionProps> = ({
             <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
               Male Infertility Causes
             </button>
-            <h2 className="text-[20px] md:text-[32px] lg:text-[48px] md:text-[48px] font-light text-[#2C2C2C] leading-[40px] md:leading-[56px]">
-              Understanding the Causes of Male Infertility
+            <h2 className="text-[20px] md:text-[32px] lg:text-[40px] md:text-[40px] font-light text-[#2C2C2C] leading-[40px] md:leading-[56px]">
+              Understanding the Causes<br/> of Male Infertility
             </h2>
           </div>
           <div className="w-full">
-            <p className="text-[#2C2C2C] font-light text-[20px] md:text-[32px] leading-[28px] md:leading-[40px]">
+            <p className="text-[#2C2C2C] font-light text-[20px] md:text-[24px] leading-[28px] md:leading-[40px]">
               Male infertility can result from issues like low sperm count, azoospermia, or erectile dysfunction.
               <span className="">
                 Recognizing these causes early is the first step toward effective treatment and improving the chances of conception.

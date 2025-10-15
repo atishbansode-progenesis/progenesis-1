@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import Journey from '../../components/Journey'
 import { useRouter } from "next/navigation";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
+import HeroSection from "@/components/HeroSection/herosection";
 const InternationalPatientsPage: React.FC = () => {
   const categories = [
     { id: "start", label: "Start Your Journey Today" },
@@ -200,6 +201,24 @@ const InternationalPatientsPage: React.FC = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const BackIconSvg=()=>{
+      return (
+        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 7.37452L1.4173 7.01606M1.4173 7.01606L8.18318 1M1.4173 7.01606L7.31279 13.4768" stroke="#F9F9F9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+      )
+    }
+
+    const NextIconSvg=()=>{
+      return (
+        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 7.37452L13.5827 7.01606M13.5827 7.01606L6.81682 1M13.5827 7.01606L7.68721 13.4768" stroke="#F9F9F9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>        
+
+      )
+    }
+
     return (
       <section
         id="testimonial"
@@ -207,7 +226,7 @@ const InternationalPatientsPage: React.FC = () => {
       >
         <div className="flex flex-col csLg:flex-row items-center mx-auto px-6 md:px-[120px] gap-8 csLg:gap-0">
           {/* Header Section */}
-          <div className="flex flex-col justify-between w-full csLg:w-[350px] mr-8">
+          <div className="flex flex-col justify-between w-full csLg:w-[350px] mr-4">
             <h2
               className="text-[#F9F9F9] font-[Manrope] 
              text-[32px] csLg:text-[48px] font-normal leading-[40px] csLg:leading-[56px] 
@@ -230,21 +249,21 @@ const InternationalPatientsPage: React.FC = () => {
             <div className="hidden csLg:flex items-center space-x-4 mt-6">
               <button
                 ref={prevRef}
-                className="w-14 h-14 flex items-center justify-center border border-white rounded-lg hover:bg-white hover:text-blue-700 transition"
+                className="w-14 h-14 flex items-center justify-center border border-white rounded-[16px] cursor-pointer"
               >
-                ←
+                <BackIconSvg/>
               </button>
               <button
                 ref={nextRef}
-                className="w-14 h-14 flex items-center justify-center border border-white rounded-lg hover:bg-white hover:text-blue-700 transition"
+                className="w-14 h-14 flex items-center justify-center border border-white rounded-[16px] cursor-pointer"
               >
-                →
+                  <NextIconSvg/>
               </button>
             </div>
           </div>
 
           {/* Swiper Container */}
-          <div className="w-full csLg:w-[400px] csLg:mr-[16px]">
+          <div className="w-full csLg:w-[400px] csLg:mr-[10px]">
             <Swiper
               modules={[Navigation, Pagination]}
               spaceBetween={24}
@@ -311,11 +330,12 @@ const InternationalPatientsPage: React.FC = () => {
           </div>
 
           {/* Image - Desktop Only */}
-          <div className="hidden csLg:block w-[750px]">
-            <img
+          <div className="relative z-10 w-full h-[530px] hidden csLg:block">
+            <Image
               src="/InternationalPatients/testimonial.png"
               alt="Happy Family"
-              className="rounded-xl h-[536px] shadow-lg"
+              fill
+              className="rounded-xl object-cover"
             />
           </div>
         </div>
@@ -326,9 +346,8 @@ const InternationalPatientsPage: React.FC = () => {
 
   return (
     <main className="">
-      <section className="relative w-full h-[60vh] py-4 csLg:px-[120px] px-6  flex flex-col csLg:justify-center">
-        {/* Background images: mobile and desktop */}
-        <div
+      {/* <section className="relative w-full h-[60vh] py-4 csLg:px-[120px] px-6  flex flex-col csLg:justify-center">
+         <div
           className="absolute inset-0 md:hidden bg-cover bg-center"
           style={{ backgroundImage: "url('/InternationalPatients/ip-bg-mob.png')" }}
           aria-hidden
@@ -342,25 +361,21 @@ const InternationalPatientsPage: React.FC = () => {
         <img className=" csLg:block hidden absolute csLg:right-[10%] bottom-0 h-[100%] w-[30%]" src="/InternationalPatients/hero_person.png" alt="" />
 
         <div className='relative w-full'>
-          {/* Left: Content block */}
           <div className=''>
             <div className='flex flex-col gap-[20px] mt-10 csLg:mt-0'>
-              {/* Breadcrumb-like line */}
               <div >
                 <h2 className='font-manrope csLg:text-[18px] font-semibold text-[12px] leading-[26px] tracking-[-0.02em]'>
                   <button onClick={() => router.push('/')} className='hover:cursor-pointer'> Home </button> <span className="px-[12px]">›</span> <span className="text-[#1656A5]"> International Patient </span>
                 </h2>
               </div>
 
-              {/* Title */}
               <div>
                 <h1 className='font-manrope font-semibold csLg:text-[80px] text-[32px] csLg:leading-[88px] leading-[48px] tracking-[-0.02em] csLg:max-w-[60%]'>
                   IVF Treatment for
                   International Patient              </h1>
               </div>
 
-              {/* CTA */}
-              <div className=''>
+               <div className=''>
                 <button
                   className='bg-[#252525] text-[14px] h-[56px] px-6  text-[#F9F9F9] rounded-[16px] hover:bg-[#333] transition'
                 >
@@ -370,11 +385,23 @@ const InternationalPatientsPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Right column removed; background image now covers entire section */}
         </div>
-      </section>
+      </section> */}
+
+      <HeroSection
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: " International Patient", href: "/international-patients" },
+        ]}
+        title={`IVF Treatment for <br/> International Patient`}
+        buttonText="Book Your Appointment"
+        buttonLink="/book-appointment"
+        foregroundImage="/InternationalPatients/hero_person.png"
+        overlayImage="/treatments/doctor-foreground.png"
+        contentClassName="justify-start"
+      />
       <div
-        className="w-full bg-white pt-[50px] px-[12px] md:px-[80px] xl:px-[120px]"
+        className="w-full bg-white pt-[30px] md:pt-[50px] px-[12px] md:px-[80px] xl:px-[120px]"
       >
         <div className="flex flex-wrap justify-start items-start gap-3 md:gap-4 text-left">
           {categories.map((cat) => (
@@ -393,7 +420,7 @@ const InternationalPatientsPage: React.FC = () => {
         </div>
       </div>
 
-      <section id="start" className="csLg:px-[120px] px-[16px] py-[80px] bg-white">
+      <section id="start" className="csLg:px-[120px] px-[16px] py-[40px] md:py-[80px] bg-white">
         <Journey />
       </section>
 
@@ -412,25 +439,25 @@ const InternationalPatientsPage: React.FC = () => {
           aria-hidden
         />
 
-        <p className="text-[#94BA3D] max-w-[90%] text-[28px] csLg:text-[48px] text-center font-normal font-[Manrope] relative z-10">
+        <p className="text-[#94BA3D] max-w-[100%] text-[28px] csLg:text-[40px] text-center font-normal font-[Manrope] relative z-10">
           Our specialists address your concerns, explain treatment steps, ensure safe care, and arrange hassle-free accommodation with comfort, transport, and support.          </p>
       </section>
-      <section id="fertility" className="bg-white pt-[80px] pb-[60px]">
+      <section id="fertility" className="bg-white pt-[40px] md:pt-[80px] pb-[40px] md:pb-[60px]">
         <div className="px-4 md:px-[80px] lg:px-[120px]">
           <div className="flex flex-col xl:flex-row justify-between md:gap-10">
-            <div className="w-full xl:w-[45%]">
+            <div className="w-full xl:w-[50%]">
               <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-[8px] mb-4">
                 Advanced Fertility Solutions
               </span>
-              <h2 className="text-[32px] md:text-[48px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">
+              <h2 className="text-[32px] md:text-[40px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">
                 Personalized fertility care for,<br /> every parenthood journey
               </h2>
             </div>
             <div className="flex-1">
               <p
-                className="font-[Manrope] font-normal text-[#2C2C2C] text-[16px] leading-[28px] tracking-[-0.36px] md:text-[24px] md:leading-[32px] md:tracking-[-0.48px] lg:text-[32px] lg:leading-[40px] lg:tracking-[-0.56px] max-w-[832px]"
+                className="font-[Manrope] font-normal text-[#2C2C2C] text-[16px] leading-[28px] tracking-[-0.36px] md:text-[24px] md:leading-[32px] md:tracking-[-0.48px] lg:text-[24px] lg:leading-[32px] lg:tracking-[-0.48px] max-w-[832px]"
               >
-                At Progenesis, we offer all advanced fertility treatments under one roof — from IVF and ICSI to embryo donation, genetic screening, and cryopreservation. <span className="text-[#606060]"> Our global-standard care ensures international patients receive safe, personalized solutions to achieve their dream of parenthood.</span>
+                At Progenesis, we offer all advanced fertility treatments under one roof — from IVF and ICSI to embryo donation, genetic screening, and cryopreservation. <span className=""> Our global-standard care ensures international patients receive safe, personalized solutions to achieve their dream of parenthood.</span>
               </p>
             </div>
           </div>
@@ -441,16 +468,19 @@ const InternationalPatientsPage: React.FC = () => {
               <Link
                 key={issue.id}
                 href={`/infertility/${issue.slug}`}
-                className="flex flex-col items-center justify-between w-full px-6 pt-6 pb-[70px] gap-[40px] bg-[rgba(22,86,165,0.05)] rounded-2xl transition hover:bg-[#1656A51F]"
+                className="flex flex-col items-center justify-between w-full px-6 pt-6 bg-[rgba(22,86,165,0.05)] rounded-2xl transition hover:bg-[#1656A51F]"
               >
                 <h3 className="text-[#2C2C2C] text-[20px] md:text-[24px] font-normal leading-[28px] md:leading-[36px] text-start w-full font-[Manrope]">
                   {issue.title}
                 </h3>
-                <img
+                <div className="relative z-10 w-full h-[250px] mix-blend-multiply">
+                <Image
                   src={issue.image}
                   alt={issue.title}
-                  className="w-[200px] h-[180px] md:w-[260px] md:h-[240px] object-contain mix-blend-multiply"
+                  fill
+                  className="object-contain "
                 />
+                </div>
               </Link>
             ))}
           </div>
