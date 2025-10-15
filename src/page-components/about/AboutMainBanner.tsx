@@ -14,7 +14,7 @@ const AboutMainBanner = () => {
             { label: "About Us", href: "/about-us" },
           ]}
           foregroundImage='/images/about-for.png'
-          overlayImage='/images/abtt-bg     .png'
+          overlayImage='/images/abtt-bg.png'
           title="Your journey to <br /> parenthood begins here."
           />
     )
