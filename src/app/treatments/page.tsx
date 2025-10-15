@@ -24,42 +24,50 @@ interface FeatureCardProps {
 
 export function FeatureCard({ title, description, href }: FeatureCardProps) {
   const cardContent = (
-    <div
+  <div
+  className="
+    group
+    flex flex-col gap-3 rounded-[16px] md:p-5 md:bg-[#F2F2F2]
+    transition-colors duration-300
+    lg:hover:bg-[#F1F7FC] cursor-pointer h-full
+  "
+>
+  <div className="flex flex-col items-start gap-3">
+    <span
       className="
-        flex flex-col gap-3 rounded-[16px]  md:p-5 md:bg-[#F2F2F2]
-        transition-colors duration-300
-        hover:bg-[#F1F7FC] cursor-pointer h-full
+        flex h-8 w-16 items-center justify-center rounded-full 
+        bg-white text-black border border-[#2C2C2C] 
+        transition-all duration-300
+        group-hover:bg-black group-hover:text-white group-hover:border-transparent
       "
     >
-      <div className="flex flex-col items-start gap-3">
-        <span
-          className="flex h-8 w-16 items-center justify-center rounded-full bg-white text-black border border-[#2C2C2C] hover:bg-black hover:text-white hover:border-transparent transition-all duration-300"
-        >
-          <ArrowUpRight className="w-4 h-4" />
-        </span>
-        <h4
-          className="
-    text-[#606060]
-    font-[Manrope]
-    text-[16px] leading-[24px] tracking-[-0.32px] font-semibold
-    md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
-  "
-        >
-          {title}
-        </h4>
+      <ArrowUpRight className="w-4 h-4" />
+    </span>
 
-      </div>
-      <p
-        className="
-          text-[#606060] font-[Manrope] opacity-70
-          text-[16px] leading-[24px] tracking-[-0.32px] font-normal
-        "
-      >
-        {description}
-      </p>
+    <h4
+      className="
+        text-[#2C2C2C]
+        font-[Manrope]
+        text-[16px] leading-[24px] tracking-[-0.32px] font-semibold
+        md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
+      "
+    >
+      {title}
+    </h4>
+  </div>
 
-      <hr className="md:hidden text-[#1656A50D] "/>
-    </div>
+  <p
+    className="
+      text-[#606060] font-[Manrope] opacity-70
+      text-[16px] leading-[24px] tracking-[-0.32px] font-normal
+    "
+  >
+    {description}
+  </p>
+
+  <hr className="md:hidden text-[#1656A50D]" />
+</div>
+
   );
 
   return href ? <Link href={href}>{cardContent}</Link> : cardContent;
@@ -566,15 +574,15 @@ const [activeTab, setActiveTab] = useState<string>("path");
         </h2>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {treatments.map((item, idx) => (
             <Link
               key={idx}
               href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
-              className=" rounded-xl border-[#E6E6E6] p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
+              className=" group rounded-xl border-[#E6E6E6] p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
             >
               <span
-                className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] hover:bg-black hover:text-white hover:border-transparent transition-all duration-300"
+                className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] group-hover:bg-black group-hover:text-white group-hover:border-transparent transition-all duration-300"
               >
                 <ArrowUpRight className="w-4 h-4" />
               </span>
@@ -620,9 +628,9 @@ const [activeTab, setActiveTab] = useState<string>("path");
               href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
               className="
               flex flex-col items-center
+              justify-between
               relative
               rounded-[16px]
-              h-[370px] md:h-[444px]
               bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
               hover:bg-[rgba(22,86,165,0.12)] transition
               p-6
@@ -635,7 +643,8 @@ const [activeTab, setActiveTab] = useState<string>("path");
     font-[Manrope] font-normal
     text-[24px] leading-[32px] tracking-[-0.64px]
     md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
-          pt-[24px] pl-[24px]">
+    max-w-[300px] md:max-w-auto
+          ">
                 {item.title}
               </h3>
               {/* Image */}
@@ -644,7 +653,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
                 alt={item.title}
                 width={238} // desktop size
                 height={240}
-                className="mt-[56px] w-[180px] h-[180px] md:w-[238px] md:h-[240px] object-contain"
+                className="mt-[26px] lg:mt-[56px] w-[180px] h-[180px] md:w-[238px] md:h-[240px] object-contain"
                 style={{ mixBlendMode: "multiply" }}
                 priority={false} // optional: use priority for above-the-fold images
               />
@@ -679,7 +688,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
               key={idx}
               href={item.slug && item.category ? `/treatments/${item.category}/${item.slug}` : "#"}
               className={`
-              flex flex-col gap-3 rounded-[16px] p-6
+              flex flex-col gap-3 rounded-[16px] p-6 group
               ${item.highlighted ? "bg-[#EEF5FF]" : "bg-[#EEF5FF]  border-[#E6E6E6]"}
               hover:bg-[#DDEBFF] transition
               cursor-pointer
@@ -687,7 +696,7 @@ const [activeTab, setActiveTab] = useState<string>("path");
             >
               {/* Icon */}
              <span
-                className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] hover:bg-black hover:text-white hover:border-transparent transition-all duration-300"
+                className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] group-hover:bg-black group-hover:text-white group-hover:border-transparent transition-all duration-300"
               >
                 <ArrowUpRight className="w-4 h-4" />
               </span>
