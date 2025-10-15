@@ -28,8 +28,8 @@ export const PathSection: React.FC<PathSectionProps> = ({
     >
       {/* Label */}
       {tag && (
-        <div className="mb-4">
-          <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-4">
+        <div className="">
+          <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-2">
             {tag}
           </span>
         </div>
@@ -42,11 +42,11 @@ export const PathSection: React.FC<PathSectionProps> = ({
 
       {/* Divider */}
       {showDivider && (
-        <hr className="my-8 border-t border-[#E0E0E0]" />
+        <hr className="csLg:mt-[80px] csLg:mb-[16px] my-[12px] border-t border-[#E0E0E0]" />
       )}
 
       {/* Subheading + Description */}
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 csLg:gap-6">
         {/* Subheading */}
         <h3 className="font-[Manrope] font-normal text-[#2C2C2C] text-[24px] leading-[32px] tracking-[-0.48px] md:text-[32px] md:leading-[40px] md:tracking-[-0.64px]">
           {subHeading}
