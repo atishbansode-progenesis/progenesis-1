@@ -23,9 +23,9 @@ export default function SymptomSection({ properties }: StatisticsVisualProps) {
 
   return (
     <section className="w-full bg-[#FAFAFA] p-[16px] lg:p-[120px]">
-      <div className="relative flex flex-col gap-10 csLg:gap-[80px] items-start ">
+      <div className="relative w-full justify-center flex flex-col gap-10 csLg:gap-[80px] csLg:items-start items-center ">
         {/* Tag */}
-        <div className="grid grid-cols-1 csLg:grid-cols-2  gap-4">
+        <div className="grid w-full grid-cols-1 csLg:grid-cols-2  gap-4">
           <div>
             <span className="py-2  px-4 rounded-[8px] text-[#1656A5] bg-[#1656A50D] text-[12px] leading-[18px] font-medium lg:leading-[20px]">
               {properties.tag}
@@ -38,13 +38,15 @@ export default function SymptomSection({ properties }: StatisticsVisualProps) {
 
 
         </div>
-        <div className="grid grid-cols-1 csLg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 csLg:grid-cols-3 gap-4 w-full">
           {cards.map((card, index) => (
-            <div key={index} className="bg-[#Fefefe] justify-between rounded-[16px] p-[24px] gap-[18px] flex flex-col items-start min-h-[188px]">
+            <div key={index} className="bg-[#Fefefe] w-full justify-between rounded-[16px] p-[24px] gap-[18px] flex flex-col items-start min-h-[188px]">
               {card.icon && (
 
 
                 <img className="  text-center" src={card.icon} alt={card.title} />
+
+                
               )}
               <h2 className="  csLg:text-[32px] mt-[10px]  leading-[30px] font-normal text-[#2C2C2C] font-[manrope] csLg:leading-[38px]">
                 {card.title}

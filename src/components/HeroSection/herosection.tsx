@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -54,14 +55,25 @@ export default function HeroSection({
         backgroundImage: backgroundImage ? backgroundImage : "",
       }}
     >
-      {/* Overlay Image (background layer) */}
-      {typeof window !== 'undefined' && overlayImage && (
+      {/* Overlay Image (background layer) - Desktop */}
+      {overlayImage && (
         <Image
-          src={window.innerWidth >= 1024 ? overlayImage : overlayImageSmall || overlayImage}
+          src={overlayImage}
           alt="Overlay"
           fill
           priority
-          className="absolute inset-0 object-cover -z-20"
+          className="absolute inset-0 object-cover -z-20 hidden lg:block"
+        />
+      )}
+      
+      {/* Overlay Image (background layer) - Mobile */}
+      {overlayImageSmall && (
+        <Image
+          src={overlayImageSmall}
+          alt="Overlay"
+          fill
+          priority
+          className="absolute inset-0 object-cover -z-20 lg:hidden"
         />
       )}
 
@@ -82,8 +94,8 @@ export default function HeroSection({
         {/* Breadcrumbs */}
         <p className="text-[12px] lg:text-[18px] leading-[20px] lg:leading-[40px] font-medium flex flex-wrap items-center gap-2 lg:gap-[12px]">
           {breadcrumbs.map((crumb, idx) => (
-            <>
-              <span key={idx} className="flex items-center">
+            <React.Fragment key={idx}>
+              <span className="flex items-center">
                 {crumb.href ? (
                   <Link
                     href={crumb.href}
@@ -98,9 +110,9 @@ export default function HeroSection({
                 ) : null}
               </span>
               {idx < breadcrumbs.length - 1 && (
-                <span key={idx} style={{ color: breadcrumbColor }}>›</span>
+                <span style={{ color: breadcrumbColor }}>›</span>
               )}
-            </>
+            </React.Fragment>
           ))}
         </p>
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Letter = ({ char }) => (
-  <span className="text-sm md:text-[32px] md:leading-[40px] leading-8 tracking-[-0.32px] md:tracking-[-0.64px] font-[Manrope] font-normal text-[#2C2C2C]">
+  <span className="text-sm csLg:text-[32px] csLg:leading-[40px] leading-8 tracking-[-0.32px] csLg:tracking-[-0.64px] font-[Manrope] font-normal text-[#2C2C2C]">
     {char}
   </span>
 );
@@ -65,7 +65,7 @@ const TreatmentsSection = () => {
       {/* Header Section (Static) */}
       <div className="csLg:px-[120px] px-4 mb-6 csLg:mb-[76px]">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-          <div className="w-full max-w-full sm:max-w-xl md:max-w-xl flex flex-col gap-[24px] csLg:gap-[40px] ">
+          <div className="w-full max-w-full sm:max-w-xl csLg:max-w-xl flex flex-col gap-[24px] csLg:gap-[40px] ">
             <div className="flex flex-col gap-2">
 
               <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 w-fit py-1 rounded-full ">
@@ -78,7 +78,7 @@ const TreatmentsSection = () => {
               </h2>
             </div>
 
-            <button className="px-[14px] csLg:mt-[40px] w-fit cursor-pointer md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] text-[12px] md:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
+            <button className="px-[14px] csLg:mt-[40px] w-fit cursor-pointer csLg:px-12 py-[12px] csLg:py-3 csLg:rounded-[16px] rounded-[8px] text-[12px] csLg:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
               View all treatments
             </button>
                           </div>
@@ -94,7 +94,7 @@ const TreatmentsSection = () => {
 
       {/* Treatments Cards (Normal Flow, No Overlap) */}
       <div className="px-4 csLg:px-[120px]   csLg:mb-[76px] ">
-        <div className="flex flex-wrap gap-6 w-full justify-start">
+        <div className="flex flex-wrap gap-6 w-full justify-start ">
           {treatments.map((item, index) => {
             const isSmall = index === 2 || index === 3;
             const widthClass = isSmall
@@ -108,7 +108,7 @@ const TreatmentsSection = () => {
                 onMouseLeave={() => setSelected(null)}
                 className={`
                   relative cursor-pointer rounded-2xl p-6 csLg:h-[350px]
-                  flex flex-col gap-[8px] csLg:gap-0 md:flex-row items-center justify-between transition-all duration-300
+                  flex flex-col gap-[8px] csLg:gap-0 csLg:flex-row items-center justify-between transition-all duration-300
                   ${selected === index
                     ? "border border-[#1656A5] bg-white shadow-md"
                     : "border border-transparent bg-white"
@@ -117,8 +117,8 @@ const TreatmentsSection = () => {
                 `}
               >
                 {/* Left Side (Text) */}
-                <div className="flex flex-col  md:w-[350px]  md:pt-[100px] ">
-                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] md:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2">
+                <div className="flex flex-col  csLg:w-[350px]  csLg:pt-[100px] ">
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] csLg:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2">
                     {item.title}
                   </h3>
                   <p className="text-[#606060] text-[16px] leading-6">
@@ -142,13 +142,13 @@ const TreatmentsSection = () => {
                 {/* Arrow Button (Clickable Link) */}
                 <Link  href={item.link} passHref>
                   <div
-                  className={`absolute top-4 csLg:flex hidden left-4 w-8 md:w-14 md:h-14 h-8 flex items-center justify-center rounded-lg transition ${selected === index
+                  className={`absolute top-4 csLg:flex hidden left-4 w-8 csLg:w-14 csLg:h-14 h-8 flex items-center justify-center rounded-lg transition ${selected === index
                         ? "bg-[#1656A5]"
                         : "bg-gray-100 hover:bg-[#1656A5]"
                       }`}
                   >
                     <ArrowRight
-                      className={`w-4 h-4 md:w-5 md:h-5 ${selected === index
+                      className={`w-4 h-4 csLg:w-5 csLg:h-5 ${selected === index
                           ? "text-white"
                           : "text-gray-600 hover:text-white"
                         }`}
