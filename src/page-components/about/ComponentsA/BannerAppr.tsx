@@ -724,6 +724,8 @@ const BannerOfApproach: React.FC = () => {
   const [ctaActive, setCtaActive] = useState<Record<number, 'primary' | 'secondary'>>({});
   const [isOpen, setIsOpen] = useState(false);
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Update underline position on activeTab change
   useEffect(() => {
@@ -732,8 +734,6 @@ const BannerOfApproach: React.FC = () => {
       const parentRect = currentTab.parentElement!.getBoundingClientRect();
       const tabRect = currentTab.getBoundingClientRect();
       setUnderlineStyle({ left: tabRect.left - parentRect.left, width: tabRect.width });
-      // Auto-scroll tab into view
-      currentTab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     }
   }, [activeTab]);
 
@@ -747,38 +747,47 @@ const BannerOfApproach: React.FC = () => {
     const container = document.querySelector(".mobile-slide-scroll");
     if (!container) return;
 
+    let rafId: number | null = null;
+
     const handleScroll = () => {
-      const scrollLeft = container.scrollLeft;
-      const containerWidth = container.clientWidth;
+      // Throttle with requestAnimationFrame to prevent flickering
+      if (rafId) return;
       
-      // Calculate which slide is currently most visible
-      let newIndex = 0;
-      let maxVisibility = 0;
-      
-      mobileSlideRefs.current.forEach((slide, index) => {
-        if (slide) {
-          const slideRect = slide.getBoundingClientRect();
-          const containerRect = container.getBoundingClientRect();
-          
-          // Calculate how much of the slide is visible
-          const visibleLeft = Math.max(slideRect.left, containerRect.left);
-          const visibleRight = Math.min(slideRect.right, containerRect.right);
-          const visibleWidth = Math.max(0, visibleRight - visibleLeft);
-          
-          if (visibleWidth > maxVisibility) {
-            maxVisibility = visibleWidth;
-            newIndex = index;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        
+        // Calculate which slide is currently most visible
+        let newIndex = 0;
+        let maxVisibility = 0;
+        
+        mobileSlideRefs.current.forEach((slide, index) => {
+          if (slide) {
+            const slideRect = slide.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+            
+            // Calculate how much of the slide is visible
+            const visibleLeft = Math.max(slideRect.left, containerRect.left);
+            const visibleRight = Math.min(slideRect.right, containerRect.right);
+            const visibleWidth = Math.max(0, visibleRight - visibleLeft);
+            
+            if (visibleWidth > maxVisibility) {
+              maxVisibility = visibleWidth;
+              newIndex = index;
+            }
           }
+        });
+        
+        if (newIndex !== activeTab) {
+          setActiveTab(newIndex);
         }
       });
-      
-      if (newIndex !== activeTab) {
-        setActiveTab(newIndex);
-      }
     };
 
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [activeTab]);
 
   return (
@@ -821,7 +830,7 @@ const BannerOfApproach: React.FC = () => {
       {/* MOBILE SLIDES - FIXED */}
       {/* MOBILE SLIDES - FIXED */}
       {/* MOBILE SLIDES - FIXED */}
-      <div className="md:hidden py-5" style={{ position: "relative", zIndex: 10 }}>
+      <div className="md:hidden pb-5" style={{ position: "relative", zIndex: 10 }}>
         <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory mobile-slide-scroll px-5" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
           <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
           {slides.map((s, index) => (
@@ -850,8 +859,8 @@ const BannerOfApproach: React.FC = () => {
               </div>
               
               {/* Card with image background */}
-              <div className="relative rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10"
-                style={{ backgroundImage: `url(${s.image1})`, minHeight: '520px' }}
+              <div className="relative rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10 h-full"
+                style={{ backgroundImage: `url(${s.image1})`, minHeight: '700px', height: '580px' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-0" />
                 <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-green-400/20 to-transparent z-0" />
