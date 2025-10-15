@@ -13,7 +13,7 @@ interface ProcedureStepsProps {
 
 export default function ProcedureSteps({ tag, heading, steps }: ProcedureStepsProps) {
   return (
-    <section id="procedure" className="w-full bg-[#FAFAFA] px-4 py-4 csLg:px-[120px] csLg:py-[80px]   scroll-mt-[120px]">
+    <section id="procedure" className="w-full bg-[#FAFAFA] px-4 py-4 lg:px-[120px] lg:py-[80px]   scroll-mt-[120px]">
       {tag && (
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[8px]">
           {tag}
