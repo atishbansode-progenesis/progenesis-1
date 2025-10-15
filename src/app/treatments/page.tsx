@@ -315,7 +315,7 @@ const TreatmentsPage: React.FC = () => {
           className="
           text-[#2C2C2C] font-[Manrope] 
           text-[32px] leading-[40px] tracking-[-0.64px] font-normal
-          md:text-[48px] md:leading-[56px] md:tracking-normal
+          md:text-[40px] md:leading-[56px] md:tracking-normal
         "
         >
           Personalized Fertility Treatments for <br />
@@ -371,7 +371,7 @@ const TreatmentsPage: React.FC = () => {
           className="
             text-[#2C2C2C] font-[Manrope] font-normal mb-[12px] md:mb-[80px]
             text-[32px] leading-[40px] tracking-[-0.64px]   /* mobile */
-            md:text-[48px] md:leading-[56px] md:tracking-[-0.96px] /* desktop */
+            md:text-[40px] md:leading-[56px] md:tracking-[-0.96px] /* desktop */
           "
         >
           Cutting-Edge Techniques for Better Success
@@ -571,7 +571,7 @@ const TreatmentsPage: React.FC = () => {
     font-[Manrope]
     font-normal
     text-[32px]
-    md:text-[48px]
+    md:text-[40px]
     leading-[56px]
     tracking-normal
     max-w-[790px]
@@ -623,7 +623,7 @@ const TreatmentsPage: React.FC = () => {
         </span>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-[32px]  lg:mb-[80px]">
+        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[40px] md:leading-[56px] md:tracking-normal mb-[32px]  lg:mb-[80px]">
           Future Parenthood Made Possible
         </h2>
 
@@ -686,7 +686,7 @@ const TreatmentsPage: React.FC = () => {
         </span>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-[32px] lg:mb-[80px]">
+        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[40px] md:leading-[56px] md:tracking-normal mb-[32px] lg:mb-[80px]">
           Know, Understand & Take Action
         </h2>
 

@@ -20,7 +20,7 @@ export default function ProcedureSteps({ tag, heading, steps }: ProcedureStepsPr
         </span>
       )}
 
-      <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] mb-[32px] lg:mb-[80px]">
+      <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[40px] md:leading-[56px] mb-[32px] lg:mb-[80px]">
         {heading}
       </h2>
 

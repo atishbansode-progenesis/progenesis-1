@@ -21,7 +21,7 @@ const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, 
             {tag}
           </span>
           <h2
-  className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] mb-12 whitespace-pre-line"
+  className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[40px] md:leading-[56px] mb-12 whitespace-pre-line"
 >
   {heading}
 </h2>
