@@ -24,7 +24,7 @@ const OpenionLanding = () => {
       <div className='relative w-full'>
         {/* Left: Content block */}
         <div className=''>
-          <div className='flex flex-col gap-[20px] mt-10 csLg:mt-0'>
+          <div className='flex flex-col csLg:gap-[44px] gap-6 mt-10 csLg:mt-0'>
             {/* Breadcrumb-like line */}
             <div >
               <h2 className='font-manrope csLg:text-[18px] font-medium text-[12px] leading-[20px] csLg:leading-[26px] tracking-[-0.02em]'>
