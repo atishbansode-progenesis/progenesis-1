@@ -15,6 +15,7 @@ interface BlogMainProps {
 const BlogMain: React.FC<BlogMainProps> = ({ data, showGridFirst = false }) => {
   const hasBlogData = Boolean(data);
   const [isOpen, setIsOpen] = useState(false);
+  console.log(data);
 
   return (
     <div>

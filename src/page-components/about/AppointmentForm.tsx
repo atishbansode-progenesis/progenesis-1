@@ -328,8 +328,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const renderCheckbox = (field: any, idx: number) => (
     <label
       htmlFor={field.name}
-      key={idx}
-      className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] "
+      className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] cursor-pointer"
     >
       <input
         type="checkbox"
@@ -347,9 +346,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
             .map((part: string, i: number) => {
               if (part === "Privacy Policy" || part === "T&C") {
                 return (
-                  <a key={i} href="#">
-                    {part}
-                  </a>
+                    part
                 );
               }
               return part;
@@ -357,8 +354,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         </>
       ) : (
         <>
-          Clicking means you agree to our <a href="#">Privacy Policy</a> and{" "}
-          <a href="#">T&C.</a>
+          Clicking means you agree to our Privacy Policy and T&C
         </>
       )}
     </label>
@@ -381,7 +377,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         className={`flex flex-col gap-4 justify-between h-full`}
         onSubmit={handleSubmit}
       >
-        <ul className="flex flex-col gap-4 flex-1 max-h-[250px] lg:max-h-[400px] overflow-y-auto overflow-x-hidden">
+        <ul className="flex flex-col gap-4 flex-1 max-h-[250px] lg:max-h-[400px] overflow-y-auto overflow-x-hidden pb-4 lg:pb-0">
           {groupedFields.map((row, rowIdx) => (
             <li key={rowIdx} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {row.map((field, idx) => (
@@ -501,9 +497,9 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
 
       <div className="absolute inset-0 bg-black/40"></div>
 
-      <section className="relative p-4 lg:p-[120px] py-[80px] flex justify-center bg-transparent">
-        <div className="bg-white rounded-[10px] lg:rounded-[16px] p-4 grid grid-cols-1 lg:grid-cols-2 lg:h-[626px] max-w-[1200px]">
-          <div className="h-full flex flex-col gap-8 justify-between lg:p-8">
+      <section className="relative p-4 lg:p-[120px] py-[80px] flex flex-col lg:flex-row justify-center bg-transparent">
+        <div className="bg-transparent lg:bg-white rounded-[10px] lg:rounded-[16px] lg:p-4 grid grid-cols-1 lg:grid-cols-2 lg:h-[626px] max-w-[1200px]">
+          <div className="bg-white lg:bg-transparent p-4 lg:p-0 rounded-[16px] lg:rounded-[0px] h-full flex flex-col gap-8 justify-between lg:p-8">
             <div className="space-y-2 text-center">
               <div className="text-[12px] w-fit font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mx-auto">
                 Schedule a Consultation
@@ -524,7 +520,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
             )}
           </div>
 
-          <div className="flex-1 relative bg-[url('/images/appointment.jpg')] bg-cover bg-center rounded-[16px]"></div>
+          <div className="flex-1 relative bg-[url('/images/appointment.jpg')] bg-cover bg-center rounded-[16px] h-[443px] lg:h-auto mt-4 lg:mt-0"></div>
         </div>
       </section>
 
