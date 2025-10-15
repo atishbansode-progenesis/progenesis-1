@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 
 interface WhyChooseSectionProps {
   tag?: string;
@@ -72,12 +71,10 @@ export default function WhyChooseSection({
           </div>
 
           <div className=" h-full pl-[77px]">
-            <Image
+            <img
               key={activePoint}
               src={points[activePoint].image}
               alt={points[activePoint].title}
-              width={100}
-              height={100}
               className="w-full min-h-[660px] h-full object-cover overflow-hidden rounded-[14.5px]"
             />
           </div>
