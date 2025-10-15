@@ -42,9 +42,6 @@ const EmiCare: React.FC = () => {
 </div>
 
 
-      {/* Background Shapes - Similar to other sections */}
-      <div className="absolute top-0 right-0 w-[320px] md:w-[420px] lg:w-[522px] h-[280px] md:h-[360px] lg:h-[442px] rounded-full blur-[250px] bg-[#1656A5] opacity-10 -rotate-2" />
-      <div className="absolute bottom-0 left-0 w-[240px] md:w-[300px] lg:w-[348px] h-[200px] md:h-[240px] lg:h-[280px] rounded-full blur-[250px] bg-[#94BA3D] opacity-10 -rotate-2" />
     </section>
   );
 };

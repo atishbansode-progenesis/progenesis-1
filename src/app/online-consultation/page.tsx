@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import ConsultationForm from "../../components/Consultation/ConsultationForm";
 import Link from "next/link";
-import HeroSection from "../../components/HeroSection/herosection";
+import HeroSection from "@/components/HeroSection/herosection";
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 
 const OnlineConsultation: React.FC = () => {
@@ -43,6 +44,7 @@ const OnlineConsultation: React.FC = () => {
   return (
     <div className="w-full flex flex-col">
       <HeroSection
+      
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Online Consultation", href: "/online-consultation" },
@@ -52,15 +54,12 @@ const OnlineConsultation: React.FC = () => {
         buttonLink="/book-appointment"
         foregroundImage="/online-consultation/onlinebg.png"
         overlayImage="/online-consultation/heartbg.png"
+        contentClassName="justify-start "
       />
 
 
-
-
-
-
-      <div className="flex flex-wrap gap-4 pt-[50px] px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] pb-[80px] bg-[#fff]">
-        <button
+      {/* 1. TAB BUTTONS (Adjusted pb-[80px] to pb-[40px] for less gap) */}
+<div className="flex flex-wrap gap-4 pt-[20px] lg:pt-[40px] px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] lg:pb-[80px] pb-[40px] bg-[#fff]">        <button
           type="button"
           onClick={() => document.getElementById("journey-section")?.scrollIntoView({ behavior: "smooth" })}
           className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
@@ -70,7 +69,7 @@ const OnlineConsultation: React.FC = () => {
               : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
             }`}
         >
-          Start Your Journey Today
+          Start Your Journey Today 
         </button>
 
         <button
@@ -106,9 +105,8 @@ const OnlineConsultation: React.FC = () => {
 
 
 
-      {/* 2️⃣ Section: Talk to Specialists */}
-
-      <section id="journey-section" className="w-full flex flex-col lg:flex-row justify-between px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 gap-10 bg-[#FAFAFA]">
+      {/* 2️⃣ Section: Talk to Specialists (Adjusted py-4 to pt-0/py-0 on mobile and smaller padding on desktop) */}
+      <section id="journey-section" className="w-full flex flex-col lg:flex-row justify-between px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] pt-0 pb-4 md:py-8 l:py-12 2xl:py-16 gap-10 bg-[#FAFAFA]">
         {/* Left content */}
         <div className="max-w-lg flex flex-col justify-between">
           <div>
@@ -120,13 +118,13 @@ const OnlineConsultation: React.FC = () => {
               className="
                     text-[#2C2C2C] font-normal font-[Manrope] 
                     text-[32px] leading-[40px] tracking-[-0.64px] 
-                    md:text-[48px] md:leading-[56px] md:tracking-normal mb-[50px]
+                    md:text-[40px] md:leading-[56px] md:tracking-normal mb-[50px]
                     md:mb-[200px]
                   "
             >
               {title}
             </h2>
-            <div className="h-px bg-[#D4D4D4] md:hidden mb-[40px]"></div>
+            <div className="h-px bg-[#D4D4D4] md:hidden  mb-[30px]"></div>
 
           </div>
 
@@ -182,9 +180,10 @@ const OnlineConsultation: React.FC = () => {
 
         {/* 🔹 Left Heading */}
         <div className="flex-1 relative mt-[20px] md:mt-[80px] l:mt-[145px] z-10 text-left">
-          <h2 className="text-[#94BA3D] font-[Manrope] text-[32px] md:text-[46px] font-semibold leading-[40px] md:leading-[44.84px] tracking-[-0.92px] opacity-90">
-            Book your consultation <br /> with our experts today.
-          </h2>
+          <h2 className="text-[#94BA3D] font-[600] text-[32px] md:text-[46px] font-semibold leading-[40px] md:leading-[44.84px] tracking-[-0.92px] opacity-90">
+  Book your consultation <br /> with our experts today.
+</h2>
+
         </div>
 
         {/* 🔹 Center Image (desktop only) */}
@@ -234,7 +233,7 @@ const OnlineConsultation: React.FC = () => {
           className="
             text-[#2C2C2C] font-[Manrope] font-normal 
             text-[32px] leading-[40px] tracking-[-0.64px]   /* ✅ Mobile */
-            md:w-[650px] md:text-[48px] md:leading-[56px] md:tracking-[-0.96px]  /* ✅ Desktop */
+            md:w-[650px] md:text-[40px] md:leading-[56px] md:tracking-[-0.96px]  /* ✅ Desktop */
             mb-12
           "
         >
@@ -284,7 +283,7 @@ const OnlineConsultation: React.FC = () => {
                 className="
     text-[#2C2C2C] font-[Manrope] 
     text-[16px] leading-[24px] tracking-[-0.32px] font-semibold  /* ✅ Mobile */
-    md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal  /* ✅ Desktop */
+    md:text-[24px] lg:text-[24px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal  /* ✅ Desktop */
   "
               >
                 {card.title}
@@ -329,7 +328,7 @@ const OnlineConsultation: React.FC = () => {
 
         {/* 🔹 Content */}
         <div className="relative z-10 max-w-[700px] text-left md:text-left">
-          <span className="flex items-center gap-1 px-2 py-1 text-[#1656A5] font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px] mb-4">
+          <span className="flex items-center gap-1 px-2 py-1  text-[#1656A5] font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px] mb-4">
             Quick Fertility Score, Expert Advice
           </span>
 
@@ -338,25 +337,26 @@ const OnlineConsultation: React.FC = () => {
         text-[#2C2C2C] font-[Manrope] font-normal
         text-[28px] leading-[36px] tracking-[-0.56px] 
         md:text-[40px] md:leading-[48px] md:tracking-[-0.8px] 
-        lg:text-[48px] lg:leading-[56px] lg:tracking-[-0.96px] 
+        lg:text-[40px] lg:leading-[56px] lg:tracking-[-0.96px] 
         mb-6 md:mb-8
       "
           >
             Not Sure Where to Start? <br /> Take Our 2-Minute Fertility Quiz
           </h2>
 
-          <button
-            type="button"
-            className="px-6 py-3 rounded-[8px] bg-black text-[#F9F9F9] font-[Manrope] text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition hover:bg-gray-900"
-          >
-            Take a Quiz
-          </button>
+         <button
+  type="button"
+  className="px-6 py-3 rounded-[8px] bg-[#1656A5] text-[#F9F9F9] font-[Manrope] text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition"
+>
+  Take a Quiz
+</button>
+
         </div>
       </section>
 
 
 
-      <ConsultationForm />
+      <AppointmentForm/>
     </div>
   );
 };

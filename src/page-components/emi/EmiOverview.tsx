@@ -60,7 +60,7 @@ const EmiOverview = () => {
                   className="w-[22px] h-[22px] md:w-8 md:h-8 object-contain"
                 /></div>
                 {/* Text */}
-                <p className="text-[#2C2C2C] text-[16px] md:text-[32px] leading-[24px] md:leading-[40px] tracking-tight font-normal">
+                <p className="text-[#2C2C2C] text-[16px] lg:text-[24px] md:text-[24px] leading-[24px] md:leading-[40px] tracking-tight font-normal">
                   {it.text}
                 </p>
               </div>
