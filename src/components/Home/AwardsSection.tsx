@@ -79,8 +79,26 @@ export default function AwardsSection() {
     setMobileIndex((prev) => (prev - 1 + data.length) % data.length);
   };
 
+  const BackIconSvg=()=>{
+    return (
+      <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 7.37452L1.4173 7.01606M1.4173 7.01606L8.18318 1M1.4173 7.01606L7.31279 13.4768" stroke="#1656A5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    )
+  }
+
+  const NextIconSvg=()=>{
+    return (
+      <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 7.37452L13.5827 7.01606M13.5827 7.01606L6.81682 1M13.5827 7.01606L7.68721 13.4768" stroke="#1656A5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>        
+
+    )
+  }
+
   return (
-    <section className=" pt-[42px] md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] csLg:pb-[60px]">
+    <section className=" pt-[42px] md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] pb-[40px] md:pb-[60px]">
       <div className="mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[80px] items-start">
           {/* Left column */}
@@ -205,15 +223,17 @@ export default function AwardsSection() {
                 <div className="flex gap-3 mt-6">
                   <button
                     onClick={handlePrev}
-                    className="w-10 h-10 rounded-lg border-2 border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                    className="w-10 h-10 rounded-[12px] border border-[#1656A5] flex items-center justify-center "
                   >
-                    <ChevronLeft className="w-5 h-5 text-[#1656A5]" />
+                    {/* <ChevronLeft className="w-5 h-5 text-[#1656A5]" />
+                     */}
+                    <BackIconSvg/>
                   </button>
                   <button
                     onClick={handleNext}
-                    className="w-10 h-10 rounded-lg border-2 border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                    className="w-10 h-10 rounded-[12px] border border-[#1656A5] flex items-center justify-center "
                   >
-                    <ChevronRight className="w-5 h-5 text-[#1656A5]" />
+                    <NextIconSvg/>
                   </button>
                 </div>
               </article>

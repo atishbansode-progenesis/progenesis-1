@@ -72,9 +72,9 @@ export default function StoriesSection() {
           
             <Link
               href="/resources"
-              className=" md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition"
+              className=" "
             >
-              See all
+            <span className="md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition ">See all</span> 
             </Link>
          
         </div>
