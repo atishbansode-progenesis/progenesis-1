@@ -837,11 +837,11 @@ const BannerOfApproach: React.FC = () => {
             <div
               key={s.tab}
               ref={(el) => { mobileSlideRefs.current[index] = el; }}
-
-                className={`snap-start shrink-0`}
+              className={`snap-start shrink-0 flex flex-col`}
               style={{ 
                 width: 'calc(100vw - 80px)', 
-                minWidth: 'calc(100vw - 80px)' 
+                minWidth: 'calc(100vw - 80px)',
+                minHeight: '650px'
               }}
             >
               {/* Tab name outside card */}
@@ -860,8 +860,8 @@ const BannerOfApproach: React.FC = () => {
               </div>
               
               {/* Card with image background */}
-              <div className="relative rounded-2xl bg-[#000000B2] overflow-hidden bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10 h-full"
-                style={{ backgroundImage: `url(${s.image1})`, minHeight: '700px', height: '580px' }}
+              <div className="relative rounded-2xl bg-[#000000B2] overflow-y-auto bg-cover bg-center text-[#F9F9F9] shadow-lg border border-white/10 flex-1"
+                style={{ backgroundImage: `url(${s.image1})` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-0" />
                 <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-green-400/20 to-transparent z-0" />
