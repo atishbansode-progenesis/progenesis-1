@@ -45,10 +45,6 @@ const BlogContent: React.FC<BlogContentProps> = ({
             />
           )}
 
-          <div className="mt-8 text-sm text-gray-500">
-            {author && <p>Written by <span className="font-semibold text-gray-700">{author}</span></p>}
-            {created && <p>Published on {new Date(created).toLocaleDateString('en-IN')}</p>}
-          </div>
         </div>
       </div>
     </div>
