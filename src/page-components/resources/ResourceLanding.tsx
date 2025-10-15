@@ -5,7 +5,7 @@ const ResourceLanding = ({ recentBlog }: any) => {
   console.log(recentBlog);
   return (
     <div>
-      <section className="relative w-full section-spa">
+      <section>
         <div
           className="relative  w-full h-[728px] md:h-[560px] lg:h-[620px] xl:h-[680px] bg-center bg-cover"
           style={{ backgroundImage: `url(${recentBlog?.image})` }}
