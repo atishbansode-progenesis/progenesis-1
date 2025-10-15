@@ -12,7 +12,7 @@ export const FemaleInfertilitySection: React.FC<FemaleInfertilitySectionProps> =
   return (
     <section
       id="fertility-section"
-      className="bg-[#FFFFFF] pt-[50px] pb-[80px]"
+      className="bg-[#FFFFFF] pt-[20px] md:pt-[50px] pb-[20px] md:pb-[80px]"
     >
       <div className="px-4 md:px-[80px] lg:px-[120px]">
         <div className="w-full flex flex-col xl:flex-row justify-between gap-[8px]">
@@ -27,14 +27,14 @@ export const FemaleInfertilitySection: React.FC<FemaleInfertilitySectionProps> =
           <div className="w-full">
             <p className="text-[#2C2C2C] font-light text-[20px] md:text-[32px] leading-[28px] md:leading-[40px]">
               Female infertility can arise from various health conditions that affect ovulation, egg quality, or the reproductive system. Understanding these causes—
-              <span className="text-[#606060]">
+              <span className="">
                 such as PCOS, low AMH, fibroids, or repeated treatment failures—helps in taking timely steps toward the right medical care and treatment options.
               </span>
             </p>
           </div>
         </div>
 
-        <div className="grid gap-2 mt-[80px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center">
+        <div className="grid gap-2 mt-[20px] md:mt-[80px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center">
           {issues.map((issue) => (
             <InfertilityCard key={issue.id} issue={issue} basePath="female" />
           ))}

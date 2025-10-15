@@ -53,15 +53,16 @@ export default function StoriesSection() {
   const cardStyle = getCardStyle();
 
   return (
-    <section className=" pl-4 py- md:py-[80px]  md:px-[120px] bg-[#F1F7FC]">
-      <div className="mx-auto">
+
+    <section className="pb-[20px] md:pb-[60px] pt-[20px] md:pt-[80px] bg-[#FFFFFF] md:bg-[#F1F7FC]">
+      <div className="px-4 md:px-[80px] lg:px-[120px]">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-[26px] md:mb-[80px]">
           <div>
             <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
               Real Stories. Real Miracles.
             </button>
-            <h2 className="mt-2 text-[20px] md:text-4xl font-medium text-[#2C2C2C] leading-[28px] md:leading-[56px]">
+            <h2 className="mt-2 text-[20px] md:text-[32px] lg:text-[48px] font-medium text-[#2C2C2C] leading-[28px] md:leading-[56px]">
               Inspiring stories of strength & Victories
             </h2>
           </div>
