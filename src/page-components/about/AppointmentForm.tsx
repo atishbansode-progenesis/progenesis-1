@@ -498,7 +498,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
       <div className="absolute inset-0 bg-black/40"></div>
 
       <section className="relative p-4 lg:p-[120px] py-[80px] flex flex-col lg:flex-row justify-center bg-transparent">
-        <div className="bg-transparent lg:bg-white rounded-[10px] lg:rounded-[16px] lg:p-4 grid grid-cols-1 lg:grid-cols-2 lg:h-[626px] max-w-[1200px]">
+        <div className="bg-transparent lg:bg-white rounded-[10px] lg:rounded-[16px] lg:p-4 grid grid-cols-1 lg:grid-cols-2 min-h-[626px] max-w-[1200px]">
           <div className="bg-white lg:bg-transparent p-4 lg:p-0 rounded-[16px] lg:rounded-[0px] h-full flex flex-col gap-8 justify-between lg:p-8">
             <div className="space-y-2 text-center">
               <div className="text-[12px] w-fit font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mx-auto">

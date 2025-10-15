@@ -18,7 +18,7 @@ const DoctorBanner: React.FC = () => {
           <div className="w-full lg:max-w-[70%]"> {/* constrain width on large screens like design */}
             <h1
               className="text-[#2C2C2C] font-[Manrope] font-semibold tracking-[-0.02em] text-left
-                         text-[32px] csLg:text-[80px] leading-[40px] csLg:leading-[88px]
+                         text-[32px] csLg:text-[60px] leading-[40px] csLg:leading-[65px]
                          "
             >
               Because of Their Expertise &amp;  Care,

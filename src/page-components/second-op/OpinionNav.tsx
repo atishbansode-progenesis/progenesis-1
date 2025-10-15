@@ -21,7 +21,7 @@ const OpinionNav: React.FC = () => {
 
   return (
     <nav className="w-full bg-[#FFFFFF]">
-      <div className="section-spacing w-full px-6 md:px-8 lg:px-14 py-6">
+      <div className="p-4 lg:px-[120px] lg:py-[80px]">
         <div className="flex flex-wrap items-center gap-3 md:gap-6">
           {tabs.map((t) => {
             const isActive = t.id === active;

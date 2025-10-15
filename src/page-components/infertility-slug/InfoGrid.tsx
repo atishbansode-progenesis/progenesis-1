@@ -22,7 +22,7 @@ export default function InfoGrid({ tag, heading, items }: InfoGridProps) {
       </button>
       {/* Main Heading */}
       <h2
-        className="md:max-w-2lg text-[32px] md:text-[48px] font-normal md:leading-[56px] leading-[40px] tracking-[-0.96px] text-[#2C2C2C] mb-[40px] md:mb-[80px]"
+        className="md:max-w-2lg text-[32px] md:text-[40px] font-normal md:leading-[50px] leading-[40px] tracking-[-0.96px] text-[#2C2C2C] mb-[40px] md:mb-[80px]"
         style={{ fontFamily: "Manrope" }}
         dangerouslySetInnerHTML={{ __html: heading }}
       />

@@ -29,7 +29,7 @@ const DoctorsPart = () => {
         </div>
 
         {/* Paragraph text */}
-        <div className="absolute top-[180px] w-full px-6 text-center lg:text-left lg:w-auto lg:bottom-10 lg:left-[90px] lg:right-auto z-10">
+        <div className="absolute  w-full px-6 text-center lg:text-left lg:w-auto lg:bottom-10 lg:left-[90px] top-[180px] lg:top-auto left-0 lg:right-auto z-10">
           <p className="text-[14px] md:text-[16px] text-[#3B3B3B] leading-[1.4]">
             <span className="block">Connect with the specialists who</span>
             <span className="block">combine world-class expertise with</span>

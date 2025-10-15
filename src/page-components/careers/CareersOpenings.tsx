@@ -37,7 +37,7 @@ const CareersOpenings = () => {
         <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
           Current Openings
         </span>
-        <h2 className="mt-4 font-manrope font-normal lg:text-[56px] lg:leading-[56px] leading-[40px] text-[32px] leading-tight text-[#2C2C2C] tracking-[-0.02em]">
+        <h2 className="mt-4 font-manrope font-normal lg:text-[60px] lg:leading-[70px] leading-[40px] text-[32px]  text-[#2C2C2C] tracking-[-0.02em]">
           Find the right role and begin your journey at Progenesis.
         </h2>
       </div>
@@ -48,7 +48,7 @@ const CareersOpenings = () => {
             <div
               className="flex lg:text-[32px]   text-[16px] items-start justify-between gap-6 py-4 md:py-8 carr-opp-padd group font-manrope font-medium"
             >
-              <div>
+              <div >
                 <h3 className="font-manrope mt-[20px] lg:mt-[5px] lg:text-[32px] text-[16px] md:text-[28px] font-medium text-[#2C2C2C]">
                   {job.title}
                 </h3>
@@ -68,7 +68,7 @@ const CareersOpenings = () => {
                 aria-label="Open role"
                 onClick={() => handleClick(idx)}
                 className={
-    "group h-[40px] w-[56px] flex items-center justify-center lg:rounded-[50px] rounded-full border border-black " +
+    "group h-[40px] w-[56px] flex items-center justify-center lg:rounded-[50px] rounded-full border border-black hover:border-[#1656A5] " +
                   (job.primary
                     ? "bg-white text-gray-600 border border-[#1656A51A] hover:bg-[#1656A5] hover:text-[#FFFFFF]"
                     : "bg-white text-gray-600 border border-[#1656A51A] hover:bg-[#1656A5] hover:text-white")

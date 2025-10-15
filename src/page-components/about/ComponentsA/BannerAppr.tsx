@@ -790,6 +790,54 @@ const BannerOfApproach: React.FC = () => {
     };
   }, [activeTab]);
 
+  // ✅ Detect scroll on desktop slides and sync active tab
+  useEffect(() => {
+    const container = document.querySelector(".desktop-slide-scroll");
+    if (!container) return;
+
+    let rafId: number | null = null;
+
+    const handleScroll = () => {
+      // Throttle with requestAnimationFrame to prevent flickering
+      if (rafId) return;
+      
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        
+        // Calculate which slide is currently most visible
+        let newIndex = 0;
+        let maxVisibility = 0;
+        
+        desktopSlideRefs.current.forEach((slide, index) => {
+          if (slide) {
+            const slideRect = slide.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+            
+            // Calculate how much of the slide is visible
+            const visibleLeft = Math.max(slideRect.left, containerRect.left);
+            const visibleRight = Math.min(slideRect.right, containerRect.right);
+            const visibleWidth = Math.max(0, visibleRight - visibleLeft);
+            
+            if (visibleWidth > maxVisibility) {
+              maxVisibility = visibleWidth;
+              newIndex = index;
+            }
+          }
+        });
+        
+        if (newIndex !== activeTab) {
+          setActiveTab(newIndex);
+        }
+      });
+    };
+
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [activeTab]);
+
   return (
     <div className="w-full bg-[#FAFAFA] pl-4 lg:pl-[120px] py-4 md:py-22" style={{ overflow: 'visible', margin: 0 }}>
       {/* Heading */}
@@ -911,7 +959,7 @@ const BannerOfApproach: React.FC = () => {
 
       {/* DESKTOP SLIDES */}
       <div className="hidden md:block mt-10" style={{ position: "relative", width: "100%", zIndex: 10 }}>
-        <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+        <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory desktop-slide-scroll" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
           <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
           {slides.map((s, index) => (
             <div

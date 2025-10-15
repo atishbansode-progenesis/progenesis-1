@@ -3,3 +3,50 @@
   display: none;
   -webkit-appearance: none;
 }
+
+/* Match placeholder/text color for all inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  color: #2C2C2C; /* same text color */
+}
+
+/* Match placeholder styles */
+input::placeholder,
+select:invalid {
+  color: #9CA3AF; /* gray-400 */
+  opacity: 1; /* ensures visibility on iOS Safari */
+}
+
+/* Ensure date input looks like placeholder when empty */
+input[type="date"]:not(:focus):invalid {
+  color: #9CA3AF;
+}
+
+/* Make placeholder gray only when empty */
+input[type="date"]:not(:focus):invalid::-webkit-datetime-edit {
+  color: #9CA3AF; /* gray for placeholder */
+}
+
+/* Show normal color when date is filled */
+input[type="date"]:valid::-webkit-datetime-edit,
+input[type="date"]:focus::-webkit-datetime-edit {
+  color: #2C2C2C; /* normal text color */
+}
+
+input[type="date"]:focus::-webkit-datetime-edit {
+  color: #2C2C2C;
+}
+
+/* Optional: make select placeholder color consistent */
+select:required:invalid {
+  color: #9CA3AF;
+}
+option[value=""] {
+  display: none;
+}
+option {
+  color: #2C2C2C;
+}

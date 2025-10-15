@@ -6,6 +6,7 @@ import "../about/AboutMain.css";
 import ParenthoodBannerBlog from "./ParenthoodBannerBlog";
 import { formatDate } from "@/utils/format-date";
 import AppointmentForm from "../about/AppointmentForm";
+import FaQ from "../about/FaQ";
 
 interface BlogMainProps {
   data?: any;
@@ -14,7 +15,7 @@ interface BlogMainProps {
 const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
   return (
     <div>
-      <div className="p-4 bg-white lg:p-[120px] text-center space-y-2 font-manrope font-normal">
+      <div className="p-4 bg-white lg:px-[120px] lg:py-[80px] text-center space-y-2 font-manrope font-normal">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[80px]">
           <BlogLanding
             title={data.title}
@@ -56,10 +57,12 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
 
           <BlogContent data={data} />
 
-          <p className="text-[14px] md:text-[22px] leading-[24px] text-[#606060] mb-4">~ Verified by Progenesis Fertility Center's Expert Doctors</p>
+          <p className="text-[14px] md:text-[22px] leading-[24px] text-[#606060] mb-4">
+            ~ Verified by Progenesis Fertility Center's Expert Doctors
+          </p>
         </div>
       </div>
-
+      <FaQ />
       <ParenthoodBannerBlog />
       <AppointmentForm />
     </div>
