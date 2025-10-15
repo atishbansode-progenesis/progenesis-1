@@ -9,7 +9,7 @@ const VisionMission: React.FC = () => {
         <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px] mb-2">Our Vision & Mission</span>
 
         {/* Section Title */}
-        <h2 className="font-[Manrope] text-[32px] leading-[40px] tracking-[-0.02em] font-normal text-[#2C2C2C] mb-6 lg:mb-12 csLg:text-[48px] csLg:leading-[56px]">
+        <h2 className="font-[Manrope] text-[32px] leading-[40px] tracking-[-0.02em] font-normal text-[#2C2C2C] mb-6 lg:mb-12 csLg:text-[40px] csLg:leading-[56px]">
           Guided by Purpose. <br /> Driven by Compassion.
         </h2>
       </div>
@@ -17,10 +17,10 @@ const VisionMission: React.FC = () => {
       {/* Our Vision Row */}
       <div className="border-t border-gray-200 pt-6 pb-10 md:flex ">
         <div className="md:w-1/3 md:mb-0">
-          <h3 className="text-[32px] leading-[40px] tracking-[-0.02em] font-normal text-[#2C2C2C] mb-4 csLg:leading-14 csLg:text-[48px]">Our Vision</h3>
+          <h3 className="text-[32px] leading-[40px] tracking-[-0.02em] font-normal text-[#2C2C2C] mb-4 csLg:leading-14 csLg:text-[40px]">Our Vision</h3>
         </div>
         <div className="md:w-2/3">
-          <p className="font-[Manrope] text-[16px] leading-[24px] tracking-[-0.02em] font-normal csLg:text-[32px] csLg:leading-[40px] text-[#2C2C2C]">
+          <p className="font-[Manrope] text-[16px] leading-[24px] tracking-[-0.02em] font-normal csLg:text-[24px] csLg:leading-[40px] text-[#2C2C2C]">
             At Progenesis IVF, our vision is to become the benchmark for reproductive healthcare — a trusted name where hope meets expertise. We are committed to walking hand-in-hand with every couple on their path to parenthood, blending cutting-edge fertility science with deep empathy and ethical care.
           </p>
         </div>
@@ -32,10 +32,10 @@ const VisionMission: React.FC = () => {
       {/* Our Mission Row */}
       <div className="pb-10 pt-6 md:flex ">
         <div className="md:w-1/3 md:mb-0">
-          <h3 className="text-[32px] leading-[40px] tracking-[-0.02em] font-normal mb-4 text-[#2C2C2C] csLg:text-[48px] ">Our Mission</h3>
+          <h3 className="text-[32px] leading-[40px] tracking-[-0.02em] font-normal mb-4 text-[#2C2C2C] csLg:text-[40px] ">Our Mission</h3>
         </div>
         <div className="md:w-2/3">
-          <p className="font-[Manrope] text-[16px] leading-[24px] tracking-[-0.02em] font-normal csLg:text-[32px] csLg:leading-[40px] text-[#2C2C2C]">
+          <p className="font-[Manrope] text-[16px] leading-[24px] tracking-[-0.02em] font-normal csLg:text-[24px] csLg:leading-[40px] text-[#2C2C2C]">
             Our mission is to provide comprehensive, personalized fertility solutions in a nurturing environment that values trust, transparency, and dignity. We strive to deliver the highest standards in reproductive medicine, guided by compassion, clinical excellence, and a relentless dedication to making parenthood possible, one family at a time.
           </p>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const JoinUs: React.FC = () => {
   return (
-<div className="flex bg-[url('/images/gradient-mob-bg.png')] bg-cover bg-center flex-col pt-[40px] csLg:flex-row justify-between csLg:justify-end w-full relative csLg:min-h-[500px] min-h-[515px]   ">
+<div className="flex bg-[url('/images/gradient-mob-bg.png')] csLg:bg-[url('/images/gradient-banner.png')] bg-cover bg-center flex-col pt-[40px] csLg:flex-row justify-between csLg:justify-end w-full relative csLg:min-h-[500px] min-h-[515px]   ">
 
   {/* Doctor Image */}
     <img
@@ -13,7 +13,7 @@ const JoinUs: React.FC = () => {
 
   {/* Content */}
   <div className="csLg:max-w-[70%] flex flex-col justify-center items-center csLg:items-start text-center csLg:text-left text-white gap-6 ">
-    <h2 className="text-[28px] md:text-[40px] lg:text-[48px] text-[#94BA3D] font-normal leading-tight">
+    <h2 className="text-[28px] md:text-[40px] lg:text-[40px] text-[#94BA3D] font-normal leading-tight">
       We’re looking for passionate people to help create life’s most precious journeys.
     </h2>
 

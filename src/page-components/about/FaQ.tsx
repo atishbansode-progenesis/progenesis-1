@@ -120,9 +120,9 @@ const FaQ: React.FC = () => {
             FAQ's
           </span>
           <div className="pb-5">  
-            <h2 className="lg:text-[48px] text-[32px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
+            <h2 className="lg:text-[40px] text-[32px] md:text-[40px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
               Quick answers to  the
-              
+              <br/>
               <span className="text-[#94BA3D]"> most common</span>
               <br />
               <span className="text-[#94BA3D]">fertility-related</span>

@@ -16,6 +16,9 @@ const AboutMainBanner = () => {
           foregroundImage='/images/about-for.png'
           overlayImage='/images/abtt-bg.png'
           title="Your journey to <br /> parenthood begins here."
+          buttonLink="/contact-us"
+          buttonText="Book an Appointment"
+          contentClassName='justify-start lg:justify-end'
           />
     )
 }
