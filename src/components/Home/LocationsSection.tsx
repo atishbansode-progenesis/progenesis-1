@@ -98,13 +98,13 @@ const locations: City[] = [
     city: "Ahilyanagar",
     address:
       "Shop No 2, First Floor, Diansh Plaza, opp. Mauli Sankul Road, Savedi, Ahilya Nagar, Maharashtra",
-    image: "/LocationsSection/Ahilyanagar.jpg",
+    image: "/images/Ahilyanagar.jpg",
   },
   {
     city: "Amravati",
     address:
       "3rd floor, Above Raghubir Food Zone, Sharda Vihar, Badnera Road, Amravati, Maharashtra 444605",
-    image: "/LocationsSection/Amravati.jpg",
+    image: "/images/Amravati.jpg ",
   },
   {
     city: "Kolhapur",

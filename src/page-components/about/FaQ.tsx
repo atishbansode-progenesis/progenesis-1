@@ -111,7 +111,7 @@ const FaQ: React.FC = () => {
   return (
     <section
       id="faqs"
-      className="w-full bg-[#FAFAFA] px-4 csLg:px-[120px] py-10 md:py-14 lg:py-20 font-[Manrope]"
+      className="w-full bg-[#FAFAFA] p-4 lg:px-[120px] lg:py-[80px]"
     >
       <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] lg:grid-cols-[500px_1fr] gap-10 md:gap-[80px] lg:gap-[120px] items-start">
         {/* Left intro */}

@@ -15,7 +15,7 @@ const ResourceStories = () => {
   const handleSeeAll = () => setShowAll(true)
 
   return (
-    <section className="bg-white p-4 lg:p-[120px]">
+    <section className="bg-white p-4 lg:px-[120px] lg:py-[80px]">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between pb-4">
         <div>
           <span className='w-fit rounded-[8px] bg-[#1656A50D] py-1 px-2 font-medium text-[12px] leading-[20px] text-[#1656A5]'>

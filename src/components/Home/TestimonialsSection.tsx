@@ -40,24 +40,24 @@ const TestimonialsSection = () => {
     <section className="w-full bg-white overflow-hidden">
       <div className="flex flex-col md:flex-row h-auto md:h-[700px]">
         {/* LEFT PANEL */}
-        <div className="bg-[#1656A5] text-white py-10 flex flex-col justify-between md:w-[528px] px-4 csLg:px-[120px]  pt-[80px] md:pt-[128px]">
+        <div className="bg-[#1656A5] text-white py-10 flex flex-col justify-between md:[528px] px-4 lg:px-[70px]  pt-[80px] md:pt-[128px]">
           <div className="md:text-left text-center">
             {/* Google Rating */}
             <div className="flex flex-row md:flex-col md:items-start items-center justify-center md:justify-start space-x-2 mb-2">
-              <div className="flex md:flex-row items-center md:items-start justify-center md:justify-start space-x-2 md:space-x-0">
+              <div className="flex md:flex-row items-center  justify-center md:justify-start space-x-2 md:space-x-0">
 
                 {/* Mobile image */}
                 <img
                   src="/images/google.png"
                   alt="Google"
-                  className="w-[65px] h-[34px] rounded-[5px] block md:hidden"
+                  className="w-[65px] h-[34px] rounded-[5px] block csLg:hidden"
                 />
 
                 {/* Desktop image */}
                 <img
-                  src="/TestimonialsSection/google.png"
+                  src="/images/g2.svg"
                   alt="Google"
-                  className="w-10 h-10 rounded-[5px] hidden md:block mr-2"
+                  className="mr-[4px] hidden csLg:block"
                 />
 
                 {/* Mobile star + rating inline */}
@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
 
 
             {/* Heading */}
-        <h2 className="text-[32px] md:text-[48px] font-[Manrope] md:leading-[56px] leading-[40px] tracking-tight font-normal text-[#F9F9F9] text-center md:text-left">
+        <h2 className="text-[32px] md:text-[40px] font-[Manrope] md:leading-[56px] leading-[40px] tracking-tight font-normal text-[#F9F9F9] text-center md:text-left">
               What our patient's are saying
             </h2>
 

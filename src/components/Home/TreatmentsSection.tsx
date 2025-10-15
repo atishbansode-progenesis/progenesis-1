@@ -3,11 +3,6 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Letter = ({ char }) => (
-  <span className="text-sm xl:text-[24px] xl:leading-[40px] leading-8 tracking-[-0.32px] xl:tracking-[-0.64px] font-[Manrope] font-normal text-[#2C2C2C]">
-    {char}
-  </span>
-);
 
 const TreatmentsSection = () => {
   const text =
@@ -67,11 +62,11 @@ title2: "Fertilization (IVF)",
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-blue-50 xl:py-[80px] py-4">
+    <section className="w-full bg-blue-50 xl:py-[80px] py-4 px-4 csLg:px-[90px]">
       {/* Header Section (Static) */}
-      <div className="xl:px-[120px] px-4 mb-6 xl:mb-[76px]">
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-          <div className="w-full max-w-full sm:max-w-xl xl:max-w-xl flex flex-col gap-[24px] xl:gap-[40px] ">
+      <div className=" mb-6 xl:mb-[76px]  ">
+    <div className="grid grid-cols-1  csLg:grid-cols-2 items-start gap-8 justify-between ">
+          <div className="w-full  flex flex-col gap-[24px] xl:gap-[40px] ">
             <div className="flex flex-col gap-2">
 
               <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 w-fit py-1 rounded-full ">
@@ -90,18 +85,16 @@ title2: "Fertilization (IVF)",
                           </div>
 
           </div>
-          <div className="flex-1">
-            {text.split("").map((char, i) => (
-              <Letter key={i} char={char} />
-            ))}
+          <div className="">
+         <p className="text-[24px] leading-[40px] font-[Manrope] font-normal text-[#2C2C2C]">{text}</p>
           </div>
         </div>
       </div>
 
       {/* Treatments Cards (Normal Flow, No Overlap) */}
-      <div className="px-4 xl:px-[120px] xl:mb-[76px] flex flex-col gap-6">
+      <div className=" xl:mb-[76px] flex flex-col gap-6">
         {/* First 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[35%_35%_30%] gap-6 w-full justify-start">
+        <div className="grid  grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-[35%_35%_30%]  w-full justify-start">
           {treatments.slice(0, 3).map((item, index) => {
             const widthClass = index === 0 
               ? " w-full sm:w-auto md:w-auto min-w-[280px]"
@@ -176,7 +169,7 @@ title2: "Fertilization (IVF)",
         </div>
 
         {/* Last 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[30%_35%_35%] gap-6 w-full justify-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[30%_35%_35%] gap-2 w-full justify-start">
           {treatments.slice(3, 6).map((item, index) => {
             const actualIndex = index + 3;
             const widthClass = "w-full sm:w-auto md:w-auto min-w-[280px]";
