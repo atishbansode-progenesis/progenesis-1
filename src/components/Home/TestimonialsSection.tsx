@@ -50,14 +50,14 @@ const TestimonialsSection = () => {
                 <img
                   src="/images/google.png"
                   alt="Google"
-                  className="w-[65px] h-[34px] rounded-[5px] block md:hidden"
+                  className="w-[65px] h-[34px] rounded-[5px] block csLg:hidden"
                 />
 
                 {/* Desktop image */}
                 <img
                   src="/images/g2.svg"
                   alt="Google"
-                  className="mr-[4px]"
+                  className="mr-[4px] hidden csLg:block"
                 />
 
                 {/* Mobile star + rating inline */}
