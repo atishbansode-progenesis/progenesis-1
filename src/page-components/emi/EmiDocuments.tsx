@@ -34,14 +34,14 @@ const EmiDocuments = () => {
           {/* Head */}
           <div className="grid grid-cols-4 text-[#2C2C2C] p-4">
             <div className="" />
-            <div className=" text-center text-[22px]">Adhar Card</div>
-            <div className=" text-center text-[22px]">Pan Card</div>
-            <div className=" text-center text-[22px]">IT Return Salary Slip</div>
+            <div className=" text-center lg:text-[32px] leading-[40px] tracking-tight ">Adhar Card</div>
+            <div className=" text-center lg:text-[32px] leading-[40px] tracking-tight">Pan Card</div>
+            <div className=" text-center lg:text-[32px] leading-[40px] tracking-tight">IT Return Salary Slip</div>
           </div>
 
           {/* Row 1 */}
           <div className="grid grid-cols-4 items-center bg-[#F5F9FF] p-4">
-            <div className=" text-[20px] text-[#2C2C2C]">Address Proof</div>
+            <div className=" text-[32px] text-[#2C2C2C] leading-[40px] tracking-tight">Address Proof</div>
             <div className=" flex justify-center"><CheckIcon /></div>
             <div className=" flex justify-center"><CheckIcon /></div>
             <div className=" flex justify-center"><Dash /></div>
@@ -49,7 +49,7 @@ const EmiDocuments = () => {
 
           {/* Row 2 */}
           <div className="grid grid-cols-4 items-center bg-[#FFFFFF] p-4">
-            <div className=" text-[20px] text-[#2C2C2C]">Identity Proof</div>
+            <div className=" text-[32px] text-[#2C2C2C] leading-[40px] tracking-tight">Identity Proof</div>
             <div className=" flex justify-center"><CheckIcon /></div>
             <div className=" flex justify-center"><CheckIcon /></div>
             <div className=" flex justify-center"><Dash /></div>
@@ -57,12 +57,12 @@ const EmiDocuments = () => {
 
           {/* Row 3 */}
           <div className="grid grid-cols-4 items-center bg-[#F5F9FF] p-4">
-            <div className=" text-[20px] text-[#2C2C2C]">Income Proof</div>
+            <div className=" text-[32px] text-[#2C2C2C] leading-[40px] tracking-tight">Income Proof</div>
             <div className=" flex justify-center"><Dash /></div>
             <div className=" flex justify-center"><Dash /></div>
             <div className=" flex justify-center"><CheckIcon /></div>
           </div>
-          <div className=" hidden md:block bg-[#FFFFFF] text-[18px] text-[#2C2C2C] p-4">
+          <div className=" hidden md:block bg-[#FFFFFF] text-[32px] text-[#2C2C2C] leading-[40px] tracking-tight p-4">
           Bank Statement of last 6 month from date of application
           </div>
         </div>
@@ -77,24 +77,24 @@ const EmiDocuments = () => {
             <h3 className="text-[#2C2C2C] font-semibold mb-3 pb-2">Address Proof</h3>
             <div className="flex items-center gap-3 mb-2 text-[#2C2C2C] pb-2">
               <CheckIcon />
-              <span>Aadhar Card</span>
+              <span className="text-[16px] leading-[24px] tracking-tight">Aadhar Card</span>
             </div>
             <div className="flex items-center gap-3 text-[#2C2C2C] pb-2">
               <CheckIcon />
-              <span>Pan Card</ span>
+              <span className="text-[16px] leading-[24px] tracking-tight">Pan Card</ span>
             </div>
           </div>
 
           {/* Identity Proof */}
           <div className="bg-[#FFFFFF] p-2">
-            <h3 className="text-[#2C2C2C] font-semibold mb-3 pb-2">Identity Proof</h3>
+            <h3 className="text-[#2C2C2C] text-[16px] font-normal mb-3 pb-2">Identity Proof</h3>
             <div className="flex items-center gap-3 mb-2 text-[#2C2C2C] pb-2">
               <CheckIcon />
-              <span>Aadhar Card</span>
+              <span className="text-[16px] leading-[24px] tracking-tight">Aadhar Card</span>
             </div>
             <div className="flex items-center gap-3 text-[#2C2C2C] pb-2">
               <CheckIcon />
-              <span>Pan Card</span>
+              <span className="text-[16px] leading-[24px] tracking-tight">Pan Card</span>
             </div>
           </div>
 

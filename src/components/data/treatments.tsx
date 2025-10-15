@@ -18,7 +18,7 @@ export const imsiTreatmentData = {
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Treatments", href: "/treatments" },
-    { label: "Advanced", href: "/treatments/advanced" },
+    { label: "Advanced Treatments", href: "/treatments/advanced" },
     { label: "IMSI", href: "/treatments/advanced/imsi" },
   ],
   basics_heading: "Precision sperm selection for healthier embryos and pregnancies",
@@ -132,6 +132,7 @@ export const imsiTreatmentData = {
       image: "/treatments/image4.png",
     },
   ],
+  bottom_footer: "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success.",
 };
 
 // For backward compatibility and list views
@@ -187,7 +188,7 @@ export const picsiTreatmentData = {
   breadcrumbs: [
     { "label": "Home", "href": "/", id: "home" },
     { "label": "Treatments", "href": "/treatments", id: "treatments" },
-    { "label": "Advanced", "href": "/treatments/advanced", id: "advanced" },
+    { "label": "Advanced Treatments", "href": "/treatments/advanced", id: "advanced" },
     { "label": "PICSI", "href": "/treatments/advanced/picsi", id: "picsi" }
   ],
   basics_heading: "Precision Sperm Selection for Embryo Health",
@@ -286,7 +287,8 @@ export const picsiTreatmentData = {
       description: "Boosts IVF outcomes with targeted sperm selection for better pregnancy chances.",
       image: "/treatments/picsi/picsibg_c4.png"
     }
-  ]
+  ],
+  bottom_footer :"Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success."
 }
 
 
@@ -302,7 +304,7 @@ export const lahTreatmentData = {
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Treatments", href: "/treatments" },
-    { label: "Advanced", href: "/treatments/advanced" },
+    { label: "Advanced Treatments", href: "/treatments/advanced" },
     { label: "LAH", href: "/treatments/advanced/lah" }
   ],
   basics_heading: "Why LAH Can Make a Difference in Your Journey",
@@ -398,6 +400,7 @@ export const lahTreatmentData = {
       image: "/treatments/lah/lah_t3.png",
     },
   ],
+  bottom_footer : "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success."
 }
 
 
@@ -414,7 +417,7 @@ export const blastocystTransferData = {
   breadcrumbs: [
     { "label": "Home", "href": "/", id: "home" },
     { "label": "Treatments", "href": "/treatments", id: "treatments" },
-    { "label": "Advanced", "href": "/treatments/advanced", id: "advanced" },
+    { "label": "Advanced Treatments", "href": "/treatments/advanced", id: "advanced" },
     { "label": "Blastocyst Transfer", "href": "/treatments/advanced/blastocyst-transfer", id: "blastocyst-transfer" }
   ],
   basics_heading: "Why Blastocyst Transfer Can Make a Difference in Your IVF Journey",
@@ -508,6 +511,7 @@ export const blastocystTransferData = {
   },
   gradient_data: "90%",
   gradient_text: "Couples who opted for blastocyst transfer saw embryos cultured for 5 days, developed into a blastocyst with improved implantation rates",
+  bottom_footer : "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success."
 }
 
 // Sequential Embryo Transfer Data
@@ -616,6 +620,7 @@ export const sequentialEmbryoTransferData = {
   },
   gradient_data: "80%",
   gradient_text: "Patients who undergo higher embryo implantation rates through dual stage transfer, bringing advanced embryo selection",
+  bottom_footer : "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success."
 }
 
 

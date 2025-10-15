@@ -14,6 +14,7 @@ import StoriesSection from "@/components/Home/StoriesSection";
 import TestimonialsSection from "@/components/Home/TestimonialsSection";
 import TreatmentsSection from "@/components/Home/TreatmentsSection";
 import VideoSection from "@/components/Home/VideoSection";
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 import FaQ from "@/page-components/about/FaQ";
 
 export default function Home() {
@@ -31,7 +32,7 @@ export default function Home() {
       <FaqSection />
       <AwardsSection />
       <VideoSection />
-      <ConsultationForm />
+      <AppointmentForm />
       <GradientBanner text="Striving to set a new standard for reproductive health care services."/>
     </>
   );

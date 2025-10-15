@@ -13,7 +13,8 @@ import ProcedureStepsNoImage from "./ProcedureNoImageSteps";
 import GeneticTestingCards from "./GeneticTestingCards";
 import { OvulationCards } from "./OvulationCards";
 import { PathSection } from "./PathSection";
-import ParenthoodBanner from "@/page-components/treatment-slug/ParenthoodBanner";
+import AppointmentForm from "../about/AppointmentForm";
+import ParenthoodBanner from "./ParenthoodBanner";
 
 export default function MainTreatment({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("basics");
@@ -44,7 +45,7 @@ export default function MainTreatment({ data }: { data: any }) {
           { label: "Home", href: "/" },
           { label: "Treatments", href: "/treatments" },
         ]}
-        title={data?.hero_title || "Hope, Science & Parenthood Begin Here"}
+        title={data?.hero_title || "Hope, Science & <br/> Parenthood Begin Here"}
         buttonText={data?.hero_button_text || "Book Your Appointment"}
         buttonLink={data?.hero_button_link || "/book-appointment"}
         overlayImage={data?.hero_image || "/default-hero-bg.png"}
@@ -80,7 +81,7 @@ export default function MainTreatment({ data }: { data: any }) {
           heading={data.basics_heading || "Understanding the Treatment"}
           items={data.basics}
         />
-      )}
+      )} 
 
       {/* Section 4: Why Choose */}
       {data.points && data.points.length > 0 && (
@@ -126,11 +127,10 @@ export default function MainTreatment({ data }: { data: any }) {
       <section id="stories" className="scroll-mt-[120px]">
         <StoriesSection />
       </section>
-
       <ParenthoodBanner/>
 
       {/* Section 9: Consultation Form */}
-      <ConsultationForm />
+      <AppointmentForm />
     </div>
   );
 }
