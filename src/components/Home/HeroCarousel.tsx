@@ -189,6 +189,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -196,6 +197,7 @@ const HeroCarousel = () => {
   const [progress, setProgress] = useState(0);
   const [activeTab, setActiveTab] = useState("Home");
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   const slides = [
     {
@@ -213,7 +215,7 @@ const HeroCarousel = () => {
       title: "Your parenthood journey starts with us",
       buttons: [
         { label: "Get Started", href: "/get-started" },
-        { label: "Meet Our Experts", href: "/experts" },
+        { label: "Meet Our Experts", href: "/doctors" },
       ],
     },
     {
@@ -340,19 +342,37 @@ const HeroCarousel = () => {
         </p>
 
         <div className="flex flex-row gap-3 mt-6 md:mt-12">
-          {slides[currentSlide].buttons.map((btn, i) => (
-            <Link key={i} href={btn.href}>
-              <button
-                className={`cursor-pointer px-[12px] md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] font-[Manrope] text-[12px] md:text-sm font-medium leading-[20px] sm:leading-6 tracking-[-0.24px] sm:tracking-[-0.28px] transition-all duration-300 ease-in-out ${
-                  i === 0
-                    ? "bg-white text-[#2C2C2C] backdrop-blur-[7.5px]"
-                    : "border border-white text-white backdrop-blur-[7.5px]"
-                }`}
-              >
-                {btn.label}
-              </button>
-            </Link>
-          ))}
+          {slides[currentSlide].buttons.map((btn, i) => {
+            if (btn.href === "/appointment") {
+              return (
+                <button
+                  key={i}
+                  onClick={() => setIsOpen(true)}
+                  className={`cursor-pointer px-[12px] md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] font-[Manrope] text-[12px] md:text-sm font-medium leading-[20px] sm:leading-6 tracking-[-0.24px] sm:tracking-[-0.28px] transition-all duration-300 ease-in-out ${
+                    i === 0
+                      ? "bg-white text-[#2C2C2C] backdrop-blur-[7.5px]"
+                      : "border border-white text-white backdrop-blur-[7.5px]"
+                  }`}
+                >
+                  {btn.label}
+                </button>
+              );
+            } else {
+              return (
+                <Link key={i} href={btn.href}>
+                  <button
+                    className={`cursor-pointer px-[12px] md:px-12 py-[12px] md:py-3 md:rounded-[16px] rounded-[8px] font-[Manrope] text-[12px] md:text-sm font-medium leading-[20px] sm:leading-6 tracking-[-0.24px] sm:tracking-[-0.28px] transition-all duration-300 ease-in-out ${
+                      i === 0
+                        ? "bg-white text-[#2C2C2C] backdrop-blur-[7.5px]"
+                        : "border border-white text-white backdrop-blur-[7.5px]"
+                    }`}
+                  >
+                    {btn.label}
+                  </button>
+                </Link>
+              );
+            }
+          })}
         </div>
 
         {/* Dots with Progress Bars */}
@@ -406,6 +426,7 @@ const HeroCarousel = () => {
           </Link>
         ))}
       </div>
+      {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
     </div>
   );
 };

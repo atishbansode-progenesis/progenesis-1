@@ -29,7 +29,7 @@ export default function CarouselSection({ tag, heading, slides }: CarouselSectio
             </span>
 
             {/* Heading */}
-            <h2 className="text-[#2C2C2C] text-[28px] sm:text-[36px] lg:text-[48px] leading-[36px] sm:leading-[44px] lg:leading-[56px] font-normal tracking-[-0.96px]">
+            <h2 className="text-[#2C2C2C] text-[28px] sm:text-[36px] lg:text-[40px] leading-[36px] sm:leading-[44px] lg:leading-[50px] font-normal tracking-[-0.96px]">
               Key Reasons Behind IUI Failure and Their<br/> Impact on Conception
             </h2>
           </div>

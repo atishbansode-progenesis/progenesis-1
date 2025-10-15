@@ -80,11 +80,11 @@ export default function AwardsSection() {
   };
 
   return (
-    <section className=" pt-[42px] md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
-      <div className="mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[80px] items-start">
+    <section className=" pt-[42px] md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] csLg:pb-[60px] w-full">
+      <div className="w-full">
+        <div className="flex csLg:flex-row flex-col space-y-6 justify-between  w-full">
           {/* Left column */}
-          <div>
+          <div className="">
             <span className="inline-block bg-[#1656A50D]  text-blue-700 text-xs px-3 py-1 rounded-full">
               Featured News & Media
             </span>
@@ -102,11 +102,10 @@ export default function AwardsSection() {
                     setActiveTab(tab);
                     setMobileIndex(0);
                   }}
-                  className={`block text-left font-[Manrope] text-[20px] md:text-[32px] leading-[40px] font-normal tracking-[-0.64px] pb-2 border-b-2 transition-all duration-200 ${
-                    activeTab === tab
+                  className={`block text-left font-[Manrope] text-[20px] md:text-[32px] leading-[40px] font-normal tracking-[-0.64px] pb-2 border-b-2 transition-all duration-200 ${activeTab === tab
                       ? "text-[#1656A5] border-[#1656A5]"
                       : "text-gray-400 border-gray-200 hover:text-gray-600"
-                  }`}
+                    }`}
                 >
                   {tab}
                 </button>
@@ -115,14 +114,14 @@ export default function AwardsSection() {
           </div>
 
           {/* Right column */}
-          <div>
+          <div className="">
             {/* Desktop view */}
             <div className="hidden lg:block mt-2">
-              <div className="grid grid-cols-2 gap-x-[24px] gap-y-[32px]">
+              <div className="grid grid-cols-2 gap-x-[28px] gap-y-[32px]">
                 {data.map((item, idx) => (
                   <article
                     key={idx}
-                    className="bg-white rounded-2xl  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col h-[490px]"
+                  className="bg-white rounded-2xl  csLg:min-w-[370px] csLg:max-w-[370px]  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col csLg:min-h-[496px] "
                   >
                     {/* <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
                       <span>{item.year}</span>
@@ -133,24 +132,24 @@ export default function AwardsSection() {
                       </span>
                     </div> */}
                     <div className="flex items-center gap-1.5 mb-3 text-[#606060]/70 font-[Manrope] text-[14px] font-medium leading-[22px] tracking-[-0.3px]">
-  {activeTab === "Awards & Certifications" ? (
-    <>
-      <span>{item.year}</span>
-      <span>•</span>
-      <span>Awards</span>
-    </>
-  ) : (
-    <>
-      <span>{item.views}</span>
-      <span>•</span>
-      <span>{item.year}</span>
-    </>
-  )}
-</div>
+                      {activeTab === "Awards & Certifications" ? (
+                        <>
+                          <span>{item.year}</span>
+                          <span>•</span>
+                          <span>Awards</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>{item.views}</span>
+                          <span>•</span>
+                          <span>{item.year}</span>
+                        </>
+                      )}
+                    </div>
 
 
 
-                    <div className="w-full h-[180px] rounded-xl overflow-hidden">
+                    <div className="w-full h-[180px] b rounded-xl overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.title}

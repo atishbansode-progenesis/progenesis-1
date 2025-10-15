@@ -37,7 +37,7 @@ export default function StepsSection({
   }, [autoRotate, rotateInterval, steps.length]);
 
   return (
-    <section id="treatment" className="w-full p-[16px] lg:p-[120px] bg-white font-[Manrope] scroll-mt-[120px]">
+    <section id="treatment" className="w-full p-[16px] py-[40px] md:py-[80px] lg:px-[120px] bg-white font-[Manrope] scroll-mt-[120px]">
       <div>
         <div className="flex flex-col items-start justify-between">
           {/* Header */}
@@ -45,7 +45,7 @@ export default function StepsSection({
             <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
               {tag}
             </button>
-            <h2 className="max-w-2xl text-[#2C2C2C] text-[28px] sm:text-[36px] lg:text-[48px] leading-[36px] sm:leading-[44px] lg:leading-[56px] font-normal tracking-[-0.96px]">
+            <h2 className="max-w-2xl text-[#2C2C2C] text-[28px] sm:text-[36px] lg:text-[40px] leading-[36px] sm:leading-[44px] lg:leading-[50px] font-normal tracking-[-0.96px]">
               {heading}
             </h2>
           </div>

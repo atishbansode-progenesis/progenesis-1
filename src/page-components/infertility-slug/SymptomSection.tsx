@@ -36,7 +36,6 @@ export default function SymptomSection({ properties }: StatisticsVisualProps) {
             </h2>
           </div>
 
-
         </div>
         <div className="grid grid-cols-1 csLg:grid-cols-3 gap-4 w-full">
           {cards.map((card, index) => (

@@ -13,7 +13,7 @@ interface ProcedureStepsNoImageProps {
 
 const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, tag, steps }) => {
   return (
-    <div id="procedure" className=" bg-gradient-to-br from-gray-50 to-blue-50 px-4 py-4 md:px-[120px] md:py-[80px]">
+    <div id="procedure" className=" bg-gradient-to-br from-gray-50 to-blue-50 px-4 py-4 csLg:px-[120px] csLg:py-[80px]">
       <div className="mx-auto">
         {/* Header */}
         <div className="mb-12">
@@ -41,14 +41,15 @@ const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, 
               </div>
 
               {/* Step Content */}
-              <div className='max-w-[200px]'>
-                <h3 className="text-[#2C2C2C] text-lg md:text-[16px] font-semibold mb-[8px]">
-                  {step.title}
-                </h3>
-                <p className="text-[#2C2C2C]/70 text-sm md:text-[16px] leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
+             <div className="lg:max-w-[200px] text-left">
+  <h3 className="text-[#2C2C2C] text-lg md:text-[16px] font-semibold mb-[8px]">
+    {step.title}
+  </h3>
+  <p className="text-[#2C2C2C]/70 text-sm md:text-[16px] leading-relaxed">
+    {step.description}
+  </p>
+</div>
+
             </div>
           ))}
         </div>

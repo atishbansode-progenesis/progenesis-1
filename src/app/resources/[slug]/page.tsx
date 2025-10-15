@@ -1,11 +1,11 @@
 import BlogMain from '@/page-components/blog/BlogMain';
 import { notFound } from 'next/navigation';
 
-const revalidate = 60 * 60 * 24; // 24 hours
+const revalidate = 60 * 60 * 24; 
 
-const fetchBlogBySlug = async (slug) => {
+const fetchBlogBySlug = async (slug: string) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${slug}`, {
-    next: { revalidate },
+    next: { revalidate:0},
   });
 
   if (!res.ok) {
@@ -15,7 +15,7 @@ const fetchBlogBySlug = async (slug) => {
   return res.json();
 };
 
-export const generateMetadata = async ({ params }) => {
+export const generateMetadata = async ({ params }: { params: { slug: string } }) => {
   const { slug } = await params;
   const blog = await fetchBlogBySlug(slug);
 
@@ -36,7 +36,7 @@ export const generateMetadata = async ({ params }) => {
   };
 };
 
-const Page = async ({ params }) => {
+const Page = async ({ params }: { params: { slug: string } }) => {
   const { slug } = await params;
   const blogData = await fetchBlogBySlug(slug);
 

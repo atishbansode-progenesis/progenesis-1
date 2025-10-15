@@ -10,11 +10,11 @@ export const WhatIsInfertility: React.FC = () => {
         What is Infertility
       </button>
 
-      <h2 className="mt-2 text-[#2C2C2C] font-[Manrope] text-[28px] md:text-[48px] font-normal leading-[38px] md:leading-[56px]">
+      <h2 className="mt-2 text-[#2C2C2C] font-[Manrope] text-[28px] md:text-[40px] font-normal leading-[38px] md:leading-[50px]">
         Understanding the Basics of Infertility
       </h2>
 
-      <hr className="border-t lg:mt-[80px] border-[#D4D4D4]" />
+      <hr className="my-6 md:my-0 border-t lg:mt-[80px] border-[#D4D4D4]" />
 
       <div className="w-full flex flex-col md:flex-row justify-between gap-3 mt-4">
         <h3 className="w-full text-[#2C2C2C] text-[16px] md:text-[32px] leading-[30px] md:leading-[40px] font-[Manrope] font-normal">

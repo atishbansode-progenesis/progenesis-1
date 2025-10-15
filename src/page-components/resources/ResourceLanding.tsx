@@ -1,13 +1,14 @@
 import React from "react";
 import "../about/AboutMain.css";
 
-const ResourceLanding = () => {
+const ResourceLanding = ({ recentBlog }: any) => {
+  console.log(recentBlog);
   return (
     <div>
-      <section className="relative w-full section-spa">
+      <section>
         <div
           className="relative  w-full h-[728px] md:h-[560px] lg:h-[620px] xl:h-[680px] bg-center bg-cover"
-          style={{ backgroundImage: "url('/images/Rbanner.png')" }}
+          style={{ backgroundImage: `url(${recentBlog?.image})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/70" />
 
@@ -17,26 +18,18 @@ const ResourceLanding = () => {
                 Featured
               </span>
 
-              <div className="flex justify-center items-center w-full relative ">
-              
-                  <h1 className="text-[#F9F9F9] font-semibold leading-tight md:leading-tight lg:leading-tight text-[28px] sm:text-[34px] md:text-[40px] lg:text-[52px] xl:text-[56px]">
-                    Our Complete Guide to Parenthood Inspiring & Supportive
-                    Story to Guide You.
-                  </h1>
-                <div className="hidden md:block absolute bottom-2 right-[-90px]">
-                 
-                    <img
-                      src="\icons\resorcesrighter.svg"
-                      alt="right"
-                      className="w-40 h-10"
-                    />
-                  
-                </div>
-              </div>
-              <p className="text-[#F9F9F9]/80 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px] mt-4 max-w-3xl">
-                See our expert insight to inspire, guide, and support you
-                through every step of your unique parenthood journey with
-                confidence.
+              <a href={`/resources/${recentBlog?.slug}`} className="flex justify-center items-center w-full relative cursor-pointer group">
+                <h1 className="text-[#F9F9F9] font-semibold leading-tight md:leading-tight lg:leading-tight text-[28px] sm:text-[34px] md:text-[40px] lg:text-[52px] xl:text-[56px] line-clamp-2 group-hover:text-[#f1e8e8]">
+                  <span>{recentBlog?.title}</span>
+                  <img
+                    src="\icons\resorcesrighter.svg"
+                    alt="right"
+                    className=" ml-4 h-10 inline-flex"
+                  />
+                </h1>
+              </a>
+              <p className="text-[#F9F9F9]/80 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px] mt-4 max-w-3xl line-clamp-2">
+                {recentBlog?.description}
               </p>
               {/* Mobile-only action button below description */}
               <div className="mt-4 md:hidden">

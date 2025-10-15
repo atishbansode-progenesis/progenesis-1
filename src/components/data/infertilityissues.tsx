@@ -78,21 +78,21 @@ export const repeatedIUIFailuresData = {
         title: "Poor Egg Quality",
         description:
           "Eggs that are not healthy or mature enough can reduce the chances of successful fertilization and embryo development.",
-        image: "/InfertilityIssues/rght 1.png",
+        image: "/InfertilityIssues/crRght 1.png",
       },
       {
         id: "02",
         title: "Low Sperm Quality",
         description:
           "Issues like low sperm count, poor motility, or abnormal shape can reduce the chances of sperm reaching and fertilizing the egg.",
-        image: "/InfertilityIssues/rght 2.png",
+        image: "/InfertilityIssues/crRght 2.png",
       },
       {
         id: "03",
         title: "Hormonal Imbalance",
         description:
           "Irregular hormone levels can disrupt ovulation or affect the uterine environment, making conception difficult.",
-        image: "/InfertilityIssues/rght 3.png",
+        image: "/InfertilityIssues/crRght 3.png",
       },
       {
         id: "04",
@@ -122,41 +122,41 @@ export const repeatedIUIFailuresData = {
   },
   steps: {
     tag: "Fast Facts",
-    heading: "Recommended Next Steps After Repeated IVF Failures",
+    heading: "Recommended Next Steps After Repeated IUI Failures",
     steps: [
       {
         id: 1,
-        label: "Advanced Testing & Diagnosis",
-        title: "Diagnosing Critical Barriers to Successful Implantation",
+        label: "IVF Treatment",
+        title: "IVF – A Promising Next Step",
         items: [
-          "Genetic testing screens embryos for chromosomal abnormalities, reducing miscarriage risks.",
-          "Hormonal profiling identifies deficiencies affecting implantation.",
-          "Uterine evaluation detects structural or lining issues.",
-          "Immune system assessment ensures proper maternal tolerance of embryo.",
+          "IVF offers higher chances of pregnancy compared to IUI, especially after repeated failures.",
+          "Fertilization happens outside the body, bypassing issues like poor sperm motility or blocked fallopian tubes.",
+          "Provides optimal conditions for embryo development and implantation.",
+          ,
         ],
         image: "/InfertilityIssues/rght 1.png",
       },
       {
         id: 2,
-        label: "Personalized Treatment Plan",
-        title: "Tailored Interventions for Your IVF Journey",
+        label: "ICSI for Male Infertility",
+        title: "ICSI - Targeted Solution for Male Infertility",
         items: [
-          "Customized medication protocol for optimal response.",
-          "Lifestyle and nutrition guidance to enhance implantation.",
-          "Targeted therapies for recurrent implantation failure.",
-          "Continuous monitoring to adjust treatment as needed.",
+          "Even with low sperm count or quality, one healthy sperm can achieve fertilization.",
+          "A selected sperm is injected directly into the egg, bypassing natural barriers.",
+          "Gives higher success rates than conventional IVF in male infertility cases.",
+          
         ],
         image: "/InfertilityIssues/rght 2.png",
       },
       {
         id: 3,
-        label: "Holistic & Emotional Support",
-        title: "Supporting Mind, Body & Emotions",
+        label: "Book Fertility Consultation",
+        title: "Scheduling a Consultation with a Fertility Counsellor",
         items: [
-          "Stress reduction strategies and counseling.",
-          "Mind-body therapies to improve fertility outcomes.",
-          "Support groups for emotional well-being.",
-          "Education and guidance for informed decisions.",
+          "Provides guidance, support, and expert advice to help couples navigate fertility treatments.",
+          "Helps identify underlying causes of treatment failure, addressing medical and emotional factors.",
+          "Creates a personalized treatment plan tailored to individual needs for better outcomes.",
+          
         ],
         image: "/InfertilityIssues/rght 3.png",
       },
@@ -394,28 +394,28 @@ export const repeatedIVFFailuresData = {
         id: "01",
         title: "Poor Egg Quality",
         description:
-          "Decline in egg quality with age can hinder fertilization and embryo development.",
+          "Embryos carrying genetic abnormalities or poor development often fail to implant in the uterus, leading to unsuccessful cycles and reduced chances of pregnancy.",
         image: "/InfertilityIssues/ivf-egg.png",
       },
       {
         id: "02",
         title: "Uterine Issues",
         description:
-          "Fibroids, polyps, or poor endometrial lining may prevent successful implantation.",
+          "Structural problems like fibroids, adhesions, polyps, or a thin endometrial lining create an unfavorable environment for embryos, making implantation difficult.",
         image: "/InfertilityIssues/ivf-uterus.png",
       },
       {
         id: "03",
         title: "Sperm Factors",
         description:
-          "Low motility, abnormal morphology, or DNA damage in sperm affects fertilization.",
+          "High DNA fragmentation, low motility, or poor sperm morphology can compromise embryo quality, affecting both fertilization and implantation.",
         image: "/InfertilityIssues/ivf-sperm.png",
       },
       {
         id: "04",
         title: "Genetic Abnormalities",
         description:
-          "Chromosomal abnormalities in embryos are a major reason for failed cycles.",
+          "Conditions such as thyroid disorders, PCOS, or abnormal immune responses can interfere with proper embryo acceptance, disrupting the conception process.",
         image: "/InfertilityIssues/ivf-genetic.png",
       },
     ],

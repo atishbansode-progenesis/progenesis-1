@@ -32,7 +32,7 @@ const OpinionBenefits: React.FC = () => {
         {/* Top Section: Tag + Main Heading */}
         <div className="csLg:mb-[80px] mb-[32px]" >
           {/* Tag/Button */}
-          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-xs font-medium tracking-tight rounded-[8px] font-[Manrope] mb-2" style={{padding:'8px'}}>
+          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-xs font-medium tracking-tight rounded-[8px] font-[Manrope] p-2 mb-2" >
             How a Second Opinion Helps
           </span>
           
@@ -47,22 +47,22 @@ const OpinionBenefits: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="bg-[#1656A50D] flex flex-col justify-between csLg:min-h-[394px] rounded-[12px] p-[24px] flex flex-col gap-4 hover:shadow-md transition-shadow duration-300"
+              className="bg-[#1656A50D] flex flex-col justify-between csLg:min-h-[394px] rounded-[12px] p-4 csLg:p-6 gap-3 csLg:gap-4"
             >
               {/* Icon */}
-              <div className="w-12 h-12 csLg:w-14 csLg:h-14 flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium">
+              <div className="w-7 h-7 csLg:w-[50px] csLg:h-[50px] flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium">
                 {benefit.icon}
               </div>
 
               {/* Content */}
               <div className="flex flex-col gap-2 csLg:max-w-[65%] csLg:min-h-[128px]">
                 {/* Title */}
-                <h3 className="text-lg csLg:text-[16px] font-semibold text-[#2C2C2C] leading-tight tracking-tight font-[Manrope]">
+                <h3 className="text-[16px] csLg:text-[16px] font-semibold text-[#2C2C2C] leading-[24px] tracking-tight font-[Manrope]">
                   {benefit.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm csLg:text-[16px] leading-6 text-[#2C2C2C] opacity-[70%] tracking-tight font-[Manrope]">
+                <p className="text-[16px] leading-6 text-[#2C2C2C] opacity-[60%] tracking-tight font-[Manrope]">
                   {benefit.description}
                 </p>
               </div>

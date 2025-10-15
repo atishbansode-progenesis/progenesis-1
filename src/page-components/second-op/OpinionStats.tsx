@@ -44,19 +44,19 @@ const OpinionStats: React.FC = () => {
         <div className="w-full h-px bg-gray-200 mb-[16px]" ></div>
 
         {/* Stats Content */}
-        <div className="space-y-8">
+        <div className="">
           {stats.map((stat, index) => (
             <div key={index}>
               {/* Stats Row */}
-              <div className="grid grid-cols-1 csLg:grid-cols-3 gap-6 csLg:gap-12 items-center">
+              <div className="grid grid-cols-1 csLg:grid-cols-3 gap-4 justify-between csLg:gap-8 items-center ">
                 {/* Mobile: Title and Metric on one line, Description below */}
-                <div className="csLg:hidden space-y-4" style={{paddingBottom:'12px'}}>
+                <div className="csLg:hidden space-y-4 hover:bg-[#1656A50D]/5" style={{paddingBottom:'12px'}}>
                   {/* Title and Metric Row */}
                   <div className="flex justify-between items-center">
-                    <h3 className="text-[32px]  text-black leading-tight tracking-tight font-[Manrope] whitespace-nowrap">
+                    <h3 className="text-[32px] font-normal text-[#2C2C2C] leading-tight tracking-tight font-[Manrope] whitespace-nowrap">
                       {stat.title}
                     </h3>
-                    <span className="text-[32px] text-[#2C2C2C] leading-none tracking-tight font-[Manrope]">
+                    <span className="text-[32px] text-[#2C2C2C] leading-[40px] font-normal tracking-tight font-[Manrope]">
                       {stat.metric}
                     </span>
                   </div>
@@ -75,7 +75,7 @@ const OpinionStats: React.FC = () => {
                 </div>
 
                 {/* Center: Description */}
-                <div className="hidden csLg:block w-full  ">
+                <div className="hidden csLg:block w-full  csLg:pl-10">
                   <p className="text-base csLg:text-[16px]   text-left  leading-6 csLg:leading-7 text-[#2C2C2C] tracking-tight font-[Manrope]">
                     {stat.description}
                   </p>
@@ -91,7 +91,7 @@ const OpinionStats: React.FC = () => {
 
               {/* Horizontal Line (except for last item) */}
               {index < stats.length - 1 && (
-                <div className="w-full h-px bg-gray-200 mt-[16px] csLg:mt-[48px]" ></div>
+                <div className="w-full h-px bg-gray-200 mt-[16px] mb-4 csLg:mt-[48px]" ></div>
               )}
             </div>
           ))}

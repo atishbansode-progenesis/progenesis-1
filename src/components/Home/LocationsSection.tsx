@@ -98,13 +98,13 @@ const locations: City[] = [
     city: "Ahilyanagar",
     address:
       "Shop No 2, First Floor, Diansh Plaza, opp. Mauli Sankul Road, Savedi, Ahilya Nagar, Maharashtra",
-    image: "/LocationsSection/Ahilyanagar.jpg",
+    image: "/images/Ahilyanagar.jpg",
   },
   {
     city: "Amravati",
     address:
       "3rd floor, Above Raghubir Food Zone, Sharda Vihar, Badnera Road, Amravati, Maharashtra 444605",
-    image: "/LocationsSection/Amravati.jpg",
+    image: "/images/Amravati.jpg ",
   },
   {
     city: "Kolhapur",
@@ -136,10 +136,10 @@ export default function LocationsSection() {
   };
 
   return (
-    <section className="bg-white py-8 px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] md:py-20">
+    <section className="bg-white py-8 px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] md:py-20">
       <div className="mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-8">
+        <div className="flex flex-col md:flex-row items-start csLg:items-end justify-between gap-6 mb-8">
           <div className="md:flex-1">
             <span className="inline-block text-xs md:text-sm font-medium text-[#1656a5] bg-[#1656A50D] px-3 py-1 rounded-[8px] mb-2 md:mb-0">
               Trusted Guidance Everywhere.
@@ -150,7 +150,7 @@ export default function LocationsSection() {
             </h2>
           </div>
 
-          <div className="md:flex-none flex items-end">
+          <div className="md:flex-none flex items-start csLg:items-end">
             <Link href="/centers">
               <button className="cursor-pointer px-4 md:px-6 py-2 border border-[#1656a5] text-[#1656a5] rounded-lg transition text-sm hover:bg-[#1656a5] hover:text-white">
                 View all Centers
@@ -161,7 +161,7 @@ export default function LocationsSection() {
 
 
         {/* Content */}
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className=" hidden csLg:flex flex-col md:flex-row gap-8">
           {/* Left: clickable list */}
           <div className="hidden md:flex md:flex-col md:w-1/3 space-y-4 pr-2 overflow-y-auto h-[450px] cursor-pointer">
             {locations.map((loc, idx) => {
@@ -324,10 +324,58 @@ export default function LocationsSection() {
                 </motion.div>
               </motion.div>
             </div>
-
           </div>
+        </div>
 
+        {/* Mobile Layout - Horizontal Swiper */}
+        <div className="csLg:hidden">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <style jsx>{`
+              div::-webkit-scrollbar { display: none; }
+            `}</style>
+            {locations.flatMap((loc) => 
+              loc.subCities ? loc.subCities.map((sub, idx) => (
+                <div key={`${loc.city}-${idx}`} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white ">
+                  {/* Image */}
+                  <div className="relative h-[400px] w-full">
+                    <Image
+                      src={sub.image || "/LocationsSection/location.png"}
+                      alt={sub.name}
+                      fill
+                      className="object-cover rounded-[16px]"
+                    />
+                  </div>
 
+                  {/* Card Details */}
+                  <div className="p-5 mt-4 flex justify-between items-center bg-[#1656A50D] rounded-[16px] p-6">
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center" >
+
+                      <h3 className="text-[32px] font-normal text-[#2C2C2C] mb-2">
+                        {sub.name}
+                      </h3>
+                      <div
+                      className={`flex w-[56px] items-center justify-center rounded-full px-[24px] py-[16px]  
+                          
+                           bg-black text-white
+                        `}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                        <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>  
+                    </div>
+                      </div>
+                    <p className="text-[14px] text-[#606060] mt-4">
+                        {sub.address}
+                      </p>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+              )) : []
+            )}
+          </div>
         </div>
       </div>
     </section>

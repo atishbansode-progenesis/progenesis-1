@@ -267,12 +267,15 @@ const DifferenceSection = () => {
           </span>
 
           {/* Heading */}
-          <h2 className="mt-6 text-[32px] md:text-4xl font-[Manrope] font-normal leading-[36px] md:leading-[50px] tracking-[-0.96px] text-[#94BA3D]">
+          <h2 className="mt-6 hidden csLg:block text-[32px] md:text-4xl font-[Manrope] font-normal leading-[36px] md:leading-[50px] tracking-[-0.96px] text-[#94BA3D]">
             Choosing a fertility clinic<br /> means choosing the people <br />
             who’ll walk beside you. <br />
             At Progenesis, expert care <br />meets heartfelt support,<br /> every step of the way.
           </h2>
-
+          {/* Heading */}
+          <h2 className="mt-6 block csLg:hidden text-[32px] md:text-4xl font-[Manrope] font-normal leading-[36px] md:leading-[50px] tracking-[-0.96px] text-[#94BA3D]">
+            Choosing a fertility clinic means choosing the people who’ll walk beside you. At Progenesis, expert care meets heartfelt support, every step of the way.
+          </h2>
           {/* Card stack (overlays text) */}
           {/* <div className="absolute inset-0 flex justify-center items-center mt-100">
             {cards.map((card, index) => (

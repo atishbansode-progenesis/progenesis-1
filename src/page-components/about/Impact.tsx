@@ -31,7 +31,7 @@ const Impact: React.FC = () => {
       <div className="max-w-5xl md:max-w-3xl lg:max-w-5xl ">
         <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px]" >Impact & Growth</span>
         <div className="hidden md:block">
-        <h2 className="csLg:text-[48px] lg:leading-[56px] leading-[40px] text-[32px] tracking-tight text-[#2C2C2C] font-normal pt-2 md:mb-5 lg:mb-10">
+        <h2 className="csLg:text-[40px] lg:leading-[56px] leading-[40px] text-[32px] tracking-tight text-[#2C2C2C] font-normal pt-2 md:mb-5 lg:mb-10">
           Extending care through
           <br />
           community initiatives while
@@ -55,7 +55,7 @@ const Impact: React.FC = () => {
         {items.map((it, idx) => (
           <div key={idx} className="bg-[#EEF5FF] backdrop-blur-sm rounded-2xl p-4 lg:py-[30px] lg:px-[20px] min-h-[180px] md:min-h-[220px] flex flex-col">
             <div className="text-[#1656A5] text-2xl mb-6"><img src={it.icon} alt={it.title} className="w-[30px] h-[30px] object-contain" /></div>
-            <h3 className="text-[20px] md:text-[26px] font-normal text-[#2C2C2C] mb-2">{it.title}</h3>
+            <h3 className="text-[20px] md:text-[24px] font-normal text-[#2C2C2C] mb-2">{it.title}</h3>
             <p className="mt-1 text-[14px] leading-[22px] text-[#606060]">{it.desc}</p>
           </div>
         ))}

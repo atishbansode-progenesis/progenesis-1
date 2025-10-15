@@ -34,97 +34,97 @@ const OurStories: React.FC = () => {
 
   return (
     <section id="why-1" className="w-full bg-white overflow-hidden">
-  <div className="section-spacing max-w-[2500px] md:max-h-[1500px]  mx-auto px-4 csLg:px-8">
-    {/* Desktop layout */}
-    <div className="hidden csLg:flex flex-col ">
-          
+      <div className="section-spacing max-w-[2500px] md:max-h-[1500px]  mx-auto px-4 csLg:px-8">
+        {/* Desktop layout */}
+        <div className="hidden csLg:flex flex-col ">
+
 
           {/* Right Column: Paragraph + Image + Info Box */}
           <div className="flex flex-col gap-10">
 
             <div className='grid grid-cols-2'>
 
-            {/* Paragraph (top of right column) */}
-            <div className=''>
-              <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" >Why choose us</span>
-              <h2 className="text-4xl lg:text-5xl font-normal text-[#2C2C2C] leading-[56px] tracking-tight font-[Manrope]">
-                Our Story
-              </h2>
+              {/* Paragraph (top of right column) */}
+              <div className=''>
+      <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]" >The Journey</span>
+                <h2 className="text-4xl lg:text-[40px] font-normal text-[#2C2C2C] leading-[56px] tracking-tight font-[Manrope]">
+                  Our Story
+                </h2>
+              </div>
+              <p className="text-[16px] line-height-[24px] tracking-tight text-[#2C2C2C] lg:line-height-[40px] lg:text-[24px]">
+                We believe every hopeful parent deserves a team that listens, cares, and fights to make
+                dreams a reality — with science, empathy, and unwavering support.
+              </p>
             </div>
-            <p className="text-[16px] line-height-[24px] tracking-tight text-[#2C2C2C] lg:line-height-[40px] lg:text-[32px]">
-              We believe every hopeful parent deserves a team that listens, cares, and fights to make
-              dreams a reality — with science, empathy, and unwavering support.
-            </p>
-</div>
             {/* Image + Info Box */}
             <div className='grid grid-cols-2'>
 
-          {/* Left Column: Heading + Tab List */}
-          <div className="flex flex-col gap-8 lg:gap-12 ">
-            {/* Heading */}
-            
+              {/* Left Column: Heading + Tab List */}
+              <div className="flex flex-col gap-8 lg:gap-12 ">
+                {/* Heading */}
 
-            {/* Tab List */}
-            <div className="flex flex-col col-span-3 pt-4 max-w-[444px]">
-              {tabItems.map((item, index) => (
-                <div key={index} className=''>
-                  <div className="h-[1px] w-full bg-[#A5A5A5]  relative ">
-                    {activeTab === index && (
-                      <div className="absolute left-0 top-[-1px] h-[2px] w-32 bg-[#1656A5]" />
-                    )}
-                  </div>
-                  <div
-                    onClick={() => setActiveTab(index)}
-                    className="flex items-center justify-between cursor-pointer py-[16px] lg:flex-nowrap lg:gap-4"
-                  >
-                    <span
-                      className={`text-lg md:text-[24px] lg:text-[28px] font-medium font-[Manrope] tracking-tight lg:whitespace-nowrap ${activeTab === index ? "text-[#1656A5]" : "text-[##606060] opacity-50"
-                        }`}
-                    >
-                      {item.title}
-                    </span>
-                    <span
-                      className={`w-2 h-2 rounded-full ml-4 ${activeTab === index ? "bg-[#1656A5]" : "bg-gray-400"
-                        }`}
-                    />
-                  </div>
-                  {/* Separator line (after every tab) */}
-                  {index === tabItems.length - 1 && (
-                    <div className="h-[1px] w-full bg-[#A5A5A5] relative">
+
+                {/* Tab List */}
+                <div className="flex flex-col col-span-3 pt-4 max-w-[444px]">
+                  {tabItems.map((item, index) => (
+                    <div key={index} className=''>
+                      <div className="h-[1px] w-full bg-[#A5A5A5]  relative ">
+                        {activeTab === index && (
+                          <div className="absolute left-0 top-[-1px] h-[2px] w-32 bg-[#1656A5]" />
+                        )}
+                      </div>
+                      <div
+                        onClick={() => setActiveTab(index)}
+                        className="flex items-center justify-between cursor-pointer py-[16px] lg:flex-nowrap lg:gap-4"
+                      >
+                        <span
+                          className={`text-lg md:text-[24px] lg:text-[28px] font-medium font-[Manrope] tracking-tight lg:whitespace-nowrap ${activeTab === index ? "text-[#1656A5]" : "text-[##606060] opacity-50"
+                            }`}
+                        >
+                          {item.title}
+                        </span>
+                        <span
+                          className={`w-2 h-2 rounded-full ml-4 ${activeTab === index ? "bg-[#1656A5]" : "bg-gray-400"
+                            }`}
+                        />
+                      </div>
+                      {/* Separator line (after every tab) */}
+                      {index === tabItems.length - 1 && (
+                        <div className="h-[1px] w-full bg-[#A5A5A5] relative">
+                        </div>
+                      )}
+
+
                     </div>
-                  )}
-
-
+                  ))}
                 </div>
-              ))}
-            </div>
 
-          </div>
-            <div className="flex flex-col csLg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden ">
-              {/* Image */}
-              <div className="w-full bg-[#E8EFF6] max-w-[400px] lg:min-w-[400px] lg:min-h-[400px] max-h-[400px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
-                <img
-                  src={tabItems[activeTab].image}
-                  alt={tabItems[activeTab].title}
-                  className="w-full h-full object-cover rounded-xl transition-all duration-300 ease-in-out"
-                />
               </div>
-
-              {/* Info Box */}
-              <div className="flex flex-col justify-start min-w-[120px] gap-4 w-full lg:flex-1  pt-2.5 px-4">
-                <div>
-                <h3 className="text-[#94BA3D] mb-[4px]">{tabItems[activeTab].storyNumber}</h3>
-                <h3 className="text-[#1656A5] font-medium text-[16px] lg:text-[32px] lg:leading-[40px] tracking-tight font-[Manrope]">
-                  {tabItems[activeTab].heading}
-                </h3>
+              <div className="flex flex-col csLg:flex-row gap-4  md:gap-6 lg:gap-8 w-auto max-w-full overflow-hidden ">
+                {/* Image */}
+                <div className="w-full bg-[#E8EFF6] max-w-[300px] lg:min-w-[300px] lg:min-h-[300px] max-h-[300px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
+                  <img
+                    src={tabItems[activeTab].image}
+                    alt={tabItems[activeTab].title}
+                    className="w-full h-full object-cover rounded-xl transition-all duration-300 ease-in-out"
+                  />
                 </div>
-                
-                <p className="text-[14px] line-height-[20px] text-[#2C2C2C] tracking-tight font-[Manrope] lg:text-[16px] lg:line-height-[24px]">
-                  {tabItems[activeTab].description}
-                </p>
+
+                {/* Info Box */}
+                <div className="flex flex-col justify-start min-w-[120px] gap-4 w-full lg:flex-1  pt-2.5 px-2     ">
+                  <div>
+                    <h3 className="text-[#94BA3D] mb-[4px]">{tabItems[activeTab].storyNumber}</h3>
+                    <h3 className="text-[#1656A5] font-medium text-[16px] lg:text-[24px] lg:leading-[40px] tracking-tight font-[Manrope]">
+                      {tabItems[activeTab].heading}
+                    </h3>
+                  </div>
+
+                  <p className="text-[14px] line-height-[20px] text-[#2C2C2C] tracking-tight font-[Manrope] lg:text-[16px] lg:line-height-[24px]">
+                    {tabItems[activeTab].description}
+                  </p>
+                </div>
               </div>
             </div>
-</div>
           </div>
 
         </div>

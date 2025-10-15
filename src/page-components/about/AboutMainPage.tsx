@@ -19,8 +19,8 @@ const AboutMainPage = () => {
         <OurStories />
         <OurApproach /> 
         <VisionMission />
-        <WhyProgenesis />
         <Impact />
+        <WhyProgenesis />
         <JoinUs />
         <FaQ />
     </div>

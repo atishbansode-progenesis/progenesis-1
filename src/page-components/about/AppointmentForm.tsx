@@ -1,7 +1,9 @@
-'use client'
-import React, { useRef, useEffect, useState } from 'react';
-import axios from 'axios';
-import { SelectFieldArrowDown } from './icons';
+"use client";
+import React, { useRef, useEffect, useState } from "react";
+import axios from "axios";
+import { SelectCalendarIcon, SelectFieldArrowDown } from "./icons";
+import "./form-styles.css";
+
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 interface AppointmentFormProps {
   onClose?: () => void;
@@ -29,9 +31,10 @@ const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
         className={`
           flex items-center gap-3 min-w-[320px] px-6 py-4 rounded-2xl shadow-2xl
           backdrop-blur-md border transform transition-all duration-300
-          ${type === "success"
-            ? "bg-green-50 border-green-200 text-green-800"
-            : "bg-red-50 border-red-200 text-red-800"
+          ${
+            type === "success"
+              ? "bg-green-50 border-green-200 text-green-800"
+              : "bg-red-50 border-red-200 text-red-800"
           }
         `}
       >
@@ -102,24 +105,28 @@ const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
   );
 };
 
-
 const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const isPopupMode = !!onClose;
   const formRef = useRef<HTMLFormElement | null>(null);
   const [formFields, setFormFields] = useState<any[]>([]);
   const [formData, setFormData] = useState<any>({});
-  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [toast, setToast] = useState<{
+    message: string;
+    type: "success" | "error";
+  } | null>(null);
   const [isFormOpen, setIsFormOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitLoading, setIsSubmitLoading] = useState(false);
   const [apiError, setApiError] = useState(false);
+
+  const dateInputRef =  useRef<HTMLInputElement>(null);
 
   // Timeout promise helper
   const timeoutPromise = (promise: Promise<any>, ms: number) =>
     Promise.race([
       promise,
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('Timeout')), ms)
+        setTimeout(() => reject(new Error("Timeout")), ms)
       ),
     ]);
 
@@ -138,7 +145,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
           setFormFields(response.data[0].fields);
           setApiError(false);
         } else {
-          throw new Error('No form fields found');
+          throw new Error("No form fields found");
         }
       } catch (err: any) {
         console.log(err);
@@ -161,7 +168,8 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     // Check if form fields failed to load
     if (formFields.length === 0 || apiError) {
       setToast({
-        message: "We are unable to book appointment at this moment. Please try again later.",
+        message:
+          "We are unable to book appointment at this moment. Please try again later.",
         type: "error",
       });
       return;
@@ -208,9 +216,10 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
 
       // Show error toast
       setToast({
-        message: error.message === 'Timeout'
-          ? "We are unable to book appointment at this moment. Please try again later."
-          : "Failed to submit form. Please try again.",
+        message:
+          error.message === "Timeout"
+            ? "We are unable to book appointment at this moment. Please try again later."
+            : "Failed to submit form. Please try again.",
         type: "error",
       });
     } finally {
@@ -219,8 +228,8 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   };
 
   // Separate fields by type
-  const nonCheckboxFields = formFields.filter(f => f.type !== "checkbox");
-  const checkboxFields = formFields.filter(f => f.type === "checkbox");
+  const nonCheckboxFields = formFields.filter((f) => f.type !== "checkbox");
+  const checkboxFields = formFields.filter((f) => f.type === "checkbox");
 
   // Group fields into rows of 2 for desktop
   const groupedFields: any[][] = [];
@@ -245,14 +254,25 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
 
     if (field.type === "date") {
       return (
-        <input
-          type="date"
-          required={field.required}
-          className={containerClass}
-          onChange={(e) => handleChange(field.name, e.target.value)}
-          value={formData[field.name] || ""}
-          disabled={isSubmitLoading}
-        />
+        <div className="relative w-full">
+          <input
+            ref={dateInputRef}
+            type="date"
+            placeholder="DD/MM/YYYY"
+            value={formData[field.name] || ""}
+            onChange={(e) => handleChange(field.name, e.target.value)}
+            className={`${containerClass} hide-calendar-icon appearance-none focus:outline-none focus:ring-0 pr-10`}
+            disabled={isSubmitLoading}
+          />
+
+          {/* Custom Calendar Icon */}
+          <div
+            className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
+            onClick={() => dateInputRef.current?.showPicker?.()} // modern browsers
+          >
+            <SelectCalendarIcon />
+          </div>
+        </div>
       );
     }
 
@@ -261,7 +281,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         <div className="relative w-full">
           <select
             required={field.required}
-            className={`${containerClass} appearance-none focus:outline-none focus:ring-0 pr-8`}
+            className={`${containerClass} appearance-none focus:outline-none focus:ring-0`}
             onChange={(e) => handleChange(field.name, e.target.value)}
             value={formData[field.name] || ""}
             disabled={isSubmitLoading}
@@ -306,7 +326,10 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   };
 
   const renderCheckbox = (field: any, idx: number) => (
-    <label htmlFor={field.name} key={idx} className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] ">
+    <label
+      htmlFor={field.name}
+      className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] cursor-pointer"
+    >
       <input
         type="checkbox"
         id={field.name}
@@ -318,27 +341,20 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
       />
       {field.options && field.options.length > 0 ? (
         <>
-          {field.options[0].label.split(/(\bPrivacy Policy\b|\bT&C\b)/g).map((part: string, i: number) => {
-            if (part === "Privacy Policy" || part === "T&C") {
-              return (
-                <a key={i} href="#">
-                  {part}
-                </a>
-              );
-            }
-            return part;
-          })}
+          {field.options[0].label
+            .split(/(\bPrivacy Policy\b|\bT&C\b)/g)
+            .map((part: string, i: number) => {
+              if (part === "Privacy Policy" || part === "T&C") {
+                return (
+                    part
+                );
+              }
+              return part;
+            })}
         </>
       ) : (
         <>
-          Clicking means you agree to our{" "}
-          <a href="#">
-            Privacy Policy
-          </a>{" "}
-          and{" "}
-          <a href="#">
-            T&C.
-          </a>
+          Clicking means you agree to our Privacy Policy and T&C
         </>
       )}
     </label>
@@ -356,13 +372,20 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     }
 
     return (
-      <form ref={formRef} className={`flex flex-col gap-4 justify-between h-full`} onSubmit={handleSubmit}>
-        <ul className='flex flex-col gap-4 flex-1 max-h-[250px] lg:max-h-[400px] overflow-y-auto'>
+      <form
+        ref={formRef}
+        className={`flex flex-col gap-4 justify-between h-full`}
+        onSubmit={handleSubmit}
+      >
+        <ul className="flex flex-col gap-4 flex-1 max-h-[250px] lg:max-h-[400px] overflow-y-auto overflow-x-hidden pb-4 lg:pb-0">
           {groupedFields.map((row, rowIdx) => (
             <li key={rowIdx} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {row.map((field, idx) => (
                 <div key={idx} className="w-full">
-                  {renderField(field, "w-full border border-[#00000026] p-4 rounded-[16px] focus:ring-0 focus:outline-none")}
+                  {renderField(
+                    field,
+                    "w-full border border-[#00000026] p-4 rounded-[16px] focus:ring-0 focus:outline-none"
+                  )}
                 </div>
               ))}
             </li>
@@ -404,11 +427,15 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
                     Schedule a Consultation
                   </span>
                   <h2 className="text-[#2C2C2C] font-[Manrope] text-[16px] lg:text-[32px] font-normal leading-[20px] lg:leading-[40px] tracking-[-0.64px] text-center">
-                    Just focus on your fertility journey, <br className='hidden lg:block' /> We got the rest
-                    covered!
+                    Just focus on your fertility journey,{" "}
+                    <br className="hidden lg:block" /> We got the rest covered!
                   </h2>
-                  <div className='flex-1 mt-4'>
-                    {!isLoading ? renderFormContent() : <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5] mx-auto"></div>}
+                  <div className="flex-1 mt-4">
+                    {!isLoading ? (
+                      renderFormContent()
+                    ) : (
+                      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5] mx-auto"></div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -470,17 +497,17 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
 
       <div className="absolute inset-0 bg-black/40"></div>
 
-      <section className="relative p-4 lg:p-[120px] py-[80px] flex justify-center bg-transparent">
-        <div className="bg-white rounded-[10px] lg:rounded-[16px] p-4 grid grid-cols-1 lg:grid-cols-2 lg:h-[626px] max-w-[1200px]">
-          <div className="h-full flex flex-col gap-8 justify-between lg:p-8">
+      <section className="relative p-4 lg:p-[120px] py-[80px] flex flex-col lg:flex-row justify-center bg-transparent">
+        <div className="bg-transparent lg:bg-white rounded-[10px] lg:rounded-[16px] lg:p-4 grid grid-cols-1 lg:grid-cols-2 min-h-[626px] max-w-[1200px]">
+          <div className="bg-white lg:bg-transparent p-4 lg:p-0 rounded-[16px] lg:rounded-[0px] h-full flex flex-col gap-8 justify-between lg:p-8">
             <div className="space-y-2 text-center">
               <div className="text-[12px] w-fit font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mx-auto">
                 Schedule a Consultation
               </div>
 
               <h2 className="text-[19px] font-normal text-[#2C2C2C] leading-[23px] lg:text-[32px] lg:leading-[40px] ">
-                Just focus on your fertility journey, <br className="lg:hidden" /> We got the rest
-                covered!
+                Just focus on your fertility journey,{" "}
+                <br className="lg:hidden" /> We got the rest covered!
               </h2>
             </div>
 
@@ -493,8 +520,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
             )}
           </div>
 
-          <div className="flex-1 relative bg-[url('/images/appointment.jpg')] bg-cover bg-center rounded-[16px]">
-          </div>
+          <div className="flex-1 relative bg-[url('/images/appointment.jpg')] bg-cover bg-center rounded-[16px] h-[443px] lg:h-auto mt-4 lg:mt-0"></div>
         </div>
       </section>
 

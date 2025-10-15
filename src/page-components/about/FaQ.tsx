@@ -111,7 +111,7 @@ const FaQ: React.FC = () => {
   return (
     <section
       id="faqs"
-      className="w-full bg-[#FAFAFA] px-4 csLg:px-[120px] py-10 md:py-14 lg:py-20 font-[Manrope]"
+      className="w-full bg-[#FAFAFA] p-4 lg:px-[120px] lg:py-[80px]"
     >
       <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] lg:grid-cols-[500px_1fr] gap-10 md:gap-[80px] lg:gap-[120px] items-start">
         {/* Left intro */}
@@ -120,9 +120,9 @@ const FaQ: React.FC = () => {
             FAQ's
           </span>
           <div className="pb-5">  
-            <h2 className="lg:text-[48px] text-[32px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
+            <h2 className="lg:text-[40px] text-[32px] md:text-[40px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
               Quick answers to  the
-              
+              <br/>
               <span className="text-[#94BA3D]"> most common</span>
               <br />
               <span className="text-[#94BA3D]">fertility-related</span>

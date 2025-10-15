@@ -44,7 +44,7 @@ export default function HeroSection({
   breadcrumbColor = '#606060',
   breadcrumbActiveColor = '#1656A5',
   titleColor = '#000000',
-  buttonBgColor = '#252525',
+  buttonBgColor = '#1656A5',
   buttonTextColor = '#FFFFFF',
 }: HeroSectionProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,25 +55,14 @@ export default function HeroSection({
         backgroundImage: backgroundImage ? backgroundImage : "",
       }}
     >
-      {/* Overlay Image (background layer) - Desktop */}
-      {overlayImage && (
+      {/* Overlay Image (background layer) */}
+      {typeof window !== 'undefined' && overlayImage && (
         <Image
-          src={overlayImage}
+          src={window.innerWidth >= 1024 ? overlayImage : overlayImageSmall || overlayImage}
           alt="Overlay"
           fill
           priority
-          className="absolute inset-0 object-cover -z-20 hidden lg:block"
-        />
-      )}
-      
-      {/* Overlay Image (background layer) - Mobile */}
-      {overlayImageSmall && (
-        <Image
-          src={overlayImageSmall}
-          alt="Overlay"
-          fill
-          priority
-          className="absolute inset-0 object-cover -z-20 lg:hidden"
+          className="absolute inset-0 object-cover -z-20"
         />
       )}
 
@@ -118,7 +107,7 @@ export default function HeroSection({
 
         {/* Title */}
         <h1 
-          className="text-[32px] lg:text-[80px] leading-[40px] lg:leading-[88px] font-semibold"
+          className="text-[32px] lg:text-[3.125vw] csxl:text-[4.17vw] leading-[40px] lg:leading-[4vw] font-semibold"
           style={{ color: titleColor }}
         >
           {typeof title === "string" ? (
@@ -139,7 +128,7 @@ export default function HeroSection({
             {buttonLink ? (
               <button
                 onClick={() => setIsOpen(true)}
-                className="p-[10px] lg:p-[20px] rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium inline-block"
+                className="p-[10px] lg:p-[20px] rounded-[8px] cursor-pointer lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium inline-block"
                 style={{
                   backgroundColor: buttonBgColor,
                   color: buttonTextColor
@@ -149,7 +138,7 @@ export default function HeroSection({
               </button>
             ) : (
               <button 
-                className="p-[10px] lg:p-[20px] rounded-[8px] lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium"
+                className="p-[10px] lg:p-[20px] rounded-[8px] cursor-pointer lg:rounded-[16px] text-[12px] lg:text-[14px] leading-[20px] lg:leading-[24px] font-medium"
                 style={{
                   backgroundColor: buttonBgColor,
                   color: buttonTextColor
