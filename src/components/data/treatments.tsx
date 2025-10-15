@@ -1902,8 +1902,8 @@ export const fertilitySurgeryTreatmentData = {
   ],
   path_section: {
     tag: "Know the Basics",
-    mainHeading: "Restoring Health. Renewing Hope.",
-    subHeading: "Restoring Health. Renewing Hope.",
+    mainHeading: "What Is Fertility Surgery?",
+    subHeading: "Restoring Health and Renewing Hope.",
     description1:"Fertility surgery helps treat anatomical or structural conditions that interfere with conception. It’s performed to correct issues such as fibroids, endometriosis, blocked fallopian tubes, uterine septum, adhesions, or cysts — restoring the reproductive organs to normal function.",
     description2:"Both men and women can benefit from fertility surgery, which is often a minimally invasive, daycare procedure using laparoscopy or hysteroscopy.",
   },
