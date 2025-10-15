@@ -78,7 +78,7 @@ export default function WhyChooseSection({
               alt={points[activePoint].title}
               width={100}
               height={100}
-              className="w-full h-full object-cover overflow-hidden rounded-[14.5px]"
+              className="w-full min-h-[660px] h-full object-cover overflow-hidden rounded-[14.5px]"
             />
           </div>
         </div>
