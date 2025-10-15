@@ -1,22 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
-interface BlogCard {
-  uid?: string;
-  title: string;
-  slug: string;
-  description?: string;
-  desc?: string;
-  image?: string;
-  img?: string;
-  author?: string;
-  created?: string;
-  posted?: string;
-  views?: number | string;
-}
-
 const PAGE_SIZE = 6;
 
 interface ResourceGridProps {
@@ -24,6 +10,8 @@ interface ResourceGridProps {
   heading?: string;
   showEyebrow?: boolean;
   showHeading?: boolean;
+  initialBlogs: any[];
+  totalCount: number;
 }
 
 const ResourceGrid: React.FC<ResourceGridProps> = ({
@@ -31,12 +19,15 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
   heading = "Insights & Inspiration for Your Parenthood Journey",
   showEyebrow = true,
   showHeading = true,
+  initialBlogs,
+  totalCount,
 }) => {
-  const [cards, setCards] = useState<BlogCard[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [cards, setCards] = useState(initialBlogs);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+
+  const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 
   const fetchBlogs = async () => {
     try {
@@ -47,40 +38,40 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
         `${apiUrl}/api/blogs/?page=${currentPage}&page_size=${PAGE_SIZE}`
       );
       if (!response.ok) {
-        throw new Error("Failed to fetch data");
+        throw new Error("Failed to fetch blogs");
       }
-      const data = await response.json();
-      const results: BlogCard[] = data.results ?? [];
-      setCards(results);
 
-      if (typeof data.count === "number") {
-        const calculatedPages = Math.max(1, Math.ceil(data.count / PAGE_SIZE));
-        setTotalPages(calculatedPages);
-      } else {
-        const hasMore = results.length === PAGE_SIZE;
-        setTotalPages((prev) =>
-          hasMore
-            ? Math.max(prev, currentPage + 1)
-            : Math.max(prev, currentPage)
-        );
-      }
+      const data = await response.json();
+      setCards(data.results ?? []);
     } catch (err: unknown) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("Something went wrong");
-      }
+      if (err instanceof Error) setError(err.message);
+      else setError("Something went wrong");
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchBlogs();
+    if (currentPage === 1) {
+      setCards(initialBlogs);
+    } else {
+      fetchBlogs();
+    }
   }, [currentPage]);
 
-  if (loading) return <p className="text-center py-10 min-h-[200px] flex justify-center items-center">Loading...</p>;
-  if (error) return <p className="text-center py-10 text-red-500 min-h-[200px] flex justify-center items-center">{error}</p>;
+  if (loading)
+    return (
+      <p className="text-center py-10 min-h-[200px] flex justify-center items-center">
+        Loading...
+      </p>
+    );
+
+  if (error)
+    return (
+      <p className="text-center py-10 text-red-500 min-h-[200px] flex justify-center items-center">
+        {error}
+      </p>
+    );
 
   return (
     <section className="bg-[#FAFAFA] p-4 lg:p-[120px]">
@@ -101,14 +92,16 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cards.map((card) => {
+          {cards?.map((card: any) => {
             const formattedDate = card.created
               ? new Intl.DateTimeFormat("en-IN", {
                   month: "long",
                   year: "numeric",
                 }).format(new Date(card.created))
               : card.posted || "Recently";
-            const previewImage = card.image || "/images/Rstory1.png";
+
+            const previewImage =
+              card.image || card.img || "/images/Rstory1.png";
             const previewDescription =
               card.description ||
               card.desc ||
@@ -128,6 +121,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                     {formattedDate}
                     {views ? ` • ${views} views` : ""}
                   </p>
+
                   <div className="relative w-full aspect-[16/11] overflow-hidden rounded-xl bg-gray-100 mt-2">
                     <img
                       src={previewImage}
@@ -136,6 +130,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                       loading="lazy"
                     />
                   </div>
+
                   <div className="space-y-2">
                     <h4 className="text-[16px] leading-[22px] font-normal text-[#2C2C2C] line-clamp-1">
                       {card.title}
@@ -162,7 +157,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
             </button>
 
             <div className="flex flex-wrap items-center justify-center gap-2">
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
                 (pageNumber) => (
                   <button
                     key={pageNumber}
