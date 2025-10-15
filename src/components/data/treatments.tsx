@@ -114,21 +114,21 @@ export const imsiTreatmentData = {
       id: "02",
       title: "High DNA Fragmentation",
       description:
-        "Better sperm selection reduces DNA fragmentation and increases the likelihood of viable embryos.",
+        "Sperm DNA damage harms embryo quality, implantation. IMSI selects sperm for better results.",
       image: "/treatments/image2.png",
     },
     {
       id: "03",
       title: "Failed IVF/IUI Cycles",
       description:
-        "For couples who have experienced failed cycles, IMSI offers a more precise method of sperm selection.",
+        "When standard treatments fail, precise sperm selection can boost pregnancy chances.",
       image: "/treatments/image3.png",
     },
     {
       id: "04",
       title: "Benefits & Success Rates",
       description:
-        "Targeted sperm selection enhances IVF outcomes, boosting confidence in long-term fertility success.",
+        "Enhances embryo quality, improves implantation, and increases chances of a healthy live birth.",
       image: "/treatments/image4.png",
     },
   ],
