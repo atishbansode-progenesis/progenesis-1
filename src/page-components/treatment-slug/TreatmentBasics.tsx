@@ -12,7 +12,7 @@ interface TreatmentBasicsProps {
 
 export default function TreatmentBasics({ tag, heading, items }: TreatmentBasicsProps) {
   return (
-    <section id="basics" className="px-4 py-4 csLg:px-[120px]  csLg:py-[80px] bg-[#F9FBFF] scroll-mt-[120px]">
+    <section id="basics" className="px-4 py-4 lg:px-[120px]  lg:py-[80px] bg-[#F9FBFF] scroll-mt-[120px]">
       {tag && (
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[8px]">
           {tag}
@@ -31,7 +31,7 @@ export default function TreatmentBasics({ tag, heading, items }: TreatmentBasics
             		 <img
           src={item.icon}
           alt={item.title}
-          className="w-[20px] h-[20px] csLg:w-[32px] csLg:h-[32px] object-contain csLg:mb-4"
+          className="w-[20px] h-[20px] lg:w-[32px] lg:h-[32px] object-contain lg:mb-4"
         />
             <h3 className="text-[#2C2C2C] font-[Manrope] text-[24px] leading-[40px] tracking-[-0.64px] font-normal">
               {item.title}

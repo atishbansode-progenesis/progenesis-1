@@ -13,7 +13,7 @@ interface ProcedureStepsNoImageProps {
 
 const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, tag, steps }) => {
   return (
-    <div id="procedure" className=" bg-gradient-to-br from-gray-50 to-blue-50 px-4 py-4 csLg:px-[120px] csLg:py-[80px]">
+    <div id="procedure" className=" bg-gradient-to-br from-gray-50 to-blue-50 px-4 py-4 lg:px-[120px] lg:py-[80px]">
       <div className="mx-auto">
         {/* Header */}
         <div className="mb-12">

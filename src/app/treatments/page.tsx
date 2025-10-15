@@ -46,7 +46,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
         text-[#2C2C2C]/70
         font-[Manrope]
         text-[16px] leading-[24px] tracking-[-0.32px] font-semibold
-        md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
+        md:text-[24px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
       "
         >
           {title}
@@ -55,7 +55,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
 
       <p
         className="
-      text-[#606060] font-[Manrope] opacity-70
+      text-[#606060] opacity-70
       text-[16px] leading-[24px] tracking-[-0.32px] font-normal
     "
       >
@@ -598,7 +598,7 @@ const TreatmentsPage: React.FC = () => {
               </span>
 
               {/* Title */}
-              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[28px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
+              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[24px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
                 {item.title}
               </h3>
 
@@ -654,7 +654,7 @@ const TreatmentsPage: React.FC = () => {
     text-[var(--Text_Black,#2C2C2C)]
     font-[Manrope] font-normal
     text-[24px] leading-[32px] tracking-[-0.64px]
-    md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
+    md:text-[24px] md:leading-[40px] md:tracking-[-0.64px] self-start
     max-w-[200px] md:max-w-full
           "
               >
@@ -717,7 +717,7 @@ const TreatmentsPage: React.FC = () => {
               </span>
 
               {/* Title */}
-              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[32px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
+              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[24px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
                 {item.title}
               </h3>
 

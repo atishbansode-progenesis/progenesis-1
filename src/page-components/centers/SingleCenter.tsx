@@ -201,12 +201,10 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         </div>
       </section>
 
-      <div className="w-full h-fit">
         <CenterCarousel
           gallery={selectedCenter.gallery}
           fallbackImage={selectedCenter.image}
         />
-      </div>
 
       <CenterDoctorsSection />
       <TestimonialsCenters />
