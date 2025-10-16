@@ -43,7 +43,7 @@ const OpenionLanding = () => {
             <div className=''>
                         <button 
                             onClick={() => setIsOpen(true)} 
-                            className='bg-[#252525] text-[12px] tracking-tight csLg:text-[14px] h-10 csLg:h-[56px] px-3 py-[10px]  text-[#F9F9F9] rounded-[8px] csLg:rounded-[16px] hover:bg-[#333] transition'
+                            className='bg-[#1656A5] text-[12px] tracking-tight csLg:text-[14px] h-10 csLg:h-[56px] px-3 py-[10px]  text-[#F9F9F9] rounded-[8px] csLg:rounded-[16px] hover:bg-[#333] transition'
                         >
                             Book Your Appointment
                         </button>

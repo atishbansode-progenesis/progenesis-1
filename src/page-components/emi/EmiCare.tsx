@@ -10,7 +10,7 @@ const EmiCare: React.FC = () => {
         </span>
       <div className="flex flex-col gap-4 mb-8 md:mb-12">
         
-        <h1 className="text-[32px] md:text-4xl lg:text-[48px] font-manrope font-normal text-[#2C2C2C] leading-tight md:leading-[1.2]">
+        <h1 className="text-[32px] md:text-4xl lg:text-[40px] font-manrope font-normal text-[#2C2C2C] leading-tight md:leading-[1.2]">
           Now Get 'No Cost EMI' Assistence.
         </h1>
       </div>
