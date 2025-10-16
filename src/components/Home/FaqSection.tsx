@@ -30,7 +30,7 @@ const tabs: Tab[] = [
     items: [
       { q: "Do you offer packages?", a: "Yes, we offer transparent packages tailored to treatment needs. Contact our team for current details." },
       { q: "Are there financing options?", a: "We can guide you to financing partners and flexible payment schedules where available." },
-      { q: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.", a: "Are there financing options available?" },
+      { a: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.", q: "Are there financing options available?" },
     ],
   },
   {

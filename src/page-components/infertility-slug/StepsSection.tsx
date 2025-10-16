@@ -92,7 +92,7 @@ export default function StepsSection({
           </div>
 
           {/* Content + Image */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-stretch gap-8">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-stretch gap-8 min-h-[600px]">
             {/* Left Card */}
             <div className="w-[349px] bg-[#F1F7FC] justify-between rounded-2xl flex  flex-col p-5 gap-6">
               <div className="text-[28px] text-[#2C2C2C] font-normal lg:mb-6">
