@@ -41,7 +41,7 @@ export const MaleInfertilitySection: React.FC<MaleInfertilitySectionProps> = ({
               href={`/infertility/male/${item.slug}`}
               className="flex flex-col items-center justify-between w-full h-[400px] px-6 pt-6 pb-[30px] gap-[16px] rounded-[16px] bg-[#1656A5]/5"
             >
-              <h3 className="text-[#2C2C2C] text-[20px] md:text-[32px] font-normal lg:leading-[40px] leading-[40px] md:leading-[36px] text-start w-full font-[Manrope]">
+              <h3 className="text-[#2C2C2C] text-[16px] md:text-[20px] lg:text-2xl font-normal lg:leading-[32px] leading-[24px] md:leading-[28px] text-start w-full font-[Manrope]">
                 {item.title}
               </h3>
               <div className="relative flex-1 w-full max-h-[250px]">
