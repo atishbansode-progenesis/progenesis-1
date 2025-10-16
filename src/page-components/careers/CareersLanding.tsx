@@ -187,7 +187,7 @@ const CareersLanding: React.FC = () => {
     <div className="w-full bg-[#FAFAFA]">
       {/* Hero Section */}
       <section
-        className="section-spacing bg-gradient-to-r from-green-100 via-white to-sky-200 relative w-full h-[340px] sm:h-[380px] md:h-[500px] lg:h-[567px] overflow-hidden bg-no-repeat bg-cover bg-center flex items-start
+        className="section-spacing bg-gradient-to-r from-green-100 via-white to-sky-200 relative w-full h-[340px] sm:h-[380px] md:h-[400px] lg:h-[400px] overflow-hidden bg-no-repeat bg-cover bg-center flex items-start
                   bg-[url('/images/Carrer-mobile.png')] h-[444px] csLg:h-full sm:bg-[url('/images/Carrer.png')]"
       >
         <div className="container md:pr-0 grid grid-cols-12 items-start">
