@@ -360,6 +360,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     );
   }
 
+
   // ========================
   // MOBILE VIEW (FULL HEIGHT + SLIDE-UP)
   // ========================
@@ -648,16 +649,15 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 }
 
 
+// Mega Menu Data Moble
 
-/* -------------------- DROPDOWN DATA -------------------- */
-const megaMenuData: Record<string, any> = {
+const megaMenuDataMobile: Record<string, any> = {
   "About Us": {
     image: "/Navbar/about.png",
     columns: [
       {
         title: "Discover Us",
         links: [
-          // { label: "Why Progenesis", path: "/about-us#why-1" },
           { label: "Our Approach", path: "/about-us#our-approach" },
           { label: "Our Vision & Mission", path: "/about-us#our-vision" },
           { label: "Why choose us", path: "/about-us#why-choose-us" },
@@ -677,28 +677,6 @@ const megaMenuData: Record<string, any> = {
           { label: "International Patients", path: "/international-patients", isarrow: true },
         ],
       },
-      // {
-      //   title: "Quick Links",
-      //   links: [
-      //     { label: "Book Appointment", path: "/appointment", isButton: true },
-      //     { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-      //     { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
-      //     // { label: "Take a Quiz", path: "/quiz", isarrow: true },
-      //     // { label: "Online Consult", path: "/online-consult", isarrow: true },
-      //     // { label: "EMI Options", path: "/emi-options", isarrow: true },
-      //   ],
-      // },
-      // {
-      //   links: [
-      //     // { label: "Fellowship", path: "/fellowship", isarrow: true },
-      //     { label: "Our Centers", path: "/centers", isarrow: true },
-      //     { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-      //     { label: "EMI Options", path: "/emi-options", isarrow: true },
-      //     { label: "International Patients", path: "/international-patients", isarrow: true },
-      //     { label: "Online Consultation", path: "/online-consultation", isarrow: true },
-
-      //   ],
-      // },
     ],
   },
   "Infertility Issues": {
@@ -751,15 +729,6 @@ const megaMenuData: Record<string, any> = {
           { label: "International Patients", path: "/international-patients", isarrow: true },
         ],
       },
-      // {
-      //   links: [
-      //     { label: "Our Centers", path: "/centers", isarrow: true },
-      //     { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-      //     { label: "EMI Options", path: "/emi-options", isarrow: true },
-      //     { label: "International Patients", path: "/international-patients", isarrow: true },
-      //     { label: "Online Consultation", path: "/online-consultation", isarrow: true },
-      //   ],
-      // },
     ],
   },
   "Our Centers": {
@@ -820,6 +789,240 @@ const megaMenuData: Record<string, any> = {
               { label: "Blastocyst Transfer – Stronger Embryo Transfer", path: "/treatments//advanced/blastocyst-transfer" },
               { label: "Sequential Embryo Transfer – Two-Stage Transfer", path: "/treatments/advanced/sequential-embryo-transfer/" },
               { label: "PGD/PGS/PGT-A – Genetic Screening", path: "/treatments/advanced/pgd-pgs-pgt-a/" },
+            ],
+          },
+          {
+            label: "Advanced Facilities for Trusted Care", path: "/treatments#advanced",
+            submenu: [
+              { label: "Class-1000 Modular Lab", path: "/treatments/advanced/class-1000-modular-lab/" },
+              { label: "Trigas Incubators", path: "/treatments/advanced/trigas-incubators/" },
+              { label: "Witness System", path: "/treatments/advanced/witness-system/" },
+              { label: "Cryopreservation", path: "/treatments/advanced/cryopreservation/" },
+            ],
+          },
+          {
+            label: "Infertility Treatments", path: "/treatments#infertility",
+            submenu: [
+              { label: "Ovulation Induction", path: "/treatments/infertility/ovulation-induction/" },
+              { label: "IUI", path: "/treatments/infertility/artificial-insemination-iui-treatment/" },
+              { label: "IVF", path: "/treatments/infertility/ivf/" },
+              { label: "IVF-ICSI ", path: "/treatmentsinfertility/ivf-icsi/" },
+              { label: "Frozen Embryo Transfer", path: "/treatments/infertility/frozen-embryo-transfer/" },
+              { label: "Fertility Surgery  ", path: "/treatments/infertility/fertility-surgery/" },
+            ],
+          },
+          {
+            label: "Fertility Preservation", path: "/treatments#preservation",
+            submenu: [
+              { label: "Female Fertility Preservation", path: "/treatments/preservation/female-fertility-preservation/" },
+              { label: "Male Fertility Preservation", path: "/treatments/preservation/male-fertility-preservation/" },
+              { label: "Embryo Preservation", path: "/treatments/preservation/egg-embryo-freezing/" },
+            ],
+          },
+          {
+            label: "Fertility Evaluation", path: "/treatments#evaluation",
+            submenu: [
+              { label: "Female Analysis-Complete Reproductive Health Check", path: "/treatments/evaluation/female-analysis-complete-reproductive-health-check/" },
+              { label: "Male Analysis – Advanced Sperm Testing", path: "/treatments/evaluation/male-analysis/" },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Quick Links",
+        links: [
+          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          { label: "International Patients", path: "/international-patients", isarrow: true },
+        ],
+      },
+    ],
+  },
+};
+
+
+
+/* -------------------- DROPDOWN DATA -------------------- */
+const megaMenuData: Record<string, any> = {
+  "About Us": {
+    image: "/Navbar/about.png",
+    columns: [
+      {
+        title: "Discover Us",
+        links: [
+          // { label: "Why Progenesis", path: "/about-us#why-1" },
+          { label: "Our Approach", path: "/about-us#our-approach" },
+          { label: "Our Vision & Mission", path: "/about-us#our-vision" },
+          { label: "Why choose us", path: "/about-us#why-choose-us" },
+          { label: "Leadership Team", path: "/leadership-team" },
+          { label: "Impact & Growth", path: "/about-us#impact-growth" },
+          { label: "FAQs", path: "/about-us#faqs" },
+        ],
+      },
+      {
+        title: "Quick Links",
+        links: [
+          { label: "Book Appointment", path: "/appointment", isButton: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          // { label: "Take a Quiz", path: "/quiz", isarrow: true },
+          // { label: "Online Consult", path: "/online-consult", isarrow: true },
+          // { label: "EMI Options", path: "/emi-options", isarrow: true },
+        ],
+      },
+      {
+        links: [
+          // { label: "Fellowship", path: "/fellowship", isarrow: true },
+          { label: "Our Centers", path: "/centers", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "International Patients", path: "/international-patients", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
+
+        ],
+      },
+    ],
+  },
+  "Infertility Issues": {
+    image: "/Navbar/infertility-image.png",
+    columns: [
+      {
+        title: "Know Infertility",
+        links: [
+          {
+            label: "What is Infertility", path: "/infertility#path",
+            submenu: [
+              { label: "Overview", path: "/infertility" },
+              { label: "Symptoms", path: "/infertility" },
+              { label: "Diagnosis", path: "/infertility" },
+              { label: "Treatment Options", path: "/infertility" },
+            ],
+          },
+          {
+            label: "Female Infertility Causes", path: "/infertility#fertility-section",
+            submenu: [
+              { label: "Repeated IUI Failures", path: "/infertility/female/repeated-iui-failures/" },
+              { label: "Repeated IVF Failures", path: "/infertility/female/repeated-ivf-failures/" },
+              { label: "Pregnancy after Menopause", path: "/infertility/female/pregnancy-after-menopause/" },
+              { label: "Low AMH", path: "/infertility/female/low-amh/" },
+              { label: "PCOS", path: "/infertility/female/pcos/" },
+              { label: "Tubal Blockage", path: "/infertility/female/tubal-blockage/" },
+              { label: "Fibroids", path: "/infertility/female/fibroids/" },
+              { label: "Endometriosis", path: "/infertility/female/endometriosis/" },
+            ],
+          },
+          {
+            label: "Male Infertility Causes", path: "/infertility#fertility-mini-section",
+            submenu: [
+              { label: "Azoospermia", path: "/infertility/male/azoospermia/" },
+              { label: "Low Sperm Count", path: "/infertility/male/low-sperm-count/" },
+              { label: "Erectile Dysfunction (ED)", path: "/infertility/male/erectile-dysfunction/" },
+            ],
+          },
+          { label: "Real Stories. Real Miracles.", path: "/infertility#stories-section" },
+        ],
+      },
+      {
+        title: "Quick Links",
+        links: [
+          { label: "Book Appointment", path: "/appointment", isButton: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          // { label: "Take a Quiz", path: "/quiz", isarrow: true },
+          // { label: "Online Consult", path: "/online-consult", isarrow: true },
+          // { label: "EMI Options", path: "/emi-options", isarrow: true },
+        ],
+      },
+      {
+        links: [
+          { label: "Our Centers", path: "/centers", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "International Patients", path: "/international-patients", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
+        ],
+      },
+    ],
+  },
+  "Our Centers": {
+    image: "/Navbar/center.png",
+    columns: [
+      {
+        title: "Where We Are",
+        links: [
+          {
+            label: "Mumbai", path: "/centers/mumbai",
+            submenu: [
+              { label: "Thane", path: "/centers/thane" },
+              { label: "Andheri", path: "/centers/andheri" },
+              { label: "Borivali", path: "/centers/borivali" },
+              { label: "Ghatkopar", path: "/centers/ghatkopar" },
+              { label: "Vashi", path: "/centers/vashi" },
+              { label: "Virar", path: "/centers/virar" },
+              { label: "Kalyan", path: "/centers/kalyan" },
+              { label: "Panvel", path: "/centers/panvel" },
+            ],
+          },
+          { label: "Nashik", path: "/centers/nashik" },
+          { label: "Jalgaon", path: "/centers/jalgaon" },
+          // { label: "Ahilyanagar", path: "/centers/ahilyanagar" },
+          // { label: "Amravati", path: "/centers/amravati" },
+          // { label: "Kolhapur", path: "/centers/kolhapur" },
+          // { label: "Nagpur", path: "/centers/nagpur" },
+          // { label: "Solapur", path: "/centers/solapur" },
+          // { label: "Pune", path: "/centers/pune" },
+        ],
+      },
+      {
+        // title: "Quick Links",
+        links: [
+          // { label: "Book Appointment", path: "/appointment", isButton: true },
+          // { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
+          // { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "Ahilyanagar", path: "/centers/ahilyanagar" },
+          { label: "Amravati", path: "/centers/amravati" },
+          { label: "Kolhapur", path: "/centers/kolhapur" },
+          { label: "Nagpur", path: "/centers/nagpur" },
+          { label: "Solapur", path: "/centers/solapur" },
+          { label: "Pune", path: "/centers/pune" },
+          // { label: "Take a Quiz", path: "/quiz", isarrow: true },
+          // { label: "Online Consult", path: "/online-consult", isarrow: true },
+          // { label: "EMI Options", path: "/emi-options", isarrow: true },
+          // { label: "Fellowship", path: "/fellowship",isarrow: true },
+          // { label: "Our Centers", path: "/centers",isarrow: true },
+          // { label: "Our Social Impact", path: "/social-impact" ,isarrow: true},
+        ],
+      },
+      {
+        links: [
+          { label: "Our Centers", path: "/centers", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "International Patients", path: "/international-patients", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
+        ],
+      },
+    ],
+  },
+  "Treatments": {
+    image: "/Navbar/treatments.png",
+    columns: [
+      {
+        title: "Fertility Solutions",
+        links: [
+          { label: "Your Path to Parenthood", path: "/treatments#path" },
+          {
+            label: "Advanced Infertility Treatments", path: "/treatments#advanced",
+            submenu: [
+              { label: "IMSI – High-Resolution Sperm Selection", path: "/treatments/advanced/imsi" },
+              { label: "PICSI – Physiological ICSI", path: "/treatments/advanced/picsi" },
+              { label: "LAH – Laser Assisted Hatching", path: "/treatments/advanced/lah" },
+              { label: "Blastocyst Transfer – Stronger Embryo Transfer", path: "/treatments//advanced/blastocyst-transfer" },
+              { label: "Sequential Embryo Transfer – Two-Stage Transfer", path: "/treatments/advanced/sequential-embryo-transfer/" },
+              { label: "PGD/PGS/PGT-A – Genetic Screening", path: "/treatments/advanced/pgd-pgs-pgt-a/" },
 
             ],
           },
@@ -833,6 +1036,12 @@ const megaMenuData: Record<string, any> = {
 
             ],
           },
+
+        ],
+      },
+      {
+        links: [
+
           {
             label: "Infertility Treatments", path: "/treatments#infertility",
             submenu: [
@@ -868,43 +1077,6 @@ const megaMenuData: Record<string, any> = {
         ],
       },
       // {
-      //   links: [
-
-      //     {
-      //       label: "Infertility Treatments", path: "/treatments#infertility",
-      //       submenu: [
-      //         { label: "Ovulation Induction", path: "/treatments/infertility/ovulation-induction/" },
-      //         { label: "IUI", path: "/treatments/infertility/artificial-insemination-iui-treatment/" },
-      //         { label: "IVF", path: "/treatments/infertility/ivf/" },
-      //         { label: "IVF-ICSI ", path: "/treatmentsinfertility/ivf-icsi/" },
-      //         { label: "Frozen Embryo Transfer", path: "/treatments/infertility/frozen-embryo-transfer/" },
-      //         { label: "Fertility Surgery  ", path: "/treatments/infertility/fertility-surgery/" },
-
-      //       ],
-      //     },
-      //     {
-      //       label: "Fertility Preservation", path: "/treatments#preservation",
-      //       submenu: [
-      //         { label: "Female Fertility Preservation", path: "/treatments/preservation/female-fertility-preservation/" },
-      //         { label: "Male Fertility Preservation", path: "/treatments/preservation/male-fertility-preservation/" },
-      //         { label: "Embryo Preservation", path: "/treatments/preservation/egg-embryo-freezing/" },
-
-      //       ],
-
-      //     },
-      //     {
-      //       label: "Fertility Evaluation", path: "/treatments#evaluation",
-      //       submenu: [
-      //         { label: "Female Analysis-Complete Reproductive Health Check", path: "/treatments/evaluation/female-analysis-complete-reproductive-health-check/" },
-      //         { label: "Male Analysis – Advanced Sperm Testing", path: "/treatments/evaluation/male-analysis/" },
-
-      //       ],
-
-      //     },
-
-      //   ],
-      // },
-      // {
       //   title: "Preservation",
       //   links: [
       //     { label: "Online Consult", path: "/treatments#female-preservation" ,isarrow: true},
@@ -915,14 +1087,12 @@ const megaMenuData: Record<string, any> = {
       //   ],
       // },
       {
-        title: "Quick Links",
         links: [
-          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
-          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
-          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Our Centers", path: "/centers", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultation", isarrow: true },
         ],
       },
     ],
@@ -1523,9 +1693,9 @@ export default function Navbar() {
                 <>
                   {/* SUBMENU */}
                   <div className="p-2 space-y-6">
-                    {megaMenuData[activeMobileSubmenu] && (
+                    {(megaMenuDataMobile[activeMobileSubmenu] || megaMenuData[activeMobileSubmenu]) && (
                       <>
-                        {megaMenuData[activeMobileSubmenu].columns.map((col: any, i: number) => {
+                        {(megaMenuDataMobile[activeMobileSubmenu] || megaMenuData[activeMobileSubmenu]).columns.map((col: any, i: number) => {
                           const highlightedSections = [
                             "Discover Us",
                             "Know Infertility",
@@ -1799,7 +1969,6 @@ export default function Navbar() {
 
   );
 }
-
 
 
 
