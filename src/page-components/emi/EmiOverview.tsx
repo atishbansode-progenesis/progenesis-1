@@ -40,7 +40,7 @@ const EmiOverview = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-normal tracking-tight text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] mb-8 md:pb-12">
+        <h2 className="text-[#2C2C2C] lg:text-[40px] font-normal tracking-tight text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] mb-8 md:pb-12">
           Financial Support That Puts You First
         </h2>
 
@@ -53,7 +53,7 @@ const EmiOverview = () => {
             >
               <div className="flex flex-col items-start justify-center gap-[10px]">
                 {/* Icon */}
-                <div className="h-7 w-7 lg:h-[50px] lg:w-[50px]">
+                <div className="h-7 w-7 lg:h-[46px] lg:w-[50px]">
                 <img
                   src={it.icon}
                   alt={it.text}
