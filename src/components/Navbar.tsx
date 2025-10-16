@@ -1625,7 +1625,7 @@ export default function Navbar() {
 
 
             {/* LINKS */}
-            <div className="flex-1 overflow-y-auto px-6 py-4 divide-y divide-[#EDEDED]">
+            <div className="flex-1 overflow-y-auto px-4 py-4 pb-28 divide-y divide-[#EDEDED]">
               {/* MAIN MENU */}
               {!activeMobileSubmenu ? (
                 <>
@@ -1692,7 +1692,7 @@ export default function Navbar() {
               ) : (
                 <>
                   {/* SUBMENU */}
-                  <div className="p-2 space-y-6">
+                  <div className="p-1 space-y-6">
                     {(megaMenuDataMobile[activeMobileSubmenu] || megaMenuData[activeMobileSubmenu]) && (
                       <>
                         {(megaMenuDataMobile[activeMobileSubmenu] || megaMenuData[activeMobileSubmenu]).columns.map((col: any, i: number) => {
