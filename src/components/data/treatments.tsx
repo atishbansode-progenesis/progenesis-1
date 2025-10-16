@@ -797,8 +797,8 @@ export const class1000ModularLabData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "procedure", label: "Lab Features" }, // Maps to procedure steps
-    { id: "why-choose", label: "Why It Matters" }, // Maps to why section
+    { id: "procedure", label: "Why Choose a Class-1000 Modular Lab" }, // Maps to procedure steps
+    { id: "why-choose", label: "Steps of Lab Operation Process" }, // Maps to why section
     { id: "stories", label: "Success Stories" },
   ],
   basics: [
@@ -963,7 +963,7 @@ export const trigasIncubatorsData = {
       id: "01",
       title: "Advanced Gas Control",
       description:
-        "Stable Conditions. Supports AH Outcomes.",
+        "Regulates CO₂, O₂, and N₂ levels to replicate the natural conditions of the female reproductive system.",
       image: "/treatments/trigas/trigas_c1.png",
     },
     {
@@ -1144,7 +1144,7 @@ export const witnessSystemData = {
   },
   gradient_data: "100%",
   gradient_text:
-    "Accuracy ensures all samples and embryos verified, with zero errors and full patient confidence.",
+    "accuracy ensures all samples and embryos verified, with zero errors and full patient confidence.",
   our_story: "From Hope to Happiness Watch Now!"
 };
 
@@ -1270,7 +1270,7 @@ export const cryopreservationData = {
   },
   gradient_data: "98%",
   gradient_text:
-    "Post-thaw viability ensures cryopreserved eggs, sperm, and embryos retain quality for successful future IVF outcomes.",
+    "post-thaw viability ensures cryopreserved eggs, sperm, and embryos retain quality for successful future IVF outcomes.",
   success_stories: "From Hope to Happiness Watch Now!",
   success_tag:"Success Stories",
 };
