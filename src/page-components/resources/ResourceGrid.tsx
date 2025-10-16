@@ -150,7 +150,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
             <button
               type="button"
               onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-              className="rounded-full border border-[#1656A5] px-4 py-2 text-sm font-medium text-[#1656A5] transition-colors hover:bg-[#1656A5] hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400"
+              className="rounded-[8px] border border-[#1656A5] px-4 py-2 text-sm font-medium text-[#1656A5] transition-colors hover:bg-[#1656A5] hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400"
               disabled={currentPage === 1}
             >
               Previous
@@ -163,7 +163,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                     key={pageNumber}
                     type="button"
                     onClick={() => setCurrentPage(pageNumber)}
-                    className={`min-w-[40px] rounded-full px-4 py-2 text-sm font-semibold ${
+                    className={`min-w-[40px] rounded-[8px]  px-4 py-2 text-sm font-semibold ${
                       currentPage === pageNumber
                         ? "bg-[#1656A5] text-white shadow-md"
                         : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors"
@@ -180,7 +180,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
               onClick={() =>
                 setCurrentPage((prev) => Math.min(totalPages, prev + 1))
               }
-              className="rounded-full border border-[#1656A5] px-4 py-2 text-sm font-medium text-[#1656A5] transition-colors hover:bg-[#1656A5] hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400"
+              className="rounded-[8px] border border-[#1656A5] px-4 py-2 text-sm font-medium text-[#1656A5] transition-colors hover:bg-[#1656A5] hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400"
               disabled={currentPage === totalPages}
             >
               Next
