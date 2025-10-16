@@ -38,7 +38,7 @@ export default function StepsSection({
   }, [autoRotate, rotateInterval, steps.length]);
 
   return (
-    <section id="treatment" className="w-full p-[16px] py-[40px] md:py-[80px] lg:px-[120px] bg-white font-[Manrope] scroll-mt-[120px]">
+    <section id="treatment" className="w-full p-[16px] md:px-[120px] md:py-[80px] bg-white font-[Manrope]">
       <div>
         <div className="flex flex-col items-start justify-between">
           {/* Header */}
@@ -52,9 +52,9 @@ export default function StepsSection({
           </div>
 
           {/* Buttons + Progress */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-20">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center">
             {/* Step Buttons */}
-            <div className="flex flex-wrap gap-2 mb-5 lg:mb-0">
+            <div className="flex flex-wrap gap-2 mb-[24px] lg:mb-0">
               {steps.map((step, i) => (
                 <button
                   key={step.id}

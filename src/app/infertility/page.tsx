@@ -17,6 +17,7 @@ import {
 } from "@/page-components/infertilityV1";
 import NewConstaltentForm from "@/page-components/infertilityV1/NewConstaltentForm";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
+import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
 
 export function FeatureCard({ title, description, href }: FeatureCardProps) {
   const cardContent = (
@@ -79,7 +80,7 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
         contentClassName="justify-start"
       />
 
-      <CategoryTabs
+      <NavigationTabs
         categories={CATEGORIES}
         activeTab={activeTab}
         onTabClick={handleScroll}
