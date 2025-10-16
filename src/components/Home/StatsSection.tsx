@@ -196,8 +196,7 @@ const StatsSection = () => {
 
   return (
     <section
-      className="relative bg-[url('/images/stats-bg-mob.png')] csLg:bg-[url('/images/stats-bg-desk.png')] bg-cover bg-center w-full bg-gradient-to-r from-white via-white to-blue-50 overflow-hidden pb-[60px]"
-      style={{ paddingTop: "84px" }}
+      className="relative  py-4 csLg:py-[80px] bg-[url('/images/stats-bg-mob.png')] csLg:bg-[url('/images/stats-bg-desk.png')] bg-cover bg-center w-full bg-gradient-to-r from-white via-white to-blue-50 overflow-hidden "
     >
 
       <div className="relative mx-0 px-6 lg:px-[50px]  xl:px-[80px] 2xl:px-[120px]">

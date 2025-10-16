@@ -224,7 +224,7 @@ const HeroCarousel = () => {
       title: "Trusted care for every step of the way",
       buttons: [
         { label: "Book Consultation", href: "/consultation" },
-        { label: "See Success Stories", href: "/success-stories" },
+        { label: "See Success Stories", href: "/resources" },
       ],
     },
   ];
@@ -303,7 +303,9 @@ const HeroCarousel = () => {
           >
             {slide.image.endsWith(".mp4") ? (
               <video
-                ref={(el) => (videoRefs.current[index] = el)}
+                ref={(el) => {
+                  videoRefs.current[index] = el;
+                }}
                 src={slide.image}
                 muted
                 playsInline
@@ -343,7 +345,7 @@ const HeroCarousel = () => {
 
         <div className="flex flex-row gap-3 mt-6 md:mt-12">
           {slides[currentSlide].buttons.map((btn, i) => {
-            if (btn.href === "/appointment") {
+            if (btn.href === "/appointment" || btn.href === "/get-started" || btn.href === "/consultation") {
               return (
                 <button
                   key={i}

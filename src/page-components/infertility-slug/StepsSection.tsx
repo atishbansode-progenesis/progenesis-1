@@ -1,4 +1,5 @@
 // components/InfertilityIssues/StepsSection.tsx
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 interface Step {
@@ -91,7 +92,7 @@ export default function StepsSection({
           </div>
 
           {/* Content + Image */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-stretch gap-8">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-stretch gap-8 min-h-[600px]">
             {/* Left Card */}
             <div className="w-[349px] bg-[#F1F7FC] justify-between rounded-2xl flex  flex-col p-5 gap-6">
               <div className="text-[28px] text-[#2C2C2C] font-normal lg:mb-6">
@@ -108,7 +109,7 @@ export default function StepsSection({
             </div>
 
             {/* Right Image */}
-            <div className="w-full max-w-[1248px] rounded-2xl overflow-hidden flex-1">
+            {/* <div className="w-full max-w-[1248px] rounded-2xl overflow-hidden flex-1">
               <img
                 key={activeStep}
                 src={steps[activeStep].image}
@@ -116,6 +117,25 @@ export default function StepsSection({
                 className="w-full h-full object-cover block transition-opacity duration-500 ease-in-out"
                 style={{ minHeight: '0', height: '100%' }}
               />
+            </div> */}
+
+            <div className="relative w-full max-w-[1248px] rounded-2xl overflow-hidden flex-1 aspect-[1248/601]">
+              {steps.map((step, i) => (
+                <div
+                  key={i}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${i === activeStep ? "opacity-100" : "opacity-0"
+                    }`}
+                >
+                  <Image
+                    src={step.image}
+                    alt={step.title}
+                    fill
+                    priority={i === 0}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

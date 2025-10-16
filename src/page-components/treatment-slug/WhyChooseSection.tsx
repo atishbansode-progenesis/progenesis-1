@@ -35,7 +35,7 @@ export default function WhyChooseSection({
                 </span>
               )}
 
-              <h2 className="text-[#2C2C2C] font-manrope font-normal text-[28px] leading-[36px] md:text-[44px] md:leading-[52px]">
+              <h2 className="text-[#2C2C2C] font-manrope font-normal text-[28px] leading-[36px] md:text-[40px] md:leading-[52px]">
                 {heading}
               </h2>
             </div>
