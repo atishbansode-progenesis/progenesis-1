@@ -40,6 +40,7 @@ export default function MainInfertility({ data }: { data: any }) {
         buttonText={data.hero.buttonText}
         buttonLink={data.hero.buttonLink}
         overlayImage={data.hero.overlayImage}
+        showBlurredShape={false}
         overlayImageSmall={data.hero.overlayImageSmall}
         breadcrumbColor={data.hero.breadcrumbColor}
         breadcrumbActiveColor={data.hero.breadcrumbActiveColor}
