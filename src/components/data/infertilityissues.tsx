@@ -1649,7 +1649,6 @@ export const endometriosisData = {
     buttonText: "Book Your Appointment",
     buttonLink: "/book-appointment",
     overlayImage: "/InfertilityIssues/endometriosis-bg.png",
-    overlayImageSmall: "/InfertilityIssues/endometriosis-bg-small.png",
     breadcrumbColor: "#FFFFFF",
     breadcrumbActiveColor: "#A4CDFF",
     titleColor: "#F9F9F9",
