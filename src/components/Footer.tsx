@@ -55,8 +55,11 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-  className="relative w-full min-h-[120vh] flex flex-col justify-between bg-center bg-cover bg-no-repeat bg-fixed text-white overflow-hidden"
-  style={{ backgroundImage: "url('/footer.png')" }}
+  className="relative w-full bg-[url('/images/foot-mob.png')] csLg:bg-[url('/footer.png')] bg-[#645242] min-h-[120vh] flex flex-col justify-between bg-no-repeat md:bg-fixed text-white overflow-hidden"
+  style={{ 
+    backgroundPosition: 'center top',
+    backgroundSize: '100% auto',
+  }}
 >
 
   
@@ -72,9 +75,9 @@ const Footer: React.FC = () => {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
 
       {/* Content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center max-w-screen-2xl w-full mx-auto px-6 md:px-20 pt-10 md:pt-20 pb-10">
+      <div className="relative z-10 flex-1 flex flex-col justify-between csLg:justify-center max-w-screen-2xl w-full mx-auto px-6 md:px-20 pt-10 md:pt-20 pb-10">
         {/* Logo */}
-        <div className="mb-10 md:mb-20">
+        <div className="mb-10 md:mb-20 min-h-[50vh] csLg:min-h-auto flex flex-col">
           <Link href="/">
             <img
               src="/footer.svg"
@@ -82,10 +85,13 @@ const Footer: React.FC = () => {
               className="w-40 md:w-64 object-contain"
             />
           </Link>
+          <p className="text-base  csLg:hidden block mt-3 md:text-2xl leading-6 md:leading-10 font-normal max-w-sm md:max-w-2xl">
+              Aiming to be the benchmark for reproductive health care services.
+            </p>
         </div>
 
         {/* Grid Section */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-y-10 gap-x-8 md:gap-x-12 lg:gap-x-20">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-y-10 gap-x-8 md:gap-x-12 lg:gap-x-20 ">
           {/* About */}
           <div>
             <h3 className="text-base md:text-lg font-[Manrope] font-semibold leading-6 mb-4">
@@ -278,7 +284,7 @@ const Footer: React.FC = () => {
         {/* Bottom section (original restored) */}
         <div className="mt-auto w-full pb-10">
           <div className="mt-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
-            <p className="text-base md:text-2xl leading-6 md:leading-10 font-normal max-w-sm md:max-w-2xl">
+            <p className="text-base hidden csLg:block md:text-2xl leading-6 md:leading-10 font-normal max-w-sm md:max-w-2xl">
               Aiming to be the benchmark for reproductive health care services.
             </p>
 
