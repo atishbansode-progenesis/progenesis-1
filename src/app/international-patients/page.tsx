@@ -389,17 +389,18 @@ const InternationalPatientsPage: React.FC = () => {
       </section> */}
 
       <HeroSection
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: " International Patient", href: "/international-patients" },
-        ]}
-        title={`IVF Treatment for <br/> International Patient`}
-        buttonText="Book Your Appointment"
-        buttonLink="/book-appointment"
-        foregroundImage="/InternationalPatients/hero_person.png"
-        overlayImage="/treatments/doctor-foreground.png"
-        contentClassName="justify-start"
-      />
+  breadcrumbs={[
+    { label: "Home", href: "/" },
+    { label: " International Patient", href: "/international-patients" },
+  ]}
+  title={`IVF Treatment for <br/> International Patient`}
+  buttonText="Book Your Appointment"
+  buttonLink="/book-appointment"
+  overlayImage="/InternationalPatients/hero_person.png"
+  overlayImageSmall="/InternationalPatients/ip-bg-mob.png"
+  contentClassName="justify-start"
+ />
+
       <div
         className="w-full bg-white pt-[30px] md:pt-[50px] px-[12px] md:px-[80px] xl:px-[120px]"
       >
@@ -420,7 +421,7 @@ const InternationalPatientsPage: React.FC = () => {
         </div>
       </div>
 
-      <section id="start" className="csLg:px-[120px] px-[16px] py-[40px] md:py-[80px] bg-white">
+      <section id="start" className="csLg:px-[120px] px-[16px] py-[30px] md:py-[80px] bg-white">
         <Journey />
       </section>
 
