@@ -18,7 +18,7 @@ const DoctorsPart = () => {
         ></div>
 
         {/* Overlay for better text contrast */}
-        <div className="absolute inset-0 bg-black opacity-20 lg:opacity-0"></div>
+        <div className="absolute inset-0  opacity-20 lg:opacity-0"></div>
 
         {/* Top-right heading */}
         <div className="absolute top-[60px] right-0 lg:right-[90px] w-full lg:w-auto text-center lg:text-right z-10">
