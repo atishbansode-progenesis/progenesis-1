@@ -1904,47 +1904,51 @@ export default function Navbar() {
             </div>
 
 
-            {/* FOOTER BUTTONS */}
-            <div className="flex justify-between items-center px-[16px] py-[16px] gap-3">
-              {/* Book Appointment Button */}
-              <button
-                onClick={handleBookAppointment}
-                className="
-      flex items-center justify-center
-      px-[16px] py-[10px]
-      rounded-[8px]
-      bg-[#1656A5]
-      text-[#F9F9F9]
-      font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px]
-      whitespace-nowrap
-      transition-all duration-200
-      hover:bg-[#0E3E7A]
-      focus:outline-none focus:ring-2 focus:ring-[#1656A5]/40
-      cursor-pointer
-    "
-              >
-                Book Your Appointment
-              </button>
+            {/* FOOTER BUTTONS - Fixed at bottom of mobile menu */}
+            <div className="sticky bottom-0 left-0 right-0 bg-white border-t border-[#EDEDED] shadow-[0_-2px_10px_rgba(0,0,0,0.05)] mt-auto">
+              <div className="flex justify-between items-center px-[16px] py-[16px] gap-3">
+                {/* Book Appointment Button */}
+                <button
+                  onClick={handleBookAppointment}
+                  className="
+        flex items-center justify-center
+        px-[16px] py-[10px]
+        rounded-[8px]
+        bg-[#1656A5]
+        text-[#F9F9F9]
+        font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px]
+        whitespace-nowrap
+        transition-all duration-200
+        hover:bg-[#0E3E7A]
+        focus:outline-none focus:ring-2 focus:ring-[#1656A5]/40
+        cursor-pointer
+        active:scale-95
+      "
+                >
+                  Book Your Appointment
+                </button>
 
-              {/* Find My Right Treatment Button */}
-              <Link
-                href="/check-fit"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="
-      flex items-center justify-center
-      px-[16px] py-[10px]
-      rounded-[8px]
-      border border-[#1656A5]
-      text-[#1656A5]
-      font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px]
-      whitespace-nowrap
-      transition-all duration-200
-      hover:bg-[#1656A5] hover:text-[#F9F9F9]
-      focus:outline-none focus:ring-2 focus:ring-[#1656A5]/30
-    "
-              >
-                Find My Right Treatment
-              </Link>
+                {/* Find My Right Treatment Button */}
+                <Link
+                  href="/check-fit"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="
+        flex items-center justify-center
+        px-[16px] py-[10px]
+        rounded-[8px]
+        border border-[#1656A5]
+        text-[#1656A5]
+        font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px]
+        whitespace-nowrap
+        transition-all duration-200
+        hover:bg-[#1656A5] hover:text-[#F9F9F9]
+        focus:outline-none focus:ring-2 focus:ring-[#1656A5]/30
+        active:scale-95
+      "
+                >
+                  Find My Right Treatment
+                </Link>
+              </div>
             </div>
 
 
