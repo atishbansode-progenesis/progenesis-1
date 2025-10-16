@@ -70,7 +70,7 @@ export default function EmiLanding() {
             <button
               onClick={() => setIsOpen(true)}
               className="
-                bg-[#252525] 
+                bg-[#1656A5] 
                 csLg:text-[14px] csLg:leading-[24px] 
                 tracking-tight cursor-pointer 
                 text-[12px] md:px-6 px-3 py-3 md:py-4 

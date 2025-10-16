@@ -206,21 +206,39 @@ export const pregnancyAfterMenopauseData = {
     items: [
       {
         id: 1,
-        title: "Menopause Defined",
+        title: "Definition",
         description:
-          "The natural end of a woman’s reproductive years, marked by the absence of menstrual cycles for 12 consecutive months.",
+          "Menopause is the natural end of menstruation due to reduced ovarian hormones and egg release, marking the end of fertility.",
       },
       {
         id: 2,
-        title: "Common Causes",
+        title: "Possible Reasons",
         description:
-          "Natural aging, hormonal decline, surgical removal of ovaries, or certain medical treatments.",
+          "Hormonal shifts, early menopause, genetics, or medical treatments can reduce ovarian reserves and hinder conception.",
       },
       {
         id: 3,
-        title: "Symptoms",
+        title: "Symptoms & Impact",
         description:
-          "Hot flashes, irregular cycles, mood swings, vaginal dryness, weight gain, and sleep disturbances.",
+          "Pregnancy during menopause mimics menopause symptoms and increases risks for mother and baby.",
+      },
+      {
+        id: 4,
+        title: "Treatment Options",
+        description:
+          "Oocyte Donation uses donor eggs with the husband’s sperm, providing a successful IVF solution for menopause-related infertility.",
+      },
+      {
+        id: 5,
+        title: "Emotional Challenges",
+        description:
+          "Pregnancy after menopause can bring grief, anxiety, mood swings, identity challenges, and a strong need for support.",
+      },
+      {
+        id: 6,
+        title: "When to Seek Expert Help",
+        description:
+          "Expert help after menopause is vital to assess fertility, manage risks, and ensure safe care.",
       },
     ],
   },
@@ -267,15 +285,15 @@ export const pregnancyAfterMenopauseData = {
     subText2: "leading to weight gain and a slower metabolic rate, which may impact overall health and well-being",
     card1: {
       title: "Irregular or missed cycles signaling hormonal.",
-      icon:"/images/icons/care-1.svg"
+      icon:"/InfertilityIssues/polycysticOvarianSyndromeIcon1.svg"
     },
     card2: {
       title: "Reduced vaginal lubrication causing hormonal discomfort.",
-      icon:"/images/icons/care-1.svg"
+      icon:"/InfertilityIssues/care-2.svg"
     },
     card3: {
       title: "Weight gain and slowed metabolism",
-      icon: "/images/icons/care-1.svg"
+      icon: "/InfertilityIssues/care-3.svg"
     }
   },
 
@@ -365,25 +383,36 @@ export const repeatedIVFFailuresData = {
         id: 1,
         title: "Definition",
         description:
-          "Repeated IVF failure refers to unsuccessful implantation or pregnancy after multiple cycles of in vitro fertilization.",
+          "When IVF doesn’t succeed the first time, it doesn’t mean the journey ends. Each attempt brings you closer to the right solution.",
       },
       {
         id: 2,
         title: "Possible Reasons",
         description:
-          "Poor egg or sperm quality, genetic abnormalities, uterine issues, hormonal imbalance, or lifestyle factors.",
+          "Embryo quality, uterine conditions, chromosomal issues, immune problems, or advanced maternal age. ",
       },
       {
         id: 3,
-        title: "Emotional Impact",
+        title: "Symptoms & Impact",
         description:
-          "Repeated failures often cause stress, anxiety, and frustration for couples trying to conceive.",
+          "Repeated IVF failures cause physical strain, emotional stress, and financial or social pressure.",
       },
       {
         id: 4,
-        title: "When to Seek Expert Help",
+        title: "Treatment Options",
         description:
-          "If IVF fails repeatedly, advanced diagnostic and treatment strategies are necessary with expert guidance.",
+          "Genetic testing, sperm selection, uterine care, receptivity tests, donor programs, and lifestyle changes can improve success.",
+      },
+      {  
+        id: 5,
+        title: "Emotional Challenges",
+        description:
+          "Each failed cycle can bring disappointment, relationship stress, isolation, and anxiety about future fertility.",
+      },
+      {
+        id: 6,
+        title: "When to Seek Expert Help",
+        description: "Consult a specialist after two or more failed cycles, especially for women over 35 or with sperm, egg, or uterine issues.",
       },
     ],
   },
@@ -428,15 +457,15 @@ export const repeatedIVFFailuresData = {
     heading: "Learn the numbers, Take control of your fertility journey",
     greenCircleData: {
       value: "3–4<br/> Cycles",
-      description: "If you’ve had 3–4 failed IUI cycles, it’s time to consult your doctor about advanced options."
+      description: "In many cases, it may take 3 to 4 cycles before achieving a successful pregnancy, which is completely normal in fertility treatments."
     },
     skyCircleData: {
       value: "60–70%",
-      description: "Only around 5–10% of couples experience repeated IVF failures despite multiple attempts.",
+      description: "For women under the age of 35, IVF success rates are encouraging, ranging between 60–70%",
     },
     blueCircleData: {
       value: "5–10%",
-      description: "It often takes 3–4 IVF cycles before achieving pregnancy—this is considered normal."
+      description: "Only a small percentage—around 5–10% of couples—face repeated failures even after multiple attempts."
     },
   },
 
@@ -527,25 +556,37 @@ export const lowAMHData = {
         id: 1,
         title: "Definition",
         description:
-          "AMH (Anti-Müllerian Hormone) is a marker of ovarian reserve. Low AMH indicates reduced egg supply.",
+          "AMH shows ovarian reserve. Low AMH means fewer eggs, making conception harder.",
       },
       {
         id: 2,
         title: "Possible Reasons",
         description:
-          "Aging, genetic factors, lifestyle habits, ovarian surgery, or medical conditions.",
+          "Caused by age, genetics, lifestyle, medical treatments, or ovarian issues.",
       },
       {
         id: 3,
-        title: "Symptoms",
+        title: "Symptoms & Impact",
         description:
-          "Often symptomless, but may be linked to irregular cycles, difficulty conceiving, or poor IVF response.",
+          "Often no signs, but may include irregular periods, reduced fertility, or early menopause.",
       },
       {
         id: 4,
-        title: "Impact",
+        title: "Treatment Options",
         description:
-          "Low AMH reduces natural fertility chances and may affect IVF success, but parenthood is still possible with proper treatment.",
+          "Fertility specialists use approaches like IVF with ovarian stimulation, supplements (DHEA, Vitamin D3, CoQ10), PRP therapy, or donor eggs.",
+      },
+      {
+        id: 5,
+        title: "Emotional Challenges",
+        description:
+          "Facing Low AMH can be stressful and emotionally draining, often leading to anxiety, self-doubt, or relationship strain.",
+      },
+      {
+        id: 6,
+        title: "When to Seek Expert Help",
+        description:
+          "If over 35, with irregular cycles, or facing difficulty conceiving, consult a specialist early.",
       },
     ],
   },
@@ -583,15 +624,15 @@ export const lowAMHData = {
     subHeading:"We believe every hopeful parent deserves a team that listens, cares, and fights to make dreams a reality — with science, empathy, and unwavering support.",
     skyCircleData : {
       value: "70–80%",
-      description: "AMH levels in the optimal range indicate strong ovarian reserve for most women."
+      description: "Success rate with donor eggs in Low AMH cases, offering higher chances."
     },
     greenCircleData: {
-      value: "3–4<br/> Cycles",
-      description: "Moderate AMH levels may still support natural conception and IVF success."
+      value: "50–60%",
+      description: "IVF success rates improve with tailored protocols and proper ovarian stimulation."
     },
     blueCircleData: {
-      value: "5–10%",
-      description: "Low AMH levels may require IVF or donor egg/embryo support for successful conception."
+      value: "30–40%",
+      description: "Women with Low AMH can still conceive naturally with lifestyle and medical support."
     },
   },
 
@@ -682,25 +723,37 @@ export const polycysticOvarianSyndromeData = {
         id: 1,
         title: "Definition",
         description:
-          "Polycystic Ovarian Syndrome (PCOS) is a hormonal disorder causing enlarged ovaries with small cysts, leading to irregular periods and fertility challenges.",
+          "A hormonal imbalance causing irregular cycles, cystic ovaries, and fertility issues.",
       },
       {
         id: 2,
         title: "Possible Reasons",
         description:
-          "Hormonal imbalances, insulin resistance, genetics, and lifestyle factors contribute to PCOS development.",
+          "Linked to genetics, insulin resistance, obesity, hormonal imbalance, and lifestyle factors.",
       },
       {
         id: 3,
-        title: "Common Symptoms",
+        title: "Symptoms & Impact",
         description:
-          "Irregular periods, weight gain, acne, hair growth, and difficulty conceiving are common signs.",
+          "Irregular periods, acne, weight gain, hair growth, and long-term health risks.",
       },
       {
         id: 4,
         title: "Treatment Options",
         description:
-          "Lifestyle changes, medication to regulate hormones, and fertility treatments can manage symptoms and improve conception chances.",
+          "Lifestyle changes, medicines for cycle regulation, fertility treatments, and advanced care.",
+      },
+      {
+        id: 5,
+        title: "Emotional Challenges",
+        description:
+          "PCOS often affects self-confidence, body image, emotional health, and mental well-being.",
+      },
+      {
+        id: 6,
+        title: "When to Seek Expert Help",
+        description:
+          "If periods are irregular, symptoms persist, fertility issues arise, or pregnancy is difficult.",
       },
     ],
   },
@@ -737,16 +790,16 @@ export const polycysticOvarianSyndromeData = {
     tag: "Recognizing PCOS Symptoms",
     heading: "Physical and Emotional Indicators That Signal Possible PCOS",
     card1: {
-      title: "Cycles longer than 35 days or fewer than 8 periods per year.",
-      icon:"/InfertilityIssues/polycysticOvarianSyndromeIcon1.png"
+      title: "Irregular or missed cycles signaling hormonal or health issues.",
+      icon:"/InfertilityIssues/polycysticOvarianSyndromeIcon1.svg"
     },
     card2: {
-      title: "Excess hair growth on the face, chest, or back due to elevated androgens.",
-      icon:"/InfertilityIssues/polycysticOvarianSyndromeIcon2.png"
+      title: "Reduced vaginal lubrication causing hormonal discomfort.",
+      icon:"/InfertilityIssues/polycysticOvarianSyndromeIcon2.svg"
     },
     card3: {
-      title: "Skin changes, fatigue, and anxiety are common signs.",
-      icon: "/InfertilityIssues/polycysticOvarianSyndromeIcon3.png"
+      title: "Weight gain and slowed metabolism.",
+      icon: "/InfertilityIssues/polycysticOvarianSyndromeIcon3.svg"
     }
   },
 
@@ -837,25 +890,37 @@ export const tubalBlockageData = {
         id: 1,
         title: "Definition",
         description:
-          "Tubal blockage occurs when the fallopian tubes, which connect the ovaries to the uterus, are partially or completely blocked, preventing fertilization.",
+          "Tubal blockage is when fallopian tubes are blocked, preventing egg and sperm meeting, causing female infertility.",
       },
       {
         id: 2,
         title: "Possible Reasons",
         description:
-          "Pelvic infections, endometriosis, prior surgeries, or scarring from STIs can lead to blocked fallopian tubes.",
+          "Causes include infections, endometriosis, fibroids, past surgeries, STDs, or tuberculosis affecting fallopian tubes’ normal function.",
       },
       {
         id: 3,
         title: "Symptoms & Impact",
         description:
-          "Often asymptomatic, but can cause infertility, pelvic pain, or ectopic pregnancy in some women.",
+          "Symptoms include irregular periods, pelvic pain, unusual discharge, difficulty conceiving, and emotional stress from infertility struggles.",
       },
       {
         id: 4,
         title: "Treatment Options",
         description:
-          "Treatment depends on the blockage location and severity — surgical repair or IVF are common solutions.",
+          "Treatment may involve diagnostic tests, laparoscopic surgery, IVF procedures, or supportive medications.",
+      },
+      {
+        id: 5,
+        title: "Emotional Challenges",
+        description:
+          "Infertility often causes stress, anxiety, and low self-esteem; counseling, emotional support, and open communication help cope."
+      },
+      {
+        id: 6,
+        title: "When to Seek Expert Help",
+        description:
+          "Seek help after a year of unsuccessful conception, pelvic pain, irregular cycles, or related fertility conditions."
       },
     ],
   },
@@ -975,25 +1040,37 @@ export const uterineFibroidsData = {
         id: 1,
         title: "Definition",
         description:
-          "Uterine fibroids are non-cancerous growths that develop within or on the uterus, often during childbearing years.",
+          "Uterine fibroids are non-cancerous growths in the uterus that may affect fertility, cause discomfort, and disrupt daily life.",
       },
       {
         id: 2,
         title: "Possible Reasons",
         description:
-          "Hormonal imbalances, genetics, obesity, and lifestyle factors can contribute to the growth of fibroids.",
+          "It may form from hormones, genetics, lifestyle, or early menstruation, growing during reproductive years & shrinking after menopause.",
       },
       {
         id: 3,
         title: "Symptoms & Impact",
         description:
-          "Common symptoms include heavy menstrual bleeding, pelvic pain, frequent urination, and fertility challenges.",
+          "Symptoms include heavy periods, pelvic pressure, frequent urination, pain, and sometimes fertility or pregnancy-related complications.",
       },
       {
         id: 4,
         title: "Treatment Options",
         description:
-          "Treatments vary depending on severity — from medication to minimally invasive surgery or fertility-focused management.",
+          "Treatment depends on severity, options include medication, minimally invasive procedures, or surgery for lasting relief.",
+      },
+      {
+        id: 5,
+        title: "Emotional Challenges",
+        description:
+          "Fibroids may cause stress, anxiety, or fear especially with fertility concerns, making emotional support and counseling important."
+      },
+      {
+        id: 6,
+        title: "When to Seek Expert Help",
+        description:
+          "See a specialist for heavy bleeding, pain, fertility issues, or distress. Early care leads to better outcomes."
       },
     ],
   },
@@ -1112,25 +1189,37 @@ export const azoospermiaData = {
         id: 1,
         title: "Definition",
         description:
-          "Azoospermia is a condition where a man’s semen contains no measurable sperm, leading to challenges in achieving natural conception.",
+          "Azoospermia is a condition where no sperm is present in semen, leading to male infertility and requiring medical evaluation.",
       },
       {
         id: 2,
         title: "Possible Reasons",
         description:
-          "It can result from blockages, hormonal imbalances, genetic factors, or issues in sperm production within the testes.",
+          "Causes include genetic disorders, hormonal issues, or blockages in the reproductive tract affecting sperm production or delivery.",
       },
       {
         id: 3,
         title: "Symptoms & Impact",
         description:
-          "Usually symptomless, but may cause infertility. Some may experience hormonal imbalance signs like reduced libido or hair loss.",
+          "Usually symptomless, but may include low libido, testicular pain, or infertility—impacting emotional and relationship well-being.",
       },
       {
         id: 4,
         title: "Treatment Options",
         description:
-          "Depending on the cause, treatments include microsurgery, hormonal therapy, or assisted reproductive techniques like IVF-ICSI.",
+          "Treatment varies from hormonal therapy and surgery to assisted reproductive techniques like IVF with sperm retrieval.",
+      },
+      {
+        id: 5,
+        title: "Emotional Challenges",
+        description:
+          "Men may experience stress, anxiety, or low self-esteem; emotional support and counseling are often essential.",
+      },
+      {
+        id: 6,
+        title: "When to Seek Expert Help",
+        description:
+          "If conception fails after 12 months, seek a fertility specialist for diagnosis and personalized treatment plans.",
       },
     ],
   },
@@ -1251,25 +1340,37 @@ export const lowSpermCountData = {
         id: 1,
         title: "Definition",
         description:
-          "Low sperm count, or oligospermia, is a condition where the semen contains fewer sperm than normal, reducing the chances of natural conception.",
+          "Low sperm count means fewer sperm, lowering fertility. It’s a common cause of male infertility, diagnosed through fertility tests.",
       },
       {
         id: 2,
         title: "Possible Reasons",
         description:
-          "Hormonal imbalances, lifestyle factors, infections, and testicular issues are common contributors to low sperm production.",
+          "Lifestyle, infections, hormones, genetics, or environment can lower sperm production or quality, affecting male fertility.",
       },
       {
         id: 3,
         title: "Symptoms & Impact",
         description:
-          "Usually symptom-free but can lead to infertility. Some men may experience hormonal changes, sexual dysfunction, or testicular discomfort.",
+          "Often symptomless but may include low libido, erectile issues, or swelling. Mainly causes fertility problems and emotional stress.",
       },
       {
         id: 4,
         title: "Treatment Options",
         description:
-          "Treatment focuses on improving sperm production through medications, lifestyle changes, or assisted reproductive techniques like IUI and IVF.",
+          "Treatment varies: medication, lifestyle changes, surgery, or assisted reproductive techniques like IUI and IVF improve sperm count.",
+      },
+      {
+        id: 5,
+        title: "Emotional Challenges",
+        description:
+          "Low sperm count can lead to anxiety, stress, and relationship strain. Counseling supports mental well-being alongside treatment.",
+      },
+      {
+        id: 6,
+        title: "When to Seek Expert Help",
+        description:
+          "Consult a specialist if conception takes over a year or if symptoms like pain, swelling, or erectile problems occur.",
       },
     ],
   },
@@ -1302,7 +1403,7 @@ export const lowSpermCountData = {
     heading: "Recognizing Indicators of Low Sperm Count",
     card1: {
       title: "Low sex drive",
-      icon: "/InfertilityIssues/low-sperm-icon1.png",
+      icon: "/InfertilityIssues/low-sperm-icon1.svg",
     },
     card2: {
       title: "Erectile dysfunction",
@@ -1389,25 +1490,37 @@ export const erectileDysfunctionData = {
         id: 1,
         title: "Definition",
         description:
-          "Erectile Dysfunction (ED) is the inability to achieve or maintain an erection firm enough for satisfactory sexual performance.",
+          "ED is the ongoing inability to get or maintain an erection, often affecting confidence, emotional health, and relationships.",
       },
       {
         id: 2,
         title: "Possible Reasons",
         description:
-          "Physical causes include diabetes, heart disease, hormonal issues, or obesity. Psychological causes include stress, anxiety, and depression.",
+          "Causes include health issues like diabetes, stress, anxiety, smoking, alcohol, and poor lifestyle habits.",
       },
       {
         id: 3,
         title: "Symptoms & Impact",
         description:
-          "Difficulty in maintaining an erection, reduced sexual desire, or stress related to sexual performance are key indicators.",
+          "Trouble getting or keeping an erection and low sexual desire can affect self-esteem, intimacy, and quality of life.",
       },
       {
         id: 4,
         title: "Treatment Options",
         description:
-          "Treatment includes medications, hormone therapy, counseling, and lifestyle modifications to restore sexual confidence.",
+          "Treatment includes lifestyle changes, medication, counseling, or advanced options like IUI, IVF-ICSI, and sperm retrieval.",
+      },
+      {
+        id: 5,
+        title: "Emotional Challenges",
+        description:
+          "ED may lead to anxiety, depression, and relationship issues—emotional support and counseling are often vital.",
+      },
+      {
+        id: 6,
+        title: "When to Seek Expert Help",
+        description:
+          "See a specialist if ED is persistent or distressing. Early care improves outcomes and may reveal underlying health concerns.",
       },
     ],
   },
@@ -1560,37 +1673,37 @@ export const endometriosisData = {
         id: 1,
         title: "Definition",
         description:
-          "Endometriosis occurs when tissue similar to the uterine lining grows outside the uterus, causing pain and fertility issues.",
+          "Endometriosis is a condition where uterine lining tissue grows outside the uterus, causing pain and infertility.",
       },
       {
         id: 2,
         title: "Possible Reasons",
         description:
-          "Retrograde menstruation, hormonal imbalance, genetics, immune system disorders, or surgical scarring may contribute.",
+          "Causes include retrograde menstruation, genetics, immune issues, and lifestyle factors like smoking or low BMI.",
       },
       {
         id: 3,
         title: "Symptoms & Impact",
         description:
-          "Pelvic pain, painful periods, heavy bleeding, and fertility challenges are common symptoms of endometriosis.",
+          "Symptoms include painful periods, pelvic pain, infertility, bowel issues, and pain during intercourse or urination.",
       },
       {
         id: 4,
-        title: "Diagnosis Challenges",
+        title: "Treatment Options",
         description:
-          "Endometriosis is often underdiagnosed because its symptoms overlap with other gynecological conditions.",
+          "Treatments involve medication, hormonal therapy, laparoscopic surgery, and assisted reproductive techniques for fertility support.",
       },
       {
         id: 5,
-        title: "Emotional Impact",
+        title: "Emotional Challenges",
         description:
-          "Chronic pain and infertility can lead to emotional distress, anxiety, and lowered quality of life.",
+          "Endometriosis causes anxiety, stress, and emotional distress, especially due to chronic pain and fertility struggles.",
       },
       {
         id: 6,
         title: "When to Seek Expert Help",
         description:
-          "If you have persistent pelvic pain, irregular cycles, or difficulty conceiving, consult a fertility specialist early.",
+          "Consult a specialist if you have persistent pain, infertility, heavy bleeding, or emotional difficulties related to symptoms.",
       },
     ],
   },
@@ -1630,15 +1743,15 @@ export const endometriosisData = {
       "Endometriosis affects millions of women worldwide, but with early diagnosis and the right care, fertility outcomes can significantly improve.",
       skyCircleData: {
       value: "1 in 10",
-      description: "Nearly 1 in 10 women of reproductive age are affected by endometriosis.",
+      description: "Women of reproductive age worldwide are affected by endometriosis. (That's nearly 190 million globally.)",
     },
     blueCircleData: {
       value: "30–50%",
-      description: "Around 30–50% of women with endometriosis experience infertility.",
+      description: "Of women with endometriosis experience infertility. (It is one of the top causes of female infertility.)",
     },
     greenCircleData: {
       value: "7–10<br/> years",
-      description: "On average, diagnosis takes 7–10 years due to overlapping symptoms.",
+      description: "Is the average delay in diagnosis after symptom onset. (Many women live with pain for years before getting properly diagnosed.)", 
     },
   },
 
