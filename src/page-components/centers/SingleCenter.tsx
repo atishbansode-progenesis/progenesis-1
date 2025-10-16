@@ -394,7 +394,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
               {/* Left: Contact Information */}
               <div className="font-[Manrope] lg:gap-20 space-y-6 lg:space-y-[80px] ">
                 {/* Phone Section */}
-                <div className="flex items-center lg:gap-4">
+                <div className="flex items-center  gap-4">
                   {/* Icon Box */}
                   <div className="lg:p-5 rounded-2xl p-2 bg-[#1656A50D] flex items-center justify-center">
                     <svg
@@ -425,7 +425,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                 </div>
 
                 {/* Address Section */}
-                <div className="flex items-start  lg:gap-[16px]">
+                <div className="flex items-start  gap-[16px]">
                   {/* Icon Box */}
                   <div className="lg:p-5 rounded-2xl p-2 bg-[#1656A50D] flex justify-center">
                     <svg
