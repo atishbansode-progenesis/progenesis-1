@@ -288,16 +288,43 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           process.env.NEXT_PUBLIC_API_URL + '/api/centres-with-faqs/'
         );
         const data = await response.json();
-        
-        // Find the matching center by location name
+  
+        // All Mumbai locations
+        const mumbaiLocations = [
+          "Thane",
+          "Andheri",
+          "Borivali",
+          "Ghatkopar",
+          "Vashi",
+          "Virar",
+          "Kalyan",
+          "Panvel",
+        ];
+  
         if (selectedCenter && data.results) {
-          const matchingCenter = data.results.find(
-            (center: CenterData) => 
-              center.location.toLowerCase() === selectedCenter.name.toLowerCase()
+          // If selected center is one of Mumbai suburbs, we search for "Mumbai"
+          const isMumbaiSuburb = mumbaiLocations.some(
+            (loc) => loc.toLowerCase() === selectedCenter.name.toLowerCase()
           );
-          
+  
+          let matchingCenter;
+  
+          if (isMumbaiSuburb) {
+            matchingCenter = data.results.find(
+              (center: CenterData) =>
+                center.location.toLowerCase() === "mumbai"
+            );
+          } else {
+            matchingCenter = data.results.find(
+              (center: CenterData) =>
+                center.location.toLowerCase() === selectedCenter.name.toLowerCase()
+            );
+          }
+  
           if (matchingCenter && matchingCenter.faqs) {
-            setFaqData(matchingCenter.faqs.filter((faq: FAQ) => faq.is_published));
+            setFaqData(
+              matchingCenter.faqs.filter((faq: FAQ) => faq.is_published)
+            );
           }
         }
       } catch (error) {
@@ -306,11 +333,12 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         setIsLoading(false);
       }
     };
-
+  
     if (selectedCenter) {
       fetchCenterData();
     }
   }, [selectedCenter]);
+  
 
   if (!selectedCenter) {
     return null;
@@ -366,7 +394,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
               {/* Left: Contact Information */}
               <div className="font-[Manrope] lg:gap-20 space-y-6 lg:space-y-[80px] ">
                 {/* Phone Section */}
-                <div className="flex items-center lg:gap-4">
+                <div className="flex items-center  gap-4">
                   {/* Icon Box */}
                   <div className="lg:p-5 rounded-2xl p-2 bg-[#1656A50D] flex items-center justify-center">
                     <svg
@@ -397,7 +425,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                 </div>
 
                 {/* Address Section */}
-                <div className="flex items-start  lg:gap-[16px]">
+                <div className="flex items-start  gap-[16px]">
                   {/* Icon Box */}
                   <div className="lg:p-5 rounded-2xl p-2 bg-[#1656A50D] flex justify-center">
                     <svg

@@ -48,12 +48,12 @@ export const femaleFertilityPreservationData = {
       description:"Ideal for women facing surgeries, cancer therapies, or genetic conditions that may affect fertility."
     },
     {
-      icon: "/treatments/male-fertility-preservation/icon4.png",
+      icon: "/treatments/male-fertility-preservation/icon5.svg",
       title: "Result",
       description:"Enables women to conceive with their own healthy eggs or embryos, even years after preservation."
     },
     {
-      icon: "/treatments/male-fertility-preservation/icon4.png",
+      icon: "/treatments/male-fertility-preservation/icon6.svg",
       title: "Added Advantage",
       description:"Provides emotional assurance, flexibility, and reproductive independence for women planning motherhood on their own terms."
     }
@@ -156,12 +156,12 @@ export const maleFertilityPreservationData = {
         description:"Sperm is collected, analyzed for quality, and cryopreserved at extremely low temperatures using advanced freezing techniques."
       },
       {
-        icon: "/treatments/male-fertility-preservation/icon4.png",
+        icon: "/treatments/male-fertility-preservation/icon5.svg",
         title: "Outcome",
         description:"Ensures the ability to conceive biologically in the future — providing peace of mind and flexibility."
       },
       {
-        icon: "/treatments/male-fertility-preservation/icon4.png",
+        icon: "/treatments/male-fertility-preservation/icon6.svg",
         title: "Added Advantage",
         description:"A safe, non-invasive, and proven method with excellent sperm survival rates post-thaw."
       }
@@ -469,7 +469,7 @@ export const semenAnalysisData = {
       { id: "basics", label: "Know the Basics" },
       { id: "why-choose", label: "Why Choose Semen Analysis at Progenesis" },
       {id: "procedure", label: "What the Test Evaluates"},
-      { id: "procedure", label: "Steps of the Semen Analysis Process" },
+      { id: "procedures", label: "Steps of the Semen Analysis Process" },
       { id: "stories", label: "Success Stories" },
     ],
     basics: [
@@ -508,7 +508,7 @@ export const semenAnalysisData = {
         description:"Sample collection and testing are performed discreetly in a controlled, confidential environment.",
         image: "/treatments/semen-analysis/c3.png",
       },
-    ],
+    ],    
     procedure_steps: [
       {
         title: "Sample Collection",
