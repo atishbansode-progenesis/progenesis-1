@@ -35,7 +35,7 @@ export default function InfoGrid({ tag, heading, items }: InfoGridProps) {
               <div className="text-[16px] text-[#606060]">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <div className="text-[16px] font-semibold lg:font-normal md:text-[32px] text-[#2C2C2C]">
+              <div className="text-[16px] font-semibold lg:font-normal md:text-[24px] text-[#2C2C2C]">
                 {item.title}
               </div>
             </div>

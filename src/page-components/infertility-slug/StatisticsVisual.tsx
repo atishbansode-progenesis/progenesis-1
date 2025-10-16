@@ -62,7 +62,7 @@ export default function StatisticsVisual({ tag, heading, blueCircleData, greenCi
         </div>
 
         {/* Circle 3 */}
-        <div className="absolute rounded-full bg-[#E4F8B6] w-[28vw] h-[28vw] top-[31vw] left-[55vw] lg:w-[22vw] lg:h-[22vw] lg:top-[40vh] lg:left-[45vw]">
+        <div className="absolute rounded-full bg-[#E4F8B6] w-[28vw] h-[28vw] top-[31vw] left-[55vw] lg:w-[22vw] lg:h-[22vw] lg:top-[35vh] lg:left-[44vw]">
           <div className="hidden lg:flex justify-between pt-[2vh] border-t border-t-[rgba(122,122,122,0.5)] 
         lg:w-[32.14vw] absolute transform lg:translate-x-[20%] lg:top-[40%]">
             <p className="text-[3.33vw] font-medium leading-[2.92vw]" dangerouslySetInnerHTML={{ __html: greenCircleData.value }} />
