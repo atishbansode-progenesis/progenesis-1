@@ -260,20 +260,6 @@ const TreatmentsPage: React.FC = () => {
       {/* 2️⃣ Category Tabs */}
       <div className="flex flex-wrap gap-4 px-[16px] py-[16px]  csLg:py-[50px] csLg:px-[120px]  bg-[#fff]">
         {categories.map((cat) => (
-          //  <button
-          //   key={cat.id}
-          //   type="button"
-          //   onClick={() => setActiveTab(cat.id)}
-          //   className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px]
-          //     font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px]
-          //     transition-colors duration-200
-          //     ${activeTab === cat.id
-          //       ? "bg-[#1656A5] text-white"
-          //       : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-          //     }`}
-          // >
-          //   {cat.label}
-          // </button>
           <button
             key={cat.id}
             type="button"
@@ -364,52 +350,50 @@ const TreatmentsPage: React.FC = () => {
       >
         <div className="p-4 lg:p-0 ">
           <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[12px] lg:mb-[8px]">
-          Advanced Infertility Treatments
-        </span>
+            Advanced Infertility Treatments
+          </span>
 
-        <h2
-          className="
+          <h2
+            className="
             text-[#2C2C2C] font-[Manrope] font-normal mb-[12px] md:mb-[80px]
             text-[32px] leading-[40px] tracking-[-0.64px]   /* mobile */
             md:text-[40px] md:leading-[56px] md:tracking-[-0.96px] /* desktop */
           "
-        >
-          Cutting-Edge Techniques for Better Success
-        </h2>
+          >
+            Cutting-Edge Techniques for Better Success
+          </h2>
 
-        {/* Block 1 */}
-        <h3
-          className="
+          {/* Block 1 */}
+          <h3
+            className="
           text-[#2C2C2C] font-[Manrope]
           text-[16px] leading-[24px] tracking-[-0.32px] font-normal
           md:text-[32px] md:leading-[40px] md:tracking-[-0.64px]
           mb-[32px] lg:mb-[40px]
         "
-        >
-          Precision Methods for Better Outcomes
-        </h3>
+          >
+            Precision Methods for Better Outcomes
+          </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 ">
-          {precisionMethods.map((item, idx) => (
-            <FeatureCard
-              key={idx}
-              title={item.title}
-              description={item.description}
-              href={
-                item.slug && item.category
-                  ? `/treatments/${item.category}/${item.slug}`
-                  : undefined
-              }
-            />
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 ">
+            {precisionMethods.map((item, idx) => (
+              <FeatureCard
+                key={idx}
+                title={item.title}
+                description={item.description}
+                href={
+                  item.slug && item.category
+                    ? `/treatments/${item.category}/${item.slug}`
+                    : undefined
+                }
+              />
+            ))}
+          </div>
         </div>
-                </div>
-
 
         {/* Block 2 */}
 
         <div className="bg-[#F5FAFF] px-4 pb-4 lg:p-0 lg:bg-transparent">
-          
           <h3
             className="
           text-[#2C2C2C] font-[Manrope]
@@ -439,64 +423,7 @@ const TreatmentsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* <section className="w-full bg-[#FAFAFA] px-6 md:px-12 lg:px-24 py-20 relative overflow-hidden">
-     
-        <div className="mb-12 text-center md:text-left">
-          <h2 className="text-[#2C2C2C] font-manrope font-normal text-2xl md:text-4xl lg:text-[48px] leading-[40px] md:leading-[56px] tracking-[-0.64px] md:tracking-[-0.96px]">
-            Learn the numbers, Take control of your fertility journey
-          </h2>
-        </div>
-
-
-        <div className="relative flex justify-center items-center w-full h-[1150px] md:h-[1000px]">
-         
-          <div className="absolute translate-x-[160px] -translate-y-[40px] w-[380px] md:w-[596px] h-[380px] md:h-[596px] rounded-full bg-[#C3DCFB] flex items-center justify-center text-center z-10">
-            <p className="text-[#2C2C2C] font-manrope font-medium text-[32px] md:text-[64px]">
-              60–70%
-            </p>
-
-           
-            <div className="absolute top-1/2 left-full ml-6 flex items-center hidden md:flex">
-              <hr className="w-[220px] border-t border-dotted border-[#7A7A7A]" />
-              <p className="ml-4 text-[#606060] font-manrope text-[16px] leading-[24px] tracking-[-0.32px] w-64">
-                Switching to IVF or ICSI can raise success rates to 60–70% per cycle in suitable cases.
-              </p>
-            </div>
-          </div>
-
-
-          <div className="absolute -translate-x-[260px] translate-y-[80px] w-[280px] md:w-[386px] h-[280px] md:h-[386px] rounded-full bg-[#E5F1FF] flex items-center justify-center text-center z-20">
-            <p className="text-[#2C2C2C] font-manrope font-medium text-[32px] md:text-[64px]">
-              5–10%
-            </p>
-
-
-            <div className="absolute top-1/2 right-full mr-6 flex items-center hidden md:flex">
-              <hr className="w-[220px] border-t border-dotted border-[#7A7A7A]" />
-              <p className="mr-4 text-[#606060] text-right font-manrope text-[16px] leading-[24px] tracking-[-0.32px] w-64">
-                The success rate of a single IUI cycle is only 5–10%, meaning multiple attempts are often needed.
-              </p>
-            </div>
-          </div>
-
-          <div className="absolute translate-x-[60px] translate-y-[300px] w-[300px] md:w-[432px] h-[300px] md:h-[432px] rounded-full bg-[#E4F8B6] flex items-center justify-center text-center z-30">
-            <p className="text-[#2C2C2C] font-manrope font-medium text-[32px] md:text-[64px]">
-              3–4 <br /> Cycles
-            </p>
-
-
-            <div className="absolute top-full mt-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center hidden md:flex">
-              <hr className="w-[220px] border-t border-dotted border-[#7A7A7A]" />
-              <p className="mt-2 text-[#606060] text-center font-manrope text-[16px] leading-[24px] tracking-[-0.32px] w-80">
-                If you’ve had 3–4 failed IUI cycles, it’s time to consult your doctor about advanced options.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* 5️⃣ Success Rate */}
-      <section className="relative w-full flex justify-center items-center overflow-hidden p-4 csLg:px-[120px] csLg:py-20">
+      <section className="relative w-full flex justify-center items-center overflow-hidden px-6 pt-4 pb-[80px]  csLg:px-[120px] csLg:py-[80px]">
         {/* 🔹 Left Green Blur Ellipse */}
         <div
           className="absolute left-[-100px] bottom-[-50px] rounded-full bg-[#94BA3D] blur-[250px]"
@@ -518,16 +445,15 @@ const TreatmentsPage: React.FC = () => {
         ></div>
 
         {/* 🔹 Content */}
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between w-full">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between w-full ">
           {/* Percentage */}
           <h2
             className="
         text-[#94BA3D] font-manrope font-normal
         text-right md:text-left
-        text-[120px] md:text-[120px]
+        text-[120px] md:text-[100px]
         leading-none tracking-[-2.4px]
         mb-[80px] md:mb-0
-
         px-6 md:px-0
       "
           >
@@ -537,22 +463,21 @@ const TreatmentsPage: React.FC = () => {
           {/* Heading Text */}
           <p
             className="
-        text-[#94BA3D] font-manrope font-normal
-        text-[32px] md:text-[48px]
+         text-[#94BA3D] font-manrope font-normal
+        text-[32px] md:text-[40px]
         leading-[40px] md:leading-[56px]
         tracking-[-0.64px] md:tracking-[-0.96px]
         text-left md:text-right
         lg:px-6 md:px-0
-        md:max-w-[70%]
+        md:max-w-[932px]
         max-w-[312px]
       "
           >
             Success Rate in Personalized Fertility Care, Delivering Unmatched
-            Results
+            Results{" "}
           </p>
         </div>
       </section>
-
       {/* 6️⃣ Proven Treatments */}
       <section
         id="infertility"
