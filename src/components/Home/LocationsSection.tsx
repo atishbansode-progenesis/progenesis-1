@@ -136,7 +136,7 @@ export default function LocationsSection() {
   };
 
   return (
-    <section className="bg-white mt-20 lg:mt-0 py-8 px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] md:py-20">
+    <section className="bg-white py-8 px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] md:py-20">
       <div className="mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start csLg:items-end justify-between gap-6 mb-8">
