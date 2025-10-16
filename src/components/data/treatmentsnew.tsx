@@ -468,8 +468,8 @@ export const semenAnalysisData = {
     categories: [
       { id: "basics", label: "Know the Basics" },
       { id: "why-choose", label: "Why Choose Semen Analysis at Progenesis" },
-      {id: "procedure", label: "What the Test Evaluates"},
-      { id: "procedures", label: "Steps of the Semen Analysis Process" },
+      {id: "types-of-testing", label: "What the Test Evaluates"},
+      { id: "procedure", label: "Steps of the Semen Analysis Process" },
       { id: "stories", label: "Success Stories" },
     ],
     basics: [
