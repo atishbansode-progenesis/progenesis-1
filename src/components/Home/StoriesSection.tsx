@@ -71,7 +71,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
             <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
               {tag}
             </button>
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 lg:gap-6 mb-[16px] lg:mb-[80px] md:mb-[80px]">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 lg:gap-6 mb-[40px] lg:mb-[80px] md:mb-[80px]">
             
             <h2 className="mt-2 text-[20px] md:text-[32px] lg:text-[40px] font-normal text-[#2C2C2C] leading-[28px] md:leading-[56px] lg:max-w-[691px]" >
               {heading}
