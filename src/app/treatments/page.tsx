@@ -267,7 +267,7 @@ const TreatmentsPage: React.FC = () => {
                 block: "start",
               });
             }}
-            className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
+            className={`px-[10px] cursor-pointer py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
     font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px] 
     transition-colors duration-200
     ${
