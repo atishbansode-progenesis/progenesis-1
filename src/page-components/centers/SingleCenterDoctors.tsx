@@ -28,7 +28,7 @@ const doctors = [
 const CenterDoctorsSection = () => {
   return (
     <section className="bg-[#F9FAFB]">
-      <div className="csLg:px-[120px] csLg:py[80px] p-4">
+      <div className=" p-4 csLg:px-[120px] csLg:py-[80px] ">
         <div className="hidden csLg:block mb-12 md:mb-24">
           <span className="inline-block text-sm font-medium text-[#1656A5] bg-[#1656A5]/10 px-3 py-1 rounded-[8px] mb-6">
             The Experts
