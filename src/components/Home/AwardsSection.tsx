@@ -117,11 +117,11 @@ export default function AwardsSection() {
           <div className="">
             {/* Desktop view */}
             <div className="hidden lg:block mt-2">
-              <div className="grid grid-cols-2 gap-x-[28px] gap-y-[32px]">
+              <div className="grid grid-cols-2 gap-x-[20px] gap-y-[32px]">
                 {data.map((item, idx) => (
                   <article
                     key={idx}
-                  className="bg-white rounded-2xl  csLg:min-w-[370px] csLg:max-w-[370px]  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col csLg:min-h-[496px] "
+                  className="bg-white rounded-[16px]  csLg:min-w-[350px] csLg:max-w-[350px]  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col csLg:min-h-[415px] "
                   >
                     {/* <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
                       <span>{item.year}</span>
@@ -157,7 +157,7 @@ export default function AwardsSection() {
                       />
                     </div>
 
-                    <div className="pt-5 flex flex-col justify-between   flex-1">
+                    <div className="pt-5 flex flex-col gap-[24px]    flex-1">
                       <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-medium leading-[28px] tracking-[-0.4px]">
                         {item.title}
                       </h3>
