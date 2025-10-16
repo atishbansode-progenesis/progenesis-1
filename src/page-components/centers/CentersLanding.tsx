@@ -4,7 +4,10 @@ import "../about/AboutMain.css";
 
 const CentersLanding = () => {
   return (
-    <section id="landing" className="relative w-screen h-[60vh] overflow-hidden">
+    <section
+      id="landing"
+      className="relative w-screen h-[60vh] overflow-hidden flex items-center justify-start"
+    >
       {/* Mobile Background */}
       <div className="absolute inset-0 md:hidden">
         <Image
@@ -28,21 +31,14 @@ const CentersLanding = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 grid grid-cols-12 gap-4 min-h-[300px] md:min-h-[420px] lg:min-h-[500px] section-spacing">
-        <div
-          className="col-span-12 csLg:col-span-9 flex items-center justify-start 
-                     min-h-[300px] lg:min-h-auto 
-                     md:items-center 
-                     items-end pb-6 md:pb-0"
+      <div className="relative z-10 w-full px-6 md:px-12 lg:px-24 flex items-center">
+        <h1
+          className="font-manrope font-semibold text-[32px] lg:text-[60px] 
+                     leading-[48px] md:leading-[56px] lg:leading-[88px] 
+                     tracking-[-0.02em] text-[#2C2C2C] text-left"
         >
-          <h1
-            className="font-manrope font-semibold text-[32px] lg:text-[60px] 
-                       w-[288px] lg:w-auto h-[80px] leading-[48px] md:leading-[56px] 
-                       lg:leading-[88px] tracking-[-0.02em] text-[#2C2C2C] text-left"
-          >
-            Our Fertility Centers
-          </h1>
-        </div>
+          Our Fertility Centers
+        </h1>
       </div>
     </section>
   );
