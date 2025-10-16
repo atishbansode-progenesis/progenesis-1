@@ -15,7 +15,7 @@ const OpinionContent: React.FC = () => {
 
           {/* Main Heading */}
           <h1
-  className="text-[32px] csLg:text-[40px] font-normal text-black leading-[56px] csLg:leading-[72px] tracking-tight font-[Manrope]"
+  className="text-[32px] csLg:text-[40px] font-normal text-black lg:leading-[56px] leading-[40px] csLg:leading-[72px] tracking-tight font-[Manrope]"
  
 >
   {/* Mobile: with line break */}

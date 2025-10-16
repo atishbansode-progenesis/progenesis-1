@@ -43,7 +43,7 @@ const OpinionBenefits: React.FC = () => {
         </div>
 
         {/* Benefits Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 csLg:grid-cols-4 gap-6 csLg:gap-8" >
+        <div className="grid grid-cols-1 md:grid-cols-4 csLg:grid-cols-4 gap-[21px] csLg:gap-8" >
           {benefits.map((benefit, index) => (
             <div 
               key={index}
@@ -55,7 +55,7 @@ const OpinionBenefits: React.FC = () => {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-2 csLg:max-w-[65%] csLg:min-h-[128px]">
+              <div className="flex flex-col gap-2 csLg:max-w-auto csLg:min-h-[128px]">
                 {/* Title */}
                 <h3 className="text-[16px] csLg:text-[16px] font-semibold text-[#2C2C2C] leading-[24px] tracking-tight font-[Manrope]">
                   {benefit.title}
