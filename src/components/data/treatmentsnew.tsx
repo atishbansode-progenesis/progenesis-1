@@ -226,8 +226,8 @@ export const eggEmbryoFreezingData = {
 export const femaleAnalysisData = {
     slug: "female-analysis-complete-reproductive-health-check",
     category: "fertility-evaluation",
-    title: "Female Analysis – Complete Reproductive Health Check",
-    hero_title: "Female Analysis – Complete Reproductive Health Check",
+    title: "Female Analysis – Complete <br/> Reproductive Health Check",
+    hero_title: "Female Analysis – Complete <br/> Reproductive Health Check",
     hero_button_text: "Book Your Appointment",
     hero_button_link: "/book-appointment",
     hero_image: "/treatments/female-analysis/female-analysis-hero.png",
@@ -240,7 +240,7 @@ export const femaleAnalysisData = {
         href: "/treatments/fertility-evaluation/female-analysis-complete-reproductive-health-check",
       },
     ],
-    basics_heading: "Comprehensive reproductive health testing for women",
+    basics_heading: "Why Female Fertility Analysis Matters",
     points_tag: "Types of Fertility Tests for Women",
     points_heading: "Comprehensive testing to uncover fertility challenges.",
     procedure_tag: "Steps of the Fertility Evaluation Process",
@@ -259,8 +259,8 @@ export const femaleAnalysisData = {
     `,
     categories: [
       { id: "basics", label: "Know the Basics" },
-      { id: "why-choose", label: "Why It Matters" },
-      { id: "procedure", label: "Comprehensive Testing" },
+      { id: "why-choose", label: "Types of Fertility Tests for Women" },
+      { id: "procedure", label: "Steps of the Fertility Evaluation Process" },
       { id: "stories", label: "Success Stories" },
     ],
     basics: [
@@ -320,6 +320,7 @@ export const femaleAnalysisData = {
         image: "/treatments/female-analysis/c3.png",
       },
     ],
+    our_story: "From Hope to Happiness Watch Now!"
   };
   
 
@@ -339,7 +340,7 @@ export const semenAnalysisData = {
       { label: "Treatments", href: "/treatments" },
       { label: "Fertility Evaluation", href: "/treatments/fertility-evaluation" },
       {
-        label: "Semen Analysis – The First Step to Male Fertility Insight",
+        label: "Semen Analysis Tests",
         href: "/treatments/fertility-evaluation/semen-analysis-first-step-to-male-fertility-insight",
       },
     ],
@@ -360,8 +361,9 @@ export const semenAnalysisData = {
     `,
     categories: [
       { id: "basics", label: "Know the Basics" },
-      { id: "why-choose", label: "Why It Matters" },
-      { id: "procedure", label: "Comprehensive Testing" },
+      { id: "why-choose", label: "Why Choose Semen Analysis at Progenesis" },
+      {id: "procedure", label: "What the Test Evaluates"},
+      { id: "procedure", label: "Steps of the Semen Analysis Process" },
       { id: "stories", label: "Success Stories" },
     ],
     basics: [
@@ -385,7 +387,7 @@ export const semenAnalysisData = {
       {
         id: "01",
         title: "Comprehensive Evaluation",
-        description: "Comprehensive Evaluation",
+        description: "We analyze every aspect of sperm health using globally standardized testing protocols.",
         image: "/treatments/semen-analysis/c1.png",
       },
       {
@@ -421,5 +423,6 @@ export const semenAnalysisData = {
     gradient_data: "90%",
     gradient_text:
       "Fertility plans at Progenesis start with semen analysis, the key to identifying infertility causes and guiding effective treatment.",
+    our_story: "From Hope to Happiness Watch Now!"
   };
   
