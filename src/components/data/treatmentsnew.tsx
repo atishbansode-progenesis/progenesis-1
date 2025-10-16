@@ -468,8 +468,8 @@ export const semenAnalysisData = {
     categories: [
       { id: "basics", label: "Know the Basics" },
       { id: "why-choose", label: "Why Choose Semen Analysis at Progenesis" },
-      {id: "procedure", label: "What the Test Evaluates"},
-      { id: "procedures", label: "Steps of the Semen Analysis Process" },
+      {id: "types-of-testing", label: "What the Test Evaluates"},
+      { id: "procedure", label: "Steps of the Semen Analysis Process" },
       { id: "stories", label: "Success Stories" },
     ],
     basics: [
@@ -526,6 +526,32 @@ export const semenAnalysisData = {
         image: "/treatments/semen-analysis/t3.png",
       },
     ],
+    who_can_benefit_desc: {
+      tag: "What the Test Evaluates",
+      title: "Precise assessment of key sperm parameters.",
+      cards: [
+        {
+          icon: "/treatments/semen-analysis/b-icon1.svg",
+          title: "Sperm Count & Concentration",
+          description: "Measures the number of sperm in each milliliter of semen — normal ranges fall between 20–200 million/mL."
+        },
+        {
+          icon: "/treatments/semen-analysis/b-icon2.svg",
+          title: "Motility & Movement Quality",
+          description: "Checks the percentage of active, forward-moving sperm essential for fertilization."
+        },
+        {
+          icon: "/treatments/semen-analysis/b-icon3.svg",
+          title: "Morphology (Sperm Shape & Structure)",
+          description: "Assesses the sperm's form — normal shape improves chances of fertilizing an egg."
+        },
+        {
+          icon: "/treatments/semen-analysis/b-icon4.svg",
+          title: "pH Level & Color",
+          description: "Abnormal pH or color may indicate infection or other medical issues affecting sperm health."
+        }
+      ]
+    },
     gradient_data: "90%",
     gradient_text:
       "Fertility plans at Progenesis start with semen analysis, the key to identifying infertility causes and guiding effective treatment.",

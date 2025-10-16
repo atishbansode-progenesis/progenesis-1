@@ -34,7 +34,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
 
   const getCardStyle = () => {
     if (winWidth < 640) {
-      return { minWidth: "80vw", height:"402px" };
+      return { minWidth: "65vw", height:"390px" };
     }
     if (winWidth < 1024) {
       return { minWidth: 240, height: 300 };
@@ -113,11 +113,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
             return (
               <article
                 key={`${title}-${index}`}
-                className="story-card snap-center flex-shrink-0 rounded-2xl overflow-hidden border border-gray-200 bg-white relative shadow-[0_1px_8px_rgba(0,0,0,0.08)]"
-                style={{
-                  minWidth: cardStyle.minWidth,
-                  height: cardStyle.height,
-                }}
+                className="story-card snap-center flex-shrink-0 rounded-2xl overflow-hidden border border-gray-200 bg-white relative shadow-[0_1px_8px_rgba(0,0,0,0.08)] w-[65vw] h-[390px] sm:w-[240px] sm:h-[300px] lg:w-[380px] lg:h-[420px]"
               >
                 <div className="relative w-full h-full">
                   <iframe
