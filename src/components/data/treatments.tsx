@@ -380,21 +380,21 @@ export const lahTreatmentData = {
   points: [
     {
       id: "01",
-      title: "Embryo preparation",
-      description:"Selection of high-quality embryos for treatment",
+      title: "Improved Implantation",
+      description:"Gently assists embryos in hatching, improving the likelihood of successful attachment to the uterus.",
       image: "/treatments/lah/lah_c1.png",
     },
     {
       id: "02",
-      title: "Laser-assisted hatching",
-      description:"Controlled thinning or opening of zona pellucida.",
+      title: "For Complex IVF Cases",
+      description:"For patients with IVF failures, advanced age, or thick embryo shells.",
       image: "/treatments/lah/lah_c2.png",
     },
     {
       id: "03",
-      title: "Embryo transfer",
+      title: "Scientifically Proven",
       description:
-        "Placement into uterus for improved implantation",
+        "Performed with cutting-edge laser technology that ensures accuracy without harming the embryo.",
       image: "/treatments/lah/lah_c3.png",
     },
   ],
@@ -428,8 +428,8 @@ export const blastocystTransferData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "why-choose", label: "Why Blastocyst Transfer" },
-    { id: "procedure", label: "The Blastocyst Transfer" },
+    { id: "why-choose", label: "Why Choose Blastocyst Transfer" },
+    { id: "procedure", label: "The Blastocyst Transfer Procedure" },
     { id: "stories", label: "Success Stories" }
   ],
   basics: [
@@ -508,16 +508,15 @@ export const blastocystTransferData = {
     ]
   },
   gradient_data: "90%",
-  gradient_text: "Couples who opted for blastocyst transfer saw embryos cultured for 5 days, developed into a blastocyst with improved implantation rates",
-  bottom_footer : "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success."
+  gradient_text: "Embryos are nurtured in optimal lab conditions for 5–6 days, allowing natural and strong development.",  bottom_footer : "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success."
 }
 
 // Sequential Embryo Transfer Data
 export const sequentialEmbryoTransferData = {
   slug: "sequential-embryo-transfer",
   category: "advanced",
-  title: "Sequential Embryo Transfer",
-  hero_title: "Sequential Embryo Transfer",
+  title: "Sequential Embryo <br/> Transfer",
+  hero_title: "Sequential Embryo <br/> Transfer",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/sequential/sequentialbg.png",
@@ -537,7 +536,7 @@ export const sequentialEmbryoTransferData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "why-choose", label: "Why Sequential Transfer" },
+    { id: "why-choose", label: "Why Choose Sequential Embryo Transfer" },
     { id: "procedure", label: "Steps of Sequential Embryo Transfer" },
     { id: "stories", label: "Success Stories" }
   ],
@@ -658,8 +657,9 @@ export const pgdTreatmentData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Why Choose PGD/PGS/PGT-A" },
     { id: "types-of-testing", label: "Types of Testing" },
-    { id: "why-choose", label: "Why Choose Genetic Testing" },
+    { id: "procedure", label: "Steps of Preimplantation Genetic Testing" },
     { id: "stories", label: "Success Stories" },
   ],
   
