@@ -1,6 +1,6 @@
 // components/InfertilityIssues/CarouselSection.tsx
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { act, useState } from "react";
 
 interface Slide {
   id: string;
@@ -17,7 +17,6 @@ interface CarouselSectionProps {
 
 export default function CarouselSection({ tag, heading, slides }: CarouselSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <section className="w-full p-[16px] lg:p-[120px] bg-[#F1F7FC] font-[Manrope] scroll-mt-[120px]" id="causes">
       <div >
@@ -26,12 +25,13 @@ export default function CarouselSection({ tag, heading, slides }: CarouselSectio
           <div className="mb-10 md:mb-20">
             {/* Chip */}
             <span className="inline-block mb-2 px-2 py-1 bg-[rgba(22,86,165,0.05)] text-[#1656A5] text-xs font-medium rounded-md w-fit tracking-tight">
-              Causes
+              {tag}
             </span>
 
             {/* Heading */}
             <h2 className="text-[#2C2C2C] text-[28px] sm:text-[36px] lg:text-[40px] leading-[36px] sm:leading-[44px] lg:leading-[50px] font-normal tracking-[-0.96px]">
-              Key Reasons Behind IUI Failure and Their<br/> Impact on Conception
+              {/* Key Reasons Behind IUI Failure and Their<br/> Impact on Conception */}
+              {heading}
             </h2>
           </div>
           {/* LEFT DIV */}
