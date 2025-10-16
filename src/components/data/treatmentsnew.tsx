@@ -1,9 +1,117 @@
+// Female Fertility Preservation Data
+export const femaleFertilityPreservationData = {
+  slug: "female-fertility-preservation",
+  category: "fertility-preservation",
+  title: "Female Fertility <br/> Preservation",
+  hero_title: "Female Fertility <br/> Preservation",
+  hero_button_text: "Book Your Appointment",
+  hero_button_link: "/book-appointment",
+  hero_image: "/treatments/female-fertility-preservation/femalepreservationbg.png",
+  breadcrumbs: [
+    { label: "Home", href: "/", id: "home" },
+    { label: "Treatments", href: "/treatments", id: "treatments" },
+    { label: "Fertility Preservation", href: "/treatments/fertility-preservation", id: "fertility-preservation" },
+    { label: "Female Fertility Preservation", href: "/treatments/fertility-preservation/female-fertility-preservation", id: "female-fertility-preservation" }
+  ],
+  basics_heading: "Why Female Fertility Preservation Matters",
+  points_tag: "Why Male Fertility Preservation Matters",
+  points_heading: "Ensuring Fertility for a Confident Tomorrow",
+  description:
+    "Male fertility preservation provides a reliable solution for men who wish to safeguard their reproductive potential for future parenthood. Through advanced cryopreservation techniques, sperm cells are stored safely and securely, maintaining quality for years.",
+  content:
+    "<p>At our center, we specialize in preserving male fertility through cutting-edge sperm banking and cryostorage techniques. Whether due to medical treatments, lifestyle choices, or age-related factors, men can take proactive steps to protect their ability to father children in the future.</p><p>Our expert team ensures each sample is processed and stored under precise conditions, maintaining high viability for use in assisted reproduction whenever needed.</p>",
+  categories: [
+    { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Why Choose Fertility Preservation at Progenesis" },
+    { id: "procedure", label: "Steps of the Fertility Preservation Process" },
+    { id: "stories", label: "Success Stories" }
+  ],
+  basics: [
+    {
+      icon: "/treatments/female-fertility-preservation/icon1.png",
+      title: "What It Is",
+      description: "Fertility preservation allows women to freeze eggs, embryos, or ovarian tissue to maintain their ability to conceive later in life."
+    },
+    {
+      icon: "/treatments/female-fertility-preservation/icon2.png",
+      title: "Why It’s Important",
+      description: "It helps women undergoing medical treatments like chemotherapy or those delaying pregnancy due to personal or professional reasons."
+    },
+    {
+      icon: "/treatments/female-fertility-preservation/icon3.png",
+      title: "How It Works",
+      description: "Eggs are collected, frozen using advanced vitrification, and safely stored for future use — maintaining quality and reproductive potential."
+    },
+    {
+      icon: "/treatments/female-fertility-preservation/icon4.png",
+      title: "When It’s Recommended",
+      description:"Ideal for women facing surgeries, cancer therapies, or genetic conditions that may affect fertility."
+    },
+    {
+      icon: "/treatments/male-fertility-preservation/icon4.png",
+      title: "Result",
+      description:"Enables women to conceive with their own healthy eggs or embryos, even years after preservation."
+    },
+    {
+      icon: "/treatments/male-fertility-preservation/icon4.png",
+      title: "Added Advantage",
+      description:"Provides emotional assurance, flexibility, and reproductive independence for women planning motherhood on their own terms."
+    }
+  ],
+  procedure_no_image_steps: {
+    main_heading: "Ensuring stable, safe, and precise embryo growth.",
+    main_tag: "Steps of the Fertility Preservation Process",
+    data: [
+      {
+        title: "Hormonal Stimulation & Egg Retrieval",
+        description:"Fertility hormones are used to produce mature eggs, which are then collected from the ovaries."      },
+      {
+        title: "Vitrification (Freezing)",
+        description: "The collected eggs or embryos are frozen at sub-zero temperatures using advanced vitrification technology.",
+            },
+      {
+        title: "Storage & Future Use",
+        description: "Preserved samples are stored in liquid nitrogen and thawed when the patient is ready for conception through IVF."
+            },
+      {
+        title: "Varicocele Repair",
+        description: "Improves sperm count and motility by treating enlarged veins in the scrotum.",
+            }
+    ]
+  },
+  gradient_data: "90%",
+  gradient_text:"post-thaw survival rate ensures preserved eggs and embryos retain quality for successful IVF outcomes.",
+  points: [
+    {
+      id: "01",
+      title: "High-Tech Freezing",
+      description:"Ultra-rapid vitrification keeps eggs and embryos healthy and viable for future use.",
+      image: "/treatments/female-fertility-preservation/c1.png"
+    },
+    {
+      id: "02",
+      title: "Expert Fertility Care",
+      description:"Our specialists design personalized preservation plans for every woman’s unique needs.",
+      image: "/treatments/female-fertility-preservation/c2.png"
+    },
+    {
+      id: "03",
+      title: "Secure Long-Term Storage",
+      description:"Samples are safely stored under constant monitoring, ensuring maximum protection and stability.",
+      image: "/treatments/female-fertility-preservation/c3.png"
+    },
+  ]
+}
+
+
+
+
 // Male Fertility Preservation Data
 export const maleFertilityPreservationData = {
     slug: "male-fertility-preservation",
     category: "fertility-preservation",
-    title: "Male Fertility Preservation",
-    hero_title: "Male Fertility Preservation",
+    title: "Male Fertility <br/> Preservation",
+    hero_title: "Male Fertility <br/> Preservation",
     hero_button_text: "Book Your Appointment",
     hero_button_link: "/book-appointment",
     hero_image: "/treatments/male-fertility-preservation/malepreservationbg.png",
@@ -13,7 +121,7 @@ export const maleFertilityPreservationData = {
       { label: "Fertility Preservation", href: "/treatments/fertility-preservation", id: "fertility-preservation" },
       { label: "Male Fertility Preservation", href: "/treatments/fertility-preservation/male-fertility-preservation", id: "male-fertility-preservation" }
     ],
-    basics_heading: "Preserving Parenthood Options for the Future",
+    basics_heading: "Why Male Fertility Preservation Matters",
     points_tag: "Why Male Fertility Preservation Matters",
     points_heading: "Ensuring Fertility for a Confident Tomorrow",
     description:
@@ -22,8 +130,8 @@ export const maleFertilityPreservationData = {
       "<p>At our center, we specialize in preserving male fertility through cutting-edge sperm banking and cryostorage techniques. Whether due to medical treatments, lifestyle choices, or age-related factors, men can take proactive steps to protect their ability to father children in the future.</p><p>Our expert team ensures each sample is processed and stored under precise conditions, maintaining high viability for use in assisted reproduction whenever needed.</p>",
     categories: [
       { id: "basics", label: "Know the Basics" },
-      { id: "why-choose", label: "Why Preservation Matters" },
-      { id: "procedure", label: "The Preservation Process" },
+      { id: "why-choose", label: "Why Choose Fertility Preservation at Progenesis" },
+      { id: "procedure", label: "Steps of the Preservation Process" },
       { id: "stories", label: "Success Stories" }
     ],
     basics: [
@@ -82,8 +190,7 @@ export const maleFertilityPreservationData = {
     },
     gradient_data: "95%",
     gradient_text:
-      "Proven techniques ensure cryopreserved sperm retains motility and quality, ensuring future IVF or ICSI success.",
-    points: [
+"post-thaw survival rate ensures cryopreserved sperm retains motility and quality for successful future IVF or ICSI cycles.",    points: [
       {
         id: "01",
         title: "High-Tech Freezing",
@@ -132,8 +239,8 @@ export const eggEmbryoFreezingData = {
       "<p>Our egg and embryo freezing programs are designed to provide women with reproductive flexibility and peace of mind. Whether due to medical conditions, career planning, or personal reasons, freezing eggs or embryos allows women to conceive when the time is right.</p><p>Using state-of-the-art freezing methods, we ensure optimal preservation, stability, and high success rates upon thawing, helping many achieve healthy pregnancies later in life.</p>",
     categories: [
       { id: "basics", label: "Know the Basics" },
-      { id: "why-choose", label: "Why Freezing Matters" },
-      { id: "procedure", label: "The Freezing Process" },
+      { id: "why-choose", label: "Why Choose Fertility Preservation at Progenesis" },
+      { id: "procedure", label: "Steps of the Freezing Process" },
       { id: "stories", label: "Success Stories" }
     ],
     basics: [
@@ -169,7 +276,7 @@ export const eggEmbryoFreezingData = {
       }
     ],
     procedure_no_image_steps: {
-      main_heading: "Advanced care preserving fertility for tomorrow.",
+      main_heading: "Scientific precision preserving fertility for future.",
       main_tag: "Steps of the Freezing Process",
       data: [
         {
@@ -195,8 +302,7 @@ export const eggEmbryoFreezingData = {
       ]
     },
     gradient_data: "95%",
-    gradient_text:
-      "Proven thaw survival rates ensure eggs and embryos retain quality for successful future outcomes and healthy pregnancies.",
+    gradient_text:"post-thaw survival rate ensures eggs and embryos retain quality for successful IVF outcomes and healthy pregnancies.",
     points: [
       {
         id: "01",
@@ -236,8 +342,8 @@ export const femaleAnalysisData = {
       { label: "Treatments", href: "/treatments" },
       { label: "Fertility Evaluation", href: "/treatments/fertility-evaluation" },
       {
-        label: "Female Analysis – Complete Reproductive Health Check",
-        href: "/treatments/fertility-evaluation/female-analysis-complete-reproductive-health-check",
+        label: "Female Analysis",
+        href: "/treatments/fertility-evaluation/female-analysis",
       },
     ],
     basics_heading: "Why Female Fertility Analysis Matters",
