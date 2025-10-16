@@ -1010,7 +1010,7 @@ export const uterineFibroidsData = {
       { label: "Home", href: "/" },
       { label: "Infertility", href: "/infertility" },
       { label: "Female Infertility", href: "/infertility/female" },
-      { label: "Uterine Fibroids", href: "/infertility/uterine-fibroids" },
+      { label: "Fibroids", href: "/infertility/uterine-fibroids" },
     ],
     title: "Uterine Fibroids",
     buttonText: "Book Your Appointment",
