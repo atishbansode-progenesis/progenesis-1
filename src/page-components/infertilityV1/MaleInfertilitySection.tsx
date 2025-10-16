@@ -13,9 +13,9 @@ export const MaleInfertilitySection: React.FC<MaleInfertilitySectionProps> = ({
   return (
     <section
       id="fertility-mini-section"
-      className="bg-[#FAFAFA] pb-[20px] md:pb-[60px] pt-[20px] md:pt-[80px]"
+      className="bg-[#FAFAFA] p-4 md:px-[120px] md:py-[80px]"
     >
-      <div className="px-4 md:px-[80px] lg:px-[120px]">
+      <div className="">
         <div className="w-full flex flex-col xl:flex-row justify-between gap-[8px]">
           <div className="w-full">
             <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">

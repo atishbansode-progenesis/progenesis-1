@@ -2,13 +2,14 @@ import React from "react";
 import "../about/AboutMain.css";
 
 const ResourceLanding = ({ recentBlog }: any) => {
+  const isSmallDevice = window.innerWidth < 768;
   
   return (
     <div>
       <section>
         <div
           className="relative  w-full h-[728px] md:h-[560px] lg:h-[620px] xl:h-[680px] bg-center bg-cover"
-          style={{ backgroundImage: `url(${recentBlog?.image})` }}
+          style={{ backgroundImage: isSmallDevice ? `url(${recentBlog?.featured_banner_small})` : `url(${recentBlog?.image})`}}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/70" />
 
