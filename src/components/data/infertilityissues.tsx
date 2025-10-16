@@ -70,7 +70,7 @@ export const repeatedIUIFailuresData = {
 
   carousel: {
     tag: "Causes",
-    heading: "Key Reasons Behind IUI Failure and Their<br/> Impact on Conception",
+    heading: "Recommended Next Steps After Repeated IUI Failures",
     slides: [
       {
         id: "01",
@@ -417,7 +417,7 @@ export const repeatedIVFFailuresData = {
 
   carousel: {
     tag: "Causes",
-    heading: "Key Reasons Behind IVF Failure and Their <br/>Impact on Conception",
+    heading: "Key Reasons Behind IVF Failure and Their Impact on Conception",
     slides: [
       {
         id: "01",
