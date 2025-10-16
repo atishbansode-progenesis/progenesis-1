@@ -12,8 +12,8 @@ export default function TreatmentsCategoryPage({ params }: { params: { category:
     const map: Record<string, string> = {
       advanced: "advanced",
       infertility: "infertility",
-      preservation: "preservation",
-      evaluation: "evaluation",
+      "fertility-preservation": "fertility-preservation",
+      "fertility-evaluation": "fertility-evaluation",
       stories: "stories",
     };
 

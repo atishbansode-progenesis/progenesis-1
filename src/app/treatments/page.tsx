@@ -2,10 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import GradientBanner from "@/components/GradientBanner";
-import StoriesSectionNew from "@/components/Storiescard-with-new-layout";
-import ResourceStories from "@/page-components/resources/ResourceStories";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
 import StoriesSection from "@/components/Home/StoriesSection"; //
@@ -74,8 +71,8 @@ const TreatmentsPage: React.FC = () => {
     { id: "path", label: "Your Path to Parenthood" },
     { id: "advanced", label: "Advanced Infertility Treatments" },
     { id: "infertility", label: "Infertility Treatments" },
-    { id: "preservation", label: "Fertility Preservation" },
-    { id: "evaluation", label: "Fertility Evaluation" },
+    { id: "fertility-preservation", label: "Fertility Preservation" },
+    { id: "fertility-evaluation", label: "Fertility Evaluation" },
     { id: "stories", label: "Real Stories. Real Miracles." },
   ];
 
@@ -538,7 +535,7 @@ const TreatmentsPage: React.FC = () => {
 
       {/* 7️⃣ Future Parenthood */}
       <section
-        id="preservation"
+        id="fertility-preservation"
         className="w-full bg-[#FAFAFA] px-4 py-4 csLg:px-[120px]  csLg:py-20"
       >
         {/* Tag */}
@@ -602,7 +599,7 @@ const TreatmentsPage: React.FC = () => {
 
       {/* 8️⃣ Diagnostic Section */}
       <section
-        id="evaluation"
+        id="fertility-evaluation"
         className="w-full bg-[#F5FAFF] px-4 py-4 csLg:px-[120px]  csLg:py-20"
       >
         {/* Tag */}
@@ -655,7 +652,9 @@ const TreatmentsPage: React.FC = () => {
         </div>
       </section>
 
+      <section id="stories">
       <StoriesSection />
+      </section>
 
       <AppointmentForm />
       <GradientBanner text="Every journey to parenthood is unique — with the right care, hope finds its way." />
