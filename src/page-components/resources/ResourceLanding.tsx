@@ -2,7 +2,7 @@ import React from "react";
 import "../about/AboutMain.css";
 
 const ResourceLanding = ({ recentBlog }: any) => {
-  console.log(recentBlog);
+  
   return (
     <div>
       <section>
