@@ -46,7 +46,7 @@ export default function CarouselSection({
           <div className="w-full flex-col md:flex-row flex justify-between gap-12">
             <div className="w-full  md:w-[25rem]">
               {/* Dots */}
-              <div className="flex gap-3 mt-[25%]">
+              <div className="flex gap-3 lg:mt-[25%]">
                 {slides.map((_, i) => (
                   <button
                     key={i}
