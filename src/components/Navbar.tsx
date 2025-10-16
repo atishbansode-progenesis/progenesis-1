@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Search, X, ChevronDown, Menu } from "lucide-react";
 import { centersData } from "@/page-components/centers/CenterCard";
+import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 
 
@@ -903,7 +904,7 @@ const megaMenuData: Record<string, any> = {
 };
 
 /* -------------------- MEGA MENU -------------------- */
-const MegaMenu = ({ menu }: { menu: any }) => {
+const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (e: React.MouseEvent) => void }) => {
   const [expandedLink, setExpandedLink] = useState<string | null>(null);
   if (!menu) return null;
 
@@ -966,13 +967,13 @@ const MegaMenu = ({ menu }: { menu: any }) => {
 
                     {link.isButton ? (
                       // ✅ BOOK APPOINTMENT BUTTON
-                      <Link
-                        href={link.path}
+                      <button
+                        onClick={onBookAppointment}
                         className="
             flex items-center justify-center gap-2
             w-full px-4 py-[10px] rounded-[8px]
             bg-[#1656A5] text-white font-[Manrope] text-[14px] font-semibold leading-[24px] tracking-[-0.28px]
-            hover:bg-[#12498C] transition
+            hover:bg-[#12498C] transition cursor-pointer
           "
                       >
                         {link.label}
@@ -991,7 +992,7 @@ const MegaMenu = ({ menu }: { menu: any }) => {
                             strokeLinejoin='round'
                           />
                         </svg>
-                      </Link>
+                      </button>
                     ) : link.isPhone ? (
                       // ✅ PHONE LINK
                       <a
@@ -1154,6 +1155,7 @@ export default function Navbar() {
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(null);
   const [activeMobileSubmenuItem, setActiveMobileSubmenuItem] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAppointmentFormOpen, setIsAppointmentFormOpen] = useState(false);
   React.useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
   }, [isMobileMenuOpen]);
@@ -1235,6 +1237,13 @@ export default function Navbar() {
     closeTimeoutRef.current = window.setTimeout(() => setOpenMenu(null), 200);
   };
 
+  const handleBookAppointment = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setOpenMenu(null); // Close any open dropdown
+    setIsMobileMenuOpen(false); // Close mobile menu if open
+    setIsAppointmentFormOpen(true); // Open appointment form
+  };
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-300 will-change-transform bg-white font-sans ${showHeader ? "translate-y-0 shadow-sm" : "-translate-y-full"
@@ -1268,7 +1277,7 @@ export default function Navbar() {
                   </Link>
 
                   {item.hasMegaMenu && openMenu === item.label && (
-                    <MegaMenu menu={(megaMenuData as any)[item.label]} />
+                    <MegaMenu menu={(megaMenuData as any)[item.label]} onBookAppointment={handleBookAppointment} />
                   )}
                 </div>
               ))}
@@ -1702,9 +1711,8 @@ export default function Navbar() {
             {/* FOOTER BUTTONS */}
             <div className="flex justify-between items-center px-[16px] py-[16px] gap-3">
               {/* Book Appointment Button */}
-              <Link
-                href="/appointment"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <button
+                onClick={handleBookAppointment}
                 className="
       flex items-center justify-center
       px-[16px] py-[10px]
@@ -1716,10 +1724,11 @@ export default function Navbar() {
       transition-all duration-200
       hover:bg-[#0E3E7A]
       focus:outline-none focus:ring-2 focus:ring-[#1656A5]/40
+      cursor-pointer
     "
               >
                 Book Your Appointment
-              </Link>
+              </button>
 
               {/* Find My Right Treatment Button */}
               <Link
@@ -1755,6 +1764,11 @@ export default function Navbar() {
 
       </header>
       <div className="h-20" aria-hidden="true" />
+      
+      {/* Appointment Form Popup */}
+      {isAppointmentFormOpen && (
+        <AppointmentForm onClose={() => setIsAppointmentFormOpen(false)} />
+      )}
     </>
 
   );
