@@ -1642,18 +1642,18 @@ export const ivfTreatmentData = {
 export const ivfIcsiTreatmentData = {
   slug: "ivf-icsi-intracytoplasmic-sperm-injection",
   category: "fertility-treatments",
-  title: "IVF-ICSI – Intracytoplasmic Sperm Injection",
-  hero_title: "IVF-ICSI – Intracytoplasmic Sperm Injection",
+  title: "IVF-ICSI – Intracytoplasmic <br/> Sperm Injection",
+  hero_title: "IVF-ICSI – Intracytoplasmic <br/> Sperm Injection",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/ivf-icsi/ivf-icsi-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
     {
       label: "IVF-ICSI – Intracytoplasmic Sperm Injection",
-      href: "/treatments/fertility-treatments/ivf-icsi-intracytoplasmic-sperm-injection",
+      href: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection",
       id: "ivf-icsi-intracytoplasmic-sperm-injection",
     },
   ],
@@ -1684,8 +1684,9 @@ export const ivfIcsiTreatmentData = {
   `,
   categories: [
     { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who It Helps" },
-    { id: "Process", label: "Treatment Process" },
+    { id: "Who", label: "Who Can Benefit from ICSI" },
+    { id: "Process", label: "Why Choose ICSI at Progenesis" },
+    { id: "Steps", label: "Steps of the ICSI Procedure" },
     { id: "Success", label: "Success Rate" },
   ],
   who_can_benefit: {
@@ -1779,10 +1780,10 @@ export const frozenEmbryoTransferTreatmentData = {
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
     {
       label: "Frozen Embryo Transfer",
-      href: "/treatments/fertility-treatments/frozen-embryo-transfer",
+      href: "/treatments/infertility/frozen-embryo-transfer",
       id: "frozen-embryo-transfer",
     },
   ],
@@ -1813,8 +1814,9 @@ export const frozenEmbryoTransferTreatmentData = {
   `,
   categories: [
     { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who It Helps" },
-    { id: "Process", label: "Treatment Process" },
+    { id: "Who", label: "Who Can Benefit from FET" },
+    { id: "Process", label: "Why Choose FET at Progenesis" },
+    { id: "Steps", label: "Steps of the FET Procedure" },
     { id: "Success", label: "Success Rate" },
   ],
   who_can_benefit: {
@@ -1851,13 +1853,13 @@ export const frozenEmbryoTransferTreatmentData = {
       id: "02",
       title: "Low Hormonal Stress",
       description: "Natural or medicated cycles carefully and precisely tailored to your body.",
-      image: "/treatments/frozen-embryo-transfer/c2.png",
+      image: "/treatments/frozen-embryo-transfer/c3.png",
     },
     {
       id: "03",
       title: "Expert Fertility Team",
       description: "Decades of extensive experience in IVF and advanced embryology techniques.",
-      image: "/treatments/frozen-embryo-transfer/c3.png",
+      image: "/treatments/frozen-embryo-transfer/c2.png",
     },
   ],
   procedure_no_image_steps: {
@@ -1903,17 +1905,17 @@ export const fertilitySurgeryTreatmentData = {
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
     {
       label: "Fertility Surgery",
-      href: "/treatments/fertility-treatments/fertility-surgery",
+      href: "/treatments/infertility/fertility-surgery",
       id: "fertility-surgery",
     },
   ],
   path_section: {
     tag: "Know the Basics",
     mainHeading: "What Is Fertility Surgery?",
-    subHeading: "Restoring Health and Renewing Hope.",
+    subHeading: "Restoring Health. Renewing Hope.",
     description1:"Fertility surgery helps treat anatomical or structural conditions that interfere with conception. It’s performed to correct issues such as fibroids, endometriosis, blocked fallopian tubes, uterine septum, adhesions, or cysts — restoring the reproductive organs to normal function.",
     description2:"Both men and women can benefit from fertility surgery, which is often a minimally invasive, daycare procedure using laparoscopy or hysteroscopy.",
   },
@@ -1937,8 +1939,9 @@ export const fertilitySurgeryTreatmentData = {
   `,
   categories: [
     { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who It Helps" },
-    { id: "Process", label: "Treatment Process" },
+    { id: "Who", label: "Who Can Benefit from Fertility Surgery" },
+    { id: "Process", label: "Why Choose Fertility Surgery at Progenesis" },
+    { id: "Steps", label: "Steps of the Fertility Surgery Procedure" },
     { id: "Success", label: "Success Rate" },
   ],
   who_can_benefit: {
@@ -1975,18 +1978,18 @@ export const fertilitySurgeryTreatmentData = {
       id: "02",
       title: "Advanced Technology",
       description: "Precision surgical instruments and high-definition imaging technology.",
-      image: "/treatments/fertility-surgery/c2.png",
+      image: "/treatments/fertility-surgery/c3.png",
     },
     {
       id: "03",
       title: "Daycare Procedures",
       description: "Most patients are safely discharged the same day after treatment.",
-      image: "/treatments/fertility-surgery/c3.png",
+      image: "/treatments/fertility-surgery/c2.png",
     },
   ],
   procedure_no_image_steps: {
-    main_heading: "Every step synchronized for higher success.",
-    main_tag: "Steps of the Frozen Embryo Transfer Process",
+    main_heading: "Advanced, minimally invasive solutions for reproductive health.",
+    main_tag: "Types of Fertility Surgery",
     data: [
       {
         title: "Laparoscopic Surgery",
@@ -2010,6 +2013,8 @@ export const fertilitySurgeryTreatmentData = {
   gradient_data: "75%",
   gradient_text:
     "improvement in fertility — Progenesis surgeries restore function and boost conception with expert care.",
+    success_stories: "From Hope to Happiness Watch Now!",
+    success_tag:"Success Stories",
 };
 
 

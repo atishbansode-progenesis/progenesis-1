@@ -84,6 +84,9 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
     case "frozen-embryo-transfer":
       data = frozenEmbryoTransferTreatmentData;
       break;
+    case "fertility-surgery":
+      data = fertilitySurgeryTreatmentData;
+      break;
     case "female-fertility-preservation":
       data = fertilitySurgeryTreatmentData;
       break;
