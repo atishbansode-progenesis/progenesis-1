@@ -32,7 +32,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
         flex h-8 w-16 items-center justify-center rounded-full 
         bg-white text-black border border-[#2C2C2C] 
         transition-all duration-300
-        group-hover:bg-black group-hover:text-white group-hover:border-transparent
+        group-hover:bg-[#1656A5] group-hover:text-white group-hover:border-transparent
       "
         >
           <ArrowUpRight className="w-4 h-4" />
@@ -390,13 +390,13 @@ const TreatmentsPage: React.FC = () => {
 
         {/* Block 2 */}
 
-        <div className="bg-[#F5FAFF] px-4 pb-4 lg:p-0 lg:bg-transparent">
+        <div className="bg-[#F5FAFF] px-4 py-4 lg:p-0 lg:bg-transparent">
           <h3
             className="
           text-[#2C2C2C] font-[Manrope]
           text-[16px] leading-[24px] tracking-[-0.32px] font-normal
           md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] mb-8
-          lg:mb-8 lg:mt-[80px] mt-4
+          lg:mb-8 lg:mt-[80px] 
 
           
         "
@@ -515,7 +515,7 @@ const TreatmentsPage: React.FC = () => {
               }
               className=" group rounded-xl border-[#E6E6E6] p-4 md:p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
             >
-              <span className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] group-hover:bg-black group-hover:text-white group-hover:border-transparent transition-all duration-300">
+              <span className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] group-hover:bg-[#1656A5] group-hover:text-white group-hover:border-transparent transition-all duration-300">
                 <ArrowUpRight className="w-4 h-4" />
               </span>
 
@@ -634,7 +634,7 @@ const TreatmentsPage: React.FC = () => {
             `}
             >
               {/* Icon */}
-              <span className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] group-hover:bg-black group-hover:text-white group-hover:border-transparent transition-all duration-300">
+              <span className="flex h-8 w-16 items-center justify-center rounded-full bg-[#EEF5FF] text-black border border-[#2C2C2C] group-hover:bg-[#1656A5] group-hover:text-white group-hover:border-transparent transition-all duration-300">
                 <ArrowUpRight className="w-4 h-4" />
               </span>
 
