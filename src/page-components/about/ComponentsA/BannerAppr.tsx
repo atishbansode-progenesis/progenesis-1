@@ -703,7 +703,7 @@ const slides = [
     image: "/images/banner3.png",
     image1: '/images/Abanner3.png',
     heading:
-      'Transparent plans, clear pricing, and complete support designed for peace of mind.',
+      'We make your fertility journey easier with clarity, transparency, and the right support at every step.',
     ctaPrimary: 'Book Your Appointment',
     ctaSecondary: 'Check My Fit',
     ctaThird: 'Take A Quiz',
@@ -974,7 +974,7 @@ const BannerOfApproach: React.FC = () => {
               <div className="absolute inset-0 bg-black/30 z-0" />
 
               <div className="relative z-10 p-6 md:p-10 lg:p-12" style={{ paddingLeft: "60px", paddingTop: "80px", paddingRight: "60px" }}>
-                <h3 className="font-manrope text-[28px] leading-[30px] tracking-[-0.02em] font-normal">{s.heading}</h3>
+                <h3 className="font-manrope text-[28px] leading-[30px] tracking-[-0.02em] font-normal max-w-[90%]">{s.heading}</h3>
 
                 <div className="flex flex-wrap gap-3 md:gap-4 mb-10" style={{ paddingTop: "30px", paddingBottom: "100px" }}>
                   <button
@@ -999,7 +999,7 @@ const BannerOfApproach: React.FC = () => {
                 <div className="grid grid-cols-2 csLg:grid-cols-4">
                   {s.features.map((item, idx) => (
                     <div key={idx} className="flex flex-col gap-2 mt-2 csLg:mt-0">
-                      <img src={item.icon} alt={item.title} className="lg:w-[30px] lg:h-[30px]  object-contain" />
+                      <img src={item.icon} alt={item.title} className="w-[30px] h-[30px]  object-contain" />
                       <h4 className="font-semibold tracking-tight text-[15px] md:text-[16px]">{item.title}</h4>
                       <p className="text-sm text-gray-200 csLg:max-w-[200px]">{item.desc}</p>
                     </div>

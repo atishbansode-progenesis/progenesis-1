@@ -808,12 +808,12 @@ export const class1000ModularLabData = {
       description:"A Class-1000 Modular Lab maintains a sterile, contaminant-free environment for embryo growth."
         },
     {
-      icon: "/treatments/modular-lab/lab_icon2.png",
+      icon: "/treatments/modular-lab/lab_icon2.svg",
       title: "Why It's Important",
       description:
 "In IVF, even tiny particles can affect embryos. A Class-1000 lab ensures clean, optimal air."    },
     {
-      icon: "/treatments/modular-lab/lab_icon3.png",
+      icon: "/treatments/modular-lab/lab_icon3.svg",
       title: "How It Works",
       description:
 "The lab filters air to limit particle count to fewer than 1,000 particles per cubic foot — far cleaner than regular environments."    },
@@ -823,7 +823,7 @@ export const class1000ModularLabData = {
       description:
 "Used during critical stages like fertilization, culture, and embryo transfer to protect embryo integrity."    },
     {
-      icon: "/treatments/modular-lab/lab_icon5.png",
+      icon: "/treatments/modular-lab/lab_icon5.svg",
       title: "End Result",
       description:
 "Creates ideal lab conditions for successful fertilization, healthier embryos, and higher pregnancy success rates."   },
