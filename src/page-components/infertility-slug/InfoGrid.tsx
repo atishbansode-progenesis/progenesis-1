@@ -21,11 +21,14 @@ export default function InfoGrid({ tag, heading, items }: InfoGridProps) {
         {tag}
       </button>
       {/* Main Heading */}
-      <h2
+      <div className="max-w-[50%]">
+  <h2
         className="md:max-w-2lg text-[32px] md:text-[40px] font-normal md:leading-[50px] leading-[40px] tracking-[-0.96px] text-[#2C2C2C] mb-[40px] md:mb-[80px]"
         style={{ fontFamily: "Manrope" }}
         dangerouslySetInnerHTML={{ __html: heading }}
       />
+      </div>
+    
 
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-8 md:gap-y-16">
