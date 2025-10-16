@@ -919,11 +919,11 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
           className="
       hidden sm:block
       w-[200px] sm:w-[250px] md:w-[300px] lg:w-[300px]
-      max-h-[400px] sm:max-h-[400px] xl:max-h-[450px]
+      h-[350px]
       flex-shrink-0
       transition-all duration-300
-      [@media(min-width:1920px)]:w-[500px] 
-      [@media(min-width:1920px)]:max-h-[600px]
+      [@media(min-width:1920px)]:w-[500px]
+      [@media(min-width:1920px)]:h-[500px]
     "
         >
           <Image
