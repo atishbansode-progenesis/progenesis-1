@@ -307,9 +307,9 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
     <div onClick={() => {
               router.push(`/centers/${centerData.slug}`);
             }}
-     className="flex flex-col hover:cursor-pointer md:flex-row gap-4 bg-[#FFFFFF] hover:bg-[#1656A50D]  rounded-[16px] overflow-hidden transition-shadow">
+     className="flex flex-col hover:cursor-pointer md:flex-row cslg:gap-4 bg-[#FFFFFF] hover:bg-[#1656A50D]  rounded-[16px] overflow-hidden transition-shadow">
       {/* Image Container */}
-      <div className=" p-4 relative w-full  h-[100%] md:h-[444px]">
+      <div className=" px-4 pt-4 csLg:p-4 relative w-full  h-[100%] md:h-[444px]">
         <img
           src={image}
           alt={name}

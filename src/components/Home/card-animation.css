@@ -1,0 +1,5 @@
+ .card-smooth-home-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none; /* Prevent rubber-band effect */
+  touch-action: pan-y; /* Restrict touch events to vertical scrolling */
+}

@@ -48,12 +48,12 @@ export const femaleFertilityPreservationData = {
       description:"Ideal for women facing surgeries, cancer therapies, or genetic conditions that may affect fertility."
     },
     {
-      icon: "/treatments/male-fertility-preservation/icon4.png",
+      icon: "/treatments/male-fertility-preservation/icon5.svg",
       title: "Result",
       description:"Enables women to conceive with their own healthy eggs or embryos, even years after preservation."
     },
     {
-      icon: "/treatments/male-fertility-preservation/icon4.png",
+      icon: "/treatments/male-fertility-preservation/icon6.svg",
       title: "Added Advantage",
       description:"Provides emotional assurance, flexibility, and reproductive independence for women planning motherhood on their own terms."
     }
