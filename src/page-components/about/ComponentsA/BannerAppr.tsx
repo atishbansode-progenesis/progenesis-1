@@ -929,13 +929,13 @@ const BannerOfApproach: React.FC = () => {
                       {s.ctaPrimary}
                     </button>
 
-                    <button
+                    {/* <button
                       onClick={() => setCtaActive((prev) => ({ ...prev, [index]: "secondary" }))}
                       className={`${(ctaActive[index] ?? "primary") === "secondary" ? "bg-[#FAFAFA] text-[#2C2C2C]" : "border border-white/90 text-[#F9F9F9]"
                         } h-[40px] px-4 rounded-[12px] hover:cursor-pointer text-xs font-medium`}
                     >
                       {s.ctaThird}
-                    </button>
+                    </button> */}
 
                     {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
                   </div>

@@ -43,7 +43,7 @@ export const doctors: Doctor[] = [
     languages: "Marathi, Hindi, English",
     image: "/images/doctor-sonali.png",
   },
-   {
+  {
     slug: "dr-unnati-mamtora",
     name: "Dr. Unnati Mamtora",
     bio: "Fertility Consultant, Borivali",
@@ -54,8 +54,8 @@ export const doctors: Doctor[] = [
     specialty: "Obstetrics and Gynaecology",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Unnati.png",
-},
-{
+  },
+  {
     slug: "dr-dinesh-wade",
     name: "Dr. Dinesh Wade",
     bio: "Fertility Consultant, Pune",
@@ -66,8 +66,8 @@ export const doctors: Doctor[] = [
     specialty: "MBBS, MS, DNB (OBST & GYNAE), FNB, MRCOG (UK)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Dinesh.png",
-},
-{
+  },
+  {
     slug: "dr-shital-sonone",
     name: "Dr. Shital Sonone",
     bio: "Fertility Consultant, Nashik.",
@@ -78,8 +78,8 @@ export const doctors: Doctor[] = [
     specialty: "MS (Obstetrics and Gynaecology)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Shital.png",
-},
-{
+  },
+  {
     slug: "dr-rajashree-patil",
     name: "Dr. Rajashree Patil",
     bio: "Fertility Consultant, Virar.",
@@ -90,8 +90,8 @@ export const doctors: Doctor[] = [
     specialty: "Obstetrics and Gynaecology",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Rajashree.png",
-},
-{
+  },
+  {
     slug: "dr-darshna-wahane",
     name: "Dr. Darshna Wahane",
     bio: "Fertility Consultant, Panvel",
@@ -102,8 +102,8 @@ export const doctors: Doctor[] = [
     specialty: "MBBS DGO (OBST & GYNAE)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Darshna.png",
-},
-{
+  },
+  {
     slug: "dr-priti-pardeshi",
     name: "Dr. Priti Pardeshi",
     bio: "Fertility Consultant, Kalyan",
@@ -114,8 +114,8 @@ export const doctors: Doctor[] = [
     specialty: "DGO (Obstetrics and Gynaecology)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Priti.png",
-},
-{
+  },
+  {
     slug: "dr-teena-desai",
     name: "Dr. Teena Desai",
     bio: "Fertility Consultant, Andheri.",
@@ -126,8 +126,8 @@ export const doctors: Doctor[] = [
     specialty: "DNB DGO (Obstetrics and Gynaecology)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Teena.png",
-},
-{
+  },
+  {
     slug: "dr-bhavika-sane",
     name: "Dr. Bhavika Sane",
     bio: "Fertility Consultant, Vashi.",
@@ -138,8 +138,8 @@ export const doctors: Doctor[] = [
     specialty: "DGO (Obstetrics and Gynaecology)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Bhavika.png",
-},
-{
+  },
+  {
     slug: "dr-prerna-khandelwal",
     name: "Dr. Prerna Khandelwal",
     bio: "Fertility Consultant, Thane.",
@@ -150,8 +150,8 @@ export const doctors: Doctor[] = [
     specialty: "MS (Obstetrics and Gynaecology)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Prerna.png",
-},
-{
+  },
+  {
     slug: "dr-shradha-pol",
     name: "Dr. Shradha Pol",
     bio: "Fertility Consultant, Thane.",
@@ -162,8 +162,8 @@ export const doctors: Doctor[] = [
     specialty: "MS (Obstetrics and Gynaecology)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Shradha.png",
-},
-{
+  },
+  {
     slug: "dr-vivek-bagul",
     name: "Dr. Vivek Bagul",
     bio: "Fertility Consultant, Jalgaon.",
@@ -174,7 +174,7 @@ export const doctors: Doctor[] = [
     specialty: "DGO (Obstetrics and Gynaecology)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Vivek.png",
-}
+  }
 ];
 
 const DoctorsInfo: React.FC = () => {
@@ -191,13 +191,11 @@ const DoctorsInfo: React.FC = () => {
 
       <div className="pb-4">
         {doctors.map((d, idx) => (
-         <div
+          <div
 
-  key={idx}
-  className="w-full border-b border-gray-200 py-3 md:py-4 mb-2 md:mb-3 last:border-b-0 last:mb-0"
->
-
-
+            key={idx}
+            className="w-full border-b border-gray-200 py-3 md:py-4 mb-2 md:mb-3 last:border-b-0 last:mb-0"
+          >
             <div onClick={() => router.push(`/doctors/${d.slug}`)} className="grid  grid-cols-1 lg:grid-cols-[320px_1fr_260px] lg:gap-10 items-start lg:hover:bg-[#1656A50D] lg:p-4 rounded-[16px] cursor-pointer">
               {/* Left: Image */}
               <div className="w-full h-full md:h-full lg:h-full overflow-hidden rounded-[16px] bg-gray-100">
@@ -222,11 +220,9 @@ const DoctorsInfo: React.FC = () => {
                   <span>{d.qualifications}</span>
                   <span>{d.fellowship}</span>
                 </div>
-                
-                <div className="mt-4 flex flex-wrap csLg:hidden gap-[8px] text-[13px] md:text-[14px] font-normal text-[#1656A5]">
-                  <span>{d.experience} |</span>
-                  <span>{d.qualifications} | </span>
-                  <span>{d.fellowship}</span>
+
+                <div className="my-4 flex flex-wrap csLg:hidden gap-[px] text-[13px] md:text-[14px] font-normal text-[#1656A5]">
+                  <span>{d.experience} | {d.qualifications} | {d.fellowship}</span>
                 </div>
               </div>
 
@@ -243,7 +239,7 @@ const DoctorsInfo: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="min-w-[150px] csLg:flex flex-col justify-end items-end">
+                  <div className="min-w-[190px] csLg:flex flex-col justify-end items-end">
                     <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-normal">
                       Specialty
                     </div>
@@ -258,9 +254,9 @@ const DoctorsInfo: React.FC = () => {
                   Book Your Appointment
                 </button>
 
+              </div>
             </div>
           </div>
-        </div>
         ))}
       </div>
     </section>

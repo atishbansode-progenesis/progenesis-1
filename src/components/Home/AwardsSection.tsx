@@ -14,7 +14,7 @@ const awards = [
     year: "2016-17",
     title: "World's Greatest Brand & World's Greatest Leaders",
     subtitle: "URS and ASIA ONE in Dubai.URS and ASIA ONE in Dubai.",
-    image: "/awards/awards.png",
+    image: "/awards/awardsa.png",
   },
   {
     year: "2017-18",

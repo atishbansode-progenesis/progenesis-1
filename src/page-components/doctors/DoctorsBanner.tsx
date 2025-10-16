@@ -2,9 +2,9 @@ import React from 'react'
 
 const DoctorBanner: React.FC = () => {
   return (
-    <section className="w-full ">
+    <section className="w-full">
       <div
-        className="relative w-full h-[340px] sm:h-[380px] md:h-[500px] lg:h-[567px] overflow-hidden bg-no-repeat bg-cover bg-center flex items-end md:items-center
+        className="relative w-full overflow-hidden bg-no-repeat bg-cover bg-center flex items-end md:items-center
                    bg-[url('/images/DoctorB-mobile.png')] sm:bg-[url('/images/DoctorB.png')]"
       >
         {/* Overlay for better text contrast on mobile + soft fade to white at bottom like the design */}
@@ -21,8 +21,8 @@ const DoctorBanner: React.FC = () => {
                          text-[32px] csLg:text-[60px] leading-[40px] csLg:leading-[65px]
                          "
             >
-              Because of Their Expertise &amp;  Care,
-              Dreams Have Found Life.
+              Because of Their Expertise &amp; <br />
+              Care, Dreams Have Found Life.
             </h1>
           </div>
         </div>
