@@ -51,7 +51,7 @@ const CareersBenefits = () => {
 							 <img
           src={benefit.icon}
           alt={benefit.title}
-          className="w-7 h-7 lg:w-11 lg:h-11 object-contain"
+          className="w-[19px] h-[19px] md:w-[28px] md:h-[28px] object-contain"
         />
 <h3 className="font-manrope font-normal lg:text-[24px] text-[16px]  lg:leading-[30px] leading-[24px] tracking-[-0.02em] text-[#2C2C2C] ">
   {benefit.title}
