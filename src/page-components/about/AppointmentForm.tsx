@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import { SelectCalendarIcon, SelectFieldArrowDown } from "./icons";
 import "./form-styles.css";
@@ -107,6 +108,7 @@ const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
 
 const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const isPopupMode = !!onClose;
+  const router = useRouter();
   const formRef = useRef<HTMLFormElement | null>(null);
   const [formFields, setFormFields] = useState<any[]>([]);
   const [formData, setFormData] = useState<any>({});
@@ -213,22 +215,11 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         formRef.current.reset();
       }
 
+      // Redirect to thank you page after successful submission
+      router.push('/thank-you');
+      
       if (isPopupMode) {
         setIsFormOpen(false); // Close the form
-
-        // Show success toast after form closes
-        setTimeout(() => {
-          setToast({
-            message: "Your appointment has been booked successfully!",
-            type: "success",
-          });
-        }, 300); // Slight delay to ensure form closes first
-      } else {
-        // For inline, show toast immediately
-        setToast({
-          message: "Your appointment has been booked successfully!",
-          type: "success",
-        });
       }
     } catch (error: any) {
       console.error(error);
