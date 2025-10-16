@@ -24,7 +24,7 @@ export default function WhyChooseSection({
       {/* Desktop Version */}
       <section
         id="why-choose"
-        className="lg:px-[120px] lg:py-[80px] bg-transparent hidden lg:block scroll-mt-[120px]"
+        className="csLg:px-[120px] csLg:py-[80px] bg-transparent hidden lg:block scroll-mt-[120px]"
       >
         <div className="grid grid-cols-[40%_60%]  w-full items-center">
           <div className="flex flex-col  justify-between h-full ">
