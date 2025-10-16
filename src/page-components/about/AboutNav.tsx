@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 const sections = [
-  { id: "why-1", label: "Why choose us" },
+  { id: "why-1", label: "The Journey" },
   { id: "our-approach", label: "Our Approach" },
   { id: "our-vision", label: "Our Vision & Mission" },
   { id: "why-choose-us", label: "Why choose us" },
