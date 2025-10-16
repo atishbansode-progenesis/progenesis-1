@@ -259,7 +259,7 @@ export const picsiTreatmentData = {
     ]
     },
   gradient_data: "82%",
-  gradient_text: "Couples undergoing PICSI improved embryo quality and higher implantation success rates",
+  gradient_text: "Couples undergoing PICSI report improved embryo quality and higher implantation success rates.",
   points: [
     {
       id: "01",
