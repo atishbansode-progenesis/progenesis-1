@@ -669,25 +669,36 @@ const megaMenuData: Record<string, any> = {
       {
         title: "Quick Links",
         links: [
-          { label: "Book Appointment", path: "/appointment", isButton: true },
           { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
           { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
-          // { label: "Take a Quiz", path: "/quiz", isarrow: true },
-          // { label: "Online Consult", path: "/online-consult", isarrow: true },
-          // { label: "EMI Options", path: "/emi-options", isarrow: true },
-        ],
-      },
-      {
-        links: [
-          // { label: "Fellowship", path: "/fellowship", isarrow: true },
-          { label: "Our Centers", path: "/centers", isarrow: true },
-          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-          { label: "EMI Options", path: "/emi-options", isarrow: true },
-          { label: "International Patients", path: "/international-patients", isarrow: true },
           { label: "Online Consultation", path: "/online-consultation", isarrow: true },
-
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          { label: "International Patients", path: "/international-patients", isarrow: true },
         ],
       },
+      // {
+      //   title: "Quick Links",
+      //   links: [
+      //     { label: "Book Appointment", path: "/appointment", isButton: true },
+      //     { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
+      //     { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+      //     // { label: "Take a Quiz", path: "/quiz", isarrow: true },
+      //     // { label: "Online Consult", path: "/online-consult", isarrow: true },
+      //     // { label: "EMI Options", path: "/emi-options", isarrow: true },
+      //   ],
+      // },
+      // {
+      //   links: [
+      //     // { label: "Fellowship", path: "/fellowship", isarrow: true },
+      //     { label: "Our Centers", path: "/centers", isarrow: true },
+      //     { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+      //     { label: "EMI Options", path: "/emi-options", isarrow: true },
+      //     { label: "International Patients", path: "/international-patients", isarrow: true },
+      //     { label: "Online Consultation", path: "/online-consultation", isarrow: true },
+
+      //   ],
+      // },
     ],
   },
   "Infertility Issues": {
@@ -732,23 +743,23 @@ const megaMenuData: Record<string, any> = {
       {
         title: "Quick Links",
         links: [
-          { label: "Book Appointment", path: "/appointment", isButton: true },
           { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
           { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
-          // { label: "Take a Quiz", path: "/quiz", isarrow: true },
-          // { label: "Online Consult", path: "/online-consult", isarrow: true },
-          // { label: "EMI Options", path: "/emi-options", isarrow: true },
-        ],
-      },
-      {
-        links: [
-          { label: "Our Centers", path: "/centers", isarrow: true },
-          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-          { label: "EMI Options", path: "/emi-options", isarrow: true },
-          { label: "International Patients", path: "/international-patients", isarrow: true },
           { label: "Online Consultation", path: "/online-consultation", isarrow: true },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          { label: "International Patients", path: "/international-patients", isarrow: true },
         ],
       },
+      // {
+      //   links: [
+      //     { label: "Our Centers", path: "/centers", isarrow: true },
+      //     { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+      //     { label: "EMI Options", path: "/emi-options", isarrow: true },
+      //     { label: "International Patients", path: "/international-patients", isarrow: true },
+      //     { label: "Online Consultation", path: "/online-consultation", isarrow: true },
+      //   ],
+      // },
     ],
   },
   "Our Centers": {
@@ -772,41 +783,23 @@ const megaMenuData: Record<string, any> = {
           },
           { label: "Nashik", path: "/centers/nashik" },
           { label: "Jalgaon", path: "/centers/jalgaon" },
-          // { label: "Ahilyanagar", path: "/centers/ahilyanagar" },
-          // { label: "Amravati", path: "/centers/amravati" },
-          // { label: "Kolhapur", path: "/centers/kolhapur" },
-          // { label: "Nagpur", path: "/centers/nagpur" },
-          // { label: "Solapur", path: "/centers/solapur" },
-          // { label: "Pune", path: "/centers/pune" },
-        ],
-      },
-      {
-        // title: "Quick Links",
-        links: [
-          // { label: "Book Appointment", path: "/appointment", isButton: true },
-          // { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          // { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
           { label: "Ahilyanagar", path: "/centers/ahilyanagar" },
           { label: "Amravati", path: "/centers/amravati" },
           { label: "Kolhapur", path: "/centers/kolhapur" },
           { label: "Nagpur", path: "/centers/nagpur" },
           { label: "Solapur", path: "/centers/solapur" },
           { label: "Pune", path: "/centers/pune" },
-          // { label: "Take a Quiz", path: "/quiz", isarrow: true },
-          // { label: "Online Consult", path: "/online-consult", isarrow: true },
-          // { label: "EMI Options", path: "/emi-options", isarrow: true },
-          // { label: "Fellowship", path: "/fellowship",isarrow: true },
-          // { label: "Our Centers", path: "/centers",isarrow: true },
-          // { label: "Our Social Impact", path: "/social-impact" ,isarrow: true},
         ],
       },
       {
+        title: "Quick Links",
         links: [
-          { label: "Our Centers", path: "/centers", isarrow: true },
-          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-          { label: "EMI Options", path: "/emi-options", isarrow: true },
-          { label: "International Patients", path: "/international-patients", isarrow: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
           { label: "Online Consultation", path: "/online-consultation", isarrow: true },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          { label: "International Patients", path: "/international-patients", isarrow: true },
         ],
       },
     ],
@@ -840,12 +833,6 @@ const megaMenuData: Record<string, any> = {
 
             ],
           },
-
-        ],
-      },
-      {
-        links: [
-
           {
             label: "Infertility Treatments", path: "/treatments#infertility",
             submenu: [
@@ -881,6 +868,43 @@ const megaMenuData: Record<string, any> = {
         ],
       },
       // {
+      //   links: [
+
+      //     {
+      //       label: "Infertility Treatments", path: "/treatments#infertility",
+      //       submenu: [
+      //         { label: "Ovulation Induction", path: "/treatments/infertility/ovulation-induction/" },
+      //         { label: "IUI", path: "/treatments/infertility/artificial-insemination-iui-treatment/" },
+      //         { label: "IVF", path: "/treatments/infertility/ivf/" },
+      //         { label: "IVF-ICSI ", path: "/treatmentsinfertility/ivf-icsi/" },
+      //         { label: "Frozen Embryo Transfer", path: "/treatments/infertility/frozen-embryo-transfer/" },
+      //         { label: "Fertility Surgery  ", path: "/treatments/infertility/fertility-surgery/" },
+
+      //       ],
+      //     },
+      //     {
+      //       label: "Fertility Preservation", path: "/treatments#preservation",
+      //       submenu: [
+      //         { label: "Female Fertility Preservation", path: "/treatments/preservation/female-fertility-preservation/" },
+      //         { label: "Male Fertility Preservation", path: "/treatments/preservation/male-fertility-preservation/" },
+      //         { label: "Embryo Preservation", path: "/treatments/preservation/egg-embryo-freezing/" },
+
+      //       ],
+
+      //     },
+      //     {
+      //       label: "Fertility Evaluation", path: "/treatments#evaluation",
+      //       submenu: [
+      //         { label: "Female Analysis-Complete Reproductive Health Check", path: "/treatments/evaluation/female-analysis-complete-reproductive-health-check/" },
+      //         { label: "Male Analysis – Advanced Sperm Testing", path: "/treatments/evaluation/male-analysis/" },
+
+      //       ],
+
+      //     },
+
+      //   ],
+      // },
+      // {
       //   title: "Preservation",
       //   links: [
       //     { label: "Online Consult", path: "/treatments#female-preservation" ,isarrow: true},
@@ -891,12 +915,14 @@ const megaMenuData: Record<string, any> = {
       //   ],
       // },
       {
+        title: "Quick Links",
         links: [
-          { label: "Our Centers", path: "/centers", isarrow: true },
-          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-          { label: "EMI Options", path: "/emi-options", isarrow: true },
-          { label: "International Patients", path: "/international-patients", isarrow: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
           { label: "Online Consultation", path: "/online-consultation", isarrow: true },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          { label: "International Patients", path: "/international-patients", isarrow: true },
         ],
       },
     ],
