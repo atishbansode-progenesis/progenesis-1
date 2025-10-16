@@ -15,7 +15,10 @@ interface InfoGridProps {
 
 export default function InfoGrid({ tag, heading, items }: InfoGridProps) {
   return (
-    <section className="w-full p-[16px] lg:p-[120px] bg-[#FAFAFA] scroll-mt-[120px]" id="about">
+    <section
+      className="w-full p-[16px] md:px-[120px] md:py-[80px] bg-[#FAFAFA]"
+      id="about"
+    >
       {/* Small Tag */}
       <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
         {tag}
@@ -30,17 +33,20 @@ export default function InfoGrid({ tag, heading, items }: InfoGridProps) {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-8 md:gap-y-16">
         {items.map((item, index) => (
-          <div key={item.id} className="flex flex-col items-start gap-3">
+          <div key={item.id} className="flex flex-col items-start gap-[20px]">
             <div className="flex flex-row md:flex-col items-start gap-1">
               <div className="text-[16px] text-[#606060]">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <div className="text-[16px] font-semibold lg:font-normal md:text-[24px] text-[#2C2C2C]">
+              <div className="text-[16px] font-semibold lg:font-normal md:text-[24px] text-[#2C2C2C]/70">
                 {item.title}
               </div>
             </div>
-            <hr className="border-[#1656A50D] border-[1px] w-[80%]" />
-            <div className="text-[16px] text-[#606060]/70">{item.description}</div>
+            <hr className="border-[#1656A50D] border-[1px] w-[80%] hidden md:block" />
+            <div className="text-[16px] text-[#606060]/70">
+              {item.description}
+            </div>
+            {index < items.length - 1 && <hr className="border-[#1656A50D] border-[1px] w-full md:hidden" />}
           </div>
         ))}
       </div>
