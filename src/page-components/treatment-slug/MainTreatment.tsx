@@ -3,7 +3,6 @@
 import { useState } from "react";
 import HeroSection from "@/components/HeroSection/herosection";
 import StoriesSection from "@/components/Home/StoriesSection";
-import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
 import TreatmentBasics from "@/page-components/treatment-slug/TreatmentBasics";
 import WhyChooseSection from "@/page-components/treatment-slug/WhyChooseSection";
@@ -15,6 +14,7 @@ import { OvulationCards } from "./OvulationCards";
 import { PathSection } from "./PathSection";
 import AppointmentForm from "../about/AppointmentForm";
 import ParenthoodBanner from "./ParenthoodBanner";
+import { OvulationCardsWithDesc } from "./OvulationCardsWithDesc";
 
 export default function MainTreatment({ data }: { data: any }) {
   const [activeTab, setActiveTab] = useState("basics");
@@ -91,6 +91,15 @@ export default function MainTreatment({ data }: { data: any }) {
           points={data.points}
         />
       )}
+
+      {data.who_can_benefit_desc && (
+        <OvulationCardsWithDesc
+          tag={data.who_can_benefit_desc.tag}
+          heading={data.who_can_benefit_desc.title}
+          cards={data.who_can_benefit_desc.cards}
+        />
+      )}
+
       {/* Section 5: Genetic Testing Cards */}
       {data.genetic_testing_cards && (
         <GeneticTestingCards
