@@ -92,7 +92,7 @@ title2: "Fertilization (IVF)",
       </div>
 
       {/* Treatments Cards (Normal Flow, No Overlap) */}
-      <div className=" xl:mb-[76px] flex flex-col gap-6">
+      <div className=" xl:mb-[76px] flex flex-col gap-2">
         {/* First 3 cards */}
         <div className="grid  grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-[35%_35%_30%]  w-full justify-start">
           {treatments.slice(0, 3).map((item, index) => {

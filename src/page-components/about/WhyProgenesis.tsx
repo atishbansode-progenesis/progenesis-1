@@ -135,15 +135,17 @@ const WhyProgenesis: React.FC = () => {
                   )}
 
                   {idx === slides.length - 1 && (
-                    <div className="mt-[0.833vw] h-[1px] w-full bg-[#A5A5A5] relative" />
+                    <div className="mt-[0.833vw] h-[1px] w-full  bg-[#A5A5A5] relative" />
                   )}
                 </button>
               );
             })}
           </div>
         </div>
+ 
 
-        <img src={current.image} className="hidden lg:block h-full" />
+        <img src={current.image} className="hidden lg:block mt-20"  />
+      
       </div>
     </section>
   );
