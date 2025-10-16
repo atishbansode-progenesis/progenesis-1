@@ -136,7 +136,7 @@ export default function MainTreatment({ data }: { data: any }) {
 
       {/* Section 8: Stories */}
       <section id="stories" className="scroll-mt-[120px]">
-        <StoriesSection />
+        <StoriesSection heading={"From Hope to Happiness Watch Now!"} tag={"Success Stories"}/>
       </section>
       <ParenthoodBanner/>
 

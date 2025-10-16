@@ -1444,11 +1444,11 @@ export const artificialInseminationData = {
     </p>
   `,
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who Can Benefit?" },
-    { id: "Process", label: "Why Choose IUI at Progenesis" },
-    { id: "Steps", label: "Steps of the IUI Procedure" },
-    { id: "Success", label: "Success Rate" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "who-can-benefit", label: "Who Can Benefit?" },
+    { id: "why-choose", label: "Why Choose IUI at Progenesis" },
+    { id: "procedure", label: "Steps of the IUI Procedure" },
+    { id: "stories", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit?",
@@ -1563,11 +1563,11 @@ export const ivfTreatmentData = {
     </p>
   `,
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who Can Benefit from IVF" },
-    { id: "Process", label: "Why Choose IVF at Progenesis" },
-    { id: "Steps", label: "Steps of the IVF Process" },
-    { id: "Success", label: "Success Rate" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "who-can-benefit", label: "Who Can Benefit from IVF" },
+    { id: "why-choose", label: "Why Choose IVF at Progenesis" },
+    { id: "procedure", label: "Steps of the IVF Process" },
+    { id: "stories", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit?",
@@ -1683,11 +1683,11 @@ export const ivfIcsiTreatmentData = {
     </p>
   `,
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who Can Benefit from ICSI" },
-    { id: "Process", label: "Why Choose ICSI at Progenesis" },
-    { id: "Steps", label: "Steps of the ICSI Procedure" },
-    { id: "Success", label: "Success Rate" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "who-can-benefit", label: "Who Can Benefit from ICSI" },
+    { id: "why-choose", label: "Why Choose ICSI at Progenesis" },
+    { id: "procedure", label: "Steps of the ICSI Procedure" },
+    { id: "stories", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit from ICSI",
@@ -1813,11 +1813,11 @@ export const frozenEmbryoTransferTreatmentData = {
     </p>
   `,
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who Can Benefit from FET" },
-    { id: "Process", label: "Why Choose FET at Progenesis" },
-    { id: "Steps", label: "Steps of the FET Procedure" },
-    { id: "Success", label: "Success Rate" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "who-can-benefit", label: "Who Can Benefit from FET" },
+    { id: "why-choose", label: "Why Choose FET at Progenesis" },
+    { id: "procedure", label: "Steps of the FET Procedure" },
+    { id: "stories", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit from FET",
@@ -1938,11 +1938,11 @@ export const fertilitySurgeryTreatmentData = {
     </p>
   `,
   categories: [
-    { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who Can Benefit from Fertility Surgery" },
-    { id: "Process", label: "Why Choose Fertility Surgery at Progenesis" },
-    { id: "Steps", label: "Steps of the Fertility Surgery Procedure" },
-    { id: "Success", label: "Success Rate" },
+    { id: "basics", label: "Know the Basics" },
+    { id: "who-can-benefit", label: "Who Can Benefit from Fertility Surgery" },
+    { id: "why-choose", label: "Why Choose Fertility Surgery at Progenesis" },
+    { id: "procedure", label: "Steps of the Fertility Surgery Procedure" },
+    { id: "stories", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit from Fertility Surgery",
