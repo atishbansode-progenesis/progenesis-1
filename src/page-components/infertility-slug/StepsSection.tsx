@@ -42,7 +42,7 @@ export default function StepsSection({
       <div>
         <div className="flex flex-col items-start justify-between">
           {/* Header */}
-          <div className="mb-10 md:mb-20">
+          <div className="mb-10 md:mb-20 bg-red-900" >
             <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
               {tag}
             </button>
@@ -52,7 +52,7 @@ export default function StepsSection({
           </div>
 
           {/* Buttons + Progress */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center">
+          <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center bg-blue-900">
             {/* Step Buttons */}
             <div className="flex flex-wrap gap-2 mb-[24px] lg:mb-0">
               {steps.map((step, i) => (

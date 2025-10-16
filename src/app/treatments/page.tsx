@@ -471,7 +471,7 @@ const TreatmentsPage: React.FC = () => {
       "
           >
             Success Rate in Personalized Fertility Care, Delivering Unmatched
-            Results{" "}
+            Results
           </p>
         </div>
       </section>
