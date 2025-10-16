@@ -6,7 +6,7 @@ const ParenthoodBanner = () => {
 
   return (
     <section
-      className="relative flex pt-[80px] lg:p-0 lg:items-center justify-end bg-cover bg-center lg:px-[120px] lg:py-[80px] h-[605px] lg:h-[500px] bg-no-repeat"
+      className="relative flex pt-[80px] lg:p-0 lg:items-center justify-end bg-cover bg-center csLg:px-[120px] csLg:py-[80px] h-[605px] lg:h-[500px] bg-no-repeat"
       style={{
         backgroundImage: !isLargeDevice
           ? "url('/treatments/bg-banner-small-device-hands.png')"

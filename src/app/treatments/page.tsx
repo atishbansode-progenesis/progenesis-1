@@ -26,7 +26,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
     group
     flex flex-col gap-3 rounded-[16px] md:p-5 md:bg-[#F2F2F2]
     transition-colors duration-300
-    lg:hover:bg-[#F1F7FC] cursor-pointer h-full
+    csLg:hover:bg-[#F1F7FC] cursor-pointer h-full
   "
     >
       <div className="flex flex-col items-start gap-3">
@@ -258,7 +258,7 @@ const TreatmentsPage: React.FC = () => {
       />
 
       {/* 2️⃣ Category Tabs */}
-      <div className="flex flex-wrap gap-4 px-[16px] py-[16px]  md:py-[50px] md:px-[120px]  bg-[#fff]">
+      <div className="flex flex-wrap gap-4 px-[16px] py-[16px]  csLg:py-[50px] csLg:px-[120px]  bg-[#fff]">
         {categories.map((cat) => (
           //  <button
           //   key={cat.id}
@@ -301,7 +301,7 @@ const TreatmentsPage: React.FC = () => {
       {/* 3️⃣ Personalized Treatments */}
       <section
         id="path"
-        className="px-4 py-4 md:px-[120px] md:py-[80px] bg-[#F9F9F9]"
+        className="px-4 py-4 csLg:px-[120px] csLg:py-[80px] bg-[#F9F9F9]"
       >
         {/* Label */}
         <div className="">
@@ -360,7 +360,7 @@ const TreatmentsPage: React.FC = () => {
       {/* 4️⃣ Cutting Edge Techniques */}
       <section
         id="advanced"
-        className="md:px-[120px] md:py-[80px] bg-[#fff]"
+        className="csLg:px-[120px] csLg:py-[80px] bg-[#fff]"
       >
         <div className="p-4 lg:p-0 ">
           <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[12px] lg:mb-[8px]">
@@ -496,7 +496,7 @@ const TreatmentsPage: React.FC = () => {
       </section> */}
 
       {/* 5️⃣ Success Rate */}
-      <section className="relative w-full flex justify-center items-center overflow-hidden px-6 md:px-12 lg:px-[120px] py-20">
+      <section className="relative w-full flex justify-center items-center overflow-hidden p-4 csLg:px-[120px] csLg:py-20">
         {/* 🔹 Left Green Blur Ellipse */}
         <div
           className="absolute left-[-100px] bottom-[-50px] rounded-full bg-[#94BA3D] blur-[250px]"
@@ -556,7 +556,7 @@ const TreatmentsPage: React.FC = () => {
       {/* 6️⃣ Proven Treatments */}
       <section
         id="infertility"
-        className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20"
+        className="w-full bg-[#F5FAFF] px-4 py-4 csLg:px-[120px]  csLg:py-20"
       >
         {/* Tag */}
 
@@ -614,7 +614,7 @@ const TreatmentsPage: React.FC = () => {
       {/* 7️⃣ Future Parenthood */}
       <section
         id="preservation"
-        className="w-full bg-[#FAFAFA] px-4 py-4 md:px-[120px]  md:py-20"
+        className="w-full bg-[#FAFAFA] px-4 py-4 csLg:px-[120px]  csLg:py-20"
       >
         {/* Tag */}
 
@@ -678,7 +678,7 @@ const TreatmentsPage: React.FC = () => {
       {/* 8️⃣ Diagnostic Section */}
       <section
         id="evaluation"
-        className="w-full bg-[#F5FAFF] px-4 py-4 md:px-[120px]  md:py-20"
+        className="w-full bg-[#F5FAFF] px-4 py-4 csLg:px-[120px]  csLg:py-20"
       >
         {/* Tag */}
         <span className="inline-block text-[12px] font-medium text-[#1656A5] bg-[#1656A5]/5 px-3 py-1 rounded-full mb-[8px]">
