@@ -14,14 +14,14 @@ interface OvulationCardsProps {
 
 export const OvulationCards: React.FC<OvulationCardsProps> = ({ tag, heading, cards }) => {
   return (
-    <section className="px-4 py-4 csLg:px-[120px] csLg:py-[80px] w-full bg-white">
+    <section className="px-4 py-4 lg:px-[120px] lg:py-[80px] w-full bg-white">
       {tag && (
         <span className="inline-block text-xs font-medium text-[#1656A5] bg-[#1656A50D] px-3 py-1 rounded-full mb-2">
           {tag}
         </span>
       )}
       
-      <h2 className="text-gray-900 font-normal mb-[32px] md:mb-[80px] text-3xl leading-tight tracking-tight md:text-4xl md:leading-tight">
+      <h2 className="text-gray-900 font-normal mb-[32px] md:mb-[80px] text-3xl leading-tight tracking-tight md:text-[40px] md:leading-tight">
         {heading}
       </h2>
 

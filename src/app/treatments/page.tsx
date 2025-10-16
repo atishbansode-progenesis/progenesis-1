@@ -46,7 +46,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
         text-[#2C2C2C]/70
         font-[Manrope]
         text-[16px] leading-[24px] tracking-[-0.32px] font-semibold
-        md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
+        md:text-[24px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal
       "
         >
           {title}
@@ -55,7 +55,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
 
       <p
         className="
-      text-[#606060] font-[Manrope] opacity-70
+      text-[#606060] opacity-70
       text-[16px] leading-[24px] tracking-[-0.32px] font-normal
     "
       >
@@ -315,7 +315,7 @@ const TreatmentsPage: React.FC = () => {
           className="
           text-[#2C2C2C] font-[Manrope] 
           text-[32px] leading-[40px] tracking-[-0.64px] font-normal
-          md:text-[48px] md:leading-[56px] md:tracking-normal
+          md:text-[40px] md:leading-[56px] md:tracking-normal
         "
         >
           Personalized Fertility Treatments for <br />
@@ -371,7 +371,7 @@ const TreatmentsPage: React.FC = () => {
           className="
             text-[#2C2C2C] font-[Manrope] font-normal mb-[12px] md:mb-[80px]
             text-[32px] leading-[40px] tracking-[-0.64px]   /* mobile */
-            md:text-[48px] md:leading-[56px] md:tracking-[-0.96px] /* desktop */
+            md:text-[40px] md:leading-[56px] md:tracking-[-0.96px] /* desktop */
           "
         >
           Cutting-Edge Techniques for Better Success
@@ -408,7 +408,7 @@ const TreatmentsPage: React.FC = () => {
 
         {/* Block 2 */}
 
-        <div className="bg-[#F5FAFF] p-4 lg:p-0 lg:bg-transparent">
+        <div className="bg-[#F5FAFF] px-4 pb-4 lg:p-0 lg:bg-transparent">
           
           <h3
             className="
@@ -571,7 +571,7 @@ const TreatmentsPage: React.FC = () => {
     font-[Manrope]
     font-normal
     text-[32px]
-    md:text-[48px]
+    md:text-[40px]
     leading-[56px]
     tracking-normal
     max-w-[790px]
@@ -598,7 +598,7 @@ const TreatmentsPage: React.FC = () => {
               </span>
 
               {/* Title */}
-              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[28px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
+              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[24px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
                 {item.title}
               </h3>
 
@@ -623,7 +623,7 @@ const TreatmentsPage: React.FC = () => {
         </span>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-[32px]  lg:mb-[80px]">
+        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[40px] md:leading-[56px] md:tracking-normal mb-[32px]  lg:mb-[80px]">
           Future Parenthood Made Possible
         </h2>
 
@@ -654,7 +654,7 @@ const TreatmentsPage: React.FC = () => {
     text-[var(--Text_Black,#2C2C2C)]
     font-[Manrope] font-normal
     text-[24px] leading-[32px] tracking-[-0.64px]
-    md:text-[32px] md:leading-[40px] md:tracking-[-0.64px] self-start
+    md:text-[24px] md:leading-[40px] md:tracking-[-0.64px] self-start
     max-w-[200px] md:max-w-full
           "
               >
@@ -686,7 +686,7 @@ const TreatmentsPage: React.FC = () => {
         </span>
 
         {/* Heading */}
-        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[48px] md:leading-[56px] md:tracking-normal mb-[32px] lg:mb-[80px]">
+        <h2 className="text-[#2C2C2C] font-manrope font-normal text-[32px] leading-[40px] tracking-[-0.64px] md:text-[40px] md:leading-[56px] md:tracking-normal mb-[32px] lg:mb-[80px]">
           Know, Understand & Take Action
         </h2>
 
@@ -717,7 +717,7 @@ const TreatmentsPage: React.FC = () => {
               </span>
 
               {/* Title */}
-              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[32px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
+              <h3 className="text-[#2C2C2C]/70 font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px] md:text-[24px] md:font-normal md:leading-[40px] md:tracking-[-0.64px]">
                 {item.title}
               </h3>
 

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 
 interface WhyChooseSectionProps {
   tag?: string;
@@ -25,7 +24,7 @@ export default function WhyChooseSection({
       {/* Desktop Version */}
       <section
         id="why-choose"
-        className="csLg:px-[120px] csLg:py-[80px] bg-transparent hidden lg:block scroll-mt-[120px]"
+        className="lg:px-[120px] lg:py-[80px] bg-transparent hidden lg:block scroll-mt-[120px]"
       >
         <div className="grid grid-cols-[40%_60%]  w-full items-center">
           <div className="flex flex-col  justify-between h-full ">
@@ -36,7 +35,7 @@ export default function WhyChooseSection({
                 </span>
               )}
 
-              <h2 className="text-[#2C2C2C] font-manrope font-normal text-[28px] leading-[36px] md:text-[44px] md:leading-[52px]">
+              <h2 className="text-[#2C2C2C] font-manrope font-normal text-[28px] leading-[36px] md:text-[40px] md:leading-[52px]">
                 {heading}
               </h2>
             </div>
@@ -72,12 +71,10 @@ export default function WhyChooseSection({
           </div>
 
           <div className=" h-full pl-[77px]">
-            <Image
+            <img
               key={activePoint}
               src={points[activePoint].image}
               alt={points[activePoint].title}
-              width={100}
-              height={100}
               className="w-full min-h-[660px] h-full object-cover overflow-hidden rounded-[14.5px]"
             />
           </div>

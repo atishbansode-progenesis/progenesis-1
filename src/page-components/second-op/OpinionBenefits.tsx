@@ -37,7 +37,7 @@ const OpinionBenefits: React.FC = () => {
           </span>
           
           {/* Main Heading */}
-          <h1 className="text-[32px] csLg:max-w-[60%] csLg:text-5xl font-normal text-[#2C2C2C] leading-[40px] csLg:leading-[56px] tracking-tight font-[Manrope]">
+          <h1 className="text-4xl lg:text-[40px] csLg:max-w-[60%] csLg:text-5xl font-normal text-black leading-[56px] csLg:leading-[64px] tracking-tight font-[Manrope]">
             Clarity, Better Choices, Greater Confidence in Fertility Care
           </h1>
         </div>

@@ -1,3 +1,5 @@
+import { Watch } from "lucide-react";
+
 export interface Treatment {
   slug: string;
   category: "basic" | "advanced"; // optional grouping
@@ -106,31 +108,27 @@ export const imsiTreatmentData = {
     {
       id: "01",
       title: "Poor Sperm Morphology",
-      description:
-        "IMSI helps doctors select healthy sperm, improving fertilization when abnormal shapes hinder success.",
-      image: "/treatments/image1.png",
+      description: "IMSI helps doctors select healthy sperm, improving fertilization when abnormal shapes hinder success.",
+      image: "/treatments/imsi/C1.png"
     },
     {
       id: "02",
       title: "High DNA Fragmentation",
-      description:
-        "Sperm DNA damage harms embryo quality, implantation. IMSI selects sperm for better results.",
-      image: "/treatments/image2.png",
+      description: "Sperm DNA damage harms embryo quality, implantation. IMSI selects sperm for better results.",
+      image: "/treatments/imsi/C2.png"
     },
     {
       id: "03",
       title: "Failed IVF/IUI Cycles",
-      description:
-        "When standard treatments fail, precise sperm selection can boost pregnancy chances.",
-      image: "/treatments/image3.png",
+      description: "When standard treatments fail, precise sperm selection can boost pregnancy chances.",     
+      image: "/treatments/imsi/C3.png"
     },
     {
       id: "04",
       title: "Benefits & Success Rates",
-      description:
-        "Enhances embryo quality, improves implantation, and increases chances of a healthy live birth.",
-      image: "/treatments/image4.png",
-    },
+      description: "Enhances embryo quality, improves implantation, and increases chances of a healthy live birth.",      
+      image: "/treatments/imsi/C4.png"
+    }
   ],
   bottom_footer: "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success.",
 };
@@ -193,7 +191,7 @@ export const picsiTreatmentData = {
   ],
   basics_heading: "Precision Sperm Selection for Embryo Health",
   points_tag: "Why Choose PICSI",
-  points_heading: "Targeted Selection for Higher IVF Success",
+  points_heading: "Why PICSI Makes a Real Difference in Your IVF Journey",
   procedure_tag: "The PICSI Procedure",
   procedure_heading: "Three Steps Closer to Your Parenthood Journey",
   description: "PICSI enhances IVF by selecting the most mature and healthy sperm using hyaluronic acid binding, improving embryo development and pregnancy rates.",
@@ -209,32 +207,32 @@ export const picsiTreatmentData = {
     {
       icon: "/treatments/picsi/picsibg_icon1.png",
       title: "What PICSI Means",
-      description: "PICSI (Physiologic Intracytoplasmic Sperm Injection) selects mature sperm using hyaluronic acid for better fertilization outcomes."
+      description: "PICSI is an advanced fertility technique used to select the healthiest, most mature sperm for fertilization."
     },
     {
       icon: "/treatments/picsi/picsibg_icon2.png",
-      title: "Hyaluronic Acid Selection",
-      description: "Mature sperm bind to hyaluronic acid, allowing selection of the healthiest sperm for injection."
+      title: "DNA Integrity First",
+      description: "PICSI helps select sperm with intact DNA, reducing the chances of embryo arrest or implantation failure."
     },
     {
       icon: "/treatments/picsi/picsibg_icon3.png",
-      title: "Who Needs PICSI",
-      description: "Ideal for couples with poor sperm maturity, high DNA fragmentation, or previous IVF failures."
+      title: "Enhanced Embryo Development",
+      description: "By using only mature sperm that naturally bind to hyaluronic acid, the resulting embryos show stronger growth potential."
     },
     {
       icon: "/treatments/picsi/picsibg_icon4.png",
-      title: "How It Works",
-      description: "Healthy sperm are selected using hyaluronic acid and injected directly into the egg for fertilization."
+      title: "Improved IVF Outcomes",
+      description: "PICSI is shown higher pregnancy and live birth rates in couples with sperm DNA fragmentation or recurrent ICSI failures."
     },
     {
       icon: "/treatments/picsi/picsibg_icon5.png",
-      title: "Benefits of PICSI",
-      description: "Improves embryo quality, implantation rates, and chances of a successful pregnancy."
+      title: "Scientifically Guided Selection",
+      description: "Mimics the body's natural process of sperm selection -- choosing those capable of successful fertilization and embryo development."
     },
     {
       icon: "/treatments/picsi/picsibg_icon6.png",
-      title: "Proven Success",
-      description: "PICSI is widely recognized for enhancing IVF success in cases of male infertility."
+      title: "Who Can Benefit from PICSI?",
+      description: "PICSI can benefit couples with sperm DNA issues, repeated IVF/ICSI failures, unexplained infertility, poor embryo quality, or miscarriages."
     }
   ],
   procedure_steps: null,
@@ -242,49 +240,49 @@ export const picsiTreatmentData = {
     main_heading: "Step-by-step selection of healthy sperm for stronger embryos.",
     main_tag: "The PICSI Procedure",
     data: [
-      {
-        title: "Collection & Preparation",
-        description: "Retrieving eggs from the female partner for fertilization."
-      },
-      {
-        title: "Egg Collection Process",
-        description: "Retrieving eggs from the female partner for fertilization."
-      },
-      {
-        title: "Mature Sperm Selection",
-        description: "Selecting mature sperm using hyaluronic acid for optimal fertilization."
-      },
-      {
-        title: "Fertilization and Transfer",
-        description: "Injecting selected sperm into eggs and transferring the embryo."
-      }
+    {
+    title: "Collection & Preparation",
+    description: "Semen samples are collected and processed to separate motile sperm."
+    },
+    {
+    title: "Accurate Diagnosis",
+    description: "Sperm are placed in an HA dish, where only DNA-intact ones bind naturally."
+    },
+    {
+    title: "Selection for Injection",
+    description: "Bound sperm are carefully picked and injected into the eggs (oocytes) through ICSI."
+    },
+    {
+    title: "Fertilization & Embryo Transfer",
+    description: "Resulting embryos are cultured, and the best-quality ones are transferred into the uterus."
+    }
     ]
-  },
+    },
   gradient_data: "82%",
-  gradient_text: "Couples undergoing PICSI improved embryo quality and higher implantation success rates",
+  gradient_text: "Couples undergoing PICSI report improved embryo quality and higher implantation success rates.",
   points: [
     {
       id: "01",
-      title: "Immature Sperm Issues",
-      description: "PICSI targets mature sperm, improving fertilization when immaturity is a concern.",
+      title: "DNA Integrity First",
+      description: "PICSI helps select sperm with intact DNA, reducing the chances of embryo arrest or implantation failure.",
       image: "/treatments/picsi/picsibg_c1.png"
     },
     {
       id: "02",
-      title: "High DNA Fragmentation",
-      description: "Selects sperm with lower DNA damage, enhancing embryo viability.",
+      title: "Improved Embryo Growth",
+      description: "Using mature sperm that bind to hyaluronic acid leads to stronger embryo growth.",
       image: "/treatments/picsi/picsibg_c2.png"
     },
     {
       id: "03",
-      title: "Failed IVF Cycles",
-      description: "Offers a precise solution for couples with repeated IVF or IUI failures.",
+      title: "Improved IVF Outcomes",
+      description: "PICSI shows higher pregnancy rates in couples with sperm DNA issues or repeated ICSI failures.",
       image: "/treatments/picsi/picsibg_c3.png"
     },
     {
       id: "04",
-      title: "Improved Success Rates",
-      description: "Boosts IVF outcomes with targeted sperm selection for better pregnancy chances.",
+      title: "Science-Guided Selection",
+      description: "It mimics natural sperm selection, choosing those fit for fertilization and embryo development.",
       image: "/treatments/picsi/picsibg_c4.png"
     }
   ],
@@ -309,7 +307,7 @@ export const lahTreatmentData = {
   ],
   basics_heading: "Why LAH Can Make a Difference in Your Journey",
   points_tag: "Why Choose LAH",
-  points_heading: "Improved Implantation Rates",
+  points_heading: "Precision and care that give every embryo the best start",
   procedure_tag: "The LAH Procedure",
   procedure_heading: "Three steps closer to your parenthood journey",
   description: "LAH uses a precise laser to thin the embryo's outer layer, enhancing implantation success.",
@@ -330,51 +328,51 @@ export const lahTreatmentData = {
   ],
   basics: [
     {
-      icon: "/treatments/lah/lah_icon1.png",
+      icon: "/treatments/lah/lah_icon1.svg",
       title: "What LAH Means",
-      description: "LAH (Laser Assisted Hatching) helps embryos hatch by thinning their outer shell for better implantation."
+      description: "Laser Assisted Hatching (LAH) is an advanced technique that helps embryos implant better during IVF."
     },
     {
-      icon: "/treatments/lah/lah_icon2.png",
-      title: "Laser Precision",
-      description: "A controlled laser thins the zona pellucida, aiding the embryo's natural hatching process."
+      icon: "/treatments/lah/lah_icon2.svg",
+      title: "Supports Difficult Implantations",
+      description: "Helps embryos hatch and attach to the uterus when natural hatching is limited due to a thick or hardened shell."
     },
     {
-      icon: "/treatments/lah/lah_icon3.png",
-      title: "Who Needs LAH",
-      description: "Recommended for women over 35, those with thick zona pellucida, or after multiple failed IVF cycles."
+      icon: "/treatments/lah/lah_icon3.svg",
+      title: "Ideal for Women Above 35",
+      description: "As age advances, the outer layer of embryos can become tougher; LAH enhances implantation success in such cases."
     },
     {
-      icon: "/treatments/lah/lah_icon4.png",
-      title: "How It Works",
-      description: "A laser creates a small opening in the embryo's shell before transfer to the uterus."
+      icon: "/treatments/lah/lah_icon4.svg",
+      title: "Boosts IVF Success Rates",
+      description: "Improves pregnancy rates in couples with multiple IVF failures or implantation history."
     },
     {
-      icon: "/treatments/lah/lah_icon5.png",
-      title: "Benefits of LAH",
-      description: "Increases implantation and pregnancy rates, especially in challenging fertility cases."
+      icon: "/treatments/lah/lah_icon5.svg",
+      title: "Precision & Safety",
+      description: "Modern laser technology offers precise, safe, and faster results with minimal embryo handling."
     },
     {
-      icon: "/treatments/lah/lah_icon6.png",
-      title: "Proven Success",
-      description: "LAH has helped many couples achieve successful pregnancies worldwide."
+      icon: "/treatments/lah/lah_icon6.svg",
+      title: "Boosts Embryo Transfer Results",
+      description: "During frozen embryo transfers, the embryo's shell may harden; LAH gently assists hatching to improve implantation success."
     }
   ],
   procedure_steps: [
     {
       title: "Embryo preparation",
-      description: "Preparing the embryo with laser-assisted thinning of the zona pellucida.",
-      image: "/treatments/lah/lah_c1.png"
+      description: "Selection of high-quality embryos for treatment",
+      image: "/treatments/lah/lah_t1.png"
     },
     {
-      title: "Laser hatching",
-      description: "Using a laser to create a precise opening for embryo hatching.",
-      image: "/treatments/lah/lah_c2.png"
+      title: "Laser-assisted hatching",
+      description: "Controlled thinning or opening of zona pellucida",
+      image: "/treatments/lah/lah_t2.png"
     },
     {
       title: "Embryo transfer",
-      description: "Transferring the hatched embryo to the uterus for implantation.",
-      image: "/treatments/lah/lah_c3.png"
+      description: "Placement into uterus for improved implantation",
+      image: "/treatments/lah/lah_t3.png"
     }
   ],
   gradient_data: "74%",
@@ -382,22 +380,22 @@ export const lahTreatmentData = {
   points: [
     {
       id: "01",
-      title: "Embryo preparation",
-      description:"Selection of high-quality embryos for treatment",
-      image: "/treatments/lah/lah_t1.png",
+      title: "Improved Implantation",
+      description:"Gently assists embryos in hatching, improving the likelihood of successful attachment to the uterus.",
+      image: "/treatments/lah/lah_c1.png",
     },
     {
       id: "02",
-      title: "Laser-assisted hatching",
-      description:"Controlled thinning or opening of zona pellucida.",
-      image: "/treatments/lah/lah_t2.png",
+      title: "For Complex IVF Cases",
+      description:"For patients with IVF failures, advanced age, or thick embryo shells.",
+      image: "/treatments/lah/lah_c2.png",
     },
     {
       id: "03",
-      title: "Embryo transfer",
+      title: "Scientifically Proven",
       description:
-        "Placement into uterus for improved implantation",
-      image: "/treatments/lah/lah_t3.png",
+        "Performed with cutting-edge laser technology that ensures accuracy without harming the embryo.",
+      image: "/treatments/lah/lah_c3.png",
     },
   ],
   bottom_footer : "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success."
@@ -430,40 +428,40 @@ export const blastocystTransferData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "why-choose", label: "Why Blastocyst Transfer" },
-    { id: "procedure", label: "The Blastocyst Transfer" },
+    { id: "why-choose", label: "Why Choose Blastocyst Transfer" },
+    { id: "procedure", label: "The Blastocyst Transfer Procedure" },
     { id: "stories", label: "Success Stories" }
   ],
   basics: [
     {
       icon: "/treatments/blastocyst/blastocyst_icon1.png",
-      title: "What Is Blastocyst Transfer",
-      description: "Embryos are cultured until Day 5 or 6, reaching the blastocyst stage before transfer to the uterus."
+      title: "What blastocyst Means",
+      description: "A blastocyst is an embryo about 5-6 days after fertilization, developed to the stage where it's ready to implant in the uterus."
     },
     {
       icon: "/treatments/blastocyst/blastocyst_icon2.png",
-      title: "Better Embryo Selection",
-      description: "Extended culture allows identification of embryos with the highest implantation potential."
+      title: "Why It's Performed",
+      description: "Only the strongest embryos become blastocysts, and transferring them enhances implantation and pregnancy success."
     },
     {
       icon: "/treatments/blastocyst/blastocyst_icon3.png",
-      title: "Who Benefits from It",
-      description: "Ideal for patients with good embryo quality, multiple embryos, or previous IVF failures."
+      title: "Higher Pregnancy Rates",
+      description: "Embryos transferred at the blastocyst stage are more likely to implant successfully and result in a healthy pregnancy."
     },
     {
       icon: "/treatments/blastocyst/blastocyst_icon4.png",
-      title: "Higher Implantation Rates",
-      description: "Blastocyst-stage embryos have better synchronization with the uterine lining, improving success rates."
-    },
-    {
-      icon: "/treatments/blastocyst/blastocyst_icon5.png",
-      title: "Reduced Multiple Pregnancy Risk",
-      description: "Fewer embryos need to be transferred, lowering the risk of twins or triplets."
+      title: "Better Embryo Selection",
+      description: "Culturing embryos for 5-6 days helps identify and select the most viable ones for transfer."
     },
     {
       icon: "/treatments/blastocyst/blastocyst_icon6.png",
-      title: "Advanced Lab Technology",
-      description: "Requires specialized incubators and lab expertise to support extended embryo culture."
+      title: "Lower Risk of Multiple Pregnancies",
+      description: "Since the success rate per embryo is higher, fewer embryos are transferred, reducing the risk of twins or triplets."
+    },
+    {
+      icon: "/treatments/blastocyst/blastocyst_icon5.png",
+      title: "Blastocyst Transfer Benefits",
+      description: "Blastocyst transfer suits those with good embryos, past IVF failures, or who want higher success with lower multiple pregnancy risk."
     }
   ],
   points: [
@@ -488,16 +486,16 @@ export const blastocystTransferData = {
   ],
   procedure_steps: null,
   procedure_no_image_steps: {
-    main_heading: "A journey nurturing just embryo from creation to conception",
-    main_tag: "The Blastocyst Transfer",
+    main_heading: "A journey nurturing your embryo from creation to conception.",
+    main_tag: "The Blastocyst Transfer Procedure",
     data: [
       {
         title: "Egg Fertilization",
-        description: "Eggs are fertilized with sperm in the laboratory."
+        description: "Eggs are fertilized in the lab using advanced IVF or ICSI techniques for precise results."
       },
       {
         title: "Embryo Culture",
-        description: "Embryos are cultured for 5-6 days until they reach the blastocyst stage."
+        description: "Embryos are cultured in specialized incubators for 5-6 days until they reach the blastocyst stage."
       },
       {
         title: "Embryo Selection & Transfer",
@@ -510,16 +508,15 @@ export const blastocystTransferData = {
     ]
   },
   gradient_data: "90%",
-  gradient_text: "Couples who opted for blastocyst transfer saw embryos cultured for 5 days, developed into a blastocyst with improved implantation rates",
-  bottom_footer : "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success."
+  gradient_text: "Embryos are nurtured in optimal lab conditions for 5–6 days, allowing natural and strong development.",  bottom_footer : "Your dream of parenthood deserves the best. Our specialists offer advanced fertility treatments for higher success."
 }
 
 // Sequential Embryo Transfer Data
 export const sequentialEmbryoTransferData = {
   slug: "sequential-embryo-transfer",
   category: "advanced",
-  title: "Sequential Embryo Transfer",
-  hero_title: "Sequential Embryo Transfer",
+  title: "Sequential Embryo <br/> Transfer",
+  hero_title: "Sequential Embryo <br/> Transfer",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/sequential/sequentialbg.png",
@@ -539,42 +536,42 @@ export const sequentialEmbryoTransferData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "why-choose", label: "Why Sequential Transfer" },
+    { id: "why-choose", label: "Why Choose Sequential Embryo Transfer" },
     { id: "procedure", label: "Steps of Sequential Embryo Transfer" },
     { id: "stories", label: "Success Stories" }
   ],
   basics: [
     {
-      icon: "/treatments/sequential/sequential_icon1.png",
-      title: "Understanding SET",
-      description: "Sequential Embryo Transfer involves two embryo transfers at different developmental stages for optimal results."
+    icon: "/treatments/sequential/sequential_icon1.svg",
+    title: "Understanding SET",
+    description: "Sequential Embryo Transfer (SET) transfers two sets of embryos at different cycle stages to boost implantation and pregnancy success."
     },
     {
-      icon: "/treatments/sequential/sequential_icon2.png",
-      title: "Why It Is Performed",
-      description: "SET prepares the uterus for implantation through dual-stage embryo placement, improving receptivity."
+    icon: "/treatments/sequential/sequential_icon2.svg",
+    title: "Why It's Performed",
+    description: "This method implants the best-developed embryos at the optimal time, boosting implantation and pregnancy success."
     },
     {
-      icon: "/treatments/sequential/sequential_icon3.png",
-      title: "Higher Implantation Rates",
-      description: "The two-stage approach enhances uterine-embryo synchronization, leading to better implantation outcomes."
+    icon: "/treatments/sequential/sequential_icon3.svg",
+    title: "Higher Implantation Rates",
+    description: "By transferring embryos at two stages, SET aligns embryo and uterine timing to enhance implantation."
     },
     {
-      icon: "/treatments/sequential/sequential_icon4.png",
-      title: "Better Embryo Utilization",
-      description: "Maximizes the use of available embryos by transferring at both cleavage and blastocyst stages."
+    icon: "/treatments/sequential/sequential_icon4.svg",
+    title: "Better Embryo Utilization",
+    description: "Using early and late-stage embryos lets specialists choose the healthiest ones, boosting success rates."
     },
     {
-      icon: "/treatments/sequential/sequential_icon5.png",
-      title: "Improved Pregnancy Outcomes",
-      description: "Studies show higher pregnancy rates with sequential transfer compared to single-stage transfers."
+    icon: "/treatments/sequential/sequential_icon5.svg",
+    title: "Improved Pregnancy Outcomes",
+    description: "Sequential transfer ensures that if the first set fails, the second can still achieve pregnancy in the same cycle."
     },
     {
-      icon: "/treatments/sequential/sequential_icon6.png",
-      title: "Who Benefits Most",
-      description: "Ideal for patients with repeated implantation failures or those with multiple good-quality embryos."
+    icon: "/treatments/sequential/sequential_icon6.svg",
+    title: "Who Benefits Most",
+    description: "SET is effective for women over 40, those with past IVF failures, or couples seeking higher success without extra cycles."
     }
-  ],
+    ],
   points: [
     {
       id: "01",
@@ -629,7 +626,7 @@ export const pgdTreatmentData = {
   slug: "pgd-pgs-pgt-a",
   category: "advanced",
   title: "PGD/PGS/PGT-A – Preimplantation Genetic Testing",
-  hero_title: "PGD/PGS/PGT-A Treatment",
+  hero_title: "PGD/PGS/PGT-A",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/pgd/pgd-bg.png",
@@ -641,7 +638,7 @@ export const pgdTreatmentData = {
   ],
   basics_heading: "Why Preimplantation Genetic Testing Matters in IVF",
   points_tag: "Advanced screening: Healthier results. Informed choices.",
-  points_heading: "Advanced Screening for Better Outcomes",
+  points_heading: "Advanced screening. Healthier results. Informed choices.",
   procedure_tag: "Steps of Preimplantation Genetic Testing",
   procedure_heading: "Steps of Preimplantation Genetic Testing",
   description:
@@ -660,8 +657,9 @@ export const pgdTreatmentData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
+    { id: "why-choose", label: "Why Choose PGD/PGS/PGT-A" },
     { id: "types-of-testing", label: "Types of Testing" },
-    { id: "why-choose", label: "Why Choose Genetic Testing" },
+    { id: "procedure", label: "Steps of Preimplantation Genetic Testing" },
     { id: "stories", label: "Success Stories" },
   ],
   
@@ -685,62 +683,56 @@ export const pgdTreatmentData = {
 
   basics: [
     {
-      icon: "/treatments/pgd/pgd_icon1.png",
+      icon: "/treatments/pgd/pgd_icon1.svg",
       title: "What It Means",
-      description:
-        "Preimplantation Genetic Testing (PGT) is a method used to identify genetic or chromosomal defects in embryos before implantation.",
+      description: "Preimplantation Genetic Testing (PGT) is a method used to identify genetic or chromosomal defects in embryos before implantation."
     },
     {
-      icon: "/treatments/pgd/pgd_icon2.png",
+      icon: "/treatments/pgd/pgd_icon2.svg",
       title: "Why It's Done",
-      description:
-        "PGT helps select only healthy embryos for transfer, improving pregnancy success and minimizing the risk of inherited disorders.",
+      description: "PGT helps select only healthy embryos for transfer, improving pregnancy success and minimizing the risk of inherited disorders."
     },
     {
-      icon: "/treatments/pgd/pgd_icon3.png",
+      icon: "/treatments/pgd/pgd_icon3.svg",
       title: "When It's Recommended",
-      description:
-        "Ideal for couples with known genetic disorders, recurrent IVF failures, or women above 35 years of age.",
+      description: "Ideal for couples with known genetic disorders, recurrent IVF failures, or women above 35 years of age."
     },
     {
-      icon: "/treatments/pgd/pgd_icon4.png",
+      icon: "/treatments/pgd/pgd_icon4.svg",
       title: "What It Helps Prevent",
-      description:
-        "Reduces risks of miscarriages, chromosomal abnormalities, and hereditary diseases in offspring.",
+      description: "Reduces risks of miscarriages, chromosomal abnormalities, and hereditary diseases in offspring."
     },
     {
-      icon: "/treatments/pgd/pgd_icon5.png",
+      icon: "/treatments/pgd/pgd_icon5.svg",
       title: "Success Outcome",
-      description:
-        "Enables higher pregnancy rates and healthier babies through precision embryo selection.",
+      description: "Enables higher pregnancy rates and healthier babies through precision embryo selection."
     },
     {
-      icon: "/treatments/pgd/pgd_icon6.png",
+      icon: "/treatments/pgd/pgd_icon6.svg",
       title: "Long-Term Advantage",
-      description:
-        "Supports informed family planning by preventing the transmission of genetic conditions to future generations.",
+      description: "Supports informed family planning by preventing the transmission of genetic conditions to future generations."
     },
   ],
 
   procedure_steps: [
     {
-      step: "01",
-      title: "Embryo Development",
-      description: "Following IVF, embryos are cultured in the lab until they reach the blastocyst stage for biopsy.",
-      image: "/treatments/pgd/pgd_t1.png",
+      "step": "01",
+      "title": "Embryo Culturing & Biopsy",
+      "description": "Embryos are developed to the blastocyst stage (5-6 days), and a few cells are gently extracted for testing without affecting embryo quality.",
+      "image": "/treatments/pgd/pgd_t1.png"
     },
     {
-      step: "02",
-      title: "Genetic Screening",
-      description: "A few cells are carefully removed from each embryo and sent for detailed genetic analysis.",
-      image: "/treatments/pgd/pgd_t2.png",
+      "step": "02",
+      "title": "Genetic Screening",
+      "description": "Cells are analyzed using advanced sequencing to detect abnormalities.",
+      "image": "/treatments/pgd/pgd_t2.png"
     },
     {
-      step: "03",
-      title: "Healthy Embryo Transfer",
-      description: "Only genetically healthy embryos are selected and transferred to the uterus for implantation.",
-      image: "/treatments/pgd/pgd_t3.png",
-    },
+      "step": "03",
+      "title": "Healthy Embryo Transfer",
+      "description": "Only normal embryos are selected and transferred for better success and healthier pregnancies.",
+      "image": "/treatments/pgd/pgd_t3.png"
+    }
   ],
 
   gradient_data: "85%",
@@ -750,16 +742,14 @@ export const pgdTreatmentData = {
     {
       id: "01",
       title: "Genetic Accuracy",
-      description:
-        "Advanced testing ensures precise identification of genetic abnormalities, improving embryo selection and IVF success rates.",
-      image: "/treatments/pgd/pgd_c1.png",
+      description:"Detects chromosomal abnormalities early, ensuring only genetically normal embryos are transferred.",
+            image: "/treatments/pgd/pgd_c1.png",
     },
     {
       id: "02",
       title: "Expert Embryologists",
-      description:
-        "Performed by experts using NGS and advanced biopsy techniques.",
-      image: "/treatments/pgd/pgd_c2.png",
+      description:"Performed by experts using NGS and advanced biopsy techniques.",
+            image: "/treatments/pgd/pgd_c2.png",
     },
     {
       id: "03",
@@ -807,47 +797,40 @@ export const class1000ModularLabData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "procedure", label: "Lab Features" }, // Maps to procedure steps
-    { id: "why-choose", label: "Why It Matters" }, // Maps to why section
+    { id: "procedure", label: "Why Choose a Class-1000 Modular Lab" }, // Maps to procedure steps
+    { id: "why-choose", label: "Steps of Lab Operation Process" }, // Maps to why section
     { id: "stories", label: "Success Stories" },
   ],
   basics: [
     {
       icon: "/treatments/modular-lab/lab_icon1.png",
       title: "What It Means",
-      description:
-        "A Class-1000 lab allows no more than 1,000 particles (≥0.5 microns) per cubic foot of air, ensuring ultra-clean conditions.",
-    },
+      description:"A Class-1000 Modular Lab maintains a sterile, contaminant-free environment for embryo growth."
+        },
     {
       icon: "/treatments/modular-lab/lab_icon2.png",
       title: "Why It's Important",
       description:
-        "Clean air and controlled environment are critical for embryo culture, reducing contamination and improving development.",
-    },
+"In IVF, even tiny particles can affect embryos. A Class-1000 lab ensures clean, optimal air."    },
     {
       icon: "/treatments/modular-lab/lab_icon3.png",
-      title: "Expert Teams",
+      title: "How It Works",
       description:
-        "Our embryologists work in this sterile environment with strict protocols to ensure the highest quality care.",
-    },
+"The lab filters air to limit particle count to fewer than 1,000 particles per cubic foot — far cleaner than regular environments."    },
     {
       icon: "/treatments/modular-lab/lab_icon4.png",
       title: "Where It's Used",
       description:
-        "The Class-1000 lab is used for all critical IVF procedures including embryo culture, ICSI, and assisted hatching.",
-    },
+"Used during critical stages like fertilization, culture, and embryo transfer to protect embryo integrity."    },
     {
       icon: "/treatments/modular-lab/lab_icon5.png",
-      title: "Excellence",
+      title: "End Result",
       description:
-        "State-of-the-art modular design with HEPA filtration and positive pressure maintains optimal conditions 24/7.",
-    },
+"Creates ideal lab conditions for successful fertilization, healthier embryos, and higher pregnancy success rates."   },
     {
       icon: "/treatments/modular-lab/lab_icon6.png",
-      title: "Better Advantage",
-      description:
-        "Advanced environmental control translates to healthier embryos, higher implantation rates, and better pregnancy outcomes.",
-    },
+      title: "Added Advantage",
+      description:"Ensures long-term equipment reliability and consistent laboratory performance, maintaining the highest IVF safety and success standards."    },
   ],
   points: [
     {
@@ -933,8 +916,8 @@ export const trigasIncubatorsData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "procedure", label: "Incubator Features" }, // Maps to procedure steps
-    { id: "why-choose", label: "Why It Matters" }, // Maps to why section
+    { id: "procedure", label: "Why Choose Trigas Incubators" }, // Maps to procedure steps
+    { id: "why-choose", label: "Steps of Embryo Incubation Process" }, // Maps to why section
     { id: "stories", label: "Success Stories" },
   ],
   basics: [
@@ -980,7 +963,7 @@ export const trigasIncubatorsData = {
       id: "01",
       title: "Advanced Gas Control",
       description:
-        "Stable Conditions. Supports AH Outcomes.",
+        "Regulates CO₂, O₂, and N₂ levels to replicate the natural conditions of the female reproductive system.",
       image: "/treatments/trigas/trigas_c1.png",
     },
     {
@@ -1021,21 +1004,22 @@ export const trigasIncubatorsData = {
       {
         title: "Secure Data & System Control",
         description:
-          "Records all incubator parameters and log every stage, ensuring precision, safety, and full traceability of embryo development.",
+          "Advanced digital systems monitor and log every stage, ensuring precision, safety, and full traceability of embryo development.",
       },
     ],
   },
   gradient_data: "95%",
   gradient_text:
-    "Embryos maintained stability ensures consistent IVF conditions for optimal embryo growth and IVF success.",
+    "environmental stability ensures consistent lab conditions for optimal embryo growth and IVF success.",
+  our_story: "From Hope to Happiness Watch Now!"
 };
 
 // Witness System Data
 export const witnessSystemData = {
   slug: "witness-system",
   category: "advanced",
-  title: "Advanced Technology - Witness System",
-  hero_title: "Advanced Technology - Witness System",
+  title: "Advanced Technology -<br/> Witness System",
+  hero_title: "Advanced Technology -<br/> Witness System",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/witness/witness-bg.png",
@@ -1043,7 +1027,7 @@ export const witnessSystemData = {
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
     { label: "Advanced", href: "/treatments/advanced", id: "advanced" },
-    { label: "Witness System", href: "/treatments/advanced/witness-system", id: "witness-system" },
+    { label: "Advanced Technology - Witness system", href: "/treatments/advanced/witness-system", id: "witness-system" },
   ],
   basics_heading: "Why the Witness System Is Vital in IVF",
   points_tag: "Why Choose Witness System",
@@ -1066,8 +1050,8 @@ export const witnessSystemData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "procedure", label: "System Features" }, // Maps to procedure steps
-    { id: "why-choose", label: "Why It Matters" }, // Maps to why section
+    { id: "procedure", label: "Why Choose the Witness System" }, // Maps to procedure steps
+    { id: "why-choose", label: "Steps of the Witness System Process" }, // Maps to why section
     { id: "stories", label: "Success Stories" },
   ],
   basics: [
@@ -1160,7 +1144,8 @@ export const witnessSystemData = {
   },
   gradient_data: "100%",
   gradient_text:
-    "Accuracy ensures all samples and embryos verified, with zero errors and full patient confidence.",
+    "accuracy ensures all samples and embryos verified, with zero errors and full patient confidence.",
+  our_story: "From Hope to Happiness Watch Now!"
 };
 
 
@@ -1169,19 +1154,19 @@ export const witnessSystemData = {
 export const cryopreservationData = {
   slug: "cryopreservation",
   category: "advanced",
-  title: "Cryopreservation of Human Gametes",
-  hero_title: "Cryopreservation of Human Gametes",
+  title: "Cryopreservation of Human <br/> Gametes",
+  hero_title: "Cryopreservation of Human <br/> Gametes",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/cryopreservation/cryo-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Advanced", href: "/treatments/advanced", id: "advanced" },
-    { label: "Cryopreservation", href: "/treatments/advanced/cryopreservation", id: "cryopreservation" },
+    { label: "Advanced Treatment ", href: "/treatments/advanced", id: "advanced" },
+    { label: "Advanced Technology - Cryopreservation", href: "/treatments/advanced/cryopreservation", id: "cryopreservation" },
   ],
   basics_heading: "Why Cryopreservation Is Important in Fertility Care",
-  points_tag: "Why Choose Cryopreservation",
+  points_tag: "Why Choose Cryopreservation at Progenesis",
   points_heading: "Preserving fertility safely, effectively, and for longer.",
   procedure_tag: "Steps of Cryopreservation Process",
   procedure_heading: "Safely freezing life for future possibilities.",
@@ -1201,41 +1186,36 @@ export const cryopreservationData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "procedure", label: "Preservation Process" }, // Maps to procedure steps
-    { id: "why-choose", label: "Why It Matters" }, // Maps to why section
+    { id: "procedure", label: "Why Choose Cryopreservation at Progenesis" }, // Maps to procedure steps
+    { id: "why-choose", label: "Steps of the Cryopreservation Process" }, // Maps to why section
     { id: "stories", label: "Success Stories" },
   ],
   basics: [
     {
-      icon: "/treatments/witness/witness_icon1.png",
+      icon: "/treatments/cryopreservation/cryo_icon1.png",
       title: "What It Is",
-      description:
-        "The Witness System digitally tracks all samples, gametes, and embryos during IVF.",
-    },
+      description:"Cryopreservation freezes sperm or eggs at ultra-low temperatures for future use.",
+        },
     {
-      icon: "/treatments/witness/witness_icon2.png",
+      icon: "/treatments/cryopreservation/cryo_icon2.png",
       title: "Why It's Needed",
-      description:
-        "The gametes are cooled using advanced vitrification methods that prevent ice formation, maintaining their structure and viability for years.",
+      description:"The gametes are cooled using advanced vitrification methods that prevent ice formation, maintaining their structure and viability for years."    },
+    {
+      icon: "/treatments/cryopreservation/cryo_icon3.png",
+      title: "Why It’s Done",
+      description:"Ideal for individuals or couples who want to delay pregnancy, preserve fertility before medical treatments, or use donor gametes later.",
     },
     {
-      icon: "/treatments/witness/witness_icon3.png",
-      title: "How It Works",
-      description:
-        "Ideal for individuals or couples who want to delay pregnancy, preserve fertility before medical treatments, or use donor gametes later.",
-    },
-    {
-      icon: "/treatments/witness/witness_icon4.png",
+      icon: "/treatments/cryopreservation/cryo_icon4.png",
       title: "Who It Helps",
-      description:
-        "Men with low sperm counts, women with limited egg reserve, or couples undergoing IVF who wish to save embryos for future cycles.",
+      description:"Men with low sperm counts, women with limited egg reserve, or couples undergoing IVF who wish to save embryos for future cycles.",
     },
     {
-      icon: "/treatments/witness/witness_icon5.png",
+      icon: "/treatments/cryopreservation/cryo_icon5.png",
       title: "Result",
       description:"Cryopreserved samples retain their fertility potential even after thawing — offering flexibility, reassurance, and hope."    },
     {
-      icon: "/treatments/witness/witness_icon6.png",
+      icon: "/treatments/cryopreservation/cryo_icon6.png",
       title: "Added Advantage",
       description:"A proven, safe, and effective method for preserving reproductive cells without compromising quality or success rates."    },
   ],
@@ -1245,20 +1225,20 @@ export const cryopreservationData = {
       title: "Advanced Vitrification",
       description:
         "Rapid freezing prevents ice formation and preserves cell integrity.",
-      image: "/treatments/witness/witness_c1.png",
+      image: "/treatments/cryopreservation/cryo_c1.png",
     },
     {
       id: "02",
       title: "Safe Long-Term Storage",
       description:
         "Samples are securely stored in liquid nitrogen under strict monitoring.",
-      image: "/treatments/witness/witness_c2.png",
+      image: "/treatments/cryopreservation/cryo_c2.png",
     },
     {
       id: "03",
       title: "High Post-Thaw Survival",
       description:"Ensures excellent quality and fertility potential for future use.",
-      image: "/treatments/witness/witness_c3.png",
+      image: "/treatments/cryopreservation/cryo_c3.png",
     },
   ],
   procedure_steps: null,
@@ -1290,7 +1270,9 @@ export const cryopreservationData = {
   },
   gradient_data: "98%",
   gradient_text:
-    "Post-thaw viability ensures cryopreserved eggs, sperm, and embryos retain quality for successful future IVF outcomes.",
+    "post-thaw viability ensures cryopreserved eggs, sperm, and embryos retain quality for successful future IVF outcomes.",
+  success_stories: "From Hope to Happiness Watch Now!",
+  success_tag:"Success Stories",
 };
 
 
@@ -1300,16 +1282,16 @@ export const cryopreservationData = {
 export const ovulationInductionData = {
   slug: "ovulation-induction",
   category: "fertility-treatments",
-  title: "Ovulation Induction – Stimulating Egg Release",
-  hero_title: "Ovulation Induction – Stimulating Egg Release",
+  title: "Ovulation Induction –<br/> Stimulating Egg Release",
+  hero_title: "Ovulation Induction –<br/> Stimulating Egg Release",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/ovulation-induction/ovulation-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
-    { label: "Ovulation Induction", href: "/treatments/fertility-treatments/ovulation-induction", id: "ovulation-induction" },
+    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
+    { label: "Ovulation Induction", href: "/treatments/infertility/ovulation-induction", id: "ovulation-induction" },
   ],
   path_section :{
     tag:"Know the Basics",
@@ -1338,8 +1320,9 @@ export const ovulationInductionData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "why-choose", label: "Who It Helps" }, // Maps to "Who Can Benefit?" section
-    { id: "procedure", label: "Treatment Process" }, // Maps to procedure steps
+    { id: "why-choose", label: "Who Can Benefit?" }, // Maps to "Who Can Benefit?" section
+    { id: "procedure", label: "Why Choose Ovulation Induction at Progenesis" }, // Maps to procedure steps
+    { id: "steps", label: "Steps of the Ovulation Induction Process" }, // Maps to procedure steps
     { id: "success-rate", label: "Success Rate" }, // Unique tab for this treatment
   ],
   who_can_benefit:{
@@ -1414,6 +1397,8 @@ export const ovulationInductionData = {
   gradient_data: "78%",
   gradient_text:
     "Success in Regulating Ovulation: Most women at Progenesis achieve regular cycles within few treatments, improving conception chances.",
+    success_stories: "From Hope to Happiness Watch Now!",
+    success_tag:"Success Stories",
 };
 
 
@@ -1423,16 +1408,16 @@ export const ovulationInductionData = {
 export const artificialInseminationData = {
   slug: "artificial-insemination-iui-treatment",
   category: "fertility-treatments",
-  title: "Artificial Insemination – IUI Treatment",
-  hero_title: "Artificial Insemination – IUI Treatment",
+  title: "Artificial Insemination – IUI <br/> Treatment",
+  hero_title: "Artificial Insemination – IUI <br/> Treatment",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/iui/iui-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
-    { label: "Artificial Insemination – IUI Treatment", href: "/treatments/fertility-treatments/artificial-insemination-iui-treatment", id: "artificial-insemination-iui-treatment" },
+    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
+    { label: "Artificial Insemination – IUI Treatment", href: "/treatments/infertility/artificial-insemination-iui-treatment", id: "artificial-insemination-iui-treatment" },
   ],
   path_section: {
     tag: "Overview",
@@ -1460,8 +1445,9 @@ export const artificialInseminationData = {
   `,
   categories: [
     { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who It Helps" },
-    { id: "Process", label: "Treatment Process" },
+    { id: "Who", label: "Who Can Benefit?" },
+    { id: "Process", label: "Why Choose IUI at Progenesis" },
+    { id: "Steps", label: "Steps of the IUI Procedure" },
     { id: "Success", label: "Success Rate" },
   ],
   who_can_benefit: {
@@ -1528,6 +1514,8 @@ export const artificialInseminationData = {
   gradient_data: "20%",
   gradient_text:
     "Pregnancy success per cycle — achieved through advanced monitoring, precise timing, and expert sperm selection at Progenesis.",
+    success_stories: "From Hope to Happiness Watch Now!",
+    success_tag:"Success Stories",
 };
 
 
@@ -1536,25 +1524,25 @@ export const artificialInseminationData = {
 export const ivfTreatmentData = {
   slug: "ivf-treatment",
   category: "fertility-treatments",
-  title: "IVF – Comprehensive In Vitro Fertilization Treatment",
-  hero_title: "IVF – Comprehensive In Vitro Fertilization Treatment",
+  title: "IVF – Comprehensive In Vitro <br/> Fertilization Treatment",
+  hero_title: "IVF – Comprehensive In Vitro <br/> Fertilization Treatment",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/ivf/ivf-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
-    { label: "IVF Treatment", href: "/treatments/fertility-treatments/ivf-treatment", id: "ivf-treatment" },
+    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
+    { label: "IVF Treatment", href: "/treatments/infertility/ivf-treatment", id: "ivf-treatment" },
   ],
   path_section: {
     tag: "Know the Basics",
     mainHeading: "What is IVF Treatment?",
     subHeading: "Advanced. Precise. Hopeful.",
     description1:
-      "In Vitro Fertilization (IVF) is a comprehensive assisted reproductive technology where eggs are retrieved from the ovaries and fertilized with sperm in a controlled laboratory environment.",
+      "In Vitro Fertilization (IVF) is an advanced fertility treatment where eggs are retrieved from a woman’s ovaries and fertilized with sperm in a laboratory. The resulting healthy embryos are then transferred into the uterus, increasing the chances of pregnancy.",
     description2:
-      "The resulting embryos are carefully monitored and cultured, then transferred to the uterus to achieve pregnancy. IVF is the most effective fertility treatment for a wide range of infertility challenges.",
+      "IVF is ideal for couples facing severe infertility factors such as blocked fallopian tubes, low sperm count, endometriosis, or unexplained infertility.",
   },
   basics_heading: "What is IVF Treatment?",
   points_tag: "Why Choose IVF at Progenesis",
@@ -1576,8 +1564,9 @@ export const ivfTreatmentData = {
   `,
   categories: [
     { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who It Helps" },
-    { id: "Process", label: "Treatment Process" },
+    { id: "Who", label: "Who Can Benefit from IVF" },
+    { id: "Process", label: "Why Choose IVF at Progenesis" },
+    { id: "Steps", label: "Steps of the IVF Process" },
     { id: "Success", label: "Success Rate" },
   ],
   who_can_benefit: {
@@ -1653,18 +1642,18 @@ export const ivfTreatmentData = {
 export const ivfIcsiTreatmentData = {
   slug: "ivf-icsi-intracytoplasmic-sperm-injection",
   category: "fertility-treatments",
-  title: "IVF-ICSI – Intracytoplasmic Sperm Injection",
-  hero_title: "IVF-ICSI – Intracytoplasmic Sperm Injection",
+  title: "IVF-ICSI – Intracytoplasmic <br/> Sperm Injection",
+  hero_title: "IVF-ICSI – Intracytoplasmic <br/> Sperm Injection",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/ivf-icsi/ivf-icsi-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
     {
       label: "IVF-ICSI – Intracytoplasmic Sperm Injection",
-      href: "/treatments/fertility-treatments/ivf-icsi-intracytoplasmic-sperm-injection",
+      href: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection",
       id: "ivf-icsi-intracytoplasmic-sperm-injection",
     },
   ],
@@ -1695,8 +1684,9 @@ export const ivfIcsiTreatmentData = {
   `,
   categories: [
     { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who It Helps" },
-    { id: "Process", label: "Treatment Process" },
+    { id: "Who", label: "Who Can Benefit from ICSI" },
+    { id: "Process", label: "Why Choose ICSI at Progenesis" },
+    { id: "Steps", label: "Steps of the ICSI Procedure" },
     { id: "Success", label: "Success Rate" },
   ],
   who_can_benefit: {
@@ -1768,6 +1758,8 @@ export const ivfIcsiTreatmentData = {
   gradient_data: "70%",
   gradient_text:
     "Fertilization success with ICSI – advanced lab precision and expert embryology ensure high embryo quality and pregnancy success.",
+    success_stories: "From Hope to Happiness Watch Now!",
+    success_tag:"Success Stories",
 };
 
 
@@ -1788,10 +1780,10 @@ export const frozenEmbryoTransferTreatmentData = {
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
     {
       label: "Frozen Embryo Transfer",
-      href: "/treatments/fertility-treatments/frozen-embryo-transfer",
+      href: "/treatments/infertility/frozen-embryo-transfer",
       id: "frozen-embryo-transfer",
     },
   ],
@@ -1822,8 +1814,9 @@ export const frozenEmbryoTransferTreatmentData = {
   `,
   categories: [
     { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who It Helps" },
-    { id: "Process", label: "Treatment Process" },
+    { id: "Who", label: "Who Can Benefit from FET" },
+    { id: "Process", label: "Why Choose FET at Progenesis" },
+    { id: "Steps", label: "Steps of the FET Procedure" },
     { id: "Success", label: "Success Rate" },
   ],
   who_can_benefit: {
@@ -1860,13 +1853,13 @@ export const frozenEmbryoTransferTreatmentData = {
       id: "02",
       title: "Low Hormonal Stress",
       description: "Natural or medicated cycles carefully and precisely tailored to your body.",
-      image: "/treatments/frozen-embryo-transfer/c2.png",
+      image: "/treatments/frozen-embryo-transfer/c3.png",
     },
     {
       id: "03",
       title: "Expert Fertility Team",
       description: "Decades of extensive experience in IVF and advanced embryology techniques.",
-      image: "/treatments/frozen-embryo-transfer/c3.png",
+      image: "/treatments/frozen-embryo-transfer/c2.png",
     },
   ],
   procedure_no_image_steps: {
@@ -1912,16 +1905,16 @@ export const fertilitySurgeryTreatmentData = {
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Fertility Treatments", href: "/treatments/fertility-treatments", id: "fertility-treatments" },
+    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
     {
       label: "Fertility Surgery",
-      href: "/treatments/fertility-treatments/fertility-surgery",
+      href: "/treatments/infertility/fertility-surgery",
       id: "fertility-surgery",
     },
   ],
   path_section: {
     tag: "Know the Basics",
-    mainHeading: "Restoring Health. Renewing Hope.",
+    mainHeading: "What Is Fertility Surgery?",
     subHeading: "Restoring Health. Renewing Hope.",
     description1:"Fertility surgery helps treat anatomical or structural conditions that interfere with conception. It’s performed to correct issues such as fibroids, endometriosis, blocked fallopian tubes, uterine septum, adhesions, or cysts — restoring the reproductive organs to normal function.",
     description2:"Both men and women can benefit from fertility surgery, which is often a minimally invasive, daycare procedure using laparoscopy or hysteroscopy.",
@@ -1946,8 +1939,9 @@ export const fertilitySurgeryTreatmentData = {
   `,
   categories: [
     { id: "Basics", label: "Know the Basics" },
-    { id: "Who", label: "Who It Helps" },
-    { id: "Process", label: "Treatment Process" },
+    { id: "Who", label: "Who Can Benefit from Fertility Surgery" },
+    { id: "Process", label: "Why Choose Fertility Surgery at Progenesis" },
+    { id: "Steps", label: "Steps of the Fertility Surgery Procedure" },
     { id: "Success", label: "Success Rate" },
   ],
   who_can_benefit: {
@@ -1984,18 +1978,18 @@ export const fertilitySurgeryTreatmentData = {
       id: "02",
       title: "Advanced Technology",
       description: "Precision surgical instruments and high-definition imaging technology.",
-      image: "/treatments/fertility-surgery/c2.png",
+      image: "/treatments/fertility-surgery/c3.png",
     },
     {
       id: "03",
       title: "Daycare Procedures",
       description: "Most patients are safely discharged the same day after treatment.",
-      image: "/treatments/fertility-surgery/c3.png",
+      image: "/treatments/fertility-surgery/c2.png",
     },
   ],
   procedure_no_image_steps: {
-    main_heading: "Every step synchronized for higher success.",
-    main_tag: "Steps of the Frozen Embryo Transfer Process",
+    main_heading: "Advanced, minimally invasive solutions for reproductive health.",
+    main_tag: "Types of Fertility Surgery",
     data: [
       {
         title: "Laparoscopic Surgery",
@@ -2019,6 +2013,8 @@ export const fertilitySurgeryTreatmentData = {
   gradient_data: "75%",
   gradient_text:
     "improvement in fertility — Progenesis surgeries restore function and boost conception with expert care.",
+    success_stories: "From Hope to Happiness Watch Now!",
+    success_tag:"Success Stories",
 };
 
 

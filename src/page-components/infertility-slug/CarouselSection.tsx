@@ -1,4 +1,5 @@
 // components/InfertilityIssues/CarouselSection.tsx
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface Slide {
@@ -67,7 +68,7 @@ export default function CarouselSection({ tag, heading, slides }: CarouselSectio
           </div>  
           
           {/* RIGHT DIV (Image only) */}
-          <div >
+          {/* <div className="border border-[red]">
             <div className="w-full max-w-[1248px] aspect-[1248/601] rounded-2xl overflow-hidden relative">
               <img
                 key={activeIndex}
@@ -76,7 +77,28 @@ export default function CarouselSection({ tag, heading, slides }: CarouselSectio
                 className="w-full h-full object-cover block transition-opacity duration-500 ease-in-out"
               />
             </div>
-          </div>
+          </div> */}
+
+          <div className="w-full max-w-[1248px] aspect-[1248/601] rounded-2xl overflow-hidden relative">
+              {/* We render all images but only show the active one, allowing smooth fade */}
+              {slides.map((slide, i) => (
+                <div
+                  key={i}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    i === activeIndex ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    priority={i === 0}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>

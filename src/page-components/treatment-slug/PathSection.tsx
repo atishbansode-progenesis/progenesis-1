@@ -23,7 +23,7 @@ export const PathSection: React.FC<PathSectionProps> = ({
   return (
     <section 
       id="basics" 
-      className="px-4 py-4 csLg:px-[120px] csLg:py-[80px]"
+      className="px-4 py-4 lg:px-[120px] lg:py-[80px]"
       style={{ backgroundColor }}
     >
       {/* Label */}
@@ -36,7 +36,7 @@ export const PathSection: React.FC<PathSectionProps> = ({
       )}
 
       {/* Main Heading */}
-      <h2 className="text-[#2C2C2C] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal md:text-[48px] md:leading-[56px] md:tracking-normal">
+      <h2 className="text-[#2C2C2C] font-[Manrope] text-[32px] leading-[40px] tracking-[-0.64px] font-normal md:text-[40px] md:leading-[56px] md:tracking-normal">
         {mainHeading}
       </h2>
 

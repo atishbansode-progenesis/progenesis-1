@@ -60,7 +60,7 @@ const LeadershipTeam: React.FC = () => {
         className="relative w-full h-[400px] md:h-[550px] flex lg:bg-[url('/images/leadership-bg.png')] bg-[url('/images/leadership-bg_M.png')]  px-6 md:px-24 pt-6 lg:pt-20 bg-cover bg-center"
        
       >
-        <div className="relative z-10 w-[80%]" >
+        <div className="relative z-10" >
           {/* Breadcrumb */}
           <nav className="text-sm text-[#606060] mt-5 mb-6 md:mb-11">
             <button
@@ -93,7 +93,7 @@ const LeadershipTeam: React.FC = () => {
 
           {/* Desktop / tablet heading (2 lines) */}
           <h1
-            className="hidden  md:block  md:leading-[56px] lg:text-[80px] md:text-5xl lg:leading-[88px] tracking-tight  font-semibold"
+            className="hidden  md:block  md:leading-[56px] lg:text-[60px] md:text-5xl lg:leading-[70px] tracking-tight  font-semibold"
             style={{ color: "#252525" }}
           >
             The Team Leading With <br />

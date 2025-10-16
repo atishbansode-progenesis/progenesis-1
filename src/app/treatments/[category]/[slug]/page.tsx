@@ -20,6 +20,7 @@ import {
 import {
   eggEmbryoFreezingData,
   femaleAnalysisData,
+  femaleFertilityPreservationData,
   maleFertilityPreservationData,
   semenAnalysisData,
 } from "@/components/data/treatmentsnew";
@@ -84,8 +85,11 @@ export default function TreatmentPage({ params }: TreatmentPageProps) {
     case "frozen-embryo-transfer":
       data = frozenEmbryoTransferTreatmentData;
       break;
-    case "female-fertility-preservation":
+    case "fertility-surgery":
       data = fertilitySurgeryTreatmentData;
+      break;
+    case "female-fertility-preservation":
+      data = femaleFertilityPreservationData;
       break;
     case "male-fertility-preservation":
       data = maleFertilityPreservationData;
