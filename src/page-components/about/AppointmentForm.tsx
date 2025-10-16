@@ -144,6 +144,17 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         if (Array.isArray(response.data) && response.data.length > 0) {
           setFormFields(response.data[0].fields);
           setApiError(false);
+          
+          // Set default date to today for date fields
+          const dateField = response.data[0].fields.find((field: any) => field.type === "date");
+          if (dateField) {
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            const formattedDate = `${dd}/${mm}/${yyyy}`; // Format: DD/MM/YYYY
+            setFormData((prev: any) => ({ ...prev, [dateField.name]: formattedDate }));
+          }
         } else {
           throw new Error("No form fields found");
         }
@@ -186,8 +197,16 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         6000
       );
 
-      // Reset form data
-      setFormData({});
+      // Reset form data with default date
+      const today = new Date();
+      const dd = String(today.getDate()).padStart(2, '0');
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const yyyy = today.getFullYear();
+      const formattedDate = `${dd}/${mm}/${yyyy}`;
+      
+      const dateField = formFields.find((field: any) => field.type === "date");
+      const defaultData = dateField ? { [dateField.name]: formattedDate } : {};
+      setFormData(defaultData);
 
       // Reset the form element itself
       if (formRef.current) {
@@ -253,22 +272,36 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     }
 
     if (field.type === "date") {
+      const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+        
+        if (value.length >= 2) {
+          value = value.slice(0, 2) + '/' + value.slice(2);
+        }
+        if (value.length >= 5) {
+          value = value.slice(0, 5) + '/' + value.slice(5, 9);
+        }
+        
+        handleChange(field.name, value);
+      };
+
       return (
         <div className="relative w-full">
           <input
             ref={dateInputRef}
-            type="date"
+            type="text"
             placeholder="DD/MM/YYYY"
             value={formData[field.name] || ""}
-            onChange={(e) => handleChange(field.name, e.target.value)}
-            className={`${containerClass} hide-calendar-icon appearance-none focus:outline-none focus:ring-0 pr-10`}
+            onChange={handleDateChange}
+            maxLength={10}
+            className={`${containerClass} appearance-none focus:outline-none focus:ring-0 pr-10`}
             disabled={isSubmitLoading}
           />
 
           {/* Custom Calendar Icon */}
           <div
             className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
-            onClick={() => dateInputRef.current?.showPicker?.()} // modern browsers
+            onClick={() => dateInputRef.current?.focus()}
           >
             <SelectCalendarIcon />
           </div>
