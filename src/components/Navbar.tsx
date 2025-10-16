@@ -1169,7 +1169,7 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
             flex items-center justify-center gap-2
             w-full px-4 py-[10px] rounded-[8px]
             bg-[#1656A5] text-white font-[Manrope] text-[14px] font-semibold leading-[24px] tracking-[-0.28px]
-            hover:bg-[#12498C] transition cursor-pointer
+            hover:bg-[#12498C] transition-colors cursor-pointer
           "
                       >
                         {link.label}
@@ -1198,7 +1198,7 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
             bg-[rgba(22,86,165,0.10)] rounded-[8px]
             px-4 py-[10px]
             text-[#606060] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-            hover:bg-[rgba(22,86,165,0.15)] transition
+            hover:bg-[rgba(22,86,165,0.15)] transition-colors
           "
                       >
                         <span className="flex items-center justify-center w-[24px] h-[24px] shrink-0">
@@ -1218,7 +1218,7 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
                             bg-[rgba(22,86,165,0.10)] rounded-[8px]
                             px-4 py-[10px]
                             text-[#606060] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-                            hover:bg-[rgba(22,86,165,0.15)] transition
+                            hover:bg-[rgba(22,86,165,0.15)] transition-colors
                           "
                       >
                         <span className="flex items-center justify-center w-[24px] h-[24px] shrink-0">
@@ -1264,7 +1264,8 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
                         className="
             flex items-center justify-between w-full
             text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-            hover:text-[#1656A5] rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
+            px-2 py-1 rounded-[8px]
+            hover:text-[#1656A5] hover:bg-[rgba(22,86,165,0.10)] transition-colors"
                       >
                         <span>{link.label}</span>
                         <svg
@@ -1286,14 +1287,14 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
                       </Link>
                     ) : (
                       <div
-                        className="relative transition-all duration-150"
+                        className="relative"
                         onMouseEnter={() => setExpandedLink(link.label)}
                         onMouseLeave={() => setExpandedLink(null)}
 
                       >
                         <Link
                           href={link.path}
-                          className="block text-[#2C2C2C] font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] w-full flex items-center gap-2 rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
+                          className="block text-[#2C2C2C] font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] w-full flex items-center gap-2 px-2 py-1 rounded-[8px] hover:bg-[rgba(22,86,165,0.10)] transition-colors"
                         >
                           {link.label}
                         </Link>
@@ -1303,12 +1304,12 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
 
                         {/* ✅ Submenu opens below on hover, no overlap */}
                         {link.submenu && expandedLink === link.label && (
-                          <ul className="pl-4 mt-2 space-y-1 transition-all duration-200 ease-in-out">
+                          <ul className="pl-4 mt-2 space-y-1">
                             {link.submenu.map((sublink: any, subIdx: number) => (
                               <li key={subIdx}>
                                 <Link
                                   href={sublink.path}
-                                  className="block text-[#555] font-[Manrope] text-[14px] leading-[22px] hover:text-[#1656A5] transition-all duration-150"
+                                  className="block text-[#555] font-[Manrope] text-[14px] leading-[22px] hover:text-[#1656A5] transition-colors"
                                 >
                                   {sublink.label}
                                 </Link>
@@ -1642,7 +1643,7 @@ export default function Navbar() {
   }}
   className={`w-full flex items-center justify-between py-3 font-[Manrope] text-[20px] font-normal tracking-[-0.4px]
     ${activeMobileSubmenu === item.label ? "text-[#1656A5]" : "text-[#7E7E7E]"}
-    hover:text-[#1656A5] transition-colors duration-200`}
+    hover:text-[#1656A5]`}
 >
 
                         {item.label}
@@ -1679,7 +1680,7 @@ export default function Navbar() {
                                 fill={
                                   activeMobileSubmenu === item.label ? "#1656A5" : "#7E7E7E"
                                 }
-                                className="transition-colors duration-200 group-hover:fill-[#1656A5]"
+                                className=""
                               />
                             </g>
                           </svg>
@@ -1760,7 +1761,7 @@ export default function Navbar() {
                                           className="inline-flex items-center gap-2 px-3 py-[6px] rounded-[8px]
              bg-[rgba(22,86,165,0.10)]
              text-[#606060] font-[Manrope] text-[14px] font-medium leading-[20px] tracking-[-0.28px]
-             hover:bg-[rgba(22,86,165,0.15)] transition"
+             hover:bg-[rgba(22,86,165,0.15)] transition-colors"
                                         >
 
                                           {/* Phone SVG (same as desktop) */}
@@ -1781,7 +1782,7 @@ export default function Navbar() {
                                           className="inline-flex items-center gap-2 px-3 py-[6px] rounded-[8px]
              bg-[rgba(22,86,165,0.10)]
              text-[#606060] font-[Manrope] text-[14px] font-medium leading-[20px] tracking-[-0.28px]
-             hover:bg-[rgba(22,86,165,0.15)] transition"
+             hover:bg-[rgba(22,86,165,0.15)] transition-colors"
                                         >
 
                                           {/* WhatsApp SVG */}
@@ -1806,7 +1807,7 @@ export default function Navbar() {
                                         <Link
                                           href={link.path}
                                           onClick={() => setIsMobileMenuOpen(false)}
-                                          className="flex items-center justify-between w-full text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] transition"
+                                          className="flex items-center justify-between w-full text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] transition-colors"
                                         >
                                           {link.label}
                                           <svg
@@ -1836,7 +1837,7 @@ export default function Navbar() {
                                                   activeMobileSubmenuItem === link.label ? null : link.label
                                                 )
                                               }
-                                              className="w-full flex items-center justify-between px-0 py-2 text-left text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition"
+                                              className="w-full flex items-center justify-between px-0 py-2 text-left text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition-colors"
                                               aria-expanded={activeMobileSubmenuItem === link.label}
                                               aria-controls={`mobile-submenu-${j}`}
                                             >
@@ -1865,7 +1866,7 @@ export default function Navbar() {
                                                         setActiveMobileSubmenu(null);
                                                         setActiveMobileSubmenuItem(null);
                                                       }}
-                                                      className="block text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition px-2 py-1"
+                                                      className="block text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition-colors px-2 py-1"
                                                     >
                                                       {sublink.label}
                                                     </Link>
@@ -1879,7 +1880,7 @@ export default function Navbar() {
                                           <Link
                                             href={link.path}
                                             onClick={() => setIsMobileMenuOpen(false)}
-                                            className="block text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition"
+                                            className="block text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition-colors"
                                           >
                                             {link.label}
                                           </Link>
