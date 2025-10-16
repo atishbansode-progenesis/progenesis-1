@@ -5,7 +5,7 @@ type Slide = {
   title: string;
   number: string;
   desc: string;
-  image: string; // background image url
+  image: string;
   bannerHeading: string;
   bannerPara?: string;
 };
@@ -51,21 +51,19 @@ const WhyProgenesis: React.FC = () => {
   const [active, setActive] = useState<number>(0);
   const [progress, setProgress] = useState<number>(0);
   const current = slides[active];
-  const INTERVAL_DURATION = 5000; // 5 seconds
+  const INTERVAL_DURATION = 5000;
 
-  // Auto-play functionality - cycles through tabs every 5 seconds
   useEffect(() => {
-    setProgress(0); // Reset progress when tab changes
-    
+    setProgress(0);
+
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % slides.length);
     }, INTERVAL_DURATION);
 
-    // Update progress bar smoothly
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) return 0;
-        return prev + (100 / (INTERVAL_DURATION / 50)); // Update every 50ms
+        return prev + (100 / (INTERVAL_DURATION / 50));
       });
     }, 50);
 
@@ -78,32 +76,28 @@ const WhyProgenesis: React.FC = () => {
   return (
     <section
       id="why-choose-us"
-      className="w-full bg-[#1656A50D] px-6 lg:px-[90px] py-12 lg:py-16 section-spacing"
+      className="w-full bg-[#1656A50D] px-[0.3125vw] lg:px-[4.6875vw] py-[0.625vw] lg:py-[0.833vw] section-spacing"
     >
-      {/* Grid: mobile = single column, lg = 2 equal columns */}
-      <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-4 lg:gap-10 items-start">
-        {/* Left Column - Heading + Tabs */}
-        <div className="flex flex-col">
-          {/* Heading section (always stays on top) */}
-          <div className="why-bott-pad">
-            <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] px-3 py-1 rounded-[8px]">
+      <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-[0.52vw] lg:gap-[4vw] items-start">
+        <div className="flex flex-col ">
+          <div className="csLg:mb-[12.76vw] mb-10">
+            <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] px-[0.9375vw] py-[0.625vw] rounded-[0.416vw]">
               Why choose us
             </span>
-            <h2 className="mt-3 text-[36px] lg:text-[40px] leading-10 font-normal text-[#2C2C2C] pb-6">
+            <h2 className="csLg:mt-[0.625vw] mt-6 text-[32px] csLg:text-[2.093vw] leading-[2.083vw] font-normal text-[#2C2C2C] pb-[1.25vw]">
               Why Progenesis?
             </h2>
           </div>
 
-          {/* Image — visible here only on mobile */}
+          {/* Mobile Image */}
           <div className="block lg:hidden relative w-full rounded-2xl overflow-hidden min-h-[220px] flex items-center justify-center">
             <div
-              className="absolute inset-0 bg-cover bg-center rounded-2xl bg-no-repeat "
+              className="absolute inset-0 bg-cover bg-center rounded-2xl bg-no-repeat"
               style={{ backgroundImage: `url(${current.image})` }}
             />
           </div>
 
-          {/* Tabs */}
-          <div className=" space-y-4 pt-8 md:pt-2">
+          <div className="csLg:space-y-[0.833vw] space-y-[16px] mt-6 csLg:mt-0">
             {slides.map((s, idx) => {
               const activeRow = idx === active;
               return (
@@ -112,37 +106,36 @@ const WhyProgenesis: React.FC = () => {
                   onClick={() => setActive(idx)}
                   className="w-full text-left group hover:cursor-pointer"
                 >
-                  {/* Top separator */}
                   <div className="h-[1px] w-full bg-[#A5A5A5] relative">
                     {activeRow && (
-                      <div 
+                      <div
                         className="absolute left-0 top-[-1px] h-[2px] bg-[#1656A5] transition-all duration-100 ease-linear"
                         style={{ width: `${progress}%` }}
                       />
                     )}
                   </div>
 
-                  <div className="flex items-center justify-between pt-3">
+                  <div className="flex items-center justify-between pt-[0.833vw]">
                     <div
-                      className={`text-[16px] lg:leading-10 lg:text-[24px] font-medium ${
+                      className={`text-[16px] lg:leading-[2.083vw] lg:text-[1.75vw] font-normal ${
                         activeRow ? "text-[#1a1a1a]" : "text-[#2C2C2C]"
                       }`}
                     >
                       {s.title}
                     </div>
-                    <span className="text-[#606060] font-semibold">
+                    <span className="text-[#606060] font-semibold text-[16px] csLg:text-[0.833vw]">
                       {s.number}
                     </span>
                   </div>
 
                   {activeRow && (
-                    <p className="text-[14px] text-[#606060] max-w-[360px]">
+                    <p className="csLg:text-[0.740vw] text-[16px] text-[#606060] csLg:max-w-[18.75vw]">
                       {s.desc}
                     </p>
                   )}
 
                   {idx === slides.length - 1 && (
-                    <div className="mt-4 h-[1px] w-full bg-[#A5A5A5] relative" />
+                    <div className="mt-[0.833vw] h-[1px] w-full bg-[#A5A5A5] relative" />
                   )}
                 </button>
               );
@@ -150,10 +143,7 @@ const WhyProgenesis: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column - Banner (only visible on desktop) */}
-        {/* <div className="hidden lg:flex relative w-full rounded-2xl overflow-hidden min-h-[250px] md:min-h-full md:w-full items-center justify-center bg-red-700"> */}
-         <img src={current.image} className=" hidden lg:block  h-full"/>
-        {/* </div> */}
+        <img src={current.image} className="hidden lg:block h-full" />
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 const tabs = ["Awards & Certifications", "Knowledge Center"];
 
@@ -204,15 +204,15 @@ export default function AwardsSection() {
                 <div className="flex gap-3 mt-6">
                   <button
                     onClick={handlePrev}
-                    className="w-10 h-10 rounded-lg border-2 border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                    className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
                   >
-                    <ChevronLeft className="w-5 h-5 text-[#1656A5]" />
+                    <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
                   </button>
                   <button
                     onClick={handleNext}
-                    className="w-10 h-10 rounded-lg border-2 border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                    className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
                   >
-                    <ChevronRight className="w-5 h-5 text-[#1656A5]" />
+                    <ArrowRight className="w-5 h-5 text-[#1656A5]" />
                   </button>
                 </div>
               </article>

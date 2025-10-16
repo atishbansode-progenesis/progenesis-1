@@ -74,7 +74,7 @@ title2: "Fertilization (IVF)",
               </span>
               <div>
                 
-              <h2 className="text-[32px] xl:text-[40px] leading-[40px] font-light text-[#2c2c2c] leading-[56px] ">
+              <h2 className="text-[32px] xl:text-[40px]  font-light text-[#2c2c2c]  ">
                 Being India’s Best Fertility & IVF Center. We Specialize in:
               </h2>
             </div>
@@ -86,7 +86,7 @@ title2: "Fertilization (IVF)",
 
           </div>
           <div className="">
-         <p className="text-[24px] leading-[40px] font-[Manrope] font-normal text-[#2C2C2C]">{text}</p>
+         <p className="text-[24px] csLg:leading-[40px] font-[Manrope] font-normal text-[#2C2C2C]">{text}</p>
           </div>
         </div>
       </div>
@@ -119,12 +119,12 @@ title2: "Fertilization (IVF)",
                 <div className=" h-full flex flex-col xl:flex-col-reverse justify-between">
 
                 <div className="xl:max-w-[80%] flex flex-col justify-between ">
-                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] " >
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] csLg:leading-[40px] tracking-[-0.64px] " >
               
                       {item.title}
                   
                   </h3>
-                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 " >
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] csLg:leading-[40px] tracking-[-0.64px] mb-2 " >
               
                       {item.title2}
                   
@@ -194,10 +194,10 @@ title2: "Fertilization (IVF)",
                 <div className=" h-full flex flex-col  xl:flex-col-reverse justify-between">
 
                 <div className="xl:max-w-[80%] flex flex-col justify-between ">
-                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 " >
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] csLg:leading-[40px] tracking-[-0.64px] csLg:mb-2 " >
                     {item.title}
                   </h3>
-                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] leading-[40px] tracking-[-0.64px] mb-2 " >
+                  <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] csLg:leading-[40px] tracking-[-0.64px] mb-2 " >
                     {item.title2}
                   </h3>
                   <p className="text-[#606060] text-[16px] leading-6">

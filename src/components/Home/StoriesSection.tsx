@@ -34,7 +34,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
 
   const getCardStyle = () => {
     if (winWidth < 640) {
-      return { minWidth: "calc(100% - 90px)", height: 220 };
+      return { minWidth: "80vw", height:"402px" };
     }
     if (winWidth < 1024) {
       return { minWidth: 240, height: 300 };
