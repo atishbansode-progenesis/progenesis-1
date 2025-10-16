@@ -170,7 +170,7 @@ const CareersLanding: React.FC = () => {
         indexRef.current = 1;
         setTimeout(() => scrollToIndex(indexRef.current, false), 1600);
       }
-    }, 3000);
+    }, 4000);
 
     const onResize = () => {
       stepRef.current = cards[1].offsetLeft - cards[0].offsetLeft;
@@ -219,11 +219,11 @@ const CareersLanding: React.FC = () => {
       </section>
 
       {/* 🖼️ Image Gallery Section (Auto-Scrolling Carousel) */}
-      <section className="relative w-full py-8 md:py-[80px] bg-[#FAFAFA] overflow-hidden">
+      <section className="relative w-full py-8 md:py-[80px] bg-[#FAFAFA] overflow-hidden px-4 md:px-[120px]">
         {/* Carousel container */}
         <div
           ref={scrollerRef}
-          className="flex gap-4 overflow-x-scroll snap-x snap-mandatory scroll-smooth w-full md:gap-6 [&::-webkit-scrollbar]:hidden"
+          className="flex gap-4 overflow-x-scroll snap-x snap-mandatory scroll-smooth w-full md:gap-6 [&::-webkit-scrollbar]:hidden  rounded-[16px]"
           style={{ scrollSnapType: "x mandatory" }}
         >
           {(() => {
