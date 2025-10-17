@@ -1355,7 +1355,7 @@ export default function Navbar() {
   React.useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
   }, [isMobileMenuOpen]);
-  // ─── NAVBAR SHOW/HIDE ON SCROLL ─────────────────────────────
+  // ─── NAVBAR SHOW/HIDE ON SCROLL ────────────────────────
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
 
