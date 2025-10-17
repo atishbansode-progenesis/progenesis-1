@@ -237,7 +237,7 @@ const InternationalPatientsPage: React.FC = () => {
             </h2>
 
             {/* Progress Bar */}
-            <div className="w-full csLg:w-[200px] h-1 bg-white/30 rounded-full mb-4 mx-auto csLg:mx-0">
+            <div className=" hidden csLg:block w-full csLg:w-[200px] h-1 bg-white/30 rounded-full mb-4 mx-auto csLg:mx-0">
               <div
                 className="h-1 bg-white rounded-full transition-all duration-500"
                 style={{

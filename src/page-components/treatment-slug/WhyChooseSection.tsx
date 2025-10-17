@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface WhyChooseSectionProps {
   tag?: string;
@@ -18,6 +18,28 @@ export default function WhyChooseSection({
   points,
 }: WhyChooseSectionProps) {
   const [activePoint, setActivePoint] = useState<number>(0);
+  const [progress, setProgress] = useState<number>(0);
+  const INTERVAL_DURATION = 5000;
+
+  useEffect(() => {
+    setProgress(0);
+
+    const interval = setInterval(() => {
+      setActivePoint((prev) => (prev + 1) % points.length);
+    }, INTERVAL_DURATION);
+
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) return 0;
+        return prev + (100 / (INTERVAL_DURATION / 50));
+      });
+    }, 50);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(progressInterval);
+    };
+  }, [activePoint, points.length]);
 
   return (
     <>
@@ -40,30 +62,46 @@ export default function WhyChooseSection({
               </h2>
             </div>
 
-            <div className="flex flex-col divide-y divide-[#A5A5A5]">
+            <div className="flex flex-col">
               {points.map((point, idx) => (
-                <div
-                  key={point.id}
-                  className="py-5 cursor-pointer"
-                  onClick={() => setActivePoint(idx)}
-                >
-                  <div className="flex items-start justify-between">
-                    <h3
-                      className={`text-[#2C2C2C] font-[Manrope] text-[32px] md:text-[26px] leading-[32px]max-w-[379px] ${
-                        activePoint === idx ? "text-[#2C2C2C]" : ""
-                      }`}
-                    >
-                      {point.title}
-                    </h3>
-                    <span className="text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[20px] font-medium">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
+                <div key={point.id}>
+                  {/* Animated separator line */}
+                  <div className="h-[1px] w-full bg-[#A5A5A5] relative">
+                    {activePoint === idx && (
+                      <div
+                        className="absolute left-0 top-[-1px] h-[2px] bg-[#1656A5] transition-all duration-100 ease-linear"
+                        style={{ width: `${progress}%` }}
+                      />
+                    )}
                   </div>
+                  
+                  <div
+                    className="py-5 cursor-pointer"
+                    onClick={() => setActivePoint(idx)}
+                  >
+                    <div className="flex items-start justify-between">
+                      <h3
+                        className={`text-[#2C2C2C] font-[Manrope] text-[32px] md:text-[26px] leading-[32px]max-w-[379px] ${
+                          activePoint === idx ? "text-[#2C2C2C]" : ""
+                        }`}
+                      >
+                        {point.title}
+                      </h3>
+                      <span className="text-[#2C2C2C] font-[Manrope] text-[18px] md:text-[20px] font-medium">
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                    </div>
 
-                  {activePoint === idx && (
-                    <p className="mt-2 text-[#606060] font-[Manrope] max-w-[379px] text-[15px] leading-[22px] opacity-80">
-                      {point.description}
-                    </p>
+                    {activePoint === idx && (
+                      <p className="mt-2 text-[#606060] font-[Manrope] max-w-[379px] text-[15px] leading-[22px] opacity-80">
+                        {point.description}
+                      </p>
+                    )}
+                  </div>
+                  
+                  {/* Bottom separator for last item */}
+                  {idx === points.length - 1 && (
+                    <div className="h-[1px] w-full bg-[#A5A5A5] relative" />
                   )}
                 </div>
               ))}
