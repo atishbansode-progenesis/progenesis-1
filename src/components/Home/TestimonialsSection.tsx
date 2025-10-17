@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import ReviewsEmbed from "./ReviewsEmbed";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -33,11 +34,16 @@ const TestimonialsSection = () => {
     },
   ];
 
+
+
   const rating = 4.5;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <section className="w-full bg-white overflow-hidden">
+      {/* Badge Embed */}
+      {/* <iframe width="560" height="315" src="https://progenesisivf.com/wp-admin/admin-ajax.php?action=brb_embed&brb_collection_id=22772&%E2%80%A6"></iframe> */}
+      <ReviewsEmbed/>
       <div className="flex flex-col md:flex-row h-auto md:h-[700px]">
         {/* LEFT PANEL */}
         <div className="bg-[#1656A5] text-white py-10 flex flex-col justify-between md:[528px] px-4 lg:px-[70px]  pt-[80px] md:pt-[128px]">
