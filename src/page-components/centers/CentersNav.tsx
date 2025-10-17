@@ -41,6 +41,8 @@ const CentersNav: React.FC = () => {
   const stateDropdownRef = useRef<HTMLDivElement>(null);
   const cityDropdownRef = useRef<HTMLDivElement>(null);
 
+  const sectionRef = useRef<HTMLElement | null>(null); 
+
   // Handle clicks outside dropdowns
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -58,8 +60,11 @@ const CentersNav: React.FC = () => {
 
   // Scroll to top on page change
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPage]);
+    if(currentPage>1){
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }}
+  }, [currentPage]); 
 
   const handleStateChange = (state: string) => {
     setSelectedState(state);
@@ -69,6 +74,9 @@ const CentersNav: React.FC = () => {
     setIsStateDropdownOpen(false);
     setCurrentPage(1);
     setFilteredCenters(centersData.filter((center: Center) => center.city === firstCity));
+
+ 
+
   };
 
   const handleCityChange = (city: string) => {
@@ -79,7 +87,7 @@ const CentersNav: React.FC = () => {
   };
 
   return (
-    <section className="w-full px-4 py-4 lg:px-[120px] lg:py-[80px] overflow-hidden bg-[#F6F6F6]">
+    <section className="w-full px-4 py-4 lg:px-[120px] lg:py-[80px] overflow-hidden bg-[#F6F6F6]" ref={sectionRef}>
       {/* Badge and Title */}
       <div className='mb-[32px] lg:mb-[80px]'>
         <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
