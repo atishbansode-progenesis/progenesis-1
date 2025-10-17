@@ -1625,7 +1625,7 @@ export default function Navbar() {
 
 
             {/* LINKS */}
-            <div className="flex-1 overflow-y-auto px-4 py-4 pb-28 divide-y divide-[#EDEDED]">
+            <div className="flex-1 overflow-y-auto px-4 py-4 pb-28 divide-y divide-[#EDEDED] overscroll-contain">
               {/* MAIN MENU */}
               {!activeMobileSubmenu ? (
                 <>
@@ -1930,7 +1930,7 @@ export default function Navbar() {
 
                 {/* Find My Right Treatment Button */}
                 <Link
-                  href="/check-fit"
+                  href="/treatments"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="
         flex items-center justify-center
