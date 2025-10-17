@@ -6,8 +6,8 @@ const OnlineConsultationHero = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className='bg-gradient-to-r grid bg-[url("/images/oc-mob.png")] h-[520px] md:h-auto csLg:h-[80vh] csLg:bg-[url("/images/oc-hero-bg.png")] bg-cover overflow-hidden  bg-center  '>
-            <div className='section-spacing'>
+        <div className='bg-gradient-to-r grid bg-[url("/images/oc-mob.png")] h-[520px] md:h-auto  csLg:bg-[url("/images/oc-hero-bg.png")] bg-cover overflow-hidden  bg-center  '>
+            <div className='p-4 lg:px-[120px] lg:py-[80px]'>
                 <div className='flex flex-col'>
                     <div className='lg:pb-[44px] pb-[16px]'>
                         <h2 className='font-manrope text-[12px] md:text-[16px] csLg:text-[18px] font-medium leading-[26px] tracking-[-0.02em]'>
@@ -16,7 +16,7 @@ const OnlineConsultationHero = () => {
                     </div>
 
                     <div >
-                        <h1 className='font-manrope w-auto font-semibold lg:text-[60px] md:text-[56px] text-[32px] lg:leading-[75px] leading-[40px] tracking-[-0.02em]'>
+                        <h1 className='font-manrope w-auto font-semibold lg:text-[60px] md:text-[56px] text-[32px] lg:leading-[72px] leading-[40px] tracking-[-0.02em]'>
                         IVF & Fertility <br/>
                         Online Consultation                        </h1>
                     </div>
