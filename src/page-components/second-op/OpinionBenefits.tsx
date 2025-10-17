@@ -27,8 +27,8 @@ const benefits = [
 
 const OpinionBenefits: React.FC = () => {
   return (
-    <section id='how' className="w-full bg-[#FFFFFF]">
-      <div className="section-spacing w-full">
+    <section id='how' className="w-full bg-[#FFFFFF] p-4 lg:px-[120px] lg:py-[80px]">
+      <div className="w-full">
         {/* Top Section: Tag + Main Heading */}
         <div className="csLg:mb-[80px] mb-[32px]" >
           {/* Tag/Button */}
@@ -50,7 +50,7 @@ const OpinionBenefits: React.FC = () => {
               className="bg-[#1656A50D] flex flex-col justify-between csLg:min-h-[394px] rounded-[12px] p-4 csLg:p-6 gap-3 csLg:gap-4"
             >
               {/* Icon */}
-              <div className="w-7 h-7 csLg:w-[50px] csLg:h-[50px] flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium">
+              <div className="w-[19px] h-[19px] lg:w-[29px] lg:h-[29px] flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium">
                 {benefit.icon}
               </div>
 

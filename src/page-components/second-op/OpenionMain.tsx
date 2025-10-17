@@ -15,7 +15,7 @@ const OpenionMain = () => {
         <OpinionNav />
         <OpinionContent />
         <OpinionBenefits />
-        <OpinionStats />
+        {/* <OpinionStats /> */}
         <OpinionCare />
         <section className="relative overflow-hidden">
           {/* Video Background */}

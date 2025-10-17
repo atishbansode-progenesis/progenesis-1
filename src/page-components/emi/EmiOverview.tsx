@@ -31,7 +31,7 @@ const items = [
 const EmiOverview = () => {
   return (
     <section id="care" className="w-full bg-[#F3F6FA]">
-      <div className="section-spacing w-full px-6 md:px-8 lg:px-16 py-10 md:py-14">
+      <div className="w-full p-4 lg:px-[120px] lg:py-[80px]">
         {/* Badge */}
         <div className="mb-2">
           <span className="inline-block bg-[#1656A50D] text-[#1656A5] font-medium text-[12px] leading-[20px] md:text-[13px] px-3 py-1 rounded-[8px]">
@@ -57,7 +57,7 @@ const EmiOverview = () => {
                 <img
                   src={it.icon}
                   alt={it.text}
-                  className="w-[22px] h-[22px] md:w-8 md:h-8 object-contain"
+                  className="w-[18px] h-[18px] md:w-[30px] md:h-[30px] object-contain"
                 /></div>
                 {/* Text */}
                 <p className="text-[#2C2C2C] text-[16px] lg:text-[24px] md:text-[24px] leading-[24px] md:leading-[40px] tracking-tight font-normal">
