@@ -212,7 +212,7 @@ const Journey: React.FC = () => {
 
   return (
     <section id="why-1" className="w-full bg-white overflow-hidden">
-  <div className="section-spacing max-w-[2500px] md:max-h-[1500px] ">
+  <div className="max-w-[2500px] ">
     {/* Desktop layout */}
     <div className="hidden csLg:flex flex-col ">
           
@@ -277,9 +277,9 @@ const Journey: React.FC = () => {
             </div>
 
           </div>
-            <div className="flex flex-col csLg:flex-row gap-4  md:gap-4 lg:gap-4 w-auto max-w-full overflow-hidden items-center">
+            <div className="flex flex-col csLg:flex-row gap-4  md:gap-4 lg:gap-4 w-auto max-w-full overflow-hidden ">
               {/* Image */}
-              <div className="w-full bg-[#E8EFF6] max-w-[400px] lg:min-w-[400px] lg:min-h-[400px] max-h-[400px] h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <div className="w-full bg-[#E8EFF6] max-w-[400px] max-h-[400px] lg:max-w-[300px] lg:max-h-[300px]  h-full rounded-[8px] md:rounded-[12px] lg:rounded-[16px] overflow-hidden flex-shrink-0 flex items-start justify-center">
                 <img
                   src={tabItems[activeTab].image}
                   alt={tabItems[activeTab].title}
@@ -307,7 +307,7 @@ const Journey: React.FC = () => {
         </div>
 
         {/* Mobile & tablet layout: visible below large screens */}
-        <div className="flex flex-col gap-6 md:gap-8 lg:hidden">
+        <div className="flex flex-col gap-6 md:gap-8 csLg:hidden">
           {/* Mobile heading */}
           <div>
             <span className="inline-block bg-[#E9F0FF] text-[#1656A5] text-[12px] px-3 py-2 rounded-[8px] mb-[8px]">Your Journey, Made Simple</span>
