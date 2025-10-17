@@ -21,7 +21,7 @@ export const doctors: Doctor[] = [
     slug: "dr-narhari-s-malgaonkar",
     name: "Dr. Narhari S. Malgaonkar",
     bio:
-      "Dr. Narhari S. Malagaonkar is the dedicated and exclusive chief fertility consultant. Dr. Narhari S. Malagaonkar is the dedicated and exclusive chief fertility consultant.",
+      "Dr. Narhari S. Malagaonkar is the dedicated and exclusive chief fertility consultant.",
     experience: "12+ Years of Experience",
     qualifications: "DNB/DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -34,7 +34,7 @@ export const doctors: Doctor[] = [
     slug: "dr-sonali-malgaonkar",
     name: "Dr. Sonali Malgaonkar",
     bio:
-      "Dr. Sonali Malagaonkar is the dedicated and exclusive chief fertility consultant. Dr. Sonali Malagaonkar is the dedicated and exclusive chief fertility consultant.",
+      "Dr. Sonali Malagaonkar is the dedicated and exclusive chief fertility consultant.",
     experience: "12+ Years of Experience",
     qualifications: "DNB/DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -231,19 +231,19 @@ const DoctorsInfo: React.FC = () => {
                 {/* Hospital | Specialty */}
                 <div className="w-full grid grid-cols-2 csLg:flex flex-col   justify-end  lg:gap-[24px]">
                   <div className="min-w-[150px] csLg:flex flex-col justify-end items-end">
-                    <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-normal">
+                    <div className="text-[14px] text-[#1656A5] font-normal">
                       Hospital
                     </div>
-                    <div className="text-[14px] text-[#606060] font-normal">
+                    <div className="text-[16px] lg:text-[20px] text-[#606060] font-normal">
                       {d.hospital}
                     </div>
                   </div>
 
                   <div className="min-w-[190px] csLg:flex flex-col justify-end items-end">
-                    <div className="text-[16px] lg:text-[20px] text-[#1656A5] font-normal">
+                    <div className="text-[14px]  text-[#1656A5] font-normal">
                       Specialty
                     </div>
-                    <div className="text-[14px] text-[#606060] font-normal text-start lg:text-end">
+                    <div className="text-[16px] lg:text-[20px] text-[#606060] font-normal text-start lg:text-end">
                       {d.specialty}
                     </div>
                   </div>
