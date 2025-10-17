@@ -173,7 +173,7 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const tabItems = [
   {
@@ -209,6 +209,28 @@ const tabItems = [
 
 const Journey: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
+  const [progress, setProgress] = useState<number>(0);
+  const INTERVAL_DURATION = 5000;
+
+  useEffect(() => {
+    setProgress(0);
+
+    const interval = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % tabItems.length);
+    }, INTERVAL_DURATION);
+
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) return 0;
+        return prev + (100 / (INTERVAL_DURATION / 50));
+      });
+    }, 50);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(progressInterval);
+    };
+  }, [activeTab]);
 
   return (
     <section id="why-1" className="w-full bg-white overflow-hidden">
@@ -247,7 +269,10 @@ const Journey: React.FC = () => {
                 <div key={index} className=''>
                   <div className="h-[1px] w-full bg-[#A5A5A5]  relative ">
                     {activeTab === index && (
-                      <div className="absolute left-0 top-[-1px] h-[2px] w-32 bg-[#1656A5]" />
+                      <div
+                        className="absolute left-0 top-[-1px] h-[2px] bg-[#1656A5] transition-all duration-100 ease-linear"
+                        style={{ width: `${progress}%` }}
+                      />
                     )}
                   </div>
                   <div

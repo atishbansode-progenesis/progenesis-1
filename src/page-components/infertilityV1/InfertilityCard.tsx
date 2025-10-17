@@ -20,14 +20,16 @@ export const InfertilityCard: React.FC<InfertilityCardProps> = ({
       <h3 className="text-[#2C2C2C] text-[16px] md:text-[20px] lg:text-2xl font-normal lg:leading-[32px] leading-[24px] md:leading-[28px] text-start w-full font-[Manrope]">
         {issue.title}
       </h3>
-      <div className="relative flex-1 w-full max-h-[250px]">
-        <Image
-          src={issue.image}
-          alt={issue.title}
-          fill
-          className="object-contain mix-blend-multiply"
-        />
-      </div>
+  <div className="relative flex-1 w-full max-h-[250px] mb-[30px] flex items-center justify-center">
+  <Image
+    src={issue.image}
+    alt={issue.title}
+    fill
+    className="object-contain object-center mix-blend-multiply"
+  />
+</div>
+
+
     </Link>
   );
 };

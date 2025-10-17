@@ -16,6 +16,7 @@ import Journey from '../../components/Journey'
 import { useRouter } from "next/navigation";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 import HeroSection from "@/components/HeroSection/herosection";
+import HeroInter from "@/page-components/international-patient/HeroInter";
 const InternationalPatientsPage: React.FC = () => {
   const categories = [
     { id: "start", label: "Start Your Journey Today" },
@@ -222,7 +223,7 @@ const InternationalPatientsPage: React.FC = () => {
     return (
       <section
         id="testimonial"
-        className="w-full bg-[#1656A5] text-white py-12 csLg:py-[82px] csLg:h-[700px] min-h-screen csLg:min-h-0"
+        className="w-full bg-[#1656A5] text-white py-4 csLg:py-12 csLg:py-[82px] csLg:h-[700px]  csLg:min-h-0"
       >
         <div className="flex flex-col csLg:flex-row items-center mx-auto px-6 md:px-[120px] gap-8 csLg:gap-0">
           {/* Header Section */}
@@ -236,7 +237,7 @@ const InternationalPatientsPage: React.FC = () => {
             </h2>
 
             {/* Progress Bar */}
-            <div className="w-full csLg:w-[200px] h-1 bg-white/30 rounded-full mb-4 mx-auto csLg:mx-0">
+            <div className=" hidden csLg:block w-full csLg:w-[200px] h-1 bg-white/30 rounded-full mb-4 mx-auto csLg:mx-0">
               <div
                 className="h-1 bg-white rounded-full transition-all duration-500"
                 style={{
@@ -388,18 +389,7 @@ const InternationalPatientsPage: React.FC = () => {
         </div>
       </section> */}
 
-      <HeroSection
-  breadcrumbs={[
-    { label: "Home", href: "/" },
-    { label: " International Patient", href: "/international-patients" },
-  ]}
-  title={`IVF Treatment for <br/> International Patient`}
-  buttonText="Book Your Appointment"
-  buttonLink="/book-appointment"
-  overlayImage="/InternationalPatients/hero_person.png"
-  overlayImageSmall="/InternationalPatients/ip-bg-mob.png"
-  contentClassName="justify-start"
- />
+   <HeroInter/>
 
       <div
         className="w-full bg-white p-4 lg:px-[120px] lg:py-[80px]"
