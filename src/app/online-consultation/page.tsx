@@ -5,6 +5,7 @@ import ConsultationForm from "../../components/Consultation/ConsultationForm";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection/herosection";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
+import OnlineConsultationHero from "@/page-components/oc/OnlineConsultationHero";
 
 
 const OnlineConsultation: React.FC = () => {
@@ -43,19 +44,8 @@ const OnlineConsultation: React.FC = () => {
 
   return (
     <div className="w-full flex flex-col">
-      <HeroSection
       
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Online Consultation", href: "/online-consultation" },
-        ]}
-        title="IVF & Fertility <br/> Online Consultation"
-        buttonText="Book Your Appointment"
-        buttonLink="/book-appointment"
-        foregroundImage="/online-consultation/onlinebg.png"
-        overlayImage="/online-consultation/heartbg.png"
-        contentClassName="justify-start "
-      />
+      <OnlineConsultationHero />
 
 
       {/* 1. TAB BUTTONS (Adjusted pb-[80px] to pb-[40px] for less gap) */}
