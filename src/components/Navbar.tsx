@@ -66,22 +66,22 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
   ];
 
   const locations = [
-    { name: "Andheri", desc: "(Opp. to Laxmi Industrial Complex)", icon: "/LocationsSection/Andheri.jpg", link: "centers/andheri/" },
-    { name: "Thane", desc: "(Opp R Mall, Manpada)", icon: "/LocationsSection/thane.png", link: "/centers/thane/" },
-    { name: "Borivali", desc: "(Near Station)", icon: "/LocationsSection/borivali.png", link: "/centers/borivali/" },
-    { name: "Ghatkopar", desc: "(Mahatma Gandhi Road)", icon: "/LocationsSection/ghatkopar.jpg", link: "/centers/ghatkopar/" },
-    { name: "Vashi", desc: "(Palm Beach Service Road)", icon: "/LocationsSection/vashi.jpg", link: "/centers/vashi/" },
-    { name: "Virar", desc: "(Virar Medical Complex)", icon: "/LocationsSection/virar.jpg", link: "/centers/virar/" },
-    { name: "Kalyan", desc: "(Kalyan Health Clinic)", icon: "/LocationsSection/kalyan.jpg", link: "/centers/kalyan/" },
-    { name: "Panvel", desc: "(Panvel Medical Center)", icon: "/LocationsSection/panvel.jpg", link: "/centers/panvel/" },
-    { name: "Pune", desc: "(Near FC Road)", icon: "/LocationsSection/pune.png", link: "/centers/pune/" },
-    { name: "Nashik", desc: "(Yeolekar Mala)", icon: "/LocationsSection/nasik.png", link: "/centers/nashik/" },
-    { name: "Jalgaon", desc: "(College Rd)", icon: "/LocationsSection/jalgaon.png", link: "/centers/jalgaon/" },
-    { name: "Solapur", desc: "(Dufferin Chowk)", icon: "/LocationsSection/solapur.png", link: "/centers/solapur/" },
-    { name: "Nagpur", desc: "(Dharampeth)", icon: "/LocationsSection/nagpur.png", link: "/centers/nagpur/" },
-    { name: "Kolhapur", desc: "(Railway Colony)", icon: "/LocationsSection/kolhapur.png", link: "/centers/kolhapur/" },
-    { name: "Amravati", desc: "(Sharda Vihar)", icon: "/LocationsSection/amravati.png", link: "/centers/amravati/" },
-    { name: "Ahilyanagar", desc: "(Mauli Sankul Road)", icon: "/LocationsSection/ahilyanagar.png", link: "/centers/ahilyanagar/" },
+    { name: "Andheri", desc: "(Opp. to Laxmi Industrial Complex)", icon: "/images/Andheri.png", link: "centers/andheri/" },
+    { name: "Thane", desc: "(Opp R Mall, Manpada)", icon: "/images/Thane.png", link: "/centers/thane/" },
+    { name: "Borivali", desc: "(Near Station)", icon: "/images/Borivali.png", link: "/centers/borivali/" },
+    { name: "Ghatkopar", desc: "(Mahatma Gandhi Road)", icon: "/images/Ghatkopar.png", link: "/centers/ghatkopar/" },
+    { name: "Vashi", desc: "(Palm Beach Service Road)", icon: "/images/Vashi.png", link: "/centers/vashi/" },
+    { name: "Virar", desc: "(Virar Medical Complex)", icon: "/images/virar.jpg", link: "/centers/virar/" },
+    { name: "Kalyan", desc: "(Kalyan Health Clinic)", icon: "/images/kalyan.webp", link: "/centers/kalyan/" },
+    { name: "Panvel", desc: "(Panvel Medical Center)", icon: "/images/Panvel.jpg", link: "/centers/panvel/" },
+    { name: "Pune", desc: "(Near FC Road)", icon: "/images/Pune.jpg", link: "/centers/pune/" },
+    { name: "Nashik", desc: "(Yeolekar Mala)", icon: "/images/Nasik.jpg", link: "/centers/nashik/" },
+    { name: "Jalgaon", desc: "(College Rd)", icon: "/images/Jalgaon.jpg", link: "/centers/jalgaon/" },
+    { name: "Solapur", desc: "(Dufferin Chowk)", icon: "/images/Solapur.jpg", link: "/centers/solapur/" },
+    { name: "Nagpur", desc: "(Dharampeth)", icon: "/images/Nagpur.jpg", link: "/centers/nagpur/" },
+    { name: "Kolhapur", desc: "(Railway Colony)", icon: "/images/Kolhapur.jpg", link: "/centers/kolhapur/" },
+    { name: "Amravati", desc: "(Sharda Vihar)", icon: "/images/Amravati.jpg", link: "/centers/amravati/" },
+    { name: "Ahilyanagar", desc: "(Mauli Sankul Road)", icon: "/images/Ahilyanagar.jpg", link: "/centers/ahilyanagar/" },
   ];
 
   const doctors = [
