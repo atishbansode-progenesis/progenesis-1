@@ -37,7 +37,7 @@ const OpinionCare: React.FC = () => {
           </span>
           
           {/* Main Heading */}
-          <h1 className="text-[32px] csLg:text-5xl font-normal text-[#2C2C2C] leading-[40px] csLg:leading-[56px] tracking-tight font-[Manrope] csLg:pb-8" >
+          <h1 className="text-[32px] lg:text-[40px] font-normal text-[#2C2C2C] leading-[40px] csLg:leading-[56px] tracking-tight font-[Manrope] csLg:pb-8" >
             Grow personally, professionally,<br/> purposefully.
           </h1>
         </div>
@@ -51,14 +51,14 @@ const OpinionCare: React.FC = () => {
               className="bg-white rounded-[16px] p-4 csLg:p-[20px] flex flex-col csLg:gap-4 "
             >
               {/* Icon */}
-              <div className="w-7 h-7 csLg:w-[50px] csLg:h-[56px] flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium rounded-[8px]">
+              <div className="w-[19px] h-[19px] csLg:w-[29px] csLg:h-[29px] flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium rounded-[8px]">
                 {item.icon}
               </div>
 
               {/* Content */}
               <div className="flex flex-col gap-3">
                 {/* Title */}
-                <h3 className="text-[16px] csLg:text-[32px] font-semibold csLg:font-normal text-[#2c2c2c] leading-[24px] csLg:leading-[40px] tracking-tight font-[Manrope]">
+                <h3 className="text-[16px] lg:text-[24px] font-semibold csLg:font-normal text-[#2c2c2c] leading-[24px] csLg:leading-[40px] tracking-tight font-[Manrope]">
                   {item.title}
                 </h3>
 

@@ -37,17 +37,17 @@ export default function SymptomSection({ properties }: StatisticsVisualProps) {
           </div>
 
         </div>
-        <div className="grid grid-cols-1 csLg:grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-1 csLg:grid-cols-3  w-full">
           {cards.map((card, index) => (
-            <div key={index} className="bg-[#Fefefe] w-full justify-between rounded-[16px] p-[24px] gap-[18px] flex flex-col items-start min-h-[188px]">
+            <div key={index} className="bg-[#Fefefe] w-full rounded-[16px] p-[24px] gap-[10px] lg:gap-[18px] flex flex-col items-start ">
               {card.icon && (
 
 
-                <img className="  text-center" src={card.icon} alt={card.title} />
+                <img className="w-[19px] h-[19px] md:w-[28px] md:h-[28px] object-contain" src={card.icon} alt={card.title} />
 
                 
               )}
-              <h2 className="  csLg:text-[32px] mt-[10px]  leading-[30px] font-normal text-[#2C2C2C] font-[manrope] csLg:leading-[38px]">
+              <h2 className="  csLg:text-[24px]  leading-[30px] font-normal text-[#2C2C2C]  csLg:leading-[38px]">
                 {card.title}
               </h2>
 

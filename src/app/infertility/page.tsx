@@ -18,6 +18,7 @@ import {
 import NewConstaltentForm from "@/page-components/infertilityV1/NewConstaltentForm";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
+import InfertilityHero from "@/page-components/infertilityV1/InfertilityHero";
 
 export function FeatureCard({ title, description, href }: FeatureCardProps) {
   const cardContent = (
@@ -67,18 +68,7 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
 
   return (
     <div className="w-full flex flex-col">
-      <HeroSection
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Infertility", href: "/infertility" },
-        ]}
-        title="Understanding Infertility"
-        buttonText="Book Your Appointment"
-        buttonLink="/book-appointment"
-        foregroundImage="/Infertility/Infertility_s1.png"
-        overlayImage="/treatments/doctor-foreground.png"
-        contentClassName="justify-start"
-      />
+      <InfertilityHero />
 
       <NavigationTabs
         categories={CATEGORIES}

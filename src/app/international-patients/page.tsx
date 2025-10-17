@@ -402,7 +402,7 @@ const InternationalPatientsPage: React.FC = () => {
  />
 
       <div
-        className="w-full bg-white pt-[30px] md:pt-[50px] px-[12px] md:px-[80px] xl:px-[120px]"
+        className="w-full bg-white p-4 lg:px-[120px] lg:py-[80px]"
       >
         <div className="flex flex-wrap justify-start items-start gap-3 md:gap-4 text-left">
           {categories.map((cat) => (
@@ -421,7 +421,7 @@ const InternationalPatientsPage: React.FC = () => {
         </div>
       </div>
 
-      <section id="start" className="csLg:px-[120px] px-[16px] py-[30px] md:py-[80px] bg-white">
+      <section id="start" className="lg:px-[120px] px-[16px] py-[16px] lg:py-[80px] bg-white">
         <Journey />
       </section>
 
@@ -469,7 +469,7 @@ const InternationalPatientsPage: React.FC = () => {
               <Link
                 key={issue.id}
                 href={`/infertility/${issue.slug}`}
-                className="flex flex-col items-center justify-between w-full px-6 pt-6 bg-[rgba(22,86,165,0.05)] rounded-2xl transition hover:bg-[#1656A51F]"
+                className="flex flex-col items-center justify-between w-full p-4 lg:p-[24px] bg-[rgba(22,86,165,0.05)] rounded-2xl transition hover:bg-[#1656A51F]"
               >
                 <h3 className="text-[#2C2C2C] text-[20px] md:text-[24px] font-normal leading-[28px] md:leading-[36px] text-start w-full font-[Manrope]">
                   {issue.title}

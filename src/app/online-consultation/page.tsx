@@ -5,6 +5,7 @@ import ConsultationForm from "../../components/Consultation/ConsultationForm";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection/herosection";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
+import OnlineConsultationHero from "@/page-components/oc/OnlineConsultationHero";
 
 
 const OnlineConsultation: React.FC = () => {
@@ -42,20 +43,9 @@ const OnlineConsultation: React.FC = () => {
 
 
   return (
-    <div className="w-full flex flex-col">
-      <HeroSection
+    <div className="w-full flex flex-col ">
       
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Online Consultation", href: "/online-consultation" },
-        ]}
-        title="IVF & Fertility <br/> Online Consultation"
-        buttonText="Book Your Appointment"
-        buttonLink="/book-appointment"
-        foregroundImage="/online-consultation/onlinebg.png"
-        overlayImage="/online-consultation/heartbg.png"
-        contentClassName="justify-start "
-      />
+      <OnlineConsultationHero />
 
 
       {/* 1. TAB BUTTONS (Adjusted pb-[80px] to pb-[40px] for less gap) */}
@@ -85,7 +75,7 @@ const OnlineConsultation: React.FC = () => {
           How It Works
         </button>
 
-        <button
+        {/* <button
           type="button"
           onClick={() => document.getElementById("quiz-section")?.scrollIntoView({ behavior: "smooth" })}
           className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px]  
@@ -95,8 +85,8 @@ const OnlineConsultation: React.FC = () => {
               : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
             }`}
         >
-          Take a Quiz
-        </button>
+          Take a Quiz 
+        </button> */}
       </div>
 
 
@@ -220,7 +210,7 @@ const OnlineConsultation: React.FC = () => {
 
       {/* 4️⃣ 4-Step Journey Section */}
 
-      <section id="how-section" className="w-full px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 bg-[#FAFAFA]">
+      <section id="how-section" className="w-full px-4 lg:px-[50px] xl:px-[84px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 bg-[#FAFAFA]">
         {/* Small Label (How it works) */}
 
 
@@ -275,14 +265,14 @@ const OnlineConsultation: React.FC = () => {
                 alt={card.title}
                 width={50}
                 height={50}
-                className="w-[28px] h-[28px] md:w-[50px] md:h-[50px] aspect-[1/1] object-contain"
+                className="w-[28px] h-[28px] md:w-[32px] md:h-[32px] aspect-[1/1] object-contain"
               />
 
               {/* Title (Contact Us etc.) */}
               <h3
                 className="
     text-[#2C2C2C] font-[Manrope] 
-    text-[16px] leading-[24px] tracking-[-0.32px] font-semibold  /* ✅ Mobile */
+    text-[16px] lg:text-[24px] leading-[24px] tracking-[-0.32px] font-semibold  /* ✅ Mobile */
     md:text-[24px] lg:text-[24px] md:leading-[40px] md:tracking-[-0.64px] md:font-normal  /* ✅ Desktop */
   "
               >
@@ -311,48 +301,40 @@ const OnlineConsultation: React.FC = () => {
 
 
 
-      <section
-        id="quiz-section"
-        className="
+     <section
+  id="quiz-section"
+  className="
     relative w-full flex flex-col
-    bg-no-repeat bg-cover bg-center h-[582px] md:h-[474px]
+    bg-no-repeat bg-cover
+    bg-center md:bg-[left_-230px_center-fixed]   lg:bg-[left_-340px_center] 
+    h-[582px] md:h-[474px]
     px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px]
     py-16 md:py-24 lg:py-[80px]
     /* ✅ Mobile Background */
     bg-[url('/online-consultation/take_a_quiz_bg_mobile.png')]
     md:bg-[url('/online-consultation/take_a_quiz_bg_desktop.png')]
   "
-      >
-        {/* 🔹 Overlay if needed */}
-        {/* <div className="absolute inset-0 bg-black/30"></div> */}
+>
+  {/* Content */}
+  <div className="relative z-10 max-w-[700px] text-left md:text-left">
+    <span className="flex items-center gap-1 px-2 py-1 text-[#1656A5] font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px] mb-4">
+      Quick Fertility Score, Expert Advice
+    </span>
 
-        {/* 🔹 Content */}
-        <div className="relative z-10 max-w-[700px] text-left md:text-left">
-          <span className="flex items-center gap-1 px-2 py-1  text-[#1656A5] font-[Manrope] text-[12px] font-medium leading-[20px] tracking-[-0.24px] mb-4">
-            Quick Fertility Score, Expert Advice
-          </span>
-
-          <h2
-            className="
+    <h2
+      className="
         text-[#2C2C2C] font-[Manrope] font-normal
         text-[28px] leading-[36px] tracking-[-0.56px] 
         md:text-[40px] md:leading-[48px] md:tracking-[-0.8px] 
         lg:text-[40px] lg:leading-[56px] lg:tracking-[-0.96px] 
         mb-6 md:mb-8
       "
-          >
-            Not Sure Where to Start? <br /> Take Our 2-Minute Fertility Quiz
-          </h2>
+    >
+      Not Sure Where to Start? <br /> Take Our 2-Minute Fertility Quiz
+    </h2>
+  </div>
+</section>
 
-         <button
-  type="button"
-  className="px-6 py-3 rounded-[8px] bg-[#1656A5] text-[#F9F9F9] font-[Manrope] text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition"
->
-  Take a Quiz
-</button>
-
-        </div>
-      </section>
 
 
 

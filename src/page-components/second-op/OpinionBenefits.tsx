@@ -27,8 +27,8 @@ const benefits = [
 
 const OpinionBenefits: React.FC = () => {
   return (
-    <section id='how' className="w-full bg-[#FFFFFF]">
-      <div className="section-spacing w-full">
+    <section id='how' className="w-full bg-[#FFFFFF] p-4 lg:px-[120px] lg:py-[80px]">
+      <div className="w-full">
         {/* Top Section: Tag + Main Heading */}
         <div className="csLg:mb-[80px] mb-[32px]" >
           {/* Tag/Button */}
@@ -43,19 +43,19 @@ const OpinionBenefits: React.FC = () => {
         </div>
 
         {/* Benefits Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 csLg:grid-cols-4 gap-6 csLg:gap-8" >
+        <div className="grid grid-cols-1 md:grid-cols-4 csLg:grid-cols-4 gap-[21px] csLg:gap-8" >
           {benefits.map((benefit, index) => (
             <div 
               key={index}
               className="bg-[#1656A50D] flex flex-col justify-between csLg:min-h-[394px] rounded-[12px] p-4 csLg:p-6 gap-3 csLg:gap-4"
             >
               {/* Icon */}
-              <div className="w-7 h-7 csLg:w-[50px] csLg:h-[50px] flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium">
+              <div className="w-[19px] h-[19px] lg:w-[29px] lg:h-[29px] flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium">
                 {benefit.icon}
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-2 csLg:max-w-[65%] csLg:min-h-[128px]">
+              <div className="flex flex-col gap-2 csLg:max-w-auto csLg:min-h-[128px]">
                 {/* Title */}
                 <h3 className="text-[16px] csLg:text-[16px] font-semibold text-[#2C2C2C] leading-[24px] tracking-tight font-[Manrope]">
                   {benefit.title}

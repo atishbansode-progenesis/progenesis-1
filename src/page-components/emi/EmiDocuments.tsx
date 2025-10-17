@@ -13,10 +13,10 @@ const Dash = () => <span className="text-[#2C2C2C]">-</span>;
  
 const EmiDocuments = () => {
   return (
-    <section id="stats" className="w-full relative overflow-hidden">
+    <section id="stats" className="w-full relative overflow-hidden p-4 lg:px-[120px] lg:py-[80px]">
       <div className="absolute inset-0 pointer-events-none bg-[url('/images/EmiLast.png')] bg-cover opacity-60" />
 
-      <div className="relative section-spacing w-full px-6 md:px-8 lg:px-16 py-10 md:py-14 pt-9">
+      <div className="relative  w-full">
         {/* Badge */}
         <div className="mb-3">
           <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] font-medium md:text-[13px] leading-[20px] px-3 py-1 rounded-[8px]">Stats and Metrics</span>

@@ -41,7 +41,7 @@ const ProcedureStepsNoImage: React.FC<ProcedureStepsNoImageProps> = ({ heading, 
               </div>
 
               {/* Step Content */}
-             <div className="lg:max-w-[200px] text-left">
+             <div className="text-left">
   <h3 className="text-[#2C2C2C] text-lg md:text-[16px] font-semibold mb-[8px]">
     {step.title}
   </h3>
