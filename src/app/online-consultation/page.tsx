@@ -49,7 +49,7 @@ const OnlineConsultation: React.FC = () => {
 
 
       {/* 1. TAB BUTTONS (Adjusted pb-[80px] to pb-[40px] for less gap) */}
-<div className="flex flex-wrap gap-4 pt-[20px] lg:pt-[40px] px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] lg:pb-[80px] pb-[40px] bg-[#fff]">        <button
+<div className="flex flex-wrap gap-4 p-4 lg:px-30 lg:py-20 bg-[#fff]">        <button
           type="button"
           onClick={() => document.getElementById("journey-section")?.scrollIntoView({ behavior: "smooth" })}
           className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
@@ -96,7 +96,7 @@ const OnlineConsultation: React.FC = () => {
 
 
       {/* 2️⃣ Section: Talk to Specialists (Adjusted py-4 to pt-0/py-0 on mobile and smaller padding on desktop) */}
-      <section id="journey-section" className="w-full flex flex-col lg:flex-row justify-between px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] pt-0 pb-4 md:py-8 l:py-12 2xl:py-16 gap-10 bg-[#FAFAFA]">
+      <section id="journey-section" className="w-full flex flex-col lg:flex-row justify-between p-4 lg:px-30 lg:py-20 gap-10 bg-[#FAFAFA]">
         {/* Left content */}
         <div className="max-w-lg flex flex-col justify-between">
           <div>
@@ -170,8 +170,8 @@ const OnlineConsultation: React.FC = () => {
 
         {/* 🔹 Left Heading */}
         <div className="flex-1 relative mt-[20px] md:mt-[80px] l:mt-[145px] z-10 text-left">
-          <h2 className="text-[#94BA3D] font-[600] text-[32px] md:text-[46px] font-semibold leading-[40px] md:leading-[44.84px] tracking-[-0.92px] opacity-90">
-  Book your consultation <br /> with our experts today.
+          <h2 className="text-[#94BA3D] text-[32px] md:text-[46px] font-semibold leading-[40px] md:leading-[44.84px] tracking-[-0.92px] opacity-90">
+  Book your consultation  with our experts today.
 </h2>
 
         </div>
@@ -210,7 +210,7 @@ const OnlineConsultation: React.FC = () => {
 
       {/* 4️⃣ 4-Step Journey Section */}
 
-      <section id="how-section" className="w-full px-4 lg:px-[50px] xl:px-[84px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 bg-[#FAFAFA]">
+      <section id="how-section" className="w-full p-4 lg:px-[120px] lg:py-[80px] bg-[#FAFAFA]">
         {/* Small Label (How it works) */}
 
 
