@@ -296,8 +296,8 @@ export const lahTreatmentData = {
   category : "advanced",
   title : "Laser Assisted Hatching - LAH",
   hero_title : "Laser Assisted Hatching - LAH",
-  hero_button_text : "Watch Now",
-  hero_button_link : "/watch-now",
+  hero_button_text : "Book Your Appointment",
+  hero_button_link : "/book-appointment",
   hero_image : "/treatments/lah/lahbg.png",
   breadcrumbs: [
     { label: "Home", href: "/" },
