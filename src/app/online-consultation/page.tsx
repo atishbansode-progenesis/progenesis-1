@@ -210,7 +210,7 @@ const OnlineConsultation: React.FC = () => {
 
       {/* 4️⃣ 4-Step Journey Section */}
 
-      <section id="how-section" className="w-full px-4 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 bg-[#FAFAFA]">
+      <section id="how-section" className="w-full px-4 lg:px-[50px] xl:px-[84px] 2xl:px-[120px] py-4 md:py-8 l:py-12 2xl:py-16 bg-[#FAFAFA]">
         {/* Small Label (How it works) */}
 
 
