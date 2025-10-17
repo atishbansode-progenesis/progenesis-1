@@ -249,9 +249,10 @@ const TreatmentsPage: React.FC = () => {
         title="Hope, Science & <br/> Parenthood  Begin Here"
         buttonText="Book Your Appointment"
         buttonLink="/book-appointment"
-        foregroundImage="/treatments/bg-overlay.png"
-        overlayImage="/treatments/doctor-foreground.png"
+        overlayImage="/treatments/infweb.png"
+        overlayImageSmall="/treatments/infmobile.png"
         contentClassName="justify-start"
+        showBlurredShape={false}
       />
 
       {/* 2️⃣ Category Tabs */}

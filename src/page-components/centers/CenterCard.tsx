@@ -174,7 +174,7 @@ export const centersData: Center[] = [
     services: ["IVF", "IUI", "Fertility Preservation"],
     mapUri: "wYmnqje6hZPsmSyX6",
     coordinates: { lat: 19.2406614, lng: 73.1296727 },
-    gallery: Array.from({ length: 13 }, (_, i) => `/AllCentersImage/Kalyan/Kalyan${i + 1}.jpg`)
+    gallery: Array.from({ length: 13 }, (_, i) => `/AllCentersImage/Kalyan/Kalyan${i + 1}.JPG`)
   },
   {
     id: 11,
@@ -264,7 +264,7 @@ export const centersData: Center[] = [
     services: ["IVF", "IUI", "Fertility Counseling"],
     mapUri: "tNr54ErBfVH7mHX67",
     coordinates: { lat: 19.1151738, lng: 74.7296822 },
-    gallery: Array.from({ length: 10 }, (_, i) => `/AllCentersImage/Ahilyanagar/Ahilyanagar${i + 1}.jpg`)
+    gallery: Array.from({ length: 10 }, (_, i) => `/AllCentersImage/Ahilyanagar/Ahilyanagar${i + 1}.JPG`)
   }
 ];
 

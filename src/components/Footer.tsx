@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
   className="relative w-full bg-[url('/images/foot-mob.png')] csLg:bg-[url('/footer.png')] bg-[#645242] min-h-[120vh] flex flex-col justify-between bg-no-repeat md:bg-fixed text-white overflow-hidden"
   style={{ 
     backgroundPosition: 'center top',
-    backgroundSize: '100% auto',
+    backgroundSize: '100% 100%',
   }}
 >
 
