@@ -146,7 +146,7 @@ export default function LocationsSection() {
             </span>
 
             <h2 className="mt-2 text-3xl md:text-5xl font-light text-gray-900 leading-snug">
-              Trusted care, now across <br />20+ centers near you...
+              Trusted care, now across <br />21+ centers near you...
             </h2>
           </div>
 

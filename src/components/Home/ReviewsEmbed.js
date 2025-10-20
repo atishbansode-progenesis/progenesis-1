@@ -11,7 +11,7 @@ export default function ReviewsEmbed() {
 
   return (
     <>
-    <h2>What our patient's are saying</h2>
+    {/* <h2>What our patient's are saying</h2> */}
     <div id="brb_collection_22772"></div>
     </>
   );
