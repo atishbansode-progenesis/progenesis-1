@@ -860,7 +860,7 @@ export const tubalBlockageData = {
       { label: "Home", href: "/" },
       { label: "Infertility", href: "/infertility" },
       { label: "Female Infertility", href: "/infertility/female" },
-      { label: "Tubal Blockage", href: "/infertility/tubal-blockage" },
+      { label: "Tubal Blockage", href: "/InfertilityIssues/tubal-hero.png"},
     ],
     title: "Tubal Blockage",
     buttonText: "Book Your Appointment",

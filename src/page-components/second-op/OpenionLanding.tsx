@@ -34,8 +34,10 @@ const OpenionLanding = () => {
 
             {/* Title */}
             <div>
-              <h1 className='font-manrope font-semibold csLg:text-[80px] text-[32px] csLg:leading-[88px] leading-[40px] tracking-[-0.02em] csLg:max-w-[60%]'>
-                IVF & Fertility Second Opinion
+              <h1 className='font-manrope font-semibold csLg:text-[60px] text-[32px] csLg:leading-[70px] leading-[40px] tracking-[-0.02em]'>
+                IVF & Fertility Second 
+                <br></br>
+                Opinion
               </h1>
             </div>
 

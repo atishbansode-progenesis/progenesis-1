@@ -50,7 +50,7 @@ export default function HeroSection({
   const [isOpen, setIsOpen] = useState(false);
   return (
     <section
-      className="relative w-full min-h-[400px] lg:min-h-[400px] flex px-4 py-4 md:px-[120px] md:py-[80px] overflow-hidden"
+      className="relative w-full min-h-[400px] lg:min-h-[480px] flex px-4 py-4 md:px-[120px] md:py-[80px] overflow-hidden"
       style={{
         backgroundImage: backgroundImage ? backgroundImage : "",
       }}
