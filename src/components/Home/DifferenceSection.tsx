@@ -90,6 +90,12 @@ const DifferenceSection = () => {
       subtitle:
         "Our success stories speak volumes about the commitment we bring to your dream of parenthood.",
     },
+    {
+      number: "06",
+      title: "New data will be adding here",
+      subtitle:
+        "New data will be adding here",
+    },
   ];
 
   const ref = useRef(null);

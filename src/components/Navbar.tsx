@@ -653,7 +653,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 
 const megaMenuDataMobile: Record<string, any> = {
   "About Us": {
-    image: "/Navbar/about.png",
+    image: "/Navbar/about-new.png",
     columns: [
       {
         title: "Discover Us",
@@ -848,7 +848,7 @@ const megaMenuDataMobile: Record<string, any> = {
 /* -------------------- DROPDOWN DATA -------------------- */
 const megaMenuData: Record<string, any> = {
   "About Us": {
-    image: "/Navbar/about.png",
+    image: "/Navbar/about-new.png",
     columns: [
       {
         title: "Discover Us",
