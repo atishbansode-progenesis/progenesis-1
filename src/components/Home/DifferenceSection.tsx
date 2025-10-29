@@ -92,9 +92,9 @@ const DifferenceSection = () => {
     },
     {
       number: "06",
-      title: "New data will be adding here",
+      title: "Holistic Wellness Support",
       subtitle:
-        "New data will be adding here",
+        "We go beyond treatment, nurturing your emotional and physical well-being through your fertility journey.",
     },
   ];
 
