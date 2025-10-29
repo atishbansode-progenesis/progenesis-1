@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
                 {Array.from({ length: 5 }).map((_, i) => {
                   const full = i + 1 <= Math.floor(rating);
                   const half = rating - i === 0.5;
-                  return <span key={i}>{full ? "★" : half ? "☆" : "☆"}</span>;
+                  return <span key={i}>{full ? "★" : half ? "★" : "★"}</span>;
                 })}
               </div>
 

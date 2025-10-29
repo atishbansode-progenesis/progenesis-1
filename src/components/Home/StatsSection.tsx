@@ -190,7 +190,7 @@ const StatsSection = () => {
     {
       label: "Centers",
       description: "Because hope should never be out of reach.",
-      value: "20+",
+      value: "21+",
     },
   ];
 
