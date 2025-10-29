@@ -241,6 +241,8 @@ import TestimonialsCenters from "./TestimonialCenters";
 import AppointmentForm from "../about/AppointmentForm";
 import CenterCarousel from "./CenterCarousel";
 import FAQCenters from "../about/FAQCenters";
+import GradientBanner from "../infertility-slug/GradientBanner";
+import InfoGridCenters from "./InfoGridCenters";
 
 interface SingleCenterProps {
   selectedSlug?: string;
@@ -263,6 +265,48 @@ interface CenterData {
   created_at: string;
   updated_at: string;
   faqs: FAQ[];
+}
+
+
+const infoGridCenters = {
+  tag: "Our Expertise",
+  heading: "Advanced fertility treatments backed <br/> by innovation and compassionate care",
+  items: [
+    {
+      id: 1,
+      title: "IVF & ICSI",
+      description:
+        "Personalized fertility solutions using advanced lab technology to ensure the highest success rates.",
+    },
+    {
+      id: 2,
+      title: "IUI Treatment",
+      description:"A minimally invasive and effective first-line approach for couples beginning their parenthood journey."
+        },
+        {
+          id: 3,
+          title: "Blastocyst Culture & Transfer",
+          description:
+            "Carefully nurtured embryos transferred at the most viable stage for improved implantation outcomes.",
+        },
+    {
+      id: 4,
+      title: "Laser Assisted Hatching (LAH)",
+      description:"Precision technique that enhances embryo implantation by aiding the natural hatching process."    },
+    
+    {  
+      id: 5,
+      title: "Donor Programs",
+      description:
+        "Safe and confidential oocyte and embryo donation programs designed to support complex fertility cases.",
+    },
+    {
+      id: 6,
+      title: "Laparoscopy & Hysteroscopy",
+      description:
+        "State-of-the-art diagnostic and surgical procedures to identify and treat underlying fertility issues.",
+    },
+  ],
 }
 
 export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
@@ -517,6 +561,8 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         gallery={selectedCenter.gallery}
         fallbackImage={selectedCenter.image}
       />
+      <GradientBanner text="Our chain of fertility clinic is one of the most successful IVF center in Thane, having completed more than 11,000+ successful IVFs. Our ART lab and IVF doctors, who have more than 45 years of combined experience,"/>
+      <InfoGridCenters  tag={infoGridCenters.tag} heading={infoGridCenters.heading} items={infoGridCenters.items}/>
 
       <CenterDoctorsSection />
       <TestimonialsCenters />

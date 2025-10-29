@@ -11,6 +11,7 @@ input[type="tel"],
 input[type="date"],
 select {
   color: #2C2C2C; /* same text color */
+  cursor: pointer;
 }
 
 /* Match placeholder styles */
@@ -49,4 +50,52 @@ option[value=""] {
 }
 option {
   color: #2C2C2C;
+  cursor: pointer;
+}
+
+/* Select dropdown scrolling - Mobile */
+@media (max-width: 768px) {
+  select {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  /* For browsers that support size attribute styling */
+  select[size] {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
+/* Select dropdown scrolling - Desktop */
+@media (min-width: 769px) {
+  select {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  /* For browsers that support size attribute styling */
+  select[size] {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+/* Improve scrollbar appearance for select elements */
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
