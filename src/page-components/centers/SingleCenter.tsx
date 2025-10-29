@@ -243,6 +243,7 @@ import CenterCarousel from "./CenterCarousel";
 import FAQCenters from "../about/FAQCenters";
 import GradientBanner from "../infertility-slug/GradientBanner";
 import InfoGridCenters from "./InfoGridCenters";
+import Detailing from "./Detailing";
 
 interface SingleCenterProps {
   selectedSlug?: string;
@@ -561,9 +562,9 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         gallery={selectedCenter.gallery}
         fallbackImage={selectedCenter.image}
       />
+      <Detailing />
       <GradientBanner text="Our chain of fertility clinic is one of the most successful IVF center in Thane, having completed more than 11,000+ successful IVFs. Our ART lab and IVF doctors, who have more than 45 years of combined experience,"/>
       <InfoGridCenters  tag={infoGridCenters.tag} heading={infoGridCenters.heading} items={infoGridCenters.items}/>
-
       <CenterDoctorsSection />
       <TestimonialsCenters />
       {faqData.length > 0 && (
