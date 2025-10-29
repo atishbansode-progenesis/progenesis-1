@@ -241,6 +241,7 @@ import TestimonialsCenters from "./TestimonialCenters";
 import AppointmentForm from "../about/AppointmentForm";
 import CenterCarousel from "./CenterCarousel";
 import FAQCenters from "../about/FAQCenters";
+import Detailing from "./Detailing";
 
 interface SingleCenterProps {
   selectedSlug?: string;
@@ -517,7 +518,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         gallery={selectedCenter.gallery}
         fallbackImage={selectedCenter.image}
       />
-
+      <Detailing />
       <CenterDoctorsSection />
       <TestimonialsCenters />
       {faqData.length > 0 && (
