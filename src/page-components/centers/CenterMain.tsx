@@ -4,11 +4,11 @@ import CentersNav from './CentersNav'
 import CentersLanding from "./CentersLanding";
 import AppointmentForm from "../about/AppointmentForm";
 
-const CenterMain = () => {
+const CenterMain = ({ centersData }: { centersData: any[] }) => {
   return (
     <div className="w-full bg-[#F6F6F6] !overflow-x-hidden">
       <CentersLanding />  
-      <CentersNav />
+      <CentersNav centersData={centersData} />
      
 
        <section className="relative overflow-hidden">

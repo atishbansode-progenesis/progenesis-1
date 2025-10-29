@@ -1,8 +1,6 @@
 import BlogMain from '@/page-components/blog/BlogMain';
 import { notFound } from 'next/navigation';
 
-const revalidate = 60 * 60 * 24; 
-
 const fetchBlogBySlug = async (slug: string) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${slug}`, {
     next: { revalidate:0},

@@ -26,7 +26,7 @@ const stateWithCities: StateCityMap = (() => {
 
 const CENTERS_PER_PAGE = 5;
 
-const CentersNav: React.FC = () => {
+const CentersNav: React.FC<{ centersData: Center[] }> = ({ centersData }) => {
   const defaultState = Object.keys(stateWithCities)[0];
   const defaultCity = stateWithCities[defaultState][0];
 

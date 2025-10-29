@@ -242,10 +242,6 @@ import AppointmentForm from "../about/AppointmentForm";
 import CenterCarousel from "./CenterCarousel";
 import FAQCenters from "../about/FAQCenters";
 
-interface SingleCenterProps {
-  selectedSlug?: string;
-}
-
 interface FAQ {
   uid: string;
   question: string;
@@ -255,30 +251,51 @@ interface FAQ {
   updated_at: string;
 }
 
-interface CenterData {
+interface CenterDataFromAPI {
   uid: string;
+  category: string | null;
   location: string;
-  description: string;
-  is_published: boolean;
+  slug: string;
+  url: string;
+  meta_title: string | null;
+  meta_description: string | null;
+  cover_image: string | null;
+  images: string[];
+  name: string;
+  city: string;
+  state: string;
+  address: string;
+  email: string;
+  services: any[];
+  sitemaps: any;
+  coordinates: any;
+  videos: any;
+  content: any;
+  alt_text: string | null;
+  testimonial_text: string | null;
+  faq: any;
+  google_reviews: any;
+  location_url: string | null;
+  contact_number: string;
+  description: string | null;
+  doctors: any[];
+  testimonials: any[];
   created_at: string;
   updated_at: string;
-  faqs: FAQ[];
 }
 
-export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
+interface SingleCenterProps {
+  centerData: CenterDataFromAPI;
+}
+
+export default function SingleCenter({ centerData }: SingleCenterProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [faqData, setFaqData] = useState<FAQ[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const selectedCenter = useMemo(() => {
-    if (!selectedSlug) {
-      return undefined;
-    }
-
-    const normalizedSlug = selectedSlug.toLowerCase();
-    return centersData.find((c) => c.slug === normalizedSlug);
-  }, [selectedSlug]);
+  // Use centerData directly from props instead of searching hardcoded data
+  const selectedCenter = centerData;
 
   useEffect(() => {
     const fetchCenterData = async () => {
@@ -311,12 +328,12 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   
           if (isMumbaiSuburb) {
             matchingCenter = data.results.find(
-              (center: CenterData) =>
+              (center: any) =>
                 center.location.toLowerCase() === "mumbai"
             );
           } else {
             matchingCenter = data.results.find(
-              (center: CenterData) =>
+              (center: any) =>
                 center.location.toLowerCase() === selectedCenter.name.toLowerCase()
             );
           }
@@ -337,12 +354,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
     if (selectedCenter) {
       fetchCenterData();
     }
-  }, [selectedCenter]);
-  
-
-  if (!selectedCenter) {
-    return null;
-  }
+  }, [selectedCenter.uid]);
 
   return (
     <div>
@@ -350,7 +362,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
       <section
         className="relative w-full h-[500px] bg-cover bg-center flex items-center"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${selectedCenter.image})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${selectedCenter.cover_image || selectedCenter.images?.[0] || '/images/default-center.jpg'})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -419,7 +431,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                       </span>
                     </div>
                     <p className="lg:text-[32px] text-base leading-5 font-normal md:leading-[40px] text-[#1656A5]">
-                      {selectedCenter.phone}
+                      {selectedCenter.contact_number}
                     </p>
                   </div>
                 </div>
@@ -459,14 +471,14 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                 <div className="flex flex-row flex-wrap gap-3 lg:gap-4 pt-[9px] lg:pt-[52px]">
                   <button
                     onClick={() => {
-                      if (selectedCenter.mapUri) {
+                      if (selectedCenter.location_url) {
                         window.open(
-                          `https://maps.app.goo.gl/${selectedCenter.mapUri}`,
+                          `https://maps.app.goo.gl/${selectedCenter.location_url}`,
                           "_blank"
                         );
                       }
                     }}
-                    disabled={!selectedCenter.mapUri}
+                    disabled={!selectedCenter.location_url}
                     className=" lg:px-8 lg:py-3 p-[10px] h-10 lg:h-14 w-fit rounded-lg border hover:cursor-pointer border-[#1656A5] text-white bg-[#1656A5] text-sm font-medium hover:bg-white hover:text-[#1656A5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Get Location
@@ -512,10 +524,10 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           )}
         </div>
       </section>
-
+      {console.log("selectedCenter", selectedCenter)}
       <CenterCarousel
-        gallery={selectedCenter.gallery}
-        fallbackImage={selectedCenter.image}
+        gallery={selectedCenter.images || []}
+        fallbackImage={selectedCenter.cover_image || selectedCenter.images?.[0] || '/images/default-center.jpg'}
       />
 
       <CenterDoctorsSection />

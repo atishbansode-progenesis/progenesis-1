@@ -4,11 +4,11 @@ import '../about/AboutMain.css'
 import DoctorsInfo from './DoctorsInfo'
 import AppointmentForm from '../about/AppointmentForm'
 import DoctorsPart from './DoctorsPart'
-const MainDoctors = () => {
+const MainDoctors = ({doctors}: {doctors: any}) => {
   return (
     <div className= "w-full overflow-x-hidden">
         <DoctorBanner/>
-        <DoctorsInfo />
+        <DoctorsInfo doctors={doctors} />
         <DoctorsPart />
         <section className="relative overflow-hidden">
           {/* Video Background */}

@@ -3,7 +3,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import ReviewsEmbed from "./ReviewsEmbed";
 import "swiper/css";
 import "swiper/css/navigation";
 

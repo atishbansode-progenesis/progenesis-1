@@ -24,7 +24,6 @@ const fetchBlogs = async () => {
 
 const page = async () => {
   const blogsData = await fetchBlogs();
-
   if (!blogsData) {
     notFound();
   }

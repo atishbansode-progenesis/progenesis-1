@@ -23,7 +23,6 @@ export interface Center {
   
 }
 
-// Centers data
 
 export const centersData: Center[] = [
   {
