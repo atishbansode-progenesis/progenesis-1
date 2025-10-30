@@ -186,10 +186,8 @@ const TestimonialsSection = () => {
               nextEl: nextRef.current,
             }}
             onBeforeInit={(swiper) => {
-              if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-              }
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
             }}
             onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
           >

@@ -14,8 +14,9 @@ interface NavigationTabsProps {
 
 export default function NavigationTabs({ categories, activeTab, onTabClick }: NavigationTabsProps) {
   return (
-    <div className="w-full bg-white p-4 csLg:py-[50px]  csLg:px-[120px] ">
-      <div className="flex flex-wrap justify-start items-start lg:gap-[24px] gap-4 md:gap-6 text-left">
+    <div className="w-full bg-white sticky top-0 z-50 p-4 csLg:py-[50px] csLg:px-[120px]">
+      {/* Mobile Version - Filled Button Style */}
+      <div className="flex csLg:hidden flex-wrap justify-start items-start gap-4 md:gap-6 text-left">
         {categories.map((cat) => (
           <button
             key={cat.id}
@@ -35,6 +36,34 @@ export default function NavigationTabs({ categories, activeTab, onTabClick }: Na
             `}
           >
             {cat.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Desktop Version - Underline Tab Style */}
+      <div className="hidden csLg:flex flex-wrap w-fit justify-start items-start gap-8 md:gap-12 text-left border-b border-gray-200">
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            type="button"
+            onClick={() => {
+              onTabClick(cat.id);
+            }}
+            className={`
+              cursor-pointer pb-4
+              font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px]
+              tracking-[-0.28px] transition-all duration-200
+              relative
+              ${activeTab === cat.id
+                ? "text-[#1656A5]"
+                : "text-gray-500 hover:text-[#1656A5]"
+              }
+            `}
+          >
+            {cat.label}
+            {activeTab === cat.id && (
+              <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1656A5] rounded-t-full" />
+            )}
           </button>
         ))}
       </div>

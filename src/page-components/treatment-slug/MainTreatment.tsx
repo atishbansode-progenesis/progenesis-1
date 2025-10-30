@@ -49,6 +49,7 @@ export default function MainTreatment({ data }: { data: any }) {
         buttonText={data?.hero_button_text || "Book Your Appointment"}
         buttonLink={data?.hero_button_link || "/book-appointment"}
         overlayImage={data?.hero_image || "/default-hero-bg.png"}
+        overlayImageSmall={data?.hero_image_small || null}
       />
 
       {/* Section 2: Navigation Tabs */}

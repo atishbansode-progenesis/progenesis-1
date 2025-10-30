@@ -16,7 +16,8 @@ export const imsiTreatmentData = {
   hero_title: "IMSI Treatment",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
-  hero_image: "/treatments/imsi/imsibg.png",
+  hero_image: "/treatments/imsi/imsibg1.png",
+  hero_image_small: "/treatments/imsi/imsibg_small.png",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Treatments", href: "/treatments" },
