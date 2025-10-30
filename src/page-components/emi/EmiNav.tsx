@@ -19,13 +19,11 @@ const EmiNav: React.FC = () => {
   };
 
   return (
-    <div className="relative sticky top-0 z-[20]">
       <NavigationTabs 
         categories={tabs}
         activeTab={activeTab}
         onTabClick={handleTabClick}
       />
-    </div>
   );
 };
 

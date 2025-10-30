@@ -108,26 +108,6 @@ const InternationalPatientsPage: React.FC = () => {
     },
   ];
 
-  const Letter = ({ char, index, total, scrollYProgress }) => {
-    const start = index / total;
-    const end = (index + 1) / total;
-
-    const color = useTransform(
-      scrollYProgress,
-      [start, end],
-      ["rgba(44,44,44,0.25)", "#2C2C2C"]
-    );
-
-    return (
-      <motion.span
-        style={{ color }}
-        className="text-sm md:text-[32px] md:leading-[40px] leading-8 tracking-[-0.32px] md:tracking-[-0.64px] font-[Manrope] font-normal"
-      >
-        {char}
-      </motion.span>
-    );
-  };
-
   const femaleInfertilityIssues = [
     {
       id: 1,
@@ -275,8 +255,10 @@ const InternationalPatientsPage: React.FC = () => {
                 nextEl: nextRef.current,
               }}
               onBeforeInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
+                if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
+                  swiper.params.navigation.prevEl = prevRef.current;
+                  swiper.params.navigation.nextEl = nextRef.current;
+                }
               }}
               onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
               className="testimonial-swiper"
@@ -392,13 +374,11 @@ const InternationalPatientsPage: React.FC = () => {
 
    <HeroInter/>
 
-      <div className="w-full bg-white relative sticky top-0 z-[20]">
         <NavigationTabs 
           categories={categories}
           activeTab={activeTab}
           onTabClick={handleScroll}
         />
-      </div>
 
       <section id="start" className="lg:px-[120px] px-[16px] py-[16px] lg:py-[80px] bg-white">
         <Journey />

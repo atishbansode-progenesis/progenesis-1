@@ -45,7 +45,6 @@ const OnlineConsultation: React.FC = () => {
       <OnlineConsultationHero />
 
       {/* Navigation Tabs */}
-      <div className="w-full bg-white relative sticky top-0 z-[20]">
         <NavigationTabs
           categories={[
             { id: "journey", label: "Start Your Journey Today" },
@@ -59,7 +58,6 @@ const OnlineConsultation: React.FC = () => {
             document.getElementById(`${id}-section`)?.scrollIntoView({ behavior: "smooth" });
           }}
         />
-      </div>
 
 
 

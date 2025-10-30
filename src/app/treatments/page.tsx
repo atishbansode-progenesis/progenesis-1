@@ -256,8 +256,6 @@ const TreatmentsPage: React.FC = () => {
         showBlurredShape={false}
       />
 
-      {/* 2️⃣ Category Tabs */}
-      <div className="w-full bg-white relative sticky top-0 z-[20]">
         <NavigationTabs
           categories={categories}
           activeTab={activeTab}
@@ -269,9 +267,7 @@ const TreatmentsPage: React.FC = () => {
             });
           }}
         />
-      </div>
 
-      {/* 3️⃣ Personalized Treatments */}
       <section
         id="path"
         className="px-4 py-4 csLg:px-[120px] csLg:py-[80px] bg-[#F9F9F9]"
