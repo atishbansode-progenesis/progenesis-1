@@ -51,18 +51,18 @@ export default function NavigationTabs({ categories, activeTab, onTabClick }: Na
             }}
             className={`
               cursor-pointer pb-4
-              font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px]
+              font-[Manrope] text-[12px] md:text-[16px] font-medium leading-[24px]
               tracking-[-0.28px] transition-all duration-200
               relative
               ${activeTab === cat.id
                 ? "text-[#1656A5]"
-                : "text-gray-500 hover:text-[#1656A5]"
+                : "text-[#606060] hover:text-[#1656A5]"
               }
             `}
           >
             {cat.label}
             {activeTab === cat.id && (
-              <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1656A5] rounded-t-full" />
+              <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#1656A5] rounded-t-full" />
             )}
           </button>
         ))}

@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
 import StoriesSection from "@/components/Home/StoriesSection"; //
 import AppointmentForm from "@/page-components/about/AppointmentForm";
+import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
 
 interface FeatureCardProps {
   title: string;
@@ -256,30 +257,18 @@ const TreatmentsPage: React.FC = () => {
       />
 
       {/* 2️⃣ Category Tabs */}
-      <div className="flex flex-wrap gap-4 px-[16px] py-[16px]  csLg:py-[50px] csLg:px-[120px]  bg-[#fff]">
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            type="button"
-            onClick={() => {
-              setActiveTab(cat.id);
-              document.getElementById(cat.id)?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }}
-            className={`px-[10px] cursor-pointer py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
-    font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px] 
-    transition-colors duration-200
-    ${
-      activeTab === cat.id
-        ? "bg-[#1656A5] text-white"
-        : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-    }`}
-          >
-            {cat.label}
-          </button>
-        ))}
+      <div className="w-full bg-white relative sticky top-0 z-[20]">
+        <NavigationTabs
+          categories={categories}
+          activeTab={activeTab}
+          onTabClick={(id) => {
+            setActiveTab(id);
+            document.getElementById(id)?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }}
+        />
       </div>
 
       {/* 3️⃣ Personalized Treatments */}

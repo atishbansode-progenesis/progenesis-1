@@ -1,56 +1,31 @@
 import React, { useState } from "react";
+import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
 
 const tabs = [
-  { key: "financial", label: "Financial Support" },
-  { key: "care", label: "We Take Care of You" },
-  { key: "stats", label: "Stats and Metrics" },
+  { id: "financial", label: "Financial Support" },
+  { id: "care", label: "We Take Care of You" },
+  { id: "stats", label: "Stats and Metrics" },
 ];
 
 const EmiNav: React.FC = () => {
-  // ✅ Set first tab active by default (you can also start with "" if you want none active)
-  const [active, setActive] = useState<string>("financial");
+  const [activeTab, setActiveTab] = useState("financial");
 
-  const handleScroll = (id: string) => {
-    setActive(id);
+  const handleTabClick = (id: string) => {
+    setActiveTab(id);
     const element = document.getElementById(id);
     if (!element) return;
-
     const y = element.getBoundingClientRect().top + window.scrollY - 20;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   return (
-    <nav className="w-full bg-white relative z-[20]">
-      <div className="px-4 py-4 md:px-[120px] md:py-[60px]">
-        <div className="flex flex-wrap items-center gap-3 lg:gap-6 relative z-[30]">
-          {tabs.map((t) => {
-            const isActive = t.key === active;
-
-            return (
-              <button
-                key={t.key}
-                type="button"
-                onClick={() => handleScroll(t.key)}
-                className={`lg:rounded-[16px] rounded-[8px] font-medium h-10 md:h-[56px] transition-all duration-200 
-                  text-[12px] leading-[20px] md:text-[14px] md:leading-[24px] px-[10px] tracking-tight md:px-5 py-[10px] md:py-4 
-                  border cursor-pointer
-                  ${
-                    isActive
-                      ? "bg-[#1656A5] text-white border-transparent"
-                      : "bg-white text-[#1656A5] border-[#1656A5]/60 hover:bg-[#1656A5] hover:text-white"
-                  }`}
-                style={{
-                  zIndex: 50, // ✅ ensures clickable on desktop
-                  position: "relative",
-                }}
-              >
-                {t.label}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </nav>
+    <div className="relative sticky top-0 z-[20]">
+      <NavigationTabs 
+        categories={tabs}
+        activeTab={activeTab}
+        onTabClick={handleTabClick}
+      />
+    </div>
   );
 };
 

@@ -17,6 +17,7 @@ import { useRouter } from "next/navigation";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 import HeroSection from "@/components/HeroSection/herosection";
 import HeroInter from "@/page-components/international-patient/HeroInter";
+import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
 const InternationalPatientsPage: React.FC = () => {
   const categories = [
     { id: "start", label: "Start Your Journey Today" },
@@ -391,24 +392,12 @@ const InternationalPatientsPage: React.FC = () => {
 
    <HeroInter/>
 
-      <div
-        className="w-full bg-white p-4 lg:px-[120px] lg:py-[80px]"
-      >
-        <div className="flex flex-wrap justify-start items-start gap-3 md:gap-4 text-left">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => handleScroll(cat.id)}
-              className={`cursor-pointer px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] tracking-[-0.28px] transition-all duration-200 ${activeTab === cat.id
-                ? "bg-[#1656A5] text-white shadow-md"
-                : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-                }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
+      <div className="w-full bg-white relative sticky top-0 z-[20]">
+        <NavigationTabs 
+          categories={categories}
+          activeTab={activeTab}
+          onTabClick={handleScroll}
+        />
       </div>
 
       <section id="start" className="lg:px-[120px] px-[16px] py-[16px] lg:py-[80px] bg-white">

@@ -1,6 +1,6 @@
-// src/components/Navbar.tsx
 'use client'
 import React, { useState } from "react";
+import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
 
 const sections = [
   { id: "why-1", label: "The Journey" },
@@ -12,10 +12,10 @@ const sections = [
 ];
 
 const AboutNav: React.FC = () => {
-  const [active, setActive] = useState("why-1");
+  const [activeTab, setActiveTab] = useState("why-1");
 
-  const handleScroll = (id: string) => {
-    setActive(id);
+  const handleTabClick = (id: string) => {
+    setActiveTab(id);
     const element = document.getElementById(id);
     if (!element) return;
     // Smooth scroll with a small offset compensation for sticky headers if any
@@ -24,24 +24,11 @@ const AboutNav: React.FC = () => {
   };
 
   return (
-    <nav className="bg-[#FFFFFF]">
-      <div className="px-4 py-4 md:py-[50px] md:px-[120px] flex flex-wrap md::gap-6 gap-3">
-           {sections.map((section) => (
-        <button
-          key={section.id}
-          onClick={() => handleScroll(section.id)}
-          className={`lg:h-[56px] h-[40px] px-3 inline-flex items-center hover:cursor-pointer justify-center text-sm font-medium text-[12px] md:text-[13px] lg:text-[14px] gap-2 lg:rounded-[16px] md:rounded-[12px] rounded-[8px] border transition-colors duration-300 ${
-            active === section.id
-              ? "bg-[#1656A5] text-[#F9F9F9] border-[#1656A5]"
-              : "text-[#1656A5] border-[#1656A5] hover:bg-[#1656A5] hover:text-[#F9F9F9]"
-          }`}
-        >
-          {section.label}
-        </button>
-      ))}
-      </div>
-     
-    </nav>
+    <NavigationTabs 
+      categories={sections}
+      activeTab={activeTab}
+      onTabClick={handleTabClick}
+    />
   );
 };
 

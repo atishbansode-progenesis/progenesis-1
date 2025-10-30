@@ -6,10 +6,9 @@ import Link from "next/link";
 import HeroSection from "@/components/HeroSection/herosection";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 import OnlineConsultationHero from "@/page-components/oc/OnlineConsultationHero";
-
+import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
 
 const OnlineConsultation: React.FC = () => {
-
 
   const [activeTab, setActiveTab] = useState<keyof typeof sections>("journey");
 
@@ -40,57 +39,27 @@ const OnlineConsultation: React.FC = () => {
 
   const { tabname, title, subtitle, text, image } = sections[activeTab];
 
-
-
   return (
     <div className="w-full flex flex-col ">
 
       <OnlineConsultationHero />
 
-
-      {/* 1. TAB BUTTONS (Adjusted pb-[80px] to pb-[40px] for less gap) */}
-      <div className="flex flex-wrap gap-4 p-4 lg:px-30 lg:py-20 bg-[#fff]">        <button
-        type="button"
-        onClick={() => document.getElementById("journey-section")?.scrollIntoView({ behavior: "smooth" })}
-        className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px] 
-      font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] 
-      tracking-[-0.28px] transition ${activeTab === "journey"
-            ? "bg-[#1656A5] text-white"
-            : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-          }`}
-      >
-        Start Your Journey Today
-      </button>
-
-        <button
-          type="button"
-          onClick={() => document.getElementById("how-section")?.scrollIntoView({ behavior: "smooth" })}
-          className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px]  
-      font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] 
-      tracking-[-0.28px] transition ${activeTab === "how"
-              ? "bg-[#1656A5] text-white"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-            }`}
-        >
-          How It Works
-        </button>
-
-        {/* <button
-          type="button"
-          onClick={() => document.getElementById("quiz-section")?.scrollIntoView({ behavior: "smooth" })}
-          className={`px-[10px] py-[10px] md:px-[20px] md:py-[16px] rounded-[8px] md:rounded-[16px]  
-      font-[Manrope] text-[12px] md:text-[14px] font-medium leading-[24px] 
-      tracking-[-0.28px] transition ${activeTab === "quiz"
-              ? "bg-[#1656A5] text-white"
-              : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5]/10"
-            }`}
-        >
-          Take a Quiz 
-        </button> */}
+      {/* Navigation Tabs */}
+      <div className="w-full bg-white relative sticky top-0 z-[20]">
+        <NavigationTabs
+          categories={[
+            { id: "journey", label: "Start Your Journey Today" },
+            { id: "how", label: "How It Works" },
+            // Uncomment the line below if you want to include the quiz tab
+            // { id: "quiz", label: "Take a Quiz" }
+          ]}
+          activeTab={activeTab}
+          onTabClick={(id) => {
+            setActiveTab(id as keyof typeof sections);
+            document.getElementById(`${id}-section`)?.scrollIntoView({ behavior: "smooth" });
+          }}
+        />
       </div>
-
-
-
 
 
 
