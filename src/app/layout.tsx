@@ -4,6 +4,7 @@ import { Manrope } from 'next/font/google';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NextTopLoader from 'nextjs-toploader';
+import MainContent from "@/components/MainContent";
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -26,7 +27,7 @@ export default function RootLayout({
       <body className={`antialiased ${manrope.variable}`}>
         <Navbar />
         <NextTopLoader color="#1656A5" />
-        {children}
+        <MainContent>{children}</MainContent>
         <Footer />
       </body>
     </html>

@@ -14,7 +14,7 @@ interface NavigationTabsProps {
 
 export default function NavigationTabs({ categories, activeTab, onTabClick }: NavigationTabsProps) {
   return (
-    <div className="w-full bg-white sticky top-0 z-20 p-4 csLg:py-[50px] csLg:px-[120px]">
+    <div className="w-full bg-white top-0 z-20 p-4 csLg:sticky csLg:pt-[50px] csLg:pb-[20px] csLg:px-[120px]">
       {/* Mobile Version - Filled Button Style */}
       <div className="flex csLg:hidden flex-wrap justify-start items-start gap-4 md:gap-6 text-left">
         {categories.map((cat) => (

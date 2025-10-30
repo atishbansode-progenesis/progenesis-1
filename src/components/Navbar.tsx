@@ -806,7 +806,7 @@ const megaMenuDataMobile: Record<string, any> = {
               { label: "Ovulation Induction", path: "/treatments/infertility/ovulation-induction/" },
               { label: "IUI", path: "/treatments/infertility/artificial-insemination-iui-treatment/" },
               { label: "IVF", path: "/treatments/infertility/ivf/" },
-              { label: "IVF-ICSI ", path: "/treatmentsinfertility/ivf-icsi/" },
+              { label: "IVF-ICSI ", path: "/treatments/infertility/ivf-icsi/" },
               { label: "Frozen Embryo Transfer", path: "/treatments/infertility/frozen-embryo-transfer/" },
               { label: "Fertility Surgery  ", path: "/treatments/infertility/fertility-surgery/" },
             ],
@@ -1378,6 +1378,8 @@ export default function Navbar() {
     }
   }, [isMobileMenuOpen]);
   
+  const pathname = usePathname();
+  
   // ─── NAVBAR SHOW/HIDE ON SCROLL ────────────────────────
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
@@ -1394,14 +1396,20 @@ export default function Navbar() {
       const currentY = window.scrollY || 0;
       if (Math.abs(currentY - lastScrollY.current) < SCROLL_THRESHOLD) return;
 
-      if (
-        currentY > lastScrollY.current &&
-        currentY > HIDE_AFTER &&
-        !isMobileMenuOpen &&
-        !isSearchOpen
-      ) {
-        setShowHeader(false);
+      // Only hide/show navbar on home page
+      if (pathname === "/") {
+        if (
+          currentY > lastScrollY.current &&
+          currentY > HIDE_AFTER &&
+          !isMobileMenuOpen &&
+          !isSearchOpen
+        ) {
+          setShowHeader(false);
+        } else {
+          setShowHeader(true);
+        }
       } else {
+        // Always show navbar on other pages
         setShowHeader(true);
       }
 
@@ -1420,12 +1428,9 @@ export default function Navbar() {
 
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [isMobileMenuOpen, isSearchOpen]);
+  }, [isMobileMenuOpen, isSearchOpen, pathname]);
   // ────────────────────────────────────────────────────────────
 
-
-
-  const pathname = usePathname();
   // Close mobile menu automatically on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -1465,7 +1470,10 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-300 will-change-transform bg-white font-sans ${showHeader ? "translate-y-0 shadow-sm" : "-translate-y-full"
+      <header className={`${pathname === "/" ? "fixed" : "relative"} top-0 left-0 right-0 z-50 w-full transition-transform duration-300 will-change-transform bg-white font-sans ${
+          pathname === "/" 
+            ? (showHeader ? "translate-y-0 shadow-sm" : "-translate-y-full")
+            : "translate-y-0 shadow-sm"
         }`}>
         {/* NAVBAR */}
         {!isSearchOpen && (
@@ -1985,9 +1993,7 @@ export default function Navbar() {
 
 
 
-      </header>
-      <div className="h-20" aria-hidden="true" />
-      
+      </header>      
       {/* Appointment Form Popup */}
       {isAppointmentFormOpen && (
         <AppointmentForm onClose={() => setIsAppointmentFormOpen(false)} />

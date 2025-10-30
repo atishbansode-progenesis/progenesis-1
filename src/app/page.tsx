@@ -20,7 +20,6 @@ import FaQ from "@/page-components/about/FaQ";
 export default function Home() {
   return (
     <>
-
       <HeroCarousel />
       <StatsSection />
       <TreatmentsSection />
