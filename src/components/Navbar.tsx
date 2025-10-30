@@ -662,15 +662,15 @@ const megaMenuDataMobile: Record<string, any> = {
           { label: "Our Vision & Mission", path: "/about-us#our-vision" },
           { label: "Why choose us", path: "/about-us#why-choose-us" },
           { label: "Leadership Team", path: "/leadership-team" },
-          { label: "Impact & Growth", path: "/about-us#impact-growth" },
+          // { label: "Impact & Growth", path: "/about-us#impact-growth" },
           { label: "FAQs", path: "/about-us#faqs" },
         ],
       },
       {
         title: "Quick Links",
         links: [
-          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isWhatsapp: true },
           { label: "Online Consultation", path: "/online-consultation", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
@@ -686,12 +686,12 @@ const megaMenuDataMobile: Record<string, any> = {
         title: "Know Infertility",
         links: [
           {
-            label: "What is Infertility", path: "/infertility#path",
+            label: "What is Infertility", path: "/infertility#about",
             submenu: [
-              { label: "Overview", path: "/infertility" },
-              { label: "Symptoms", path: "/infertility" },
-              { label: "Diagnosis", path: "/infertility" },
-              { label: "Treatment Options", path: "/infertility" },
+              { label: "Overview", path: "/infertility#about" },
+              { label: "Symptoms", path: "/infertility#about" },
+              { label: "Diagnosis", path: "/infertility#about" },
+              { label: "Treatment Options", path: "/infertility#about" },
             ],
           },
           {
@@ -715,14 +715,13 @@ const megaMenuDataMobile: Record<string, any> = {
               { label: "Erectile Dysfunction (ED)", path: "/infertility/male/erectile-dysfunction/" },
             ],
           },
-          { label: "Real Stories. Real Miracles.", path: "/infertility#stories-section" },
         ],
       },
       {
         title: "Quick Links",
         links: [
-          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isWhatsapp: true },
           { label: "Online Consultation", path: "/online-consultation", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
@@ -763,8 +762,8 @@ const megaMenuDataMobile: Record<string, any> = {
       {
         title: "Quick Links",
         links: [
-          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isWhatsapp: true },
           { label: "Online Consultation", path: "/online-consultation", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
@@ -831,8 +830,8 @@ const megaMenuDataMobile: Record<string, any> = {
       {
         title: "Quick Links",
         links: [
-          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isWhatsapp: true },
           { label: "Online Consultation", path: "/online-consultation", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
@@ -858,7 +857,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Our Vision & Mission", path: "/about-us#our-vision" },
           { label: "Why choose us", path: "/about-us#why-choose-us" },
           { label: "Leadership Team", path: "/leadership-team" },
-          { label: "Impact & Growth", path: "/about-us#impact-growth" },
+          // { label: "Impact & Growth", path: "/about-us#impact-growth" },
           { label: "FAQs", path: "/about-us#faqs" },
         ],
       },
@@ -866,8 +865,8 @@ const megaMenuData: Record<string, any> = {
         title: "Quick Links",
         links: [
           { label: "Book Appointment", path: "/appointment", isButton: true },
-          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isWhatsapp: true },
           // { label: "Take a Quiz", path: "/quiz", isarrow: true },
           // { label: "Online Consult", path: "/online-consult", isarrow: true },
           // { label: "EMI Options", path: "/emi-options", isarrow: true },
@@ -893,12 +892,12 @@ const megaMenuData: Record<string, any> = {
         title: "Know Infertility",
         links: [
           {
-            label: "What is Infertility", path: "/infertility#path",
+            label: "What is Infertility", path: "/infertility#about",
             submenu: [
-              { label: "Overview", path: "/infertility" },
-              { label: "Symptoms", path: "/infertility" },
-              { label: "Diagnosis", path: "/infertility" },
-              { label: "Treatment Options", path: "/infertility" },
+              { label: "Overview", path: "/infertility#about" },
+              { label: "Symptoms", path: "/infertility#about" },
+              { label: "Diagnosis", path: "/infertility#about" },
+              { label: "Treatment Options", path: "/infertility#about" },
             ],
           },
           {
@@ -922,15 +921,14 @@ const megaMenuData: Record<string, any> = {
               { label: "Erectile Dysfunction (ED)", path: "/infertility/male/erectile-dysfunction/" },
             ],
           },
-          { label: "Real Stories. Real Miracles.", path: "/infertility#stories-section" },
         ],
       },
       {
         title: "Quick Links",
         links: [
           { label: "Book Appointment", path: "/appointment", isButton: true },
-          { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
+          { label: "+91 94239 71260", path: "tel:+919423971260", isWhatsapp: true },
           // { label: "Take a Quiz", path: "/quiz", isarrow: true },
           // { label: "Online Consult", path: "/online-consult", isarrow: true },
           // { label: "EMI Options", path: "/emi-options", isarrow: true },
@@ -1115,11 +1113,9 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
           className="
       hidden sm:block
       w-[200px] sm:w-[250px] md:w-[300px] lg:w-[300px]
-      h-[350px]
       flex-shrink-0
       transition-all duration-300
       [@media(min-width:1920px)]:w-[500px]
-      [@media(min-width:1920px)]:h-[500px]
     "
         >
           <Image
@@ -1127,7 +1123,7 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
             alt='menu-img'
             width={500}
             height={500}
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-auto object-contain rounded-lg"
           />
         </div>
       )}
