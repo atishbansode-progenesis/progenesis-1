@@ -7,6 +7,7 @@ export type Doctor = {
   slug: string;
   name: string;
   bio: string;
+  singlePageBio?: string;
   experience: string;
   qualifications: string;
   fellowship: string;
@@ -20,9 +21,10 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-narhari-s-malgaonkar",
     name: "Dr. Narhari S. Malgaonkar",
-    bio:
-      "Dr. Narhari S. Malagaonkar is the dedicated and exclusive chief fertility consultant.",
+    singlePageBio:
+      "Dr. Narhari believes in combining advanced reproductive science with compassionate patient care. He takes time to understand every couple’s emotional and medical journey, ensuring each treatment plan is unique and backed by trust and transparency.",
     experience: "12+ Years of Experience",
+    bio: "He emphasises a fully personalised fertility treatment plan and advanced laboratory technologies to address each couple’s unique infertility issues.",
     qualifications: "DNB/DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
     hospital: "Mumbai",
@@ -33,8 +35,9 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-sonali-malgaonkar",
     name: "Dr. Sonali Malgaonkar",
-    bio:
-      "Dr. Sonali Malagaonkar is the dedicated and exclusive chief fertility consultant.",
+    singlePageBio:
+      "Dr. Sonali focuses on guiding patients through every step of their fertility journey with empathy and clarity. She believes emotional reassurance and education are just as vital as treatment, helping couples feel confident and understood throughout the process.",
+    bio: "She combines fertility and gynaecological care with clear, empathetic communication, helping couples understand every step of their journey.",
     experience: "12+ Years of Experience",
     qualifications: "DNB/DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -46,7 +49,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-unnati-mamtora",
     name: "Dr. Unnati Mamtora",
-    bio: "Fertility Consultant, Borivali",
+    singlePageBio: "Dr. Unnati blends research-based medical practice with a personal touch, explaining procedures in detail and involving couples in every decision. Her calm and approachable nature helps patients feel comfortable even during challenging fertility treatments.",
+    bio: "She combines fertility and gynaecological care with clear, empathetic communication, helping couples understand every step of their journey.",
     experience: "12+ Years of Experience",
     qualifications: "DNB DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -58,7 +62,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-dinesh-wade",
     name: "Dr. Dinesh Wade",
-    bio: "Fertility Consultant, Pune",
+    singlePageBio: "Dr. Dinesh follows a holistic and transparent approach to fertility care, focusing on creating an open dialogue with his patients. He believes that informed decisions lead to better outcomes, ensuring couples fully understand their options before proceeding.",
+    bio: "Based in Pune, he brings together obstetrics-Gynaecology and reproductive medicine to support couples through their parenthood journey.",
     experience: "14+ Years of Experience",
     qualifications: "MBBS, MS, DNB (OBST & GYNAE), FNB, MRCOG (UK)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -70,7 +75,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-shital-sonone",
     name: "Dr. Shital Sonone",
-    bio: "Fertility Consultant, Nashik.",
+    singlePageBio: "Dr. Shital is known for her patient-first mindset, especially when treating couples facing repeated IVF or IUI failures. She brings empathy and perseverance to her consultations, helping patients regain confidence and hope through tailored treatment plans.",
+    bio: "Located in Nashik, she focuses on endoscopic surgeries and advanced infertility treatments including managing patients with repeated IUI/IVF failures.",
     experience: "09+ Years of Experience",
     qualifications: "MS (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -82,7 +88,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-rajashree-patil",
     name: "Dr. Rajashree Patil",
-    bio: "Fertility Consultant, Virar.",
+    singlePageBio: "Dr. Rajashree ensures that each couple feels emotionally supported and well-informed during their fertility journey. Her gentle communication style and ability to simplify complex medical terms make patients feel valued and secure.",
+    bio: "Located in Virar, she focuses on endoscopic surgeries and advanced infertility treatments including managing patients with repeated IUI/IVF failures.",
     experience: "12+ Years of Experience",
     qualifications: "DNB DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -94,7 +101,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-darshna-wahane",
     name: "Dr. Darshna Wahane",
-    bio: "Fertility Consultant, Panvel",
+    singlePageBio: "Dr. Darshna promotes holistic health alongside fertility treatments, ensuring women understand their reproductive wellness fully. She believes in building long-term trust and creating a safe environment where patients feel heard and respected.",
+    bio: "Serving at the Panvel centre, she combines general gynae-obstetric care with fertility consultation and enjoys teaching the importance of regular health-checkups.",
     experience: "10+ Years of Experience",
     qualifications: "MBBS DGO (OBST & GYNAE)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -106,7 +114,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-priti-pardeshi",
     name: "Dr. Priti Pardeshi",
-    bio: "Fertility Consultant, Kalyan",
+    singlePageBio: "Dr. Priti is known for her approachable personality and clear guidance in fertility care. She focuses on understanding each patient’s story deeply and provides solutions that balance emotional and medical needs with compassion.",
+    bio: "At the Kalyan location, she specialises in reproductive medicine and treats a broad range of fertility issues for couples.",
     experience: "12+ Years of Experience",
     qualifications: "DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -118,7 +127,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-teena-desai",
     name: "Dr. Teena Desai",
-    bio: "Fertility Consultant, Andheri.",
+    singlePageBio: "Dr. Teena takes a comprehensive approach by addressing both male and female fertility challenges together. She focuses on holistic wellbeing and open communication, ensuring that couples feel supported throughout their treatment.",
+    bio: "She handles fertility consultations from the Andheri centre and is noted to have authored work on male sub-fertility as part of her research interests.",
     experience: "10+ Years of Experience",
     qualifications: "DNB DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -130,7 +140,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-bhavika-sane",
     name: "Dr. Bhavika Sane",
-    bio: "Fertility Consultant, Vashi.",
+    singlePageBio: "Dr. Bhavika blends scientific precision with empathy, making complex fertility treatments easy to understand. She believes that success in fertility care comes from patience, reassurance, and treating each couple as a unique partnership.",
+    bio: "Operating in Vashi, she is described as a fertility consultant with a strong clinical acumen backed by her past hospital work in Mumbai.",
     experience: "04+ Years of Experience",
     qualifications: "DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -142,7 +153,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-prerna-khandelwal",
     name: "Dr. Prerna Khandelwal",
-    bio: "Fertility Consultant, Thane.",
+    singlePageBio: "Dr. Prerna is dedicated to creating a calm, positive, and personalised fertility experience for every couple. Her transparent and optimistic approach helps patients stay hopeful and engaged through each stage of their treatment.",
+    bio: "She focuses on personalising fertility care and supporting patients through each step with understanding and trust.",
     experience: "04+ Years of Experience",
     qualifications: "MS (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -154,7 +166,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-shradha-pol",
     name: "Dr. Shradha Pol",
-    bio: "Fertility Consultant, Thane.",
+    singlePageBio: "Dr. Shraddha approaches fertility care with empathy and evidence-based practice, guiding patients gently through sensitive decisions. She believes that informed and emotionally balanced patients have the best chance at success.",
+    bio: "She applies research-based methods and clear guidance to help patients navigate IVF and infertility with confidence.",
     experience: "04+ Years of Experience",
     qualifications: "MS (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
@@ -166,7 +179,8 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-vivek-bagul",
     name: "Dr. Vivek Bagul",
-    bio: "Fertility Consultant, Jalgaon.",
+    singlePageBio: "Dr. Vivek is known for his composed and reassuring nature, ensuring that every patient feels comfortable discussing their concerns openly. His approach centres on providing clarity, emotional support, and precise fertility care.",
+    bio: "Dr. Vivek’s calm and reassuring nature helps patients feel comfortable sharing their concerns. He focuses on clarity, emotional support, and precise fertility care.",
     experience: "04+ Years of Experience",
     qualifications: "DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
