@@ -1047,8 +1047,8 @@ const megaMenuData: Record<string, any> = {
             submenu: [
               { label: "Ovulation Induction", path: "/treatments/infertility/ovulation-induction/" },
               { label: "IUI", path: "/treatments/infertility/artificial-insemination-iui-treatment/" },
-              { label: "IVF", path: "/treatments/infertility/ivf/" },
-              { label: "IVF-ICSI ", path: "/treatmentsinfertility/ivf-icsi/" },
+              { label: "IVF", path: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/" },
+              { label: "IVF-ICSI ", path: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/" },
               { label: "Frozen Embryo Transfer", path: "/treatments/infertility/frozen-embryo-transfer/" },
               { label: "Fertility Surgery  ", path: "/treatments/infertility/fertility-surgery/" },
 
