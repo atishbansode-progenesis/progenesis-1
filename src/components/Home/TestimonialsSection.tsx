@@ -3,7 +3,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import ReviewsEmbed from "./ReviewsEmbed";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -187,8 +186,10 @@ const TestimonialsSection = () => {
               nextEl: nextRef.current,
             }}
             onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
+              if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }
             }}
             onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
           >
