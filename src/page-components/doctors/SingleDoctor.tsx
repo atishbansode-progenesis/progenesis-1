@@ -26,7 +26,7 @@ export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }
                 <h3 className="text-[26px] csLg:text-[40px] text-[#1656A5] font-normal tracking-[-0.02em]">
                   {selectedDoctor.name}
                 </h3>
-                <p className="mt-2 text-[14px] md:text-[16px] text-[#606060] max-w-[780px]">{selectedDoctor.bio}</p>
+                <p className="mt-2 text-[14px] md:text-[16px] text-[#606060] max-w-[780px]">{selectedDoctor.singlePageBio}</p>
 
                 {/* Meta row: Hospital | Specialty | Languages */}
                 <div className="mt-6 flex flex-row items-start gap-8 lg:gap-[135px] pb-4">

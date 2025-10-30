@@ -350,21 +350,29 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
     <div>
       {/* Hero Banner Section */}
       <section
-        className="relative w-full h-[500px] bg-cover bg-center flex items-center"
+        className="relative w-full h-[500px] bg-cover bg-center flex  flex-col"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${selectedCenter.image})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
-        <div className="section-spacing max-w-7xl w-full">
-          <h1 className="text-white text-[32px] md:text-[48px] leading-[40px] md:leading-[56px] lg:text-[80px] lg:leading-[88px] font-[Manrope] tracking-tight font-semibold mb-4">
+        <div className="lg:pl-30 pl-4 lg:pt-20 pt-4 max-w-7xl w-full">
+          <h1 className="text-white text-[32px] leading-[40px] lg:text-[60px] lg:leading-[66px] font-[Manrope] tracking-tight font-semibold mb-4">
             Progenesis IVF,
           </h1>
-          <h2 className="text-white text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] lg:text-[80px] lg:leading-[88px] font-semibold font-[Manrope] mb-6">
+          <h2 className="text-white text-[32px] leading-[40px] lg:text-[60px] lg:leading-[66px] font-semibold tracking-tight font-[Manrope] mb-6">
             {selectedCenter.name}
           </h2>
         </div>
+        <div className='lg:pl-30 pl-4 pt-5'>
+                        <button 
+                            onClick={() => setIsOpen(true)} 
+                            className='bg-[#1656A5] lg:p-[8px] p-[8px] h-[40px] w-[150px] lg:h-[56px] lg:w-[188px] text-[12px] lg:text-[14px]  text-[#F9F9F9] rounded-[8px] lg:rounded-[16px]  hover:cursor-pointer transition'
+                        >
+                            Book Your Appointment
+                        </button>
+                    </div>
       </section>
 
       {/* Center Details Section */}
