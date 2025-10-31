@@ -30,7 +30,7 @@ const doctors = [
   },
   {
     name: "Dr. Dinesh Wade",
-    image: "/DoctorsSection/DrDinesh.png",
+    image: "/images/doctors/Dinesh.png",
     description:
       "Dr. Dinesh Wade is a Senior IVF Consultant specializing in obstetrics, gynecology, and reproductive medicine, dedicated to providing comprehensive fertility care.",
     experience: [
@@ -43,7 +43,7 @@ const doctors = [
   },
   {
     name: "Dr. Unnati Mamtora",
-    image: "/DoctorsSection/DrUnnati.png",
+    image: "/images/doctors/Unnati.png",
     description:
       "Dr. Unnati Mamora is a Fertility Consultant with several publications and awards, providing research-driven, empathetic care at Progenesis IVF.",
     experience: [
@@ -56,7 +56,7 @@ const doctors = [
   },
   {
     name: "Dr. Shital Sonone",
-    image: "/DoctorsSection/DrShital.png",
+    image: "/images/doctors/Shital.png",
     description:
       "Dr. Shital Sonone is a Senior IVF Consultant in Nashik with expertise in infertility, advanced procedures, and patient education. She is a member of ISAR and holds an MD in Obstetrics and Gynaecology.",
     experience: [
@@ -69,7 +69,7 @@ const doctors = [
   },
   {
     name: "Dr. Rajashree Patil",
-    image: "/DoctorsSection/DrRajashree.png",
+    image: "/images/doctors/Rajashree.png",
     description:
       "Dr. Rajashree Patil is a Fertility Consultant specializing in gynecology and infertility, known for her attentive and personalized approach to patient care.",
     experience: [
@@ -82,7 +82,7 @@ const doctors = [
   },
   {
     name: "Dr. Darshna Wahane",
-    image: "/DoctorsSection/DrDarshna.png",
+    image: "/images/doctors/Darshna.png",
     description:
       "Dr. Darshna Wahane, Fertility Consultant, manages infertility and designs personalized treatments with a compassionate patient approach.",
     experience: [
@@ -95,7 +95,7 @@ const doctors = [
   },
   {
     name: "Dr. Priti Pardeshi",
-    image: "/DoctorsSection/DrPriti.png",
+    image: "/images/doctors/Priti.png",
     description:
       "Dr. Priti Pardeshi is a Fertility Consultant at Progenesis Fertility Center, Kalyan. She specializes in obstetrics, gynecology, and reproductive medicine, providing personalized fertility care.",
     experience: [
@@ -108,7 +108,7 @@ const doctors = [
   },
   {
     name: "Dr. Teena  Desai",
-    image: "/DoctorsSection/DrTeena.png",
+    image: "/images/doctors/Teena.png",
     description:
       "Dr. Teena Desai is a Fertility Consultant with expertise in high-risk obstetrics, gynecology, and fertility, and has contributed to research in male subfertility.",
     experience: [
@@ -121,7 +121,7 @@ const doctors = [
   },
   {
     name: "Dr. Bhavika Sane",
-    image: "/DoctorsSection/DrBhavika.png",
+    image: "/images/doctors/Bhavika.png",
     description:
       "Dr. Bhavika Sane is a Fertility Consultant with a background in gynecology and obstetrics, committed to effective and compassionate infertility care.",
     experience: [
@@ -134,7 +134,7 @@ const doctors = [
   },
   {
     name: "Dr. Prerna Khandelwal",
-    image: "/DoctorsSection/DrPrerna.png",
+    image: "/images/doctors/Prerna.png",
     description:
       "Dr. Prerna Khandelwal is a Fertility Consultant specializing in reproductive medicine, offering advanced and tailored fertility care at Progenesis IVF.",
     experience: [
@@ -147,7 +147,7 @@ const doctors = [
   },
   {
     name: "Dr. Shraddha Pol",
-    image: "/DoctorsSection/DrShraddha.png",
+    image: "/images/doctors/Shradha.png",
     description:
       "Dr. Shraddha Pol is a Fertility Consultant focused on infertility and IVF, committed to providing supportive care and improving patient outcomes.",
     experience: [
@@ -160,7 +160,7 @@ const doctors = [
   },
   {
     name: "Dr. Vivek  Bagul",
-    image: "/DoctorsSection/DrVivek.png",
+    image: "/images/doctors/Vivek.png",
     description:
       "Dr. Vivek Bagul serves as a Fertility Consultant, experienced in high-risk obstetric and gynecology procedures, and passionate about supporting patients’ fertility journeys.",
     experience: [

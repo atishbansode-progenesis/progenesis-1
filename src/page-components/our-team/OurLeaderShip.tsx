@@ -16,39 +16,82 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Dr. Narhari S. Malgaonkar",
     role: "Chief Fertility Consultant | Mumbai",
-    image: "/team/dr-narhari.png",
+    image: "/DoctorsSection/doctorimage.png",
   },
   {
     id: 2,
-    name: "Mr. Prashant Aher",
-    role: "Chief Fertility Consultant | Mumbai",
-    image: "/team/prashant-aher.png",
+    name: "Dr. Sonali Malagaonkar",
+    role: "Sr. Fertility Consultant | Mumbai",
+    image: "/DoctorsSection/DrSonali.png",
   },
   {
     id: 3,
-    name: "Mr. Sandeep Aher",
-    role: "Chief Fertility Consultant | Mumbai",
-    image: "/team/sandeep-aher.png",
+    name: "Dr. Dinesh Wade",
+    role: "Fertility Consultant | Pune",
+    image: "/images/doctors/Dinesh.png",
   },
   {
     id: 4,
-    name: "Dr. Sneha Patil",
-    role: "Chief Fertility Consultant | Mumbai",
-    image: "/team/dr-sneha.png",
+    name: "Dr. Unnati Mamtora",
+    role: "Fertility Consultant | Borivali",
+    image: "/images/doctors/Unnati.png",
   },
   {
     id: 5,
-    name: "Dr. Ramesh Kulkarni",
-    role: "Chief Fertility Consultant | Mumbai",
-    image: "/team/dr-ramesh.png",
+    name: "Dr. Shital Sonone",
+    role: "Fertility Consultant | Nashik",
+    image: "/images/doctors/Shital.png",
   },
   {
     id: 6,
-    name: "Dr. Kavita Joshi",
-    role: "Chief Fertility Consultant | Mumbai",
-    image: "/team/dr-kavita.png",
+    name: "Dr. Rajashree Patil",
+    role: "Fertility Consultant | Virar",
+    image: "/images/doctors/Rajashree.png",
+  },
+  {
+    id: 7,
+    name: "Dr. Darshna Wahane",
+    role: "Fertility Consultant | Panvel",
+    image: "/images/doctors/Darshna.png",
+  },
+  {
+    id: 8,
+    name: "Dr. Priti Pardeshi",
+    role: "Fertility Consultant | Kalyan",
+    image: "/images/doctors/Priti.png",
+  },
+  {
+    id: 9,
+    name: "Dr. Teena Desai",
+    role: "Fertility Consultant | Andheri",
+    image: "/images/doctors/Teena.png",
+  },
+  {
+    id: 10,
+    name: "Dr. Bhavika Sane",
+    role: "Fertility Consultant | Vashi",
+    image: "/images/doctors/Bhavika.png",
+  },
+  {
+    id: 11,
+    name: "Dr. Prerna Khandelwal",
+    role: "Fertility Consultant | Thane",
+    image: "/images/doctors/Prerna.png",
+  },
+  {
+    id: 12,
+    name: "Dr. Shraddha Pol",
+    role: "Fertility Consultant | Thane",
+    image: "/images/doctors/Shradha.png",
+  },
+  {
+    id: 13,
+    name: "Dr. Vivek Bagul",
+    role: "Fertility Consultant | Jalgaon",
+    image: "/images/doctors/Vivek.png",
   },
 ];
+
 
 const LeadershipTeam: React.FC = () => {
   const [isGridView, setIsGridView] = useState(true);
@@ -181,14 +224,14 @@ const LeadershipTeam: React.FC = () => {
                 ${isGridView ? "text-center p-4 md:p-6" : "flex items-center lg:max-w-full gap-4 p-4"}`}
             >
               <div
-                className={`relative ${isGridView ? "w-full h-60 mb-4" : "lg:w-32 w-24 h-24 lg:h-40 flex-shrink-0"
+                className={`relative ${isGridView ? "w-full h-75 mb-4" : "lg:w-32 w-24 h-24 lg:h-40 flex-shrink-0"
                   }`}
               >
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-cover object-end rounded-lg"
                 />
               </div>
               <div
