@@ -396,17 +396,51 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
           {field.options[0].label
             .split(/(\bPrivacy Policy\b|\bT&C\b)/g)
             .map((part: string, i: number) => {
-              if (part === "Privacy Policy" || part === "T&C") {
+              if (part === "Privacy Policy") {
                 return (
-                    part
+                  <a
+                    key={i}
+                    href="/privacy-policy"
+                    className="text-blue-600 hover:underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {part}
+                  </a>
                 );
               }
-              return part;
+              if (part === "T&C") {
+                return (
+                  <a
+                    key={i}
+                    href="/privacy-policy"
+                    className="text-blue-600 hover:underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {part}
+                  </a>
+                );
+              }
+              return <span key={i}>{part}</span>;
             })}
         </>
       ) : (
         <>
-          Clicking means you agree to our Privacy Policy and T&C
+          Clicking means you agree to our{" "}
+          <a
+            href="/privacy-policy"
+            className="text-blue-600 hover:underline"
+            onClick={(e) => e.stopPropagation()}
+          >
+            Privacy Policy
+          </a>
+          {" "}and{" "}
+          <a
+            href="/terms-and-conditions"
+            className="text-blue-600 hover:underline"
+            onClick={(e) => e.stopPropagation()}
+          >
+            T&C
+          </a>
         </>
       )}
     </label>
