@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 
@@ -268,7 +268,11 @@ const HeroCarousel = () => {
         ))}
       </div>
 
-      {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
+      {isOpen && 
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+      <AppointmentForm onClose={() => setIsOpen(false)} />
+      </Suspense>
+      }
     </div>
   );
 };

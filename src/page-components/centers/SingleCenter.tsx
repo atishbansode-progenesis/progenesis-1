@@ -232,7 +232,7 @@
 
 
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, Suspense } from "react";
 import { centersData, type Center } from "./CenterCard";
 import { useRouter } from "next/navigation";
 import FaQ from "../about/FaQ";
@@ -534,7 +534,9 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
 
                   {/* Modal */}
                   {isOpen && (
-                    <AppointmentForm onClose={() => setIsOpen(false)} />
+                    <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+                      <AppointmentForm onClose={() => setIsOpen(false)} />
+                    </Suspense>
                   )}
                 </div>
               </div>

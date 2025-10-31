@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GradientBanner from "@/components/GradientBanner";
@@ -642,7 +642,9 @@ const TreatmentsPage: React.FC = () => {
       <StoriesSection />
       </section>
 
-      <AppointmentForm />
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+        <AppointmentForm />
+      </Suspense>
       <GradientBanner text="Every journey to parenthood is unique — with the right care, hope finds its way." />
 
       {/* </div> */}

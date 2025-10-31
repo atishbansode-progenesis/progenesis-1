@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import HeroSection from "@/components/HeroSection/herosection";
 import StoriesSection from "@/components/Home/StoriesSection";
 import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
@@ -142,7 +142,9 @@ export default function MainTreatment({ data }: { data: any }) {
       <ParenthoodBanner/>
 
       {/* Section 9: Consultation Form */}
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
       <AppointmentForm />
+      </Suspense>
     </div>
   );
 }

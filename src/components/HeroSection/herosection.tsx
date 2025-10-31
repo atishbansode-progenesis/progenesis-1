@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -166,7 +166,11 @@ export default function HeroSection({
           </div>
         </div>
       )}
-      {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
+      {isOpen && 
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+      <AppointmentForm onClose={() => setIsOpen(false)} />
+      </Suspense>
+      }
     </section>
   );
 }

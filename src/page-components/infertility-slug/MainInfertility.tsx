@@ -1,6 +1,6 @@
 // pages/infertility/repeated-iui-failures/index.tsx
 "use client";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import StoriesSection from "@/components/Home/StoriesSection";
 import HeroSection from "@/components/HeroSection/herosection";
@@ -97,7 +97,9 @@ export default function MainInfertility({ data }: { data: any }) {
       </section>
 
       {/* <ConsultationForm /> */}
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
       <AppointmentForm />
+      </Suspense>
 
       {/* Section 9: Gradient Banner */}
       <GradientBanner

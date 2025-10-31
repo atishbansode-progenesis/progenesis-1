@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
@@ -451,7 +451,9 @@ const InternationalPatientsPage: React.FC = () => {
         <AwardsSection />
       </section>
           
-          <AppointmentForm />
+          <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+            <AppointmentForm />
+          </Suspense>
     </main>
   );
 };

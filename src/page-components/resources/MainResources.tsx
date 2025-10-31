@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, { Suspense } from "react";
 import "../about/AboutMain.css";
 import ResourceLanding from "./ResourceLanding";
 import ResourceGrid from "./ResourceGrid";
@@ -16,7 +16,9 @@ const MainResources = async ({ initialBlogs, totalCount }: any) => {
       <ResourceStories />
       <ResourceCta />
       <FaQ />
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
       <AppointmentForm />
+      </Suspense>
     </div>
   );
 };

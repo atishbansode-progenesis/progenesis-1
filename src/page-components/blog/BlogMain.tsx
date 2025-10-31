@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import BlogLanding from "./BlogLanding";
 import BlogContent from "./BlogContent";
 import "../about/AboutMain.css";
@@ -64,7 +64,9 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
       </div>
       <FaQ />
       <ParenthoodBannerBlog />
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
       <AppointmentForm />
+      </Suspense>
     </div>
   );
 };

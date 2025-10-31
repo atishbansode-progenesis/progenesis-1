@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -45,11 +45,11 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     { name: "Witness System", link: "/treatments/advanced/witness-system/" },
     { name: "Cryopreservation", link: "/treatments/advanced/cryopreservation/" },
 
-    
+
     { name: "Ovulation Induction", link: "/treatments/infertility/ovulation-induction/" },
 
     { name: "IUI", link: "/treatments/infertility/artificial-insemination-iui-treatment/" },
-    
+
     { name: "IVF", link: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/" },
 
     { name: "IVF-ICSI", link: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/" },
@@ -100,7 +100,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     { name: "Dr. Shradha Pol", role: "Fertility Consultant, Thane", img: "/images/doctors/Shradha.png", link: "/doctors/dr-shradha-pol/" },
     { name: "Dr. Vivek Bagul", role: "Fertility Consultant, Jalgaon", img: "/images/doctors/Vivek.png", link: "/doctors/dr-vivek-bagul/" },
   ];
-  
+
 
   const updatePopupPosition = (step: "what" | "where" | "who") => {
     const el = buttonRefs.current[step];
@@ -1259,7 +1259,7 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
                     ) : (
                       <div
                         className="relative transition-all duration-150"
-                        onMouseEnter={() =>  setExpandedLink(link.label)}
+                        onMouseEnter={() => setExpandedLink(link.label)}
                         onMouseLeave={() => {
                           // Clear the expanded link, but Mumbai will stay visible via the render condition
                           if (link.label !== "Mumbai") {
@@ -1329,34 +1329,34 @@ export default function Navbar() {
   const [activeMobileSubmenuItem, setActiveMobileSubmenuItem] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAppointmentFormOpen, setIsAppointmentFormOpen] = useState(false);
-  
+
   // Prevent background scrolling on mobile (especially iOS/iPhone)
   React.useEffect(() => {
     if (isMobileMenuOpen) {
       // Save current scroll position
       const scrollY = window.scrollY;
-      
+
       // Apply styles to prevent scrolling (works on iOS)
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollY}px`;
       document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
-      
+
       return () => {
         // Restore body styles
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
         document.body.style.overflow = '';
-        
+
         // Restore scroll position
         window.scrollTo(0, scrollY);
       };
     }
   }, [isMobileMenuOpen]);
-  
+
   const pathname = usePathname();
-  
+
   // ─── NAVBAR SHOW/HIDE ON SCROLL ────────────────────────
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
@@ -1446,10 +1446,9 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`${pathname === "/" ? "fixed" : "relative"} top-0 left-0 right-0 z-50 w-full transition-transform duration-300 will-change-transform bg-white font-sans ${
-          pathname === "/" 
-            ? (showHeader ? "translate-y-0 shadow-sm" : "-translate-y-full")
-            : "translate-y-0 shadow-sm"
+      <header className={`${pathname === "/" ? "fixed" : "relative"} top-0 left-0 right-0 z-50 w-full transition-transform duration-300 will-change-transform bg-white font-sans ${pathname === "/"
+          ? (showHeader ? "translate-y-0 shadow-sm" : "-translate-y-full")
+          : "translate-y-0 shadow-sm"
         }`}>
         {/* NAVBAR */}
         {!isSearchOpen && (
@@ -1638,19 +1637,19 @@ export default function Navbar() {
                 <>
                   {navigationItems.map((item, idx) => (
                     <div key={idx}>
- <button
-  onClick={() => {
-    if (item.hasMegaMenu) {
-      setActiveMobileSubmenu(item.label);
-    } else {
-      setIsMobileMenuOpen(false);
-      window.location.href = item.path; // ✅ instant redirect
-    }
-  }}
-  className={`w-full flex items-center justify-between py-3 font-[Manrope] text-[20px] font-normal tracking-[-0.4px]
+                      <button
+                        onClick={() => {
+                          if (item.hasMegaMenu) {
+                            setActiveMobileSubmenu(item.label);
+                          } else {
+                            setIsMobileMenuOpen(false);
+                            window.location.href = item.path; // ✅ instant redirect
+                          }
+                        }}
+                        className={`w-full flex items-center justify-between py-3 font-[Manrope] text-[20px] font-normal tracking-[-0.4px]
     ${activeMobileSubmenu === item.label ? "text-[#1656A5]" : "text-[#7E7E7E]"}
     hover:text-[#1656A5] transition-colors duration-200`}
->
+                      >
 
                         {item.label}
 
@@ -1963,16 +1962,11 @@ export default function Navbar() {
           </div>
         )}
 
-
-
-
-
-
-
-      </header>      
-      {/* Appointment Form Popup */}
+      </header>
       {isAppointmentFormOpen && (
-        <AppointmentForm onClose={() => setIsAppointmentFormOpen(false)} />
+        <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+          <AppointmentForm onClose={() => setIsAppointmentFormOpen(false)} />
+        </Suspense>
       )}
     </>
 

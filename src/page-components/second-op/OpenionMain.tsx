@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import '../about/AboutMain.css'
 import OpenionLanding from "./OpenionLanding";
 import OpinionNav from "./OpinionNav";
@@ -31,7 +31,9 @@ const OpenionMain = () => {
             <source src="/video/baby.mp4" type="video/mp4" />
           </video>
           
-            <AppointmentForm />
+            <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+              <AppointmentForm />
+            </Suspense>
           </div>
         </section>
 

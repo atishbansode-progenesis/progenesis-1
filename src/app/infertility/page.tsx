@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
@@ -87,7 +87,9 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
       </section>
 
       {/* <NewConstaltentForm /> */}
-      <AppointmentForm />
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+        <AppointmentForm />
+      </Suspense>
 
       <GradientBanner />
     </div>

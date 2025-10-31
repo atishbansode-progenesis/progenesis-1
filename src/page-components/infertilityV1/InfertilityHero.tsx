@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import AppointmentForm from '../about/AppointmentForm';  // import form component
 
 const InfertilityHero = () => {
@@ -34,7 +34,11 @@ const InfertilityHero = () => {
 
 
             {/* Modal */}
-            {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
+            {isOpen && 
+            <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+            <AppointmentForm onClose={() => setIsOpen(false)} />
+            </Suspense>
+            }
         </div>
     )
 }

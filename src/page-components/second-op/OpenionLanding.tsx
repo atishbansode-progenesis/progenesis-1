@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import '../about/AboutMain.css'
 import AppointmentForm from "../about/AppointmentForm";
 
@@ -53,7 +53,11 @@ const OpenionLanding = () => {
 
         {/* Right column removed; background image now covers entire section */}
       </div>
-      {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
+      {isOpen && (
+        <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+          <AppointmentForm onClose={() => setIsOpen(false)} />
+        </Suspense>
+      )}
     </section>
   );
 };

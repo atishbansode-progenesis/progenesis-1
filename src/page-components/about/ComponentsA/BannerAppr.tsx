@@ -661,7 +661,7 @@
 
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, Suspense } from 'react';
 import AppointmentForm from '../AppointmentForm';
 
 // Slide data
@@ -937,7 +937,11 @@ const BannerOfApproach: React.FC = () => {
                       {s.ctaThird}
                     </button> */}
 
-                    {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
+                    {isOpen && 
+                    <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+                    <AppointmentForm onClose={() => setIsOpen(false)} />
+                    </Suspense>
+                    }
                   </div>
                         
                   <div className="grid grid-cols-1 gap-6 max-w-[1100px] pt-5">
@@ -993,7 +997,11 @@ const BannerOfApproach: React.FC = () => {
                     {s.ctaSecondary}
                   </button> */}
 
-                  {isOpen && <AppointmentForm onClose={() => setIsOpen(false)} />}
+                  {isOpen && 
+                  <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+                  <AppointmentForm onClose={() => setIsOpen(false)} />
+                  </Suspense>
+                  }
                 </div>
 
                 <div className="grid grid-cols-2 csLg:grid-cols-4">

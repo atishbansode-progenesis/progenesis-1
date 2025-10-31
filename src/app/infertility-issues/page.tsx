@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import Image from "next/image";
 import React from "react";
 import ConsultationForm from "../../components/Consultation/ConsultationForm";
@@ -287,7 +287,9 @@ export default function InfertilityIssues() {
   
 
       {/* Section 4: Form */}
-      <AppointmentForm />
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+        <AppointmentForm />
+      </Suspense>
     </div>
   );
 };

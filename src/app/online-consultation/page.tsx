@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Image from "next/image";
 import ConsultationForm from "../../components/Consultation/ConsultationForm";
 import Link from "next/link";
@@ -303,7 +303,9 @@ const OnlineConsultation: React.FC = () => {
 
 
 
-      <AppointmentForm />
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+        <AppointmentForm />
+      </Suspense>
     </div>
   );
 };

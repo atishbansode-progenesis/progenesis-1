@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 import ConsultationForm from "../../components/Consultation/ConsultationForm";
 import AwardsSection from "../../components/Home/AwardsSection";
@@ -30,7 +31,9 @@ export default function Home() {
       <FaqSection />
       <AwardsSection />
        <VideoSection />
-      <AppointmentForm />
+      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+        <AppointmentForm />
+      </Suspense>
       <GradientBanner text="Striving to set a new standard for <br/> reproductive health care services." />
     </>
   );
