@@ -656,7 +656,7 @@ const megaMenuDataMobile: Record<string, any> = {
     image: "/Navbar/about-new.png",
     columns: [
       {
-        title: "Discover Us",
+        title: "About Us",
         links: [
           { label: "Our Approach", path: "/about-us#our-approach" },
           { label: "Our Vision & Mission", path: "/about-us#our-vision" },
@@ -851,7 +851,7 @@ const megaMenuData: Record<string, any> = {
     image: "/Navbar/about-new.png",
     columns: [
       {
-        title: "Discover Us",
+        title: "About Us",
         links: [
           // { label: "Why Progenesis", path: "/about-us#why-1" },
           { label: "Our Approach", path: "/about-us#our-approach" },
