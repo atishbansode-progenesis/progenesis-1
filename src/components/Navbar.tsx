@@ -84,22 +84,23 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     { name: "Ahilyanagar", desc: "(Mauli Sankul Road)", icon: "/images/Ahilyanagar.jpg", link: "/centers/ahilyanagar/" },
   ];
 
-  const doctors = [
-    { name: "Dr. Narhari S. Malgaonkar", role: "Chief Fertility Consultant, Mumbai", img: "/DoctorsSection/doctorimage.png", link: "doctors/dr-narhari-s-malgaonkar/" },
-    { name: "Dr. Sonali Malgonkar", role: "Sr. Fertility Consultant, Mumbai", img: "/DoctorsSection/DrSonali.png", link: "/doctors/dr-sonali-malgaonkar/" },
-    { name: "Dr. Dinesh Wade", role: "Fertility Consultant, Pune", img: "/DoctorsSection/DrDinesh.png", link: "/doctors/dr-unnati-mamtora/" },
-    { name: "Dr. Unnati Mamtora", role: "Fertility Consultant, Borivali", img: "/DoctorsSection/DrUnnati.png", link: "/doctors/dr-dinesh-wade/" },
-    { name: "Dr. Shital Sonone", role: "Fertility Consultant, Nashik", img: "/DoctorsSection/DrShital.png", link: "/doctors/dr-shital-sonone/" },
-    { name: "Dr. Rajashree Patil", role: "Fertility Consultant, Virar", img: "/DoctorsSection/DrRajashree.png", link: "/doctors/dr-rajashree-patil/" },
-    { name: "Dr. Darshna Wahane", role: "Fertility Consultant, Panvel", img: "/DoctorsSection/DrDarshna.png", link: "/doctors/dr-darshna-wahane/" },
-    { name: "Dr. Priti Pardeshi", role: "Fertility Consultant, Kalyan", img: "/DoctorsSection/DrPriti.png", link: "/doctors/dr-priti-pardeshi/" },
-    { name: "Dr. Teena Desai", role: "Fertility Consultant, Andheri", img: "/DoctorsSection/DrTeena.png", link: "/doctors/dr-teena-desai/" },
-    { name: "Dr. Bhavika Sane", role: "Fertility Consultant, Vashi", img: "/DoctorsSection/DrBhavika.png", link: "/doctors/dr-bhavika-sane/" },
-    { name: "Dr. Prerna Khandelwal", role: "Fertility Consultant, Thane", img: "/DoctorsSection/DrPrerna.png", link: "/doctors/dr-prerna-khandelwal/" },
-    { name: "Dr. Shradha Pol", role: "Fertility Consultant, Thane", img: "/DoctorsSection/DrShraddha.png", link: "/doctors/dr-shradha-pol/" },
-    { name: "Dr. Dr. Vivek Bagul", role: "Fertility Consultant, Jalgaon.", img: "/DoctorsSection/DrVivek.png", link: "/doctors/dr-vivek-bagul/" },
 
+  const doctors = [
+    { name: "Dr. Narhari S. Malgaonkar", role: "Chief Fertility Consultant, Mumbai", img: "/DoctorsSection/doctorimage.png", link: "/doctors/dr-narhari-s-malgaonkar/" },
+    { name: "Dr. Sonali Malgonkar", role: "Sr. Fertility Consultant, Mumbai", img: "/DoctorsSection/DrSonali.png", link: "/doctors/dr-sonali-malgaonkar/" },
+    { name: "Dr. Dinesh Wade", role: "Fertility Consultant, Pune", img: "/images/doctors/Vivek.png", link: "/doctors/dr-unnati-mamtora/" },
+    { name: "Dr. Unnati Mamtora", role: "Fertility Consultant, Borivali", img: "/images/doctors/Unnati.png", link: "/doctors/dr-dinesh-wade/" },
+    { name: "Dr. Shital Sonone", role: "Fertility Consultant, Nashik", img: "/images/doctors/Shital.png", link: "/doctors/dr-shital-sonone/" },
+    { name: "Dr. Rajashree Patil", role: "Fertility Consultant, Virar", img: "/images/doctors/Rajashree.png", link: "/doctors/dr-rajashree-patil/" },
+    { name: "Dr. Darshna Wahane", role: "Fertility Consultant, Panvel", img: "/images/doctors/Darshna.png", link: "/doctors/dr-darshna-wahane/" },
+    { name: "Dr. Priti Pardeshi", role: "Fertility Consultant, Kalyan", img: "/images/doctors/Priti.png", link: "/doctors/dr-priti-pardeshi/" },
+    { name: "Dr. Teena Desai", role: "Fertility Consultant, Andheri", img: "/images/doctors/Teena.png", link: "/doctors/dr-teena-desai/" },
+    { name: "Dr. Bhavika Sane", role: "Fertility Consultant, Vashi", img: "/images/doctors/Bhavika.png", link: "/doctors/dr-bhavika-sane/" },
+    { name: "Dr. Prerna Khandelwal", role: "Fertility Consultant, Thane", img: "/images/doctors/Prerna.png", link: "/doctors/dr-prerna-khandelwal/" },
+    { name: "Dr. Shradha Pol", role: "Fertility Consultant, Thane", img: "/images/doctors/Shradha.png", link: "/doctors/dr-shradha-pol/" },
+    { name: "Dr. Vivek Bagul", role: "Fertility Consultant, Jalgaon", img: "/images/doctors/Vivek.png", link: "/doctors/dr-vivek-bagul/" },
   ];
+  
 
   const updatePopupPosition = (step: "what" | "where" | "who") => {
     const el = buttonRefs.current[step];
@@ -225,7 +226,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
           {/* Close */}
           <button
             onClick={onClose}
-            className="h-[44px] w-[44px] rounded-xl bg-[#1656A5] flex items-center justify-center self-end md:self-center"
+            className="cursor-pointer h-[44px] w-[44px] rounded-xl bg-[#1656A5] flex items-center justify-center self-end md:self-center"
           >
             <X size={20} color="#fff" />
           </button>
@@ -276,7 +277,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                       router.push(t.link);
 
                     }}
-                    className="inline-flex px-3 py-2 rounded-[16px] border border-[#1656A5] text-[#1656A5] text-[14px] font-medium hover:bg-[#1656A5] hover:text-white transition"
+                    className="cursor-pointer inline-flex px-3 py-2 rounded-[16px] border border-[#1656A5] text-[#1656A5] text-[14px] font-medium hover:bg-[#1656A5] hover:text-white transition"
                   >
                     {t.name}
                   </button>
@@ -610,7 +611,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
             setInputs({ what: "", where: "", who: "" });
             setActiveStep(null);
           }}
-          className="text-[#606060] font-semibold underline underline-offset-2 hover:opacity-80"
+          className="text-[#606060] font-semibold underline underline-offset-2 hover:opacity-80 cursor-pointer"
         >
           Clear All
         </button>
@@ -638,7 +639,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
               if (selected) return router.push(selected.link);
             }
           }}
-          className="flex items-center justify-center gap-2 bg-[#1656A5] text-white px-6 py-3 rounded-xl text-[16px] font-semibold shadow-sm hover:opacity-90 transition-all"
+          className="flex items-center justify-center gap-2 bg-[#1656A5] text-white px-6 py-3 rounded-xl text-[16px] font-semibold shadow-sm hover:opacity-90 transition-all cursor-pointer"
         >
           <Search size={20} /> Search
         </button>
@@ -663,6 +664,7 @@ const megaMenuDataMobile: Record<string, any> = {
           { label: "Why choose us", path: "/about-us#why-choose-us" },
           { label: "Leadership Team", path: "/leadership-team" },
           // { label: "Impact & Growth", path: "/about-us#impact-growth" },
+          { label: "Careers", path: "/careers" },
           { label: "FAQs", path: "/about-us#faqs" },
         ],
       },
@@ -964,34 +966,18 @@ const megaMenuData: Record<string, any> = {
               { label: "Panvel", path: "/centers/panvel" },
             ],
           },
-          { label: "Nashik", path: "/centers/nashik" },
-          { label: "Jalgaon", path: "/centers/jalgaon" },
-          // { label: "Ahilyanagar", path: "/centers/ahilyanagar" },
-          // { label: "Amravati", path: "/centers/amravati" },
-          // { label: "Kolhapur", path: "/centers/kolhapur" },
-          // { label: "Nagpur", path: "/centers/nagpur" },
-          // { label: "Solapur", path: "/centers/solapur" },
-          // { label: "Pune", path: "/centers/pune" },
         ],
       },
       {
-        // title: "Quick Links",
         links: [
-          // { label: "Book Appointment", path: "/appointment", isButton: true },
-          // { label: "+91 94239 71260", path: "tel:+919423971260", isPhone: true },
-          // { label: "+91 70309 44041", path: "tel:+917030944041", isWhatsapp: true },
+          { label: "Nashik", path: "/centers/nashik" },
+          { label: "Jalgaon", path: "/centers/jalgaon" },
           { label: "Ahilyanagar", path: "/centers/ahilyanagar" },
           { label: "Amravati", path: "/centers/amravati" },
           { label: "Kolhapur", path: "/centers/kolhapur" },
           { label: "Nagpur", path: "/centers/nagpur" },
           { label: "Solapur", path: "/centers/solapur" },
           { label: "Pune", path: "/centers/pune" },
-          // { label: "Take a Quiz", path: "/quiz", isarrow: true },
-          // { label: "Online Consult", path: "/online-consult", isarrow: true },
-          // { label: "EMI Options", path: "/emi-options", isarrow: true },
-          // { label: "Fellowship", path: "/fellowship",isarrow: true },
-          // { label: "Our Centers", path: "/centers",isarrow: true },
-          // { label: "Our Social Impact", path: "/social-impact" ,isarrow: true},
         ],
       },
       {
@@ -1074,16 +1060,6 @@ const megaMenuData: Record<string, any> = {
 
         ],
       },
-      // {
-      //   title: "Preservation",
-      //   links: [
-      //     { label: "Online Consult", path: "/treatments#female-preservation" ,isarrow: true},
-      //     { label: "EMI Options", path: "/treatments#male-preservation",isarrow: true },
-      //     { label: "Fellowship", path: "/treatments#male-preservation",isarrow: true },
-      //     { label: "Our Centers", path: "/treatments#male-preservation" ,isarrow: true},
-      //     { label: "Our Social Impact", path: "/treatments#male-preservation",isarrow: true },
-      //   ],
-      // },
       {
         links: [
           { label: "Our Centers", path: "/centers", isarrow: true },
@@ -1099,7 +1075,7 @@ const megaMenuData: Record<string, any> = {
 
 /* -------------------- MEGA MENU -------------------- */
 const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (e: React.MouseEvent) => void }) => {
-  const [expandedLink, setExpandedLink] = useState<string | null>(null);
+  const [expandedLink, setExpandedLink] = useState<string | null>("Mumbai");
   if (!menu) return null;
 
   return (
@@ -1283,8 +1259,13 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
                     ) : (
                       <div
                         className="relative transition-all duration-150"
-                        onMouseEnter={() => setExpandedLink(link.label)}
-                        onMouseLeave={() => setExpandedLink(null)}
+                        onMouseEnter={() =>  setExpandedLink(link.label)}
+                        onMouseLeave={() => {
+                          // Clear the expanded link, but Mumbai will stay visible via the render condition
+                          if (link.label !== "Mumbai") {
+                            setExpandedLink(null);
+                          }
+                        }}
 
                       >
                         <Link
@@ -1298,7 +1279,7 @@ const MegaMenu = ({ menu, onBookAppointment }: { menu: any; onBookAppointment: (
 
 
                         {/* ✅ Submenu opens below on hover, no overlap */}
-                        {link.submenu && expandedLink === link.label && (
+                        {link.submenu && (expandedLink === link.label || link.label === "Mumbai") && (
                           <ul className="pl-4 mt-2 space-y-1 transition-all duration-200 ease-in-out">
                             {link.submenu.map((sublink: any, subIdx: number) => (
                               <li key={subIdx}>
@@ -1445,7 +1426,6 @@ export default function Navbar() {
     { label: "Treatments", path: "/treatments", hasMegaMenu: true },
     { label: "Doctors", path: "/doctors", hasMegaMenu: false },
     { label: "Patient Resources", path: "/resources", hasMegaMenu: false },
-    { label: "Careers", path: "/careers", hasMegaMenu: false },
   ];
 
   const handleMouseEnter = (label: string) => {
@@ -1473,7 +1453,7 @@ export default function Navbar() {
         }`}>
         {/* NAVBAR */}
         {!isSearchOpen && (
-          <div className="mx-auto flex items-center justify-between h-20 px-6   csLg:px-[120px]">
+          <div className=" mx-auto flex items-center justify-between h-20 px-6   csLg:px-[120px]">
             <Link href="/" className="w-[150px] h-[40px] relative">
               <Image src="/logo1.png" alt="Logo" fill className="object-contain" />
             </Link>
@@ -1514,7 +1494,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setIsSearchOpen(true)}
                 aria-label="Open search"
-                className="flex items-center justify-center h-10 w-10 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
+                className="cursor-pointer flex items-center justify-center h-10 w-10 rounded-lg bg-gray-100 hover:bg-gray-200 transition"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
