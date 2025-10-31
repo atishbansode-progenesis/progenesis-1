@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Search, X, ChevronDown, Menu } from "lucide-react";
-import { centersData } from "@/page-components/centers/CenterCard";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 
 
