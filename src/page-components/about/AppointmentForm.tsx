@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
 import { SelectCalendarIcon, SelectFieldArrowDown } from "./icons";
 import "./form-styles.css";
@@ -109,9 +109,11 @@ const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
 const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const isPopupMode = !!onClose;
   const router = useRouter();
+  const searchParams = useSearchParams();
   const formRef = useRef<HTMLFormElement | null>(null);
   const [formFields, setFormFields] = useState<any[]>([]);
   const [formData, setFormData] = useState<any>({});
+  const [utmParams, setUtmParams] = useState<Record<string, string>>({});
   const [toast, setToast] = useState<{
     message: string;
     type: "success" | "error";
@@ -122,6 +124,17 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const [apiError, setApiError] = useState(false);
 
   const dateInputRef =  useRef<HTMLInputElement>(null);
+
+  // Capture UTM parameters from URL
+  useEffect(() => {
+    const params: Record<string, string> = {};
+    searchParams.forEach((value, key) => {
+      if (key.toLowerCase().startsWith('utm')) {
+        params[key] = value;
+      }
+    });
+    setUtmParams(params);
+  }, [searchParams]);
 
   // Timeout promise helper
   const timeoutPromise = (promise: Promise<any>, ms: number) =>
@@ -190,10 +203,24 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
 
     setIsSubmitLoading(true);
     try {
+      // Prepare payload with form data and UTM parameters inside fields object
+      const fieldsData: any = { 
+        ...formData  // Spread form fields
+      };
+      
+      // Add UTM parameters under "params" key if they exist
+      if (Object.keys(utmParams).length > 0) {
+        fieldsData.params = utmParams;
+      }
+
+      const payload = { fields: fieldsData };
+
+      console.log("payload", payload);
+
       await timeoutPromise(
         axios.post(
           apiUrl + "/api/form/save/",
-          { fields: formData },
+          payload,
           { headers: { "Content-Type": "application/json" } }
         ),
         6000
@@ -351,6 +378,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
 
   const renderCheckbox = (field: any, idx: number) => (
     <label
+      key={idx}
       htmlFor={field.name}
       className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] cursor-pointer"
     >

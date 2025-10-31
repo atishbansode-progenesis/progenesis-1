@@ -128,8 +128,8 @@ const locations: City[] = [
 
 export default function LocationsSection() {
   const router = useRouter();
-  const [activeLocation, setActiveLocation] = useState<City | SubCity>(locations[1]); // default Pune
-  const [openCity, setOpenCity] = useState<string | null>(null);
+  const [activeLocation, setActiveLocation] = useState<City | SubCity>(locations[0]); // default Mumbai
+  const [openCity, setOpenCity] = useState<string | null>("Mumbai"); // default Mumbai expanded
 
   const toggleCity = (city: string) => {
     setOpenCity(openCity === city ? null : city);
@@ -214,45 +214,57 @@ export default function LocationsSection() {
                           className="mt-2 space-y-3 overflow-hidden"
                         >
                           {loc.subCities.map((sub, i) => {
-                          const isActive =
-                            "name" in activeLocation &&
-                            activeLocation.name === sub.name;
-                          return (
-                            <button
-                              key={i}
-                              onClick={() => router.push(`/centers/${sub.name}`)}
-                              onMouseEnter={() => setActiveLocation(sub)}
-                              className={`rounded-xl p-4 flex justify-between items-center w-full text-left transition cursor-pointer ${isActive
+                            const isActive =
+                              "name" in activeLocation &&
+                              activeLocation.name === sub.name;
+                            return (
+                              <button
+                                key={i}
+                                onClick={() => router.push(`/centers/${sub.name}`)}
+                                onMouseEnter={() => setActiveLocation(sub)}
+                                className={`rounded-xl p-4 flex justify-between items-center w-full text-left transition cursor-pointer ${isActive
                                   ? "bg-[rgba(22,86,165,0.05)]"
                                   : "bg-gray-50"
-                                }`}
-                            >
-                              <div className="pr-3">
-                                <h4
-                                  className={`text-[32px] font-normal tracking-tight leading-[40px] ${isActive
+                                  }`}
+                              >
+                                <div className="pr-3">
+                                  <h4
+                                    className={`text-[32px] font-normal tracking-tight leading-[40px] ${isActive
                                       ? "text-[#1656a5]"
                                       : "text-gray-900"
+                                      }`}
+                                  >
+                                    {sub.name}
+                                  </h4>
+                                  <p className="text-sm text-gray-600 mt-1">
+                                    {sub.address}
+                                  </p>
+                                </div>
+                                <div
+                                  className={`flex items-center justify-center rounded-full px-[24px] py-[16px]  ${isActive
+                                    ? "bg-[#1656a5] text-white"
+                                    : "bg-black text-white"
                                     }`}
                                 >
-                                  {sub.name}
-                                </h4>
-                                <p className="text-sm text-gray-600 mt-1">
-                                  {sub.address}
-                                </p>
-                              </div>
-                              <div
-                                 className={`flex items-center justify-center rounded-full px-[24px] py-[16px]  ${isActive
-                                  ? "bg-[#1656a5] text-white"
-                                  : "bg-black text-white"
-                                }`}
-                              >
-                               <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none" >
-  <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-                              </div>
-                            </button>
-                          );
-                                                  })}
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="8"
+                                    height="8"
+                                    viewBox="0 0 8 8"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749"
+                                      stroke="white"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </svg>
+
+                                </div>
+                              </button>
+                            );
+                          })}
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -270,8 +282,8 @@ export default function LocationsSection() {
                   onClick={() => router.push(`/centers/${loc.city}`)}
                   onMouseEnter={() => setActiveLocation(loc)}
                   className={`rounded-xl p-5 flex justify-between items-center w-full text-left transition cursor-pointer ${isActive
-                      ? "bg-[rgba(22,86,165,0.05)]"
-                      : "bg-gray-50"
+                    ? "bg-[rgba(22,86,165,0.05)]"
+                    : "bg-gray-50"
                     }`}
                 >
                   <div className="pr-3">
@@ -285,13 +297,25 @@ export default function LocationsSection() {
                   </div>
                   <div
                     className={`flex items-center justify-center rounded-full px-[24px] py-[16px]  ${isActive
-                        ? "bg-[#1656a5] text-white"
-                        : "bg-black text-white"
+                      ? "bg-[#1656a5] text-white"
+                      : "bg-black text-white"
                       }`}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-                      <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>  
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="8"
+                      height="8"
+                      viewBox="0 0 8 8"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749"
+                        stroke="white"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+
                   </div>
                 </button>
               );
@@ -333,7 +357,7 @@ export default function LocationsSection() {
             <style jsx>{`
               div::-webkit-scrollbar { display: none; }
             `}</style>
-            {locations.flatMap((loc) => 
+            {locations.flatMap((loc) =>
               loc.subCities ? loc.subCities.map((sub, idx) => (
                 <div key={`${loc.city}-${idx}`} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white ">
                   {/* Image */}
@@ -351,26 +375,38 @@ export default function LocationsSection() {
                     <div className="flex-1">
                       <div className="flex justify-between items-center" >
 
-                      <h3 className="text-[32px] font-normal text-[#2C2C2C] mb-2">
-                        {sub.name}
-                      </h3>
-                      <div
-                      className={`flex w-[56px] items-center justify-center rounded-full px-[24px] py-[16px]  
+                        <h3 className="text-[32px] font-normal text-[#2C2C2C] mb-2">
+                          {sub.name}
+                        </h3>
+                        <div
+                          className={`flex w-[56px] items-center justify-center rounded-full px-[24px] py-[16px]  
                           
                            bg-black text-white
                         `}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-                        <path d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>  
-                    </div>
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="8"
+                            height="8"
+                            viewBox="0 0 8 8"
+                            fill="none"
+                          >
+                            <path
+                              d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749"
+                              stroke="white"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+
+                        </div>
                       </div>
-                    <p className="text-[14px] text-[#606060] mt-4">
+                      <p className="text-[14px] text-[#606060] mt-4">
                         {sub.address}
                       </p>
-                      
+
                     </div>
-                    
+
                   </div>
                 </div>
               )) : []

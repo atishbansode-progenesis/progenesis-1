@@ -20,29 +20,29 @@ const HeroCarousel = () => {
       title: "What would you like to know about your fertility journey?",
       buttons: [
         { label: "Book Your Appointment", href: "/appointment" },
-        { label: "Find My Right Treatment", href: "/treatments" },
+        { label: "Find Nearest Center", href: "/centers" },
       ],
     },
-    {
-      id: 2,
-      image: "/home/v2.mp4",
-      thumbnail: "/home/thumbnail2.png",
-      title: "Your parenthood journey starts with us",
-      buttons: [
-        { label: "Get Started", href: "/get-started" },
-        { label: "Meet Our Experts", href: "/doctors" },
-      ],
-    },
-    {
-      id: 3,
-      image: "/home/v3.mp4",
-      thumbnail: "/home/thumbnail3.png",
-      title: "Trusted care for every step of the way",
-      buttons: [
-        { label: "Book Consultation", href: "/consultation" },
-        { label: "See Success Stories", href: "/resources" },
-      ],
-    },
+    // {
+    //   id: 2,
+    //   image: "/home/v2.mp4",
+    //   thumbnail: "/home/thumbnail2.png",
+    //   title: "Your parenthood journey starts with us",
+    //   buttons: [
+    //     { label: "Get Started", href: "/get-started" },
+    //     { label: "Meet Our Experts", href: "/doctors" },
+    //   ],
+    // },
+    // {
+    //   id: 3,
+    //   image: "/home/v3.mp4",
+    //   thumbnail: "/home/thumbnail3.png",
+    //   title: "Trusted care for every step of the way",
+    //   buttons: [
+    //     { label: "Book Consultation", href: "/consultation" },
+    //     { label: "See Success Stories", href: "/resources" },
+    //   ],
+    // },
   ];
 
   const goToNextSlide = () => {
@@ -137,6 +137,7 @@ const HeroCarousel = () => {
                   src={slide.image}
                   muted
                   playsInline
+                  loop
                   autoPlay={index === 0} // ✅ autoplay first video
                   preload={index === 0 ? "auto" : "metadata"}
                   className="absolute inset-0 w-full h-full object-cover z-20"
@@ -218,8 +219,8 @@ const HeroCarousel = () => {
           })}
         </div>
 
-        {/* Progress Dots */}
-        <div className="flex gap-4 mt-10 mb-[60px] sm:mb-0">
+        {/* Progress Dots - Hidden for single video */}
+        {/* <div className="flex gap-4 mt-10 mb-[60px] sm:mb-0">
           {slides.map((_, index) => (
             <button
               key={index}
@@ -236,7 +237,7 @@ const HeroCarousel = () => {
               />
             </button>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Mobile Bottom Navigation */}
