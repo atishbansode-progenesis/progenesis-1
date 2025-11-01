@@ -860,6 +860,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Leadership Team", path: "/leadership-team" },
           // { label: "Impact & Growth", path: "/about-us#impact-growth" },
           { label: "FAQs", path: "/about-us#faqs" },
+          {label: "Careers", path: "/careers"}
         ],
       },
       {
