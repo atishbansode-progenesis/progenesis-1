@@ -20,9 +20,7 @@ export const imsiTreatmentData = {
   hero_image_small: "/treatments/imsi/imsibg_small.png",
   breadcrumbs: [
     { label: "Home", href: "/" },
-    { label: "Treatments", href: "/treatments" },
-    { label: "Advanced Treatments", href: "/treatments/advanced" },
-    { label: "IMSI", href: "/treatments/advanced/imsi" },
+    { label: "IMSI", href: "/imsi" },
   ],
   basics_heading: "Precision sperm selection for healthier embryos and pregnancies",
   points_tag: "Why Choose IMSI",
@@ -186,9 +184,7 @@ export const picsiTreatmentData = {
   hero_image: "/treatments/picsi/picsibg.png",
   breadcrumbs: [
     { "label": "Home", "href": "/", id: "home" },
-    { "label": "Treatments", "href": "/treatments", id: "treatments" },
-    { "label": "Advanced Treatments", "href": "/treatments/advanced", id: "advanced" },
-    { "label": "PICSI", "href": "/treatments/advanced/picsi", id: "picsi" }
+    { "label": "PICSI", "href": "/picsi" }
   ],
   basics_heading: "Precision Sperm Selection for Embryo Health",
   points_tag: "Why Choose PICSI",
@@ -302,9 +298,7 @@ export const lahTreatmentData = {
   hero_image : "/treatments/lah/lahbg.png",
   breadcrumbs: [
     { label: "Home", href: "/" },
-    { label: "Treatments", href: "/treatments" },
-    { label: "Advanced Treatments", href: "/treatments/advanced" },
-    { label: "LAH", href: "/treatments/advanced/lah" }
+    { label: "LAH", href: "/lah" }
   ],
   basics_heading: "Why LAH Can Make a Difference in Your Journey",
   points_tag: "Why Choose LAH",
@@ -415,9 +409,7 @@ export const blastocystTransferData = {
   hero_image: "/treatments/blastocyst/blastocystbg.png",
   breadcrumbs: [
     { "label": "Home", "href": "/", id: "home" },
-    { "label": "Treatments", "href": "/treatments", id: "treatments" },
-    { "label": "Advanced Treatments", "href": "/treatments/advanced", id: "advanced" },
-    { "label": "Blastocyst Transfer", "href": "/treatments/advanced/blastocyst-transfer", id: "blastocyst-transfer" }
+    { "label": "Blastocyst Transfer", "href": "/blastocyst-transfer", id: "blastocyst-transfer" }
   ],
   basics_heading: "Why Blastocyst Transfer Can Make a Difference in Your IVF Journey",
   points_tag: "Why Blastocyst Transfer",
@@ -523,9 +515,7 @@ export const sequentialEmbryoTransferData = {
   hero_image: "/treatments/sequential/sequentialbg.png",
   breadcrumbs: [
     { "label": "Home", "href": "/", id: "home" },
-    { "label": "Treatments", "href": "/treatments", id: "treatments" },
-    { "label": "Advanced", "href": "/treatments/advanced", id: "advanced" },
-    { "label": "Sequential Embryo Transfer", "href": "/treatments/advanced/sequential-embryo-transfer", id: "sequential-embryo-transfer" }
+    { "label": "Sequential Embryo Transfer", "href": "/sequential-embryo-transfer", id: "sequential-embryo-transfer" }
   ],
   basics_heading: "Advanced IVF protocol to boost implantation and pregnancy success",
   points_tag: "Why Choose Sequential Embryo Transfer",
@@ -624,7 +614,7 @@ export const sequentialEmbryoTransferData = {
 
 // PGD / PGS / PGT-A Treatment Data
 export const pgdTreatmentData = {
-  slug: "pgd-pgs-pgt-a",
+  slug: "pgd-pgs-pgt-a-a-boon-for-couples-with-genetic-issues",
   category: "advanced",
   title: "PGD/PGS/PGT-A – Preimplantation Genetic Testing",
   hero_title: "PGD/PGS/PGT-A",
@@ -633,9 +623,7 @@ export const pgdTreatmentData = {
   hero_image: "/treatments/pgd/pgd-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/" },
-    { label: "Treatments", href: "/treatments" },
-    { label: "Advanced", href: "/treatments/advanced" },
-    { label: "PGD/PGS/PGT-A", href: "/treatments/advanced/pgd-pgs-pgt-a" },
+    { label: "PGD/PGS/PGT-A", href: "/pgd-pgs-pgt-a-a-boon-for-couples-with-genetic-issues" },
   ],
   basics_heading: "Why Preimplantation Genetic Testing Matters in IVF",
   points_tag: "Advanced screening: Healthier results. Informed choices.",
@@ -773,9 +761,7 @@ export const class1000ModularLabData = {
   hero_image: "/treatments/modular-lab/lab-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Advanced", href: "/treatments/advanced", id: "advanced" },
-    { label: "Class-1000 Modular Lab", href: "/treatments/advanced/class-1000-modular-lab", id: "class-1000-modular-lab" },
+    { label: "Class-1000 Modular Lab", href: "/class-1000-modular-lab", id: "class-1000-modular-lab" },
   ],
   basics_heading: "Why a Class-1000 Modular Lab Matters in IVF",
   points_tag: "Why Choose a Class-1000 Modular Lab",
@@ -892,9 +878,7 @@ export const trigasIncubatorsData = {
   hero_image: "/treatments/trigas/trigas-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Advanced", href: "/treatments/advanced", id: "advanced" },
-    { label: "Trigas Incubators", href: "/treatments/advanced/trigas-incubators", id: "trigas-incubators" },
+    { label: "Trigas Incubators", href: "/trigas-incubators", id: "trigas-incubators" },
   ],
   basics_heading: "Why Trigas Incubators Are Essential in IVF",
   points_tag: "Why Choose Trigas Incubators",
@@ -1026,9 +1010,7 @@ export const witnessSystemData = {
   hero_image: "/treatments/witness/witness-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Advanced", href: "/treatments/advanced", id: "advanced" },
-    { label: "Advanced Technology - Witness system", href: "/treatments/advanced/witness-system", id: "witness-system" },
+    { label: "Witness System", href: "/witness-system", id: "witness-system" },
   ],
   basics_heading: "Why the Witness System Is Vital in IVF",
   points_tag: "Why Choose Witness System",
@@ -1153,7 +1135,7 @@ export const witnessSystemData = {
 
 // Cryopreservation Data
 export const cryopreservationData = {
-  slug: "cryopreservation",
+  slug: "cryopreservation-of-human-gametes",
   category: "advanced",
   title: "Cryopreservation of Human <br/> Gametes",
   hero_title: "Cryopreservation of Human <br/> Gametes",
@@ -1162,9 +1144,7 @@ export const cryopreservationData = {
   hero_image: "/treatments/cryopreservation/cryo-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Advanced Treatment ", href: "/treatments/advanced", id: "advanced" },
-    { label: "Advanced Technology - Cryopreservation", href: "/treatments/advanced/cryopreservation", id: "cryopreservation" },
+    { label: "Advanced Technology - Cryopreservation", href: "/cryopreservation-of-human-gametes", id: "cryopreservation" },
   ],
   basics_heading: "Why Cryopreservation Is Important in Fertility Care",
   points_tag: "Why Choose Cryopreservation at Progenesis",
@@ -1290,9 +1270,7 @@ export const ovulationInductionData = {
   hero_image: "/treatments/ovulation-induction/ovulation-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
-    { label: "Ovulation Induction", href: "/treatments/infertility/ovulation-induction", id: "ovulation-induction" },
+    { label: "Ovulation Induction", href: "/ovulation-induction", id: "ovulation-induction" },
   ],
   path_section :{
     tag:"Know the Basics",
@@ -1407,7 +1385,7 @@ export const ovulationInductionData = {
 
 // Artificial Insemination (IUI) Treatment Data
 export const artificialInseminationData = {
-  slug: "artificial-insemination-iui-treatment",
+  slug: "artificial-insemination-iui",
   category: "fertility-treatments",
   title: "Artificial Insemination – IUI <br/> Treatment",
   hero_title: "Artificial Insemination – IUI <br/> Treatment",
@@ -1416,9 +1394,7 @@ export const artificialInseminationData = {
   hero_image: "/treatments/iui/iui-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
-    { label: "Artificial Insemination – IUI Treatment", href: "/treatments/infertility/artificial-insemination-iui-treatment", id: "artificial-insemination-iui-treatment" },
+    { label: "Artificial Insemination – IUI Treatment", href: "/artificial-insemination-iui", id: "artificial-insemination-iui-treatment" },
   ],
   path_section: {
     tag: "Overview",
@@ -1532,9 +1508,7 @@ export const ivfTreatmentData = {
   hero_image: "/treatments/ivf/ivf-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
-    { label: "IVF Treatment", href: "/treatments/infertility/ivf-treatment", id: "ivf-treatment" },
+    { label: "IVF Treatment", href: "/ivf-treatment", id: "ivf-treatment" },
   ],
   path_section: {
     tag: "Know the Basics",
@@ -1641,7 +1615,7 @@ export const ivfTreatmentData = {
 
 // IVF-ICSI Treatment Data
 export const ivfIcsiTreatmentData = {
-  slug: "ivf-icsi-intracytoplasmic-sperm-injection",
+  slug: "icsi-treatment",
   category: "fertility-treatments",
   title: "IVF-ICSI – Intracytoplasmic <br/> Sperm Injection",
   hero_title: "IVF-ICSI – Intracytoplasmic <br/> Sperm Injection",
@@ -1650,11 +1624,9 @@ export const ivfIcsiTreatmentData = {
   hero_image: "/treatments/ivf-icsi/ivf-icsi-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
     {
       label: "IVF-ICSI – Intracytoplasmic Sperm Injection",
-      href: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection",
+      href: "/icsi-treatment",
       id: "ivf-icsi-intracytoplasmic-sperm-injection",
     },
   ],
@@ -1780,11 +1752,9 @@ export const frozenEmbryoTransferTreatmentData = {
   hero_image: "/treatments/frozen-embryo-transfer/frozen-embryo-transfer-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
     {
       label: "Frozen Embryo Transfer",
-      href: "/treatments/infertility/frozen-embryo-transfer",
+      href: "/frozen-embryo-transfer",
       id: "frozen-embryo-transfer",
     },
   ],
@@ -1905,11 +1875,9 @@ export const fertilitySurgeryTreatmentData = {
   hero_image: "/treatments/fertility-surgery/fertility-surgery-bg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Treatments", href: "/treatments", id: "treatments" },
-    { label: "Infertility Treatments", href: "/treatments/infertility", id: "infertility" },
     {
       label: "Fertility Surgery",
-      href: "/treatments/infertility/fertility-surgery",
+      href: "/fertility-surgery",
       id: "fertility-surgery",
     },
   ],

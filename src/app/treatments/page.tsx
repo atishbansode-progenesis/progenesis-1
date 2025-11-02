@@ -119,7 +119,7 @@ const TreatmentsPage: React.FC = () => {
       title: "PGD/PGS/PGT-A – Genetic Screening",
       description:
         "Detects genetic abnormalities in embryos, ensuring healthy pregnancies.",
-      slug: "pgd-pgs-pgt-a",
+      slug: "pgd-pgs-pgt-a-a-boon-for-couples-with-genetic-issues",
       category: "advanced",
     },
   ];
@@ -150,7 +150,7 @@ const TreatmentsPage: React.FC = () => {
       title: "Cryopreservation – Secure Future Fertility",
       description:
         "Safely freezes and stores eggs, sperm, or embryos for future use.",
-      slug: "cryopreservation",
+      slug: "cryopreservation-of-human-gametes",
       category: "advanced",
     },
   ];
@@ -167,7 +167,7 @@ const TreatmentsPage: React.FC = () => {
       title: "IUI – Assisted Intrauterine Insemination Treatment",
       description:
         "Prepared sperm is placed into the uterus during ovulation, boosting fertilization chances.",
-      slug: "artificial-insemination-iui-treatment",
+      slug: "artificial-insemination-iui",
       category: "infertility",
     },
     {
@@ -216,7 +216,7 @@ const TreatmentsPage: React.FC = () => {
     {
       title: "Embryo Preservation",
       image: "/treatments/14.png",
-      slug: "egg-embryo-freezing",
+      slug: "egg-freezing-embryo-freezing",
       category: "preservation",
     },
   ];
@@ -366,7 +366,7 @@ const TreatmentsPage: React.FC = () => {
                 description={item.description}
                 href={
                   item.slug && item.category
-                    ? `/treatments/${item.category}/${item.slug}`
+                    ? `/${item.slug}`
                     : undefined
                 }
               />
@@ -397,7 +397,7 @@ const TreatmentsPage: React.FC = () => {
                 description={item.description}
                 href={
                   item.slug && item.category
-                    ? `/treatments/${item.category}/${item.slug}`
+                    ? `/${item.slug}`
                     : undefined
                 }
               />
@@ -496,7 +496,7 @@ const TreatmentsPage: React.FC = () => {
               key={idx}
               href={
                 item.slug && item.category
-                  ? `/treatments/${item.category}/${item.slug}`
+                  ? `/${item.slug}`
                   : "#"
               }
               className=" group rounded-xl border-[#E6E6E6] p-4 md:p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
@@ -542,7 +542,7 @@ const TreatmentsPage: React.FC = () => {
               key={idx}
               href={
                 item.slug && item.category
-                  ? `/treatments/${item.category}/${item.slug}`
+                  ? `/${item.slug}`
                   : "#"
               }
               className="
@@ -605,7 +605,7 @@ const TreatmentsPage: React.FC = () => {
               key={idx}
               href={
                 item.slug && item.category
-                  ? `/treatments/${item.category}/${item.slug}`
+                  ? `/${item.slug}`
                   : "#"
               }
               className={`

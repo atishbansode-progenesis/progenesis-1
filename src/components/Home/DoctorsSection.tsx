@@ -176,7 +176,7 @@ const doctors = [
 
 const DoctorsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const prevDoctor = () =>
     setCurrentIndex((prev) => (prev === 0 ? doctors.length - 1 : prev - 1));
@@ -214,8 +214,7 @@ const DoctorsSection = () => {
         {/* Right Side - Description */}
         <div className="w-full lg:w-1/2 flex items-center">
           <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl leading-relaxed md:leading-relaxed lg:leading-10 tracking-tight font-normal">
-            Our team of internationally trained fertility specialists, embryologists, and counselors are here to support you medically and emotionally. Our team of internationally trained fertility specialists, embryologists.
-          </p>
+          Our team of internationally trained fertility specialists, embryologists, and counselors provide medical expertise and emotional support throughout your journey — ensuring you feel cared for and confident every step of the way.          </p>
         </div>
       </div>
 

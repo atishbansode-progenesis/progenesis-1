@@ -15,7 +15,7 @@ title2: "Fertilization (IVF)",
       description:
         "We offer you more than a procedure. We offer a chance. A chance to hold, to cradle, to begin.",
       image: "/TreatmentsSection/IVF.png",
-      link: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/",
+      link: "/ivf-treatment",
     },
     {
       title: "Egg Freezing",
@@ -23,7 +23,7 @@ title2: "Fertilization (IVF)",
       description:
         "Your journey is uniquely yours. Whenever you feel ready, we’ll be right here waiting for you.",
       image: "/TreatmentsSection/eggfreezing.png",
-      link: "/treatments/preservation/female-fertility-preservation/",
+      link: "/female-fertility-preservation",
     },
     {
       title: "Multiple IVF &",
@@ -31,7 +31,7 @@ title2: "Fertilization (IVF)",
       description:
         "Advanced care and tailored treatments to give fresh hope after repeated failed attempts.",
       image: "/TreatmentsSection/multipleivf.png",
-      link: "/infertility/female/repeated-iui-failures/",
+      link: "/repeated-iui-failures",
     },
     {
       title: "Intrauterine ",
@@ -39,7 +39,7 @@ title2: "Fertilization (IVF)",
       description:
         "For some, the gentlest nudge is all it takes. We guide you with care and precision.",
       image: "/TreatmentsSection/iui.png",
-      link: "/treatments/infertility/artificial-insemination-iui-treatment/",
+      link: "/artificial-insemination-iui",
     },
     {
       title: "Male Fertility",
@@ -47,7 +47,7 @@ title2: "Fertilization (IVF)",
       description:
         "Fertility is not just a woman’s story. We’re here for every partner, every question, every step.",
       image: "/TreatmentsSection/malefertility.png",
-      link: "/treatments/preservation/male-fertility-preservation/",
+      link: "/male-fertility-preservation",
     },
     {
       title: "Pregnancy",
@@ -55,7 +55,7 @@ title2: "Fertilization (IVF)",
       description:
         "Advanced techniques that make motherhood possible, even beyond menopause.",
       image: "/TreatmentsSection/menopause.png",
-      link: "/infertility/female/pregnancy-after-menopause/",
+      link: "/pregnancy-after-menopause",
     },
   ];
 

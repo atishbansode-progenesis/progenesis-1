@@ -12,12 +12,14 @@ type SubCity = {
   name: string;
   address: string;
   image: string;
+  slug: string;
 };
 
 type City = {
   city: string;
   address?: string;
   image: string;
+  slug?: string;
   subCities?: SubCity[];
 };
 
@@ -28,48 +30,56 @@ const locations: City[] = [
     subCities: [
       {
         name: "Thane",
+        slug: "ivf-center-thane",
         address:
           "16, First Floor, Dosti Imperia Complex , Ghodbunder Road, Opp R Mall, Manpada, Thane (West) - 400607​",
         image: "/LocationsSection/Thane.jpg",
       },
       {
         name: "Andheri",
+        slug: "ivf-center-in-andheri",
         address:
           "4th Durolite House, Off New Link Rd, Near Oshiwara Station, Opposite to Laxmi Industrial Complex, Andheri West, Mumbai",
         image: "/LocationsSection/Andheri.jpg",
       },
       {
         name: "Borivali",
+        slug: "best-ivf-center-borivali",
         address:
           "Unit no 2, 1st Floor, Volga Building, Rayani Gram, Shimpoli, Borivali West, Mumbai, Maharashtra 400092",
         image: "/LocationsSection/borivali.png",
       },
       {
         name: "Ghatkopar",
+        slug: "ivf-center-in-ghatkopar",
         address:
           "1st Floor, Shop Zone Building, Mahatma Gandhi Rd, Ghatkopar West, Mumbai",
         image: "/LocationsSection/Ghatkopar.jpg",
       },
       {
         name: "Vashi",
+        slug: "best-ivf-center-in-vashi",
         address:
           "Ground Floor, Bhumiraj Costarica, Palm Beach Service Road, Sector 18, Vashi, Navi Mumbai",
         image: "/LocationsSection/Vashi.jpg",
       },
       {
         name: "Virar",
+        slug: "ivf-center-in-virar",
         address:
           "2nd Floor, A-Wing, Shreeram Complex, Tirupati Nagar, Virar West, Virar",
         image: "/LocationsSection/Virar.jpg",
       },
       {
         name: "Kalyan",
+        slug: "best-ivf-center-kalyan",
         address:
           "Diwadkar Complex, 302, Chatrapati Shivaji Maharaj Chowk, Kalyan(W), JijaMata Colony, Kalyan",
         image: "/LocationsSection/Kalyan.jpg",
       },
       {
         name: "Panvel",
+        slug: "ivf-center-in-panvel",
         address:
           "1st Floor, Ganga Kalash, Gandhi Hospital Lane, Near Suruchi Restaurant, Vasudev Balwant Phadke Road, Panvel",
         image: "/LocationsSection/Panvel.jpg",
@@ -78,53 +88,62 @@ const locations: City[] = [
   },
   {
     city: "Pune",
+    slug: "ivf-center-in-pune",
     address:
       "Kataria Chambers, ITI Road, Infront of Reliance Digital, Aundh, Pune, Maharashtra 411007",
     image: "/LocationsSection/Pune.jpg",
   },
   {
     city: "Nashik",
+    slug: "best-ivf-center-in-nashik",
     address:
       "IKON, 3rd Floor, Above Westside, Opp. Sun Bird Building, Yeolekar Mala, College Road, Nashik -422 005, Maharashtra",
     image: "/LocationsSection/Nashik.jpg",
   },
   {
     city: "Jalgaon",
+    slug: "best-ivf-center-in-jalgaon",
     address:
       "1st Floor, Nayantara Arcade, Pimprala Rd, Pratap Nagar, Jalgaon",
     image: "/LocationsSection/Jalgaon.jpg",
   },
   {
     city: "Ahilyanagar",
+    slug: "best-ivf-center-in-ahilyanagar",
     address:
       "Shop No 2, First Floor, Diansh Plaza, opp. Mauli Sankul Road, Savedi, Ahilya Nagar, Maharashtra",
     image: "/images/ahliyanagr.jpeg",
   },
   {
     city: "Amravati",
+    slug: "best-ivf-center-in-amravati",
     address:
       "3rd floor, Above Raghubir Food Zone, Sharda Vihar, Badnera Road, Amravati, Maharashtra 444605",
-    image: "/images/amravati.jpeg ",
+    image: "/images/amravati.jpeg",
   },
   {
     city: "Kolhapur",
+    slug: "best-ivf-center-in-kolhapur",
     address:
       "Royal Mirage Arcade, A Wing, Railway Colony Rd, opp. Kolhapur railway station, Railway Colony, New Shahupuri, Kolhapur, Maharashtra 416001",
     image: "/LocationsSection/Kolhapur.jpg",
   },
   {
     city: "Nagpur",
+    slug: "best-ivf-center-in-nagpur",
     address:
       "6th Floor, Tower 10, N Ambazari Rd, beside Alankar Theater, Shankar Nagar, Bhagwaghar, Dharampeth, Nagpur, Maharashtra 440002",
     image: "/LocationsSection/Nagpur.jpg",
   },
   {
     city: "Solapur",
+    slug: "best-ivf-center-in-solapur",
     address:
       "KASTURE AGENCIES, 3rd Floor, Unit No 3-B, Kasture Business Centre, Railway lines, Dufferin Chowk, Solapur, Maharashtra 413001",
     image: "/LocationsSection/Solapur.jpg",
   },
 ];
+
 
 export default function LocationsSection() {
   const router = useRouter();
@@ -151,7 +170,7 @@ export default function LocationsSection() {
           </div>
 
           <div className="md:flex-none flex items-start csLg:items-end">
-            <Link href="/centers">
+            <Link href="/our-center">
               <button className="cursor-pointer px-4 md:px-6 py-2 border border-[#1656a5] text-[#1656a5] rounded-lg transition text-sm hover:bg-[#1656a5] hover:text-white">
                 View all Centers
               </button>
@@ -220,7 +239,7 @@ export default function LocationsSection() {
                             return (
                               <button
                                 key={i}
-                                onClick={() => router.push(`/centers/${sub.name}`)}
+                                onClick={() => router.push(`/${sub.slug}`)}
                                 onMouseEnter={() => setActiveLocation(sub)}
                                 className={`rounded-xl p-4 flex justify-between items-center w-full text-left transition cursor-pointer ${isActive
                                   ? "bg-[rgba(22,86,165,0.05)]"
@@ -279,7 +298,7 @@ export default function LocationsSection() {
               return (
                 <button
                   key={idx}
-                  onClick={() => router.push(`/centers/${loc.city}`)}
+                  onClick={() => router.push(`/${loc.slug}`)}
                   onMouseEnter={() => setActiveLocation(loc)}
                   className={`rounded-xl p-5 flex justify-between items-center w-full text-left transition cursor-pointer ${isActive
                     ? "bg-[rgba(22,86,165,0.05)]"

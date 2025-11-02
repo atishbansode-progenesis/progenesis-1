@@ -33,54 +33,54 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
   });
 
   const treatments = [
-    { name: "IMSI", link: "/treatments/advanced/imsi" },
-    { name: "PICSI", link: "/treatments/advanced/picsi" },
-    { name: "LAH", link: "/treatments/advanced/lah" },
-    { name: "Blastocyst Transfer", link: "/treatments//advanced/blastocyst-transfer" },
-    { name: "Sequential Embryo Transfer", link: "/treatments/advanced/sequential-embryo-transfer/" },
-    { name: "PGD/PGS/PGT-A", link: "/treatments/advanced/pgd-pgs-pgt-a/" },
-    { name: "Class-1000 Modular Lab", link: "/treatments/advanced/class-1000-modular-lab/" },
-    { name: "Trigas Incubators", link: "/treatments/advanced/trigas-incubators/" },
-    { name: "Witness System", link: "/treatments/advanced/witness-system/" },
-    { name: "Cryopreservation", link: "/treatments/advanced/cryopreservation/" },
+    { name: "IMSI", link: "/imsi" },
+    { name: "PICSI", link: "/picsi" },
+    { name: "LAH", link: "/lah" },
+    { name: "Blastocyst Transfer", link: "/blastocyst-transfer" },
+    { name: "Sequential Embryo Transfer", link: "/sequential-embryo-transfer" },
+    { name: "PGD/PGS/PGT-A", link: "/pgd-pgs-pgt-a-a-boon-for-couples-with-genetic-issues" },
+    { name: "Class-1000 Modular Lab", link: "/class-1000-modular-lab" },
+    { name: "Trigas Incubators", link: "/trigas-incubators" },
+    { name: "Witness System", link: "/witness-system" },
+    { name: "Cryopreservation", link: "/cryopreservation-of-human-gametes" },
 
 
-    { name: "Ovulation Induction", link: "/treatments/infertility/ovulation-induction/" },
+    { name: "Ovulation Induction", link: "/ovulation-induction" },
 
-    { name: "IUI", link: "/treatments/infertility/artificial-insemination-iui-treatment/" },
+    { name: "IUI", link: "/artificial-insemination-iui" },
 
-    { name: "IVF", link: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/" },
+    { name: "IVF", link: "/ivf-treatment" },
 
-    { name: "IVF-ICSI", link: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/" },
+    { name: "IVF-ICSI", link: "/icsi-treatment" },
 
-    { name: "Frozen Embryo Transfer", link: "/treatments/infertility/frozen-embryo-transfer/" },
+    { name: "Frozen Embryo Transfer", link: "/frozen-embryo-transfer" },
 
-    // { name: "Fertility Surgery", link: "/treatments/infertility/fertility-surgery/" },
+    // { name: "Fertility Surgery", link: "/fertility-surgery/" },
 
-    { name: "Female Fertility Preservation", link: "/treatments/preservation/female-fertility-preservation/" },
-    { name: "Male Fertility Preservation", link: "/treatments/preservation/male-fertility-preservation/" },
-    { name: "Embryo Preservation", link: "/treatments/preservation/egg-embryo-freezing/" },
-    { name: "Female Analysis", link: "/treatments/evaluation/female-analysis-complete-reproductive-health-check/" },
-    { name: "Male Analysis", link: "/treatments/evaluation/male-analysis/" },
+    { name: "Female Fertility Preservation", link: "/female-fertility-preservation/" },
+    { name: "Male Fertility Preservation", link: "/male-fertility-preservation/" },
+    { name: "Embryo Preservation", link: "/egg-freezing-embryo-freezing/" },
+    { name: "Female Analysis", link: "/female-analysis/" },
+    { name: "Male Analysis", link: "/semen-analysis/" },
   ];
 
   const locations = [
-    { name: "Andheri", desc: "(Opp. to Laxmi Industrial Complex)", icon: "/images/Andheri.png", link: "centers/andheri/" },
-    { name: "Thane", desc: "(Opp R Mall, Manpada)", icon: "/images/Thane.png", link: "/centers/thane/" },
-    { name: "Borivali", desc: "(Near Station)", icon: "/images/Borivali.png", link: "/centers/borivali/" },
-    { name: "Ghatkopar", desc: "(Mahatma Gandhi Road)", icon: "/images/Ghatkopar.png", link: "/centers/ghatkopar/" },
-    { name: "Vashi", desc: "(Palm Beach Service Road)", icon: "/images/Vashi.png", link: "/centers/vashi/" },
-    { name: "Virar", desc: "(Virar Medical Complex)", icon: "/images/virar.jpg", link: "/centers/virar/" },
-    { name: "Kalyan", desc: "(Kalyan Health Clinic)", icon: "/images/kalyan.webp", link: "/centers/kalyan/" },
-    { name: "Panvel", desc: "(Panvel Medical Center)", icon: "/images/Panvel.jpg", link: "/centers/panvel/" },
-    { name: "Pune", desc: "(Near FC Road)", icon: "/images/Pune.jpg", link: "/centers/pune/" },
-    { name: "Nashik", desc: "(Yeolekar Mala)", icon: "/images/Nasik.jpg", link: "/centers/nashik/" },
-    { name: "Jalgaon", desc: "(College Rd)", icon: "/images/Jalgaon.jpg", link: "/centers/jalgaon/" },
-    { name: "Solapur", desc: "(Dufferin Chowk)", icon: "/images/Solapur.jpg", link: "/centers/solapur/" },
-    { name: "Nagpur", desc: "(Dharampeth)", icon: "/images/Nagpur.jpg", link: "/centers/nagpur/" },
-    { name: "Kolhapur", desc: "(Railway Colony)", icon: "/images/Kolhapur.jpg", link: "/centers/kolhapur/" },
-    { name: "Amravati", desc: "(Sharda Vihar)", icon: "/images/Amravati.jpg", link: "/centers/amravati/" },
-    { name: "Ahilyanagar", desc: "(Mauli Sankul Road)", icon: "/images/Ahilyanagar.jpg", link: "/centers/ahilyanagar/" },
+    { name: "Thane", desc: "(Opp R Mall, Manpada)", icon: "/images/Thane.png", link: "/thane/" },
+    { name: "Andheri", desc: "(Opp. to Laxmi Industrial Complex)", icon: "/images/Andheri.png", link: "/andheri/" },
+    { name: "Ghatkopar", desc: "(Mahatma Gandhi Road)", icon: "/images/Ghatkopar.png", link: "/ghatkopar/" },
+    { name: "Virar", desc: "(Virar Medical Complex)", icon: "/images/virar.jpg", link: "/virar/" },
+    { name: "Kalyan", desc: "(Kalyan Health Clinic)", icon: "/images/kalyan.webp", link: "/kalyan/" },
+    { name: "Borivali", desc: "(Near Station)", icon: "/images/Borivali.png", link: "/borivali/" },
+    { name: "Vashi", desc: "(Palm Beach Service Road)", icon: "/images/Vashi.png", link: "/vashi/" },
+    { name: "Panvel", desc: "(Panvel Medical Center)", icon: "/images/Panvel.jpg", link: "/panvel/" },
+    { name: "Pune", desc: "(Near FC Road)", icon: "/images/Pune.jpg", link: "/pune/" },
+    { name: "Nashik", desc: "(Yeolekar Mala)", icon: "/images/Nasik.jpg", link: "/nashik/" },
+    { name: "Jalgaon", desc: "(College Rd)", icon: "/images/Jalgaon.jpg", link: "/jalgaon/" },
+    { name: "Solapur", desc: "(Dufferin Chowk)", icon: "/images/Solapur.jpg", link: "/solapur/" },
+    { name: "Nagpur", desc: "(Dharampeth)", icon: "/images/Nagpur.jpg", link: "/nagpur/" },
+    { name: "Kolhapur", desc: "(Railway Colony)", icon: "/images/Kolhapur.jpg", link: "/kolhapur/" },
+    { name: "Amravati", desc: "(Sharda Vihar)", icon: "/images/Amravati.jpg", link: "/amravati/" },
+    { name: "Ahilyanagar", desc: "(Mauli Sankul Road)", icon: "/images/Ahilyanagar.jpg", link: "/ahilyanagar/" },
   ];
 
 
@@ -698,22 +698,22 @@ const megaMenuDataMobile: Record<string, any> = {
           {
             label: "Female Infertility Causes", path: "/infertility#fertility-section",
             submenu: [
-              { label: "Repeated IUI Failures", path: "/infertility/female/repeated-iui-failures/" },
-              { label: "Repeated IVF Failures", path: "/infertility/female/repeated-ivf-failures/" },
-              { label: "Pregnancy after Menopause", path: "/infertility/female/pregnancy-after-menopause/" },
-              { label: "Low AMH", path: "/infertility/female/low-amh/" },
-              { label: "PCOS", path: "/infertility/female/pcos/" },
-              { label: "Tubal Blockage", path: "/infertility/female/tubal-blockage/" },
-              { label: "Fibroids", path: "/infertility/female/fibroids/" },
-              { label: "Endometriosis", path: "/infertility/female/endometriosis/" },
+              { label: "Repeated IUI Failures", path: "/repeated-iui-failures/" },
+              { label: "Repeated IVF Failures", path: "/repeated-ivf-failures/" },
+              { label: "Pregnancy after Menopause", path: "/pregnancy-after-menopause/" },
+              { label: "Low AMH", path: "/low-amh/" },
+              { label: "PCOS", path: "/pcos/" },
+              { label: "Tubal Blockage", path: "/tubal-blockage/" },
+              { label: "Fibroids", path: "/fibroids/" },
+              { label: "Endometriosis", path: "/endometriosis/" },
             ],
           },
           {
             label: "Male Infertility Causes", path: "/infertility#fertility-mini-section",
             submenu: [
-              { label: "Azoospermia", path: "/infertility/male/azoospermia/" },
-              { label: "Low Sperm Count", path: "/infertility/male/low-sperm-count/" },
-              { label: "Erectile Dysfunction (ED)", path: "/infertility/male/erectile-dysfunction/" },
+              { label: "Azoospermia", path: "/azoospermia" },
+              { label: "Low Sperm Count", path: "/low-sperm-count" },
+              { label: "Erectile Dysfunction (ED)", path: "/erectile-dysfunction-ed" },
             ],
           },
         ],
@@ -738,26 +738,26 @@ const megaMenuDataMobile: Record<string, any> = {
         title: "Where We Are",
         links: [
           {
-            label: "Mumbai", path: "/centers/mumbai",
+            label: "Mumbai", path: "/mumbai",
             submenu: [
-              { label: "Thane", path: "/centers/thane" },
-              { label: "Andheri", path: "/centers/andheri" },
-              { label: "Borivali", path: "/centers/borivali" },
-              { label: "Ghatkopar", path: "/centers/ghatkopar" },
-              { label: "Vashi", path: "/centers/vashi" },
-              { label: "Virar", path: "/centers/virar" },
-              { label: "Kalyan", path: "/centers/kalyan" },
-              { label: "Panvel", path: "/centers/panvel" },
+              { label: "Thane", path: "/ivf-center-thane" },
+              { label: "Andheri", path: "/ivf-center-in-andheri" },
+              { label: "Ghatkopar", path: "/ivf-center-in-ghatkopar" },
+              { label: "Virar", path: "/ivf-center-in-virar" },
+              { label: "Kalyan", path: "/best-ivf-center-kalyan" },
+              { label: "Borivali", path: "/best-ivf-center-borivali" },
+              { label: "Vashi", path: "/best-ivf-center-in-vashi" },
+              { label: "Panvel", path: "/best-ivf-center-in-panvel" }
             ],
           },
-          { label: "Nashik", path: "/centers/nashik" },
-          { label: "Jalgaon", path: "/centers/jalgaon" },
-          { label: "Ahilyanagar", path: "/centers/ahilyanagar" },
-          { label: "Amravati", path: "/centers/amravati" },
-          { label: "Kolhapur", path: "/centers/kolhapur" },
-          { label: "Nagpur", path: "/centers/nagpur" },
-          { label: "Solapur", path: "/centers/solapur" },
-          { label: "Pune", path: "/centers/pune" },
+          { label: "Pune", path: "/ivf-center-in-pune" },
+          { label: "Nashik", path: "/best-ivf-center-in-nashik" },
+          { label: "Jalgaon", path: "/best-ivf-center-in-jalgaon" },
+          { label: "Ahilyanagar", path: "/best-ivf-center-in-ahilyanagar" },
+          { label: "Amravati", path: "/best-ivf-center-in-amravati" },
+          { label: "Kolhapur", path: "/kolhapur" },
+          { label: "Nagpur", path: "/best-ivf-center-in-nagpur" },
+          { label: "Solapur", path: "/best-ivf-center-in-solapur" }
         ],
       },
       {
@@ -783,47 +783,47 @@ const megaMenuDataMobile: Record<string, any> = {
           {
             label: "Advanced Infertility Treatments", path: "/treatments#advanced",
             submenu: [
-              { label: "IMSI – High-Resolution Sperm Selection", path: "/treatments/advanced/imsi" },
-              { label: "PICSI – Physiological ICSI", path: "/treatments/advanced/picsi" },
-              { label: "LAH – Laser Assisted Hatching", path: "/treatments/advanced/lah" },
-              { label: "Blastocyst Transfer – Stronger Embryo Transfer", path: "/treatments//advanced/blastocyst-transfer" },
-              { label: "Sequential Embryo Transfer – Two-Stage Transfer", path: "/treatments/advanced/sequential-embryo-transfer/" },
-              { label: "PGD/PGS/PGT-A – Genetic Screening", path: "/treatments/advanced/pgd-pgs-pgt-a/" },
+              { label: "IMSI – High-Resolution Sperm Selection", path: "/imsi" },
+              { label: "PICSI – Physiological ICSI", path: "/picsi" },
+              { label: "LAH – Laser Assisted Hatching", path: "/lah" },
+              { label: "Blastocyst Transfer – Stronger Embryo Transfer", path: "/blastocyst-transfer" },
+              { label: "Sequential Embryo Transfer – Two-Stage Transfer", path: "/sequential-embryo-transfer" },
+              { label: "PGD/PGS/PGT-A – Genetic Screening", path: "/pgd-pgs-pgt-a-a-boon-for-couples-with-genetic-issues" },
             ],
           },
           {
             label: "Advanced Facilities for Trusted Care", path: "/treatments#advanced",
             submenu: [
-              { label: "Class-1000 Modular Lab", path: "/treatments/advanced/class-1000-modular-lab/" },
-              { label: "Trigas Incubators", path: "/treatments/advanced/trigas-incubators/" },
-              { label: "Witness System", path: "/treatments/advanced/witness-system/" },
-              { label: "Cryopreservation", path: "/treatments/advanced/cryopreservation/" },
+              { label: "Class-1000 Modular Lab", path: "/class-1000-modular-lab" },
+              { label: "Trigas Incubators", path: "/trigas-incubators" },
+              { label: "Witness System", path: "/witness-system" },
+              { label: "Cryopreservation", path: "/cryopreservation-of-human-gametes" },
             ],
           },
           {
             label: "Infertility Treatments", path: "/treatments#infertility",
             submenu: [
-              { label: "Ovulation Induction", path: "/treatments/infertility/ovulation-induction/" },
-              { label: "IUI", path: "/treatments/infertility/artificial-insemination-iui-treatment/" },
-              { label: "IVF", path: "/treatments/infertility/ivf/" },
-              { label: "IVF-ICSI ", path: "/treatments/infertility/ivf-icsi/" },
-              { label: "Frozen Embryo Transfer", path: "/treatments/infertility/frozen-embryo-transfer/" },
-              { label: "Fertility Surgery  ", path: "/treatments/infertility/fertility-surgery/" },
+              { label: "Ovulation Induction", path: "/ovulation-induction" },
+              { label: "IUI", path: "/artificial-insemination-iui" },
+              { label: "IVF", path: "/ivf-treatment" },
+              { label: "IVF-ICSI ", path: "/icsi-treatment" },
+              { label: "Frozen Embryo Transfer", path: "/frozen-embryo-transfer" },
+              { label: "Fertility Surgery  ", path: "/fertility-surgery" },
             ],
           },
           {
             label: "Fertility Preservation", path: "/treatments#preservation",
             submenu: [
-              { label: "Female Fertility Preservation", path: "/treatments/preservation/female-fertility-preservation/" },
-              { label: "Male Fertility Preservation", path: "/treatments/preservation/male-fertility-preservation/" },
-              { label: "Embryo Preservation", path: "/treatments/preservation/egg-embryo-freezing/" },
+              { label: "Female Fertility Preservation", path: "/female-fertility-preservation/" },
+              { label: "Male Fertility Preservation", path: "/male-fertility-preservation/" },
+              { label: "Embryo Preservation", path: "/egg-freezing-embryo-freezing/" },
             ],
           },
           {
             label: "Fertility Evaluation", path: "/treatments#evaluation",
             submenu: [
-              { label: "Female Analysis-Complete Reproductive Health Check", path: "/treatments/evaluation/female-analysis-complete-reproductive-health-check/" },
-              { label: "Male Analysis – Advanced Sperm Testing", path: "/treatments/evaluation/male-analysis/" },
+              { label: "Female Analysis-Complete Reproductive Health Check", path: "/female-analysis/" },
+              { label: "Male Analysis – Advanced Sperm Testing", path: "/semen-analysis/" },
             ],
           },
         ],
@@ -877,7 +877,7 @@ const megaMenuData: Record<string, any> = {
       {
         links: [
           // { label: "Fellowship", path: "/fellowship", isarrow: true },
-          { label: "Our Centers", path: "/centers", isarrow: true },
+          { label: "Our Centers", path: "/our-center", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
@@ -905,22 +905,22 @@ const megaMenuData: Record<string, any> = {
           {
             label: "Female Infertility Causes", path: "/infertility#fertility-section",
             submenu: [
-              { label: "Repeated IUI Failures", path: "/infertility/female/repeated-iui-failures/" },
-              { label: "Repeated IVF Failures", path: "/infertility/female/repeated-ivf-failures/" },
-              { label: "Pregnancy after Menopause", path: "/infertility/female/pregnancy-after-menopause/" },
-              { label: "Low AMH", path: "/infertility/female/low-amh/" },
-              { label: "PCOS", path: "/infertility/female/pcos/" },
-              { label: "Tubal Blockage", path: "/infertility/female/tubal-blockage/" },
-              { label: "Fibroids", path: "/infertility/female/fibroids/" },
-              { label: "Endometriosis", path: "/infertility/female/endometriosis/" },
+              { label: "Repeated IUI Failures", path: "/repeated-iui-failures/" },
+              { label: "Repeated IVF Failures", path: "/repeated-ivf-failures/" },
+              { label: "Pregnancy after Menopause", path: "/pregnancy-after-menopause/" },
+              { label: "Low AMH", path: "/low-amh/" },
+              { label: "PCOS", path: "/pcos/" },
+              { label: "Tubal Blockage", path: "/tubal-blockage/" },
+              { label: "Fibroids", path: "/fibroids/" },
+              { label: "Endometriosis", path: "/endometriosis/" },
             ],
           },
           {
             label: "Male Infertility Causes", path: "/infertility#fertility-mini-section",
             submenu: [
-              { label: "Azoospermia", path: "/infertility/male/azoospermia/" },
-              { label: "Low Sperm Count", path: "/infertility/male/low-sperm-count/" },
-              { label: "Erectile Dysfunction (ED)", path: "/infertility/male/erectile-dysfunction/" },
+              { label: "Azoospermia", path: "/azoospermia" },
+              { label: "Low Sperm Count", path: "/low-sperm-count" },
+              { label: "Erectile Dysfunction (ED)", path: "/erectile-dysfunction-ed" },
             ],
           },
         ],
@@ -938,7 +938,7 @@ const megaMenuData: Record<string, any> = {
       },
       {
         links: [
-          { label: "Our Centers", path: "/centers", isarrow: true },
+          { label: "Our Centers", path: "/our-center", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
@@ -954,35 +954,35 @@ const megaMenuData: Record<string, any> = {
         title: "Where We Are",
         links: [
           {
-            label: "Mumbai", path: "/centers/mumbai",
+            label: "Mumbai", path: "/mumbai",
             submenu: [
-              { label: "Thane", path: "/centers/thane" },
-              { label: "Andheri", path: "/centers/andheri" },
-              { label: "Borivali", path: "/centers/borivali" },
-              { label: "Ghatkopar", path: "/centers/ghatkopar" },
-              { label: "Vashi", path: "/centers/vashi" },
-              { label: "Virar", path: "/centers/virar" },
-              { label: "Kalyan", path: "/centers/kalyan" },
-              { label: "Panvel", path: "/centers/panvel" },
+              { label: "Thane", path: "/ivf-center-thane" },
+              { label: "Andheri", path: "/ivf-center-in-andheri" },
+              { label: "Ghatkopar", path: "/ivf-center-in-ghatkopar" },
+              { label: "Virar", path: "/ivf-center-in-virar" },
+              { label: "Kalyan", path: "/best-ivf-center-kalyan" },
+              { label: "Borivali", path: "/best-ivf-center-borivali" },
+              { label: "Vashi", path: "/best-ivf-center-in-vashi" },
+              { label: "Panvel", path: "/best-ivf-center-in-panvel" }
             ],
           },
         ],
       },
       {
         links: [
-          { label: "Nashik", path: "/centers/nashik" },
-          { label: "Jalgaon", path: "/centers/jalgaon" },
-          { label: "Ahilyanagar", path: "/centers/ahilyanagar" },
-          { label: "Amravati", path: "/centers/amravati" },
-          { label: "Kolhapur", path: "/centers/kolhapur" },
-          { label: "Nagpur", path: "/centers/nagpur" },
-          { label: "Solapur", path: "/centers/solapur" },
-          { label: "Pune", path: "/centers/pune" },
+          { label: "Pune", path: "/ivf-center-in-pune" },
+          { label: "Nashik", path: "/best-ivf-center-in-nashik" },
+          { label: "Jalgaon", path: "/best-ivf-center-in-jalgaon" },
+          { label: "Ahilyanagar", path: "/best-ivf-center-in-ahilyanagar" },
+          { label: "Amravati", path: "/best-ivf-center-in-amravati" },
+          { label: "Kolhapur", path: "/kolhapur" },
+          { label: "Nagpur", path: "/best-ivf-center-in-nagpur" },
+          { label: "Solapur", path: "/best-ivf-center-in-solapur" }
         ],
       },
       {
         links: [
-          { label: "Our Centers", path: "/centers", isarrow: true },
+          { label: "Our Centers", path: "/our-center", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
@@ -1001,22 +1001,22 @@ const megaMenuData: Record<string, any> = {
           {
             label: "Advanced Infertility Treatments", path: "/treatments#advanced",
             submenu: [
-              { label: "IMSI – High-Resolution Sperm Selection", path: "/treatments/advanced/imsi" },
-              { label: "PICSI – Physiological ICSI", path: "/treatments/advanced/picsi" },
-              { label: "LAH – Laser Assisted Hatching", path: "/treatments/advanced/lah" },
-              { label: "Blastocyst Transfer – Stronger Embryo Transfer", path: "/treatments//advanced/blastocyst-transfer" },
-              { label: "Sequential Embryo Transfer – Two-Stage Transfer", path: "/treatments/advanced/sequential-embryo-transfer/" },
-              { label: "PGD/PGS/PGT-A – Genetic Screening", path: "/treatments/advanced/pgd-pgs-pgt-a/" },
+              { label: "IMSI – High-Resolution Sperm Selection", path: "/imsi" },
+              { label: "PICSI – Physiological ICSI", path: "/picsi" },
+              { label: "LAH – Laser Assisted Hatching", path: "/lah" },
+              { label: "Blastocyst Transfer – Stronger Embryo Transfer", path: "/blastocyst-transfer" },
+              { label: "Sequential Embryo Transfer – Two-Stage Transfer", path: "/sequential-embryo-transfer" },
+              { label: "PGD/PGS/PGT-A – Genetic Screening", path: "/pgd-pgs-pgt-a-a-boon-for-couples-with-genetic-issues" },
 
             ],
           },
           {
             label: "Advanced Facilities for Trusted Care", path: "/treatments#advanced",
             submenu: [
-              { label: "Class-1000 Modular Lab", path: "/treatments/advanced/class-1000-modular-lab/" },
-              { label: "Trigas Incubators", path: "/treatments/advanced/trigas-incubators/" },
-              { label: "Witness System", path: "/treatments/advanced/witness-system/" },
-              { label: "Cryopreservation", path: "/treatments/advanced/cryopreservation/" },
+              { label: "Class-1000 Modular Lab", path: "/class-1000-modular-lab" },
+              { label: "Trigas Incubators", path: "/trigas-incubators" },
+              { label: "Witness System", path: "/witness-system" },
+              { label: "Cryopreservation", path: "/cryopreservation-of-human-gametes" },
 
             ],
           },
@@ -1029,21 +1029,21 @@ const megaMenuData: Record<string, any> = {
           {
             label: "Infertility Treatments", path: "/treatments#infertility",
             submenu: [
-              { label: "Ovulation Induction", path: "/treatments/infertility/ovulation-induction/" },
-              { label: "IUI", path: "/treatments/infertility/artificial-insemination-iui-treatment/" },
-              { label: "IVF", path: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/" },
-              { label: "IVF-ICSI ", path: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/" },
-              { label: "Frozen Embryo Transfer", path: "/treatments/infertility/frozen-embryo-transfer/" },
-              { label: "Fertility Surgery  ", path: "/treatments/infertility/fertility-surgery/" },
+              { label: "Ovulation Induction", path: "/ovulation-induction/" },
+              { label: "IUI", path: "/artificial-insemination-iui/" },
+              { label: "IVF", path: "/ivf-treatment/" },
+              { label: "IVF-ICSI ", path: "/icsi-treatment/" },
+              { label: "Frozen Embryo Transfer", path: "/frozen-embryo-transfer/" },
+              { label: "Fertility Surgery  ", path: "/fertility-surgery/" },
 
             ],
           },
           {
             label: "Fertility Preservation", path: "/treatments#preservation",
             submenu: [
-              { label: "Female Fertility Preservation", path: "/treatments/preservation/female-fertility-preservation/" },
-              { label: "Male Fertility Preservation", path: "/treatments/preservation/male-fertility-preservation/" },
-              { label: "Embryo Preservation", path: "/treatments/preservation/egg-embryo-freezing/" },
+              { label: "Female Fertility Preservation", path: "/female-fertility-preservation/" },
+              { label: "Male Fertility Preservation", path: "/male-fertility-preservation/" },
+              { label: "Embryo Preservation", path: "/egg-freezing-embryo-freezing/" },
 
             ],
 
@@ -1051,8 +1051,8 @@ const megaMenuData: Record<string, any> = {
           {
             label: "Fertility Evaluation", path: "/treatments#evaluation",
             submenu: [
-              { label: "Female Analysis-Complete Reproductive Health Check", path: "/treatments/evaluation/female-analysis-complete-reproductive-health-check/" },
-              { label: "Male Analysis – Advanced Sperm Testing", path: "/treatments/evaluation/male-analysis/" },
+              { label: "Female Analysis-Complete Reproductive Health Check", path: "/female-analysis/" },
+              { label: "Male Analysis – Advanced Sperm Testing", path: "/semen-analysis/" },
 
             ],
 
@@ -1062,7 +1062,7 @@ const megaMenuData: Record<string, any> = {
       },
       {
         links: [
-          { label: "Our Centers", path: "/centers", isarrow: true },
+          { label: "Our Centers", path: "/our-center", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patients", isarrow: true },
@@ -1422,7 +1422,7 @@ export default function Navbar() {
   const navigationItems = [
     { label: "About Us", path: "/about-us", hasMegaMenu: true },
     { label: "Infertility Issues", path: "/infertility", hasMegaMenu: true },
-    { label: "Our Centers", path: "/centers", hasMegaMenu: true },
+    { label: "Our Centers", path: "/our-center", hasMegaMenu: true },
     { label: "Treatments", path: "/treatments", hasMegaMenu: true },
     { label: "Doctors", path: "/doctors", hasMegaMenu: false },
     { label: "Patient Resources", path: "/resources", hasMegaMenu: false },
