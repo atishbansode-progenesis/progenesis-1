@@ -65,22 +65,22 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
   ];
 
   const locations = [
-    { name: "Thane", desc: "(Opp R Mall, Manpada)", icon: "/images/Thane.png", link: "/thane/" },
-    { name: "Andheri", desc: "(Opp. to Laxmi Industrial Complex)", icon: "/images/Andheri.png", link: "/andheri/" },
-    { name: "Ghatkopar", desc: "(Mahatma Gandhi Road)", icon: "/images/Ghatkopar.png", link: "/ghatkopar/" },
-    { name: "Virar", desc: "(Virar Medical Complex)", icon: "/images/virar.jpg", link: "/virar/" },
-    { name: "Kalyan", desc: "(Kalyan Health Clinic)", icon: "/images/kalyan.webp", link: "/kalyan/" },
-    { name: "Borivali", desc: "(Near Station)", icon: "/images/Borivali.png", link: "/borivali/" },
-    { name: "Vashi", desc: "(Palm Beach Service Road)", icon: "/images/Vashi.png", link: "/vashi/" },
-    { name: "Panvel", desc: "(Panvel Medical Center)", icon: "/images/Panvel.jpg", link: "/panvel/" },
-    { name: "Pune", desc: "(Near FC Road)", icon: "/images/Pune.jpg", link: "/pune/" },
-    { name: "Nashik", desc: "(Yeolekar Mala)", icon: "/images/Nasik.jpg", link: "/nashik/" },
-    { name: "Jalgaon", desc: "(College Rd)", icon: "/images/Jalgaon.jpg", link: "/jalgaon/" },
-    { name: "Solapur", desc: "(Dufferin Chowk)", icon: "/images/Solapur.jpg", link: "/solapur/" },
-    { name: "Nagpur", desc: "(Dharampeth)", icon: "/images/Nagpur.jpg", link: "/nagpur/" },
-    { name: "Kolhapur", desc: "(Railway Colony)", icon: "/images/Kolhapur.jpg", link: "/kolhapur/" },
-    { name: "Amravati", desc: "(Sharda Vihar)", icon: "/images/Amravati.jpg", link: "/amravati/" },
-    { name: "Ahilyanagar", desc: "(Mauli Sankul Road)", icon: "/images/Ahilyanagar.jpg", link: "/ahilyanagar/" },
+    { name: "Thane", desc: "(Opp R Mall, Manpada)", icon: "/images/Thane.png", link: "/ivf-center-thane" },
+    { name: "Andheri", desc: "(Opp. to Laxmi Industrial Complex)", icon: "/images/Andheri.png", link: "/ivf-center-in-andheri" },
+    { name: "Ghatkopar", desc: "(Mahatma Gandhi Road)", icon: "/images/Ghatkopar.png", link: "/ivf-center-in-ghatkopar" },
+    { name: "Virar", desc: "(Virar Medical Complex)", icon: "/images/virar.jpg", link: "/ivf-center-in-virar" },
+    { name: "Kalyan", desc: "(Kalyan Health Clinic)", icon: "/images/kalyan.webp", link: "/best-ivf-center-kalyan" },
+    { name: "Borivali", desc: "(Near Station)", icon: "/images/Borivali.png", link: "/best-ivf-center-borivali" },
+    { name: "Vashi", desc: "(Palm Beach Service Road)", icon: "/images/Vashi.png", link: "/best-ivf-center-in-vashi" },
+    { name: "Panvel", desc: "(Panvel Medical Center)", icon: "/images/Panvel.jpg", link: "/best-ivf-center-in-panvel" },
+    { name: "Pune", desc: "(Near FC Road)", icon: "/images/Pune.jpg", link: "/ivf-center-in-pune" },
+    { name: "Nashik", desc: "(Yeolekar Mala)", icon: "/images/Nasik.jpg", link: "/best-ivf-center-in-nashik" },
+    { name: "Jalgaon", desc: "(College Rd)", icon: "/images/Jalgaon.jpg", link: "/best-ivf-center-in-jalgaon" },
+    { name: "Ahilyanagar", desc: "(Mauli Sankul Road)", icon: "/images/Ahilyanagar.jpg", link: "/best-ivf-center-in-ahilyanagar" },
+    { name: "Amravati", desc: "(Sharda Vihar)", icon: "/images/Amravati.jpg", link: "/best-ivf-center-in-amravati" },
+    { name: "Kolhapur", desc: "(Railway Colony)", icon: "/images/Kolhapur.jpg", link: "/kolhapur" },
+    { name: "Nagpur", desc: "(Dharampeth)", icon: "/images/Nagpur.jpg", link: "/best-ivf-center-in-nagpur" },
+    { name: "Solapur", desc: "(Dufferin Chowk)", icon: "/images/Solapur.jpg", link: "/best-ivf-center-in-solapur" },
   ];
 
 
@@ -469,6 +469,8 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                   onClick={() => {
                     setInputs({ ...inputs, what: t.name });
                     setActiveStep(null);
+                    router.push(t.link);
+                    onClose();
                   }}
                   className={`px-3 py-2 rounded-[14px] border text-[14px] font-medium ${inputs.what === t.name
                     ? "bg-[#1656A5] text-white border-[#1656A5]"
@@ -522,6 +524,8 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                   onClick={() => {
                     setInputs({ ...inputs, where: l.name });
                     setActiveStep(null);
+                    router.push(l.link);
+                    onClose();
                   }}
                   className="flex items-center gap-3 p-2 rounded-none hover:bg-gray-50 cursor-pointer"
                 >
@@ -579,6 +583,8 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                   onClick={() => {
                     setInputs({ ...inputs, who: d.name });
                     setActiveStep(null);
+                    router.push(d.link);
+                    onClose();
                   }}
                   className="flex items-center gap-3 p-2 rounded-none hover:bg-gray-50 cursor-pointer"
                 >
