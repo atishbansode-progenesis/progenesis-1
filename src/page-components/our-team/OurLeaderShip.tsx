@@ -114,7 +114,7 @@ const LeadershipTeam: React.FC = () => {
             </button>
             <span className="mx-2">›</span>
             <button
-              onClick={() => (window.location.href = "/about-us")}
+              onClick={() => (window.location.href = "/about-progenesis")}
               className="hover:cursor-pointer"
             >
               About Us

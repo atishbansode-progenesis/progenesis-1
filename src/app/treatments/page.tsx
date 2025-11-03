@@ -119,7 +119,7 @@ const TreatmentsPage: React.FC = () => {
       title: "PGD/PGS/PGT-A – Genetic Screening",
       description:
         "Detects genetic abnormalities in embryos, ensuring healthy pregnancies.",
-      slug: "pgd-pgs-pgt-a-a-boon-for-couples-with-genetic-issues",
+      slug: "pgd-pgs-pgt-a",
       category: "advanced",
     },
   ];
@@ -150,7 +150,7 @@ const TreatmentsPage: React.FC = () => {
       title: "Cryopreservation – Secure Future Fertility",
       description:
         "Safely freezes and stores eggs, sperm, or embryos for future use.",
-      slug: "cryopreservation-of-human-gametes",
+      slug: "cryopreservation",
       category: "advanced",
     },
   ];
@@ -167,7 +167,7 @@ const TreatmentsPage: React.FC = () => {
       title: "IUI – Assisted Intrauterine Insemination Treatment",
       description:
         "Prepared sperm is placed into the uterus during ovulation, boosting fertilization chances.",
-      slug: "artificial-insemination-iui",
+      slug: "artificial-insemination-iui-treatment",
       category: "infertility",
     },
     {
@@ -216,7 +216,7 @@ const TreatmentsPage: React.FC = () => {
     {
       title: "Embryo Preservation",
       image: "/treatments/14.png",
-      slug: "egg-freezing-embryo-freezing",
+      slug: "egg-embryo-freezing",
       category: "preservation",
     },
   ];
@@ -227,7 +227,7 @@ const TreatmentsPage: React.FC = () => {
       description:
         "A detailed evaluation of hormone levels, ovarian reserve, fallopian tubes, and uterine health. This testing helps identify fertility issues and guides a personalized treatment plan for better outcomes.",
       highlighted: true,
-      slug: "female-analysis-complete-reproductive-health-check",
+      slug: "female-fertility-check",
       category: "evaluation",
     },
     {
@@ -235,7 +235,7 @@ const TreatmentsPage: React.FC = () => {
       description:
         "Tests sperm count, motility, shape, and quality using advanced methods. These results help diagnose male infertility and guide the best treatment options.",
       highlighted: false,
-      slug: "male-analysis",
+      slug: "semen-analysis",
       category: "evaluation",
     },
   ];
@@ -366,7 +366,7 @@ const TreatmentsPage: React.FC = () => {
                 description={item.description}
                 href={
                   item.slug && item.category
-                    ? `/${item.slug}`
+                    ? `/treatments/${item.category}/${item.slug}`
                     : undefined
                 }
               />
@@ -397,7 +397,7 @@ const TreatmentsPage: React.FC = () => {
                 description={item.description}
                 href={
                   item.slug && item.category
-                    ? `/${item.slug}`
+                    ? `/treatments/${item.category}/${item.slug}`
                     : undefined
                 }
               />
@@ -496,7 +496,7 @@ const TreatmentsPage: React.FC = () => {
               key={idx}
               href={
                 item.slug && item.category
-                  ? `/${item.slug}`
+                  ? `/treatments/${item.category}/${item.slug}`
                   : "#"
               }
               className=" group rounded-xl border-[#E6E6E6] p-4 md:p-6 flex flex-col gap-3 transition bg-[#EEF5FF] hover:bg-[#DDEBFF] cursor-pointer"
@@ -542,7 +542,7 @@ const TreatmentsPage: React.FC = () => {
               key={idx}
               href={
                 item.slug && item.category
-                  ? `/${item.slug}`
+                  ? `/treatments/${item.category}/${item.slug}`
                   : "#"
               }
               className="
@@ -605,7 +605,7 @@ const TreatmentsPage: React.FC = () => {
               key={idx}
               href={
                 item.slug && item.category
-                  ? `/${item.slug}`
+                  ? `/treatments/${item.category}/${item.slug}`
                   : "#"
               }
               className={`

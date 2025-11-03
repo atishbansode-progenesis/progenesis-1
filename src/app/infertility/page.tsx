@@ -5,7 +5,6 @@ import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
 import StoriesSection from "@/components/Home/StoriesSection";
 import {
-  CategoryTabs,
   WhatIsInfertility,
   FemaleInfertilitySection,
   MaleInfertilitySection,
@@ -15,7 +14,6 @@ import {
   MALE_INFERTILITY_ISSUES,
   FeatureCardProps,
 } from "@/page-components/infertilityV1";
-import NewConstaltentForm from "@/page-components/infertilityV1/NewConstaltentForm";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
 import InfertilityHero from "@/page-components/infertilityV1/InfertilityHero";

@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                { label: "About Us", href: "/about-us" },
+                { label: "About Us", href: "/about-progenesis" },
                 { label: "Our Centers", href: "/our-center" },
                 { label: "Doctors", href: "/doctors" },
                 { label: "Careers", href: "/careers" },
@@ -137,14 +137,14 @@ const Footer: React.FC = () => {
                 <ArrowDown open={openDropdown === "femaleInf"} />
               </button>
               {renderList("femaleInf", [
-                { label: "Repeated IUI Failure", href: "/repeated-iui-failures" },
-                { label: "Repeated IVF Failure", href: "/repeated-ivf-failures" },
-                { label: "Pregnancy after Menopause", href: "/pregnancy-after-menopause" },
-                { label: "Low AMH", href: "/low-amh" },
-                { label: "PCOS", href: "/pcos" },
-                { label: "Tubal Blockage", href: "/tubal-blockage" },
-                { label: "Fibroids", href: "/fibroids" },
-                { label: "Endometriosis", href: "/endometriosis" },
+                { label: "Repeated IUI Failure", href: "/infertility/female/repeated-iui-failures/" },
+                { label: "Repeated IVF Failure", href: "/infertility/female/repeated-ivf-failures/" },
+                { label: "Pregnancy after Menopause", href: "/infertility/female/pregnancy-after-menopause/" },
+                { label: "Low AMH", href: "/infertility/female/low-amh/" },
+                { label: "PCOS", href: "/infertility/female/pcos/" },
+                { label: "Tubal Blockage", href: "/infertility/female/tubal-blockage/" },
+                { label: "Fibroids", href: "/infertility/female/fibroids/" },
+                { label: "Endometriosis", href: "/infertility/female/endometriosis/" },
               ])}
             </div>
 
@@ -159,9 +159,9 @@ const Footer: React.FC = () => {
                 <ArrowDown open={openDropdown === "maleInf"} />
               </button>
               {renderList("maleInf", [
-                { label: "Azoospermia", href: "/azoospermia" },
-                { label: "Low Sperm Count", href: "/low-sperm-count" },
-                { label: "Erectile Dysfunction (ED)", href: "/erectile-dysfunction-ed" },
+                { label: "Azoospermia", href: "/infertility/male/azoospermia/" },
+                { label: "Low Sperm Count", href: "/infertility/male/low-sperm-count/" },
+                { label: "Erectile Dysfunction (ED)", href: "/infertility/male/erectile-dysfunction/" },
               ])}
             </div>
           </div>
@@ -177,45 +177,45 @@ const Footer: React.FC = () => {
                 key: "advTreat",
                 label: "Advanced Treatments",
                 items: [
-                  { label: "IMSI", href: "/imsi" },
-                  { label: "PICSI", href: "/picsi" },
-                  { label: "LAH", href: "/lah" },
-                  { label: "Blastocyst Transfer", href: "/blastocyst-transfer" },
-                  { label: "Sequential Embryo Transfer", href: "/sequential-embryo-transfer" },
-                  { label: "PGD/PGS/PGT-A", href: "/pgd-pgs-pgt-a-a-boon-for-couples-with-genetic-issues" },
-                  { label: "Class-1000 Modular Lab", href: "/class-1000-modular-lab" },
-                  { label: "Trigas Incubators", href: "/trigas-incubators" },
-                  { label: "Witness System", href: "/witness-system" },
-                  { label: "Cryopreservation of Human Gametes", href: "/cryopreservation-of-human-gametes" },
+                  { label: "IMSI", href: "/treatments/advanced/imsi" },
+                  { label: "PICSI", href: "/treatments/advanced/picsi" },
+                  { label: "LAH", href: "/treatments/advanced/lah" },
+                  { label: "Blastocyst Transfer", href: "/treatments//advanced/blastocyst-transfer" },
+                  { label: "Sequential Embryo Transfer", href: "/treatments/advanced/sequential-embryo-transfer/" },
+                  { label: "PGD/PGS/PGT-A", href: "/treatments/advanced/pgd-pgs-pgt-a/" },
+                  { label: "Class-1000 Modular Lab", href: "/treatments/advanced/class-1000-modular-lab/" },
+                  { label: "Trigas Incubators", href: "/treatments/advanced/trigas-incubators/" },
+                  { label: "Witness System", href: "/treatments/advanced/witness-system/" },
+                  { label: "Cryopreservation of Human Gametes", href: "/treatments/advanced/cryopreservation/" },
                 ],
               },
               {
                 key: "infTreat",
                 label: "Infertility Treatments",
                 items: [
-                  { label: "Ovulation Induction", href: "/ovulation-induction" },
-                  { label: "IUI", href: "/artificial-insemination-iui" },
-                  { label: "IVF", href: "/ivf-treatment" },
-                  { label: "IVF–ICSI", href: "/icsi-treatment" },
-                  { label: "Frozen Embryo Transfer", href: "/frozen-embryo-transfer" },
-                  { label: "Fertility Surgery", href: "/fertility-surgery" },
+                  { label: "Ovulation Induction", href: "/treatments/infertility/ovulation-induction/" },
+                  { label: "IUI", href: "/treatments/infertility/artificial-insemination-iui-treatment/" },
+                  { label: "IVF", href: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/" },
+                  { label: "IVF–ICSI", href: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/" },
+                  { label: "Frozen Embryo Transfer", href: "/treatments/infertility/frozen-embryo-transfer/" },
+                  { label: "Fertility Surgery", href: "/treatments/infertility/fertility-surgery/" },
                 ],
               },
               {
                 key: "fPres",
                 label: "Fertility Preservation",
                 items: [
-                  { label: "Female Fertility Preservation", href: "/female-fertility-preservation" },
-                  { label: "Male Fertility Preservation", href: "/male-fertility-preservation" },
-                  { label: "Embryo Preservation", href: "/egg-freezing-embryo-freezing" },
+                  { label: "Female Fertility Preservation", href: "/treatments/preservation/female-fertility-preservation/" },
+                  { label: "Male Fertility Preservation", href: "/treatments/preservation/male-fertility-preservation/" },
+                  { label: "Embryo Preservation", href: "/treatments/preservation/egg-embryo-freezing/" },
                 ],
               },
               {
                 key: "fEval",
                 label: "Fertility Evaluation",
                 items: [
-                  { label: "Female Analysis", href: "/female-analysis" },
-                  { label: "Male Analysis", href: "/semen-analysis" },
+                  { label: "Female Analysis", href: "/treatments/evaluation/female-fertility-check/" },
+                  { label: "Male Analysis", href: "/treatments/evaluation/semen-analysis/" },
                 ],
               },
             ].map((section) => (
@@ -244,10 +244,10 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                { label: "International Patients", href: "/international-patients" },
+                { label: "International Patients", href: "/international-patient" },
                 { label: "EMI Options", href: "/emi-options" },
                 { label: "Second Opinion", href: "/second-opinion" },
-                { label: "Online Consultation", href: "/online-consultation" },
+                { label: "Online Consultation", href: "/online-consultations" },
               ].map((it) => (
                 <li key={it.label}>
                   <Link
@@ -320,4 +320,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-

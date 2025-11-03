@@ -29,7 +29,7 @@ export const centersData: Center[] = [
   // Mumbai Region
   {
     id: 1,
-    slug: "ivf-center-thane",
+    slug: "best-ivf-center-in-thane",
     name: "Thane",
     city: "Mumbai",
     state: "MAHARASHTRA",
@@ -44,7 +44,7 @@ export const centersData: Center[] = [
   },
   {
     id: 2,
-    slug: "ivf-center-in-andheri",
+    slug: "best-ivf-center-in-andheri",
     name: "Andheri",
     city: "Mumbai",
     state: "MAHARASHTRA",
@@ -59,7 +59,7 @@ export const centersData: Center[] = [
   },
   {
     id: 3,
-    slug: "ivf-center-in-ghatkopar",
+    slug: "best-ivf-center-in-ghatkopar",
     name: "Ghatkopar",
     city: "Mumbai",
     state: "MAHARASHTRA",
@@ -74,7 +74,7 @@ export const centersData: Center[] = [
   },
   {
     id: 4,
-    slug: "ivf-center-in-virar",
+    slug: "best-ivf-center-in-virar",
     name: "Virar",
     city: "Mumbai",
     state: "MAHARASHTRA",
@@ -89,7 +89,7 @@ export const centersData: Center[] = [
   },
   {
     id: 5,
-    slug: "best-ivf-center-kalyan",
+    slug: "best-ivf-center-in-kalyan",
     name: "Kalyan",
     city: "Mumbai",
     state: "MAHARASHTRA",
@@ -151,7 +151,7 @@ export const centersData: Center[] = [
   // Rest of Maharashtra
   {
     id: 9,
-    slug: "ivf-center-in-pune",
+    slug: "best-ivf-center-in-pune",
     name: "Pune",
     city: "Pune",
     state: "MAHARASHTRA",

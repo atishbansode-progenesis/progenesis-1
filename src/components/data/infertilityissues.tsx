@@ -3,7 +3,9 @@ export const repeatedIUIFailuresData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Repeated IUI Failures", href: "/repeated-iui-failures/" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Female Infertility", href: "/infertility" },
+      { label: "Repeated IUI Failures", href: "infertility/repeated-iui-failures/" },
     ],
     title: "Repeated IUI Failures",
     buttonText: "Book Your Appointment",
@@ -174,7 +176,9 @@ export const pregnancyAfterMenopauseData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Pregnancy after Menopause", href: "/pregnancy-after-menopause/" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Female Infertility", href: "/infertility" },
+      { label: "Pregnancy after Menopause", href: "/infertility/pregnancy-after-menopause/" },
     ],
     title: "Pregnancy after Menopause",
     buttonText: "Book Your Appointment",
@@ -347,7 +351,9 @@ export const repeatedIVFFailuresData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Repeated IVF Failures", href: "/repeated-ivf-failures" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Female Infertility", href: "/infertility/female" },
+      { label: "Repeated IVF Failures", href: "/infertility/repeated-ivf-failures" },
     ],
     title: "Repeated IVF Failures",
     buttonText: "Book Your Appointment",
@@ -518,7 +524,9 @@ export const lowAMHData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Low AMH", href: "/low-amh" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Female Infertility", href: "/infertility/female" },
+      { label: "Low AMH", href: "/infertility/low-amh" },
     ],
     title: "Low AMH",
     buttonText: "Book Your Appointment",
@@ -683,7 +691,9 @@ export const polycysticOvarianSyndromeData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Polycystic Ovarian Syndrome", href: "/polycystic-ovarian-syndrome" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Female Infertility", href: "/infertility/female" },
+      { label: "Polycystic Ovarian Syndrome", href: "/infertility/polycystic-ovarian-syndrome" },
     ],
     title: "Polycystic Ovarian Syndrome",
     buttonText: "Book Your Appointment",
@@ -848,7 +858,9 @@ export const tubalBlockageData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Tubal Blockage", href: "/tubal-blockage" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Female Infertility", href: "/infertility/female" },
+      { label: "Tubal Blockage", href: "/infertility/tubal-blockage" },
     ],
     title: "Tubal Blockage",
     buttonText: "Book Your Appointment",
@@ -996,7 +1008,9 @@ export const uterineFibroidsData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Fibroids", href: "/uterine-fibroids" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Female Infertility", href: "/infertility/female" },
+      { label: "Fibroids", href: "/infertility/uterine-fibroids" },
     ],
     title: "Uterine Fibroids",
     buttonText: "Book Your Appointment",
@@ -1143,7 +1157,9 @@ export const azoospermiaData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Azoospermia", href: "/azoospermia" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Male Infertility", href: "/infertility/male" },
+      { label: "Azoospermia", href: "/infertility/azoospermia" },
     ],
     title: "Azoospermia",
     buttonText: "Book Your Appointment",
@@ -1292,7 +1308,9 @@ export const lowSpermCountData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Low Sperm Count", href: "/low-sperm-count" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Male Infertility", href: "/infertility/male" },
+      { label: "Low Sperm Count", href: "/infertility/low-sperm-count" },
     ],
     title: "Low Sperm Count",
     buttonText: "Book Your Appointment",
@@ -1441,7 +1459,8 @@ export const erectileDysfunctionData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Erectile Dysfunction (ED)", href: "/erectile-dysfunction-ed" },
+      { label: "Men's Health", href: "/mens-health" },
+      { label: "Erectile Dysfunction (ED)", href: "/mens-health/erectile-dysfunction" },
     ],
     title: "Erectile Dysfunction (ED)",
     buttonText: "Book Your Appointment",
@@ -1620,7 +1639,9 @@ export const endometriosisData = {
   hero: {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Endometriosis", href: "/endometriosis" },
+      { label: "Infertility", href: "/infertility" },
+      { label: "Female Infertility", href: "/infertility/female" },
+      { label: "Endometriosis", href: "/infertility/female/endometriosis" },
     ],
     title: "Endometriosis",
     buttonText: "Book Your Appointment",
@@ -1781,4 +1802,3 @@ export const endometriosisData = {
     rightGradientColor: "#1656A5",
   },
 };
-
