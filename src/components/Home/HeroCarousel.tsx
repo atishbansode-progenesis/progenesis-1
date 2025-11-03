@@ -172,7 +172,7 @@ const HeroCarousel = () => {
       })}
 
       {/* Overlay Content */}
-      <div className="absolute bottom-0 left-0 pb-[10%] px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] text-white z-30 transition-all duration-700 ease-in-out">
+      <div className="absolute bottom-0 left-0 pb-[100px] sm:pb-[10%] px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] text-white z-30 transition-all duration-700 ease-in-out">
         <p
           className="font-[Manrope] font-semibold text-[var(--Text_White,#F9F9F9)]
             text-[32px] leading-[40px] tracking-[-0.64px]
