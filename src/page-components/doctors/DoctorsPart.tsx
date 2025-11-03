@@ -6,14 +6,14 @@ const DoctorsPart = () => {
       <div
         className="section-spacing relative flex w-full h-[605px] px-10 md:px-12 lg:px-[90px] py-10 md:py-14 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/DoctorsSection/Doctors banner mobile.png')",
+          backgroundImage: "url('/DoctorsSection/DoctorsPartM.png')",
         }}
       >
         {/* Large screen background */}
         <div
           className="hidden lg:block absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/DoctorsSection/Doctors banner 2.png')",
+            backgroundImage: "url('/DoctorsSection/DoctorsPartD.png')",
           }}
         ></div>
 
