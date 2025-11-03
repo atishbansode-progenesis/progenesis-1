@@ -10,7 +10,7 @@ const ParenthoodBanner = () => {
       style={{
         backgroundImage: !isLargeDevice
           ? "url('/treatments/bg-banner-small-device-hands.png')"
-          : "url('/treatments/bg baner.png')",
+          : "url('/treatments/bg-bannerM.png')",
           backgroundPosition: 'bottom',
       }}
     >
