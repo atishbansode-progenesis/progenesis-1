@@ -18,7 +18,7 @@ const HeroInter = () => {
                     <div >
                         <h1 className='font-manrope w-auto font-semibold lg:text-[60px] md:text-[56px] text-[32px] lg:leading-[72px] leading-[40px] tracking-[-0.02em]'>
                         IVF Treatment for <br/>
-                        International Patient
+                        International Patients
                         </h1>
                     </div>
 

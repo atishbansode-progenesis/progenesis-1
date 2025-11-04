@@ -4,7 +4,7 @@ import '../about/AboutMain.css'
 
 const doctors = [
   {
-    name: "Dr. Narhari S. Malgaonkar",
+    name: "Dr. Narhari S. Malagaonkar",
     image: "/DoctorsSection/doctorimage.png",
     experience: [
       "15+ Years of Experience",
@@ -14,7 +14,7 @@ const doctors = [
     role: "Chief Fertility Consultant",
   },
   {
-    name: "Dr. Sonali Malgaonkar",
+    name: "Dr. Sonali Malagaonkar",
     image: "/images/doctor-sonali.png",
     experience: [
       "14+ Years of Experience",

@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { Suspense, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import AppointmentForm from "../about/AppointmentForm";
 
 export type Doctor = {
   slug: string;
@@ -19,8 +20,8 @@ export type Doctor = {
 
 export const doctors: Doctor[] = [
   {
-    slug: "dr-narhari-s-malgaonkar",
-    name: "Dr. Narhari S. Malgaonkar",
+    slug: "dr-narhari-s-malagaonkar",
+    name: "Dr. Narhari S. Malagaonkar",
     singlePageBio:
       "Dr. Narhari believes in combining advanced reproductive science with compassionate patient care. He takes time to understand every couple’s emotional and medical journey, ensuring each treatment plan is unique and backed by trust and transparency.",
     experience: "12+ Years of Experience",
@@ -33,8 +34,8 @@ export const doctors: Doctor[] = [
     image: "/images/doctor-narhari.png",
   },
   {
-    slug: "dr-sonali-malgaonkar",
-    name: "Dr. Sonali Malgaonkar",
+    slug: "dr-sonali-malagaonkar",
+    name: "Dr. Sonali Malagaonkar",
     singlePageBio:
       "Dr. Sonali focuses on guiding patients through every step of their fertility journey with empathy and clarity. She believes emotional reassurance and education are just as vital as treatment, helping couples feel confident and understood throughout the process.",
     bio: "She combines fertility and gynaecological care with clear, empathetic communication, helping couples understand every step of their journey.",
@@ -145,7 +146,7 @@ export const doctors: Doctor[] = [
     experience: "04+ Years of Experience",
     qualifications: "DGO (Obstetrics and Gynaecology)",
     fellowship: "Fellowship in Reproductive Medicine",
-    hospital: "Andheri, Mumbai",
+    hospital: "Vashi, Mumbai",
     specialty: "DGO (Obstetrics and Gynaecology)",
     languages: "Marathi, Hindi, English",
     image: "/images/doctors/Bhavika.png",
@@ -165,7 +166,7 @@ export const doctors: Doctor[] = [
   },
   {
     slug: "dr-shradha-pol",
-    name: "Dr. Shradha Pol",
+    name: "Dr. Shraddha Pol",
     singlePageBio: "Dr. Shraddha approaches fertility care with empathy and evidence-based practice, guiding patients gently through sensitive decisions. She believes that informed and emotionally balanced patients have the best chance at success.",
     bio: "She applies research-based methods and clear guidance to help patients navigate IVF and infertility with confidence.",
     experience: "04+ Years of Experience",
@@ -193,8 +194,8 @@ export const doctors: Doctor[] = [
 
 const DoctorsInfo: React.FC = () => {
   const router = useRouter();
-  const pathname = usePathname();
-  const locale = pathname?.split("/")[1] || "en";
+  const [isAppointmentFormOpen, setIsAppointmentFormOpen] = useState(false);
+
   return (
     <section className="section-spacing w-full bg-white px-6 md:px-12  lg:px-[90px] py-10 md:py-14">
       {/* Top breadcrumb tag */}
@@ -264,7 +265,7 @@ const DoctorsInfo: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className=" w-fit csLg:w-full sm:w-auto h-[48px] px-5 rounded-[12px] bg-[#1656A5] text-white text-sm font-normal shadow-sm hover:bg-[#1656A5]/90 transition">
+                <button onClick={(e) => {e.stopPropagation();setIsAppointmentFormOpen(true)}} className="cursor-pointer w-fit csLg:w-full sm:w-auto h-[48px] px-5 rounded-[12px] bg-[#1656A5] text-white text-sm font-normal shadow-sm hover:bg-[#1656A5]/90 transition">
                   Book Your Appointment
                 </button>
 
@@ -273,6 +274,11 @@ const DoctorsInfo: React.FC = () => {
           </div>
         ))}
       </div>
+      {isAppointmentFormOpen && (
+        <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+          <AppointmentForm onClose={() => setIsAppointmentFormOpen(false)} />
+        </Suspense>
+      )}
     </section>
   );
 };

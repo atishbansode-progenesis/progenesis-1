@@ -14,7 +14,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Dr. Narhari S. Malgaonkar",
+    name: "Dr. Narhari S. Malagaonkar",
     role: "Chief Fertility Consultant | Mumbai",
     image: "/DoctorsSection/doctorimage.png",
   },

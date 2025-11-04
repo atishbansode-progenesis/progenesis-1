@@ -100,10 +100,10 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {[
                 { label: "About Us", href: "/about-progenesis" },
-                { label: "Our Centers", href: "/our-center" },
                 { label: "Doctors", href: "/doctors" },
                 { label: "Careers", href: "/careers" },
                 { label: "Success Stories", href: "/resources" },
+                // { label: "Our Centers", href: "/our-center" },
               ].map((it) => (
                 <li key={it.label}>
                   <Link

@@ -1,7 +1,6 @@
 // pages/infertility/repeated-iui-failures/index.tsx
 "use client";
 import { Suspense, useState } from "react";
-import ConsultationForm from "@/components/Consultation/ConsultationForm";
 import StoriesSection from "@/components/Home/StoriesSection";
 import HeroSection from "@/components/HeroSection/herosection";
 import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";

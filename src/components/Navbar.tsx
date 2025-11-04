@@ -85,8 +85,8 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 
 
   const doctors = [
-    { name: "Dr. Narhari S. Malgaonkar", role: "Chief Fertility Consultant, Mumbai", img: "/DoctorsSection/doctorimage.png", link: "/doctors/dr-narhari-s-malgaonkar/" },
-    { name: "Dr. Sonali Malgonkar", role: "Sr. Fertility Consultant, Mumbai", img: "/DoctorsSection/DrSonali.png", link: "/doctors/dr-sonali-malgaonkar/" },
+    { name: "Dr. Narhari S. Malagaonkar", role: "Chief Fertility Consultant, Mumbai", img: "/DoctorsSection/doctorimage.png", link: "/doctors/dr-narhari-s-malagaonkar/" },
+    { name: "Dr. Sonali Malagaonkar", role: "Sr. Fertility Consultant, Mumbai", img: "/DoctorsSection/DrSonali.png", link: "/doctors/dr-sonali-malagaonkar/" },
     { name: "Dr. Dinesh Wade", role: "Fertility Consultant, Pune", img: "/images/doctors/Vivek.png", link: "/doctors/dr-unnati-mamtora/" },
     { name: "Dr. Unnati Mamtora", role: "Fertility Consultant, Borivali", img: "/images/doctors/Unnati.png", link: "/doctors/dr-dinesh-wade/" },
     { name: "Dr. Shital Sonone", role: "Fertility Consultant, Nashik", img: "/images/doctors/Shital.png", link: "/doctors/dr-shital-sonone/" },
@@ -96,7 +96,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     { name: "Dr. Teena Desai", role: "Fertility Consultant, Andheri", img: "/images/doctors/Teena.png", link: "/doctors/dr-teena-desai/" },
     { name: "Dr. Bhavika Sane", role: "Fertility Consultant, Vashi", img: "/images/doctors/Bhavika.png", link: "/doctors/dr-bhavika-sane/" },
     { name: "Dr. Prerna Khandelwal", role: "Fertility Consultant, Thane", img: "/images/doctors/Prerna.png", link: "/doctors/dr-prerna-khandelwal/" },
-    { name: "Dr. Shradha Pol", role: "Fertility Consultant, Thane", img: "/images/doctors/Shradha.png", link: "/doctors/dr-shradha-pol/" },
+    { name: "Dr. Shraddha Pol", role: "Fertility Consultant, Thane", img: "/images/doctors/Shradha.png", link: "/doctors/dr-shradha-pol/" },
     { name: "Dr. Vivek Bagul", role: "Fertility Consultant, Jalgaon", img: "/images/doctors/Vivek.png", link: "/doctors/dr-vivek-bagul/" },
   ];
 
@@ -678,7 +678,7 @@ const megaMenuDataMobile: Record<string, any> = {
         links: [
           { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
           { label: "+91 94239 71260", path: "tel:+919423971260", isWhatsapp: true },
-          { label: "Online Consultation", path: "/online-consultationsss", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultations", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "International Patients", path: "/international-patient", isarrow: true },
@@ -729,7 +729,7 @@ const megaMenuDataMobile: Record<string, any> = {
         links: [
           { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
           { label: "+91 94239 71260", path: "tel:+919423971260", isWhatsapp: true },
-          { label: "Online Consultation", path: "/online-consultationss", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultations", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "International Patients", path: "/international-patient", isarrow: true },
@@ -853,7 +853,7 @@ const megaMenuDataMobile: Record<string, any> = {
         links: [
           { label: "+91 70309 44041", path: "tel:+917030944041", isPhone: true },
           { label: "+91 94239 71260", path: "tel:+919423971260", isWhatsapp: true },
-          { label: "Online Consultation", path: "/online-consultationss", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultations", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "International Patients", path: "/international-patient", isarrow: true },
@@ -901,7 +901,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patient", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultationss", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultations", isarrow: true },
 
         ],
       },
@@ -962,7 +962,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patient", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultationss", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultations", isarrow: true },
         ],
       },
     ],
@@ -1006,7 +1006,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patient", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultationss", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultations", isarrow: true },
         ],
       },
     ],
@@ -1086,7 +1086,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
           { label: "EMI Options", path: "/emi-options", isarrow: true },
           { label: "International Patients", path: "/international-patient", isarrow: true },
-          { label: "Online Consultation", path: "/online-consultationss", isarrow: true },
+          { label: "Online Consultation", path: "/online-consultations", isarrow: true },
         ],
       },
     ],

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const StatItem = ({ item }) => {
+const StatItemNew = ({ item }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
@@ -36,35 +36,36 @@ const StatItem = ({ item }) => {
   );
 };
 
-const StatsSection = () => {
-  const stats = [
-    {
-      label: "Families",
-      description:
-        "We've helped 32,500+ Families. That's more than just a number. Every one of them started where you are now.",
-      value: "32,500+",
-    },
-    {
-      label: "Specialists",
-      description:
-        "With over 400 specialists, Every heartbeat of this journey is supported by a team that listens and cares.",
-      value: "400+",
-    },
-    {
-      label: "Success Rate",
-      description:
-        "That’s not luck. It’s care, science, and faith, working together.",
-      value: "87%",
-    },
-    {
-      label: "Centers",
-      description: "Because hope should never be out of reach.",
-      value: "21+",
-    },
-  ];
+const StatsSectionNew = () => {
+    const stats = [
+        {
+          label: "Clear Diagnosis",
+          description:
+            "78% of patients gained clearer diagnosis after a second opinion.",
+          value: "78%",
+        },
+        {
+          label: "Corrected Errors",
+          description:
+            "62% of initial misdiagnoses were corrected with advanced evaluation.",
+          value: "62%",
+        },
+        {
+          label: "Better Results",
+          description:
+            "3 in 5 couples saw better pregnancy results after re-evaluation.",
+          value: "3 in 5",
+        },
+        {
+          label: "Patient Trust",
+          description: "95% felt more confident about their treatment choices after consultation.",
+          value: "95%",
+        },
+      ];
 
   return (
     <section
+        id="numbers"
       className="relative  py-4 csLg:py-[80px] bg-[url('/images/stats-bg-mob.png')] csLg:bg-[url('/images/stats-bg-desk.png')] bg-cover bg-center w-full bg-gradient-to-r from-white via-white to-blue-50 overflow-hidden "
     >
 
@@ -94,7 +95,7 @@ const StatsSection = () => {
         {/* Stats */}
         <div className="divide-y divide-gray-200">
           {stats.map((item, i) => (
-            <StatItem key={i} item={item} />
+            <StatItemNew key={i} item={item} />
           ))}
         </div>
       </div>
@@ -102,5 +103,5 @@ const StatsSection = () => {
   );
 };
 
-export default StatsSection;
+export default StatsSectionNew;
 

@@ -27,14 +27,14 @@ const stateWithCities: StateCityMap = (() => {
 const CENTERS_PER_PAGE = 5;
 
 const CentersNav: React.FC = () => {
-  const defaultState = Object.keys(stateWithCities)[0];
-  const defaultCity = stateWithCities[defaultState][0];
+  const defaultState = "All";
+  const defaultCity = "All";
 
   const [selectedState, setSelectedState] = useState(defaultState);
   const [selectedCity, setSelectedCity] = useState(defaultCity);
   const [isStateDropdownOpen, setIsStateDropdownOpen] = useState(false);
   const [isCityDropdownOpen, setIsCityDropdownOpen] = useState(false);
-  const [availableCities, setAvailableCities] = useState(stateWithCities[defaultState]);
+  const [availableCities, setAvailableCities] = useState<string[]>(["All"]);
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredCenters, setFilteredCenters] = useState<Center[]>(centersData);
 
@@ -68,22 +68,35 @@ const CentersNav: React.FC = () => {
 
   const handleStateChange = (state: string) => {
     setSelectedState(state);
-    setAvailableCities(stateWithCities[state]);
-    const firstCity = stateWithCities[state][0];
-    setSelectedCity(firstCity);
     setIsStateDropdownOpen(false);
     setCurrentPage(1);
-    setFilteredCenters(centersData.filter((center: Center) => center.city === firstCity));
-
- 
-
+    
+    if (state === "All") {
+      setAvailableCities(["All"]);
+      setSelectedCity("All");
+      setFilteredCenters(centersData);
+    } else {
+      const cities = ["All", ...stateWithCities[state]];
+      setAvailableCities(cities);
+      setSelectedCity("All");
+      setFilteredCenters(centersData.filter((center: Center) => center.state === state));
+    }
   };
 
   const handleCityChange = (city: string) => {
     setSelectedCity(city);
     setIsCityDropdownOpen(false);
     setCurrentPage(1);
-    setFilteredCenters(centersData.filter((center: Center) => center.city === city));
+    
+    if (city === "All") {
+      if (selectedState === "All") {
+        setFilteredCenters(centersData);
+      } else {
+        setFilteredCenters(centersData.filter((center: Center) => center.state === selectedState));
+      }
+    } else {
+      setFilteredCenters(centersData.filter((center: Center) => center.city === city));
+    }
   };
 
   return (
@@ -132,6 +145,13 @@ const CentersNav: React.FC = () => {
                   style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                 >
                   <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
+                  <button
+                    onClick={() => handleStateChange("All")}
+                    className={`w-full px-4 py-2.5 text-left hover:cursor-pointer text-sm hover:bg-gray-50 transition-colors
+                      ${selectedState === "All" ? "text-[#1656A5] font-medium bg-[#1656A5]/5" : "text-gray-700"}`}
+                  >
+                    All
+                  </button>
                   {Object.keys(stateWithCities).map((state) => (
                     <button
                       key={state}

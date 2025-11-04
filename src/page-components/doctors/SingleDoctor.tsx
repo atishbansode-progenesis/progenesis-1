@@ -35,7 +35,7 @@ export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }
                     <div className="text-[16px] text-[#2C2C2C] font-normal">{selectedDoctor.hospital}</div>
                   </div>
                   <div className="min-w-[98px] lg:min-w-[130px]">
-                    <div className="text-[16px] lg:text-[24px] font-semibold lg:font-normal text-[#1656A5]">Specialty</div>
+                    <div className="text-[16px] lg:text-[24px] font-semibold lg:font-normal text-[#1656A5]">Speciality</div>
                     <div className="text-[16px] text-[#2C2C2C] font-normal max-w-[260px]">{selectedDoctor.specialty}</div>
                   </div>
                   {selectedDoctor.languages && (

@@ -163,7 +163,7 @@ export const repeatedIUIFailuresData = {
   },
 
   banner: {
-    text: "Repeated failures don't mean the end; they mean it's time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -338,7 +338,7 @@ export const pregnancyAfterMenopauseData = {
   },
 
   banner: {
-    text: "Repeated failures don’t mean the end; they mean it’s time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -511,7 +511,7 @@ export const repeatedIVFFailuresData = {
   },
 
   banner: {
-    text: "Repeated failures don't mean the end; they mean it's time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -678,7 +678,7 @@ export const lowAMHData = {
   },
 
   banner: {
-    text: "Repeated failures don’t mean the end; they mean it’s time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -845,7 +845,7 @@ export const polycysticOvarianSyndromeData = {
   },
 
   banner: {
-    text: "Repeated failures don't mean the end; they mean it's time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -994,7 +994,7 @@ export const tubalBlockageData = {
   },
 
   banner: {
-    text: "Repeated failures don't mean the end; they mean it's time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -1143,7 +1143,7 @@ export const uterineFibroidsData = {
   },
 
   banner: {
-    text: "Repeated failures don't mean the end; they mean it's time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -1294,7 +1294,7 @@ export const azoospermiaData = {
   },
 
   banner: {
-    text: "Repeated failures don't mean the end; they mean it's time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -1445,7 +1445,7 @@ export const lowSpermCountData = {
   },
 
   banner: {
-    text: "Repeated failures don't mean the end; they mean it's time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -1625,7 +1625,7 @@ export const erectileDysfunctionData = {
   },
 
   banner: {
-    text: "Repeated failures don’t mean the end; they mean it’s time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",
@@ -1796,7 +1796,7 @@ export const endometriosisData = {
   },
 
   banner: {
-    text: "Repeated failures don’t mean the end, they mean it’s time for a new plan.",
+    text: "The road may be challenging, but with the right care, parenthood is within reach.",
     textColor: "#94BA3D",
     leftGradientColor: "#94BA3D",
     rightGradientColor: "#1656A5",

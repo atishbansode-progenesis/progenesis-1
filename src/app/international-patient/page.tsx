@@ -400,7 +400,7 @@ const InternationalPatientsPage: React.FC = () => {
         />
 
         <p className="text-[#94BA3D] max-w-[100%] text-[28px] csLg:text-[40px] text-center font-normal font-[Manrope] relative z-10">
-          Our specialists address your concerns, explain treatment steps, ensure safe care, and arrange hassle-free accommodation with comfort, transport, and support.          </p>
+        Our specialists address your concerns, explain treatment steps, ensure safe care, and arrange hassle-free accommodations for comfort, transport, and support.                 </p>
       </section>
       <section id="fertility" className="bg-white pt-[40px] md:pt-[80px] pb-[40px] md:pb-[60px]">
         <div className="px-4 md:px-[80px] lg:px-[120px]">

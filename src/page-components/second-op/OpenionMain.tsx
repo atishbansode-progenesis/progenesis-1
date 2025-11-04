@@ -7,6 +7,7 @@ import OpinionBenefits from "./OpinionBenefits";
 import OpinionStats from "./OpinionStats";
 import OpinionCare from "./OpinionCare";
 import AppointmentForm from "../about/AppointmentForm";
+import StatsSectionNew from "./StatsSectionNew";
 
 const OpenionMain = () => {
       return (
@@ -15,7 +16,7 @@ const OpenionMain = () => {
         <OpinionNav />
         <OpinionContent />
         <OpinionBenefits />
-        {/* <OpinionStats /> */}
+        <StatsSectionNew />
         <OpinionCare />
         <section className="relative overflow-hidden">
           {/* Video Background */}

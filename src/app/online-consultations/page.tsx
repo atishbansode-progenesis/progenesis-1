@@ -18,7 +18,7 @@ const OnlineConsultation: React.FC = () => {
       tabname: "Start Your Journey Today",
       title: "IVF & Fertility Online Consultation – From the Comfort of Your Home",
       subtitle: "Talk to Specialists",
-      text: "Expert advice is just a call away! Get free, hassle-free consultation with our fertility specialists without traveling or incurring extra expenses. Prepare your questions in advance to make the most of your session and get all your doubts answered.",
+      text: "Expert advice is just a call away! Get free, hassle-free consultation with our fertility specialists without traveling or incurring extra expenses. Prepare your questions in advance to make the most of your session and get all your doubts cleared.",
       image: "/online-consultation/sectionb.png",
     },
     how: {

@@ -23,7 +23,7 @@ export default function StepsSection({
   heading, 
   steps, 
   autoRotate = true, 
-  rotateInterval = 5000 
+  rotateInterval = 8000 
 }: StepsSectionProps) {
   const [activeStep, setActiveStep] = useState(0);
 

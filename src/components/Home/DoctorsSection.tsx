@@ -3,10 +3,10 @@ import React, { useState, useRef } from "react";
 
 const doctors = [
   {
-    name: "Dr. Narhari S. Malgaonkar",
+    name: "Dr. Narhari S. Malagaonkar",
     image: "/DoctorsSection/doctorimage.png",
     description:
-      "Dr. Narhari S. Malgaonkar is the dedicated and exclusive chief fertility consultant.",
+      "Dr. Narhari S. Malagaonkar is the dedicated and exclusive chief fertility consultant.",
     experience: [
       "15+ Years of Experience",
       "MD, DNB, DGO, FCPS, DFP (Mumbai)",
@@ -19,7 +19,7 @@ const doctors = [
     name: "Dr. Sonali Malagaonkar",
     image: "/DoctorsSection/DrSonali.png",
     description:
-      "Dr. Sonali Malgaonkar is a Senior Fertility Consultant in Thane, with a focus on infertility management and reproductive medicine. She is active in professional societies.",
+      "Dr. Sonali Malagaonkar is a Senior Fertility Consultant in Thane, with a focus on infertility management and reproductive medicine. She is active in professional societies.",
     experience: [
       "14+ Years of Experience",
       "M.S. (Obstetrics and Gynaecology) (Mumbai)",
