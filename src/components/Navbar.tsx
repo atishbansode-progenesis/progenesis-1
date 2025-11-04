@@ -65,7 +65,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
   ];
 
   const locations = [
-    { name: "Thane", desc: "(Opp R Mall, Manpada)", icon: "/images/Thane.png", link: "/our-center/best-ivf-center-thane" },
+    { name: "Thane", desc: "(Opp R Mall, Manpada)", icon: "/images/Thane.png", link: "/our-center/best-ivf-center-in-thane" },
     { name: "Andheri", desc: "(Opp. to Laxmi Industrial Complex)", icon: "/images/Andheri.png", link: "/our-center/best-ivf-center-in-andheri" },
     { name: "Ghatkopar", desc: "(Mahatma Gandhi Road)", icon: "/images/Ghatkopar.png", link: "/our-center/best-ivf-center-in-ghatkopar" },
     { name: "Virar", desc: "(Virar Medical Complex)", icon: "/images/virar.jpg", link: "/our-center/best-ivf-center-in-virar" },
