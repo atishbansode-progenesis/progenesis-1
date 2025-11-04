@@ -20,7 +20,7 @@ const HeroCarousel = () => {
       title: "What would you like to know about your fertility journey?",
       buttons: [
         { label: "Book Your Appointment", href: "/appointment" },
-        { label: "Find Nearest Center", href: "/centers" },
+        { label: "Find Nearest Center", href: "/our-center" },
       ],
     },
     // {
