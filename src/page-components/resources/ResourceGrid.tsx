@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 12;
 
 interface ResourceGridProps {
   eyebrowLabel?: string;
@@ -35,7 +35,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
       setError(null);
 
       const response = await fetch(
-        `${apiUrl}/api/blogs/?page=${currentPage}&page_size=${PAGE_SIZE}`
+        `${apiUrl}/api/post-seo-meta/?page=${currentPage}&page_size=${PAGE_SIZE}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch blogs");
@@ -111,8 +111,8 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
 
             return (
               <Link
-                key={card.uid || card.slug}
-                href={`/resources/${card.slug}`}
+                key={card.post_url || card.slug}
+                href={`/${card.post_url}`}
                 className="group flex h-full flex-col rounded-2xl border border-transparent transition-shadow"
               >
                 <article className="flex h-full flex-col gap-2">
@@ -124,7 +124,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
 
                   <div className="relative w-full aspect-[16/11] overflow-hidden rounded-xl bg-gray-100 mt-2">
                     <img
-                      src={previewImage}
+                      src={card.image_url}
                       alt={card.title}
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                       loading="lazy"
@@ -133,10 +133,10 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
 
                   <div className="space-y-2">
                     <h4 className="text-[16px] leading-[22px] font-normal text-[#2C2C2C] line-clamp-1">
-                      {card.title}
+                      {card.post_title}
                     </h4>
                     <p className="text-[13px] text-[#606060]/50 leading-[19.29px] line-clamp-2">
-                      {previewDescription}
+                      {card.seo_description_final}
                     </p>
                   </div>
                 </article>
@@ -146,46 +146,90 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
         </div>
 
         {totalPages > 1 && (
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-              className="rounded-[8px] border border-[#1656A5] px-4 py-2 text-sm font-medium text-[#1656A5] transition-colors hover:bg-[#1656A5] hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400"
-              disabled={currentPage === 1}
-            >
-              Previous
-            </button>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+          {(() => {
+            const buttons = [];
+            const showEllipsisStart = currentPage > 3;
+            const showEllipsisEnd = currentPage < totalPages - 2;
 
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (pageNumber) => (
+            // Always show first page
+            buttons.push(
+              <button
+                key={1}
+                type="button"
+                onClick={() => setCurrentPage(1)}
+                className={`min-w-[40px] rounded-[8px] px-4 py-2 text-sm font-semibold ${
+                  currentPage === 1
+                    ? "bg-[#1656A5] text-white shadow-md"
+                    : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors"
+                }`}
+              >
+                1
+              </button>
+            );
+
+            // Show ellipsis after first page if needed
+            if (showEllipsisStart) {
+              buttons.push(
+                <span key="ellipsis-start" className="px-2 text-[#606060]">
+                  ...
+                </span>
+              );
+            }
+
+            // Show pages around current page
+            const startPage = showEllipsisStart ? currentPage - 1 : 2;
+            const endPage = showEllipsisEnd ? currentPage + 1 : totalPages - 1;
+
+            for (let i = startPage; i <= endPage; i++) {
+              if (i > 1 && i < totalPages) {
+                buttons.push(
                   <button
-                    key={pageNumber}
+                    key={i}
                     type="button"
-                    onClick={() => setCurrentPage(pageNumber)}
-                    className={`min-w-[40px] rounded-[8px]  px-4 py-2 text-sm font-semibold ${
-                      currentPage === pageNumber
+                    onClick={() => setCurrentPage(i)}
+                    className={`min-w-[40px] rounded-[8px] px-4 py-2 text-sm font-semibold ${
+                      currentPage === i
                         ? "bg-[#1656A5] text-white shadow-md"
                         : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors"
                     }`}
                   >
-                    {pageNumber}
+                    {i}
                   </button>
-                )
-              )}
-            </div>
-
-            <button
-              type="button"
-              onClick={() =>
-                setCurrentPage((prev) => Math.min(totalPages, prev + 1))
+                );
               }
-              className="rounded-[8px] border border-[#1656A5] px-4 py-2 text-sm font-medium text-[#1656A5] transition-colors hover:bg-[#1656A5] hover:text-white disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400"
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          </div>
+            }
+
+            // Show ellipsis before last page if needed
+            if (showEllipsisEnd) {
+              buttons.push(
+                <span key="ellipsis-end" className="px-2 text-[#606060]">
+                  ...
+                </span>
+              );
+            }
+
+            // Always show last page if there's more than 1 page
+            if (totalPages > 1) {
+              buttons.push(
+                <button
+                  key={totalPages}
+                  type="button"
+                  onClick={() => setCurrentPage(totalPages)}
+                  className={`min-w-[40px] rounded-[8px] px-4 py-2 text-sm font-semibold ${
+                    currentPage === totalPages
+                      ? "bg-[#1656A5] text-white shadow-md"
+                      : "border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition-colors"
+                  }`}
+                >
+                  {totalPages}
+                </button>
+              );
+            }
+
+            return buttons;
+          })()}
+        </div>
         )}
       </div>
     </section>

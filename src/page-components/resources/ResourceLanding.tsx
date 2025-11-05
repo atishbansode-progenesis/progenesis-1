@@ -9,7 +9,7 @@ const ResourceLanding = ({ recentBlog }: any) => {
       <section>
         <div
           className="relative  w-full h-[728px] md:h-[560px] lg:h-[620px] xl:h-[680px] bg-center bg-cover"
-          style={{ backgroundImage: isSmallDevice ? `url(${recentBlog?.featured_banner_small})` : `url(${recentBlog?.image})`}}
+          style={{ backgroundImage: isSmallDevice ? `url(${recentBlog?.image_url})` : `url(${recentBlog?.image_url})`}}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/70" />
 
@@ -19,9 +19,9 @@ const ResourceLanding = ({ recentBlog }: any) => {
                 Featured
               </span>
 
-              <a href={`/resources/${recentBlog?.slug}`} className="flex justify-center items-center w-full relative cursor-pointer group">
+              <a href={`/${recentBlog?.post_url}`} className="flex justify-center items-center w-full relative cursor-pointer group">
                 <h1 className="text-[#F9F9F9] font-semibold leading-tight md:leading-tight lg:leading-tight text-[28px] sm:text-[34px] md:text-[40px] lg:text-[52px] xl:text-[56px] line-clamp-2 group-hover:text-[#f1e8e8]">
-                  <span>{recentBlog?.title}</span>
+                  <span>{recentBlog?.post_title}</span>
                   <img
                     src="\icons\resorcesrighter.svg"
                     alt="right"
@@ -30,7 +30,7 @@ const ResourceLanding = ({ recentBlog }: any) => {
                 </h1>
               </a>
               <p className="text-[#F9F9F9]/80 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px] mt-4 max-w-3xl line-clamp-2">
-                {recentBlog?.description}
+                {recentBlog?.seo_description_final}
               </p>
               {/* Mobile-only action button below description */}
               <div className="mt-4 md:hidden">

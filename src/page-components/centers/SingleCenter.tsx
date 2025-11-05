@@ -119,15 +119,17 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   }
 
   useEffect(() => {
-    getReviewData()
+    getReviewData();
+    
     const fetchCenterData = async () => {
       try {
         setIsLoading(true);
+        
+        // Fetch all pages if needed, or just use page 1 with larger page_size
         const response = await fetch(
-          process.env.NEXT_PUBLIC_API_URL + "/api/centres-with-faqs/",
+          `${process.env.NEXT_PUBLIC_API_URL}/api/centres/?page=1&page_size=100`
         );
-        const data = await response.json();
-
+        const data = await response.json();  
         // All Mumbai locations
         const mumbaiLocations = [
           "Thane",
@@ -139,15 +141,15 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           "Kalyan",
           "Panvel",
         ];
-
+  
         if (selectedCenter && data.results) {
           // If selected center is one of Mumbai suburbs, we search for "Mumbai"
           const isMumbaiSuburb = mumbaiLocations.some(
             (loc) => loc.toLowerCase() === selectedCenter.name.toLowerCase(),
           );
-
+  
           let matchingCenter;
-
+  
           if (isMumbaiSuburb) {
             matchingCenter = data.results.find(
               (center: CenterData) =>
@@ -160,11 +162,9 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                 selectedCenter.name.toLowerCase(),
             );
           }
-
+  
           if (matchingCenter && matchingCenter.faqs) {
-            setFaqData(
-              matchingCenter.faqs.filter((faq: FAQ) => faq.is_published),
-            );
+            setFaqData(matchingCenter.faqs);
           }
         }
       } catch (error) {
@@ -173,7 +173,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         setIsLoading(false);
       }
     };
-
+  
     if (selectedCenter) {
       fetchCenterData();
     }
@@ -379,7 +379,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         heading={infoGridCenters.heading}
         items={infoGridCenters.items}
       />
-      {totalReviews && totalReviews > 0 && <TestimonialsSection rating={rating} totalReviews={totalReviews} reviewsList={reviewsList}/>}
+      {totalReviews && totalReviews && reviewsList && reviewsList.length > 0 && <TestimonialsSection rating={rating} totalReviews={totalReviews} reviewsList={reviewsList}/>}
       <CenterDoctorsSection />
       <TestimonialsCenters />
       {faqData.length > 0 && (

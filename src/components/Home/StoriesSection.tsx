@@ -204,7 +204,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
 
           
             <Link
-              href="/resources"
+              href="/blog"
               className=" "
             >
             <span className="md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition ">See all</span> 

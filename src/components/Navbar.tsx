@@ -1445,7 +1445,7 @@ export default function Navbar() {
     { label: "Our Centers", path: "/our-center", hasMegaMenu: true },
     { label: "Treatments", path: "/treatments", hasMegaMenu: true },
     { label: "Doctors", path: "/doctors", hasMegaMenu: false },
-    { label: "Patient Resources", path: "/resources", hasMegaMenu: false },
+    { label: "Patient Resources", path: "/blog", hasMegaMenu: false },
   ];
 
   const handleMouseEnter = (label: string) => {
