@@ -19,30 +19,38 @@ import axios from "axios";
 export default function Home() {
   const [rating, setRating] = useState(4.5);
   const [totalReviews, setTotalReviews] = useState(0);
+  const [reviewsList, setReviewsList] = useState<{ author: string; text: string }[]>([]);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     getReviewData();
-  },[])
-
+  }, []);
 
   const getReviewData = async () => {
-    try{
+    try {
       const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/");
-      setRating(response.data.results.overall.average_rating)
-      setTotalReviews(response.data.results.overall.total_reviews)
-      return response.data;
-    }catch(error){
-      console.log("Error", error)
-    }
-  }
 
+      const overall = response.data.results.overall;
+      const reviewsData = overall.data;
+
+      const formattedReviews = reviewsData.map((item: any) => ({
+        author: item.reviewer.displayName,
+        text: item.comment,
+      }));
+
+      setRating(overall.average_rating);
+      setTotalReviews(overall.total_reviews);
+      setReviewsList(formattedReviews);
+
+    } catch (error) {
+      console.log("Error fetching reviews:", error);
+    }
+  };
   return (
     <>
       <HeroCarousel />
       <StatsSection />
       <TreatmentsSection />
-      <TestimonialsSection rating={rating} totalReviews={totalReviews} />
+      <TestimonialsSection rating={rating} totalReviews={totalReviews} reviewsList={reviewsList} />
       <DifferenceSection />
       <LocationsSection />
       <DoctorsSection />

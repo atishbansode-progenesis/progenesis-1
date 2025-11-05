@@ -88,6 +88,8 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [rating, setRating] = useState(4.5);
   const [totalReviews, setTotalReviews] = useState(0);
+  const [reviewsList, setReviewsList] = useState<{ author: string; text: string }[]>([]);
+
 
   const selectedCenter = useMemo(() => {
     if (!selectedSlug) {
@@ -104,6 +106,12 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
       const centerData = response.data.results.results.find((data: any) => data.city.toLowerCase() === selectedCenter?.name.toLowerCase());
       setRating(centerData.average_rating)
       setTotalReviews(centerData.total_reviews)
+      const reviewsData = centerData.data;
+      const formattedReviews = reviewsData.map((item: any) => ({
+        author: item.reviewer.displayName,
+        text: item.comment,
+      }));
+      setReviewsList(formattedReviews);
       return response.data;
     }catch(error){
       console.log("Error", error)
@@ -371,7 +379,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         heading={infoGridCenters.heading}
         items={infoGridCenters.items}
       />
-      {totalReviews && totalReviews > 0 && <TestimonialsSection rating={rating} totalReviews={totalReviews}/>}
+      {totalReviews && totalReviews > 0 && <TestimonialsSection rating={rating} totalReviews={totalReviews} reviewsList={reviewsList}/>}
       <CenterDoctorsSection />
       <TestimonialsCenters />
       {faqData.length > 0 && (
