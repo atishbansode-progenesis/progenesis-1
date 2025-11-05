@@ -5,10 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import axios from "axios";
 
 const TestimonialsSection = () => {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
 
   const testimonials = [
     {
@@ -34,15 +35,30 @@ const TestimonialsSection = () => {
   ];
 
 
+  useEffect(()=>{
+    getReviewData();
+  },[])
 
-  const rating = 4.5;
-  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const getReviewData = async () => {
+    try{
+      const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/");
+      console.log("Hello", response.data.results.overall.average_rating)
+      setRating(response.data.results.overall.average_rating)
+      setTotalReviews(response.data.results.overall.total_reviews)
+      return response.data;
+    }catch(error){
+      console.log("Error", error)
+    }
+  }
+
+
+
+  const [rating, setRating] = useState(4.5);
+  const [totalReviews, setTotalReviews] = useState(4.5);
 
   return (
     <section className="w-full bg-white overflow-hidden">
-      {/* Badge Embed */}
-      {/* <iframe width="560" height="315" src="https://progenesisivf.com/wp-admin/admin-ajax.php?action=brb_embed&brb_collection_id=22772&%E2%80%A6"></iframe> */}
-      {/* <ReviewsEmbed/> */}
       <div className="flex flex-col md:flex-row h-auto md:h-[700px]">
         {/* LEFT PANEL */}
         <div className="bg-[#1656A5] text-white py-10 flex flex-col justify-between md:[528px] px-4 lg:px-[70px]  pt-[80px] md:pt-[128px]">
@@ -69,17 +85,17 @@ const TestimonialsSection = () => {
                 <div className="flex items-center md:hidden space-x-1">
                   <span className="text-yellow-400 text-[16px]">★</span>
                   <span className="text-[14px] font-[Manrope] font-semibold text-[#F9F9F9]">
-                    4.9
+                    {rating}
                   </span>
                   <span className="text-[14px] text-[#F9F9F9]">/5</span>
                   <span className="text-[14px] text-gray-200">
-                    &nbsp;Based on <span className="font-bold">14,570</span> reviews
+                    &nbsp;Based on <span className="font-bold">{totalReviews}</span> reviews
                   </span>
                 </div>
 
                 {/* Desktop rating (unchanged) */}
                 <div className="hidden md:flex md:flex-row md:items-center">
-                  <span className="text-5xl font-[Manrope] font-semibold text-[#F9F9F9] pr-1">4.9</span>
+                  <span className="text-5xl font-[Manrope] font-semibold text-[#F9F9F9] pr-1">{rating}</span>
                   <span className="text-[18px] text-[#F9F9F9] pr-2">/5</span>
                 </div>
               </div>
@@ -95,7 +111,7 @@ const TestimonialsSection = () => {
 
               {/* Desktop review count (unchanged) */}
               <p className="hidden md:block text-sm text-gray-200 mb-6 text-center md:text-left">
-                Based on <span className="font-bold">14,570</span> reviews
+                Based on <span className="font-bold">{totalReviews}</span> reviews
               </p>
             </div>
 
@@ -186,10 +202,15 @@ const TestimonialsSection = () => {
               nextEl: nextRef.current,
             }}
             onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
+              // navigation can be boolean | NavigationOptions; guard before assigning
+              if (
+                swiper.params.navigation &&
+                typeof swiper.params.navigation !== "boolean"
+              ) {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }
             }}
-            onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
           >
             {testimonials.map((t, i) => (
               <SwiperSlide
