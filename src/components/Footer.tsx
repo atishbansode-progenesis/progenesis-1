@@ -288,7 +288,7 @@ const Footer: React.FC = () => {
               Aiming to be the benchmark for reproductive health care services.
             </p>
 
-            <div className="flex items-center gap-4">
+            {/* <div className="flex items-center gap-4">
               {["/linkedin.svg", "/insta.svg", "/facebook.svg", "/threads.svg", "/twitter.svg"].map(
                 (icon, i, arr) => (
                   <React.Fragment key={icon + i}>
@@ -301,7 +301,32 @@ const Footer: React.FC = () => {
                   </React.Fragment>
                 )
               )}
-            </div>
+            </div> */}
+
+            <div className="flex items-center gap-4">
+  {[
+    { icon: "/linkedin.svg", link: "https://www.linkedin.com/company/progenesis-ivf/" },
+    { icon: "/insta.svg", link: "https://www.instagram.com/progenesis_ivf_center" },
+    { icon: "/facebook.svg", link: "https://www.facebook.com/progenesisivf" },
+    { icon: "/Youtube.svg", link: "https://www.youtube.com/@ProgenesisFertilityCenter" },
+    { icon: "/twitter.svg", link: "#" }, // optional placeholder if you don’t have an official Twitter link
+  ].map((item, i, arr) => (
+    <React.Fragment key={item.icon + i}>
+      <a
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:opacity-100 opacity-80"
+      >
+        <img src={item.icon} className="w-8 h-8" alt="social" />
+      </a>
+      {i !== arr.length - 1 && (
+        <div className="h-6 w-px bg-[#685C52] md:bg-white" />
+      )}
+    </React.Fragment>
+  ))}
+</div>
+
           </div>
 
           <div className="mt-2 w-full">

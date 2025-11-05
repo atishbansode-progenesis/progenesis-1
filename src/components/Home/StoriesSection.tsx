@@ -1,17 +1,9 @@
-'use client';
+"use client";
 
 import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { Play } from "lucide-react";
+import { Play, X } from "lucide-react";
 import { resourceStoriesData } from "@/page-components/resources/ResourceStories";
-
-// Declare YouTube IFrame API types
-declare global {
-  interface Window {
-    YT: any;
-    onYouTubeIframeAPIReady: () => void;
-  }
-}
 
 interface StoryCard {
   title: string;
@@ -33,132 +25,44 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
   );
   const stories: StoryCard[] = resourceStoriesData;
   const GAP = 16; // px gap between cards
-  
-  // State to track which video is playing and custom play buttons
-  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
-  const [showPlayButton, setShowPlayButton] = useState<{[key: number]: boolean}>({});
-  const playersRef = useRef<{[key: number]: any}>({});
-  const [apiReady, setApiReady] = useState(false);
-  
-  // Load YouTube IFrame API
-  useEffect(() => {
-    // Check if API is already loaded
-    if (window.YT && window.YT.Player) {
-      setApiReady(true);
-      return;
-    }
-    
-    // Load the IFrame API
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-    
-    // API ready callback
-    window.onYouTubeIframeAPIReady = () => {
-      setApiReady(true);
-    };
-  }, []);
-  
-  // Initialize all play buttons as visible
-  useEffect(() => {
-    const initialState: {[key: number]: boolean} = {};
-    stories.forEach((_, index) => {
-      initialState[index] = true;
-    });
-    setShowPlayButton(initialState);
-  }, [stories]);
 
+  // Modal state: index of currently opened card, null if closed
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  // Track window width for responsive card sizes
   useEffect(() => {
     const onResize = () => setWinWidth(window.innerWidth);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-  
+
+  // Close modal on ESC
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenIndex(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   // Function to extract YouTube video ID from URL
   const getYouTubeVideoId = (url: string): string | null => {
+    if (!url) return null;
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     const match = url.match(regExp);
     return (match && match[2].length === 11) ? match[2] : null;
   };
-  
-  // Function to create YouTube player
-  const createPlayer = (index: number, videoId: string, elementId: string) => {
-    if (!window.YT || !window.YT.Player) return;
-    
-    const player = new window.YT.Player(elementId, {
-      videoId: videoId,
-      playerVars: {
-        controls: 0, // Hide YouTube controls
-        modestbranding: 1,
-        rel: 0,
-        showinfo: 0,
-      },
-      events: {
-        onStateChange: (event: any) => {
-          // When video starts playing
-          if (event.data === window.YT.PlayerState.PLAYING) {
-            setPlayingIndex(index);
-            setShowPlayButton(prev => ({ ...prev, [index]: false }));
-            // Stop all other videos
-            Object.keys(playersRef.current).forEach(key => {
-              const idx = parseInt(key);
-              if (idx !== index && playersRef.current[idx]) {
-                playersRef.current[idx].pauseVideo();
-              }
-            });
-          }
-          // When video is paused or ended
-          if (event.data === window.YT.PlayerState.PAUSED || event.data === window.YT.PlayerState.ENDED) {
-            setShowPlayButton(prev => ({ ...prev, [index]: true }));
-            if (playingIndex === index) {
-              setPlayingIndex(null);
-            }
-          }
-        },
-      },
-    });
-    
-    playersRef.current[index] = player;
-  };
-  
-  // Initialize players when API is ready
-  useEffect(() => {
-    if (!apiReady) return;
-    
-    stories.forEach((story, index) => {
-      const videoId = getYouTubeVideoId(story.videoUrl);
-      if (videoId) {
-        const elementId = `youtube-player-${index}`;
-        // Small delay to ensure DOM is ready
-        setTimeout(() => {
-          createPlayer(index, videoId, elementId);
-        }, 100);
-      }
-    });
-    
-    // Cleanup
-    return () => {
-      Object.values(playersRef.current).forEach(player => {
-        if (player && player.destroy) {
-          player.destroy();
-        }
-      });
-      playersRef.current = {};
-    };
-  }, [apiReady, stories]);
-  
-  // Function to handle custom play button click
-  const handlePlayClick = (index: number) => {
-    const player = playersRef.current[index];
-    if (player && player.playVideo) {
-      player.playVideo();
-    }
+
+  // Map index -> thumbnail path (defaults to TH1.png, TH2.png, ...)
+  const getThumbnail = (index: number) => {
+    // If you have specific mapping or filenames, replace this logic
+    // e.g. return `/StoriesSection/TH${index+1}.png`
+    return `/StoriesSection/TH${index + 1}.png`;
   };
 
   const getCardStyle = () => {
     if (winWidth < 640) {
-      return { minWidth: "65vw", height:"390px" };
+      return { minWidth: "65vw", height: "390px" };
     }
     if (winWidth < 1024) {
       return { minWidth: 240, height: 300 };
@@ -181,44 +85,37 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
 
   const cardStyle = getCardStyle();
 
-  // Only change: tag and heading come from props (if provided), otherwise fall back to original text
   const tag = propTag ?? "Real Stories. Real Miracles.";
   const heading = propHeading ?? "Inspiring stories of strength & Victories";
 
-  return (
+  // Build iframe src for a given video ID
+  const buildEmbedSrc = (videoId: string | null) => {
+    if (!videoId) return "";
+    // autoplay=1 to start playing when modal opens, controls=1 to show controls
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+  };
 
+  return (
     <section className="pb-[20px] md:pb-[60px] pt-[20px] md:pt-[80px] bg-[#FFFFFF] md:bg-[#F1F7FC]">
       <div className="px-4 md:px-[80px] lg:px-[120px]">
         {/* Header */}
-
-          
-            <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
-              {tag}
-            </button>
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 lg:gap-6 mb-[40px] lg:mb-[80px] md:mb-[80px]">
-            
-            <h2 className="mt-2 text-[20px] md:text-[32px] lg:text-[40px] font-normal text-[#2C2C2C] leading-[28px] md:leading-[56px] lg:max-w-[691px]" >
-              {heading}
-            </h2>
-        
-
-          
-            <Link
-              href="/resources"
-              className=" "
-            >
-            <span className="md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition ">See all</span> 
-            </Link>
-         
+        <div className="mb-[20px]">
+          <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
+            {tag}
+          </button>
         </div>
 
-        {/* Carousel   Left Arrow 
-        <button
-          onClick={prevDoctor}
-          className="absolute -left-20 top-1/2 transform -translate-y-1/2 w-[40px] h-[40px] hidden md:flex items-center justify-center rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-50 flex-shrink-0 cursor-pointer"
-        >
-          <img src="/icons/left.svg" alt="left" width={12} height={12} /> 
-        </button> */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 lg:gap-6 mb-[40px] lg:mb-[80px] md:mb-[80px]">
+          <h2 className="mt-2 text-[20px] md:text-[32px] lg:text-[40px] font-normal text-[#2C2C2C] leading-[28px] md:leading-[56px] lg:max-w-[691px]">
+            {heading}
+          </h2>
+
+          <Link href="/resources" className="">
+            <span className="md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition">See all</span>
+          </Link>
+        </div>
+
+        {/* Cards scroll container */}
         <div
           ref={scrollRef}
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
@@ -234,54 +131,125 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
             const views = story.views ?? "2k views";
             const published = story.published ?? "1 month ago";
 
+            const cardThumb = getThumbnail(index);
             const videoId = getYouTubeVideoId(videoSrc);
-            
+            const embedSrc = buildEmbedSrc(videoId);
+
             return (
               <article
                 key={`${title}-${index}`}
                 className="story-card snap-center flex-shrink-0 rounded-2xl overflow-hidden border border-gray-200 bg-white relative shadow-[0_1px_8px_rgba(0,0,0,0.08)] w-[65vw] h-[390px] sm:w-[240px] sm:h-[300px] lg:w-[380px] lg:h-[420px]"
+                style={{ ...cardStyle }}
               >
-                <div className="relative w-full h-full">
-                  {/* YouTube Player Container */}
-                  <div 
-                    id={`youtube-player-${index}`}
-                    className="w-full h-full"
+                {/* Thumbnail (use your custom image) */}
+                <button
+                  onClick={() => setOpenIndex(index)}
+                  className="relative w-full h-full block text-left group"
+                  aria-label={`Open story ${title}`}
+                >
+                  {/* Thumbnail image (served from public folder) */}
+                  <img
+                    src={cardThumb}
+                    alt={title}
+                    className="object-cover w-full h-full"
+                    draggable={false}
                   />
-                  
-                  {/* Custom Play Button Overlay */}
-                  {showPlayButton[index] && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[1px]">
-                      <button
-                        onClick={() => handlePlayClick(index)}
-                        className="cursor-pointer group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#FF0000] hover:bg-[#CC0000] shadow-lg transition-all duration-300 hover:scale-110"
-                        aria-label="Play video"
-                      >
-                        <Play className="w-8 h-8 md:w-10 md:h-10 text-white fill-white ml-1" />
-                      </button>
+
+                  {/* Overlay gradient + title */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <div>
+                      <h3 className="text-white text-[16px] md:text-[18px] font-semibold leading-snug line-clamp-2">
+                        {title}
+                      </h3>
+                      {description && (
+                        <p className="text-white/80 text-sm mt-1 line-clamp-2">
+                          {description}
+                        </p>
+                      )}
                     </div>
-                  )}
+                  </div>
 
-                  {/* Optional: Video Info Overlay */}
-                  {/* <div className="absolute inset-x-0 top-0 flex items-center justify-between px-4 py-3 text-xs md:text-sm text-white bg-gradient-to-b from-black/60 via-black/10 to-transparent">
-                    <span>
-                      {published}
-                    </span>
-                    {views && <span>{views}</span>}
-                  </div> */}
-
-                  {/* Optional: Title and Description Overlay */}
-                  {/* <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent text-white">
-                    <h3 className="text-lg font-semibold leading-snug line-clamp-2">{title}</h3>
-                    {description && (
-                      <p className="mt-1 text-sm text-white/80 line-clamp-2">{description}</p>
-                    )}
-                  </div> */}
-                </div>
+                  {/* Play button centered */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="pointer-events-auto">
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center transform transition group-hover:scale-105">
+                        <Play className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </button>
               </article>
             );
           })}
         </div>
       </div>
+
+      {/* Modal: only one iframe used at a time */}
+      {openIndex !== null && (() => {
+        const story = stories[openIndex];
+        const videoId = getYouTubeVideoId(story.videoUrl);
+        const embedSrc = buildEmbedSrc(videoId);
+
+        return (
+          <div
+            className="fixed inset-0 z-[1100] flex items-center justify-center px-4 py-6"
+            role="dialog"
+            aria-modal="true"
+          >
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-black/65 backdrop-blur-sm"
+              onClick={() => setOpenIndex(null)}
+            />
+
+            <div className="relative z-10 max-w-[1100px] w-full mx-auto rounded-lg overflow-hidden">
+              {/* Close button */}
+              <button
+                onClick={() => setOpenIndex(null)}
+                className="absolute top-3 right-3 z-20 p-2 rounded-full bg-white/80 hover:bg-white transition shadow"
+                aria-label="Close video"
+              >
+                <X className="w-5 h-5 text-[#111]" />
+              </button>
+
+              {/* Responsive iframe container */}
+              <div className="w-full h-[56vw] md:h-[60vh] lg:h-[68vh] bg-black">
+                {videoId ? (
+                  <iframe
+                    src={embedSrc}
+                    title={story.title}
+                    width="100%"
+                    height="100%"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-white">
+                    <p>Video unavailable</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Optional: metadata/footer */}
+              <div className="bg-white p-4">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-[#111]">{story.title}</h3>
+                    {story.description && (
+                      <p className="text-sm text-[#444] mt-1 line-clamp-2">{story.description}</p>
+                    )}
+                  </div>
+                  <div className="text-sm text-[#666]">
+                    <div>{story.published ?? "—"}</div>
+                    <div className="mt-1">{story.views ?? ""}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </section>
   );
 }

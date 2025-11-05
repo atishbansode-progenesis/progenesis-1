@@ -12,7 +12,7 @@ const doctors = [
       "MD, DNB, DGO, FCPS, DFP (Mumbai)",
       "Fellowship in Reproductive Medicine (Singapore)",
     ],
-    location: "Mumbai",
+    location: "All Centers",
     role: "Chief Fertility Consultant",
   },
   {
@@ -29,19 +29,6 @@ const doctors = [
     role: "Sr. Fertility Consultant",
   },
   {
-    name: "Dr. Dinesh Wade",
-    image: "/images/doctors/Dinesh.png",
-    description:
-      "Dr. Dinesh Wade is a Senior IVF Consultant specializing in obstetrics, gynecology, and reproductive medicine, dedicated to providing comprehensive fertility care.",
-    experience: [
-      "14+ Years of Experience",
-      "MBBS, MS, DNB (OBST & GYNAE), FNB, MRCOG (UK)",
-      "Fellowship in Reproductive Medicine",
-    ],
-    location: "Pune",
-    role: "Fertility Consultant",
-  },
-  {
     name: "Dr. Unnati Mamtora",
     image: "/images/doctors/Unnati.png",
     description:
@@ -55,68 +42,29 @@ const doctors = [
     role: "Fertility Consultant",
   },
   {
-    name: "Dr. Shital Sonone",
-    image: "/images/doctors/Shital.png",
+    name: "Dr. Prerna Khandelwal",
+    image: "/images/doctors/Prerna.png",
     description:
-      "Dr. Shital Sonone is a Senior IVF Consultant in Nashik with expertise in infertility, advanced procedures, and patient education. She is a member of ISAR and holds an MD in Obstetrics and Gynaecology.",
+      "Dr. Prerna Khandelwal is a Fertility Consultant specializing in reproductive medicine, offering advanced and tailored fertility care at Progenesis IVF.",
     experience: [
-      "09+ Years of Experience",
-      "MS (Obstetrics and Gynaecology)",
+      "04+ Years of Experience",
+      "MS (Obstetrics and Gynaecology)   ",
       "Fellowship in Reproductive Medicine",
     ],
-    location: "Nashik",
+    location: "Thane",
     role: "Fertility Consultant",
   },
-  {
-    name: "Dr. Rajashree Patil",
-    image: "/images/doctors/Rajashree.png",
+   {
+    name: "Dr. Shraddha Pol",
+    image: "/images/doctors/Shradha.png",
     description:
-      "Dr. Rajashree Patil is a Fertility Consultant specializing in gynecology and infertility, known for her attentive and personalized approach to patient care.",
+      "Dr. Shraddha Pol is a Fertility Consultant focused on infertility and IVF, committed to providing supportive care and improving patient outcomes.",
     experience: [
-      "12+ Years of Experience",
-      "DNB DGO (Obstetrics and Gynaecology) ",
+      "04+ Years of Experience",
+      "MS (Obstetrics and Gynaecology)   ",
       "Fellowship in Reproductive Medicine",
     ],
-    location: "Virar",
-    role: "Fertility Consultant",
-  },
-  {
-    name: "Dr. Darshna Wahane",
-    image: "/images/doctors/Darshna.png",
-    description:
-      "Dr. Darshna Wahane, Fertility Consultant, manages infertility and designs personalized treatments with a compassionate patient approach.",
-    experience: [
-      "10+ Years of Experience",
-      "MBBS.DGO (OBST & GYNAE) ",
-      "Fellowship in Reproductive Medicine",
-    ],
-    location: "Panvel",
-    role: "Fertility Consultant",
-  },
-  {
-    name: "Dr. Priti Pardeshi",
-    image: "/images/doctors/Priti.png",
-    description:
-      "Dr. Priti Pardeshi is a Fertility Consultant at Progenesis Fertility Center, Kalyan. She specializes in obstetrics, gynecology, and reproductive medicine, providing personalized fertility care.",
-    experience: [
-      "12+ Years of Experience",
-      "DGO (Obstetrics and Gynaecology) ",
-      "Fellowship in Reproductive Medicine",
-    ],
-    location: "Kalyan",
-    role: "Fertility Consultant",
-  },
-  {
-    name: "Dr. Teena  Desai",
-    image: "/images/doctors/Teena.png",
-    description:
-      "Dr. Teena Desai is a Fertility Consultant with expertise in high-risk obstetrics, gynecology, and fertility, and has contributed to research in male subfertility.",
-    experience: [
-      "10+ Years of Experience",
-      "DNB DGO (Obstetrics and Gynaecology)  ",
-      "Fellowship in Reproductive Medicine",
-    ],
-    location: "Andheri",
+    location: "Thane",
     role: "Fertility Consultant",
   },
   {
@@ -133,31 +81,177 @@ const doctors = [
     role: "Fertility Consultant",
   },
   {
-    name: "Dr. Prerna Khandelwal",
-    image: "/images/doctors/Prerna.png",
+    name:"Dr. Bhageshri",
+    image: "/images/doctors/Bhageshri.png",
     description:
-      "Dr. Prerna Khandelwal is a Fertility Consultant specializing in reproductive medicine, offering advanced and tailored fertility care at Progenesis IVF.",
+      "Dr. Bhageshri is a Fertility Consultant at Progenesis, Vashi, providing evaluation and treatment for infertility. She is trained in Ovulation Induction, IUI, IVF/ICSI, and offers individualized fertility treatment plans.",
     experience: [
-      "04+ Years of Experience",
-      "MS (Obstetrics and Gynaecology)   ",
+      "08+ Years of Experience",
+      "DGO (Obstetrics and Gynaecology)   ",
       "Fellowship in Reproductive Medicine",
     ],
-    location: "Thane",
+    location: "Vashi",
     role: "Fertility Consultant",
   },
   {
-    name: "Dr. Shraddha Pol",
-    image: "/images/doctors/Shradha.png",
+    name: "Dr. Teena  Desai",
+    image: "/images/doctors/Teena.png",
     description:
-      "Dr. Shraddha Pol is a Fertility Consultant focused on infertility and IVF, committed to providing supportive care and improving patient outcomes.",
+      "Dr. Teena Desai is a Fertility Consultant with expertise in high-risk obstetrics, gynecology, and fertility, and has contributed to research in male subfertility.",
     experience: [
-      "04+ Years of Experience",
-      "MS (Obstetrics and Gynaecology)   ",
+      "10+ Years of Experience",
+      "DNB DGO (Obstetrics and Gynaecology)  ",
       "Fellowship in Reproductive Medicine",
     ],
-    location: "Thane",
+    location: "Andheri",
     role: "Fertility Consultant",
   },
+
+    {
+    name: "Dr. Priti Pardeshi",
+    image: "/images/doctors/Priti.png",
+    description:
+      "Dr. Priti Pardeshi is a Fertility Consultant at Progenesis Fertility Center, Kalyan. She specializes in obstetrics, gynecology, and reproductive medicine, providing personalized fertility care.",
+    experience: [
+      "12+ Years of Experience",
+      "DGO (Obstetrics and Gynaecology) ",
+      "Fellowship in Reproductive Medicine",
+    ],
+    location: "Kalyan",
+    role: "Fertility Consultant",
+  },
+
+   {
+    name: "Dr. Darshna Wahane",
+    image: "/images/doctors/Darshna.png",
+    description:
+      "Dr. Darshna Wahane, Fertility Consultant, manages infertility and designs personalized treatments with a compassionate patient approach.",
+    experience: [
+      "10+ Years of Experience",
+      "MBBS.DGO (OBST & GYNAE) ",
+      "Fellowship in Reproductive Medicine",
+    ],
+    location: "Panvel",
+    role: "Fertility Consultant",
+  },
+
+   {
+    name: "Dr. Rajashree Patil",
+    image: "/images/doctors/Rajashree.png",
+    description:
+      "Dr. Rajashree Patil is a Fertility Consultant specializing in gynecology and infertility, known for her attentive and personalized approach to patient care.",
+    experience: [
+      "12+ Years of Experience",
+      "DNB DGO (Obstetrics and Gynaecology) ",
+      "Fellowship in Reproductive Medicine",
+    ],
+    location: "Virar",
+    role: "Fertility Consultant",
+  },
+
+  
+
+  {
+    name: "Dr. Dinesh Wade",
+    image: "/images/doctors/Dinesh.png",
+    description:
+      "Dr. Dinesh Wade is a Senior IVF Consultant specializing in obstetrics, gynecology, and reproductive medicine, dedicated to providing comprehensive fertility care.",
+    experience: [
+      "14+ Years of Experience",
+      "MBBS, MS, DNB (OBST & GYNAE), FNB, MRCOG (UK)",
+      "Fellowship in Reproductive Medicine",
+    ],
+    location: "Pune",
+    role: "Fertility Consultant",
+  },
+  
+
+  
+  {
+    name: "Dr. Shital Sonone",
+    image: "/images/doctors/Shital.png",
+    description:
+      "Dr. Shital Sonone is a Senior IVF Consultant in Nashik with expertise in infertility, advanced procedures, and patient education. She is a member of ISAR and holds an MD in Obstetrics and Gynaecology.",
+    experience: [
+      "09+ Years of Experience",
+      "MS (Obstetrics and Gynaecology)",
+      "Fellowship in Reproductive Medicine",
+    ],
+    location: "Nashik",
+    role: "Fertility Consultant",
+  },
+
+   {
+    name: "Dr. Ashwini Talpe",
+    image: "/images/doctors/Ashwini.png",
+    description:
+      "Dr. Ashwini Talpe is a Fertility Consultant at Progenesis, Nagpur, with an MS in Obstetrics & Gynaecology and a Fellowship in Reproductive Medicine. She specializes in infertility and IVF/ICSI, providing patient-focused care.",
+    experience: [
+      "04+ Years of Experience",
+      "MS (Obstetrics and Gynaecology)",
+      "Fellowship in Reproductive Medicine",
+    ],
+    location: "Nagpur",
+    role: "Fertility Consultant",
+  },
+ 
+    {
+    name: "Dr. Suchitra Somkuwar",
+    image: "/images/doctors/Suchitra.png",
+    description:
+      "Dr. Suchitra Somkuwar is a Fertility Consultant at Progenesis, Nagpur, specializing in reproductive health and infertility care. She provides Ovulation Induction, IUI, and IVF planning with a supportive, patient-centered approach.",
+    experience: [
+      "05+ Years of Experience",
+      "MS (Obstetrics and Gynaecology)",
+      "Fellowship in Reproductive Medicine",
+    ],
+    location: "Nagpur",
+    role: "Fertility Consultant",
+  },
+ 
+    {
+    name: "Dr. Sangita Ingle",
+    image: "/images/doctors/Sangita.png",
+    description:
+      "Dr. Sangita Ingle is a Fertility Consultant at Progenesis, Ahilyanagar, with a DNB in Obstetrics & Gynaecology and a Fellowship in Reproductive Medicine. She specializes in infertility care and IVF/ICSI, offering supportive, patient-focused treatment.",
+    experience: [
+      "05+ Years of Experience",
+      "DGO (Obstetrics and Gynaecology)",
+      "Fellowship in Reproductive Medicine",
+    ],
+    location: "Ahilyanagar",
+    role: "Fertility Consultant",
+  },
+
+  {
+    name: "Dr. Tushar Zanjade",
+    image: "/images/doctors/Tushar.png",
+    description:
+      "Dr. Tushar Zanjade holds an MBBS degree, qualifying him to practice medicine and pursue further specialization. He is trained in clinical diagnosis and patient care, forming a solid foundation for his medical practice.",
+    experience: [
+      "06+ Years of Experience",
+      "DGO (Obstetrics and Gynaecology)   ",
+      "Bachelor of Medicine, Bachelor of Surgery",
+    ],
+    location: "Amravati",
+    role: "Fertility Consultant",
+  },
+
+  {
+    name: "Dr. Apurva Patni",
+    image: "/images/doctors/Apurva.png",
+    description:
+      "Dr. Apurva Patny, Fertility Consultant at Progenesis Solapur, specialises in IVF, ICSI, and advanced fertility care.",
+    experience: [
+      "04+ Years of Experience",
+      "DGO (Obstetrics and Gynaecology)   ",
+      "Fellowship in Reproductive Medicine",
+    ],
+    location: "Solapur",
+    role: "Fertility Consultant",
+  },
+  
+ 
   {
     name: "Dr. Vivek  Bagul",
     image: "/images/doctors/Vivek.png",
