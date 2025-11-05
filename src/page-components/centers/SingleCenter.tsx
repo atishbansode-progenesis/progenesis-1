@@ -1,17 +1,17 @@
-'use client';
+"use client";
 import React, { useEffect, useMemo, useState, Suspense } from "react";
 import { centersData, type Center } from "./CenterCard";
 import { useRouter } from "next/navigation";
-import FaQ from "../about/FaQ";
 import CenterDoctorsSection from "./SingleCenterDoctors";
 import TestimonialsCenters from "./TestimonialCenters";
 import AppointmentForm from "../about/AppointmentForm";
 import CenterCarousel from "./CenterCarousel";
 import FAQCenters from "../about/FAQCenters";
-import GradientBanner from "../infertility-slug/GradientBanner";
 import InfoGridCenters from "./InfoGridCenters";
 import Detailing from "./Detailing";
 import TextSection from "./TextSection";
+import TestimonialsSection from "@/components/Home/TestimonialsSection";
+import axios from "axios";
 
 interface SingleCenterProps {
   selectedSlug?: string;
@@ -36,10 +36,10 @@ interface CenterData {
   faqs: FAQ[];
 }
 
-
 const infoGridCenters = {
   tag: "Our Expertise",
-  heading: "Advanced fertility treatments backed <br/> by innovation and compassionate care",
+  heading:
+    "Advanced fertility treatments backed <br/> by innovation and compassionate care",
   items: [
     {
       id: 1,
@@ -50,20 +50,23 @@ const infoGridCenters = {
     {
       id: 2,
       title: "IUI Treatment",
-      description:"A minimally invasive and effective first-line approach for couples beginning their parenthood journey."
-        },
-        {
-          id: 3,
-          title: "Blastocyst Culture & Transfer",
-          description:
-            "Carefully nurtured embryos transferred at the most viable stage for improved implantation outcomes.",
-        },
+      description:
+        "A minimally invasive and effective first-line approach for couples beginning their parenthood journey.",
+    },
+    {
+      id: 3,
+      title: "Blastocyst Culture & Transfer",
+      description:
+        "Carefully nurtured embryos transferred at the most viable stage for improved implantation outcomes.",
+    },
     {
       id: 4,
       title: "Laser Assisted Hatching (LAH)",
-      description:"Precision technique that enhances embryo implantation by aiding the natural hatching process."    },
-    
-    {  
+      description:
+        "Precision technique that enhances embryo implantation by aiding the natural hatching process.",
+    },
+
+    {
       id: 5,
       title: "Donor Programs",
       description:
@@ -76,13 +79,15 @@ const infoGridCenters = {
         "State-of-the-art diagnostic and surgical procedures to identify and treat underlying fertility issues.",
     },
   ],
-}
+};
 
 export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [faqData, setFaqData] = useState<FAQ[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [rating, setRating] = useState(4.5);
+  const [totalReviews, setTotalReviews] = useState(0);
 
   const selectedCenter = useMemo(() => {
     if (!selectedSlug) {
@@ -93,15 +98,28 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
     return centersData.find((c) => c.slug === normalizedSlug);
   }, [selectedSlug]);
 
+  const getReviewData = async () => {
+    try{
+      const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/");
+      const centerData = response.data.results.results.find((data: any) => data.city.toLowerCase() === selectedCenter?.city.toLowerCase());
+      setRating(centerData.average_rating)
+      setTotalReviews(centerData.total_reviews)
+      return response.data;
+    }catch(error){
+      console.log("Error", error)
+    }
+  }
+
   useEffect(() => {
+    getReviewData()
     const fetchCenterData = async () => {
       try {
         setIsLoading(true);
         const response = await fetch(
-          process.env.NEXT_PUBLIC_API_URL + '/api/centres-with-faqs/'
+          process.env.NEXT_PUBLIC_API_URL + "/api/centres-with-faqs/",
         );
         const data = await response.json();
-  
+
         // All Mumbai locations
         const mumbaiLocations = [
           "Thane",
@@ -113,30 +131,31 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           "Kalyan",
           "Panvel",
         ];
-  
+
         if (selectedCenter && data.results) {
           // If selected center is one of Mumbai suburbs, we search for "Mumbai"
           const isMumbaiSuburb = mumbaiLocations.some(
-            (loc) => loc.toLowerCase() === selectedCenter.name.toLowerCase()
+            (loc) => loc.toLowerCase() === selectedCenter.name.toLowerCase(),
           );
-  
+
           let matchingCenter;
-  
+
           if (isMumbaiSuburb) {
             matchingCenter = data.results.find(
               (center: CenterData) =>
-                center.location.toLowerCase() === "mumbai"
+                center.location.toLowerCase() === "mumbai",
             );
           } else {
             matchingCenter = data.results.find(
               (center: CenterData) =>
-                center.location.toLowerCase() === selectedCenter.name.toLowerCase()
+                center.location.toLowerCase() ===
+                selectedCenter.name.toLowerCase(),
             );
           }
-  
+
           if (matchingCenter && matchingCenter.faqs) {
             setFaqData(
-              matchingCenter.faqs.filter((faq: FAQ) => faq.is_published)
+              matchingCenter.faqs.filter((faq: FAQ) => faq.is_published),
             );
           }
         }
@@ -146,12 +165,11 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         setIsLoading(false);
       }
     };
-  
+
     if (selectedCenter) {
       fetchCenterData();
     }
   }, [selectedCenter]);
-  
 
   if (!selectedCenter) {
     return null;
@@ -176,14 +194,14 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
             {selectedCenter.name}
           </h2>
         </div>
-        <div className='lg:pl-30 pl-4 pt-5'>
-                        <button 
-                            onClick={() => setIsOpen(true)} 
-                            className='bg-[#1656A5] lg:p-[8px] p-[8px] h-[40px] w-[150px] lg:h-[56px] lg:w-[188px] text-[12px] lg:text-[14px]  text-[#F9F9F9] rounded-[8px] lg:rounded-[16px]  hover:cursor-pointer transition'
-                        >
-                            Book Your Appointment
-                        </button>
-                    </div>
+        <div className="lg:pl-30 pl-4 pt-5">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="bg-[#1656A5] lg:p-[8px] p-[8px] h-[40px] w-[150px] lg:h-[56px] lg:w-[188px] text-[12px] lg:text-[14px]  text-[#F9F9F9] rounded-[8px] lg:rounded-[16px]  hover:cursor-pointer transition"
+          >
+            Book Your Appointment
+          </button>
+        </div>
       </section>
 
       {/* Center Details Section */}
@@ -283,7 +301,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                       if (selectedCenter.mapUri) {
                         window.open(
                           `https://maps.app.goo.gl/${selectedCenter.mapUri}`,
-                          "_blank"
+                          "_blank",
                         );
                       }
                     }}
@@ -301,7 +319,13 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
 
                   {/* Modal */}
                   {isOpen && (
-                    <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+                    <Suspense
+                      fallback={
+                        <div className="w-full h-64 flex items-center justify-center">
+                          Loading...
+                        </div>
+                      }
+                    >
                       <AppointmentForm onClose={() => setIsOpen(false)} />
                     </Suspense>
                   )}
@@ -342,7 +366,12 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
       />
       <Detailing />
       <TextSection />
-      <InfoGridCenters  tag={infoGridCenters.tag} heading={infoGridCenters.heading} items={infoGridCenters.items}/>
+      <InfoGridCenters
+        tag={infoGridCenters.tag}
+        heading={infoGridCenters.heading}
+        items={infoGridCenters.items}
+      />
+      {totalReviews && totalReviews > 0 && <TestimonialsSection rating={rating} totalReviews={totalReviews}/>}
       <CenterDoctorsSection />
       <TestimonialsCenters />
       {faqData.length > 0 && (

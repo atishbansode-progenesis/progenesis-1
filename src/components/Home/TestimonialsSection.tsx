@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import axios from "axios";
 
-const TestimonialsSection = () => {
+const TestimonialsSection = ({ rating, totalReviews }: { rating: number; totalReviews: number }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
 
@@ -35,28 +34,6 @@ const TestimonialsSection = () => {
   ];
 
 
-  useEffect(()=>{
-    getReviewData();
-  },[])
-
-
-  const getReviewData = async () => {
-    try{
-      const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/");
-      console.log("Hello", response.data.results.overall.average_rating)
-      setRating(response.data.results.overall.average_rating)
-      setTotalReviews(response.data.results.overall.total_reviews)
-      return response.data;
-    }catch(error){
-      console.log("Error", error)
-    }
-  }
-
-
-
-  const [rating, setRating] = useState(4.5);
-  const [totalReviews, setTotalReviews] = useState(4.5);
-
   return (
     <section className="w-full bg-white overflow-hidden">
       <div className="flex flex-col md:flex-row h-auto md:h-[700px]">
@@ -80,7 +57,6 @@ const TestimonialsSection = () => {
                   alt="Google"
                   className="mr-[4px] hidden csLg:block"
                 />
-
                 {/* Mobile star + rating inline */}
                 <div className="flex items-center md:hidden space-x-1">
                   <span className="text-yellow-400 text-[16px]">★</span>
