@@ -45,14 +45,14 @@ export default function Home() {
         return;
       }
 
-      // const formattedReviews: Review[] = reviewsData
-      //   .filter((item: any) => item?.reviewer && item?.comment)
-      //   .map((item: any) => ({
-      //     author: item.reviewer?.displayName || "Unknown Author",
-      //     text: item.comment || "No Review Text",
-      //   }));
+      const formattedReviews: Review[] = reviewsData
+        .filter((item: any) => item?.reviewer && item?.comment)
+        .map((item: any) => ({
+          author: item.reviewer?.displayName || "Unknown Author",
+          text: item.comment || "No Review Text",
+        }));
 
-      // setReviewsList(formattedReviews);
+      setReviewsList(formattedReviews);
       setRating(overall?.average_rating ?? 0);
       setTotalReviews(overall?.total_reviews ?? 0);
     } catch (error) {
@@ -69,13 +69,11 @@ export default function Home() {
       <HeroCarousel />
       <StatsSection />
       <TreatmentsSection />
-      {reviewsList.length > 0 && (
-        <TestimonialsSection
-          rating={rating}
-          totalReviews={totalReviews}
-          reviewsList={reviewsList}
-        />
-      )}
+      <TestimonialsSection
+        rating={rating}
+        totalReviews={totalReviews}
+        reviewsList={reviewsList}
+      />
       <DifferenceSection />
       <LocationsSection />
       <DoctorsSection />
