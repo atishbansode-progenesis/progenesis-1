@@ -6,10 +6,9 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const revalidate = 60 * 60 * 24;
 
 const CURRENT_PAGE = 1;
-const PAGE_SIZE = 6;
-
+const PAGE_SIZE = 12;
 const fetchBlogs = async () => {
-  const res = await fetch(`${apiUrl}/api/blogs/?page_size=${PAGE_SIZE}&page=${CURRENT_PAGE}`, {
+  const res = await fetch(`${apiUrl}/api/post-seo-meta/?page_size=${PAGE_SIZE}&page=${CURRENT_PAGE}`, {
     next: { 
       revalidate: 0
     },

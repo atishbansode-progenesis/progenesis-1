@@ -9,7 +9,9 @@ export const femaleFertilityPreservationData = {
   hero_image: "/treatments/female-fertility-preservation/femalepreservationbg.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
-    { label: "Female Fertility Preservation", href: "/female-fertility-preservation", id: "female-fertility-preservation" }
+    { label: "Treatments", href: "/treatments", id: "treatments" },
+    { label: "Fertility Preservation", href: "/treatments/fertility-preservation", id: "fertility-preservation" },
+    { label: "Female Fertility Preservation", href: "/treatments/fertility-preservation/female-fertility-preservation", id: "female-fertility-preservation" }
   ],
   basics_heading: "Why Female Fertility Preservation Matters",
   points_tag: "Why Male Fertility Preservation Matters",
@@ -115,7 +117,9 @@ export const maleFertilityPreservationData = {
     hero_image: "/treatments/male-fertility-preservation/malepreservationbg.png",
     breadcrumbs: [
       { label: "Home", href: "/", id: "home" },
-      { label: "Male Fertility Preservation", href: "/male-fertility-preservation", id: "male-fertility-preservation" }
+      { label: "Treatments", href: "/treatments", id: "treatments" },
+      { label: "Fertility Preservation", href: "/treatments/fertility-preservation", id: "fertility-preservation" },
+      { label: "Male Fertility Preservation", href: "/treatments/fertility-preservation/male-fertility-preservation", id: "male-fertility-preservation" }
     ],
     basics_heading: "Why Male Fertility Preservation Matters",
     points_tag: "Why Male Fertility Preservation Matters",
@@ -213,7 +217,7 @@ export const maleFertilityPreservationData = {
 
   // Egg / Embryo Freezing Data
 export const eggEmbryoFreezingData = {
-    slug: "egg-freezing-embryo-freezing",
+    slug: "egg-embryo-freezing",
     category: "fertility-preservation",
     title: "Egg / Embryo Freezing",
     hero_title: "Egg / Embryo Freezing",
@@ -222,7 +226,9 @@ export const eggEmbryoFreezingData = {
     hero_image: "/treatments/egg-embryo-freezing/eggembryobg.png",
     breadcrumbs: [
       { label: "Home", href: "/", id: "home" },
-      { label: "Egg / Embryo Freezing", href: "/egg-freezing-embryo-freezing", id: "egg-freezing-embryo-freezing" }
+      { label: "Treatments", href: "/treatments", id: "treatments" },
+      { label: "Fertility Preservation", href: "/treatments/fertility-preservation", id: "fertility-preservation" },
+      { label: "Egg / Embryo Freezing", href: "/treatments/fertility-preservation/egg-embryo-freezing", id: "egg-embryo-freezing" }
     ],
     basics_heading: "Preserving Fertility for a Confident Future",
     points_tag: "Why Choose Fertility Preservation at Progenesis",
@@ -324,7 +330,7 @@ export const eggEmbryoFreezingData = {
 
   // Female Analysis – Complete Reproductive Health Check
 export const femaleAnalysisData = {
-    slug: "female-analysis",
+    slug: "female-analysis-complete-reproductive-health-check",
     category: "fertility-evaluation",
     title: "Female Analysis – Complete <br/> Reproductive Health Check",
     hero_title: "Female Analysis – Complete <br/> Reproductive Health Check",
@@ -333,9 +339,11 @@ export const femaleAnalysisData = {
     hero_image: "/treatments/female-analysis/female-analysis-hero.png",
     breadcrumbs: [
       { label: "Home", href: "/" },
+      { label: "Treatments", href: "/treatments" },
+      { label: "Fertility Evaluation", href: "/treatments/fertility-evaluation" },
       {
         label: "Female Analysis",
-        href: "/female-analysis",
+        href: "/treatments/fertility-evaluation/female-analysis",
       },
     ],
     basics_heading: "Why Female Fertility Analysis Matters",
@@ -435,9 +443,11 @@ export const semenAnalysisData = {
     contentClass: "justify-start",
     breadcrumbs: [
       { label: "Home", href: "/" },
+      { label: "Treatments", href: "/treatments" },
+      { label: "Fertility Evaluation", href: "/treatments/fertility-evaluation" },
       {
         label: "Semen Analysis Tests",
-        href: "/semen-analysis",
+        href: "/treatments/fertility-evaluation/semen-analysis-first-step-to-male-fertility-insight",
       },
     ],
     basics_heading: "Why Semen Analysis Matters in Fertility",
@@ -547,4 +557,3 @@ export const semenAnalysisData = {
       "Fertility plans at Progenesis start with semen analysis, the key to identifying infertility causes and guiding effective treatment.",
     our_story: "From Hope to Happiness Watch Now!"
   };
-  

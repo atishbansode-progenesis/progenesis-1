@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 const revalidate = 60 * 60 * 24; 
 
 const fetchBlogBySlug = async (slug: string) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${slug}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/post-seo-meta/?post_name=${slug}`, {
     next: { revalidate:0},
   });
 
@@ -18,6 +18,7 @@ const fetchBlogBySlug = async (slug: string) => {
 export const generateMetadata = async ({ params }: { params: { slug: string } }) => {
   const { slug } = await params;
   const blog = await fetchBlogBySlug(slug);
+  console.log(blog);
 
   if (!blog) {
     return {};
@@ -44,7 +45,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     notFound();
   }
 
-  return <BlogMain data={blogData} />;
+  return <BlogMain data={blogData.results[0]} />;
 };
 
 export default Page;
