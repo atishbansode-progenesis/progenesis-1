@@ -29,7 +29,6 @@ export default function Home() {
   const getReviewData = async () => {
     try{
       const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/");
-      console.log("Hello", response.data.results)
       setRating(response.data.results.overall.average_rating)
       setTotalReviews(response.data.results.overall.total_reviews)
       return response.data;
