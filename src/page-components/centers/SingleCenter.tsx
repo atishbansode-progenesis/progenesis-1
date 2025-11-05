@@ -100,10 +100,8 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
 
   const getReviewData = async () => {
     try{
-      console.log("selectedCenter", selectedCenter)
       const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/");
       const centerData = response.data.results.results.find((data: any) => data.city.toLowerCase() === selectedCenter?.name.toLowerCase());
-      console.log("centerData", response, centerData)
       setRating(centerData.average_rating)
       setTotalReviews(centerData.total_reviews)
       return response.data;
