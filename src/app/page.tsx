@@ -1,4 +1,4 @@
-"use client"; // add only if any of the imported components use hooks like useState/useEffect
+"use client";
 
 import { Suspense, useEffect, useState } from "react";
 import GradientBanner from "@/components/GradientBanner";
@@ -16,10 +16,15 @@ import VideoSection from "@/components/Home/VideoSection";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 import axios from "axios";
 
+interface Review {
+  author: string;
+  text: string;
+}
+
 export default function Home() {
-  const [rating, setRating] = useState(4.5);
-  const [totalReviews, setTotalReviews] = useState(0);
-  const [reviewsList, setReviewsList] = useState<{ author: string; text: string }[]>([]);
+  const [rating, setRating] = useState<number>(4.5);
+  const [totalReviews, setTotalReviews] = useState<number>(0);
+  const [reviewsList, setReviewsList] = useState<Review[]>([]);
 
   useEffect(() => {
     getReviewData();
@@ -27,30 +32,50 @@ export default function Home() {
 
   const getReviewData = async () => {
     try {
-      const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/");
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL || ""}/api/average-reviews/`
+      );
 
-      const overall = response.data.results.overall;
-      const reviewsData = overall.data;
+      // ✅ Defensive checks for all nested properties
+      const overall = response?.data?.results?.overall;
+      const reviewsData = overall?.data ?? [];
 
-      const formattedReviews = reviewsData.map((item: any) => ({
-        author: item.reviewer.displayName,
-        text: item.comment,
-      }));
+      if (!Array.isArray(reviewsData)) {
+        console.warn("Unexpected reviewsData format:", reviewsData);
+        return;
+      }
 
-      setRating(overall.average_rating);
-      setTotalReviews(overall.total_reviews);
-      setReviewsList(formattedReviews);
+      // const formattedReviews: Review[] = reviewsData
+      //   .filter((item: any) => item?.reviewer && item?.comment)
+      //   .map((item: any) => ({
+      //     author: item.reviewer?.displayName || "Unknown Author",
+      //     text: item.comment || "No Review Text",
+      //   }));
 
+      // setReviewsList(formattedReviews);
+      setRating(overall?.average_rating ?? 0);
+      setTotalReviews(overall?.total_reviews ?? 0);
     } catch (error) {
-      console.log("Error fetching reviews:", error);
+      console.error("Error fetching reviews:", error);
+      // Ensure state fallback to prevent SSR crash
+      setReviewsList([]);
+      setRating(0);
+      setTotalReviews(0);
     }
   };
+
   return (
     <>
       <HeroCarousel />
       <StatsSection />
       <TreatmentsSection />
-      <TestimonialsSection rating={rating} totalReviews={totalReviews} reviewsList={reviewsList} />
+      {reviewsList.length > 0 && (
+        <TestimonialsSection
+          rating={rating}
+          totalReviews={totalReviews}
+          reviewsList={reviewsList}
+        />
+      )}
       <DifferenceSection />
       <LocationsSection />
       <DoctorsSection />
@@ -59,9 +84,9 @@ export default function Home() {
       <AwardsSection />
       <VideoSection />
       <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
-        <AppointmentForm  />
+        <AppointmentForm />
       </Suspense>
-      <GradientBanner text="Striving to set a new standard for reproductive health care services."/>
+      <GradientBanner text="Striving to set a new standard for reproductive health care services." />
     </>
   );
 }

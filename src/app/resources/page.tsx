@@ -7,9 +7,9 @@ const revalidate = 60 * 60 * 24;
 
 const CURRENT_PAGE = 1;
 const PAGE_SIZE = 6;
-
+// curl --location 'http://127.0.0.1:8000/api/post-seo-meta/?post_name=myomectomy-explained'
 const fetchBlogs = async () => {
-  const res = await fetch(`${apiUrl}/api/blogs/?page_size=${PAGE_SIZE}&page=${CURRENT_PAGE}`, {
+  const res = await fetch(`${apiUrl}/api/post-seo-meta/?page_size=${PAGE_SIZE}&page=${CURRENT_PAGE}`, {
     next: { 
       revalidate: 0
     },
@@ -24,6 +24,8 @@ const fetchBlogs = async () => {
 
 const page = async () => {
   const blogsData = await fetchBlogs();
+
+  console.log("blogsData", blogsData);
 
   if (!blogsData) {
     notFound();

@@ -172,7 +172,7 @@ const TestimonialsSection = ({
               }
             }}
           >
-            {reviewsList.map((t, i) => (
+            {reviewsList && reviewsList.length > 0 && reviewsList.map((t, i) => (
               <>
                 {t.text && t.author && (
                   <SwiperSlide key={i} className="!w-[280px] md:!w-[590px]">
