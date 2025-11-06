@@ -14,6 +14,7 @@ interface BlogMainProps {
 
 const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
   // Clean the HTML content to remove "nnnn" and similar patterns
+  console.log(data);
   const cleanedContent = useMemo(() => {
     if (!data?.post_content) return "";
     

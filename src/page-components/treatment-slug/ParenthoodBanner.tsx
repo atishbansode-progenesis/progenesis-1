@@ -1,8 +1,22 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ParenthoodBanner = () => {
-  const isLargeDevice = window.matchMedia("(min-width: 1024px)").matches;
+  const [isLargeDevice, setIsLargeDevice] = useState(false);
+
+  useEffect(() => {
+    // Check if window exists before accessing it
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    setIsLargeDevice(mediaQuery.matches);
+
+    // Optional: update on resize
+    const handleResize = () => setIsLargeDevice(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, []);
 
   return (
     <section
