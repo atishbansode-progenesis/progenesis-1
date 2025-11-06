@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense } from "react";
+import React, { Suspense, useMemo } from "react";
 import BlogLanding from "./BlogLanding";
 import BlogContent from "./BlogContent";
 import "../about/AboutMain.css";
@@ -13,7 +13,18 @@ interface BlogMainProps {
 }
 
 const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
-  console.log("data.post_content", data)
+  // Clean the HTML content to remove "nnnn" and similar patterns
+  const cleanedContent = useMemo(() => {
+    if (!data?.post_content) return "";
+    
+    return data.post_content
+      .replace(/nnnn/g, "") // Remove all "nnnn" occurrences
+      .replace(/\bnnn\b/g, "") // Remove standalone "nnn"
+      .replace(/\bnn\b/g, "") // Remove standalone "nn"
+      .replace(/\bn\b(?=\s*<)/g, "") // Remove standalone "n" before tags
+      .trim();
+  }, [data?.post_content]);
+
   return (
     <div>
       <div className="p-4 bg-white lg:px-[120px] lg:py-[80px] text-center space-y-2 font-manrope font-normal">
@@ -39,12 +50,9 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
             </div>
           
             <div className="text-[#606060] lg:space-y-2">
-              {/* <p className="text-[14px] leading-[24px] font-semibold uppercase">
-                AUTHOR
-              </p> */}
               <p
                 className="text-[16px] leading-[24px] font-normal"
-                dangerouslySetInnerHTML={{ __html: data.post_content }}
+                dangerouslySetInnerHTML={{ __html: cleanedContent }}
               />
             </div>
 

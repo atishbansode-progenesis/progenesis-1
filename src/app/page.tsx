@@ -19,6 +19,7 @@ import axios from "axios";
 interface Review {
   author: string;
   text: string;
+  create_time: string;
 }
 
 export default function Home() {
@@ -45,12 +46,21 @@ export default function Home() {
         return;
       }
 
+      console.log("Reviews Data:", reviewsData);
+
       const formattedReviews: Review[] = reviewsData
-        .filter((item: any) => item?.reviewer && item?.comment)
-        .map((item: any) => ({
-          author: item.reviewer?.displayName || "Unknown Author",
-          text: item.comment || "No Review Text",
-        }));
+      .filter(
+        (item: any) =>
+          item?.reviewer &&
+          item?.comment &&
+          !item.comment.toLowerCase().includes("translated by google")
+      )
+      .map((item: any) => ({
+        author: item.reviewer?.displayName || "Unknown Author",
+        text: item.comment || "No Review Text",
+        create_time: item.create_time,
+      }));
+
 
       setReviewsList(formattedReviews);
       setRating(overall?.average_rating ?? 0);

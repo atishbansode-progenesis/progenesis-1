@@ -13,10 +13,39 @@ const TestimonialsSection = ({
 }: {
   rating: number;
   totalReviews: number;
-  reviewsList: { author: string; text: string }[];
+  reviewsList: { author: string; text: string; create_time: string }[];
 }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+
+  console.log("Reviews List:", reviewsList);
+  const getTimeAgo = (createTime: string) => {
+    const now = new Date();
+    const reviewDate = new Date(createTime);
+    const diffInSeconds = Math.floor((now.getTime() - reviewDate.getTime()) / 1000);
+
+    if (diffInSeconds < 60) return "just now";
+    if (diffInSeconds < 3600) {
+      const minutes = Math.floor(diffInSeconds / 60);
+      // return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`;
+      return "Today";
+    }
+    if (diffInSeconds < 86400) {
+      const hours = Math.floor(diffInSeconds / 3600);
+      // return `${hours} ${hours === 1 ? "hour" : "hours"} ago`;
+      return "Today";
+    }
+    if (diffInSeconds < 2592000) {
+      const days = Math.floor(diffInSeconds / 86400);
+      return `${days} ${days === 1 ? "day" : "days"} ago`;
+    }
+    if (diffInSeconds < 31536000) {
+      const months = Math.floor(diffInSeconds / 2592000);
+      return `${months} ${months === 1 ? "month" : "months"} ago`;
+    }
+    const years = Math.floor(diffInSeconds / 31536000);
+    return `${years} ${years === 1 ? "year" : "years"} ago`;
+  };
 
   return (
     <section className="w-full bg-white overflow-hidden">
@@ -205,6 +234,9 @@ const TestimonialsSection = ({
                         "
                           >
                             {t.author}
+                          </span>
+                          <span className="mt-1 text-[rgba(44,44,44,0.5)] text-[12px] text-left">
+                            {getTimeAgo(t.create_time)}
                           </span>
                         </div>
                       </div>

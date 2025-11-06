@@ -88,7 +88,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [rating, setRating] = useState(4.5);
   const [totalReviews, setTotalReviews] = useState(0);
-  const [reviewsList, setReviewsList] = useState<{ author: string; text: string }[]>([]);
+  const [reviewsList, setReviewsList] = useState<{ author: string; text: string; create_time: string }[]>([]);
 
 
   const selectedCenter = useMemo(() => {
@@ -107,10 +107,18 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
       setRating(centerData.average_rating)
       setTotalReviews(centerData.total_reviews)
       const reviewsData = centerData.data;
-      const formattedReviews = reviewsData.map((item: any) => ({
-        author: item.reviewer.displayName,
-        text: item.comment,
+      const formattedReviews = reviewsData
+      .filter(
+        (item: any) =>
+          item?.comment &&
+          !item.comment.toLowerCase().includes("translated by google")
+      )
+      .map((item: any) => ({
+        author: item.reviewer?.displayName || "Unknown Author",
+        text: item.comment || "No Review Text",
+        create_time: item.create_time,
       }));
+
       setReviewsList(formattedReviews);
       return response.data;
     }catch(error){
