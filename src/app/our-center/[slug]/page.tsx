@@ -54,7 +54,7 @@ export const centersData: Center[] = [
     name: "Thane",
     city: "Mumbai",
     state: "MAHARASHTRA",
-    address: "16, First Floor, Dosti Imperia, Ghodbunder Road, Opp R Mall, Manpada, Thane West 400607",
+    address: "--hjsdvbckj16, First Floor, Dosti Imperia, Ghodbunder Road, Opp R Mall, Manpada, Thane West 400607",
     image: "/images/Thane.png",
     phone: "+91 94239 71620",
     email: "thane@progenesis.in",

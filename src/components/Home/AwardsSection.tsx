@@ -7,25 +7,29 @@ const awards = [
   {
     year: "2022-23",
     title: "Best Hospital for Reproductive Medicine...",
-    subtitle: "Business Excellence and Research Group (BERG) Singapore.",
+    subtitle: "Business Excellence and Research Group (BERG) Singapore",
+    city:"",
     image: "/awards/awards.png",
   },
   {
     year: "2016-17",
     title: "World's Greatest Brand & World's Greatest Leaders",
-    subtitle: "URS and ASIA ONE in Dubai.URS and ASIA ONE in Dubai.",
+    subtitle: "URS and ASIA ONE",
+    city:"In Dubai",
     image: "/awards/awardsa.png",
   },
   {
     year: "2017-18",
     title: "India's Fastest Growing Brand in IVF,Brand in IVF",
-    subtitle: "URS and ASIA ONE in Dubai.URS and ASIA ONE in Dubai",
+    subtitle: "URS and ASIA ONE",
+    city:"In Dubai",
     image: "/awards/awardsb.png",
   },
   {
     year: "2023-24",
     title: "The Number 1 IVF Centre for Emerging IVF Centre Category",
-    subtitle: "The Times of India.URS and ASIA ONE in DubaiURS and ASIA ONE in Dubai",
+    subtitle: "The Times",
+    city:"of India",
     image: "/awards/awardsc.png",
   },
 ];
@@ -162,9 +166,16 @@ export default function AwardsSection() {
                         {item.title}
                       </h3>
 
+                      <div>
+
                       <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 mt-2">
                         {item.subtitle}
                       </p>
+                       <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 ">
+                        {item?.city}
+                      </p>
+                      </div>
+
                     </div>
                   </article>
                 ))}
