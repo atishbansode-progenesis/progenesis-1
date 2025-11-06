@@ -203,19 +203,19 @@ const TreatmentsPage: React.FC = () => {
   const preservation = [
     {
       title: "Female Fertility Preservation",
-      image: "/treatments/12.png",
+      image: "/treatments/T1.png",
       slug: "female-fertility-preservation",
       category: "preservation",
     },
     {
       title: "Male Fertility Preservation",
-      image: "/treatments/13.png",
+      image: "/treatments/T2.png",
       slug: "male-fertility-preservation",
       category: "preservation",
     },
     {
       title: "Embryo Preservation",
-      image: "/treatments/14.png",
+      image: "/treatments/T3.png",
       slug: "egg-embryo-freezing",
       category: "preservation",
     },
@@ -256,17 +256,17 @@ const TreatmentsPage: React.FC = () => {
         showBlurredShape={false}
       />
 
-        <NavigationTabs
-          categories={categories}
-          activeTab={activeTab}
-          onTabClick={(id) => {
-            setActiveTab(id);
-            document.getElementById(id)?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }}
-        />
+      <NavigationTabs
+        categories={categories}
+        activeTab={activeTab}
+        onTabClick={(id) => {
+          setActiveTab(id);
+          document.getElementById(id)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }}
+      />
 
       <section
         id="path"
@@ -546,38 +546,40 @@ const TreatmentsPage: React.FC = () => {
                   : "#"
               }
               className="
-              flex flex-col items-center
-              justify-between
-              relative
-              rounded-[16px]
-              bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
-              hover:bg-[rgba(22,86,165,0.12)] transition
-               p-4 lg:p-6
-              cursor-pointer
-            "
+      flex flex-col items-center
+      justify-start
+      relative
+      rounded-[16px]
+      bg-[var(--Chip_Blue,rgba(22,86,165,0.05))]
+      hover:bg-[rgba(22,86,165,0.12)] transition
+      p-4 lg:p-6
+      cursor-pointer
+      overflow-hidden
+      min-h-[300px] lg:min-h-[400px]
+    "
             >
-              {/* Title */}
-              <h3
-                className="
-    text-[var(--Text_Black,#2C2C2C)]
-    font-[Manrope] font-normal
-    text-[24px] leading-[32px] tracking-[-0.64px]
-    md:text-[24px] md:leading-[40px] md:tracking-[-0.64px] self-start
-    max-w-[200px] md:max-w-full
-          "
-              >
-                {item.title}
-              </h3>
-              {/* Image */}
+              {/* Background Image */}
               <Image
                 src={item.image}
                 alt={item.title}
-                width={238} // desktop size
-                height={240}
-                className="mt-[26px] lg:mt-[56px] w-[180px] h-[180px] md:w-[238px] md:h-[240px] object-contain"
-                style={{ mixBlendMode: "multiply" }}
-                priority={false} // optional: use priority for above-the-fold images
+                fill
+                className="object-cover object-center mix-blend-multiply z-0"
+                priority={false}
               />
+
+              {/* Title */}
+              <h3
+                className="
+        relative z-10
+        text-[var(--Text_Black,#2C2C2C)]
+        font-[Manrope] font-normal
+        text-[24px] leading-[32px] tracking-[-0.64px]
+        md:text-[24px] md:leading-[40px] md:tracking-[-0.64px] self-start
+        max-w-[200px] md:max-w-full
+      "
+              >
+                {item.title}
+              </h3>
             </Link>
           ))}
         </div>
@@ -610,11 +612,10 @@ const TreatmentsPage: React.FC = () => {
               }
               className={`
               flex flex-col gap-3 rounded-[16px] p-6 group
-              ${
-                item.highlighted
+              ${item.highlighted
                   ? "bg-[#EEF5FF]"
                   : "bg-[#EEF5FF]  border-[#E6E6E6]"
-              }
+                }
               hover:bg-[#DDEBFF] transition
               cursor-pointer
             `}
@@ -639,7 +640,7 @@ const TreatmentsPage: React.FC = () => {
       </section>
 
       <section id="stories">
-      <StoriesSection />
+        <StoriesSection />
       </section>
 
       <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>

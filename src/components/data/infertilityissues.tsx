@@ -70,7 +70,7 @@ export const repeatedIUIFailuresData = {
 
   carousel: {
     tag: "Causes",
-    heading: "Recommended Next Steps After Repeated IUI Failures",
+    heading: "Reasons Behind IUI Failure and Their Impact on Conception",
     slides: [
       {
         id: "01",
@@ -103,7 +103,7 @@ export const repeatedIUIFailuresData = {
     ],
   },
   statistics: {
-    tag: "IVF Failures Explained",
+    tag: "IUI Failures Explained",
     heading: "Learn the numbers, Take control of your fertility journey",
     subHeading:"We believe every hopeful parent deserves a team that listens, cares, and fights to make dreams a reality — with science, empathy, and unwavering support.",
     blueCircleData: {
@@ -282,7 +282,7 @@ export const pregnancyAfterMenopauseData = {
     subText1: "Hormonal changes during menopause can affect metabolism,",
     subText2: "leading to weight gain and a slower metabolic rate, which may impact overall health and well-being",
     card1: {
-      title: "Irregular or missed cycles signaling hormonal.",
+      title: "Irregular or missed cycles signaling hormonal or health issues.",
       icon:"/InfertilityIssues/polycysticOvarianSyndromeIcon1.svg"
     },
     card2: {

@@ -22,7 +22,7 @@ export const MaleInfertilitySection: React.FC<MaleInfertilitySectionProps> = ({
               Male Infertility Causes
             </button>
             <h2 className="text-[20px] md:text-[32px] lg:text-[40px] md:text-[40px] font-light text-[#2C2C2C] leading-[40px] md:leading-[56px]">
-              Understanding the Causes<br/> of Male Infertility
+              Understanding the Causes<br /> of Male Infertility
             </h2>
           </div>
           <div className="w-full">
@@ -39,19 +39,20 @@ export const MaleInfertilitySection: React.FC<MaleInfertilitySectionProps> = ({
           {issues.map((item) => (
             <Link
               href={`/infertility/male/${item.slug}`}
-              className="flex flex-col items-center justify-between w-full h-[400px] px-6 pt-6 pb-[30px] gap-[16px] rounded-[16px] bg-[#1656A5]/5"
+              className="relative flex flex-col items-center justify-start w-full h-[400px] px-6 pt-6 pb-[30px] gap-[16px] rounded-[16px] bg-[#1656A5]/5 overflow-hidden"
             >
-              <h3 className="text-[#2C2C2C] text-[16px] md:text-[20px] lg:text-2xl font-normal lg:leading-[32px] leading-[24px] md:leading-[28px] text-start w-full font-[Manrope]">
+              {/* Background Image */}
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover object-center mix-blend-multiply z-0"
+              />
+
+              {/* Content */}
+              <h3 className="relative z-10 text-[#2C2C2C] text-[16px] md:text-[20px] lg:text-2xl font-normal lg:leading-[32px] leading-[24px] md:leading-[28px] text-start w-full font-[Manrope]">
                 {item.title}
               </h3>
-              <div className="relative flex-1 w-full max-h-[250px]">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-contain mix-blend-multiply"
-                />
-              </div>
             </Link>
           ))}
         </div>

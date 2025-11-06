@@ -15,21 +15,20 @@ export const InfertilityCard: React.FC<InfertilityCardProps> = ({
   return (
     <Link
       href={`/infertility/${basePath}/${issue.slug}`}
-      className="flex flex-col items-center justify-between w-full h-[400px] p-4 md:px-6 md:py-6 gap-[16px] rounded-[16px] bg-[#1656A5]/5"
+      className="relative flex flex-col items-center justify-start w-full h-[400px] p-4 md:px-6 md:py-6 gap-[16px] rounded-[16px] bg-[#1656A5]/5 overflow-hidden"
     >
-      <h3 className="text-[#2C2C2C] text-[16px] md:text-[20px] lg:text-2xl font-normal lg:leading-[32px] leading-[24px] md:leading-[28px] text-start w-full font-[Manrope]">
+      {/* Background Image */}
+      <Image
+        src={issue.image}
+        alt={issue.title}
+        fill
+        className="object-cover object-center mix-blend-multiply z-0"
+      />
+      
+      {/* Content */}
+      <h3 className="relative z-10 text-[#2C2C2C] text-[16px] md:text-[20px] lg:text-2xl font-normal lg:leading-[32px] leading-[24px] md:leading-[28px] text-start w-full font-[Manrope]">
         {issue.title}
       </h3>
-  <div className="relative flex-1 w-full max-h-[250px] mb-[30px] flex items-center justify-center">
-  <Image
-    src={issue.image}
-    alt={issue.title}
-    fill
-    className="object-contain object-center mix-blend-multiply"
-  />
-</div>
-
-
     </Link>
   );
 };
