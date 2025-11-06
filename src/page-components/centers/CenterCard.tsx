@@ -226,7 +226,7 @@ export const centersData: Center[] = [
   },
   {
     id: 14,
-    slug: "kolhapur",
+    slug: "best-ivf-center-in-kolhapur",
     name: "Kolhapur",
     city: "Kolhapur",
     state: "MAHARASHTRA",
