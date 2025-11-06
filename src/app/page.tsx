@@ -20,6 +20,7 @@ interface Review {
   author: string;
   text: string;
   create_time: string;
+  star_rating: string
 }
 
 export default function Home() {
@@ -59,6 +60,7 @@ export default function Home() {
         author: item.reviewer?.displayName || "Unknown Author",
         text: item.comment || "No Review Text",
         create_time: item.create_time,
+        star_rating: item.star_rating
       }));
 
 

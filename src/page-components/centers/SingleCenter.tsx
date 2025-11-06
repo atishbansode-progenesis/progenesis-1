@@ -88,7 +88,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [rating, setRating] = useState(4.5);
   const [totalReviews, setTotalReviews] = useState(0);
-  const [reviewsList, setReviewsList] = useState<{ author: string; text: string; create_time: string }[]>([]);
+  const [reviewsList, setReviewsList] = useState<{ author: string; text: string; create_time: string; star_rating: string }[]>([]);
 
 
   const selectedCenter = useMemo(() => {
@@ -117,6 +117,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         author: item.reviewer?.displayName || "Unknown Author",
         text: item.comment || "No Review Text",
         create_time: item.create_time,
+        star_rating: item.star_rating
       }));
 
       setReviewsList(formattedReviews);

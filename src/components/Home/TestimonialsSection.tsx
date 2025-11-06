@@ -6,6 +6,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+
 const TestimonialsSection = ({
   rating,
   totalReviews,
@@ -13,7 +14,7 @@ const TestimonialsSection = ({
 }: {
   rating: number;
   totalReviews: number;
-  reviewsList: { author: string; text: string; create_time: string }[];
+  reviewsList: { author: string; text: string; create_time: string; star_rating: string }[];
 }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
@@ -45,6 +46,20 @@ const TestimonialsSection = ({
     }
     const years = Math.floor(diffInSeconds / 31536000);
     return `${years} ${years === 1 ? "year" : "years"} ago`;
+  };
+
+  const numberStarRating = (star_rating: string) => {
+    if (star_rating === "ONE") {
+      return 1;
+    } else if (star_rating === "TWO") {
+      return 2;
+    } else if (star_rating === "THREE") {
+      return 3;
+    } else if (star_rating === "FOUR") {
+      return 4;
+    } else if (star_rating === "FIVE") {
+      return 5;
+    }
   };
 
   return (
@@ -207,7 +222,7 @@ const TestimonialsSection = ({
                   <SwiperSlide key={i} className="!w-[280px] md:!w-[590px]">
                     {({ isActive }) => (
                       <div
-                        className={`flex flex-col justify-between transition-all duration-500 rounded-2xl bg-[#F9F9F9] p-6 md:p-[80px_60px] ml-0 mr-0 md:ml-[40px] md:mr-[40px] h-auto md:h-[520px] min-h-[280px] ${
+                        className={`flex flex-col justify-between transition-all duration-500 rounded-2xl bg-[#F9F9F9] p-6 md:p-[80px_60px] ml-0 mr-0 md:ml-[40px] md:mr-[40px] h-[320px] md:h-[520px] ${
                           isActive ? "opacity-100" : "opacity-70"
                         }`}
                       >
@@ -215,7 +230,7 @@ const TestimonialsSection = ({
                           <p
                             className="
                         text-[#1656A5] line-height-[24px]
-                        text-[16px] lg:text-[30px]
+                        text-[16px] lg:text-[26px]
                         lg:leading-[40px]
                         text-left
                       "
@@ -235,7 +250,15 @@ const TestimonialsSection = ({
                           >
                             {t.author}
                           </span>
-                          <span className="mt-1 text-[rgba(44,44,44,0.5)] text-[12px] text-left">
+                          <div className="md:flex justify-center md:justify-start items-center text-yellow-400 text-xl mb-1">
+                              {Array.from({ length: 5 }).map((_, idx: number) => {
+                                const sr = Number(numberStarRating(t.star_rating) ?? 0);
+                                const full = idx + 1 <= Math.floor(sr);
+                                const half = sr - idx === 0.5;
+                                return <span key={idx}>{full ? "★" : half ? "★" : "★"}</span>;
+                              })}
+                            </div>
+                            <span className="text-[rgba(44,44,44,0.5)] text-[12px] text-left">
                             {getTimeAgo(t.create_time)}
                           </span>
                         </div>
