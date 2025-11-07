@@ -6,6 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { resourceStoriesData } from "@/page-components/resources/ResourceStories";
+import { Play } from "lucide-react";
 
 const TestimonialsSection = () => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
@@ -13,6 +14,7 @@ const TestimonialsSection = () => {
   const [navReady, setNavReady] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const testimonials = [
     {
@@ -45,7 +47,6 @@ const TestimonialsSection = () => {
     setNavReady(true);
   }, []);
 
-  // Handle scroll progress for mobile
   useEffect(() => {
     const container = document.getElementById("mobile-scroll-container");
     if (!container) return;
@@ -53,7 +54,7 @@ const TestimonialsSection = () => {
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
       const maxScroll = container.scrollWidth - container.clientWidth;
-      const progress = (scrollLeft / maxScroll) * 100;
+      const progress = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0;
       setScrollProgress(progress);
     };
 
@@ -61,17 +62,51 @@ const TestimonialsSection = () => {
     return () => container.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const thumbnailForIndex = (index: number) => {
+    const map = [
+      "/TestimonialSection/Rhea.png",
+      "/TestimonialSection/Priya.png",
+      "/TestimonialSection/Anjali.png",
+      "/TestimonialSection/Sneha.png",
+    ];
+    return map[index] ?? "/TestimonialSection/Dharti.png";
+  };
+
   return (
-    <section className="w-full bg-[#1656A5] overflow-hidden p-4 lg:px-[115px] py-[80px]">
-      <div className="flex flex-col md:flex-row  lg:h-[600px]">
-        {/* Left Panel (Blue) */}
-        <div className="bg-[#1656A5] text-[#F9F9F9] flex flex-col justify-center md:w-[268px] ">
+    <section className="w-full bg-[#1656A5] overflow-hidden p-4 lg:px-[115px] py-[80px] relative">
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-[999]"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            className="relative w-[90%] max-w-[900px] aspect-video rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              src={selectedVideo}
+              title="video"
+              className="w-full h-full rounded-lg"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute top-3 right-3 text-white bg-black/50 rounded-full w-10 h-10 flex items-center justify-center text-2xl"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div className="flex flex-col md:flex-row lg:h-[600px]">
+        <div className="bg-[#1656A5] text-[#F9F9F9] flex flex-col justify-center md:w-[268px]">
           <div>
             <h2 className="text-[32px] leading-[40px] lg:text-[40px] lg:leading-[53px] font-normal mb-6">
               What Our Visitors Are Saying
             </h2>
 
-            {/* Progress Bar */}
             <div className="md:block hidden w-35 lg:w-[150px] h-1 bg-white/30 rounded-full mb-6">
               <div
                 className="h-1 bg-white rounded-full transition-all duration-500"
@@ -81,7 +116,7 @@ const TestimonialsSection = () => {
               ></div>
             </div>
           </div>
-          {/* Mobile Progress Bar */}
+
           <div className="md:hidden mt-6 w-[340px] h-1 bg-[#3775C2] rounded-full overflow-hidden">
             <div
               className="h-1 bg-[#F9F9F9] rounded-full transition-all duration-150"
@@ -89,54 +124,48 @@ const TestimonialsSection = () => {
             ></div>
           </div>
 
-          {/* Arrows (Hidden on mobile) */}
           <div className="hidden md:flex space-x-4">
             <button
-  ref={prevRef}
-  className="group w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
->
-  <img
-    src="/icons/left-white.svg"
-    alt="left"
-    className="block group-hover:hidden"
-  />
-  <img
-    src="/icons/left.svg"
-    alt="left-hover"
-    className="hidden group-hover:block"
-  />
-</button>
+              ref={prevRef}
+              className="group w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
+            >
+              <img
+                src="/icons/left-white.svg"
+                alt="left"
+                className="block group-hover:hidden"
+              />
+              <img
+                src="/icons/left.svg"
+                alt="left-hover"
+                className="hidden group-hover:block"
+              />
+            </button>
 
             <button
-  ref={nextRef}
-  className="group w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border bg-[#1656A5] border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
->
-  <img
-    src="/icons/right-white.svg"
-    alt="right"
-    className="block group-hover:hidden"
-  />
-  <img
-    src="/icons/right.svg"
-    alt="right-hover"
-    className="hidden group-hover:block"
-  />
-</button>
-
+              ref={nextRef}
+              className="group w-10 lg:w-14 h-10 lg:h-14 flex hover:cursor-pointer items-center justify-center border bg-[#1656A5] border-white rounded-lg hover:bg-white hover:text-[#1656A5] transition"
+            >
+              <img
+                src="/icons/right-white.svg"
+                alt="right"
+                className="block group-hover:hidden"
+              />
+              <img
+                src="/icons/right.svg"
+                alt="right-hover"
+                className="hidden group-hover:block"
+              />
+            </button>
           </div>
         </div>
 
-        {/* Right Panel (Swiper Area) */}
         <div className="flex-1 flex items-center justify-center bg-[#1656A5] md:pt-40 lg:pt-1 lg:h-auto overflow-hidden md:overflow-visible">
-          
-          
-          {/* Desktop & Tablet Swiper */}
+
           <div className="hidden md:block w-full max-w-[900px] lg:max-w-[1000px] mx-auto">
             {navReady && (
               <Swiper
                 modules={[Navigation]}
                 slidesPerView={1}
-                spaceBetween={0}
                 navigation={{
                   prevEl: prevRef.current,
                   nextEl: nextRef.current,
@@ -145,44 +174,42 @@ const TestimonialsSection = () => {
                 className="w-full"
               >
                 {videoTestimonials.map((t, i) => (
-                 <SwiperSlide key={i}>
-  <div className="flex flex-row items-stretch bg-transparent rounded-[16px] overflow-hidden w-full gap-4 p-4 lg:flex-row">
-    {/* Description Box */}
-    <div className="flex flex-col justify-center p-8 bg-white rounded-[16px] w-[536px] h-[536px]">
-      <p className="text-[#1656A5] font-[Manrope] text-[32px] tracking-tight leading-[40px]">
-        {t.text}
-      </p>
-      <span className="mt-6 text-[#606060] text-base">
-        ~ {t.author}
-      </span>
-    </div>
+                  <SwiperSlide key={i}>
+                    <div className="flex flex-row items-stretch bg-transparent rounded-[16px] overflow-hidden w-full gap-4 p-4">
+        
+                      <div className="flex flex-col justify-center p-8 bg-white rounded-[16px] w-[536px] h-[536px]">
+                        <p className="text-[#1656A5] font-[Manrope] text-[32px] tracking-tight leading-[40px]">
+                          {t.text}
+                        </p>
+                        <span className="mt-6 text-[#606060] text-base">
+                          ~ {t.author}
+                        </span>
+                      </div>
 
-    {/* Video Box */}
-    <div className="rounded-[16px] overflow-hidden w-[832px] h-[536px]">
-      {t.videoUrl ? (
-        <iframe
-          src={t.videoUrl}
-          title={t.storyTitle || t.author}
-          className="w-full h-full rounded-[16px]"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          loading="lazy"
-        />
-      ) : (
-        <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400 rounded-[16px]">
-          Video unavailable
-        </div>
-      )}
-    </div>
-  </div>
-</SwiperSlide>
-
+                      <div
+                        className="rounded-[16px] overflow-hidden w-[832px] h-[536px] relative cursor-pointer"
+                        onClick={() => t.videoUrl && setSelectedVideo(t.videoUrl)}
+                      >
+                        <img
+                          src={thumbnailForIndex(i)}
+                          alt={`thumbnail-${i}`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition">
+                          <div className="pointer-events-auto">
+                            <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center transform transition group-hover:scale-105">
+                              <Play className="w-6 h-6 text-white" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
                 ))}
               </Swiper>
             )}
           </div>
 
-          {/* Mobile View */}
           <div
             id="mobile-scroll-container"
             className="md:hidden flex overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth px-2 py-2"
@@ -192,8 +219,8 @@ const TestimonialsSection = () => {
                 key={i}
                 className="flex flex-col bg-transparent rounded-[16px] overflow-hidden min-w-[85%] snap-center p-2 gap-4"
               >
-                {/* Description First */}
-                <div className="p-4 bg-white h-[300px] justify-center rounded-[16px] py-[66px] gap-6 lg:pt-auto px-[34px]">
+              
+                <div className="p-4 bg-white h-[300px] justify-center rounded-[16px] py-[66px] gap-6 px-[34px]">
                   <p className="text-[#1656A5] font-[Manrope] text-[16px] font-normal tracking-tight leading-[24px]">
                     {t.text}
                   </p>
@@ -202,27 +229,27 @@ const TestimonialsSection = () => {
                   </span>
                 </div>
 
-                {/* Video Second */}
-                <div className="w-full h-[250px] rounded-[16px] overflow-hidden">
-                  {t.videoUrl ? (
-                    <iframe
-                      src={t.videoUrl}
-                      title={t.storyTitle || t.author}
-                      className="w-full h-full rounded-[16px]"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400 rounded-[16px]">
-                      Video unavailable
-                    </div>
-                  )}
+      
+                <div
+                  className="w-full h-[250px] rounded-[16px] overflow-hidden relative cursor-pointer"
+                  onClick={() => t.videoUrl && setSelectedVideo(t.videoUrl)}
+                >
+                  <img
+                    src={thumbnailForIndex(i)}
+                    alt={`thumb-mobile-${i}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition">
+                     <div className="pointer-events-auto">
+                            <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center transform transition group-hover:scale-105">
+                              <Play className="w-6 h-6 text-white" />
+                            </div>
+                          </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

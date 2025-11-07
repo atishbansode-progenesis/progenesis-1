@@ -20,6 +20,7 @@ export interface Center {
     lat: number;
     lng: number;
   };
+  availableDoctors:number[];
   
 }
 
@@ -40,7 +41,10 @@ export const centersData: Center[] = [
     services: ["IVF", "IUI", "ICSI", "Fertility Preservation"],
     mapUri: "LuyNRTcTaR1bH88y9",
     coordinates: { lat: 19.2319173, lng: 72.97594 },
-    gallery: Array.from({ length: 9 }, (_, i) => `/AllCentersImage/Thane/Thane${i + 1}.jpg`)
+    gallery: Array.from({ length: 9 }, (_, i) => `/AllCentersImage/Thane/Thane${i + 1}.jpg`),
+    availableDoctors: [0 ,1 , 4] 
+
+
   },
   {
     id: 2,
@@ -50,12 +54,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "4th Durolite House, Off New Link Rd, Near Oshiwara Station, Opposite to Laxmi Industrial Complex, Andheri West, Mumbai",
     image: "/images/Andheri-main.png",
-    phone: "+91 94239 71621",
+    phone: "+91 94239 71620",
     email: "andheri@progenesis.in",
     mapUri: "Qsk6P3KPvZwhi9Zb7",
     services: ["IVF", "IUI", "Surrogacy", "Egg Freezing"],
     coordinates: { lat: 19.13711948, lng: 72.8323002 },
-    gallery: Array.from({ length: 14 }, (_, i) => `/AllCentersImage/Andheri/Andheri${i + 1}.jpg`)
+    gallery: Array.from({ length: 14 }, (_, i) => `/AllCentersImage/Andheri/Andheri${i + 1}.jpg`),
+    availableDoctors: [0 , 7] 
   },
   {
     id: 3,
@@ -65,12 +70,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "Shop Zone Building, Mahatma Gandhi Road, Ghatkopar West, Mumbai 400077",
     image: "/images/Ghatkopar-main.png",
-    phone: "+91 94239 71622",
+    phone: "+91 94239 71620",
     email: "ghatkopar@progenesis.in",
     services: ["IVF", "IUI", "Genetic Counseling"],
     mapUri: "bu9UrQbqCwHokn148",
     coordinates: { lat: 19.0858784, lng: 72.9051982 },
-    gallery: Array.from({ length: 13 }, (_, i) => `/AllCentersImage/Ghatkopar/Ghatkopar${i + 1}.jpg`)
+    gallery: Array.from({ length: 13 }, (_, i) => `/AllCentersImage/Ghatkopar/Ghatkopar${i + 1}.jpg`),
+    availableDoctors: [0 ] 
   },
   {
     id: 4,
@@ -79,13 +85,14 @@ export const centersData: Center[] = [
     city: "Mumbai",
     state: "MAHARASHTRA",
     address: "2nd Floor, A-Wing, Shreeram Complex, Tirupati Nagar, Virar West, Virar",
-    image: "/images/Virar-main.jpg",
-    phone: "+91 94239 71623",
+    image: "/images/Virar-main.png",
+    phone: "+91 94239 71620",
     email: "virar@progenesis.in",
     services: ["IVF", "Fertility Assessment", "Egg Freezing"],
-    mapUri: "acG2v3Y8xdZcK64EA",
+    mapUri: "acG2v3Y8xdZcK64EA", 
     coordinates: { lat: 19.4530572, lng: 72.7986412 },
-    gallery: Array.from({ length: 8 }, (_, i) => `/AllCentersImage/Virar/Virar${i + 1}.jpg`)
+    gallery: Array.from({ length: 8 }, (_, i) => `/AllCentersImage/Virar/Virar${i + 1}.jpg`),
+    availableDoctors: [0 , 10] 
   },
   {
     id: 5,
@@ -95,12 +102,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "Diwadkar Complex, 302, Chatrapati Shivaji Maharaj Chowk, Kalyan(W), JijaMata Colony, Kalyan",
     image: "/images/Kalyan-main.png",
-    phone: "+91 94239 71624",
+    phone: "+91 94239 71620",
     email: "kalyan@progenesis.in",
     services: ["IVF", "IUI", "Fertility Preservation"],
     mapUri: "wYmnqje6hZPsmSyX6",
     coordinates: { lat: 19.2406614, lng: 73.1296727 },
-    gallery: Array.from({ length: 13 }, (_, i) => `/AllCentersImage/Kalyan/Kalyan${i + 1}.JPG`)
+    gallery: Array.from({ length: 13 }, (_, i) => `/AllCentersImage/Kalyan/Kalyan${i + 1}.JPG`),
+    availableDoctors: [0 , 8] 
   },
   {
     id: 6,
@@ -110,12 +118,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "Unit no 2, 1st Floor, Volga Building, Rayani Gram, Shimpoli, Borivali West, Mumbai, Maharashtra 400092",
     image: "/images/Borivali-main.png",
-    phone: "+91 94239 71625",
+    phone: "+91 94239 71620",
     email: "borivali@progenesis.in",
     services: ["IVF", "Fertility Assessment", "Genetic Testing"],
     mapUri: "qqZZDcf3K1Hw62838",
     coordinates: { lat: 19.2221387, lng: 72.8485524 },
-    gallery: Array.from({ length: 12 }, (_, i) => `/AllCentersImage/Borivali/Borivali${i + 1}.png`)
+    gallery: Array.from({ length: 12 }, (_, i) => `/AllCentersImage/Borivali/Borivali${i + 1}.png`),
+    availableDoctors: [0 , 2] 
   },
   {
     id: 7,
@@ -125,12 +134,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "Ground Floor, Bhumiraj Costarica, Palm Beach Service Road, Vashi, Navi Mumbai 400703",
     image: "/images/Vashi-main.png",
-    phone: "+91 94239 71626",
+    phone: "+91 94239 71620",
     email: "vashi@progenesis.in",
     services: ["IVF", "IUI", "Surrogacy"],
     mapUri: "zLSUwhnYjK2WfRZi7",
     coordinates: { lat: 19.0565633, lng: 73.0035369 },
-    gallery: Array.from({ length: 11 }, (_, i) => `/AllCentersImage/Vashi/Vashi${i + 1}.jpg`)
+    gallery: Array.from({ length: 11 }, (_, i) => `/AllCentersImage/Vashi/Vashi${i + 1}.jpg`),
+    availableDoctors: [0 , 5] 
   },
   {
     id: 8,
@@ -140,12 +150,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "1st Floor, Ganga Kalash, Gandhi Hospital Lane, Near Suruchi Restaurant, Vasudev Balwant Phadke Road, Panvel",
     image: "/images/Panvel-main.png",
-    phone: "+91 94239 71627",
+    phone: "+91 94239 71620",
     email: "panvel@progenesis.in",
     services: ["IVF", "IUI", "Genetic Testing"],
     mapUri: "X9cFyp1dBKFnmv459",
     coordinates: { lat: 18.9879311, lng: 73.1141176 },
-    gallery: Array.from({ length: 8 }, (_, i) => `/AllCentersImage/Panvel/Panvel${i + 1}.jpg`)
+    gallery: Array.from({ length: 8 }, (_, i) => `/AllCentersImage/Panvel/Panvel${i + 1}.jpg`),
+    availableDoctors: [0 , 9] 
   },
 
   // Rest of Maharashtra
@@ -157,12 +168,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "Infront of Reliance Digital, Kataria Chambers, ITI Rd, Sanewadi, Aundh, Pune 411007",
     image: "/images/Pune-main.png",
-    phone: "+91 94239 71628",
+    phone: "+91 94239 71620",
     email: "pune@progenesis.in",
     services: ["IVF", "IUI", "Fertility Counseling"],
     mapUri: "gSE6EkZSCW6G5aNz6",
     coordinates: { lat: 18.5542529, lng: 73.8092704 },
-    gallery: Array.from({ length: 8 }, (_, i) => `/AllCentersImage/Pune/Pune${i + 1}.jpg`)
+    gallery: Array.from({ length: 8 }, (_, i) => `/AllCentersImage/Pune/Pune${i + 1}.jpg`),
+    availableDoctors: [0 , 11] 
   },
   {
     id: 10,
@@ -172,12 +184,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "IKON, 3rd Floor, Above Westside, Opp. Sun Bird Building, Yeolekar Mala, College Road, Nashik 422005",
     image: "/images/Nashik-main.png",
-    phone: "+91 94239 71629",
+    phone: "+91 94239 71620",
     email: "nashik@progenesis.in",
     services: ["IVF", "Fertility Treatment", "Embryology"],
     mapUri: "zyXCS6dEsjRpndD88",
     coordinates: { lat: 20.0009439, lng: 73.7620231 },
-    gallery: Array.from({ length: 11 }, (_, i) => `/AllCentersImage/Nashik/Nashik${i + 1}.jpg`)
+    gallery: Array.from({ length: 11 }, (_, i) => `/AllCentersImage/Nashik/Nashik${i + 1}.jpg`),
+    availableDoctors: [0 , 12] 
   },
   {
     id: 11,
@@ -187,12 +200,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "1st Floor, Nayantara Arcade, Pimprala Rd, Pratap Nagar, Jalgaon",
     image: "/images/Jalgaon-main.png",
-    phone: "+91 94239 71630",
+    phone: "+91 94239 71620",
     email: "jalgaon@progenesis.in",
     services: ["IVF", "IUI", "Fertility Consultation"],
     mapUri: "koq52L9pCqt9AyDM8",
     coordinates: { lat: 21.00143072, lng: 75.5610411 },
-    gallery: Array.from({ length: 9 }, (_, i) => `/AllCentersImage/Jalgaon/Jalgaon${i + 1}.jpg`)
+    gallery: Array.from({ length: 9 }, (_, i) => `/AllCentersImage/Jalgaon/Jalgaon${i + 1}.jpg`),
+    availableDoctors: [0 , 18] 
   },
   {
     id: 12,
@@ -202,12 +216,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "Shop No 2, First Floor, Diansh Plaza, opp. Mauli Sankul Road, Savedi, Ahilyanagar, Maharashtra 414003",
     image: "/images/Ahilyanagar-main.png",
-    phone: "+91 94239 71631",
+    phone: "+91 94239 71620",
     email: "ahmednagar@progenesis.in",
     services: ["IVF", "IUI", "Fertility Counseling"],
     mapUri: "tNr54ErBfVH7mHX67",
     coordinates: { lat: 19.1151738, lng: 74.7296822 },
-    gallery: Array.from({ length: 10 }, (_, i) => `/AllCentersImage/Ahilyanagar/Ahilyanagar${i + 1}.JPG`)
+    gallery: Array.from({ length: 10 }, (_, i) => `/AllCentersImage/Ahilyanagar/Ahilyanagar${i + 1}.JPG`),
+    availableDoctors: [0,15] 
   },
   {
     id: 13,
@@ -217,12 +232,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "3rd floor, Badnera Rd, above Raghubir Food Zone, Sharda Vihar, Amravati, Maharashtra 444605",
     image: "/images/Amravati-main.png",
-    phone: "+91 94239 71632",
+    phone: "+91 94239 71620",
     email: "amravati@progenesis.in",
     services: ["IVF", "Fertility Assessment", "Genetic Testing"],
     mapUri: "rYd1qu5wgL4ycmjV8",
     coordinates: { lat: 20.9157935, lng: 77.7531131 },
-    gallery: Array.from({ length: 6 }, (_, i) => `/AllCentersImage/Amravati/Amravati${i + 1}.jpg`)
+    gallery: Array.from({ length: 6 }, (_, i) => `/AllCentersImage/Amravati/Amravati${i + 1}.jpg`),
+    availableDoctors: [0,16] 
   },
   {
     id: 14,
@@ -232,12 +248,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "Royal Mirage Arcade, A Wing, Railway Colony Rd, opp. Kolhapur railway station, Railway Colony, New Shahupuri, Kolhapur 416001",
     image: "/images/Kolhapur-main.png",
-    phone: "+91 94239 71633",
+    phone: "+91 94239 71620",
     email: "kolhapur@progenesis.in",
     services: ["IVF", "IUI", "Surrogacy"],
     mapUri: "i1Ap66b3nMNhSZbh8",
     coordinates: { lat: 16.7034419, lng: 74.2377609 },
-    gallery: Array.from({ length: 4 }, (_, i) => `/AllCentersImage/Kolhapur/Kolhapur${i + 1}.jpeg`)
+    gallery: Array.from({ length: 4 }, (_, i) => `/AllCentersImage/Kolhapur/Kolhapur${i + 1}.jpeg`),
+    availableDoctors: [0] 
   },
   {
     id: 15,
@@ -247,12 +264,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "6th Floor, Tower 10, N Ambazari Rd, beside Alankar Theater, Bhagwaghar, Dharampeth, Nagpur, Maharashtra 440002",
     image: "/images/Nagpur-main.png",
-    phone: "+91 94239 71634",
+    phone: "+91 94239 71620",
     email: "nagpur@progenesis.in",
     services: ["IVF", "IUI", "Embryology"],
     mapUri: "vsx3HtpkRy9rGUHK8",
     coordinates: { lat: 18.9353097, lng: 73.2963966 },
-    gallery: Array.from({ length: 7 }, (_, i) => `/AllCentersImage/Nagpur/Nagpur${i + 1}.jpg`)
+    gallery: Array.from({ length: 7 }, (_, i) => `/AllCentersImage/Nagpur/Nagpur${i + 1}.jpg`),
+    availableDoctors: [0 , 13 , 14] 
   },
   {
     id: 16,
@@ -262,12 +280,13 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "KASTURE AGENCIES, 3rd Floor, Unit No 3-B, Kasture Business Centre, Railway lines, Dufferin Chowk, Solapur, Maharashtra 413001",
     image: "/images/Solapur-main.png",
-    phone: "+91 94239 71635",
+    phone: "+91 94239 71620",
     email: "solapur@progenesis.in",
     services: ["IVF", "Fertility Treatment", "Counseling"],
     mapUri: "acwiefbWWf2ZXC5x9",
     coordinates: { lat: 21.0143072, lng: 75.5610411 },
-    gallery: Array.from({ length: 5 }, (_, i) => `/AllCentersImage/Solapur/Solapur${i + 1}.jpg`)
+    gallery: Array.from({ length: 5 }, (_, i) => `/AllCentersImage/Solapur/Solapur${i + 1}.jpg`),
+    availableDoctors: [0 , 17] 
   }
 ];
 

@@ -53,7 +53,7 @@ export default function StoriesSection() {
     <section className="bg-white pt-[84px] mx-0 px-4 md:px-[80px] lg:px-[120px] pb-[60px]">
       <div className="mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-4">
           <div>
             <span className="inline-block text-xs md:text-sm bg-blue-100 text-[#1656A5] px-3 py-1 rounded-full">
               Real Stories. Real Miracles.
