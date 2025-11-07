@@ -191,7 +191,6 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
     return null;
   }
 
-  console.log(selectedCenter)
   return (
     <div>
       {/* Hero Banner Section */}
