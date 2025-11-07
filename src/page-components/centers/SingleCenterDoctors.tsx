@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import '../about/AboutMain.css'
 import { doctors } from "../../components/Home/DoctorsSection";
 
@@ -13,6 +13,18 @@ const CenterDoctorsSection = ({ centre }: any) => {
 
   const isCarousel = showDotors.length > 2;
   const GAP = 24;
+  
+  const calculateVisibleCards = useCallback(() => {
+
+    if (winWidth >= 768) { 
+      return 2;
+    }
+    return 1;
+  }, [winWidth]);
+
+  const visibleCards = calculateVisibleCards();
+  
+  const totalSlides = Math.ceil(showDotors.length / visibleCards);
 
   useEffect(() => {
     const ansList = doctors.filter(d => centre.availableDoctors.includes(d.id));
@@ -26,35 +38,33 @@ const CenterDoctorsSection = ({ centre }: any) => {
   }, []);
 
   useEffect(() => {
-    if (!isCarousel || showDotors.length === 0) return;
+    if (!isCarousel || showDotors.length === 0 || totalSlides <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % showDotors.length);
+      setCurrentSlide(prev => (prev + 1) % totalSlides); 
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [isCarousel, showDotors.length]);
+  }, [isCarousel, showDotors.length, totalSlides]); 
 
   useEffect(() => {
     if (!isCarousel || !scrollRef.current) return;
 
     const sc = scrollRef.current;
-
     const card = sc.querySelector<HTMLElement>(".doctor-card");
 
-    const cardWidth = card ? card.offsetWidth : (winWidth > 832 ? 832 : winWidth * 0.9);
-
+    const cardWidth = card ? card.offsetWidth : winWidth; 
     const scrollAmount = currentSlide * (cardWidth + GAP);
 
     sc.scrollTo({ left: scrollAmount, behavior: "smooth" });
-  }, [currentSlide, isCarousel, winWidth, showDotors.length]);
+  }, [currentSlide, isCarousel, winWidth, showDotors.length, visibleCards]);
+
 
   const renderDoctorCards = (doctor: any, index: number) => (
     <div
       key={index}
-
       className={`doctor-card bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100 flex flex-col min-h-[250px] w-full 
-        ${isCarousel ? 'flex-shrink-0 max-w-[832px] md:flex-row' : 'md:flex-row flex-1 max-w-[832px] mx-auto'}`
+        ${isCarousel ? 'flex-shrink-0 max-w-[700px] md:flex-row' : 'md:flex-row flex-1 max-w-[832px] mx-auto'}`
       }
       style={isCarousel ? { scrollSnapAlign: 'start' } : {}}
     >
@@ -103,9 +113,8 @@ const CenterDoctorsSection = ({ centre }: any) => {
 
         <div
           ref={scrollRef}
-          className={`flex gap-6 md:gap-8 w-full ${isCarousel ? 'overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide' : 'flex-col md:flex-row justify-center'}`}
+          className={`flex gap-6 md:gap-8  ${isCarousel ? 'overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide' : 'flex-col md:flex-row justify-center'}`}
           style={{
-
             flexWrap: isCarousel ? 'nowrap' : 'wrap',
             scrollbarWidth: isCarousel ? 'none' : undefined,
             msOverflowStyle: isCarousel ? 'none' : undefined,
@@ -114,9 +123,9 @@ const CenterDoctorsSection = ({ centre }: any) => {
           {showDotors.map((doctor: any, index: number) => renderDoctorCards(doctor, index))}
         </div>
 
-        {isCarousel && (
+        {isCarousel && totalSlides > 1 && ( 
           <div className="flex justify-center mt-8 gap-2">
-            {showDotors.map((_: any, index: number) => (
+            {[...Array(totalSlides)].map((_: any, index: number) => ( 
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
