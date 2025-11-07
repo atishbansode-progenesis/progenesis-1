@@ -247,7 +247,7 @@ const TreatmentsPage: React.FC = () => {
           { label: "Home", href: "/" },
           { label: "Treatments", href: "/treatments" },
         ]}
-        title="Hope, Science & <br/> Parenthood  Begin Here"
+        title="Hope, Science & <br/> Parenthood  Begins Here"
         buttonText="Book Your Appointment"
         buttonLink="/book-appointment"
         overlayImage="/treatments/infweb.png"
