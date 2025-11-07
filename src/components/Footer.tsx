@@ -14,9 +14,8 @@ const ArrowDown: React.FC<ArrowDownProps> = ({ open }) => (
     height="20"
     viewBox="0 0 24 24"
     fill="none"
-    className={`text-white transition-transform duration-300 ease-in-out ${
-      open ? "rotate-180" : "rotate-0"
-    }`}
+    className={`text-white transition-transform duration-300 ease-in-out ${open ? "rotate-180" : "rotate-0"
+      }`}
   >
     <path
       d="M9 11L12 14L15 11"
@@ -55,22 +54,12 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-  className="relative w-full bg-[url('/images/foot-mob.png')] csLg:bg-[url('/footer.png')] bg-[#645242] min-h-[120vh] flex flex-col justify-between bg-no-repeat md:bg-fixed text-white overflow-hidden"
-  style={{ 
-    backgroundPosition: 'center top',
-    backgroundSize: '100% 100%',
-  }}
->
-
-  
-{/* <footer className="relative w-full h-[130vh] md:h-[120vh] flex flex-col justify-between bg-center bg-cover bg-no-repeat text-white overflow-hidden" style={{ backgroundImage: "url('/footer.png')" }}> */}
-
-
-
-{/* </footer><footer className="relative w-full min-h-[120vh] flex flex-col justify-between bg-center bg-cover bg-no-repeat bg-fixed text-white overflow-hidden" style={{ backgroundImage: "url('/footer.png')" }}> */}
-
-
-
+      className="relative w-full bg-[url('/images/Footer_PHONE.png')] csLg:bg-[url('/footer.png')] bg-[#645242] min-h-[120vh] flex flex-col justify-between bg-no-repeat md:bg-fixed text-white overflow-hidden"
+      style={{
+        backgroundPosition: 'center top',
+        backgroundSize: '100% 100%',
+      }}
+    >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
 
@@ -86,8 +75,8 @@ const Footer: React.FC = () => {
             />
           </Link>
           <p className="text-base  csLg:hidden block mt-3 md:text-2xl leading-6 md:leading-10 font-normal max-w-sm md:max-w-2xl">
-              Aiming to be the benchmark for reproductive health care services.
-            </p>
+            Aiming to be the benchmark for reproductive health care services.
+          </p>
         </div>
 
         {/* Grid Section */}
@@ -304,27 +293,27 @@ const Footer: React.FC = () => {
             </div> */}
 
             <div className="flex items-center gap-4">
-  {[
-    { icon: "/linkedin.svg", link: "https://www.linkedin.com/company/progenesis-ivf/" },
-    { icon: "/insta.svg", link: "https://www.instagram.com/progenesis_ivf_center" },
-    { icon: "/facebook.svg", link: "https://www.facebook.com/progenesisivf" },
-    { icon: "/Youtube.svg", link: "https://www.youtube.com/@ProgenesisFertilityCenter" },
-  ].map((item, i, arr) => (
-    <React.Fragment key={item.icon + i}>
-      <a
-        href={item.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:opacity-100 opacity-80"
-      >
-        <img src={item.icon} className="w-8 h-8" alt="social" />
-      </a>
-      {i !== arr.length - 1 && (
-        <div className="h-6 w-px bg-[#685C52] md:bg-white" />
-      )}
-    </React.Fragment>
-  ))}
-</div>
+              {[
+                { icon: "/linkedin.svg", link: "https://www.linkedin.com/company/progenesis-ivf/" },
+                { icon: "/insta.svg", link: "https://www.instagram.com/progenesis_ivf_center" },
+                { icon: "/facebook.svg", link: "https://www.facebook.com/progenesisivf" },
+                { icon: "/Youtube.svg", link: "https://www.youtube.com/@ProgenesisFertilityCenter" },
+              ].map((item, i, arr) => (
+                <React.Fragment key={item.icon + i}>
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-100 opacity-80"
+                  >
+                    <img src={item.icon} className="w-8 h-8" alt="social" />
+                  </a>
+                  {i !== arr.length - 1 && (
+                    <div className="h-6 w-px bg-[#685C52] md:bg-white" />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
 
           </div>
 

@@ -1466,10 +1466,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`${pathname === "/" ? "fixed" : "relative"} top-0 left-0 right-0 z-50 w-full transition-transform duration-300 will-change-transform bg-white font-sans ${pathname === "/"
-          ? (showHeader ? "translate-y-0 shadow-sm" : "-translate-y-full")
-          : "translate-y-0 shadow-sm"
-        }`}>
+      <header className={`${pathname === "/" ? "sticky" : "relative"} top-0 left-0 right-0 z-50 w-full bg-white font-sans shadow-sm`}>
         {/* NAVBAR */}
         {!isSearchOpen && (
           <div className=" mx-auto flex items-center justify-between h-20 px-6   csLg:px-[120px]">
