@@ -102,7 +102,7 @@ const CareersLanding: React.FC = () => {
     <div className="w-full bg-[#FAFAFA]">
       <section
         className="section-spacing bg-gradient-to-r from-green-100 via-white to-sky-200 relative w-full h-[340px] sm:h-[380px] md:h-[500px] lg:h-[567px] overflow-hidden bg-no-repeat bg-cover bg-center flex items-start
-                  bg-[url('/images/Carrer-mobile.png')] h-[444px] csLg:h-full sm:bg-[url('/images/Carrer.png')]"
+                  bg-[url('/images/Careers-banner-Phone.png')] h-[444px] csLg:h-full sm:bg-[url('/images/Careers-banner.png')]"
       >
         <div className="container md:pr-0 grid grid-cols-12 items-start">
           <div className="col-span-12 csLg:col-span-8 flex flex-col gap-10">
@@ -117,7 +117,7 @@ const CareersLanding: React.FC = () => {
               <span className="text-[#1656A5]"> Careers</span>
             </p>
 
-            <h1 className="font-manrope font-semibold csLg:text-[64px] text-[32px] csLg:leading-[72px] leading-[40px] tracking-[-0.02em] text-[#111827]">
+            <h1 className="font-manrope  font-semibold csLg:text-[64px] text-[32px] csLg:leading-[72px] leading-[40px] tracking-[-0.02em] text-[#111827]  -mt-8 sm:-mt-6 md:mt-0">
               What We Offer: Care,
               <br className="hidden csLg:block" />
               Growth & Purpose

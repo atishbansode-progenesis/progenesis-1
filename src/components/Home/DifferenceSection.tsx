@@ -6,7 +6,7 @@ const Card = ({ card, index, total, scrollYProgress }: any) => {
   const end = (index + 1) / total;
 
   // Animations
-  const y = useTransform(scrollYProgress, [start, end], [350, 0]);
+  const y = useTransform(scrollYProgress, [start, end], [450, 0]);
   const rotate = useTransform(scrollYProgress, [start, end], [index % 2 === 0 ? -6 : 6, 0]);
   const scale = useTransform(scrollYProgress, [start, end], [0.9, 1]);
 
@@ -140,13 +140,13 @@ const DifferenceSection = () => {
            <div className="relative -mt-36 flex justify-center">
            <div className="relative min-h-[40vh] flex justify-center">
              {cards.map((card, index) => (
-               <Card
-                 key={index}
-                 card={card}
-                 index={index}
-                 total={cards.length}
-                 scrollYProgress={scrollYProgress}
-               />
+                <Card
+                  key={index}
+                  card={card}
+                  index={index}
+                  total={cards.length}
+                  scrollYProgress={scrollYProgress}
+                />
              ))}
           </div>
          </div>
