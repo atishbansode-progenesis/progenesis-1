@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React, { useState, useRef } from "react";
 
-const doctors = [
-  {
+export const doctors = [
+  { id:0,
     name: "Dr. Narhari S. Malagaonkar",
     image: "/DoctorsSection/doctorimage.png",
     description:
@@ -16,6 +16,7 @@ const doctors = [
     role: "Chief Fertility Consultant",
   },
   {
+    id:1,
     name: "Dr. Sonali Malagaonkar",
     image: "/DoctorsSection/DrSonali.png",
     description:
@@ -29,6 +30,7 @@ const doctors = [
     role: "Sr. Fertility Consultant",
   },
   {
+    id:2,
     name: "Dr. Unnati Mamtora",
     image: "/images/doctors/Unnati.png",
     description:
@@ -42,6 +44,7 @@ const doctors = [
     role: "Fertility Consultant",
   },
   {
+    id:3,
     name: "Dr. Prerna Khandelwal",
     image: "/images/doctors/Prerna.png",
     description:
@@ -55,6 +58,7 @@ const doctors = [
     role: "Fertility Consultant",
   },
    {
+    id:4,
     name: "Dr. Shraddha Pol",
     image: "/images/doctors/Shradha.png",
     description:
@@ -68,6 +72,7 @@ const doctors = [
     role: "Fertility Consultant",
   },
   {
+    id:5,
     name: "Dr. Bhavika Sane",
     image: "/images/doctors/Bhavika.png",
     description:
@@ -81,6 +86,7 @@ const doctors = [
     role: "Fertility Consultant",
   },
   {
+    id:6,
     name:"Dr. Bhageshri",
     image: "/images/doctors/Bhageshri.png",
     description:
@@ -94,6 +100,7 @@ const doctors = [
     role: "Fertility Consultant",
   },
   {
+    id:7,
     name: "Dr. Teena  Desai",
     image: "/images/doctors/Teena.png",
     description:
@@ -108,6 +115,7 @@ const doctors = [
   },
 
     {
+      id:8,
     name: "Dr. Priti Pardeshi",
     image: "/images/doctors/Priti.png",
     description:
@@ -122,6 +130,7 @@ const doctors = [
   },
 
    {
+    id:9,
     name: "Dr. Darshna Wahane",
     image: "/images/doctors/Darshna.png",
     description:
@@ -136,6 +145,7 @@ const doctors = [
   },
 
    {
+    id:10,
     name: "Dr. Rajashree Patil",
     image: "/images/doctors/Rajashree.png",
     description:
@@ -152,6 +162,7 @@ const doctors = [
   
 
   {
+    id:11,
     name: "Dr. Dinesh Wade",
     image: "/images/doctors/Dinesh.png",
     description:
@@ -168,6 +179,7 @@ const doctors = [
 
   
   {
+    id:12,
     name: "Dr. Shital Sonone",
     image: "/images/doctors/Shital.png",
     description:
@@ -182,6 +194,7 @@ const doctors = [
   },
 
    {
+    id:13,
     name: "Dr. Ashwini Talpe",
     image: "/images/doctors/Ashwini.png",
     description:
@@ -196,6 +209,7 @@ const doctors = [
   },
  
     {
+      id:14,
     name: "Dr. Suchitra Somkuwar",
     image: "/images/doctors/Suchitra.png",
     description:
@@ -210,6 +224,7 @@ const doctors = [
   },
  
     {
+      id:15,
     name: "Dr. Sangita Ingle",
     image: "/images/doctors/Sangita.png",
     description:
@@ -224,6 +239,7 @@ const doctors = [
   },
 
   {
+    id:16,
     name: "Dr. Tushar Zanjade",
     image: "/images/doctors/Tushar.png",
     description:
@@ -238,6 +254,7 @@ const doctors = [
   },
 
   {
+    id:17,
     name: "Dr. Apurva Patni",
     image: "/images/doctors/Apurva.png",
     description:
@@ -253,6 +270,7 @@ const doctors = [
   
  
   {
+    id:18,
     name: "Dr. Vivek  Bagul",
     image: "/images/doctors/Vivek.png",
     description:
@@ -289,9 +307,9 @@ const DoctorsSection = () => {
   const doctor = doctors[currentIndex];
 
   return (
-    <section className="py-12 md:py-20 bg-[#FAFAFA] px-4 sm:px-6 lg:px-30 xl:px-30 2xl:px-32">
+    <section className="py-4 md:py-20 bg-[#FAFAFA] px-4 sm:px-6 lg:px-30 xl:px-30 2xl:px-32">
       {/* Heading Section */}
-      <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-12 mb-12 md:mb-20 lg:mb-32">
+      <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-12 mb-8 md:mb-20 lg:mb-32">
         {/* Left Side */}
         <div className="w-full lg:w-1/2 lg:max-w-2xl">
           <span className="inline-block text-xs md:text-sm font-medium text-[#1656a5] bg-[#1656a50d] px-3 py-1 rounded-full mb-4 md:mb-6">

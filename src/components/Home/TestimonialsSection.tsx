@@ -6,7 +6,6 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-
 const TestimonialsSection = ({
   rating,
   totalReviews,
@@ -14,65 +13,49 @@ const TestimonialsSection = ({
 }: {
   rating: number;
   totalReviews: number;
-  reviewsList: { author: string; text: string; create_time: string; star_rating: string }[];
+  reviewsList: {
+    author: string;
+    text: string;
+    create_time: string;
+    star_rating: string;
+  }[];
 }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
 
-  console.log("Reviews List:", reviewsList);
   const getTimeAgo = (createTime: string) => {
     const now = new Date();
     const reviewDate = new Date(createTime);
     const diffInSeconds = Math.floor((now.getTime() - reviewDate.getTime()) / 1000);
-
     if (diffInSeconds < 60) return "just now";
-    if (diffInSeconds < 3600) {
-      const minutes = Math.floor(diffInSeconds / 60);
-      // return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`;
-      return "Today";
-    }
-    if (diffInSeconds < 86400) {
-      const hours = Math.floor(diffInSeconds / 3600);
-      // return `${hours} ${hours === 1 ? "hour" : "hours"} ago`;
-      return "Today";
-    }
-    if (diffInSeconds < 2592000) {
-      const days = Math.floor(diffInSeconds / 86400);
-      return `${days} ${days === 1 ? "day" : "days"} ago`;
-    }
-    if (diffInSeconds < 31536000) {
-      const months = Math.floor(diffInSeconds / 2592000);
-      return `${months} ${months === 1 ? "month" : "months"} ago`;
-    }
-    const years = Math.floor(diffInSeconds / 31536000);
-    return `${years} ${years === 1 ? "year" : "years"} ago`;
+    if (diffInSeconds < 3600) return "Today";
+    if (diffInSeconds < 86400) return "Today";
+    if (diffInSeconds < 2592000) return `${Math.floor(diffInSeconds / 86400)} days ago`;
+    if (diffInSeconds < 31536000) return `${Math.floor(diffInSeconds / 2592000)} months ago`;
+    return `${Math.floor(diffInSeconds / 31536000)} years ago`;
   };
 
   const numberStarRating = (star_rating: string) => {
-    if (star_rating === "ONE") {
-      return 1;
-    } else if (star_rating === "TWO") {
-      return 2;
-    } else if (star_rating === "THREE") {
-      return 3;
-    } else if (star_rating === "FOUR") {
-      return 4;
-    } else if (star_rating === "FIVE") {
-      return 5;
+    switch (star_rating) {
+      case "ONE": return 1;
+      case "TWO": return 2;
+      case "THREE": return 3;
+      case "FOUR": return 4;
+      case "FIVE": return 5;
+      default: return 0;
     }
   };
 
   return (
     <section className="w-full bg-white overflow-hidden">
       <div className="flex flex-col md:flex-row h-auto md:h-[700px]">
-        {/* LEFT PANEL */}
-        <div className="bg-[#1656A5] text-white py-10 flex flex-col justify-between md:[528px] px-4 lg:px-[70px]  pt-[80px] md:pt-[128px]">
-          <div className="md:text-left text-center">
-            {/* Google Rating */}
-            <div className="flex flex-row md:flex-col md:items-start items-center justify-center md:justify-start space-x-2 mb-2">
-              <div className="flex md:flex-row items-center  justify-center md:justify-start space-x-2 md:space-x-0">
-                {/* Mobile image */}
-                <img
+         <div className="bg-[#1656A5] text-white py-10 flex flex-col justify-between md:[528px] px-4 lg:px-[70px]  pt-[80px] md:pt-[128px]">
+           <div className="md:text-left text-center">
+             {/* Google Rating */}
+             <div className="flex flex-row md:flex-col md:items-start items-center justify-center md:justify-start space-x-2 mb-2">
+               <div className="flex md:flex-row items-center  justify-center md:justify-start space-x-2 md:space-x-0">
+                 {/* Mobile image */}
+                 <img
                   src="/images/google.png"
                   alt="Google"
                   className="w-[65px] h-[34px] rounded-[5px] block csLg:hidden"
@@ -96,7 +79,6 @@ const TestimonialsSection = ({
                     <span className="font-bold">{totalReviews}</span> reviews
                   </span>
                 </div>
-
                 {/* Desktop rating (unchanged) */}
                 <div className="hidden md:flex md:flex-row md:items-center">
                   <span className="text-5xl font-[Manrope] font-semibold text-[#F9F9F9] pr-1">
@@ -143,7 +125,7 @@ const TestimonialsSection = ({
                   className="block group-hover:hidden"
                 />
                 {/* Hover icon */}
-                <img
+                 <img
                   src="/icons/left.svg"
                   alt="left-hover"
                   className="hidden group-hover:block"
@@ -174,7 +156,7 @@ const TestimonialsSection = ({
 
         {/* RIGHT CAROUSEL */}
         <div
-          className="relative bg-cover bg-center h-full  csLg:w-[70%] py-[42px] pl-4 md:pl-0 md:pt-[82px]"
+          className="relative bg-cover bg-center h-full csLg:w-[70%] py-[42px] pl-4 md:pl-0 md:pt-[82px]"
           style={{
             backgroundImage: "url('/TestimonialsSection/testimonial.png')",
           }}
@@ -189,85 +171,56 @@ const TestimonialsSection = ({
                 spaceBetween: -40,
               },
             }}
-            centeredSlides={false}
-            centerInsufficientSlides={true}
-            className="md:pr-[80px] pl-4 md:pl-0"
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
             autoplay={{
-              delay: 2000,
+              delay: 2500,
               disableOnInteraction: false,
-              pauseOnMouseEnter: true,
             }}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
             }}
             onBeforeInit={(swiper) => {
-              // navigation can be boolean | NavigationOptions; guard before assigning
-              if (
-                swiper.params.navigation &&
-                typeof swiper.params.navigation !== "boolean"
-              ) {
+              // ✅ Set navigation refs before swiper initializes
+              if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
                 swiper.params.navigation.prevEl = prevRef.current;
                 swiper.params.navigation.nextEl = nextRef.current;
               }
             }}
+            className="md:pr-[80px] pl-4 md:pl-0"
           >
-            {reviewsList && reviewsList.length > 0 && reviewsList.map((t, i) => (
-              <>
-                {t.text && t.author && (
+            {reviewsList?.length > 0 ? (
+              reviewsList.map((t, i) =>
+                t.text && t.author ? (
                   <SwiperSlide key={i} className="!w-[280px] md:!w-[590px]">
-                    {({ isActive }) => (
-                      <div
-                        className={`flex flex-col justify-between transition-all duration-500 rounded-2xl bg-[#F9F9F9] p-6 md:p-[80px_60px] ml-0 mr-0 md:ml-[40px] md:mr-[40px] h-[320px] md:h-[520px] ${
-                          isActive ? "opacity-100" : "opacity-70"
-                        }`}
-                      >
-                        <div className="flex flex-col justify-center h-full text-left">
-                          <p
-                            className="
-                        text-[#1656A5] line-height-[24px]
-                        text-[16px] lg:text-[26px]
-                        lg:leading-[40px]
-                        text-left
-                      "
-                          >
-                            {t.text.length > 230
-                              ? `${t.text.slice(0, 230)}...`
-                              : t.text}
-                          </p>
+                    <div className="flex flex-col justify-between transition-all duration-500 rounded-2xl bg-[#F9F9F9] p-6 md:p-[80px_60px] ml-0 mr-0 md:ml-[40px] md:mr-[40px] h-[320px] md:h-[520px] opacity-100">
+                      <div className="flex flex-col justify-center h-full text-left">
+                        <p className="text-[#1656A5] text-[16px] lg:text-[26px] lg:leading-[40px] text-left">
+                          {t.text.length > 230 ? `${t.text.slice(0, 230)}...` : t.text}
+                        </p>
+                        <span className="mt-4 md:mt-6 text-[rgba(44,44,44,0.5)] text-[12px] md:text-[16px]">
+                          {t.author}
+                        </span>
 
-                          <span
-                            className="
-                          mt-4 md:mt-6 text-[rgba(44,44,44,0.5)] font-[Manrope]
-                          text-[12px] md:text-[16px]
-                          leading-[18px] md:leading-[22px] tracking-[-0.32px]
-                          text-left
-                        "
-                          >
-                            {t.author}
-                          </span>
-                          <div className="md:flex justify-center md:justify-start items-center text-yellow-400 text-xl mb-1">
-                              {Array.from({ length: 5 }).map((_, idx: number) => {
-                                const sr = Number(numberStarRating(t.star_rating) ?? 0);
-                                const full = idx + 1 <= Math.floor(sr);
-                                const half = sr - idx === 0.5;
-                                return <span key={idx}>{full ? "★" : half ? "★" : "★"}</span>;
-                              })}
-                            </div>
-                            <span className="text-[rgba(44,44,44,0.5)] text-[12px] text-left">
-                            {getTimeAgo(t.create_time)}
-                          </span>
+                        {/* Stars */}
+                        <div className="flex justify-start items-center text-yellow-400 text-xl mb-1">
+                          {Array.from({ length: 5 }).map((_, idx) => {
+                            const sr = numberStarRating(t.star_rating);
+                            return <span key={idx}>{idx < sr ? "★" : "☆"}</span>;
+                          })}
                         </div>
+
+                        {/* Time */}
+                        <span className="text-[rgba(44,44,44,0.5)] text-[12px] text-left">
+                          {getTimeAgo(t.create_time)}
+                        </span>
                       </div>
-                    )}
+                    </div>
                   </SwiperSlide>
-                )}
-              </>
-            ))}
+                ) : null
+              )
+            ) : (
+              <p className="text-white text-center mt-20">No reviews available.</p>
+            )}
           </Swiper>
         </div>
       </div>

@@ -116,7 +116,7 @@ const FaQ: React.FC = () => {
     <div className="grid grid-cols-1 md:grid-cols-[360px_1fr] lg:grid-cols-[420px_1fr] gap-6 md:gap-8 lg:gap-10">
 
         <div>
-          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px]">
+          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1   rounded-[8px]">
             FAQ's
           </span>
           <div className="pb-5">  

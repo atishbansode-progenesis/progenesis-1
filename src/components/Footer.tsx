@@ -309,7 +309,6 @@ const Footer: React.FC = () => {
     { icon: "/insta.svg", link: "https://www.instagram.com/progenesis_ivf_center" },
     { icon: "/facebook.svg", link: "https://www.facebook.com/progenesisivf" },
     { icon: "/Youtube.svg", link: "https://www.youtube.com/@ProgenesisFertilityCenter" },
-    { icon: "/twitter.svg", link: "#" }, // optional placeholder if you don’t have an official Twitter link
   ].map((item, i, arr) => (
     <React.Fragment key={item.icon + i}>
       <a

@@ -98,7 +98,7 @@ const TreatmentsSection = () => {
           </div>
           <div
             ref={ref}
-            className="flex flex-wrap gap-x-2 text-[24px] ] font-[Manrope] font-normal"
+            className="flex flex-wrap gap-x-2 text-[24px] font-[Manrope] font-normal"
           >
             {words.map((word, i) => {
              
@@ -114,7 +114,7 @@ const TreatmentsSection = () => {
 
               return (
                 <motion.span key={i} style={{ color, opacity }}>
-                  {word}&nbsp;
+                  {word}
                 </motion.span>
               );
             })}
