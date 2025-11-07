@@ -12,7 +12,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Journey from '../../components/Journey'
+import Journey from "../../components/Journey";
 import { useRouter } from "next/navigation";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 import HeroSection from "@/components/HeroSection/herosection";
@@ -28,7 +28,7 @@ const InternationalPatientsPage: React.FC = () => {
 
   const [activeTab, setActiveTab] = useState("start");
 
-  const router = useRouter()
+  const router = useRouter();
 
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -54,7 +54,10 @@ const InternationalPatientsPage: React.FC = () => {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
 
     // Observe all sections
     categories.forEach((cat) => {
@@ -113,49 +116,49 @@ const InternationalPatientsPage: React.FC = () => {
       id: 1,
       title: "In-Vitro Fertilization (IVF) ",
       slug: "repeated-iui-failures",
-      image: "/InternationalPatients/ivf1.png",
+      image: "/InternationalPatients/E1.png",
     },
     {
       id: 2,
       title: "Embryo Donation (ED)",
       slug: "repeated-ivf-failures",
-      image: "/InternationalPatients/ivf2.png",
+      image: "/InternationalPatients/E2.png",
     },
     {
       id: 3,
       title: "Oocyte Donation (OD)",
       slug: "pregnancy-after-menopause",
-      image: "/InternationalPatients/ivf3.png",
+      image: "/InternationalPatients/E7.png",
     },
     {
       id: 4,
       title: "IVF-ICSI",
       slug: "low-amh",
-      image: "/InternationalPatients/ivf4.png",
+      image: "/InternationalPatients/E5.png",
     },
     {
       id: 5,
       title: "PCOS",
       slug: "pcos",
-      image: "/InternationalPatients/ivf5.png",
+      image: "/InternationalPatients/E8.png",
     },
     {
       id: 6,
       title: "Blastocyst Transfer",
       slug: "tubal-blockage",
-      image: "/InternationalPatients/ivf6.png",
+      image: "/InternationalPatients/E6.png",
     },
     {
       id: 7,
       title: "Freezing/Vitrification",
       slug: "fibroids",
-      image: "/InternationalPatients/ivf7.png",
+      image: "/InternationalPatients/E3.png",
     },
     {
       id: 8,
       title: "Genetic Screening",
       slug: "endometriosis",
-      image: "/InternationalPatients/ivf8.png",
+      image: "/InternationalPatients/E4.png",
     },
   ];
 
@@ -167,39 +170,59 @@ const InternationalPatientsPage: React.FC = () => {
       {
         text: "After years of failed attempts, Progenesis helped us find the cause, treated us with care, and blessed us with twins. Highly recommend them.",
         author: "– Gulelat Biamesh, Couple from Ethiopia",
-        image: "/InternationalPatients/testimonial.png"
+        image: "/InternationalPatients/testimonial1.png",
       },
       {
         text: "The team was so supportive throughout my journey. Their care and expertise gave me hope again.",
         author: "– Priya Sharma, Progenesis Mom, Pune",
-        image: "/InternationalPatients/testimonial.png"
+        image: "/InternationalPatients/testimonial2.png",
       },
       {
         text: "Every visit gave me more confidence. Today, I'm blessed with the family I always dreamed of.",
         author: "– Anjali Mehta, Progenesis Mom, Mumbai",
-        image: "/InternationalPatients/testimonial.png"
+        image: "/InternationalPatients/testimonial3.png",
       },
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const BackIconSvg=()=>{
+    const BackIconSvg = () => {
       return (
-        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14 7.37452L1.4173 7.01606M1.4173 7.01606L8.18318 1M1.4173 7.01606L7.31279 13.4768" stroke="#F9F9F9" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+        <svg
+          width="15"
+          height="14"
+          viewBox="0 0 15 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 7.37452L1.4173 7.01606M1.4173 7.01606L8.18318 1M1.4173 7.01606L7.31279 13.4768"
+            stroke="#F9F9F9"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      );
+    };
 
-      )
-    }
-
-    const NextIconSvg=()=>{
+    const NextIconSvg = () => {
       return (
-        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 7.37452L13.5827 7.01606M13.5827 7.01606L6.81682 1M13.5827 7.01606L7.68721 13.4768" stroke="#F9F9F9" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>        
-
-      )
-    }
+        <svg
+          width="15"
+          height="14"
+          viewBox="0 0 15 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 7.37452L13.5827 7.01606M13.5827 7.01606L6.81682 1M13.5827 7.01606L7.68721 13.4768"
+            stroke="#F9F9F9"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      );
+    };
 
     return (
       <section
@@ -233,13 +256,13 @@ const InternationalPatientsPage: React.FC = () => {
                 ref={prevRef}
                 className="w-14 h-14 flex items-center justify-center border border-white rounded-[16px] cursor-pointer"
               >
-                <BackIconSvg/>
+                <BackIconSvg />
               </button>
               <button
                 ref={nextRef}
                 className="w-14 h-14 flex items-center justify-center border border-white rounded-[16px] cursor-pointer"
               >
-                  <NextIconSvg/>
+                <NextIconSvg />
               </button>
             </div>
           </div>
@@ -255,7 +278,10 @@ const InternationalPatientsPage: React.FC = () => {
                 nextEl: nextRef.current,
               }}
               onBeforeInit={(swiper) => {
-                if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
+                if (
+                  swiper.params.navigation &&
+                  typeof swiper.params.navigation !== "boolean"
+                ) {
                   swiper.params.navigation.prevEl = prevRef.current;
                   swiper.params.navigation.nextEl = nextRef.current;
                 }
@@ -277,34 +303,46 @@ const InternationalPatientsPage: React.FC = () => {
                     </div>
 
                     {/* Testimonial Card on Mobile */}
-                    <div className="flex flex-col justify-between 
+                    <div
+                      className="flex flex-col justify-between 
                                   w-full min-h-[300px]
                                   px-6 py-8 
-                                  bg-white text-gray-800 rounded-2xl shadow-lg">
-                      <p className="text-[#1656A5] font-[Manrope] 
-                                text-[18px] leading-[28px] tracking-[-0.36px] font-normal">
+                                  bg-white text-gray-800 rounded-2xl shadow-lg"
+                    >
+                      <p
+                        className="text-[#1656A5] font-[Manrope] 
+                                text-[18px] leading-[28px] tracking-[-0.36px] font-normal"
+                      >
                         {t.text}
                       </p>
 
-                      <span className="mt-6 text-[rgba(44,44,44,0.5)] 
-                                    font-[Manrope] text-[14px] leading-[20px] tracking-[-0.28px]">
+                      <span
+                        className="mt-6 text-[rgba(44,44,44,0.5)] 
+                                    font-[Manrope] text-[14px] leading-[20px] tracking-[-0.28px]"
+                      >
                         {t.author}
                       </span>
                     </div>
                   </div>
 
                   {/* Desktop Layout */}
-                  <div className="hidden csLg:flex flex-col justify-between 
+                  <div
+                    className="hidden csLg:flex flex-col justify-between 
                                 w-[400px] h-[536px] flex-shrink-0 
                                 px-[43px] py-[96px] 
-                                bg-white text-gray-800 rounded-2xl shadow-lg">
-                    <p className="text-[#1656A5] font-[Manrope] 
-                              text-[32px] leading-[40px] tracking-[-0.64px] font-normal">
+                                bg-white text-gray-800 rounded-2xl shadow-lg"
+                  >
+                    <p
+                      className="text-[#1656A5] font-[Manrope] 
+                              text-[32px] leading-[40px] tracking-[-0.64px] font-normal"
+                    >
                       {t.text}
                     </p>
 
-                    <span className="mt-[80px] text-[rgba(44,44,44,0.5)] 
-                                  font-[Manrope] text-[16px] leading-[24px] tracking-[-0.32px]">
+                    <span
+                      className="mt-[80px] text-[rgba(44,44,44,0.5)] 
+                                  font-[Manrope] text-[16px] leading-[24px] tracking-[-0.32px]"
+                    >
                       {t.author}
                     </span>
                   </div>
@@ -314,19 +352,18 @@ const InternationalPatientsPage: React.FC = () => {
           </div>
 
           {/* Image - Desktop Only */}
-          <div className="relative z-10 w-full h-[530px] hidden csLg:block">
+          <div className="relative z-10 w-full h-[530px] hidden csLg:block overflow-hidden rounded-xl">
             <Image
-              src="/InternationalPatients/testimonial.png"
+              src={testimonials[currentIndex].image}
               alt="Happy Family"
               fill
-              className="rounded-xl object-cover"
+              className="object-cover"
             />
           </div>
         </div>
       </section>
     );
   };
-
 
   return (
     <main className="">
@@ -372,18 +409,20 @@ const InternationalPatientsPage: React.FC = () => {
         </div>
       </section> */}
 
-   <HeroInter/>
+      <HeroInter />
 
-        <NavigationTabs 
-          categories={categories}
-          activeTab={activeTab}
-          onTabClick={handleScroll}
-        />
+      <NavigationTabs
+        categories={categories}
+        activeTab={activeTab}
+        onTabClick={handleScroll}
+      />
 
-      <section id="start" className="lg:px-[120px] px-[16px] py-[16px] lg:py-[80px] bg-white">
+      <section
+        id="start"
+        className="lg:px-[120px] px-[16px] py-[16px] lg:py-[80px] bg-white"
+      >
         <Journey />
       </section>
-
 
       <section className="px-4 py-4 lg:px-30 lg:py-20 relative bg-center bg-cover flex justify-center items-center max-h-[478px]">
         {/* Mobile Background */}
@@ -400,9 +439,15 @@ const InternationalPatientsPage: React.FC = () => {
         />
 
         <p className="text-[#94BA3D] max-w-[100%] text-[28px] csLg:text-[40px] text-center font-normal font-[Manrope] relative z-10">
-        Our specialists address your concerns, explain treatment steps, ensure safe care, and arrange hassle-free accommodations for comfort, transport, and support.                 </p>
+          Our specialists address your concerns, explain treatment steps, ensure
+          safe care, and arrange hassle-free accommodations for comfort,
+          transport, and support.{" "}
+        </p>
       </section>
-      <section id="fertility" className="bg-white pt-[40px] md:pt-[80px] pb-[40px] md:pb-[60px]">
+      <section
+        id="fertility"
+        className="bg-white pt-[40px] md:pt-[80px] pb-[40px] md:pb-[60px]"
+      >
         <div className="px-4 md:px-[80px] lg:px-[120px]">
           <div className="flex flex-col xl:flex-row justify-between md:gap-10">
             <div className="w-full xl:w-[50%]">
@@ -410,37 +455,40 @@ const InternationalPatientsPage: React.FC = () => {
                 Advanced Fertility Solutions
               </span>
               <h2 className="text-[32px] md:text-[40px] font-light text-[#2C2C2C] mb-6 leading-[40px] md:leading-[56px]">
-                Personalized fertility care for,<br /> every parenthood journey
+                Personalized fertility care for,
+                <br /> every parenthood journey
               </h2>
             </div>
             <div className="flex-1">
-              <p
-                className="font-[Manrope] font-normal text-[#2C2C2C] text-[16px] leading-[28px] tracking-[-0.36px] md:text-[24px] md:leading-[32px] md:tracking-[-0.48px] lg:text-[24px] lg:leading-[32px] lg:tracking-[-0.48px] max-w-[832px]"
-              >
-                At Progenesis, we offer all advanced fertility treatments under one roof — from IVF and ICSI to embryo donation, genetic screening, and cryopreservation. <span className=""> Our global-standard care ensures international patients receive safe, personalized solutions to achieve their dream of parenthood.</span>
+              <p className="font-[Manrope] font-normal text-[#2C2C2C] text-[16px] leading-[28px] tracking-[-0.36px] md:text-[24px] md:leading-[32px] md:tracking-[-0.48px] lg:text-[24px] lg:leading-[32px] lg:tracking-[-0.48px] max-w-[832px]">
+                At Progenesis, we offer all advanced fertility treatments under
+                one roof — from IVF and ICSI to embryo donation, genetic
+                screening, and cryopreservation.{" "}
+                <span className="">
+                  {" "}
+                  Our global-standard care ensures international patients
+                  receive safe, personalized solutions to achieve their dream of
+                  parenthood.
+                </span>
               </p>
             </div>
           </div>
-          <div
-            className="grid gap-4 md:gap-6 mt-[80px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center"
-          >
+          <div className="grid gap-4 md:gap-6 mt-[80px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center">
             {femaleInfertilityIssues.map((issue) => (
               <Link
                 key={issue.id}
                 href={`/infertility/${issue.slug}`}
-                className="flex flex-col items-center justify-between w-full p-4 lg:p-[24px] bg-[rgba(22,86,165,0.05)] rounded-2xl transition hover:bg-[#1656A51F]"
+                className="relative flex flex-col items-center justify-start w-full h-[400px] p-4 md:px-6 md:py-6 gap-[16px] rounded-[16px] bg-[#1656A5]/5 overflow-hidden"
               >
                 <h3 className="text-[#2C2C2C] text-[20px] md:text-[24px] font-normal leading-[28px] md:leading-[36px] text-start w-full font-[Manrope]">
                   {issue.title}
                 </h3>
-                <div className="relative z-10 w-full h-[250px] mix-blend-multiply">
                 <Image
                   src={issue.image}
                   alt={issue.title}
                   fill
-                  className="object-contain "
+                  className="object-cover object-center mix-blend-multiply z-0"
                 />
-                </div>
               </Link>
             ))}
           </div>
@@ -450,10 +498,16 @@ const InternationalPatientsPage: React.FC = () => {
       <section id="news">
         <AwardsSection />
       </section>
-          
-          <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
-            <AppointmentForm />
-          </Suspense>
+
+      <Suspense
+        fallback={
+          <div className="w-full h-64 flex items-center justify-center">
+            Loading...
+          </div>
+        }
+      >
+        <AppointmentForm />
+      </Suspense>
     </main>
   );
 };
