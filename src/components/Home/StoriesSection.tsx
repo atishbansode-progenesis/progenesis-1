@@ -74,8 +74,11 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
     const sc = scrollRef.current;
     if (!sc) return;
 
+    // Find the first card to calculate its width
     const card = sc.querySelector<HTMLElement>(".story-card");
-    const cardWidth = card ? card.offsetWidth : sc.clientWidth * 0.9;
+    // Fallback: use a calculated width if card element isn't immediately available
+    const cardWidth = card ? card.offsetWidth : (winWidth < 640 ? winWidth * 0.65 : (winWidth < 1024 ? 240 : 380));
+    
     const amount = Math.round(cardWidth + GAP) * dir;
     sc.scrollBy({ left: amount, behavior: "smooth" });
   };
@@ -105,14 +108,35 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
           </button>
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 lg:gap-6 mb-[40px] lg:mb-[80px] md:mb-[80px]">
-          <h2 className="mt-2 text-[20px] md:text-[32px] lg:text-[40px] font-normal text-[#2C2C2C] leading-[28px] md:leading-[56px] lg:max-w-[691px]">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 lg:gap-6 mb-[20px] lg:mb-[80px] md:mb-[80px]">
+          <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#2C2C2C] leading-[28px] md:leading-[56px] lg:max-w-[691px]">
             {heading}
           </h2>
 
-          <Link href="/resources" className="">
-            <span className="md:inline-block px-4 py-2 bg-[#1656a5] text-white rounded-lg transition">See all</span>
-          </Link>
+          <div className="flex items-center gap-5">
+            {/* Previous Slide Button - Now hidden on small screens (sm:flex) */}
+                        <Link href="/resources" className="">
+            <span className="hidden md:inline-block px-4 py-3 bg-[#1656a5] text-white rounded-lg transition">See all</span>
+
+             </Link>
+            <button 
+              className="hidden sm:flex w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-[#1656a5] text-[#1656a5] text-xl hover:bg-[rgba(22,86,165,0.05)] transition-all duration-300 z-10"
+              onClick={prevSlide}
+              aria-label="Previous story"
+            >
+              <img src="/icons/left.svg" width={12} height={12} alt="Left arrow" />
+            </button>
+
+            {/* Next Slide Button - Now hidden on small screens (sm:flex) */}
+            <button 
+              className="hidden sm:flex w-[56px] h-[56px] items-center justify-center rounded-[16px] border border-[#1656a5] text-[#1656a5] text-xl hover:bg-[rgba(22,86,165,0.05)] transition-all duration-300 z-10"
+              onClick={nextSlide}
+              aria-label="Next story"
+            >
+              <img src="/icons/right.svg" width={12} height={12} alt="Right arrow" />
+            </button>
+
+          </div>
 
         </div>
 
@@ -183,6 +207,16 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
             );
           })}
         </div>
+        
+        {/* See all button after the carousel on small screens, and always on its own line */}
+        <div className="mt-6 flex justify-start md:justify-end">
+            <Link href="/resources" className="inline-block md:hidden">
+                <span className="px-4 py-3 bg-[#1656a5] text-white rounded-lg transition">See all</span>
+            </Link>
+        </div>
+
+
+
       </div>
 
       {/* Modal: only one iframe used at a time */}

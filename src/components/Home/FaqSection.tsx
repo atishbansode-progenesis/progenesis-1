@@ -85,7 +85,7 @@ const FaQ: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-[360px_1fr] lg:grid-cols-[420px_1fr] gap-6 md:gap-8 lg:gap-10">
         {/* Left intro */}
         <div>
-          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px]">FAQ's</span>
+          <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px] mb-4">FAQ's</span>
           <div style={{paddingBottom:'20px'}}>
           <h2 className="text-[36px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
             Quick answers to the

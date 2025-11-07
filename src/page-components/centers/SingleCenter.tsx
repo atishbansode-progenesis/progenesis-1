@@ -90,7 +90,6 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   const [totalReviews, setTotalReviews] = useState(0);
   const [reviewsList, setReviewsList] = useState<{ author: string; text: string; create_time: string; star_rating: string }[]>([]);
 
-
   const selectedCenter = useMemo(() => {
     if (!selectedSlug) {
       return undefined;
@@ -192,6 +191,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
     return null;
   }
 
+  console.log(selectedCenter)
   return (
     <div>
       {/* Hero Banner Section */}
@@ -388,8 +388,8 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         heading={infoGridCenters.heading}
         items={infoGridCenters.items}
       />
-      {totalReviews && totalReviews && reviewsList && reviewsList.length > 0 && <TestimonialsSection rating={rating} totalReviews={totalReviews} reviewsList={reviewsList}/>}
-      <CenterDoctorsSection />
+      {totalReviews && totalReviews && reviewsList && reviewsList.length >0 && <TestimonialsSection rating={rating} totalReviews={totalReviews} reviewsList={reviewsList}/>}
+      <CenterDoctorsSection  centre = {selectedCenter}/>
       <TestimonialsCenters />
       {faqData.length > 0 && (
         <FAQCenters data={faqData} isLoading={isLoading} />

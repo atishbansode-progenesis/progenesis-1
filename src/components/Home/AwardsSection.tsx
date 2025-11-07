@@ -84,12 +84,12 @@ export default function AwardsSection() {
   };
 
   return (
-    <section className=" pt-[42px] md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] csLg:pb-[60px] w-full">
+    <section className=" pt-4 md:pt-[84px] px-4 md:px-[80px] lg:px-[120px] csLg:pb-[60px] w-full">
       <div className="w-full">
         <div className="flex csLg:flex-row flex-col space-y-6 justify-between  w-full">
           {/* Left column */}
           <div className="">
-            <span className="inline-block bg-[#1656A50D]  text-blue-700 text-xs px-3 py-1 rounded-full">
+            <span className="inline-block bg-[#1656A50D]  text-blue-700 text-xs px-3  rounded-full">
               Featured News & Media
             </span>
 
