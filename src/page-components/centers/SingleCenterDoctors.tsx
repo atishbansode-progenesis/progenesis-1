@@ -11,23 +11,18 @@ const CenterDoctorsSection = ({ centre }: any) => {
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
 
-  const isCarousel = showDotors.length > 2;
-  const GAP = 24;
-  
-  const calculateVisibleCards = useCallback(() => {
+  const GAP = 24; 
 
-    if (winWidth >= 768) { 
-      return 2;
-    }
-    return 1;
+  const calculateVisibleCards = useCallback(() => {
+    return winWidth >= 768 ? 2 : 1;
   }, [winWidth]);
 
   const visibleCards = calculateVisibleCards();
-  
+  const isCarousel = showDotors.length > visibleCards;
   const totalSlides = Math.ceil(showDotors.length / visibleCards);
 
   useEffect(() => {
-    const ansList = doctors.filter(d => centre.availableDoctors.includes(d.id));
+    const ansList = doctors.filter((d) => centre.availableDoctors.includes(d.id));
     setShowDoctors(ansList);
   }, [centre]);
 
@@ -41,63 +36,73 @@ const CenterDoctorsSection = ({ centre }: any) => {
     if (!isCarousel || showDotors.length === 0 || totalSlides <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % totalSlides); 
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [isCarousel, showDotors.length, totalSlides]); 
+  }, [isCarousel, showDotors.length, totalSlides]);
 
   useEffect(() => {
     if (!isCarousel || !scrollRef.current) return;
 
     const sc = scrollRef.current;
-    const card = sc.querySelector<HTMLElement>(".doctor-card");
+    const containerWidth = sc.offsetWidth;
 
-    const cardWidth = card ? card.offsetWidth : winWidth; 
+    const totalGaps = GAP * (visibleCards - 1);
+    const cardWidth = (containerWidth - totalGaps) / visibleCards;
     const scrollAmount = currentSlide * (cardWidth + GAP);
 
     sc.scrollTo({ left: scrollAmount, behavior: "smooth" });
   }, [currentSlide, isCarousel, winWidth, showDotors.length, visibleCards]);
 
+  const renderDoctorCards = (doctor: any, index: number) => {
+    const cardStyle = isCarousel
+      ? {
+          width: `calc((100% - ${GAP * (visibleCards - 1)}px) / ${visibleCards})`,
+          flexShrink: 0,
+          scrollSnapAlign: 'start' as const,
+        }
+      : {};
 
-  const renderDoctorCards = (doctor: any, index: number) => (
-    <div
-      key={index}
-      className={`doctor-card bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100 flex flex-col min-h-[250px] w-full 
-        ${isCarousel ? 'flex-shrink-0 max-w-[700px] md:flex-row' : 'md:flex-row flex-1 max-w-[832px] mx-auto'}`
-      }
-      style={isCarousel ? { scrollSnapAlign: 'start' } : {}}
-    >
-      <div className="p-4 md:w-1/2 w-full overflow-hidden">
-        <img
-          src={doctor.image}
-          alt={doctor.name}
-          className="w-full h-full md:min-w-[240px] object-cover rounded-[16px]"
-        />
-      </div>
+    return (
+      <div
+        key={index}
+        className={`doctor-card bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100 flex flex-col min-h-[250px] w-full 
+          ${isCarousel ? 'md:flex-row' : 'md:flex-row flex-1 max-w-[832px] mx-auto'}`
+        }
+        style={{ ...cardStyle }}
+      >
+        <div className="p-4 md:w-1/2 w-full overflow-hidden">
+          <img
+            src={doctor.image}
+            alt={doctor.name}
+            className="w-full h-full md:min-w-[240px] object-cover rounded-[16px]"
+          />
+        </div>
 
-      <div className="flex flex-col justify-between md:min-w-[200px] flex-1 p-4">
-        <div>
-          <h3 className="text-[#1656A5] font-[Manrope] text-2xl md:text-[40px] font-normal leading-tight mb-4">
-            {doctor.name}
-          </h3>
-          <p className="text-[#606060] font-[Manrope] text-base leading-[24px] tracking-tight mb-4">
-            {doctor.role}
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          {doctor.experience.map((exp: string, idx: number) => (
-            <span
-              key={idx}
-              className="px-4 py-2 rounded-[16px] bg-[rgba(22,86,165,0.05)] text-[#1656A5] font-[Manrope] text-sm font-normal leading-[24px] tracking-tight"
-            >
-              {exp}
-            </span>
-          ))}
+        <div className="flex flex-col justify-between md:min-w-[200px] flex-1 p-4">
+          <div>
+            <h3 className="text-[#1656A5] font-[Manrope] text-2xl md:text-[40px] font-normal leading-tight mb-4">
+              {doctor.name}
+            </h3>
+            <p className="text-[#606060] font-[Manrope] text-base leading-[24px] tracking-tight mb-4">
+              {doctor.role}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {doctor.experience.map((exp: string, idx: number) => (
+              <span
+                key={idx}
+                className="px-4 py-2 rounded-[16px] bg-[rgba(22,86,165,0.05)] text-[#1656A5] font-[Manrope] text-sm font-normal leading-[24px] tracking-tight"
+              >
+                {exp}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <section className="bg-[#F9FAFB]">
@@ -113,7 +118,7 @@ const CenterDoctorsSection = ({ centre }: any) => {
 
         <div
           ref={scrollRef}
-          className={`flex gap-6 md:gap-8  ${isCarousel ? 'overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide' : 'flex-col md:flex-row justify-center'}`}
+          className={`flex gap-6 ${isCarousel ? 'overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide' : 'flex-col md:flex-row justify-center'}`}
           style={{
             flexWrap: isCarousel ? 'nowrap' : 'wrap',
             scrollbarWidth: isCarousel ? 'none' : undefined,
@@ -123,20 +128,18 @@ const CenterDoctorsSection = ({ centre }: any) => {
           {showDotors.map((doctor: any, index: number) => renderDoctorCards(doctor, index))}
         </div>
 
-        {isCarousel && totalSlides > 1 && ( 
+        {isCarousel && totalSlides > 1 && (
           <div className="flex justify-center mt-8 gap-2">
-            {[...Array(totalSlides)].map((_: any, index: number) => ( 
+            {[...Array(totalSlides)].map((_: any, index: number) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-[#1656A5] w-6' : 'bg-[#1656A5]/30'
-                  }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-[#1656A5] w-6' : 'bg-[#1656A5]/30'}`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
         )}
-
       </div>
     </section>
   );
