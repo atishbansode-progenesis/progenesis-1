@@ -35,7 +35,7 @@ const slides: Slide[] = [
     number: "03",
     desc:
       "You deserve to know everything—clearly, honestly, and respectfully.",
-    imageMobile:"/images/why3-m.png",
+    imageMobile:"/images/why3.png",
     image: "/images/why3.png",
     bannerHeading: "Every Step With Honest Care.",
     bannerPara:
