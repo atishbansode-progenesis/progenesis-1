@@ -6,44 +6,67 @@ type Slide = {
   number: string;
   desc: string;
   image: string;
+  imageMobile: string;
   bannerHeading: string;
   bannerPara?: string;
 };
 
 const slides: Slide[] = [
   {
-    title: "Personalized, Holistic Care",
+    title: "Excellence You Can Trust",
     number: "01",
     desc:
-      "Every journey is unique. We design your treatment around your story, not just your symptoms.",
+      "High success rates backed by ethical care, transparency, and trusted medical expertise.",
     image: "/images/why1.png",
+    imageMobile:"/images/why1-m.png",
     bannerHeading: "Care That Feels Like It’s Just for You.",
   },
   {
-    title: "Always Accessible",
+    title: "Redefining Patient Care",
     number: "02",
     desc:
       "We’re here whenever you need—answers, reassurance, or simply someone who understands.",
     image: "/images/why2.png",
-    bannerHeading: "We’re always here for you, completely.",
+    imageMobile:"/images/why2-m.png",
+    bannerHeading: "Supportive, personal care built around your comfort, needs, and confidence.",
   },
   {
-    title: "Transparency Builds Trust",
+    title: "Advanced ART Labs",
     number: "03",
     desc:
       "You deserve to know everything—clearly, honestly, and respectfully.",
+    imageMobile:"/images/why3-m.png",
     image: "/images/why3.png",
     bannerHeading: "Every Step With Honest Care.",
     bannerPara:
-      "From diagnosis to delivery, you’ll always know what’s happening and why because trust grows with transparency.",
+      "Advanced IVF and expert embryology delivering precise, high-quality fertility care.",
   },
   {
-    title: "Your Journey, Your Say",
+    title: "Trusted Quality & Safety",
     number: "04",
     desc:
       "We empower you to make confident, informed choices at every step of your parenthood journey.",
     image: "/images/why4.png",
-    bannerHeading: "Because Parenthood is Your Choice.",
+    imageMobile:"/images/why4-m.png",
+    bannerHeading: "Global-standard protocols, strict quality systems, and complete safety at every step.",
+  },
+  {
+    title: "Compassion-Led Care",
+    number: "05",
+    desc:
+      "Support that truly understands your emotions, journey, and the hope behind every step.",
+    image: "/images/why5.png",
+    imageMobile:"/images/why5-m.png",
+    bannerHeading: "Global-standard protocols, strict quality systems, and complete safety at every step.",
+  },
+  {
+    title: "Proven Innovation",
+    number: "06",
+    desc:
+      "Cutting-edge fertility solutions backed by research, technology, and consistently proven results.",
+    image: "/images/why6.png",
+    imageMobile:"/images/why6-m.png",
+    bannerHeading: "Global-standard protocols, strict quality systems, and complete safety at every step.",
   },
 ];
 
@@ -93,7 +116,7 @@ const WhyProgenesis: React.FC = () => {
           <div className="block lg:hidden relative w-full rounded-2xl overflow-hidden min-h-[220px] flex items-center justify-center">
             <div
               className="absolute inset-0 bg-cover bg-center rounded-2xl bg-no-repeat"
-              style={{ backgroundImage: `url(${current.image})` }}
+              style={{ backgroundImage: `url(${current.imageMobile})` }}
             />
           </div>
 
@@ -144,7 +167,7 @@ const WhyProgenesis: React.FC = () => {
         </div>
  
 
-        <img src={current.image} className="hidden lg:block mt-20"  />
+        <img src={current.image} className="hidden lg:block mt-55"  />
       
       </div>
     </section>

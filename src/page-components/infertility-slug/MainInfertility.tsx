@@ -44,6 +44,7 @@ export default function MainInfertility({ data }: { data: any }) {
         breadcrumbColor={data.hero.breadcrumbColor}
         breadcrumbActiveColor={data.hero.breadcrumbActiveColor}
         titleColor={data.hero.titleColor}
+        contentClassName={data.hero.contentClassName ? data.hero.contentClassName : null}
         // buttonBgColor={data.hero.buttonBgColor}
         // buttonTextColor={data.hero.buttonTextColor}
       />

@@ -1,27 +1,32 @@
 'use client';
 
+import Image from 'next/image';
 import React from 'react';
 
 const benefits = [
   {
     icon: <img src="/images/icons/so-icon-1.svg" />, // Magnifying glass icon (placeholder - you can replace with actual SVG)
     title: "Clarity & Confidence",
-    description: "Get an unbiased review of your diagnosis and plan to make informed, confident decisions."
+    description: "Get an unbiased review of your diagnosis and plan to make informed, confident decisions.",
+    backgroundImage: "/SecondOpinion/Opinion_1.png"
   },
   {
     icon: <img src="/images/icons/so-icon-2.svg" />, // Stethoscope icon (placeholder - you can replace with actual SVG)
     title: "Accurate Diagnosis",
-    description: "Recheck tests, spot overlooked conditions, and confirm the right diagnosis."
+    description: "Recheck tests, spot overlooked conditions, and confirm the right diagnosis.",
+    backgroundImage: "/SecondOpinion/Opinion_2.png"
   },
   {
     icon: <img src="/images/icons/so-icon-3.svg" />, // Medical cross icon (placeholder - you can replace with actual SVG)
     title: "Right Treatment Choices",
-    description: "See if your plan fits, compare success rates, and explore more options."
+    description: "See if your plan fits, compare success rates, and explore more options.",
+    backgroundImage: "/SecondOpinion/Opinion_3.png"
   },
   {
     icon: <img src="/images/icons/so-icon-4.svg" />, // Question mark icon (placeholder - you can replace with actual SVG)
     title: "Access to Advanced Care",
-    description: "Discover new technologies and fertility solutions not available everywhere."
+    description: "Discover new technologies and fertility solutions not available everywhere.",
+    backgroundImage: "/SecondOpinion/Opinion_4.png"
   }
 ];
 
@@ -47,9 +52,15 @@ const OpinionBenefits: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="bg-[#1656A50D] flex flex-col justify-between csLg:min-h-[394px] rounded-[12px] p-4 csLg:p-6 gap-3 csLg:gap-4"
+              className="relative overflow-hidden bg-[#1656A50D] flex flex-col justify-between csLg:min-h-[394px] rounded-[12px] p-4 csLg:p-6 gap-3 csLg:gap-4"
             >
-              {/* Icon */}
+              <Image
+                src={benefit.backgroundImage}
+                alt={benefit.backgroundImage}
+                fill
+                className="object-cover object-center mix-blend-multiply z-0"
+                priority={false}
+              />
               <div className="w-[19px] h-[19px] lg:w-[29px] lg:h-[29px] flex items-center justify-center text-[#1656A5] text-2xl csLg:text-3xl font-medium">
                 {benefit.icon}
               </div>

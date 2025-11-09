@@ -866,11 +866,13 @@ export const tubalBlockageData = {
     buttonText: "Book Your Appointment",
     buttonLink: "/book-appointment",
     overlayImage: "/InfertilityIssues/tubal-hero.png",
+    overlayImageSmall: "/InfertilityIssues/tubal-hero-mobile.png",
     breadcrumbColor: "#606060",
     breadcrumbActiveColor: "#1656A5",
     titleColor: "#000000",
     buttonBgColor: "#252525",
     buttonTextColor: "#FFFFFF",
+    contentClassName:"justify-start"
   },
 
   categories: [
@@ -1165,11 +1167,13 @@ export const azoospermiaData = {
     buttonText: "Book Your Appointment",
     buttonLink: "/book-appointment",
     overlayImage: "/InfertilityIssues/azoospermia-hero.png",
+    overlayImageSmall: "/InfertilityIssues/azoospermia-hero-mobile.png",
     breadcrumbColor: "#606060",
     breadcrumbActiveColor: "#1656A5",
     titleColor: "#000000",
-    buttonBgColor: "#252525",
+    buttonBgColor: "#3b1b1bff",
     buttonTextColor: "#FFFFFF",
+    contentClassName:"justify-start"
   },
 
   categories: [
@@ -1466,11 +1470,14 @@ export const erectileDysfunctionData = {
     buttonText: "Book Your Appointment",
     buttonLink: "/book-appointment",
     overlayImage: "/InfertilityIssues/ed-hero.png",
+    overlayImageSmall: "/InfertilityIssues/ed-hero-mobile.png",
     breadcrumbColor: "#606060",
     breadcrumbActiveColor: "#1656A5",
     titleColor: "#000000",
     buttonBgColor: "#252525",
     buttonTextColor: "#FFFFFF",
+    contentClassName:"justify-start"
+    
   },
 
   categories: [
