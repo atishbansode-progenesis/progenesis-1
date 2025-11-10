@@ -58,8 +58,8 @@ const tabs: Tab[] = [
         a: "We can guide you to financing partners and flexible payment schedules where available.",
       },
       {
-        q: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.",
-        a: "Are there financing options available?",
+        q: "Are there financing options available?",
+        a: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.",
       },
     ],
   },

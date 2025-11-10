@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useRef, useState, useEffect } from "react"; // <-- Updated Imports
+import  {  Swiper ,SwiperSlide } from "swiper/react";
+import { Swiper as SwiperClass } from 'swiper';
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -22,6 +23,17 @@ const TestimonialsSection = ({
 }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+  
+  // State to hold the Swiper instance
+  const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(null);
+
+  // Effect to update Swiper's navigation after refs are set
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      // This forces Swiper to recognize the navigation elements
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]); // Runs once when swiperInstance is set
 
   const getTimeAgo = (createTime: string) => {
     const now = new Date();
@@ -93,6 +105,8 @@ const TestimonialsSection = ({
                 {Array.from({ length: 5 }).map((_, i) => {
                   const full = i + 1 <= Math.floor(rating);
                   const half = rating - i === 0.5;
+                  // Note: The original logic here for half stars was slightly off, 
+                  // but maintaining the original visual output for full stars:
                   return <span key={i}>{full ? "★" : half ? "★" : "★"}</span>;
                 })}
               </div>
@@ -175,17 +189,14 @@ const TestimonialsSection = ({
               delay: 2500,
               disableOnInteraction: false,
             }}
+            // Capture the swiper instance
+            onSwiper={setSwiperInstance}
+            // Set navigation using refs
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
             }}
-            onBeforeInit={(swiper) => {
-              // ✅ Set navigation refs before swiper initializes
-              if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-              }
-            }}
+            // The onBeforeInit is no longer needed/removed for the fix
             className="md:pr-[80px] pl-4 md:pl-0"
           >
             {reviewsList?.length > 0 ? (
