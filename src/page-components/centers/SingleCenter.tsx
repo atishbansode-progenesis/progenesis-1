@@ -34,6 +34,7 @@ interface CenterData {
   created_at: string;
   updated_at: string;
   faqs: FAQ[];
+  name: string;
 }
 
 const infoGridCenters = {
@@ -149,6 +150,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           "Kalyan",
           "Panvel",
         ];
+        console.log("Selected Center", selectedCenter)
   
         if (selectedCenter && data.results) {
           // If selected center is one of Mumbai suburbs, we search for "Mumbai"
@@ -157,11 +159,12 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           );
   
           let matchingCenter;
+          console.log("Is Mumbai Suburb", isMumbaiSuburb, data)
   
           if (isMumbaiSuburb) {
             matchingCenter = data.results.find(
               (center: CenterData) =>
-                center.location.toLowerCase() === "mumbai",
+                center.name.toLowerCase() === selectedCenter.name.toLowerCase(),
             );
           } else {
             matchingCenter = data.results.find(
@@ -170,6 +173,8 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                 selectedCenter.name.toLowerCase(),
             );
           }
+
+          console.log("Matching Center", matchingCenter)
   
           if (matchingCenter && matchingCenter.faqs) {
             setFaqData(matchingCenter.faqs);
@@ -190,8 +195,6 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   if (!selectedCenter) {
     return null;
   }
-
-  console.log("SIngle Center", selectedCenter)
 
   return (
     <div>
