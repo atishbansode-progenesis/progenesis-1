@@ -150,8 +150,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           "Kalyan",
           "Panvel",
         ];
-        console.log("Selected Center", selectedCenter)
-  
+
         if (selectedCenter && data.results) {
           // If selected center is one of Mumbai suburbs, we search for "Mumbai"
           const isMumbaiSuburb = mumbaiLocations.some(
@@ -159,7 +158,6 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           );
   
           let matchingCenter;
-          console.log("Is Mumbai Suburb", isMumbaiSuburb, data)
   
           if (isMumbaiSuburb) {
             matchingCenter = data.results.find(
@@ -173,8 +171,6 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
                 selectedCenter.name.toLowerCase(),
             );
           }
-
-          console.log("Matching Center", matchingCenter)
   
           if (matchingCenter && matchingCenter.faqs) {
             setFaqData(matchingCenter.faqs);
