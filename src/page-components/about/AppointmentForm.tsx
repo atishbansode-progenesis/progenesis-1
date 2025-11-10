@@ -380,7 +380,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     <label
       key={idx}
       htmlFor={field.name}
-      className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] cursor-pointer"
+      className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] cursor-pointer flex items-center justify-center"
     >
       <input
         type="checkbox"
@@ -425,7 +425,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         </>
       ) : (
         <>
-          Clicking means you agree to our{" "}
+          Clicking means you agree to our{" "} 
           <a
             href="/privacy-policy"
             className="text-blue-600 hover:underline"
@@ -463,7 +463,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         className={`flex flex-col gap-4 justify-between h-full`}
         onSubmit={handleSubmit}
       >
-        <ul className="flex flex-col gap-4 flex-1 max-h-[250px] lg:max-h-[400px] overflow-y-auto overflow-x-hidden pb-4 lg:pb-0">
+        <ul className="flex flex-col gap-4  max-h-[250px] lg:max-h-[400px] overflow-y-auto overflow-x-hidden pb-4 lg:pb-0">
           {groupedFields.map((row, rowIdx) => (
             <li key={rowIdx} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {row.map((field, idx) => (
@@ -602,7 +602,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
                 <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1656A5]"></div>
               </div>
             ) : (
-              renderFormContent()
+  renderFormContent()
             )}
           </div>
 

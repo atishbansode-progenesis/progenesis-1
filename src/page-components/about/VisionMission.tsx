@@ -6,7 +6,7 @@ const VisionMission: React.FC = () => {
   const router = useRouter();
 
   return (
-    <section className="w-full bg-white">
+    <section id="our-vision" className="w-full bg-white">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-12">
         <div className="pb-6">
           <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[13px] px-3 py-1 rounded-[8px] mb-4">
