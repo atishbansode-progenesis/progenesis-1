@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
       }}
     >
       {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+      <div className="md:absolute md:inset-0 md:bg-black/40 md:backdrop-blur-[1px]" />
 
       {/* Content */}
       <div className="relative z-10 flex-1 flex flex-col justify-between csLg:justify-center max-w-screen-2xl w-full mx-auto px-6 md:px-20 pt-10 md:pt-20 csLg:pb-10">

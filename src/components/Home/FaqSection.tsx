@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 type QA = { q: string; a: string };
@@ -68,6 +69,7 @@ const tabs: Tab[] = [
 ];
 
 const FaQ: React.FC = () => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState(0);
   // By default, no question is open
   const [openIndex, setOpenIndex] = useState(-1);
@@ -86,20 +88,20 @@ const FaQ: React.FC = () => {
         {/* Left intro */}
         <div>
           <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-2 py-1 rounded-[8px] mb-4">FAQ's</span>
-          <div style={{paddingBottom:'20px'}}>
-          <h2 className="text-[36px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
-            Quick answers to the
-            
-            <span className="text-[#94BA3D]"> most common</span>
-            <br />
-            <span className="text-[#94BA3D]">fertility-related</span>
-            <br />
-           <span className="text-[#94BA3D]">questions.</span> 
-          </h2></div>
+          <div style={{ paddingBottom: '20px' }}>
+            <h2 className="text-[36px] md:text-[48px] leading-10 font-normal md:leading-[56px] text-[#2C2C2C]">
+              Quick answers to the
+
+              <span className="text-[#94BA3D]"> most common</span>
+              <br />
+              <span className="text-[#94BA3D]">fertility-related</span>
+              <br />
+              <span className="text-[#94BA3D]">questions.</span>
+            </h2></div>
           <p className="mt-6 text-[13px] md:text-[16px] md:leading-6 font-normal text-[#2C2C2C]">
             Didn’t find what you are looking for?
             <br />
-            Checkout <span className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px] ">Patient Resources</span> section to know more.
+            Checkout <span className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px] cursor-pointer" onClick={() => router.push("/blog")}>Patient Resources</span> section to know more.
           </p>
         </div>
 
@@ -113,12 +115,11 @@ const FaQ: React.FC = () => {
                 <button
                   key={t.label}
                   onClick={() => handleTab(idx)}
-                  className={`h-[56px] w-auto px-4 rounded-[16px] border text-sm font-medium hover:cursor-pointer transition-colors ${
-                    active
+                  className={`h-[56px] w-auto px-4 rounded-[16px] border text-sm font-medium hover:cursor-pointer transition-colors ${active
                       ? "bg-[#1656A5] text-white border-[#1656A5]"
                       : "bg-[#FFFFFF] text-[#1656A5] border-[#1656A5] "
-                  }`}
-                  
+                    }`}
+
                 >
                   {t.label}
                 </button>
@@ -133,9 +134,8 @@ const FaQ: React.FC = () => {
               return (
                 <div
                   key={i}
-                  className={`bg-[#FFFFFF] overflow-hidden rounded-[16px] ${
-                    open 
-                  }`}
+                  className={`bg-[#FFFFFF] overflow-hidden rounded-[16px] ${open
+                    }`}
                 >
                   <button
                     aria-expanded={open}
