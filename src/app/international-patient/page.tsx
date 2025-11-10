@@ -495,7 +495,7 @@ const InternationalPatientsPage: React.FC = () => {
         </div>
       </section>
       <TestimonialsSection />
-      <section id="news">
+      <section id="news" className="mb-[16px]">
         <AwardsSection />
       </section>
 

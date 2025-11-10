@@ -34,7 +34,7 @@ export default function InfoGridCenters({ tag, heading, items }: InfoGridCenters
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-8 md:gap-y-16">
         {items.map((item, index) => (
           <div key={item.id} className="flex flex-col items-start gap-[8px]">
-            <div className="flex flex-row md:flex-col items-start">
+            <div className="flex flex-row gap-2 md:flex-col items-start">
               <div className="text-[16px] text-[#606060]">
                 {String(index + 1).padStart(2, "0")}
               </div>
