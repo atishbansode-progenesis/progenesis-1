@@ -336,7 +336,7 @@ const DoctorsInfo: React.FC = () => {
 
                   <div className="min-w-[190px] csLg:flex flex-col justify-end items-end">
                     <div className="text-[14px]  text-[#1656A5] font-normal">
-                      Specialty
+                      Speciality
                     </div>
                     <div className="text-[16px] lg:text-[20px] text-[#606060] font-normal text-start lg:text-end">
                       {d.specialty}
