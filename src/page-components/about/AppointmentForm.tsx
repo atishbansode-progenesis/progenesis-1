@@ -606,7 +606,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
             )}
           </div>
 
-          <div className="flex-1 relative bg-[url('/images/HomeAppointment.jpg')] bg-cover top-4 bg-center  lg:rounded-[0px] rounded-[16px] h-[443px] lg:h-auto mt-4 lg:mt-0"></div>
+          <div className="flex-1 relative bg-[url('/images/HomeAppointment.png')] bg-cover bg-center   rounded-[16px] h-[443px] lg:h-auto mt-4 lg:mt-0"></div>
         </div>
       </section>
 
