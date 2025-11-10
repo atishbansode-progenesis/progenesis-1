@@ -98,6 +98,12 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
     { name: "Dr. Prerna Khandelwal", role: "Fertility Consultant, Thane", img: "/images/doctors/Prerna.png", link: "/doctors/dr-prerna-khandelwal/" },
     { name: "Dr. Shraddha Pol", role: "Fertility Consultant, Thane", img: "/images/doctors/Shradha.png", link: "/doctors/dr-shradha-pol/" },
     { name: "Dr. Vivek Bagul", role: "Fertility Consultant, Jalgaon", img: "/images/doctors/Vivek.png", link: "/doctors/dr-vivek-bagul/" },
+    { name: "Dr. Bhageshri", role: "Fertility Consultant, Vashi", img: "/images/doctors/Bhageshri.png", link: "/doctors/dr-bhageshri/" },
+    { name: "Dr. Ashwini Talpe", role: "Fertility Consultant, Nagpur", img: "/images/doctors/Ashwini.png", link: "/doctors/dr-ashwini-talpe/" },
+    { name: "Dr. Suchitra Somkuwar", role: "Fertility Consultant, Nagpur", img: "/images/doctors/Suchitra.png", link: "/doctors/dr-suchitra-somkuwar/" },
+    { name: "Dr. Sangita Ingle", role: "Fertility Consultant, Ahilyanagar", img: "/images/doctors/Sangita.png", link: "/doctors/dr-sangita-ingle/" },
+    { name: "Dr. Tushar Zanjade", role: "Fertility Consultant, Amravati", img: "/images/doctors/Tushar.png", link: "/doctors/dr-tushar-zanjade/" },
+    { name: "Dr. Apurva Patni", role: "Fertility Consultant, Solapur", img: "/images/doctors/Apurva.png", link: "/doctors/dr-apurva-patni/" },
   ];
 
 
@@ -324,7 +330,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
             {activeStep === "who" && (
               <div
 
-                className="flex flex-wrap rounded-2xl overflow-y-auto "
+                className="flex flex-col rounded-2xl overflow-y-auto "
                 style={{
                   maxHeight: "360px",           // ensures internal scroll area
                   scrollbarGutter: "stable",    // keeps space for scrollbar
@@ -880,7 +886,7 @@ const megaMenuData: Record<string, any> = {
           { label: "Leadership Team", path: "/about-us/leadership-team" },
           // { label: "Impact & Growth", path: "/about-progenesis#impact-growth" },
           { label: "FAQs", path: "/about-progenesis#faqs" },
-          {label: "Careers", path: "/careers"}
+          { label: "Careers", path: "/careers" }
         ],
       },
       {
