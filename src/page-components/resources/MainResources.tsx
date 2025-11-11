@@ -15,7 +15,7 @@ const MainResources = async ({ initialBlogs, totalCount }: any) => {
       <ResourceGrid initialBlogs={initialBlogs} totalCount={totalCount} />
       <ResourceStories />
       <ResourceCta />
-      <FaQ />
+      {/* <FaQ /> */}
       <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
       <AppointmentForm />
       </Suspense>

@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from "react";
 import AboutMainBanner from './AboutMainBanner'
 import OurStories from './OurStories'
 import OurApproach from './OurAppoach'
@@ -12,18 +13,56 @@ import './AboutMain.css'
 
 
 const AboutMainPage = () => {
+
+   const [activeSection, setActiveSection] = useState("about-main");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.5, 
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className=''>
+   <>
+      <AboutNav activeSection={activeSection} />
+      <section id="why-1">
         <AboutMainBanner />
-        <AboutNav />
+      </section>
+      <section id="our-stories">
         <OurStories />
-        <OurApproach /> 
+      </section>
+      <section id="our-approach">
+        <OurApproach />
+      </section>
+      <section id="our-vision">
         <VisionMission />
+      </section>
+      <section id="why-choose-us">
         <WhyProgenesis />
+      </section>
+      <section id="impact-growth">
         <Impact />
+      </section>
+      <section id="join-us">
         <JoinUs />
+      </section>
+      <section id="faqs">
         <FaQ />
-    </div>
+      </section>
+    </>
   )
 }
 

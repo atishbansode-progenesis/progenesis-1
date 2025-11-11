@@ -115,7 +115,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
 
           <div className="flex items-center gap-5">
             {/* Previous Slide Button - Now hidden on small screens (sm:flex) */}
-                        <Link href="/resources" className="">
+                        <Link href="/blog" className="">
             <span className="hidden md:inline-block px-4 py-3 bg-[#1656a5] text-white rounded-lg transition">See all</span>
 
              </Link>
@@ -210,7 +210,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
         
         {/* See all button after the carousel on small screens, and always on its own line */}
         <div className="mt-6 flex justify-start md:justify-end">
-            <Link href="/resources" className="inline-block md:hidden">
+            <Link href="/blog" className="inline-block md:hidden">
                 <span className="px-4 py-3 bg-[#1656a5] text-white rounded-lg transition">See all</span>
             </Link>
         </div>

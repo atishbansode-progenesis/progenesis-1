@@ -670,7 +670,8 @@ const megaMenuDataMobile: Record<string, any> = {
       {
         title: "About Us",
         links: [
-          { label: "Our Approach", path: "/about-progenesis#our-approach" },
+    { label: "About Us", path: "/about-progenesis" },
+          { label: "Our Approach", path: "/about-progenesis" },
           { label: "Our Vision & Mission", path: "/about-progenesis#our-vision" },
           { label: "Why choose us", path: "/about-progenesis#why-choose-us" },
           { label: "Leadership Team", path: "/about-us/leadership-team" },
@@ -700,12 +701,12 @@ const megaMenuDataMobile: Record<string, any> = {
         links: [
           {
             label: "What is Infertility", path: "/infertility#about",
-            submenu: [
-              { label: "Overview", path: "/infertility#about" },
-              { label: "Symptoms", path: "/infertility#about" },
-              { label: "Diagnosis", path: "/infertility#about" },
-              { label: "Treatment Options", path: "/infertility#about" },
-            ],
+            // submenu: [
+            //   { label: "Overview", path: "/infertility#about" },
+            //   { label: "Symptoms", path: "/infertility#about" },
+            //   { label: "Diagnosis", path: "/infertility#about" },
+            //   { label: "Treatment Options", path: "/infertility#about" },
+            // ],
           },
           {
             label: "Female Infertility Causes", path: "/infertility#fertility-section",
@@ -880,6 +881,7 @@ const megaMenuData: Record<string, any> = {
         title: "About Us",
         links: [
           // { label: "Why Progenesis", path: "/about-progenesis#why-1" },
+          { label: "About Us", path: "/about-progenesis" },
           { label: "Our Approach", path: "/about-progenesis#our-approach" },
           { label: "Our Vision & Mission", path: "/about-progenesis#our-vision" },
           { label: "Why choose us", path: "/about-progenesis#why-choose-us" },
@@ -921,12 +923,12 @@ const megaMenuData: Record<string, any> = {
         links: [
           {
             label: "What is Infertility", path: "/infertility#about",
-            submenu: [
-              { label: "Overview", path: "/infertility#about" },
-              { label: "Symptoms", path: "/infertility#about" },
-              { label: "Diagnosis", path: "/infertility#about" },
-              { label: "Treatment Options", path: "/infertility#about" },
-            ],
+            // submenu: [
+            //   { label: "Overview", path: "/infertility#about" },
+            //   { label: "Symptoms", path: "/infertility#about" },
+            //   { label: "Diagnosis", path: "/infertility#about" },
+            //   { label: "Treatment Options", path: "/infertility#about" },
+            // ],
           },
           {
             label: "Female Infertility Causes", path: "/infertility#fertility-section",

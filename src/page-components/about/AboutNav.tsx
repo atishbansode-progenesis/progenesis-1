@@ -10,8 +10,12 @@ const sections = [
   { id: "impact-growth", label: "Impact & Growth" },
   { id: "faqs", label: "FAQ's" },
 ];
+type Props = {
+  activeSection: string;
+};
 
-const AboutNav: React.FC = () => {
+
+const AboutNav = ({ activeSection }: Props) => {
   const [activeTab, setActiveTab] = useState("why-1");
 
   const handleTabClick = (id: string) => {
@@ -26,7 +30,7 @@ const AboutNav: React.FC = () => {
   return (
     <NavigationTabs 
       categories={sections}
-      activeTab={activeTab}
+      activeTab={activeSection}
       onTabClick={handleTabClick}
     />
   );

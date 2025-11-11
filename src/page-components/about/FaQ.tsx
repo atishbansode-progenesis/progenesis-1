@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 type QA = { q: string; a: string };
@@ -98,6 +99,7 @@ const tabs: Tab[] = [
 ];
 
 const FaQ: React.FC = () => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState(0);
   const [openIndex, setOpenIndex] = useState(-1);
 
@@ -134,7 +136,7 @@ const FaQ: React.FC = () => {
             Didn’t find what you are looking for?
             <br />
             Checkout{" "}
-            <span className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px]">
+            <span className="text-[#1656A5] cursor-pointer underline decoration-[#2C2C2C80] decoration-[0.5px]" onClick={()=>router.push("/blog")}>
               Patient Resources
             </span>{" "}
             section to know more.
