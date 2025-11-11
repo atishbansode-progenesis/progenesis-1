@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import React, { useRef, useEffect, useState, use } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
 import { SelectCalendarIcon, SelectFieldArrowDown } from "./icons";
 import "./form-styles.css";
@@ -110,10 +110,12 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const isPopupMode = !!onClose;
   const router = useRouter();
   const searchParams = useSearchParams();
+  const currentRoute = usePathname();
   const formRef = useRef<HTMLFormElement | null>(null);
   const [formFields, setFormFields] = useState<any[]>([]);
   const [formData, setFormData] = useState<any>({});
   const [utmParams, setUtmParams] = useState<Record<string, string>>({});
+  const [availableRoutes, setAvailableRoutes] = useState<any[]>([]);
   const [toast, setToast] = useState<{
     message: string;
     type: "success" | "error";
@@ -148,33 +150,55 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   useEffect(() => {
     const fetchFields = async () => {
       try {
-        const response = await timeoutPromise(
-          axios.get(apiUrl + "/api/forms/", {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }),
-          6000
-        );
+        const response = await axios.get(apiUrl + "/api/forms/", {
+          headers: { "Content-Type": "application/json" },
+        });
+
         if (Array.isArray(response.data) && response.data.length > 0) {
-          setFormFields(response.data[0].fields);
-          setApiError(false);
-          
-          // Set default date to today for date fields
-          const dateField = response.data[0].fields.find((field: any) => field.type === "date");
-          if (dateField) {
-            const today = new Date();
-            const dd = String(today.getDate()).padStart(2, '0');
-            const mm = String(today.getMonth() + 1).padStart(2, '0');
-            const yyyy = today.getFullYear();
-            const formattedDate = `${dd}/${mm}/${yyyy}`; // Format: DD/MM/YYYY
-            setFormData((prev: any) => ({ ...prev, [dateField.name]: formattedDate }));
+          // Remove leading "/" from pathname to match title
+          const availableRoutes = response.data.map((form: any) => form.title) || [];
+          setAvailableRoutes(availableRoutes);
+
+          let currentTitleWithoutSlash = currentRoute.replace(/(^\/|\/$)/g, '');
+
+          if (!availableRoutes.includes(currentTitleWithoutSlash)) {
+            currentTitleWithoutSlash = "home";
           }
+          
+
+          // Find the form data based on title
+          const currentForm = response.data.find(
+            (form: any) => form.title === currentTitleWithoutSlash
+          );
+
+          if (currentForm) {
+            setFormFields(currentForm.fields);
+
+            // Initialize default date for date fields
+            const dateField = currentForm.fields.find(
+              (field: any) => field.type === "date"
+            );
+            if (dateField) {
+              const today = new Date();
+              const dd = String(today.getDate()).padStart(2, "0");
+              const mm = String(today.getMonth() + 1).padStart(2, "0");
+              const yyyy = today.getFullYear();
+              const formattedDate = `${dd}/${mm}/${yyyy}`;
+              setFormData((prev: any) => ({
+                ...prev,
+                [dateField.name]: formattedDate,
+              }));
+            }
+          } else {
+            throw new Error("No form found for this path");
+          }
+
+          setApiError(false);
         } else {
           throw new Error("No form fields found");
         }
-      } catch (err: any) {
-        console.log(err);
+      } catch (err) {
+        console.error(err);
         setApiError(true);
       } finally {
         setIsLoading(false);
@@ -213,9 +237,9 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         fieldsData.params = utmParams;
       }
 
-      const payload = { fields: fieldsData };
+      let currentTitleWithoutSlash = currentRoute.replace(/(^\/|\/$)/g, '');
 
-      console.log("payload", payload);
+      const payload = { fields: fieldsData, title: currentTitleWithoutSlash };
 
       await timeoutPromise(
         axios.post(
@@ -268,10 +292,34 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const nonCheckboxFields = formFields.filter((f) => f.type !== "checkbox");
   const checkboxFields = formFields.filter((f) => f.type === "checkbox");
 
-  // Group fields into rows of 2 for desktop
+  // Group fields into rows - textarea takes full row, others are paired
   const groupedFields: any[][] = [];
-  for (let i = 0; i < nonCheckboxFields.length; i += 2) {
-    groupedFields.push(nonCheckboxFields.slice(i, i + 2));
+  let i = 0;
+  while (i < nonCheckboxFields.length) {
+    const currentField = nonCheckboxFields[i];
+    
+    if (currentField.type === "textarea") {
+      // Textarea gets its own row
+      groupedFields.push([currentField]);
+      i++;
+    } else {
+      // Try to pair with next field
+      const nextField = nonCheckboxFields[i + 1];
+      console.log("nextField", nextField);
+      if (nextField && nextField.type !== "textarea") {
+        // Pair current field with next field
+        groupedFields.push([currentField, nextField]);
+        i += 2;
+      } else if (nextField && nextField.type === "textarea") {
+        // Current field alone, next is textarea
+        groupedFields.push([currentField]);
+        i++;
+      } else {
+        // Last field or no next field
+        groupedFields.push([currentField]);
+        i++;
+      }
+    }
   }
 
   const renderField = (field: any, containerClass: string) => {
@@ -279,6 +327,34 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
       return (
         <input
           type={field.type}
+          placeholder={field.placeholder || field.title}
+          required={field.required}
+          className={containerClass}
+          onChange={(e) => handleChange(field.name, e.target.value)}
+          value={formData[field.name] || ""}
+          disabled={isSubmitLoading}
+        />
+      );
+    }
+
+    if (field.type === "textarea") {
+      return (
+        <textarea
+          placeholder={field.placeholder || field.title}
+          required={field.required}
+          className={`${containerClass} min-h-[120px] resize-none`}
+          onChange={(e) => handleChange(field.name, e.target.value)}
+          value={formData[field.name] || ""}
+          disabled={isSubmitLoading}
+          rows={4}
+        />
+      );
+    }
+
+    if (field.type === "number") {
+      return (
+        <input
+          type="number"
           placeholder={field.placeholder || field.title}
           required={field.required}
           className={containerClass}
@@ -465,13 +541,18 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
       >
         <ul className="flex flex-col gap-4 flex-1 max-h-[250px] lg:max-h-[400px] overflow-y-auto overflow-x-hidden pb-4 lg:pb-0">
           {groupedFields.map((row, rowIdx) => (
-            <li key={rowIdx} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <li key={rowIdx} className={`grid gap-4 ${row.length === 1 && row[0].type === 'textarea' ? 'grid-cols-1' : row.length === 1 ? 'grid-cols-1 lg:grid-cols-2' : 'grid-cols-1 lg:grid-cols-2'}`}>
               {row.map((field, idx) => (
-                <div key={idx} className="w-full">
+                <div key={idx} className={`w-full ${row.length === 1 && row[0].type !== 'textarea' ? 'lg:col-span-2' : ''}`}>
+                 <>
+                {console.log("nnnnnnnnnnnnnnnnnn", row)}
+                 <>
                   {renderField(
                     field,
                     "w-full border border-[#00000026] p-4 rounded-[16px] focus:ring-0 focus:outline-none"
                   )}
+                 </>
+                 </>
                 </div>
               ))}
             </li>
