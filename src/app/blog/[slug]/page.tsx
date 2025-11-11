@@ -57,6 +57,8 @@
 import BlogMain from '@/page-components/blog/BlogMain';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import '../../../page-components/blog/render-html.css'
+
 
 const revalidate = 60 * 60 * 24;
 

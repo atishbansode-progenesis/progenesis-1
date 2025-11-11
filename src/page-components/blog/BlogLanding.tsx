@@ -38,11 +38,8 @@ const BlogLanding: React.FC<BlogLandingProps> = ({
       </div>
 
       <div className="space-y-[20px]">
-        <h1 className="max-w-[1200px] mx-auto text-[32px] leading-[40px] lg:text-[48px] lg:leading-[56px] tracking-[-2px]">
-          {displayTitle}
-        </h1>
-
-        <p className="text-[12.86px] leading-[19.29px] text-center lg:text-[32px] lg:leading-[40px] max-w-[1200px] text-[#606060] mx-auto">
+        <h1 className="max-w-[1200px] mx-auto text-[32px] leading-[40px] lg:text-[48px] lg:leading-[56px] tracking-[-2px]" dangerouslySetInnerHTML={{ __html: displayTitle }} />
+        <p className="text-[12.86px] leading-[19.29px] lg:text-[32px] lg:leading-[40px] max-w-[1200px] text-[#606060] mx-auto">
           {description}
         </p>
       </div>

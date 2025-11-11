@@ -28,41 +28,60 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
 
   return (
     <div>
-      <div className="p-4 bg-white lg:px-[120px] lg:py-[80px] text-center space-y-2 font-manrope font-normal">
+      <div className="p-4 bg-white lg:px-[120px] lg:py-[80px] space-y-2 font-manrope font-normal">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-[32px] lg:gap-[80px]">
           <BlogLanding
             title={data.post_title}
             author={data.author}
             created={data.post_date}
             image={data.image_url}
-            metaDescription={data.meta_description}
+            metaDescription={data.seo_description_final}
           />
           <img src={data.image_url} className="rounded-[16px] w-full" />
 
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-4">
-            <div className="text-[#606060] lg:space-y-2 max-w-[248px] mx-auto">
-              <p className="text-[14px] leading-[24px] font-semibold uppercase">
-                DATE
-              </p>
-              <p className="text-[16px] leading-[24px] font-normal text-center">
-                Updated on <br />
-                {formatDate(data.post_date)}
-              </p>
+             <div className="blog-metadata-header">
+            <div className="blog-metadata-grid">
+              {/* Date */}
+              <div className="metadata-item">
+                <span className="metadata-label">PUBLISHED</span>
+                <span className="metadata-value">
+                  {formatDate(data.post_date)}
+                </span>
+              </div>
+
+              {/* Author */}
+              <div className="metadata-item">
+                <span className="metadata-label">WRITTEN BY</span>
+                <div className="author-badge">
+                  <svg 
+                    className="verified-icon" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24" 
+                    fill="currentColor"
+                  >
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                  </svg>
+                  Team Progenesis
+                </div>
+              </div>
+
+              {/* Reading Time */}
+              <div className="metadata-item">
+                <span className="metadata-label">READING TIME</span>
+                <span className="metadata-value">10 mins</span>
+              </div>
             </div>
+          </div>
           
             <div className="text-[#606060] lg:space-y-2">
               <p
-                className="text-[16px] leading-[24px] font-normal"
+                className="text-[16px] leading-[24px] font-normal html-render_class"
                 dangerouslySetInnerHTML={{ __html: cleanedContent }}
               />
             </div>
 
-            <div className="text-[#606060] lg:space-y-2 max-w-[248px] mx-auto">
-              <p className="text-[14px] leading-[24px] font-semibold uppercase">
-                READ
-              </p>
-              <p className="text-[16px] leading-[24px] font-normal">10 mins</p>
-            </div>
+            
           </div>
 
           <BlogContent data={data} />
