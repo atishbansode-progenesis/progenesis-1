@@ -19,9 +19,10 @@ export const repeatedIUIFailuresData = {
   },
 
   categories: [
-    { id: "about", label: "What is Infertility" },
-    { id: "causes", label: "Female Infertility Causes" },
-    { id: "treatment", label: "Male Infertility Causes" },
+    { id: "about", label: "Know the Basics" },
+    { id: "causes", label: "Causes" },
+    { id: "iuifailures", label: "IUI Failures Explained" },
+    { id: "treatment", label: "Fast Facts" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
