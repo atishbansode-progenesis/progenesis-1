@@ -3,7 +3,6 @@ import React from "react";
 export const WhatIsInfertility: React.FC = () => {
   return (
     <section
-      id="about"
       className="w-full p-4 md:px-[120px] md:py-[80px] bg-[#FAFAFA]"
     >
       <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">

@@ -14,7 +14,7 @@ import './AboutMain.css'
 
 const AboutMainPage = () => {
 
-   const [activeSection, setActiveSection] = useState("about-main");
+   const [activeSection, setActiveSection] = useState("why-1");
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -37,10 +37,10 @@ const AboutMainPage = () => {
 
   return (
    <>
-      <AboutNav activeSection={activeSection} />
       <section id="why-1">
         <AboutMainBanner />
       </section>
+      <AboutNav activeSection={activeSection} />
       <section id="our-stories">
         <OurStories />
       </section>

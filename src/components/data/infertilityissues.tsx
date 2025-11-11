@@ -106,7 +106,7 @@ export const repeatedIUIFailuresData = {
   statistics: {
     tag: "IUI Failures Explained",
     heading: "Learn the numbers, Take control of your fertility journey",
-    subHeading:"We believe every hopeful parent deserves a team that listens, cares, and fights to make dreams a reality — with science, empathy, and unwavering support.",
+    subHeading: "We believe every hopeful parent deserves a team that listens, cares, and fights to make dreams a reality — with science, empathy, and unwavering support.",
     blueCircleData: {
       value: "60–70%",
       description: "Switching to IVF or ICSI can raise success rates to 60–70% per cycle in suitable cases."
@@ -134,7 +134,7 @@ export const repeatedIUIFailuresData = {
           "Provides optimal conditions for embryo development and implantation.",
           ,
         ],
-        image: "/InfertilityIssues/rght 1.png",
+        image: "/InfertilityIssues/rght 1.2.png",
       },
       {
         id: 2,
@@ -144,7 +144,7 @@ export const repeatedIUIFailuresData = {
           "Even with low sperm count or quality, one healthy sperm can achieve fertilization.",
           "A selected sperm is injected directly into the egg, bypassing natural barriers.",
           "Gives higher success rates than conventional IVF in male infertility cases.",
-          
+
         ],
         image: "/InfertilityIssues/rght 2.png",
       },
@@ -156,7 +156,7 @@ export const repeatedIUIFailuresData = {
           "Provides guidance, support, and expert advice to help couples navigate fertility treatments.",
           "Helps identify underlying causes of treatment failure, addressing medical and emotional factors.",
           "Creates a personalized treatment plan tailored to individual needs for better outcomes.",
-          
+
         ],
         image: "/InfertilityIssues/rght 3.png",
       },
@@ -193,9 +193,10 @@ export const pregnancyAfterMenopauseData = {
   },
 
   categories: [
-    { id: "about", label: "Menopause Basics" },
-    { id: "causes", label: "Key Factors for Pregnancy" },
-    { id: "treatment", label: "Symptoms to Watch" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Key Factors" },
+    {id: "iuifailures" ,label:"Recognizing the Signs of Menopause"},
+    { id: "treatment", label: "Fast Facts" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
@@ -284,11 +285,11 @@ export const pregnancyAfterMenopauseData = {
     subText2: "leading to weight gain and a slower metabolic rate, which may impact overall health and well-being",
     card1: {
       title: "Irregular or missed cycles signaling hormonal or health issues.",
-      icon:"/InfertilityIssues/polycysticOvarianSyndromeIcon1.svg"
+      icon: "/InfertilityIssues/polycysticOvarianSyndromeIcon1.svg"
     },
     card2: {
       title: "Reduced vaginal lubrication causing hormonal discomfort.",
-      icon:"/InfertilityIssues/care-2.svg"
+      icon: "/InfertilityIssues/care-2.svg"
     },
     card3: {
       title: "Weight gain and slowed metabolism",
@@ -368,9 +369,10 @@ export const repeatedIVFFailuresData = {
   },
 
   categories: [
-    { id: "about", label: "What is IVF Failure" },
-    { id: "causes", label: "Key Reasons & Causes" },
-    { id: "treatment", label: "Next Steps After Failure" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Causes" },
+    { id: "iuifailures", label: "IVF Failures Explained" },
+          { id: "treatment", label: "Fast Facts" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
@@ -402,7 +404,7 @@ export const repeatedIVFFailuresData = {
         description:
           "Genetic testing, sperm selection, uterine care, receptivity tests, donor programs, and lifestyle changes can improve success.",
       },
-      {  
+      {
         id: 5,
         title: "Emotional Challenges",
         description:
@@ -541,9 +543,10 @@ export const lowAMHData = {
   },
 
   categories: [
-    { id: "about", label: "What is AMH" },
-    { id: "causes", label: "Factors Behind Low AMH" },
-    { id: "treatment", label: "Next Steps for Treatment" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Causes" },
+    {id:"iuifailures" , label: "Low AMH Explained"},
+    { id: "treatment", label: "Fast Facts" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
@@ -620,8 +623,8 @@ export const lowAMHData = {
   statistics: {
     tag: "Low AMH Explained",
     heading: "Understand the numbers that guide your treatment decisions",
-    subHeading:"We believe every hopeful parent deserves a team that listens, cares, and fights to make dreams a reality — with science, empathy, and unwavering support.",
-    skyCircleData : {
+    subHeading: "We believe every hopeful parent deserves a team that listens, cares, and fights to make dreams a reality — with science, empathy, and unwavering support.",
+    skyCircleData: {
       value: "70–80%",
       description: "Success rate with donor eggs in Low AMH cases, offering higher chances."
     },
@@ -696,7 +699,7 @@ export const polycysticOvarianSyndromeData = {
       { label: "Female Infertility", href: "/infertility/female" },
       { label: "Polycystic Ovarian Syndrome", href: "/infertility/polycystic-ovarian-syndrome" },
     ],
-    title: "Polycystic Ovarian Syndrome",
+    title: "Polycystic Ovarian <br /> Syndrome",
     buttonText: "Book Your Appointment",
     buttonLink: "/book-appointment",
     overlayImage: "/InfertilityIssues/pcos-hero.png",
@@ -708,9 +711,10 @@ export const polycysticOvarianSyndromeData = {
   },
 
   categories: [
-    { id: "about", label: "Understanding PCOS" },
-    { id: "causes", label: "Causes & Symptoms" },
-    { id: "treatment", label: "Recommended Care Steps" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Causes" },
+    {id:"iuifailures" , label:"Recognizing PCOS Symptoms"},
+    { id: "treatment", label: "Fast Facts" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
@@ -790,11 +794,11 @@ export const polycysticOvarianSyndromeData = {
     heading: "Physical and Emotional Indicators That Signal Possible PCOS",
     card1: {
       title: "Irregular or missed cycles signaling hormonal or health issues.",
-      icon:"/InfertilityIssues/polycysticOvarianSyndromeIcon1.svg"
+      icon: "/InfertilityIssues/polycysticOvarianSyndromeIcon1.svg"
     },
     card2: {
       title: "Reduced vaginal lubrication causing hormonal discomfort.",
-      icon:"/InfertilityIssues/polycysticOvarianSyndromeIcon2.svg"
+      icon: "/InfertilityIssues/polycysticOvarianSyndromeIcon2.svg"
     },
     card3: {
       title: "Weight gain and slowed metabolism.",
@@ -873,13 +877,14 @@ export const tubalBlockageData = {
     titleColor: "#000000",
     buttonBgColor: "#252525",
     buttonTextColor: "#FFFFFF",
-    contentClassName:"justify-start"
+    contentClassName: "justify-start"
   },
 
   categories: [
-    { id: "about", label: "Understanding Tubal Blockage" },
-    { id: "causes", label: "Causes & Indicators" },
-    { id: "treatment", label: "Treatment & Recovery" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Causes" },
+    {id:"iuifailures" , label:"Early Detection"},
+    { id: "treatment", label: "Treatment" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
@@ -1027,9 +1032,10 @@ export const uterineFibroidsData = {
   },
 
   categories: [
-    { id: "about", label: "Understanding Uterine Fibroids" },
-    { id: "causes", label: "Causes & Indicators" },
-    { id: "treatment", label: "Treatment & Recovery" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Causes" },
+    { id: "iuifailures" , label:"Early Detection"},
+    { id: "treatment", label: "Treatment" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
@@ -1174,18 +1180,19 @@ export const azoospermiaData = {
     titleColor: "#000000",
     buttonBgColor: "#3b1b1bff",
     buttonTextColor: "#FFFFFF",
-    contentClassName:"justify-start"
+    contentClassName: "justify-start"
   },
 
   categories: [
-    { id: "about", label: "Understanding Azoospermia" },
-    { id: "causes", label: "Causes & Indicators" },
-    { id: "treatment", label: "Treatment & Recovery" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Causes" },
+    {id:"iuifailures", label:"Early Detection"},
+    { id: "treatment", label: "Fast Facts" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
   infoGrid: {
-    tag: "Know the Basics",
+    tag: "Know The Basics",
     heading: "Understanding Azoospermia: Causes, Symptoms, and Care.",
     items: [
       {
@@ -1329,14 +1336,15 @@ export const lowSpermCountData = {
   },
 
   categories: [
-    { id: "about", label: "Understanding Low Sperm Count" },
-    { id: "causes", label: "Causes & Indicators" },
-    { id: "treatment", label: "Treatment & Recovery" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Causes" },
+    {id:"iuifailures" , label:"Early Detection"},
+    { id: "treatment", label: "Fast Facts" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
   infoGrid: {
-    tag: "Know the Basics",
+    tag: "Know The Basics",
     heading: "Understanding Low Sperm Count: Causes, Symptoms, and Care.",
     items: [
       {
@@ -1477,19 +1485,20 @@ export const erectileDysfunctionData = {
     titleColor: "#000000",
     buttonBgColor: "#252525",
     buttonTextColor: "#FFFFFF",
-    contentClassName:"justify-start"
-    
+    contentClassName: "justify-start"
+
   },
 
   categories: [
-    { id: "about", label: "Understanding Erectile Dysfunction" },
-    { id: "causes", label: "Causes & Indicators" },
-    { id: "treatment", label: "Treatment & Recovery" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Causes" },
+    {id:"iuifailures" , label:"Early Detection"},
+    { id: "treatment", label: "Fast Facts" },
     { id: "stories-section", label: "Real Stories. Real Miracles." },
   ],
 
   infoGrid: {
-    tag: "Know the Basics",
+    tag: "Know The Basics",
     heading: "Understanding Erectile Dysfunction (ED): Causes, Symptoms, and Care.",
     items: [
       {
@@ -1663,14 +1672,15 @@ export const endometriosisData = {
   },
 
   categories: [
-    { id: "about", label: "What is Endometriosis" },
-    { id: "causes", label: "Causes & Risk Factors" },
-    { id: "treatment", label: "Treatment & Recovery" },
+    { id: "about", label: "Know The Basics" },
+    { id: "causes", label: "Causes" },
+    {id:"iuifailures" , label:"Endometriosis & Fertility"},
+    { id: "treatment", label: "Next Steps" },
     { id: "stories-section", label: "Inspiring Patient Stories" },
   ],
 
   infoGrid: {
-    tag: "Know the Basics",
+    tag: "Know The Basics",
     heading:
       "Endometriosis: causes, signs, and<br/> treatments for parenthood.",
     items: [
@@ -1746,7 +1756,7 @@ export const endometriosisData = {
     heading: "Understand how endometriosis impacts your fertility possibilities",
     subHeading:
       "Endometriosis affects millions of women worldwide, but with early diagnosis and the right care, fertility outcomes can significantly improve.",
-      skyCircleData: {
+    skyCircleData: {
       value: "1 in 10",
       description: "Women of reproductive age worldwide are affected by endometriosis. (That's nearly 190 million globally.)",
     },
@@ -1756,7 +1766,7 @@ export const endometriosisData = {
     },
     greenCircleData: {
       value: "7–10<br/> years",
-      description: "Is the average delay in diagnosis after symptom onset. (Many women live with pain for years before getting properly diagnosed.)", 
+      description: "Is the average delay in diagnosis after symptom onset. (Many women live with pain for years before getting properly diagnosed.)",
     },
   },
 

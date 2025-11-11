@@ -19,19 +19,19 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       text: "I came in with questions, doubts, and a heart full of fear. But I left with answers, reassurance, and hope. Today... I have someone who calls me ‘Mom.’",
-      author: "Rhea Deshapnde, Progenesis Mom, Nashik",
+      author: "Minal Patel, Progenesis Mom",
     },
     {
       text: "The team was so supportive throughout my journey. Their care and expertise gave me hope again. They made our journey smooth and hopeful.",
-      author: "Priya Sharma, Progenesis Mom, Pune",
+      author: "Tuljai Dhamane, Progenesis Mom",
     },
     {
       text: "Every visit gave me more confidence. Today, I’m blessed with the family I always dreamed of.  Their care and expertise gave me hope again",
-      author: "Anjali Mehta, Progenesis Mom, Mumbai",
+      author: "Suvarna Deshmukh, Progenesis Mom",
     },
     {
       text: "Amazing care and wonderful staff. They made our journey smooth and hopeful.  Their care and expertise gave me hope again",
-      author: "Sneha Kulkarni, Progenesis Mom, Nagpur",
+      author: "Rupali Nehete, Progenesis Mom",
     },
   ];
 

@@ -60,7 +60,7 @@ export default function CarouselSection({
                 ))}
               </div>
               {/* Slide number + content */}
-              <div className="mt-6 ">
+              <div className="mt-6">
                 <div className="text-[#94BA3D] text-[16px] leading-[24px] tracking-[-0.32px]">
                   {slides[activeIndex].id}
                 </div>

@@ -12,7 +12,6 @@ export const MaleInfertilitySection: React.FC<MaleInfertilitySectionProps> = ({
 }) => {
   return (
     <section
-      id="fertility-mini-section"
       className="bg-[#FAFAFA] p-4 md:px-[120px] md:py-[80px]"
     >
       <div className="">
