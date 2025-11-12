@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GradientBanner from "@/components/GradientBanner";
@@ -74,7 +74,7 @@ const TreatmentsPage: React.FC = () => {
     { id: "infertility", label: "Infertility Treatments" },
     { id: "fertility-preservation", label: "Fertility Preservation" },
     { id: "fertility-evaluation", label: "Fertility Evaluation" },
-    { id: "stories", label: "Real Stories. Real Miracles." },
+    { id: "stories-section", label: "Real Stories. Real Miracles." },
   ];
 
   const [activeTab, setActiveTab] = useState<string>("path");
@@ -239,6 +239,28 @@ const TreatmentsPage: React.FC = () => {
       category: "evaluation",
     },
   ];
+
+      useEffect(() => {
+        const sections = document.querySelectorAll("section[id]");
+  
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setActiveTab(entry.target.id);
+              }
+            });
+          },
+          {
+            threshold: 0, 
+            rootMargin: "0px 0px -80% 0px", 
+          }
+        );
+    
+        sections.forEach((section) => observer.observe(section));
+        return () => observer.disconnect();
+      }, []);
+  
 
   return (
     <div className="w-full flex flex-col">
@@ -639,7 +661,7 @@ const TreatmentsPage: React.FC = () => {
         </div>
       </section>
 
-      <section id="stories">
+      <section id="stories-section">
         <StoriesSection />
       </section>
 
