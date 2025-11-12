@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import HeroSection from "@/components/HeroSection/herosection";
 import StoriesSection from "@/components/Home/StoriesSection";
 import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
@@ -32,6 +32,27 @@ export default function MainTreatment({ data }: { data: any }) {
     }
     setActiveTab(id);
   };
+
+        useEffect(() => {
+          const sections = document.querySelectorAll("section[id]");
+    
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setActiveTab(entry.target.id);
+                }
+              });
+            },
+            {
+              threshold: 0, 
+              rootMargin: "0px 0px -80% 0px", 
+            }
+          );
+      
+          sections.forEach((section) => observer.observe(section));
+          return () => observer.disconnect();
+        }, []);
 
   if (!data) {
     return <h1 className="p-6 text-red-600">Treatment data not found</h1>;
@@ -75,6 +96,7 @@ export default function MainTreatment({ data }: { data: any }) {
         />
       )}
 
+
       {/* Section 3: Treatment Basics */}
       {data.basics && (
         <TreatmentBasics
@@ -103,27 +125,34 @@ export default function MainTreatment({ data }: { data: any }) {
 
       {/* Section 5: Genetic Testing Cards */}
       {data.genetic_testing_cards && (
-        <GeneticTestingCards
-          tag={data.genetic_testing_cards.tag}
-          heading={data.genetic_testing_cards.heading}
-          cards={data.genetic_testing_cards.cards}
-        />
+        <section id="types-of-testing">
+          <GeneticTestingCards
+            tag={data.genetic_testing_cards.tag}
+            heading={data.genetic_testing_cards.heading}
+            cards={data.genetic_testing_cards.cards}
+          />
+        </section>
       )}
 
       {/* Section 6: Procedure Steps */}
       {data.procedure_steps ? (
+     
         <ProcedureSteps
           tag={data.procedure_tag}
           heading={data.procedure_heading || "Steps of the Procedure"}
           steps={data.procedure_steps}
         />
         
-      ) : data.procedure_no_image_steps ? (
-        <ProcedureStepsNoImage
-          tag={data.procedure_no_image_steps.main_tag}
-          heading={data.procedure_no_image_steps.main_heading || "Steps of the Procedure"}
-          steps={data.procedure_no_image_steps.data}
-        />
+      ) 
+      : data.procedure_no_image_steps ? (
+        <section id="procedure">
+          <ProcedureStepsNoImage
+            tag={data.procedure_no_image_steps.main_tag}
+            heading={data.procedure_no_image_steps.main_heading || "Steps of the Procedure"}
+            steps={data.procedure_no_image_steps.data}
+          />
+
+        </section>
         
       ) : null}
 
@@ -136,7 +165,7 @@ export default function MainTreatment({ data }: { data: any }) {
       )}
 
       {/* Section 8: Stories */}
-      <section id="stories" className="scroll-mt-[120px]">
+      <section id="stories-section" className="scroll-mt-[120px]">
         <StoriesSection heading={"From Hope to Happiness Watch Now!"} tag={"Success Stories"}/>
       </section>
       <ParenthoodBanner/>

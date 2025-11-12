@@ -7,7 +7,7 @@ interface SuccessRateSectionProps {
 
 export default function SuccessRateSection({ percentage, text }: SuccessRateSectionProps) {
   return (
-  <section className="relative w-full flex justify-center items-center overflow-hidden px-6 pt-4 pb-[80px]  csLg:px-[120px] csLg:py-[80px]">
+  <section className="relative w-full flex justify-center items-center overflow-hidden px-6 pt-4 pb-[80px]  csLg:px-[120px] csLg:py-[80px]" id="procedure">
   {/* 🔹 Left Green Blur Ellipse */}
   <div
     className="absolute left-[-100px] bottom-[-50px] rounded-full bg-[#94BA3D] blur-[250px]"

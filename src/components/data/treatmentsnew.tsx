@@ -24,7 +24,7 @@ export const femaleFertilityPreservationData = {
     { id: "basics", label: "Know the Basics" },
     { id: "why-choose", label: "Why Choose Fertility Preservation at Progenesis" },
     { id: "procedure", label: "Steps of the Fertility Preservation Process" },
-    { id: "stories", label: "Success Stories" }
+    { id: "stories-section", label: "Success Stories" }
   ],
   basics: [
     {
@@ -132,7 +132,7 @@ export const maleFertilityPreservationData = {
       { id: "basics", label: "Know the Basics" },
       { id: "why-choose", label: "Why Choose Fertility Preservation at Progenesis" },
       { id: "procedure", label: "Steps of the Preservation Process" },
-      { id: "stories", label: "Success Stories" }
+      { id: "stories-section", label: "Success Stories" }
     ],
     basics: [
       {
@@ -241,7 +241,7 @@ export const eggEmbryoFreezingData = {
       { id: "basics", label: "Know the Basics" },
       { id: "why-choose", label: "Why Choose Fertility Preservation at Progenesis" },
       { id: "procedure", label: "Steps of the Freezing Process" },
-      { id: "stories", label: "Success Stories" }
+      { id: "stories-section", label: "Success Stories" }
     ],
     basics: [
       {
@@ -367,7 +367,7 @@ export const femaleAnalysisData = {
       { id: "basics", label: "Know the Basics" },
       { id: "why-choose", label: "Types of Fertility Tests for Women" },
       { id: "procedure", label: "Steps of the Fertility Evaluation Process" },
-      { id: "stories", label: "Success Stories" },
+      { id: "stories-section", label: "Success Stories" },
     ],
     basics: [
       {
@@ -470,7 +470,7 @@ export const semenAnalysisData = {
       { id: "why-choose", label: "Why Choose Semen Analysis at Progenesis" },
       {id: "types-of-testing", label: "What the Test Evaluates"},
       { id: "procedure", label: "Steps of the Semen Analysis Process" },
-      { id: "stories", label: "Success Stories" },
+      { id: "stories-section", label: "Success Stories" },
     ],
     basics: [
       {

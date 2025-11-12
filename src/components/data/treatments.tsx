@@ -46,7 +46,7 @@ export const imsiTreatmentData = {
     { id: "basics", label: "Know the Basics" },
     { id: "why-choose", label: "Why Choose IMSI" },
     { id: "procedure", label: "The IMSI Procedure" },
-    { id: "stories", label: "Success Stories" },
+    { id: "stories-section", label: "Success Stories" },
   ],
   basics: [
     {
@@ -202,7 +202,7 @@ export const picsiTreatmentData = {
     { id: "basics", label: "Know the Basics" },
     { id: "why-choose", label: "Why Choose PICSI" },
     { id: "procedure", label: "The PICSI Procedure" },
-    { id: "stories", label: "Success Stories" }
+    { id: "stories-section", label: "Success Stories" }
   ],
   basics: [
     {
@@ -325,7 +325,7 @@ export const lahTreatmentData = {
     { id: "basics", label: "Know the Basics" },
     { id: "why-choose", label: "Why Choose LAH" },
     { id: "procedure", label: "The LAH Procedure" },
-    { id: "stories", label: "Success Stories" }
+    { id: "stories-section", label: "Success Stories" }
   ],
   basics: [
     {
@@ -431,7 +431,7 @@ export const blastocystTransferData = {
     { id: "basics", label: "Know the Basics" },
     { id: "why-choose", label: "Why Choose Blastocyst Transfer" },
     { id: "procedure", label: "The Blastocyst Transfer Procedure" },
-    { id: "stories", label: "Success Stories" }
+    { id: "stories-section", label: "Success Stories" }
   ],
   basics: [
     {
@@ -539,7 +539,7 @@ export const sequentialEmbryoTransferData = {
     { id: "basics", label: "Know the Basics" },
     { id: "why-choose", label: "Why Choose Sequential Embryo Transfer" },
     { id: "procedure", label: "Steps of Sequential Embryo Transfer" },
-    { id: "stories", label: "Success Stories" }
+    { id: "stories-section", label: "Success Stories" }
   ],
   basics: [
     {
@@ -661,7 +661,7 @@ export const pgdTreatmentData = {
     { id: "why-choose", label: "Why Choose PGD/PGS/PGT-A" },
     { id: "types-of-testing", label: "Types of Testing" },
     { id: "procedure", label: "Steps of Preimplantation Genetic Testing" },
-    { id: "stories", label: "Success Stories" },
+    { id: "stories-section", label: "Success Stories" },
   ],
   
   // New section for genetic testing cards
@@ -798,9 +798,9 @@ export const class1000ModularLabData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "procedure", label: "Why Choose a Class-1000 Modular Lab" }, // Maps to procedure steps
-    { id: "why-choose", label: "Steps of Lab Operation Process" }, // Maps to why section
-    { id: "stories", label: "Success Stories" },
+    { id: "why-choose", label: "Why Choose a Class-1000 Modular Lab" }, // Maps to procedure steps
+    { id: "procedure", label: "Steps of Lab Operation Process" }, // Maps to why section
+    { id: "stories-section", label: "Success Stories" },
   ],
   basics: [
     {
@@ -917,9 +917,9 @@ export const trigasIncubatorsData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "procedure", label: "Why Choose Trigas Incubators" }, // Maps to procedure steps
-    { id: "why-choose", label: "Steps of Embryo Incubation Process" }, // Maps to why section
-    { id: "stories", label: "Success Stories" },
+    { id: "why-choose", label: "Why Choose Trigas Incubators" }, // Maps to procedure steps
+    { id: "procedure", label: "Steps of Embryo Incubation Process" }, // Maps to why section
+    { id: "stories-section", label: "Success Stories" },
   ],
   basics: [
     {
@@ -1053,7 +1053,7 @@ export const witnessSystemData = {
     { id: "basics", label: "Know the Basics" },
     { id: "procedure", label: "Why Choose the Witness System" }, // Maps to procedure steps
     { id: "why-choose", label: "Steps of the Witness System Process" }, // Maps to why section
-    { id: "stories", label: "Success Stories" },
+    { id: "stories-section", label: "Success Stories" },
   ],
   basics: [
     {
@@ -1187,9 +1187,9 @@ export const cryopreservationData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "procedure", label: "Why Choose Cryopreservation at Progenesis" }, // Maps to procedure steps
-    { id: "why-choose", label: "Steps of the Cryopreservation Process" }, // Maps to why section
-    { id: "stories", label: "Success Stories" },
+    { id: "why-choose", label: "Why Choose Cryopreservation at Progenesis" }, // Maps to procedure steps
+    { id: "procedure", label: "Steps of the Cryopreservation Process" }, // Maps to why section
+    { id: "stories-section", label: "Success Stories" },
   ],
   basics: [
     {
@@ -1321,10 +1321,10 @@ export const ovulationInductionData = {
   // Updated categories for consistent and unique navigation IDs
   categories: [
     { id: "basics", label: "Know the Basics" },
-    { id: "why-choose", label: "Who Can Benefit?" }, // Maps to "Who Can Benefit?" section
-    { id: "procedure", label: "Why Choose Ovulation Induction at Progenesis" }, // Maps to procedure steps
-    { id: "steps", label: "Steps of the Ovulation Induction Process" }, // Maps to procedure steps
-    { id: "success-rate", label: "Success Rate" }, // Unique tab for this treatment
+    { id: "who-can-benefit", label: "Who Can Benefit?" }, // Maps to "Who Can Benefit?" section
+    { id: "why-choose", label: "Why Choose Ovulation Induction at Progenesis" }, // Maps to procedure steps
+    { id: "procedure", label: "Steps of the Ovulation Induction Process" }, // Maps to procedure steps
+    { id: "stories-section", label: "Success Rate" }, // Unique tab for this treatment
   ],
   who_can_benefit:{
     tag:"Who Can Benefit?",
@@ -1449,7 +1449,7 @@ export const artificialInseminationData = {
     { id: "who-can-benefit", label: "Who Can Benefit?" },
     { id: "why-choose", label: "Why Choose IUI at Progenesis" },
     { id: "procedure", label: "Steps of the IUI Procedure" },
-    { id: "stories", label: "Success Rate" },
+    { id: "stories-section", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit?",
@@ -1568,7 +1568,7 @@ export const ivfTreatmentData = {
     { id: "who-can-benefit", label: "Who Can Benefit from IVF" },
     { id: "why-choose", label: "Why Choose IVF at Progenesis" },
     { id: "procedure", label: "Steps of the IVF Process" },
-    { id: "stories", label: "Success Rate" },
+    { id: "stories-section", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit?",
@@ -1688,7 +1688,7 @@ export const ivfIcsiTreatmentData = {
     { id: "who-can-benefit", label: "Who Can Benefit from ICSI" },
     { id: "why-choose", label: "Why Choose ICSI at Progenesis" },
     { id: "procedure", label: "Steps of the ICSI Procedure" },
-    { id: "stories", label: "Success Rate" },
+    { id: "stories-section", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit from ICSI",
@@ -1818,7 +1818,7 @@ export const frozenEmbryoTransferTreatmentData = {
     { id: "who-can-benefit", label: "Who Can Benefit from FET" },
     { id: "why-choose", label: "Why Choose FET at Progenesis" },
     { id: "procedure", label: "Steps of the FET Procedure" },
-    { id: "stories", label: "Success Rate" },
+    { id: "stories-section", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit from FET",
@@ -1943,7 +1943,7 @@ export const fertilitySurgeryTreatmentData = {
     { id: "who-can-benefit", label: "Who Can Benefit from Fertility Surgery" },
     { id: "why-choose", label: "Why Choose Fertility Surgery at Progenesis" },
     { id: "procedure", label: "Steps of the Fertility Surgery Procedure" },
-    { id: "stories", label: "Success Rate" },
+    { id: "stories-section", label: "Success Rate" },
   ],
   who_can_benefit: {
     tag: "Who Can Benefit from Fertility Surgery",
@@ -2046,7 +2046,7 @@ export const femaleFertilityPreservationData = {
     { id: "basics", label: "Know the Basics" },
     { id: "why-choose", label: "Why Preservation Matters" },
     { id: "procedure", label: "The Preservation Process" },
-    { id: "stories", label: "Success Stories" }
+    { id: "stories-section", label: "Success Stories" }
   ],
   basics: [
     {
