@@ -14,17 +14,28 @@ interface BlogMainProps {
 
 const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
   // Clean the HTML content to remove "nnnn" and similar patterns
-  console.log(data);
-  const cleanedContent = useMemo(() => {
-    if (!data?.post_content) return "";
-    
-    return data.post_content
-      .replace(/nnnn/g, "") // Remove all "nnnn" occurrences
-      .replace(/\bnnn\b/g, "") // Remove standalone "nnn"
-      .replace(/\bnn\b/g, "") // Remove standalone "nn"
-      .replace(/\bn\b(?=\s*<)/g, "") // Remove standalone "n" before tags
-      .trim();
-  }, [data?.post_content]);
+const cleanedContent = useMemo(() => {
+  if (!data?.post_content) return "";
+
+  return data.post_content
+    // Remove repeated n patterns
+    .replace(/nnnn/g, "")              // Remove "nnnn"
+    .replace(/\bnnn\b/g, "")           // Remove standalone "nnn"
+    .replace(/\bnn\b/g, "")            // Remove standalone "nn"
+    .replace(/\bn\b(?=\s*<)/g, "")     // Remove "n" before tags
+
+    // CRITICAL: Remove "rn" even when attached to the next word
+    .replace(/rn(?=[A-Za-z])/g, "")    // Remove "rn" if followed by a letter
+
+    // Optional: Also clean up any leftover "rn" in other contexts
+    .replace(/\brn\b/g, "")
+
+    // Remove actual line breaks
+    .replace(/\r?\n/g, " ")            // Replace with space to avoid gluing words
+
+    .trim();
+}, [data?.post_content]);
+
 
   return (
     <div>
@@ -39,41 +50,43 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
           />
           <img src={data.image_url} className="rounded-[16px] w-full" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-4">
-             <div className="blog-metadata-header">
-            <div className="blog-metadata-grid">
-              {/* Date */}
-              <div className="metadata-item">
-                <span className="metadata-label">PUBLISHED</span>
-                <span className="metadata-value">
-                  {formatDate(data.post_date)}
-                </span>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-2">
+            <div className="blog-metadata-header">
+              <div className="blog-metadata-grid">
+                {/* Updated Date */}
+                <div className="metadata-item">
+                  <span className="metadata-label">UPDATED ON</span>
+                  <span className="metadata-value">
+                    {formatDate(data.post_modified)}
+                  </span>
+                </div>
 
-              {/* Author */}
-              <div className="metadata-item">
-                <span className="metadata-label">WRITTEN BY</span>
-                <div className="author-badge">
-                  <svg 
-                    className="verified-icon" 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 24 24" 
-                    fill="currentColor"
-                  >
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                  </svg>
-                  Team Progenesis
+                {/* Author */}
+                <div className="metadata-item">
+                  <span className="metadata-label">WRITTEN BY</span>
+                  <div className="author-badge">
+                   <svg
+                      className="verified-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    Team Progenesis
+                  </div>
+                </div>
+
+                {/* Reading Time */}
+                <div className="metadata-item">
+                  <span className="metadata-label">READING TIME</span>
+                  <span className="metadata-value">10 mins</span>
                 </div>
               </div>
-
-              {/* Reading Time */}
-              <div className="metadata-item">
-                <span className="metadata-label">READING TIME</span>
-                <span className="metadata-value">10 mins</span>
-              </div>
             </div>
-          </div>
-          
+
+
+
             <div className="text-[#606060] lg:space-y-2">
               <p
                 className="text-[16px] leading-[24px] font-normal html-render_class"
@@ -81,7 +94,7 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
               />
             </div>
 
-            
+
           </div>
 
           <BlogContent data={data} />
@@ -94,7 +107,7 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
       <FaQ />
       <ParenthoodBannerBlog />
       <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
-      <AppointmentForm />
+        <AppointmentForm />
       </Suspense>
     </div>
   );
