@@ -57,9 +57,9 @@
 
 .html-render_class h1,
 h2 {
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 32.51px;
+  font-weight: 400;
+  font-size: 16.08px;
+  line-height: 22.51px;
   letter-spacing: -2%;
   margin: 2rem 0;
 }
@@ -140,7 +140,3 @@ h6 {
     margin-bottom: 20px;
   }
 }
-
-
-
-
