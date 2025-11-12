@@ -1,18 +1,46 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-export const resourceStoriesData = [
-  { title: 'Because Dreams Do Come True | A Journey with Progenesis', videoUrl: 'https://www.youtube.com/embed/-TO7z5x2Qhs' },
-  { title: 'Our IVF Journey | with Progenesis | Love Finds a Way', videoUrl: 'https://www.youtube.com/embed/OsCWCiUUg64' },
-  { title: 'The Mehta Story | with Progenesis | New Beginnings', videoUrl: 'https://www.youtube.com/embed/nCLCqG-VsZc' },
-  { title: 'Hope and Happiness | Progenesis Success', videoUrl: 'https://www.youtube.com/embed/9JHCfSD20Pk?si=ZyAMK1NoOkwvgZbE' },
-  { title: 'A New Chapter | Progenesis Family', videoUrl: 'https://www.youtube.com/embed/W-SRo_zFe6M?si=pXC9m38X_diiAhrA' },
-]
+interface Video {
+  video_url: string;
+  title: string;
+}
 
 const ResourceStories = () => {
-  const [showAll, setShowAll] = useState(false)
+  const [videos, setVideos] = useState<Video[]>([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
+  const [loading, setLoading] = useState(true)
 
-  const handleSeeAll = () => setShowAll(true)
+  useEffect(() => {
+    fetchVideos(currentPage)
+  }, [currentPage])
+
+  const fetchVideos = async (page: number) => {
+    setLoading(true)
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/videos/?page=${page}`)
+      const data = await response.json()
+      setVideos(data.results)
+      setTotalPages(data.total_pages)
+    } catch (error) {
+      console.error('Error fetching videos:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1)
+    }
+  }
+
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
 
   return (
     <section className="bg-white p-4 lg:px-[120px] lg:py-[80px]">
@@ -25,58 +53,19 @@ const ResourceStories = () => {
             Inspiring stories of strength & Victories
           </h3>
         </div>
-        {!showAll && (
-          <button
-            className="w-fit h-[32px] inline-flex items-center px-4 py-2 rounded-[8px] bg-[#1656A5] text-white text-sm shadow-sm mt-3 md:mt-0 md:ml-auto p-2"
-            onClick={handleSeeAll}
-          >
-            See all
-          </button>
-        )}
       </div>
 
       <div className="mt-6">
-        {!showAll ? (
-          <div className="flex md:grid gap-4 overflow-x-auto md:overflow-visible scrollbar-hide md:grid-cols-3 px-2 md:px-0">
-            {resourceStoriesData.slice(0, 3).map((s, i) => (
-              <article
-                key={i}
-                className="rounded-2xl w-[287px] h-[340px]  overflow-hidden flex-none md:w-auto p-2 bg-[#FFFFFF]"
-              >
-                {/* Views */}
-                <div className="px-3 pt-3">
-                  <p className="text-[11px] md:text-[13px] text-gray-400 mb-2">
-                    2k views • 1 month ago
-                  </p>
-                </div>
-
-                {/* Video */}
-                <div className="relative w-full sm:w-[280px] md:w-full h-[180px] sm:h-[200px]  bg-gray-100 rounded-2xl overflow-hidden">
-                  <iframe
-                    src={s.videoUrl}
-                    title={s.title}
-                    className="absolute top-0 left-0 w-full h-full object-cover rounded-[12px]"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                </div>
-
-                {/* Title */}
-                <div className="">
-                  <h4 className="mt-2 text-[16px] sm:text-[20px] md:text-[24px] lg:text-[20px] xl:text-[20px] font-medium text-[#2C2C2C] leading-snug break-words">
-                    {s.title}
-                  </h4>
-
-                </div>
-
-              </article>
-            ))}
+        {loading ? (
+          <div className="flex justify-center items-center min-h-[400px]">
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-12 h-12 border-4 border-[#1656A5] border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-gray-600 font-medium">Loading videos...</p>
+            </div>
           </div>
-
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {resourceStoriesData.map((s, i) => (
+            {videos.map((s, i) => (
               <article
                 key={i}
                 className="rounded-2xl border border-gray-200 overflow-hidden shadow-[0_1px_2px_RGBA(0,0,0,0.04)] p-2"
@@ -86,7 +75,7 @@ const ResourceStories = () => {
                 </div>
                 <div className="relative w-full h-[260px] sm:h-[280px] md:aspect-[16/11] bg-gray-100 rounded-2xl overflow-hidden">
                   <iframe
-                    src={s.videoUrl}
+                    src={s.video_url}
                     title={s.title}
                     className="w-full h-full rounded-[12px]"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -103,9 +92,47 @@ const ResourceStories = () => {
             ))}
           </div>
         )}
+
+        {/* Pagination Controls */}
+        <div className="flex justify-center items-center gap-4 mt-8">
+          <button
+            onClick={handlePrevious}
+            disabled={currentPage === 1}
+            className="cursor-pointer px-4 py-2 rounded-lg bg-[#1656A5] text-white font-medium hover:bg-[#124583] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+            aria-label="Previous page"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <span className="text-gray-600 font-medium">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={handleNext}
+            disabled={currentPage === totalPages}
+            className="cursor-pointer px-4 py-2 rounded-lg bg-[#1656A5] text-white font-medium hover:bg-[#124583] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+            aria-label="Next page"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   )
 }
 
 export default ResourceStories
+
+
+
+
+export const resourceStoriesData = [
+  { title: 'Because Dreams Do Come True | A Journey with Progenesis', videoUrl: 'https://www.youtube.com/embed/-TO7z5x2Qhs' },
+  { title: 'Our IVF Journey | with Progenesis | Love Finds a Way', videoUrl: 'https://www.youtube.com/embed/OsCWCiUUg64' },
+  { title: 'The Mehta Story | with Progenesis | New Beginnings', videoUrl: 'https://www.youtube.com/embed/nCLCqG-VsZc' },
+  { title: 'Hope and Happiness | Progenesis Success', videoUrl: 'https://www.youtube.com/embed/9JHCfSD20Pk?si=ZyAMK1NoOkwvgZbE' },
+  { title: 'A New Chapter | Progenesis Family', videoUrl: 'https://www.youtube.com/embed/W-SRo_zFe6M?si=pXC9m38X_diiAhrA' },
+]

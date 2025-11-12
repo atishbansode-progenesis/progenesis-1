@@ -7,6 +7,7 @@ import ResourceCta from "./ResourceCta";
 import ResourceStories from "./ResourceStories";
 import FaQ from "../about/FaQ";
 import AppointmentForm from "../about/AppointmentForm";
+import YouTubePlaylist from "./YouTubePlaylist";
 
 const MainResources = async ({ initialBlogs, totalCount }: any) => {
   return (
