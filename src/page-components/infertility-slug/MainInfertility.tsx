@@ -1,6 +1,6 @@
 // pages/infertility/repeated-iui-failures/index.tsx
 "use client";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import StoriesSection from "@/components/Home/StoriesSection";
 import HeroSection from "@/components/HeroSection/herosection";
 import NavigationTabs from "@/page-components/infertility-slug/NavigationTabs";
@@ -29,6 +29,27 @@ export default function MainInfertility({ data }: { data: any }) {
     }
     setActiveTab(id);
   };
+  
+      useEffect(() => {
+        const sections = document.querySelectorAll("section[id]");
+  
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setActiveTab(entry.target.id);
+              }
+            });
+          },
+          {
+            threshold: 0, 
+            rootMargin: "0px 0px -80% 0px", 
+          }
+        );
+    
+        sections.forEach((section) => observer.observe(section));
+        return () => observer.disconnect();
+      }, []);
 
   return (
     <div className="w-full flex flex-col">

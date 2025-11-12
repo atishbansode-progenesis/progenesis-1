@@ -19,7 +19,7 @@ const ResourceStories = () => {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between pb-4">
         <div>
           <span className='w-fit rounded-[8px] bg-[#1656A50D] py-1 px-2 font-medium text-[12px] leading-[20px] text-[#1656A5]'>
-            First Person. Real Stories.
+            Real Stories. Real Miracles.
           </span>
           <h3 className="text-[32px] lg:text-[48px] leading-[40px] lg:leading-[56px] max-w-[691px] font-normal">
             Inspiring stories of strength & Victories

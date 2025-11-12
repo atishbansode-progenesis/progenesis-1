@@ -249,7 +249,7 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
           // >
 
 
-          <div
+           <div
             className="absolute z-50 bg-white rounded-2xl shadow-xl pl-4 py-4 w-[90%] lg:w-[300px] xl:w-[350px] 2xl:w-[400px]
              max-h-[400px] overflow-hidden transition-all duration-200 animate-fadeIn"
             style={{
@@ -257,8 +257,8 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
               top: popupPosition.top,
               transform: "translateX(-50%)",
             }}
-          >
-
+          >   
+            {/* // </div> */}
             {activeStep === "what" && (
               <div
                 className="flex flex-wrap gap-3 rounded-2xl overflow-y-auto"
@@ -291,7 +291,8 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
 
               </div>
             )}
-            {activeStep === "where" && (
+          
+              {activeStep === "where" && (
               <div
                 // className="space-y-3  rounded-2xl"
 
@@ -326,10 +327,8 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                 ))}
               </div>
             )}
-
-            {activeStep === "who" && (
+             {activeStep === "who" && (
               <div
-
                 className="flex flex-col rounded-2xl overflow-y-auto "
                 style={{
                   maxHeight: "360px",           // ensures internal scroll area
@@ -359,7 +358,6 @@ export function SearchSection({ onClose }: { onClose: () => void }) {
                 ))}
               </div>
             )}
-            {/* </div> */}
           </div>
         )}
       </section>

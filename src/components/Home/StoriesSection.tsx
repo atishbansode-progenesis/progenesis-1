@@ -99,7 +99,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
   };
 
   return (
-    <section className="pb-[20px] md:pb-[60px] pt-[20px] md:pt-[80px] bg-[#FFFFFF] md:bg-[#F1F7FC]">
+    <section id="stories-section" className="pb-[20px] md:pb-[60px] pt-[20px] md:pt-[80px] bg-[#FFFFFF] md:bg-[#F1F7FC]">
       <div className="px-4 md:px-[80px] lg:px-[120px]">
         {/* Header */}
         <div className="mb-[20px]">

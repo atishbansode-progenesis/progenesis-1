@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection/herosection";
 import { ArrowUpRight } from "lucide-react";
@@ -58,6 +58,28 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
 const Infertility: React.FC<{ category: string }> = ({ category }) => {
   const [activeTab, setActiveTab] = useState<string>("path");
 
+    useEffect(() => {
+      const sections = document.querySelectorAll("section[id]");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveTab(entry.target.id);
+            }
+          });
+        },
+        {
+          threshold: 0, 
+          rootMargin: "0px 0px -80% 0px", 
+        }
+      );
+  
+      sections.forEach((section) => observer.observe(section));
+      return () => observer.disconnect();
+    }, []);
+
+
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -74,11 +96,18 @@ const Infertility: React.FC<{ category: string }> = ({ category }) => {
         onTabClick={handleScroll}
       />
 
+    <section id="path">
       <WhatIsInfertility />
+    </section>
 
+    <section id="fertility-section">
       <FemaleInfertilitySection issues={FEMALE_INFERTILITY_ISSUES} />
+    </section>
 
+    <section  id="fertility-mini-section" >
       <MaleInfertilitySection issues={MALE_INFERTILITY_ISSUES} />
+      
+    </section>
 
       <section id="stories-section" className="">
         <StoriesSection />

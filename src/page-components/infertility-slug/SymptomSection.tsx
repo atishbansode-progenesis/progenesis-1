@@ -22,7 +22,7 @@ export default function SymptomSection({ properties }: StatisticsVisualProps) {
   const cards = [properties.card1, properties.card2, properties.card3];
 
   return (
-    <section className="w-full bg-[#FAFAFA] p-[16px] lg:p-[120px]">
+    <section id ="iuifailures" className="w-full bg-[#FAFAFA] p-[16px] lg:p-[120px]">
       <div className="relative w-full justify-center flex flex-col gap-10 csLg:gap-[80px] csLg:items-start items-center ">
         {/* Tag */}
         <div className="grid w-full grid-cols-1 csLg:grid-cols-2  gap-4">
@@ -37,7 +37,7 @@ export default function SymptomSection({ properties }: StatisticsVisualProps) {
           </div>
 
         </div>
-        <div className="grid grid-cols-1 csLg:grid-cols-3  w-full">
+        <div className="grid grid-cols-1 csLg:grid-cols-3 md:gap-10 gap-2  w-full">
           {cards.map((card, index) => (
             <div key={index} className="bg-[#Fefefe] w-full rounded-[16px] p-[24px] gap-[10px] lg:gap-[18px] flex flex-col items-start ">
               {card.icon && (

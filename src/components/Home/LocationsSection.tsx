@@ -26,7 +26,7 @@ type City = {
 const locations: City[] = [
   {
     city: "Mumbai",
-    image: "/LocationsSection/mumbai.png",
+    image: "/LocationsSection/mumbai.jpg",
     subCities: [
       {
         name: "Borivali",
