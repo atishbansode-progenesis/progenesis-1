@@ -91,8 +91,8 @@ const Footer: React.FC = () => {
                 { label: "About Us", href: "/about-progenesis" },
                 { label: "Doctors", href: "/doctors" },
                 { label: "Careers", href: "/careers" },
-                { label: "Success Stories", href: "/blog" },
-                // { label: "Our Centers", href: "/our-center" },
+                { label: "Success Stories", href: "/success-stories" },
+                { label: "Blog", href: "/blog" },// { label: "Our Centers", href: "/our-center" },
               ].map((it) => (
                 <li key={it.label}>
                   <Link

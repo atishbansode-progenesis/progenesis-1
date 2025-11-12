@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { Play, X } from "lucide-react";
 import { resourceStoriesData } from "@/page-components/resources/ResourceStories";
+import { useRouter } from "next/navigation";
 
 interface StoryCard {
   title: string;
@@ -23,6 +24,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
   const [winWidth, setWinWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
+  const router = useRouter()
   const stories: StoryCard[] = resourceStoriesData;
   const GAP = 16; // px gap between cards
 
@@ -103,7 +105,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
       <div className="px-4 md:px-[80px] lg:px-[120px]">
         {/* Header */}
         <div className="mb-[20px]">
-          <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
+          <button onClick={()=> router.push("/success-stories")} className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
             {tag}
           </button>
         </div>
@@ -115,7 +117,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
 
           <div className="flex items-center gap-5">
             {/* Previous Slide Button - Now hidden on small screens (sm:flex) */}
-                        <Link href="/blog" className="">
+                        <Link href="/success-stories" className="">
             <span className="hidden md:inline-block px-4 py-3 bg-[#1656a5] text-white rounded-lg transition">See all</span>
 
              </Link>

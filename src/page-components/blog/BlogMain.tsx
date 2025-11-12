@@ -185,7 +185,7 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
             </div>
 
             <div className="text-[#606060] lg:space-y-2">
-              <p
+              <article
                 className="text-[16px] leading-[24px] font-normal html-render_class"
                 dangerouslySetInnerHTML={{ __html: cleanedContent }}
               />

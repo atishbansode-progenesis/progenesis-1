@@ -8,13 +8,15 @@ import ResourceStories from "./ResourceStories";
 import FaQ from "../about/FaQ";
 import AppointmentForm from "../about/AppointmentForm";
 import YouTubePlaylist from "./YouTubePlaylist";
+import StoriesSection from "@/components/Home/StoriesSection";
 
 const MainResources = async ({ initialBlogs, totalCount }: any) => {
   return (
     <div>
       <ResourceLanding recentBlog={initialBlogs[0]}/>
       <ResourceGrid initialBlogs={initialBlogs} totalCount={totalCount} />
-      <ResourceStories />
+      {/* <ResourceStories /> */}
+      <StoriesSection />
       <ResourceCta />
       {/* <FaQ /> */}
       <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
