@@ -104,7 +104,7 @@ const cleanedContent = useMemo(() => {
           </p>
         </div>
       </div>
-      <FaQ />
+      {/* <FaQ /> */}
       <ParenthoodBannerBlog />
       <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
         <AppointmentForm />
