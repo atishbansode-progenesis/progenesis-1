@@ -2,26 +2,26 @@ import React from "react";
 import "../about/AboutMain.css";
 
 const ResourceLanding = ({ recentBlog }: any) => {
-  const isSmallDevice = window.innerWidth < 768;
+  const isSmallDevice = window.innerWidth < 768;  
   
   return (
     <div>
       <section>
         <div
           className="relative  w-full h-[728px] md:h-[560px] lg:h-[620px] xl:h-[680px] bg-center bg-cover"
-          style={{ backgroundImage: isSmallDevice ? `url(${recentBlog?.image_url})` : `url(${recentBlog?.image_url})`}}
+          style={{ backgroundImage: isSmallDevice ? `url('/images/blog _cover.jpg')` : `url('/images/blog _cover.jpg')`}}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/70" />
 
           <div className="section-spacing absolute inset-x-0 bottom-3 sm:bottom-0 px-4 sm:px-6 md:px-10 lg:px-14 xl:px-20 pb-10 md:pb-14 lg:pb-16">
             <div className="max-w-6xl">
-              <span className="inline-block text-[#F9F9F9] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px] p-2">
+              <span className="inline-block text-[#F9F9F9] text-[12px] md:text-[13px] py-1 rounded-[8px] p-2">
                 Featured
               </span>
 
-              <a href={`/${recentBlog?.post_url}`} className="flex justify-center items-center w-full relative cursor-pointer group">
+              <a href={`/${recentBlog?.post_url}`} className="flex items-center w-full relative cursor-pointer group">
                 <h1 className="text-[#F9F9F9] font-semibold leading-tight md:leading-tight lg:leading-tight text-[28px] sm:text-[34px] md:text-[40px] lg:text-[52px] xl:text-[56px] line-clamp-2 group-hover:text-[#f1e8e8]">
-                  <span>{recentBlog?.post_title}</span>
+                  <span dangerouslySetInnerHTML={{ __html: recentBlog?.post_title }} />
                   <img
                     src="\icons\resorcesrighter.svg"
                     alt="right"

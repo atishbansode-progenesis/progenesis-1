@@ -456,7 +456,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
     <label
       key={idx}
       htmlFor={field.name}
-      className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] cursor-pointer flex items-center justify-center"
+      className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] cursor-pointer flex items-center justify-center gap-2"
     >
       <input
         type="checkbox"
@@ -501,15 +501,17 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         </>
       ) : (
         <>
-          Clicking means you agree to our{" "} 
+          Clicking means you agree to our
+          <span className="mx-1"> </span>
           <a
             href="/privacy-policy"
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline mr-2"
             onClick={(e) => e.stopPropagation()}
           >
             Privacy Policy
           </a>
-          {" "}and{" "}
+          <span className="mx-1"> </span>and
+          <span className="mx-1"> </span>
           <a
             href="/terms-and-conditions"
             className="text-blue-600 hover:underline"
@@ -544,15 +546,10 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
             <li key={rowIdx} className={`grid gap-4 ${row.length === 1 && row[0].type === 'textarea' ? 'grid-cols-1' : row.length === 1 ? 'grid-cols-1 lg:grid-cols-2' : 'grid-cols-1 lg:grid-cols-2'}`}>
               {row.map((field, idx) => (
                 <div key={idx} className={`w-full ${row.length === 1 && row[0].type !== 'textarea' ? 'lg:col-span-2' : ''}`}>
-                 <>
-                {console.log("nnnnnnnnnnnnnnnnnn", row)}
-                 <>
                   {renderField(
                     field,
                     "w-full border border-[#00000026] p-4 rounded-[16px] focus:ring-0 focus:outline-none"
                   )}
-                 </>
-                 </>
                 </div>
               ))}
             </li>

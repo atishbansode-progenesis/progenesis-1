@@ -47,8 +47,6 @@ export default function Home() {
         return;
       }
 
-      console.log("Reviews Data:", reviewsData);
-
       const formattedReviews: Review[] = reviewsData
       .filter(
         (item: any) =>

@@ -12,7 +12,7 @@ const Detailing: React.FC = () => {
     {
       id: 1,
       icon: "/images/icons/syringe.svg",
-      number: "11,000+",
+      number: "18000+",
       label: "Successful IVF",
     },
     {

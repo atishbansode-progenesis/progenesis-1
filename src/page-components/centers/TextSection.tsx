@@ -8,7 +8,7 @@ function TextSection() {
             aria-hidden
           />
           <p className="text-[#94BA3D] max-w-[90%] text-[28px] lg:text-[40px] lg:leading-[48px] tracking-tight text-center font-normal font-[Manrope] relative z-10">
-            Our chain of fertility clinic is one of the most successful IVF center in Thane, having completed more than 11,000+ successful IVFs. Our ART lab and IVF doctors, who have more than 45 years of combined experience,
+            Our chain of fertility clinic is one of the most successful IVF center in Thane, having completed more than 18000+ successful IVFs. Our ART lab and IVF doctors, who have more than 45 years of combined experience,
             </p>
         </section>
   )
