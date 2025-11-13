@@ -78,10 +78,10 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
             title={data.post_title}
             author={data.author}
             created={data.post_date}
-            image={data.image_url}
+            image={data.image}
             metaDescription={data.seo_description_final}
           />
-          <img src={data.image_url} className="rounded-[16px] w-full" />
+          <img src={data.image} className="rounded-[16px] w-full" />
 
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-2">
             <div className="blog-metadata-header">

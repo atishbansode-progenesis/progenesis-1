@@ -147,7 +147,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
 
                     <div className="relative w-full aspect-[16/11] overflow-hidden rounded-xl bg-gray-100 mt-2">
                       <img
-                        src={card.image_url}
+                        src={card.image}
                         alt={card.title}
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                         loading="lazy"
