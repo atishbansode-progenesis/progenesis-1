@@ -143,7 +143,7 @@ const PrivacyPolicyPage = () => {
 </div>
 
         {/* Sidebar */}
-        <aside className="hidden md:block md:w-1/4 sticky top-28 self-start">
+        <aside className="hidden md:block md:w-1/3 sticky top-28 self-start">
           <ul className="space-y-4">
             {sections.map((section) => (
               <li key={section.id}>
@@ -213,7 +213,7 @@ const PrivacyPolicyPage = () => {
     text-[#202020]
     font-manrope text-[16px] font-semibold leading-[24px] tracking-[-0.32px]
     md:text-[28px] md:leading-[36px] md:tracking-[-0.56px] md:font-medium
-    lg:font-['Plus Jakarta Sans'] lg:text-[40px] lg:leading-normal lg:font-medium
+    lg:font-['Plus Jakarta Sans'] lg:text-[36px] lg:leading-normal lg:font-medium
   mb-[24px]"
             >
               Collection & Use of Personal Information
