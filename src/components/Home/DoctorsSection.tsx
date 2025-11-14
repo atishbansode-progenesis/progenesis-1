@@ -46,7 +46,7 @@ export const doctors = [
   {
     id:3,
     name: "Dr. Prerna Khandelwal",
-    image: "/images/doctors/Prerna.png",
+    image: "/images/doctors/Prerrna.png",
     description:
       "Dr. Prerna Khandelwal is a Fertility Consultant specializing in reproductive medicine, offering advanced and tailored fertility care at Progenesis IVF.",
     experience: [

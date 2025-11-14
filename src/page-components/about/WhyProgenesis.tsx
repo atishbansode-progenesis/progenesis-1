@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 type Slide = {
   title: string;
@@ -73,31 +73,91 @@ const slides: Slide[] = [
 const WhyProgenesis: React.FC = () => {
   const [active, setActive] = useState<number>(0);
   const [progress, setProgress] = useState<number>(0);
+  const [isInView, setIsInView] = useState<boolean>(false);
+  const containerRef = useRef<HTMLElement | null>(null);
+
+  // interval refs so we can clear them reliably
+  const slideIntervalRef = useRef<number | null>(null);
+  const progressIntervalRef = useRef<number | null>(null);
+
   const current = slides[active];
-  const INTERVAL_DURATION = 5000;
+  const INTERVAL_DURATION = 5000; // ms
 
+  // Observe whether component is in viewport
   useEffect(() => {
-    setProgress(0);
+    const node = containerRef.current;
+    if (!node) return;
 
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length);
-    }, INTERVAL_DURATION);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // consider visible if any intersection (you can tune threshold)
+          setIsInView(entry.isIntersecting);
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15, // start playing when ~15% is visible; tweak as needed
+      }
+    );
 
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) return 0;
-        return prev + (100 / (INTERVAL_DURATION / 50));
-      });
-    }, 50);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
-    return () => {
-      clearInterval(interval);
-      clearInterval(progressInterval);
+  // Start/stop timers based on visibility
+  useEffect(() => {
+    // helper to clear intervals
+    const clearTimers = () => {
+      if (slideIntervalRef.current !== null) {
+        window.clearInterval(slideIntervalRef.current);
+        slideIntervalRef.current = null;
+      }
+      if (progressIntervalRef.current !== null) {
+        window.clearInterval(progressIntervalRef.current);
+        progressIntervalRef.current = null;
+      }
     };
-  }, [active]);
+
+    clearTimers();
+
+    if (isInView) {
+      // reset progress when coming into view
+      setProgress(0);
+
+      // slide change interval
+      slideIntervalRef.current = window.setInterval(() => {
+        setActive((prev) => (prev + 1) % slides.length);
+      }, INTERVAL_DURATION);
+
+      // progress bar interval: increases every 50ms (same logic as original)
+      const progressStep = 100 / (INTERVAL_DURATION / 50);
+      progressIntervalRef.current = window.setInterval(() => {
+        setProgress((prev) => {
+          const next = prev + progressStep;
+          return next >= 100 ? 0 : next;
+        });
+      }, 50);
+    } else {
+      // when out of view, reset progress to 0 and don't auto-advance
+      setProgress(0);
+    }
+
+    // cleanup when effect re-runs or component unmounts
+    return () => clearTimers();
+    // only depends on isInView (not on active) so intervals won't be recreated on every slide change
+  }, [isInView]);
+
+  // when user manually clicks a slide row, reset progress to 0
+  const handleSetActive = (idx: number) => {
+    setActive(idx);
+    setProgress(0);
+  };
 
   return (
     <section
+      ref={containerRef}
       id="why-choose-us"
       className="w-full bg-[#1656A50D] px-[0.3125vw] lg:px-[4.6875vw] py-[0.625vw] lg:py-[0.833vw] section-spacing"
     >
@@ -126,7 +186,7 @@ const WhyProgenesis: React.FC = () => {
               return (
                 <button
                   key={s.number}
-                  onClick={() => setActive(idx)}
+                  onClick={() => handleSetActive(idx)}
                   className="w-full text-left group hover:cursor-pointer"
                 >
                   <div className="h-[1px] w-full bg-[#A5A5A5] relative">
@@ -165,10 +225,8 @@ const WhyProgenesis: React.FC = () => {
             })}
           </div>
         </div>
- 
 
-        <img src={current.image} className="hidden lg:block mt-55"  />
-      
+        <img src={current.image} className="hidden lg:block mt-55" />
       </div>
     </section>
   );
