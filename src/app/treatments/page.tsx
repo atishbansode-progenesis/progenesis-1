@@ -54,7 +54,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
       <p
         className="
       text-[#606060] opacity-70
-      text-[16px] leading-[24px] tracking-[-0.32px] font-normal
+      text-[20px] leading-[24px] tracking-[-0.32px] font-normal
     "
       >
         {description}

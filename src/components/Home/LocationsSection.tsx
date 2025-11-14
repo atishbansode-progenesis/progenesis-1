@@ -370,122 +370,130 @@ export default function LocationsSection() {
           </div>
         </div>
 
-        {/* Mobile Layout - Horizontal Swiper */}
-        {/* Mobile Layout - Horizontal Swiper */}
         <div className="csLg:hidden">
           <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             <style jsx>{`
               div::-webkit-scrollbar { display: none; }
             `}</style>
-            {locations.flatMap((loc) =>
-              loc.subCities 
-                ? loc.subCities.map((sub, idx) => (
-                    <div key={`${loc.city}-${idx}`} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white ">
-                      {/* Image */}
-                      <div className="relative h-[400px] w-full">
-                        <Image
-                          src={sub.image || "/LocationsSection/location.png"}
-                          alt={sub.name}
-                          fill
-                          className="object-cover rounded-[16px]"
-                        />
-                      </div>
+            
+            {locations.flatMap((loc) => {
+             
+              if (loc.subCities) {
+                return loc.subCities.map((sub, idx) => (
+                  <div key={`${loc.city}-${idx}`} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white ">
+                    
+                    <div className="relative h-[400px] w-full">
+                      <Image
+                        src={sub.image || "/LocationsSection/location.png"}
+                        alt={sub.name}
+                        fill
+                        className="object-cover rounded-[16px]"
+                      />
+                    </div>
 
-                      {/* Card Details */}
-                      <div className="p-5 mt-4 flex justify-between items-center bg-[#1656A50D] rounded-[16px] p-6">
-                        <div className="flex-1">
-                          <div className="flex justify-between items-center" >
+                   
+                    <div className="p-5 mt-4 flex justify-between items-center bg-[#1656A50D] rounded-[16px] p-6">
+                      <div className="flex-1">
+                        <div className="flex justify-between items-center" >
 
-                            <h3 className="text-[32px] font-normal text-[#2C2C2C] mb-2">
-                              {sub.name}
-                            </h3>
-                            <div
-                              className={`flex w-[56px] items-center justify-center rounded-full px-[24px] py-[16px]  
-                              
+                          <h3 className="text-[32px] font-normal text-[#2C2C2C] mb-2">
+                            {sub.name}
+                          </h3>
+                          <div
+                            className={`flex w-[56px] items-center justify-center rounded-full px-[24px] py-[16px]  
                                bg-black text-white
                             `}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="8"
+                              height="8"
+                              viewBox="0 0 8 8"
+                              fill="none"
                             >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="8"
-                                height="8"
-                                viewBox="0 0 8 8"
-                                fill="none"
-                              >
-                                <path
-                                  d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749"
-                                  stroke="white"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </svg>
+                              <path
+                                d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749"
+                                stroke="white"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
 
-                            </div>
                           </div>
-                          <p className="text-[14px] text-[#606060] mt-4">
-                            {sub.address}
-                          </p>
-
                         </div>
+                        <p className="text-[14px] text-[#606060] mt-4">
+                          {sub.address}
+                        </p>
 
                       </div>
+
                     </div>
-                  ))
-                : [
-                    <div key={loc.city} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white ">
-                      {/* Image */}
-                      <div className="relative h-[400px] w-full">
-                        <Image
-                          src={loc.image || "/LocationsSection/location.png"}
-                          alt={loc.city}
-                          fill
-                          className="object-cover rounded-[16px]"
-                        />
-                      </div>
+                  </div>
+                ));
+              }
 
-                      {/* Card Details */}
-                      <div className="p-5 mt-4 flex justify-between items-center bg-[#1656A50D] rounded-[16px] p-6">
-                        <div className="flex-1">
-                          <div className="flex justify-between items-center" >
+            
+              if (!loc.subCities) {
+                return (
+                  <div key={loc.city} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white ">
+                    
+                    <div className="relative h-[400px] w-full">
+                      <Image
+                        src={loc.image || "/LocationsSection/location.png"}
+                        alt={loc.city}
+                        fill
+                        className="object-cover rounded-[16px]"
+                      />
+                    </div>
 
-                            <h3 className="text-[32px] font-normal text-[#2C2C2C] mb-2">
-                              {loc.city}
-                            </h3>
-                            <div
-                              className={`flex w-[56px] items-center justify-center rounded-full px-[24px] py-[16px]  
-                              
+                   
+                    <div className="p-5 mt-4 flex justify-between items-center bg-[#1656A50D] rounded-[16px] p-6">
+                      <div className="flex-1">
+                        <div className="flex justify-between items-center" >
+
+                          <h3 className="text-[32px] font-normal text-[#2C2C2C] mb-2">
+                            {loc.city}
+                          </h3>
+                          <div
+                            className={`flex w-[56px] items-center justify-center rounded-full px-[24px] py-[16px]  
                                bg-black text-white
                             `}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="8"
+                              height="8"
+                              viewBox="0 0 8 8"
+                              fill="none"
                             >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="8"
-                                height="8"
-                                viewBox="0 0 8 8"
-                                fill="none"
-                              >
-                                <path
-                                  d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749"
-                                  stroke="white"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </svg>
+                              <path
+                                d="M0.563447 6.62744L6.77383 0.627488M6.77383 0.627488L0.563444 0.707495M6.77383 0.627488L6.77383 6.62749"
+                                stroke="white"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
 
-                            </div>
                           </div>
-                          <p className="text-[14px] text-[#606060] mt-4">
-                            {loc.address}
-                          </p>
-
                         </div>
+                        <p className="text-[14px] text-[#606060] mt-4">
+                          {loc.address}
+                        </p>
 
                       </div>
+
                     </div>
-                  ]
-            )}
+                  </div>
+                );
+              }
+
+              return [];
+            })}
+
+            
           </div>
         </div>
+
       </div>
     </section>
   );
