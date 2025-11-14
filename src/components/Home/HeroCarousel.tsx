@@ -173,7 +173,7 @@ const HeroCarousel = () => {
 
       {/* Overlay Content */}
       <div className="absolute bottom-0 left-0 pb-[100px] sm:pb-[10%] px-6 lg:px-[50px] xl:px-[80px] 2xl:px-[120px] text-white z-30 transition-all duration-700 ease-in-out">
-        <p
+        <h1
           className="font-[Manrope] font-semibold text-[var(--Text_White,#F9F9F9)]
             text-[32px] leading-[40px] tracking-[-0.64px]
             md:text-[56px] md:leading-[64px] md:tracking-[-1px]
@@ -181,7 +181,7 @@ const HeroCarousel = () => {
             max-w-[900px] transition-all duration-700 ease-in-out"
         >
           {slides[currentSlide].title}
-        </p>
+        </h1>
 
         <div className="flex flex-row gap-3 mt-6 md:mt-12">
           {slides[currentSlide].buttons.map((btn, i) => {

@@ -40,9 +40,9 @@ export const Frame = () => {
       </div>
 
       {/* Main heading */}
-      <p className="absolute left-[121px] top-[461px] w-[753px] text-bg-white font-manrope text-[80px] font-semibold tracking-[-1.60px] leading-[88px]">
+      <h1 className="absolute left-[121px] top-[461px] w-[753px] text-bg-white font-manrope text-[80px] font-semibold tracking-[-1.60px] leading-[88px]">
         What would you like to know about your fertility journey?
-      </p>
+      </h1>
     </div>
   );
 };
