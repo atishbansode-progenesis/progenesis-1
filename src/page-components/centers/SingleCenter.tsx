@@ -100,32 +100,86 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
     return centersData.find((c) => c.slug === normalizedSlug);
   }, [selectedSlug]);
 
-  const getReviewData = async () => {
-    try{
-      const response = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/");
-      const centerData = response.data.results.results.find((data: any) => data.city.toLowerCase() === selectedCenter?.name.toLowerCase());
-      setRating(centerData.average_rating)
-      setTotalReviews(centerData.total_reviews)
-      const reviewsData = centerData.data;
-      const formattedReviews = reviewsData
-      .filter(
-        (item: any) =>
-          item?.comment &&
-          !item.comment.toLowerCase().includes("translated by google")
-      )
-      .map((item: any) => ({
-        author: item.reviewer?.displayName || "Unknown Author",
-        text: item.comment || "No Review Text",
-        create_time: item.create_time,
-        star_rating: item.star_rating
-      }));
+const getReviewData = async () => {
+  try {
+    const response = await axios.get(
+      process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/"
+    );
 
-      setReviewsList(formattedReviews);
+    const centerData = response.data.results.results.find((data: any) =>
+      data.city.toLowerCase() === selectedCenter?.name.toLowerCase()
+    );
+
+    if (!centerData) {
+      console.warn("No center data found for:", selectedCenter?.name);
+      setRating(0);
+      setTotalReviews(0);
+      setReviewsList([]);
       return response.data;
-    }catch(error){
-      console.log("Error", error)
     }
+
+    setRating(centerData.average_rating);
+    setTotalReviews(centerData.total_reviews);
+
+    const reviewsData = centerData.data;
+
+    // --------------------------------------------------------------
+    // Helper: Extract original comment if Google translation exists
+    // --------------------------------------------------------------
+    const extractOriginal = (comment: string): string => {
+      if (typeof comment !== "string") return comment ?? "No Review Text";
+
+      const translatedMarker = "(Translated by Google)";
+      const originalMarker = "(Original)";
+
+      // 1. Look for (Original) first — that's the source of truth
+      const originalIdx = comment.indexOf(originalMarker);
+      if (originalIdx !== -1) {
+        const afterOriginal = comment
+          .slice(originalIdx + originalMarker.length)
+          .trim();
+        return afterOriginal.replace(/^\s*[\r\n]*/, ""); // Clean leading newlines
+      }
+
+      // 2. Fallback: If only (Translated by Google) exists, take text after it
+      const translatedIdx = comment.toLowerCase().indexOf(translatedMarker.toLowerCase());
+      if (translatedIdx !== -1) {
+        const afterTranslated = comment
+          .slice(translatedIdx + translatedMarker.length)
+          .trim();
+        return afterTranslated || "No Review Text";
+      }
+
+      // 3. No translation markers → return as-is
+      return comment;
+    };
+
+    // --------------------------------------------------------------
+    // Format reviews — keep all valid reviews, just clean the text
+    // --------------------------------------------------------------
+    const formattedReviews = reviewsData
+      .filter((item: any) => item?.comment && typeof item.comment === "string")
+      .map((item: any) => {
+        const cleanedComment = extractOriginal(item.comment);
+
+        return {
+          author: item.reviewer?.displayName || "Unknown Author",
+          text: cleanedComment,
+          create_time: item.create_time,
+          star_rating: item.star_rating,
+        };
+      });
+
+    setReviewsList(formattedReviews);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching reviews:", error);
+    setRating(0);
+    setTotalReviews(0);
+    setReviewsList([]);
+    return null;
   }
+};
 
   useEffect(() => {
     getReviewData();

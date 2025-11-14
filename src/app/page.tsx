@@ -38,7 +38,7 @@ export default function Home() {
         `${process.env.NEXT_PUBLIC_API_URL || ""}/api/average-reviews/`
       );
 
-      // ✅ Defensive checks for all nested properties
+      // Defensive checks
       const overall = response?.data?.results?.overall;
       const reviewsData = overall?.data ?? [];
 
@@ -47,27 +47,61 @@ export default function Home() {
         return;
       }
 
-      const formattedReviews: Review[] = reviewsData
-      .filter(
-        (item: any) =>
-          item?.reviewer &&
-          item?.comment &&
-          !item.comment.toLowerCase().includes("translated by google")
-      )
-      .map((item: any) => ({
-        author: item.reviewer?.displayName || "Unknown Author",
-        text: item.comment || "No Review Text",
-        create_time: item.create_time,
-        star_rating: item.star_rating
-      }));
+      // --------------------------------------------------------------
+      // Helper: extract the *original* comment if a Google translation exists
+      // --------------------------------------------------------------
+      const extractOriginal = (comment: string): string => {
+        if (typeof comment !== "string") return comment ?? "No Review Text";
 
+        const translatedMarker = "(Translated by Google)";
+        const originalMarker = "(Original)";
+
+        // Case 1: both parts present -> return the text after "(Original)"
+        const originalIdx = comment.indexOf(originalMarker);
+        if (originalIdx !== -1) {
+          const afterOriginal = comment.slice(originalIdx + originalMarker.length).trim();
+          // Remove any leading newline / whitespace that often follows the marker
+          return afterOriginal.replace(/^\s*[\r\n]*/, "");
+        }
+
+        // Case 2: only translation marker -> strip the translated part
+        const translatedIdx = comment.toLowerCase().indexOf(translatedMarker.toLowerCase());
+        if (translatedIdx !== -1) {
+          // Everything after the marker is usually the original text
+          const afterTranslated = comment.slice(translatedIdx + translatedMarker.length).trim();
+          return afterTranslated || "No Review Text";
+        }
+
+        // No translation marker at all -> keep as-is
+        return comment;
+      };
+
+      // --------------------------------------------------------------
+      // Format reviews
+      // --------------------------------------------------------------
+      const formattedReviews: Review[] = reviewsData
+        .filter(
+          (item: any) =>
+            item?.reviewer &&
+            item?.comment &&
+            typeof item.comment === "string"
+        )
+        .map((item: any) => {
+          const cleanedComment = extractOriginal(item.comment);
+
+          return {
+            author: item.reviewer?.displayName || "Unknown Author",
+            text: cleanedComment,
+            create_time: item.create_time,
+            star_rating: item.star_rating,
+          };
+        });
 
       setReviewsList(formattedReviews);
       setRating(overall?.average_rating ?? 0);
       setTotalReviews(overall?.total_reviews ?? 0);
     } catch (error) {
       console.error("Error fetching reviews:", error);
-      // Ensure state fallback to prevent SSR crash
       setReviewsList([]);
       setRating(0);
       setTotalReviews(0);
