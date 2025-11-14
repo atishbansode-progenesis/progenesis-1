@@ -453,76 +453,57 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   };
 
   const renderCheckbox = (field: any, idx: number) => (
-    <label
-      key={idx}
-      htmlFor={field.name}
-      className="text-[16px] leading-[24px] tracking-tight font-normal text-[#2C2C2C80] cursor-pointer flex items-center justify-center gap-2"
-    >
-      <input
-        type="checkbox"
-        id={field.name}
-        className="h-4 w-4 cursor-pointer mr-2"
-        onChange={(e) => handleChange(field.name, e.target.checked)}
-        checked={formData[field.name] || false}
-        required={field.required}
-        disabled={isSubmitLoading}
+  <label
+    key={idx}
+    htmlFor={field.name}
+    className="text-[16px] leading-[24px] tracking-tight font-normal justify-center text-[#2C2C2C80] cursor-pointer flex items-center gap-2"
+  >
+    <input
+      type="checkbox"
+      id={field.name}
+      className="h-4 w-4 cursor-pointer"
+      onChange={(e) => handleChange(field.name, e.target.checked)}
+      checked={formData[field.name] || false}
+      required={field.required}
+      disabled={isSubmitLoading}
+    />
+    {field.options && field.options.length > 0 ? (
+      <span
+        dangerouslySetInnerHTML={{
+          __html: field.options[0].label
+            .replace(
+              /\bPrivacy Policy\b/g,
+              '<a href="/privacy-policy" class="text-blue-600 hover:underline">$&</a>'
+            )
+            .replace(
+              /\bT&C\b/g,
+              '<a href="/terms-and-conditions" class="text-blue-600 hover:underline">$&</a>'
+            ),
+        }}
+        onClick={(e) => e.stopPropagation()}
       />
-      {field.options && field.options.length > 0 ? (
-        <>
-          {field.options[0].label
-            .split(/(\bPrivacy Policy\b|\bT&C\b)/g)
-            .map((part: string, i: number) => {
-              if (part === "Privacy Policy") {
-                return (
-                  <a
-                    key={i}
-                    href="/privacy-policy"
-                    className="text-blue-600 hover:underline"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {part}
-                  </a>
-                );
-              }
-              if (part === "T&C") {
-                return (
-                  <a
-                    key={i}
-                    href="/privacy-policy"
-                    className="text-blue-600 hover:underline"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {part}
-                  </a>
-                );
-              }
-              return <span key={i}>{part}</span>;
-            })}
-        </>
-      ) : (
-        <>
-          Clicking means you agree to our
-          <span className="mx-1"> </span>
-          <a
-            href="/privacy-policy"
-            className="text-blue-600 hover:underline mr-2"
-            onClick={(e) => e.stopPropagation()}
-          >
-            Privacy Policy
-          </a>
-          <span className="mx-1"> </span>and
-          <span className="mx-1"> </span>
-          <a
-            href="/terms-and-conditions"
-            className="text-blue-600 hover:underline"
-            onClick={(e) => e.stopPropagation()}
-          >
-            T&C
-          </a>
-        </>
-      )}
-    </label>
-  );
+    ) : (
+      <>
+        Clicking means you agree to our{" "}
+        <a
+          href="/privacy-policy"
+          className="text-blue-600 hover:underline"
+          onClick={(e) => e.stopPropagation()}
+        >
+          Privacy Policy
+        </a>{" "}
+        and{" "}
+        <a
+          href="/terms-and-conditions"
+          className="text-blue-600 hover:underline"
+          onClick={(e) => e.stopPropagation()}
+        >
+          T&C
+        </a>
+      </>
+    )}
+  </label>
+);
 
   const renderFormContent = () => {
     if (apiError) {
