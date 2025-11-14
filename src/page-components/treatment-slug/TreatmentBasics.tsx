@@ -36,7 +36,7 @@ export default function TreatmentBasics({ tag, heading, items }: TreatmentBasics
             <h3 className="text-[#2C2C2C] font-[Manrope] text-[24px] leading-[40px] tracking-[-0.64px] font-normal">
               {item.title}
             </h3>
-            <p className="text-[#606060] font-[Manrope] text-[16px] leading-[24px] opacity-80">
+            <p className="text-[#606060] font-[Manrope] text-[20px] leading-[24px] opacity-80">
               {item.description}
             </p>
           </div>
