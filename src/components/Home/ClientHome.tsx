@@ -28,56 +28,82 @@ const JsonLd = () => {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
-    name: "Progenesis IVF",
-    alternateName: "Progenesis Fertility Center",
-    url: "https://progenesisivf.com/",
-    logo: "https://progenesisivf.com/logo1.png",
-    description:
-      "Progenesis IVF is India's leading fertility & IVF center offering world-class infertility treatments, advanced IVF, ICSI, IUI, egg freezing, PCOS care, fertility preservation, and male infertility services with high success rates.",
-    telephone: "9423971620",
-    email: "info@progenesisivf.com",
-    sameAs: [
+    "name": "Progenesis IVF",
+    "alternateName": "Progenesis Fertility Center",
+    "url": "https://progenesisivf.com/",
+    "logo": "https://progenesisivf.com/wp-content/uploads/elementor/thumbs/website-landing-page-logo-qf4csbq02m4fjc1j5enkfev1diikay45momn83862q.png",
+    "description": "Progenesis IVF is India's leading fertility & IVF center offering world-class infertility treatments, advanced IVF, ICSI, IUI, egg freezing, PCOS care, fertility preservation, and male infertility services with high success rates.",
+    "telephone": "9423971620",
+    "email": "info@progenesisivf.com",
+    "sameAs": [
       "https://www.facebook.com/progenesisivf/",
       "https://www.instagram.com/progenesis_ivf_center/",
       "http://www.youtube.com/c/ProgenesisFertilityCenter",
       "https://www.linkedin.com/company/progenesis-ivf/",
-      "https://progenesisivf.com/",
+      "https://progenesisivf.com/"
     ],
-    medicalSpecialty: [
+    "medicalSpecialty": [
       "Infertility",
       "IVF",
       "Gynecology",
-      "Reproductive Medicine",
+      "Reproductive Medicine"
     ],
-    currenciesAccepted: "INR",
-    paymentAccepted: [
+    "currenciesAccepted": "INR",
+    "paymentAccepted": [
       "Cash",
       "Credit Card",
       "Debit Card",
       "UPI",
-      "Net Banking",
+      "Net Banking"
     ],
-    areaServed: ["Maharashtra", "India"],
-    aggregateRating: {
+    "areaServed": ["Maharashtra", "India"],
+    "aggregateRating": {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "18247",
+      "ratingValue": "4.9",
+      "reviewCount": "18247"
     },
-    contactPoint: {
+    "contactPoint": {
       "@type": "ContactPoint",
-      telephone: "9423971620",
-      contactType: "customer service",
-      areaServed: "IN",
-      availableLanguage: ["English", "Hindi", "Marathi"],
+      "telephone": "9423971620",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi", "Marathi"]
     },
-    address: {
+    "address": {
       "@type": "PostalAddress",
-      streetAddress: "2nd Floor, Progenesis IVF, Thane West",
-      addressLocality: "Thane",
-      addressRegion: "Maharashtra",
-      postalCode: "400601",
-      addressCountry: "IN",
+      "streetAddress": "2nd Floor, Progenesis IVF, Thane West",
+      "addressLocality": "Thane",
+      "addressRegion": "Maharashtra",
+      "postalCode": "400601",
+      "addressCountry": "IN"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "19.2183",
+      "longitude": "72.9781"
+    },
+    "department": [
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Thane", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Thane", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Andheri", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Andheri", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Borivali", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Borivali", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Ghatkopar", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Ghatkopar", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Vashi", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Vashi", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Virar", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Virar", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Kalyan", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Kalyan", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Panvel", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Panvel", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Pune", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Pune (Kalyani Nagar)", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Kalyani Nagar", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Nashik", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Nashik", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Jalgaon", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Jalgaon", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Ahilyanagar", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Ahilyanagar", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Amravati", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Amravati", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Kolhapur", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Kolhapur", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Nagpur", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Nagpur", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Solapur", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Solapur", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Dhule", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Dhule", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Sambhajinagar", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Sambhajinagar", "addressCountry": "IN" }},
+      { "@type": "MedicalClinic", "name": "Progenesis IVF Nanded", "telephone": "9423971620", "address": { "@type": "PostalAddress", "addressLocality": "Nanded", "addressCountry": "IN" }}
+    ]
   };
 
   return (
