@@ -3,6 +3,11 @@ import React from "react";
 import { notFound } from "next/navigation";
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
+export const metadata = {
+  title: "Blogs on Infertility, IVF, IUI and More | Progenesis Fertility Blog",
+  description: "Read interesting and helpful blogs related to Infertility, IVF, IUI and more at Progenesis Fertility Blogs.",
+}
+
 const revalidate = 60 * 60 * 24;
 
 const CURRENT_PAGE = 1;
