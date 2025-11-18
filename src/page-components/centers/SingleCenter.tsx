@@ -105,9 +105,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
   const schemaMarkup = useMemo(() => {
     if (!selectedCenter) return null;
     
-    const baseUrl = typeof window !== 'undefined' 
-      ? window.location.origin 
-      : process.env.NEXT_PUBLIC_BASE_URL || 'https://progenesisivf.com';
+    const baseUrl = "https://progenesisivf.com/"
     
     return generateMedicalClinicSchema({
       center: selectedCenter,

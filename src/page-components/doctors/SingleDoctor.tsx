@@ -3,7 +3,7 @@
 import React, { useMemo , useState, Suspense } from "react";
 import "../about/AboutMain.css";
 import AppointmentForm from "../about/AppointmentForm";
-import { doctors, Doctor } from "./DoctorsInfo";
+import { doctors, Doctor} from "../../data/doctors";
 
 export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }) {
   const selectedDoctor: Doctor | undefined = useMemo(() => {
@@ -61,11 +61,11 @@ export default function SingleDoctor({ selectedSlug }: { selectedSlug?: string }
                     Book Your Appointment
                   </button>
                   {/* Modal */}
-            {isOpen && (
-              <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
-                <AppointmentForm onClose={() => setIsOpen(false)} />
-              </Suspense>
-            )}
+                    {isOpen && (
+                      <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
+                        <AppointmentForm onClose={() => setIsOpen(false)} />
+                      </Suspense>
+                    )}
                 </div>
               </div>
             </div>
