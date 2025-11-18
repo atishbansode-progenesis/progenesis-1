@@ -295,9 +295,9 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
               <p className="w-fit rounded-[8px] py-[4px] px-[8px] text-sm text-[#1656A5] bg-[#1656A5]/10 mb-2">
                 Our Centers
               </p>
-              <h1 className="text-[#2C2C2C] text-[32px] md:text-[48px]  leading-[40px] md:leading-[56px] tracking-tight font-normal mb-6 lg:mb-12 md:pb-6">
+              <h2 className="text-[#2C2C2C] text-[32px] md:text-[48px]  leading-[40px] md:leading-[56px] tracking-tight font-normal mb-6 lg:mb-12 md:pb-6">
                 Progenesis IVF Fertility Center, {selectedCenter.name}
-              </h1>
+              </h2>
               
               {selectedCenter.coordinates && (
                 <div className="md:hidden block mb-6 lg:ml-10 w-full h-[400px] lg:h-[600px] overflow-hidden rounded-lg bg-gray-100 shadow-sm">
