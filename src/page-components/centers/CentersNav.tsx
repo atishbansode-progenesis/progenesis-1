@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import CenterCard from './CenterCard';
-import { centersData, type Center } from './CenterCard';
+import { Center, centersData } from '@/data/centers';
 
 // Define type for state-city mapping
 type StateCityMap = {
