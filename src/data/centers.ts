@@ -21,6 +21,8 @@ export interface Center {
     title: string;
     description: string;
   };
+  icon?: string;
+  desc?: string;
 }
 
 export const centersData: Center[] = [
@@ -44,7 +46,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF center in Thane | Top Fertility Clinic in Thane",
       description: "Best IVF center in Thane offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in thane."
-    }
+    },
+    icon: "/images/Thane.png",
+    desc: "(Opp R Mall, Manpada)"
   },
   {
     id: 2,
@@ -57,15 +61,17 @@ export const centersData: Center[] = [
     image: "/LocationsSection/Andheri.jpg",
     phone: "+91 94239 71620",
     email: "andheri@progenesis.in",
-    mapUri: "Qsk6P3KPvZwhi9Zb7",
     services: ["IVF", "IUI", "Surrogacy", "Egg Freezing"],
+    mapUri: "Qsk6P3KPvZwhi9Zb7",
     coordinates: { lat: 19.13711948, lng: 72.8323002 },
     gallery: Array.from({ length: 14 }, (_, i) => `/AllCentersImage/Andheri/Andheri${i + 1}.jpg`),
     availableDoctors: [0, 7],
     metadata: {
       title: "Best IVF center in Andheri | Top Fertility Clinic in Andheri",
       description: "Best IVF center in Andheri offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Andheri."
-    }
+    },
+    icon: "/images/Andheri.png",
+    desc: "(Opp. to Laxmi Industrial Complex)"
   },
   {
     id: 3,
@@ -86,7 +92,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF center in Ghatkopar | Top Fertility Clinic in Ghatkopar",
       description: "Best IVF center in Ghatkopar offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Ghatkopar."
-    }
+    },
+    icon: "/images/Ghatkopar.png",
+    desc: "(Mahatma Gandhi Road)"
   },
   {
     id: 4,
@@ -107,7 +115,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF center in Virar | Top Fertility Clinic in Virar",
       description: "Best IVF center in Virar offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Virar."
-    }
+    },
+    icon: "/images/virar.jpg",
+    desc: "(Virar Medical Complex)"
   },
   {
     id: 5,
@@ -128,7 +138,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Kalyan - Progenesis IVF Fertility Center",
       description: "Looking for the best IVF center in Kalyan? schedule a consultation with our fertility experts and start your journey towards parenthood."
-    }
+    },
+    icon: "/images/kalyan.webp",
+    desc: "(Kalyan Health Clinic)"
   },
   {
     id: 6,
@@ -149,7 +161,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Borivali | Fertility Clinic in Borivali",
       description: "Best IVF center in Borivali offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Borivali."
-    }
+    },
+    icon: "/images/Borivali.png",
+    desc: "(Near Station)"
   },
   {
     id: 7,
@@ -170,7 +184,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF center in Vashi | Top Fertility Clinic in Vashi",
       description: "Best IVF center in Vashi offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Vashi."
-    }
+    },
+    icon: "/images/Vashi.png",
+    desc: "(Palm Beach Service Road)"
   },
   {
     id: 8,
@@ -191,7 +207,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF center in Panvel | Top Fertility Clinic in Panvel",
       description: "Best IVF center in Panvel offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Panvel."
-    }
+    },
+    icon: "/images/Panvel.jpg",
+    desc: "(Panvel Medical Center)"
   },
   // Rest of Maharashtra
   {
@@ -213,7 +231,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Pune | Top IVF Clinic & Hospital in Pune",
       description: "Searching for the best IVF center in Pune? Our Top IVF Clinic offers advanced fertility treatment to help couples overcome infertility."
-    }
+    },
+    icon: "/images/Pune.jpg",
+    desc: "(Near FC Road)"
   },
   {
     id: 10,
@@ -234,7 +254,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Nashik - Progenesis IVF Fertility Center",
       description: "Looking for the best IVF center in Nashik? schedule a consultation with our fertility experts and start your journey towards parenthood."
-    }
+    },
+    icon: "/images/Nasik.jpg",
+    desc: "(Yeolekar Mala)"
   },
   {
     id: 11,
@@ -255,7 +277,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Jalgaon - Progenesis IVF Fertility Center",
       description: "Looking for the best IVF center in Jalgaon? schedule a consultation with our fertility experts and start your journey towards parenthood."
-    }
+    },
+    icon: "/images/Jalgaon.jpg",
+    desc: "(College Rd)"
   },
   {
     id: 12,
@@ -276,7 +300,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Ahilyanagar | Fertility Clinic in Ahilyanagar",
       description: "Best IVF center in Ahilyanagar offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Ahilyanagar."
-    }
+    },
+    icon: "/images/Ahilyanagar.jpg",
+    desc: "(Mauli Sankul Road)"
   },
   {
     id: 13,
@@ -297,7 +323,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Amravati | Fertility Clinic in Amravati",
       description: "Best IVF center in Amravati offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Amravati."
-    }
+    },
+    icon: "/images/Amravati.jpg",
+    desc: "(Sharda Vihar)"
   },
   {
     id: 14,
@@ -318,7 +346,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Kolhapur | Fertility Clinic in Kolhapur",
       description: "Best IVF center in Kolhapur offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Kolhapur."
-    }
+    },
+    icon: "/images/Kolhapur.jpg",
+    desc: "(Railway Colony)"
   },
   {
     id: 15,
@@ -339,7 +369,9 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Nagpur | Fertility Clinic in Nagpur",
       description: "Best IVF center in Nagpur offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Nagpur."
-    }
+    },
+    icon: "/images/Nagpur.jpg",
+    desc: "(Dharampeth)"
   },
   {
     id: 16,
@@ -360,6 +392,8 @@ export const centersData: Center[] = [
     metadata: {
       title: "Best IVF Center in Solapur | Fertility Clinic in Solapur",
       description: "Best IVF center in Solapur offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Solapur."
-    }
+    },
+    icon: "/images/Solapur.jpg",
+    desc: "(Dufferin Chowk)"
   }
 ];

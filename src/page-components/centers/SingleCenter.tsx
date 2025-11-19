@@ -443,7 +443,7 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
           fallbackImage={selectedCenter.image}
         />
         <Detailing />
-        <TextSection />
+        <TextSection city={selectedCenter.name} />
         <InfoGridCenters
           tag={infoGridCenters.tag}
           heading={infoGridCenters.heading}

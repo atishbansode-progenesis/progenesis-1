@@ -8,6 +8,8 @@ export const metadata = {
   description: "Read interesting and helpful blogs related to Infertility, IVF, IUI and more at Progenesis Fertility Blogs.",
 }
 
+export const dynamic = 'force-dynamic';
+
 const revalidate = 60 * 60 * 24;
 
 const CURRENT_PAGE = 1;
@@ -15,7 +17,7 @@ const PAGE_SIZE = 12;
 const fetchBlogs = async () => {
   const res = await fetch(`${apiUrl}/api/post-seo-meta/?page_size=${PAGE_SIZE}&page=${CURRENT_PAGE}`, {
     next: { 
-      revalidate: 0
+      revalidate: 86400
     },
   });
 

@@ -34,3 +34,33 @@ export const doctors = [
   { slug: "dr-apurva-patni", image: "/images/doctors/Apurva.png" },
   { slug: "dr-vivek-bagul", image: "/images/doctors/Vivek.png" }
 ];
+
+export async function getAllDoctors(): Promise<Doctor[]> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/doctor/`, {
+      next: { revalidate: 3600 },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch doctors");
+    }
+
+    // ✅ fetch JSON properly
+    const apiDoctors: Doctor[] = await response.json();
+
+    // ✅ merge images based on slug
+    const mergedDoctors = apiDoctors.map((doc) => {
+      const localMatch = doctors.find((d) => d.slug === doc.slug);
+      return {
+        ...doc,
+        image: localMatch ? localMatch.image : doc.image, // fallback to API image
+      };
+    });
+
+    return mergedDoctors;
+
+  } catch (error) {
+    console.error("Doctors API Error:", error);
+    return [];
+  }
+}

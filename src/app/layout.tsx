@@ -1,15 +1,16 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Manrope } from 'next/font/google';
+import { Manrope } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NextTopLoader from 'nextjs-toploader';
+import NextTopLoader from "nextjs-toploader";
 import MainContent from "@/components/MainContent";
+import { getAllDoctors } from "@/data/doctors";
 
 const manrope = Manrope({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-manrope',
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-manrope",
 });
 
 export const metadata: Metadata = {
@@ -17,11 +18,16 @@ export const metadata: Metadata = {
   description: "Fertility Care Website",
 };
 
-export default function RootLayout({
+// ⬅ make RootLayout async
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+  // ⬅ fetch doctors on server
+  const doctors = await getAllDoctors();
+
   return (
     <html lang="en">
       <body className={`antialiased ${manrope.variable}`}>
@@ -32,23 +38,22 @@ export default function RootLayout({
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P6WDNFF');`
+})(window,document,'script','dataLayer','GTM-P6WDNFF');`,
           }}
         />
-        {/* End Google Tag Manager */}
 
-        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-P6WDNFF"
             height="0"
             width="0"
-            style={{display: 'none', visibility: 'hidden'}}
+            style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
 
-        <Navbar />
+        {/* ⬅ pass doctors to navbar */}
+        <Navbar doctors={doctors} />
+
         <NextTopLoader color="#1656A5" />
         <MainContent>{children}</MainContent>
         <Footer />

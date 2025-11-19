@@ -60,13 +60,15 @@ import { Metadata } from 'next';
 import '../../../page-components/blog/render-html.css'
 
 
+export const dynamic = 'force-dynamic';
+
 const revalidate = 60 * 60 * 24;
 
 const fetchBlogBySlug = async (slug: string) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/post-seo-meta/?post_name=${slug}`,
     {
-      next: { revalidate: 0 },
+      next: { revalidate: 86400 },
     }
   );
 
