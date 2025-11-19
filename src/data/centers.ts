@@ -1,3 +1,4 @@
+
 export interface Center {
   id: number;
   slug: string;
