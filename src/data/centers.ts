@@ -385,8 +385,8 @@ export const centersData: Center[] = [
     phone: "+91 94239 71620",
     email: "solapur@progenesis.in",
     services: ["IVF", "Fertility Treatment", "Counseling"],
-    mapUri: "acwiefbWWf2ZXC5x9",
-    coordinates: { lat: 21.0143072, lng: 75.5610411 },
+    mapUri: "g415S25Y1L39r6qN9",
+    coordinates: { lat: 17.6671531, lng: 75.9001897 },
     gallery: Array.from({ length: 5 }, (_, i) => `/AllCentersImage/Solapur/Solapur${i + 1}.jpg`),
     availableDoctors: [0, 17],
     metadata: {
@@ -395,5 +395,26 @@ export const centersData: Center[] = [
     },
     icon: "/images/Solapur.jpg",
     desc: "(Dufferin Chowk)"
+  },
+  {
+    id: 17,
+    slug: "best-ivf-center-in-sambhajinagar",
+    name: "Chhatrapati Sambhaji Nagar",
+    city: "Chhatrapati Sambhaji Nagar",
+    state: "MAHARASHTRA",
+    address: "2nd Floor, Sagar Trade Centre, Jalna Road, Opp Akashwani, Kailash Nagar, Mondha, Chhatrapati Sambhajinagar, Maharashtra 431001",
+    pinCode: "431001",
+    image: "/LocationsSection/Sambhajinagar.jpeg",
+    phone: "+91 94239 71620",
+    email: "sambhajinagar@progenesis.in",
+    services: ["IVF", "Fertility Treatment", "Counseling"],
+    mapUri: "ChIJdXYVFcy05DsRcpmfV6BHQc0",
+    coordinates: { lat: 19.8836337, lng: 75.3433133 },
+    gallery: Array.from({ length: 3 }, (_, i) => `/AllCentersImage/Sambhajinagar/Sambhajinagar${i + 1}.jpg`),
+    availableDoctors: [0],
+    metadata: {
+      title: "Best IVF Center in Chhatrapati Sambhaji Nagar | Fertility Clinic in Sambhajinagar",
+      description: "Progenesis Fertility Center in Chhatrapati Sambhaji Nagar provides advanced fertility treatments including IVF, ICSI, and IUI. Book a consultation today."
+    }
   }
 ];

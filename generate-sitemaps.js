@@ -96,7 +96,8 @@ const centers = [
   'best-ivf-center-in-amravati',
   'best-ivf-center-in-kolhapur',
   'best-ivf-center-in-nagpur',
-  'best-ivf-center-in-solapur'
+  'best-ivf-center-in-solapur',
+  'best-ivf-center-in-sambhajinagar'
 ];
 
 const centerUrls = centers.map(slug => `/our-center/${slug}`);
