@@ -409,8 +409,8 @@ export const centersData: Center[] = [
     phone: "+91 94239 71620",
     email: "sambhajinagar@progenesis.in",
     services: ["IVF", "Fertility Treatment", "Counseling"],
-    mapUri: "ChIJdXYVFcy05DsRcpmfV6BHQc0",
-    coordinates: { lat: 19.8836337, lng: 75.3433133 },
+    mapUri: "BtVkGAWAiptaGkva7",
+    coordinates: { lat: 19.8768388, lng: 75.3428786 },
     gallery: Array.from({ length: 3 }, (_, i) => `/AllCentersImage/Sambhajinagar/Sambhajinagar${i + 1}.jpg`),
     availableDoctors: [0],
     metadata: {
