@@ -54,7 +54,6 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
       }
 
       const data = await response.json();
-      console.log("BBBBBBBBBBBBB", data)
       setCards(data.results ?? []);
     } catch (err: unknown) {
       if (err instanceof Error) setError(err.message);
@@ -133,6 +132,14 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                 "Discover more about this story.";
               const views =
                 typeof card.views === "number" ? `${card.views}` : card.views;
+              console.log("_card", card)
+
+              const extractPText = (html: string) => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const pElements = doc.querySelectorAll('p');
+                return Array.from(pElements).map(p => p.textContent).join(' ');
+              };
 
               return (
                 <Link
@@ -160,7 +167,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                         {card.post_title}
                       </h4>
                       <p className="text-[13px] text-[#606060]/50 leading-[19.29px] line-clamp-2">
-                        {card.seo_description_final}
+                        {card.post_content ? extractPText(card.post_content) : card.seo_description_final}
                       </p>
                     </div>
                   </article>

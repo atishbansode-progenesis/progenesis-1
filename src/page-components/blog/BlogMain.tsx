@@ -70,6 +70,17 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
     }
   };
 
+
+  const extractPText = (html: string) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const pElements = doc.querySelectorAll('p');
+    return Array.from(pElements).map(p => p.textContent).join(' ');
+  };
+
+  const dis = data.post_content ? extractPText(data.post_content).substring(0, 150) : data.seo_description_final
+
+
   return (
     <div>
       <div className="p-4 bg-white lg:px-[120px] lg:py-[80px] space-y-2 font-manrope font-normal">
@@ -79,7 +90,7 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
             author={data.author}
             created={data.post_date}
             image={data.image}
-            metaDescription={data.seo_description_final}
+            metaDescription={dis}
           />
           <img src={data.image} className="rounded-[16px] w-full" />
 
