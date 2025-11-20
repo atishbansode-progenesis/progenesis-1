@@ -26,7 +26,7 @@ export const InfertilityCard: React.FC<InfertilityCardProps> = ({
       />
       
       {/* Content */}
-      <h3 className="relative z-10 text-[#2C2C2C] text-[16px] md:text-[20px] lg:text-2xl font-normal lg:leading-[32px] leading-[24px] md:leading-[28px] text-start w-full font-[Manrope]">
+      <h3 className="relative z-10 text-[#2C2C2C] text-[24px] leading-[32px] tracking-[-0.64px] md:text-[24px] md:leading-[40px] md:tracking-[-0.64px] self-start max-w-[200px] md:max-w-full font-[Manrope]">
         {issue.title}
       </h3>
     </Link>

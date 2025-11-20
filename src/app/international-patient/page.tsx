@@ -235,7 +235,7 @@ const InternationalPatientsPage: React.FC = () => {
             <h2
               className="text-[#F9F9F9] font-[Manrope] 
              text-[32px] csLg:text-[48px] font-normal leading-[40px] csLg:leading-[56px] 
-             tracking-[-0.64px] csLg:tracking-[-0.96px] mb-6 csLg:mb-8 text-center csLg:text-left"
+             tracking-[-0.64px] csLg:tracking-[-0.96px] mb-5 mt-6 csLg:mb-8 text-center csLg:text-left"
             >
               What our international patients are saying
             </h2>
@@ -473,7 +473,7 @@ const InternationalPatientsPage: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="grid gap-4 md:gap-6 mt-[80px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center">
+          <div className="grid gap-4 md:gap-6 mt-[40px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center">
             {femaleInfertilityIssues.map((issue) => (
               <Link
                 key={issue.id}

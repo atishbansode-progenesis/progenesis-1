@@ -203,19 +203,19 @@ const TreatmentsPage: React.FC = () => {
   const preservation = [
     {
       title: "Female Fertility Preservation",
-      image: "/treatments/T1.png",
+      image: "/treatments/TR1.png",
       slug: "female-fertility-preservation",
       category: "preservation",
     },
     {
       title: "Male Fertility Preservation",
-      image: "/treatments/T2.png",
+      image: "/treatments/TR2.png",
       slug: "male-fertility-preservation",
       category: "preservation",
     },
     {
       title: "Embryo Preservation",
-      image: "/treatments/T3.png",
+      image: "/treatments/TR3.png",
       slug: "egg-embryo-freezing",
       category: "preservation",
     },
@@ -455,11 +455,11 @@ const TreatmentsPage: React.FC = () => {
           <h2
             className="
         text-[#94BA3D] font-manrope font-normal
-        text-right md:text-left
+        text-left md:text-left
         text-[120px] md:text-[100px]
         leading-none tracking-[-2.4px]
         mb-[80px] md:mb-0
-        px-6 md:px-0
+         md:px-0
       "
           >
             95%
