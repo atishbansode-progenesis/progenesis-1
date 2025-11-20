@@ -54,6 +54,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
       }
 
       const data = await response.json();
+      console.log("BBBBBBBBBBBBB", data)
       setCards(data.results ?? []);
     } catch (err: unknown) {
       if (err instanceof Error) setError(err.message);

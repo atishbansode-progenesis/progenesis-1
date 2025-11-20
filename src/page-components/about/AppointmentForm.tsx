@@ -566,7 +566,7 @@
 //         className={`flex flex-col gap-4 justify-between h-full`}
 //         onSubmit={handleSubmit}
 //       >
-//         <ul className="flex flex-col gap-4  max-h-[250px] lg:max-h-[400px] overflow-y-auto overflow-x-hidden pb-4 lg:pb-0">
+//         <ul className="flex flex-col gap-4 pb-4 lg:pb-0">
 //           {groupedFields.map((row, rowIdx) => (
 //             <li key={rowIdx} className={`grid gap-4 ${row.length === 1 && row[0].type === 'textarea' ? 'grid-cols-1' : row.length === 1 ? 'grid-cols-1 lg:grid-cols-2' : 'grid-cols-1 lg:grid-cols-2'}`}>
 //               {row.map((field, idx) => (
@@ -950,9 +950,9 @@ const CountryCodeDropdown: React.FC<CountryDropdownProps> = ({
         type="button"
         onClick={() => !disabled && setIsOpen(!isOpen)}
         disabled={disabled}
-        className="w-full px-3 py-3 rounded-lg border border-[#00000026] bg-white focus:outline-none focus:ring-2 focus:ring-[#1656A5] focus:ring-offset-1 transition-all flex items-center justify-between disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full px-3 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1656A5] focus:ring-offset-1 transition-all flex items-center justify-between disabled:cursor-not-allowed disabled:opacity-50"
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           {selectedCountry && (
             <>
               <span className="text-lg">{getFlagEmoji(selectedCountry.short)}</span>
@@ -1255,7 +1255,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
                 : field.placeholder || field.title
             }
             required={field.required}
-            className={`${containerClass} ${field.type === "tel" ? "pl-28" : ""}`}
+            className={`${containerClass} ${field.type === "tel" ? "pl-22" : ""}`}
             onChange={(e) => handleChange(field.name, e.target.value)}
             value={formData[field.name] || ""}
             disabled={isSubmitLoading}
@@ -1458,7 +1458,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         className={`flex flex-col gap-4 justify-between h-full`}
         onSubmit={handleSubmit}
       >
-        <ul className="flex flex-col gap-4  max-h-[250px] lg:max-h-[400px] overflow-y-auto overflow-x-hidden pb-4 lg:pb-0">
+        <ul className="flex flex-col gap-4 pb-4 lg:pb-0">
           {groupedFields.map((row, rowIdx) => (
             <li
               key={rowIdx}
@@ -1671,7 +1671,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         }
 
         input[type="tel"]::placeholder {
-          padding-left: 0px;
+          padding-left: 10px;
         }
       `}</style>
     </div>

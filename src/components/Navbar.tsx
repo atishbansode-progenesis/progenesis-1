@@ -1678,7 +1678,6 @@ export default function Navbar({ doctors }: { doctors: Doctor[] }) {
   >(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAppointmentFormOpen, setIsAppointmentFormOpen] = useState(false);
-  console.log("Hello doc", doctors);
 
   // Prevent background scrolling on mobile (especially iOS/iPhone)
   React.useEffect(() => {
