@@ -241,7 +241,7 @@ const HeroCarousel = () => {
       </div>
 
       {/* Mobile Bottom Navigation */}
-      <div
+      {/* <div
         className="absolute bottom-4 left-1/2 -translate-x-1/2 
         flex justify-center gap-2 bg-[#3A3A3A]/80 backdrop-blur-md
         px-3 py-2 rounded-2xl z-[999] sm:hidden"
@@ -266,7 +266,7 @@ const HeroCarousel = () => {
             {item}
           </Link>
         ))}
-      </div>
+      </div> */}
 
       {isOpen && 
       <Suspense fallback={<div className="w-full h-64 flex items-center justify-center">Loading...</div>}>
