@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { Center, centersData } from "@/data/centers";
 
 
 type SubCity = {
@@ -23,127 +24,27 @@ type City = {
   subCities?: SubCity[];
 };
 
+const mumbaiCenters = centersData.filter((c: Center) => c.city === "Mumbai").sort((a, b) => (a.order || a.id) - (b.order || b.id));
+const otherCenters = centersData.filter((c: Center) => c.city !== "Mumbai").sort((a, b) => (a.order || a.id) - (b.order || b.id));
+
 const locations: City[] = [
   {
     city: "Mumbai",
     image: "/LocationsSection/mumbai.jpg",
-    subCities: [
-      {
-        name: "Borivali",
-        slug: "our-center/best-ivf-center-in-borivali",
-        address:
-          "Unit no 2, 1st Floor, Volga Building, Rayani Gram, Shimpoli, Borivali West, Mumbai, Maharashtra 400092",
-        image: "/LocationsSection/Borivali.png",
-      },
-      {
-        name: "Thane",
-        slug: "our-center/best-ivf-center-in-thane",
-        address:
-          "16, First Floor, Dosti Imperia Complex , Ghodbunder Road, Opp R Mall, Manpada, Thane (West) - 400607​",
-        image: "/LocationsSection/Thane.jpg",
-      },
-       {
-        name: "Vashi",
-        slug: "our-center/best-ivf-center-in-vashi",
-        address:
-          "Ground Floor, Bhumiraj Costarica, Palm Beach Service Road, Sector 18, Vashi, Navi Mumbai",
-        image: "/LocationsSection/Vashi.jpg",
-      },
-      {
-        name: "Andheri",
-        slug: "our-center/best-ivf-center-in-andheri",
-        address:
-          "4th Durolite House, Off New Link Rd, Near Oshiwara Station, Opposite to Laxmi Industrial Complex, Andheri West, Mumbai",
-        image: "/LocationsSection/Andheri.jpg",
-      },
-      {
-        name: "Ghatkopar",
-        slug: "our-center/best-ivf-center-in-ghatkopar",
-        address:
-          "1st Floor, Shop Zone Building, Mahatma Gandhi Rd, Ghatkopar West, Mumbai",
-        image: "/LocationsSection/Ghatkopar.jpg",
-      },
-      {
-        name: "Kalyan",
-        slug: "our-center/best-ivf-center-in-kalyan",
-        address:
-          "Diwadkar Complex, 302, Chatrapati Shivaji Maharaj Chowk, Kalyan(W), JijaMata Colony, Kalyan",
-        image: "/LocationsSection/Kalyan.png",
-      },
-       {
-        name: "Panvel",
-        slug: "our-center/best-ivf-center-in-panvel",
-        address:
-          "1st Floor, Ganga Kalash, Gandhi Hospital Lane, Near Suruchi Restaurant, Vasudev Balwant Phadke Road, Panvel",
-        image: "/LocationsSection/Panvel.jpg",
-      },
-      {
-        name: "Virar",
-        slug: "our-center/best-ivf-center-in-virar",
-        address:
-          "2nd Floor, A-Wing, Shreeram Complex, Tirupati Nagar, Virar West, Virar",
-        image: "/LocationsSection/Virar.png",
-      },
-    ],
+    subCities: mumbaiCenters.map(c => ({
+      name: c.name,
+      address: c.address,
+      image: c.image,
+      slug: `our-center/${c.slug}`
+    }))
   },
-  {
-    city: "Pune",
-    slug: "our-center/best-ivf-center-in-pune",
-    address:
-      "Kataria Chambers, ITI Road, Infront of Reliance Digital, Aundh, Pune, Maharashtra 411007",
-    image: "/LocationsSection/Pune.jpg",
-  },
-  {
-    city: "Nashik",
-    slug: "our-center/best-ivf-center-in-nashik",
-    address:
-      "IKON, 3rd Floor, Above Westside, Opp. Sun Bird Building, Yeolekar Mala, College Road, Nashik -422 005, Maharashtra",
-    image: "/LocationsSection/Nashik.jpg",
-  },
-   {
-    city: "Kolhapur",
-    slug: "our-center/best-ivf-center-in-kolhapur",
-    address:
-      "Royal Mirage Arcade, A Wing, Railway Colony Rd, opp. Kolhapur railway station, Railway Colony, New Shahupuri, Kolhapur, Maharashtra 416001",
-    image: "/LocationsSection/Kolhapur.png",
-  },
-    {
-    city: "Nagpur",
-    slug: "our-center/best-ivf-center-in-nagpur",
-    address:
-      "6th Floor, Tower 10, N Ambazari Rd, beside Alankar Theater, Shankar Nagar, Bhagwaghar, Dharampeth, Nagpur, Maharashtra 440002",
-    image: "/LocationsSection/Nagpur.png",
-  },
-  {
-    city: "Ahilyanagar",
-    slug: "our-center/best-ivf-center-in-ahilyanagar",
-    address:
-      "Shop No 2, First Floor, Diansh Plaza, opp. Mauli Sankul Road, Savedi, Ahilya Nagar, Maharashtra",
-    image: "/LocationsSection/ahliyanagr.jpg",
-  },
-  {
-    city: "Amravati",
-    slug: "our-center/best-ivf-center-in-amravati",
-    address:
-      "3rd floor, Above Raghubir Food Zone, Sharda Vihar, Badnera Road, Amravati, Maharashtra 444605",
-    image: "/LocationsSection/amravati.jpg",
-  },
-    {
-      city: "Solapur",
-      slug: "our-center/best-ivf-center-in-solapur",
-      address:
-        "KASTURE AGENCIES, 3rd Floor, Unit No 3-B, Kasture Business Centre, Railway lines, Dufferin Chowk, Solapur, Maharashtra 413001",
-      image: "/LocationsSection/Solapur.png",
-    },
-  {
-    city: "Jalgaon",
-    slug: "our-center/best-ivf-center-in-jalgaon",
-    address:
-      "1st Floor, Nayantara Arcade, Pimprala Rd, Pratap Nagar, Jalgaon",
-    image: "/LocationsSection/Jalgaon.png",
-  },
+  ...otherCenters.map(c => ({
+    city: c.name,
+    address: c.address,
+    image: c.image,
+    slug: `our-center/${c.slug}`
+  }))
 ];
-
 
 export default function LocationsSection() {
   const router = useRouter();

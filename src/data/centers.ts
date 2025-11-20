@@ -25,6 +25,7 @@ export interface Center {
   };
   icon?: string;
   desc?: string;
+  order?: number;
 }
 
 export const centersData: Center[] = [
@@ -314,7 +315,7 @@ export const centersData: Center[] = [
     state: "MAHARASHTRA",
     address: "3rd floor, Badnera Rd, above Raghubir Food Zone, Sharda Vihar, Amravati, Maharashtra 444605",
     pinCode: "444605",
-    image: "/LocationsSection/Amravati.jpg",
+    image: "/LocationsSection/amravati.jpg",
     phone: "+91 94239 71620",
     email: "amravati@progenesis.in",
     services: ["IVF", "Fertility Assessment", "Genetic Testing"],

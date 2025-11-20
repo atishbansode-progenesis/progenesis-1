@@ -136,7 +136,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
               return (
                 <Link
                   key={card.post_url || card.slug}
-                  href={`/${card.post_url}`}
+                  href={`/blog/${card.post_name}`}
                   className="group flex h-full flex-col rounded-2xl border border-transparent transition-shadow"
                 >
                   <article className="flex h-full flex-col gap-2">
