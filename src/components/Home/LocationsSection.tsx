@@ -30,7 +30,7 @@ const otherCenters = centersData.filter((c: Center) => c.city !== "Mumbai").sort
 const locations: City[] = [
   {
     city: "Mumbai",
-    image: "/LocationsSection/mumbai.jpg",
+    image: "/LocationsSection/Thane.jpg",
     subCities: mumbaiCenters.map(c => ({
       name: c.name,
       address: c.address,

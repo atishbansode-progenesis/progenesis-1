@@ -67,7 +67,7 @@ const VisionMission: React.FC = () => {
 
                 <div className="mt-8 flex justify-center md:justify-start">
                   <button
-                    onClick={() => router.push("/about-us/leadership-team/")}
+                    onClick={() => router.push("/about-progenesis/leadership-team/")}
                     className="px-5 py-3 border border-[#1656A5] rounded-[8px] lg:rounded-[16px] bg-white text-[#1656A5] text-[14px] cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:bg-[#f4f4f4] transition"
                   >
                     Meet Our Specialists

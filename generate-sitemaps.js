@@ -22,9 +22,7 @@ ${urls.map(url => `  <url>
 const mainUrls = [
   // Home and main pages
   '/',
-  '/home',
-  '/about-us',
-  '/about-us/leadership-team',
+  '/about-progenesis/leadership-team',
   '/about-progenesis',
   '/careers',
   '/emi-options',
