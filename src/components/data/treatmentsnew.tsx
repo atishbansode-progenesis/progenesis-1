@@ -7,6 +7,7 @@ export const femaleFertilityPreservationData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/female-fertility-preservation/femalepreservationbg.png",
+  hero_image_small: "/treatments/male-fertility-preservation/malepreservationbgmob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -115,6 +116,8 @@ export const maleFertilityPreservationData = {
     hero_button_text: "Book Your Appointment",
     hero_button_link: "/book-appointment",
     hero_image: "/treatments/male-fertility-preservation/malepreservationbg.png",
+    hero_image_small: "/treatments/male-fertility-preservation/malepreservationbgmobb.png",
+
     breadcrumbs: [
       { label: "Home", href: "/", id: "home" },
       { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -224,6 +227,8 @@ export const eggEmbryoFreezingData = {
     hero_button_text: "Book Your Appointment",
     hero_button_link: "/book-appointment",
     hero_image: "/treatments/egg-embryo-freezing/eggembryobg.png",
+    hero_image_small: "/treatments/egg-embryo-freezing/eggembryobgmob.png",
+
     breadcrumbs: [
       { label: "Home", href: "/", id: "home" },
       { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -337,6 +342,7 @@ export const femaleAnalysisData = {
     hero_button_text: "Book Your Appointment",
     hero_button_link: "/book-appointment",
     hero_image: "/treatments/female-analysis/female-analysis-hero.png",
+    hero_image_small: "/treatments/female-analysis/female-analysis-hero-bg.png",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Treatments", href: "/treatments" },
@@ -436,10 +442,12 @@ export const semenAnalysisData = {
     slug: "semen-analysis",
     category: "fertility-evaluation",
     title: "Semen Analysis – The First Step to Male Fertility Insight",
-    hero_title: "Semen Analysis – The First <br/> Step to Male Fertility Insight",
+    hero_title: "Semen Analysis – The First Step to Male <br/> Fertility Insight",
     hero_button_text: "Book Your Appointment",
     hero_button_link: "/book-appointment",
     hero_image: "/treatments/semen-analysis/semen-analysis-hero.png",
+    hero_image_small: "/treatments/semen-analysis/semen-analysis-hero-mob.png",
+
     contentClass: "justify-start",
     breadcrumbs: [
       { label: "Home", href: "/" },

@@ -348,11 +348,11 @@ export default function LocationsSection() {
                     </div>
 
                    
-                    <div className="p-5 mt-4 flex justify-between items-center bg-[#1656A50D] rounded-[16px] p-6">
+                    <div className=" mt-4 flex justify-between items-center bg-[#1656A50D] rounded-[16px] p-6">
                       <div className="flex-1">
                         <div className="flex justify-between items-center" >
 
-                          <h3 className="text-[32px] font-normal text-[#2C2C2C] mb-2">
+                          <h3 className="text-[32px] font-normal text-[#2C2C2C] leading-8 ">
                             {loc.city}
                           </h3>
                           <div
@@ -377,7 +377,7 @@ export default function LocationsSection() {
 
                           </div>
                         </div>
-                        <p className="text-[14px] text-[#606060] mt-4">
+                        <p className="text-[14px] text-[#606060] mt-4 ">
                           {loc.address}
                         </p>
 
