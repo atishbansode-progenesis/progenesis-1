@@ -1789,13 +1789,16 @@ export default function Navbar({ doctors }: { doctors: Doctor[] }) {
     setIsAppointmentFormOpen(true); // Open appointment form
   };
 
-  const stickyNavBar = ["/", "/our-center/", "/about-progenesis/leadership-team/", "/careers/", "our-center", "doctors", "blog"]
+  const stickyNavBar = ["/", "/our-center/", "/about-progenesis/leadership-team/", "/careers/", "our-center", "doctors", "blog", "/doctors/"]
   console.log("pathname", pathname)
-
+  const isSticky =
+  stickyNavBar.includes(pathname) ||
+  pathname.startsWith("/our-center/") ||
+  pathname.startsWith("/doctors/"); 
   return (
     <>
       <header
-        className={`${stickyNavBar.includes(pathname) ? "sticky" : "relative"} top-0 left-0 right-0 z-50 w-full bg-white font-sans shadow-sm`}
+        className={`${isSticky ? "sticky" : "relative"} top-0 left-0 right-0 z-50 w-full bg-white font-sans shadow-sm`}
       >
         {/* NAVBAR */}
         {!isSearchOpen && (
