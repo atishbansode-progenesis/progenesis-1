@@ -17,9 +17,9 @@ const MainCareers = () => {
       </div>
 
       {/* Add gap between Benefits and Openings */}
-      <div className="mt-12">
+      {/* <div className="mt-12">
         <CareersOpenings />
-      </div>
+      </div> */}
     </div>
   )
 }

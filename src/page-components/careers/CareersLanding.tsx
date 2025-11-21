@@ -124,9 +124,9 @@ const CareersLanding: React.FC = () => {
             </h1>
 
             <div>
-              <button className="bg-[#1656A5] h-10 md:h-[56px] text-[#F9F9F9] font-manrope md:text-[14px] text-[12px] md:leading-[24px] font-medium rounded-[8px] md:rounded-[16px] px-2 md:px-4 py-2">
-                See Open Positions
-              </button>
+              <a href="/careers/apply-position" className="bg-[#1656A5] h-10 md:h-[56px] text-[#F9F9F9] font-manrope md:text-[14px] text-[12px] md:leading-[24px] font-medium rounded-[8px] md:rounded-[16px] px-2 md:px-4 py-2">
+                Apply Now
+              </a>
             </div>
           </div>
         </div>
