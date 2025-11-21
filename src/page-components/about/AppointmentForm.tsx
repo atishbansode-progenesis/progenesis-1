@@ -254,7 +254,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const currentRoute = usePathname();
   const formRef = useRef<HTMLFormElement | null>(null);
   const [formFields, setFormFields] = useState<any[]>([]);
-  const [formData, setFormData] = useState<any>({});
+  const [formData, setFormData] = useState<Record<string, any>>({});
   const [utmParams, setUtmParams] = useState<Record<string, string>>({});
   const [availableRoutes, setAvailableRoutes] = useState<any[]>([]);
   const [toast, setToast] = useState<{
@@ -263,8 +263,9 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   } | null>(null);
   const [isFormOpen, setIsFormOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const [isSubmitLoading, setIsSubmitLoading] = useState(false);
-  const [apiError, setApiError] = useState(false);
+  const [isSubmitLoading, setIsSubmitLoading] = useState<boolean>(false);
+  const [apiError, setApiError] = useState<boolean>(false);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   const dateInputRef = useRef<HTMLInputElement>(null);
 
@@ -353,7 +354,8 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   }, []);
 
   const handleChange = (name: string, value: string | boolean | string[]) => {
-    setFormData((prev: any) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFieldErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -380,6 +382,22 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
           fieldsData[field.name] = code + formData[field.name];
         }
       });
+
+      setFieldErrors({});
+      const errors: Record<string, string> = {};
+      formFields.forEach((field: any) => {
+        if (field.type === "tel") {
+          const phone = formData[field.name] || "";
+          if (phone.length !== 10) {
+            errors[field.name] = "Phone number must be exactly 10 digits.";
+          }
+        }
+      });
+      if (Object.keys(errors).length > 0) {
+        setFieldErrors(errors);
+        setIsSubmitLoading(false);
+        return;
+      }
 
       if (Object.keys(utmParams).length > 0) {
         fieldsData.params = utmParams;
@@ -459,37 +477,42 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   const renderField = (field: any, containerClass: string) => {
     if (["text", "email", "tel"].includes(field.type)) {
       return (
-        <div className="relative w-full">
-          {field.type === "tel" && (
-            <div className="absolute left-0 top-0 bottom-0 flex items-center z-10 w-24">
-              <CountryCodeDropdown
-                value={formData[`${field.name}_code`] || "+91"}
-                onChange={(code) => handleChange(`${field.name}_code`, code)}
-                disabled={isSubmitLoading}
-                fieldName={field.name}
-              />
-            </div>
-          )}
-          <input
-            type={field.type}
-            placeholder={
-              field.type === "tel"
-                ? "Phone number*"
-                : (field.placeholder || field.title) + (field.required ? "*" : "")
-            }
-            required={field.required}
-            className={`${containerClass} ${field.type === "tel" ? "pl-22" : ""}`}
-            onChange={(e) => {
-              if (field.type === "tel") {
-                const value = e.target.value.replace(/\D/g, '').slice(0, 10); // Only digits, max 10
-                handleChange(field.name, value);
-              } else {
-                handleChange(field.name, e.target.value);
+        <div className="w-full">
+          <div className="relative w-full">
+            {field.type === "tel" && (
+              <div className="absolute left-0 top-0 bottom-0 flex items-center z-10 w-24">
+                <CountryCodeDropdown
+                  value={formData[`${field.name}_code`] || "+91"}
+                  onChange={(code) => handleChange(`${field.name}_code`, code)}
+                  disabled={isSubmitLoading}
+                  fieldName={field.name}
+                />
+              </div>
+            )}
+            <input
+              type={field.type}
+              placeholder={
+                field.type === "tel"
+                  ? "Phone number*"
+                  : (field.placeholder || field.title) + (field.required ? "*" : "")
               }
-            }}
-            value={formData[field.name] || ""}
-            disabled={isSubmitLoading}
-          />
+              required={field.required}
+              className={`${containerClass} ${field.type === "tel" ? "pl-22" : ""}`}
+              onChange={(e) => {
+                if (field.type === "tel") {
+                  const value = e.target.value.replace(/\D/g, '').slice(0, 10); // Only digits, max 10
+                  handleChange(field.name, value);
+                } else {
+                  handleChange(field.name, e.target.value);
+                }
+              }}
+              value={formData[field.name] || ""}
+              disabled={isSubmitLoading}
+            />
+          </div>
+          {fieldErrors[field.name] && (
+            <p className="text-red-500 text-sm mt-1">{fieldErrors[field.name]}</p>
+          )}
         </div>
       );
     }
