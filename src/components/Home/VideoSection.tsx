@@ -10,7 +10,7 @@ export default function VideoSection() {
         muted
         playsInline
       >
-        <source src="/home/video.mp4" type="video/mp4" />
+        <source src="/home/Video-1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </section>
