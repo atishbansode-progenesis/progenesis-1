@@ -159,9 +159,9 @@ const TreatmentsSection = () => {
                       {item.title2}
 
                     </h3>
-                    <p className="text-[#606060] text-[16px] leading-6">
+                    {/* <p className="text-[#606060] text-[16px] leading-6">
                       {item.description}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <button onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
@@ -221,9 +221,9 @@ const TreatmentsSection = () => {
                     <h3 className="text-[#2c2c2c] font-normal font-[Manrope] xl:text-[32px] text-[20px] csLg:leading-[40px] tracking-[-0.64px] mb-2 " >
                       {item.title2}
                     </h3>
-                    <p className="text-[#606060] text-[16px] leading-6">
+                    {/* <p className="text-[#606060] text-[16px] leading-6">
                       {item.description}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <button onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>

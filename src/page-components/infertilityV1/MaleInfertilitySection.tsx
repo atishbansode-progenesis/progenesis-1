@@ -20,8 +20,8 @@ export const MaleInfertilitySection: React.FC<MaleInfertilitySectionProps> = ({
             <button className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
               Male Infertility Causes
             </button>
-            <h2 className="text-[20px] md:text-[32px] lg:text-[40px] md:text-[40px] font-light text-[#2C2C2C] leading-[40px] md:leading-[56px]">
-              Understanding the Causes<br /> of Male Infertility
+            <h2 className="text-[32px] md:text-[32px] lg:text-[40px] font-light text-[#2C2C2C] leading-[40px] md:leading-[56px]">
+              Understanding the Causes of Male Infertility
             </h2>
           </div>
           <div className="w-full">
