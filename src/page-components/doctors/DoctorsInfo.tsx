@@ -42,6 +42,9 @@ const DoctorsInfo: React.FC<DoctorsInfoProps> = ({ doctors }) => {
                 />
               </div>
 
+            </Link>
+
+
               {/* Middle: Content */}
               <div className="font-[Manrope]">
                 <h3 className="text-[26px] csLg:text-[36px] text-[#1656A5] gap-[8px] mt-4 font-normal tracking-[-0.02em]">
@@ -85,6 +88,7 @@ const DoctorsInfo: React.FC<DoctorsInfoProps> = ({ doctors }) => {
 
                 {/* CTA Button */}
                 <button
+                type="button"
                   onClick={(e) => {
                     e.stopPropagation();
                     setIsAppointmentFormOpen(true);
@@ -94,7 +98,6 @@ const DoctorsInfo: React.FC<DoctorsInfoProps> = ({ doctors }) => {
                   Book Your Appointment
                 </button>
               </div>
-            </Link>
           </div>
         ))}
       </div>

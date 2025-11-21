@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
+import { usePathname } from "next/navigation";
 
 interface Breadcrumb {
   label: string;
@@ -48,6 +49,8 @@ export default function HeroSection({
   buttonTextColor = '#FFFFFF',
 }: HeroSectionProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const location = usePathname();
+
   return (
     <section
     id="about"
@@ -80,7 +83,7 @@ export default function HeroSection({
       )}
 
       {/* Content (always above images) */}
-      <div className={`relative z-10 w-full flex flex-col justify-end lg:justify-start items-start gap-6 lg:gap-[44px] pb-8 lg:pb-0 ${contentClassName}`}>
+      <div className={`relative z-10 w-full flex flex-col ${location.includes("treatments")  ? "justify-start" : "justify-end"} lg:justify-start items-start gap-6 lg:gap-[44px] pb-8 lg:pb-0 ${contentClassName}`}>
         {/* Breadcrumbs */}
         <p className="text-[12px] lg:text-[18px] leading-[20px] lg:leading-[40px] font-medium flex flex-wrap items-center gap-2 lg:gap-[12px]">
           {breadcrumbs.map((crumb, idx) => (

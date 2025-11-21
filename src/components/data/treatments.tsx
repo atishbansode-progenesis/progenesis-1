@@ -184,6 +184,7 @@ export const picsiTreatmentData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/picsi/picsibg.png",
+  hero_image_small:"/treatments/picsi/PICSI-BG-Mob.png",
   breadcrumbs: [
     { "label": "Home", "href": "/", id: "home" },
     { "label": "Treatments", "href": "/treatments", id: "treatments" },
@@ -300,6 +301,7 @@ export const lahTreatmentData = {
   hero_button_text : "Book Your Appointment",
   hero_button_link : "/book-appointment",
   hero_image : "/treatments/lah/lahbg.png",
+  hero_image_small:"/treatments/lah/lahbgmob.png",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Treatments", href: "/treatments" },
@@ -413,6 +415,7 @@ export const blastocystTransferData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/blastocyst/blastocystbg.png",
+  hero_image_small: "/treatments/blastocyst/blastocystbgmob.png",
   breadcrumbs: [
     { "label": "Home", "href": "/", id: "home" },
     { "label": "Treatments", "href": "/treatments", id: "treatments" },
@@ -521,6 +524,7 @@ export const sequentialEmbryoTransferData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/sequential/sequentialbg.png",
+  hero_image_small: "/treatments/sequential/sequentialbgmob.png",
   breadcrumbs: [
     { "label": "Home", "href": "/", id: "home" },
     { "label": "Treatments", "href": "/treatments", id: "treatments" },
@@ -631,6 +635,7 @@ export const pgdTreatmentData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/pgd/pgd-bg.png",
+  hero_image_small: "/treatments/pgd/pgd-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Treatments", href: "/treatments" },
@@ -771,6 +776,7 @@ export const class1000ModularLabData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/modular-lab/lab-bg.png",
+  hero_image_small: "/treatments/modular-lab/lab-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -890,6 +896,7 @@ export const trigasIncubatorsData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/trigas/trigas-bg.png",
+  hero_image_small: "/treatments/trigas/trigas-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -1024,6 +1031,7 @@ export const witnessSystemData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/witness/witness-bg.png",
+  hero_image_small: "/treatments/witness/witness-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -1156,10 +1164,11 @@ export const cryopreservationData = {
   slug: "cryopreservation",
   category: "advanced",
   title: "Cryopreservation of Human <br/> Gametes",
-  hero_title: "Cryopreservation of Human <br/> Gametes",
+  hero_title: "Cryopreservation of Human Gametes",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/cryopreservation/cryo-bg.png",
+  hero_image_small: "/treatments/cryopreservation/cryo-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -1288,6 +1297,7 @@ export const ovulationInductionData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/ovulation-induction/ovulation-bg.png",
+  hero_image_small: "/treatments/ovulation-induction/ovulation-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -1410,10 +1420,11 @@ export const artificialInseminationData = {
   slug: "artificial-insemination-iui-treatment",
   category: "fertility-treatments",
   title: "Artificial Insemination – IUI <br/> Treatment",
-  hero_title: "Artificial Insemination – IUI <br/> Treatment",
+  hero_title: "Artificial Insemination – IUI Treatment",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/iui/iui-bg.png",
+  hero_image_small: "/treatments/iui/iui-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -1526,10 +1537,11 @@ export const ivfTreatmentData = {
   slug: "ivf-treatment",
   category: "fertility-treatments",
   title: "IVF – Comprehensive In Vitro <br/> Fertilization Treatment",
-  hero_title: "IVF – Comprehensive In Vitro <br/> Fertilization Treatment",
+  hero_title: "IVF – Comprehensive In Vitro Fertilization <br/> Treatment",
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/ivf/ivf-bg.png",
+  hero_image_small: "/treatments/ivf/ivf-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -1648,6 +1660,7 @@ export const ivfIcsiTreatmentData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/ivf-icsi/ivf-icsi-bg.png",
+  hero_image_small: "/treatments/ivf-icsi/ivf-icsi-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -1778,6 +1791,8 @@ export const frozenEmbryoTransferTreatmentData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/frozen-embryo-transfer/frozen-embryo-transfer-bg.png",
+  hero_image_small: "/treatments/frozen-embryo-transfer/frozen-embryo-transfer-bg-mob.png",
+
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -1903,6 +1918,7 @@ export const fertilitySurgeryTreatmentData = {
   hero_button_text: "Book Your Appointment",
   hero_button_link: "/book-appointment",
   hero_image: "/treatments/fertility-surgery/fertility-surgery-bg.png",
+  hero_image_small: "/treatments/fertility-surgery/fertility-surgery-bg-mob.png",
   breadcrumbs: [
     { label: "Home", href: "/", id: "home" },
     { label: "Treatments", href: "/treatments", id: "treatments" },
@@ -2019,6 +2035,7 @@ export const fertilitySurgeryTreatmentData = {
 };
 
 
+  
 
 
 // Female Fertility Preservation Data
