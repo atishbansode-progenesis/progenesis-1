@@ -17,7 +17,7 @@ export const doctors = [
   { slug: "dr-narhari-s-malagaonkar", image: "/images/doctors/doctor-narhari.png" },
   { slug: "dr-sonali-malagaonkar", image: "/images/doctors/doctor-sonali.png" },
   { slug: "dr-unnati-mamtora", image: "/images/doctors/Unnati.png" },
-  { slug: "dr-prerna-khandelwal", image: "/images/doctors/Prerna.png" },
+  { slug: "dr-prerna-khandelwal", image: "/images/doctors/Prerrna.png" },
   { slug: "dr-shradha-pol", image: "/images/doctors/Shradha.png" },
   { slug: "dr-bhavika-sane", image: "/images/doctors/Bhavika.png" },
   { slug: "dr-bhageshri", image: "/images/doctors/Bhageshri.png" },

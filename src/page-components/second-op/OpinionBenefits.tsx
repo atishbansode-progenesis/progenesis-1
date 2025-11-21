@@ -8,25 +8,25 @@ const benefits = [
     icon: <img src="/images/icons/so-icon-1.svg" />, // Magnifying glass icon (placeholder - you can replace with actual SVG)
     title: "Clarity & Confidence",
     description: "Get an unbiased review of your diagnosis and plan to make informed, confident decisions.",
-    backgroundImage: "/SecondOpinion/Opinion_1.png"
+    backgroundImage: "/SecondOpinion/SO-1.png"
   },
   {
     icon: <img src="/images/icons/so-icon-2.svg" />, // Stethoscope icon (placeholder - you can replace with actual SVG)
     title: "Accurate Diagnosis",
     description: "Recheck tests, spot overlooked conditions, and confirm the right diagnosis.",
-    backgroundImage: "/SecondOpinion/Opinion_2.png"
+    backgroundImage: "/SecondOpinion/SO-2.png"
   },
   {
     icon: <img src="/images/icons/so-icon-3.svg" />, // Medical cross icon (placeholder - you can replace with actual SVG)
     title: "Right Treatment Choices",
     description: "See if your plan fits, compare success rates, and explore more options.",
-    backgroundImage: "/SecondOpinion/Opinion_3.png"
+    backgroundImage: "/SecondOpinion/SO-3.png"
   },
   {
     icon: <img src="/images/icons/so-icon-4.svg" />, // Question mark icon (placeholder - you can replace with actual SVG)
     title: "Access to Advanced Care",
     description: "Discover new technologies and fertility solutions not available everywhere.",
-    backgroundImage: "/SecondOpinion/Opinion_4.png"
+    backgroundImage: "/SecondOpinion/SO-4.png"
   }
 ];
 
@@ -73,7 +73,7 @@ const OpinionBenefits: React.FC = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-[16px] leading-6 text-[#2C2C2C] opacity-[60%] tracking-tight font-[Manrope]">
+                <p className="text-[16px] leading-6 text-[#2C2C2C] opacity-[90%] tracking-tight font-[Manrope]">
                   {benefit.description}
                 </p>
               </div>

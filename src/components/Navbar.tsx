@@ -1463,10 +1463,7 @@ const MegaMenu = ({
                 {col.links.map((link: any, i: number) => (
                   <li
                     key={i}
-                    className="
-    mb-4 
-
-  "
+                    className="mb-4 "
                   >
                     {link.isButton ? (
                       // ✅ BOOK APPOINTMENT BUTTON
@@ -2085,10 +2082,10 @@ export default function Navbar({ doctors }: { doctors: Doctor[] }) {
                                     col.title === "Quick Links"
                                       ? "bg-transparent p-0" // No background, no padding
                                       : isHighlighted
-                                        ? "bg-[#F3F8FF]"
+                                        ? ""
                                         : "bg-transparent"
                                   }
-                                  ${i === 0 ? "p-[16px]" : ""} // example: remove padding for 3rd item
+                                  
                                 `}
                             >
                               {col.title && (
@@ -2105,7 +2102,7 @@ export default function Navbar({ doctors }: { doctors: Doctor[] }) {
                                 </h3>
                               )}
 
-                              <ul className="space-y-3">
+                              <ul className="space-y-6">
                                 {col.links.map((link: any, j: number) => (
                                   <li key={j}>
                                     {/* BOOK APPOINTMENT BUTTON */}
@@ -2231,7 +2228,7 @@ export default function Navbar({ doctors }: { doctors: Doctor[] }) {
                                                 : link.label,
                                             )
                                           }
-                                          className="w-full flex items-center justify-between px-0 py-2 text-left text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition"
+                                          className="w-full flex items-center justify-between px-0  text-left text-[#2c2c2c] text-[14px] font-[Manrope] hover:text-[#1656A5] transition"
                                           aria-expanded={
                                             activeMobileSubmenuItem ===
                                             link.label
