@@ -55,11 +55,16 @@ export default function SingleDoctor({ doctor }: { doctor: Doctor }) {
 
               {/* CTA buttons */}
               <div className="mt-5 flex flex-row items-start gap-[16px] justify-between md:justify-start">
-                <button className="h-[56px] rounded-[16px] lg:w-[194px] bg-white text-[#606060] border border-[#606060] text-sm font-normal hover:bg-white hover:text-[#1656A5] hover:border-[#1656A5] p-[10px]">
+               <a href="tel:+917030944041">
+                <button className="h-[56px] rounded-[16px] lg:w-[194px] bg-white text-[#606060] border border-[#606060] text-sm font-normal hover:bg-white hover:text-[#1656A5] hover:border-[#1656A5] p-[10px]"  type="button">
                   Call Our Team
                 </button>
+              </a>
+
                 <button
-                  onClick={() => setIsOpen(true)}
+                type="button"
+                  onClick={(e) => {e.stopPropagation() ,
+                          setIsOpen(true)}}
                   className="h-[56px] p-[10px] lg:w-[194px] rounded-[16px] bg-[#1656A5] text-white text-sm lg:text-[14px] font-normal hover:bg-[#1656A5]/90"
                 >
                   Book Your Appointment
@@ -71,6 +76,8 @@ export default function SingleDoctor({ doctor }: { doctor: Doctor }) {
                   </Suspense>
                 )}
               </div>
+
+
             </div>
           </div>
         </div>

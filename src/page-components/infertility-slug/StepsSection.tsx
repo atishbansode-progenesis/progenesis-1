@@ -27,15 +27,15 @@ export default function StepsSection({
 }: StepsSectionProps) {
   const [activeStep, setActiveStep] = useState(0);
 
-  useEffect(() => {
-    if (!autoRotate) return;
+  // useEffect(() => {
+  //   if (!autoRotate) return;
     
-    const interval = setInterval(() => {
-      setActiveStep(prev => (prev + 1) % steps.length);
-    }, rotateInterval);
+  //   const interval = setInterval(() => {
+  //     setActiveStep(prev => (prev + 1) % steps.length);
+  //   }, rotateInterval);
 
-    return () => clearInterval(interval);
-  }, [autoRotate, rotateInterval, steps.length]);
+  //   return () => clearInterval(interval);
+  // }, [autoRotate, rotateInterval, steps.length]);
 
   return (
     <section id="treatment" className="w-full p-[16px] md:px-[120px] md:py-[80px]  font-[Manrope]">

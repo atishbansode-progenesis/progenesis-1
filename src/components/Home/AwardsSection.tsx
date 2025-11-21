@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Award {
   year: string;
@@ -55,6 +56,7 @@ const awards: Award[] = [
 ];
 
 export default function AwardsSection() {
+  const router = useRouter(); 
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [mobileIndex, setMobileIndex] = useState(0);
   const [knowledge, setKnowledge] = useState<Knowledge[]>([]);
@@ -288,20 +290,28 @@ export default function AwardsSection() {
                       </p>
                     </div>
 
-                    <div className="flex gap-3 mt-6">
-                      <button
-                        onClick={handlePrev}
-                        className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
-                      >
-                        <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
-                      </button>
-                      <button
-                        onClick={handleNext}
-                        className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
-                      >
-                        <ArrowRight className="w-5 h-5 text-[#1656A5]" />
-                      </button>
+                   <div className="flex mt-6  items-center justify-between">
+                    <div className="flex gap-3">
+
+                    <button
+                      onClick={handlePrev}
+                      className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                    >
+                      <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                    >
+                      <ArrowRight className="w-5 h-5 text-[#1656A5]" />
+                    </button>
                     </div>
+                     <div className="">
+                    <button className="px-4 py-2 bg-[#1656A5] text-white rounded-lg w-28" onClick={()=>router.push("/blog")}>
+                        See all
+                    </button>
+                </div>
+                  </div>
                   </article>
                 </Link>
               ) : activeTab === "Awards & Certifications" ? (
