@@ -851,14 +851,8 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
 
   return (
     <div className="relative w-full">
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        src="\video\babyvideo.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      ></video>
+
+      <img src="/video/BabyImage.jpeg" alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
 
       <div className="absolute inset-0 bg-black/40"></div>
 
