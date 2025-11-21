@@ -1,242 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000/</loc>
+    <loc>https://progenesisivf.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/about-progenesis/leadership-team</loc>
+    <loc>https://progenesisivf.com/about-progenesis/leadership-team</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/about-progenesis</loc>
+    <loc>https://progenesisivf.com/about-progenesis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/careers</loc>
+    <loc>https://progenesisivf.com/careers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/emi-options</loc>
+    <loc>https://progenesisivf.com/emi-options</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility</loc>
+    <loc>https://progenesisivf.com/infertility</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/international-patient</loc>
+    <loc>https://progenesisivf.com/international-patient</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/online-consultations</loc>
+    <loc>https://progenesisivf.com/online-consultations</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/our-center</loc>
+    <loc>https://progenesisivf.com/our-center</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/privacy-policy</loc>
+    <loc>https://progenesisivf.com/privacy-policy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/second-opinion</loc>
+    <loc>https://progenesisivf.com/second-opinion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/success-stories</loc>
+    <loc>https://progenesisivf.com/success-stories</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/thank-you</loc>
+    <loc>https://progenesisivf.com/thank-you</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments</loc>
+    <loc>https://progenesisivf.com/treatments</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/blog</loc>
+    <loc>https://progenesisivf.com/blog</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/doctors</loc>
+    <loc>https://progenesisivf.com/doctors</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/imsi</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/imsi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/picsi</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/picsi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/lah</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/lah</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/blastocyst-transfer</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/blastocyst-transfer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/sequential-embryo-transfer</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/sequential-embryo-transfer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/pgd-pgs-pgt-a</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/pgd-pgs-pgt-a</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/class-1000-modular-lab</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/class-1000-modular-lab</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/trigas-incubators</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/trigas-incubators</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/witness-system</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/witness-system</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/cryopreservation</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/cryopreservation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/basic/ovulation-induction</loc>
+    <loc>https://progenesisivf.com/treatments/basic/ovulation-induction</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/basic/artificial-insemination-iui-treatment</loc>
+    <loc>https://progenesisivf.com/treatments/basic/artificial-insemination-iui-treatment</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/basic/ivf-comprehensive-in-vitro-fertilization-treatment</loc>
+    <loc>https://progenesisivf.com/treatments/basic/ivf-comprehensive-in-vitro-fertilization-treatment</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/basic/ivf-icsi-intracytoplasmic-sperm-injection</loc>
+    <loc>https://progenesisivf.com/treatments/basic/ivf-icsi-intracytoplasmic-sperm-injection</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/frozen-embryo-transfer</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/frozen-embryo-transfer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/advanced/fertility-surgery</loc>
+    <loc>https://progenesisivf.com/treatments/advanced/fertility-surgery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/fertility-preservation/female-fertility-preservation</loc>
+    <loc>https://progenesisivf.com/treatments/fertility-preservation/female-fertility-preservation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/fertility-preservation/male-fertility-preservation</loc>
+    <loc>https://progenesisivf.com/treatments/fertility-preservation/male-fertility-preservation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/fertility-preservation/egg-embryo-freezing</loc>
+    <loc>https://progenesisivf.com/treatments/fertility-preservation/egg-embryo-freezing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/basic/female-fertility-check</loc>
+    <loc>https://progenesisivf.com/treatments/basic/female-fertility-check</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/treatments/basic/semen-analysis</loc>
+    <loc>https://progenesisivf.com/treatments/basic/semen-analysis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/female/repeated-iui-failures</loc>
+    <loc>https://progenesisivf.com/infertility/female/repeated-iui-failures</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/female/repeated-ivf-failures</loc>
+    <loc>https://progenesisivf.com/infertility/female/repeated-ivf-failures</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/female/pregnancy-after-menopause</loc>
+    <loc>https://progenesisivf.com/infertility/female/pregnancy-after-menopause</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/female/low-amh</loc>
+    <loc>https://progenesisivf.com/infertility/female/low-amh</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/female/pcos</loc>
+    <loc>https://progenesisivf.com/infertility/female/pcos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/female/tubal-blockage</loc>
+    <loc>https://progenesisivf.com/infertility/female/tubal-blockage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/female/fibroids</loc>
+    <loc>https://progenesisivf.com/infertility/female/fibroids</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/female/endometriosis</loc>
+    <loc>https://progenesisivf.com/infertility/female/endometriosis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/male/azoospermia</loc>
+    <loc>https://progenesisivf.com/infertility/male/azoospermia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/male/low-sperm-count</loc>
+    <loc>https://progenesisivf.com/infertility/male/low-sperm-count</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/infertility/male/erectile-dysfunction</loc>
+    <loc>https://progenesisivf.com/infertility/male/erectile-dysfunction</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
