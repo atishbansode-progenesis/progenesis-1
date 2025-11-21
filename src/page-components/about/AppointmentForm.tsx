@@ -385,6 +385,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
 
       setFieldErrors({});
       const errors: Record<string, string> = {};
+      let currentTitleWithoutSlash = currentRoute.replace(/(^\/|\/$)/g, "");
       formFields.forEach((field: any) => {
         if (field.type === "tel") {
           const phone = formData[field.name] || "";
@@ -402,8 +403,13 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
       if (Object.keys(utmParams).length > 0) {
         fieldsData.params = utmParams;
       }
+      if (currentTitleWithoutSlash === ''){
+        fieldsData.page = 'home'
+        currentTitleWithoutSlash = 'home'
+      } else {
+        fieldsData.page = currentTitleWithoutSlash
+      }
 
-      let currentTitleWithoutSlash = currentRoute.replace(/(^\/|\/$)/g, "");
 
       const payload = { fields: fieldsData, title: currentTitleWithoutSlash };
 
