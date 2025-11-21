@@ -24,6 +24,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
   const [winWidth, setWinWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
+  const [mounted, setMounted] = useState(false);
   const router = useRouter()
   const stories: StoryCard[] = resourceStoriesData;
   const GAP = 16; // px gap between cards
@@ -33,6 +34,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
 
   // Track window width for responsive card sizes
   useEffect(() => {
+    setMounted(true);
     const onResize = () => setWinWidth(window.innerWidth);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -99,6 +101,33 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
     // autoplay=1 to start playing when modal opens, controls=1 to show controls
     return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
   };
+
+  if (!mounted) {
+    return (
+      <section id="stories-section" className="pb-[20px] md:pb-[60px] pt-[20px] md:pt-[80px] bg-[#FFFFFF] md:bg-[#F1F7FC]">
+        <div className="px-4 md:px-[80px] lg:px-[120px]">
+          <div className="mb-[20px]">
+            <div className="bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
+              Real Stories. Real Miracles.
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 lg:gap-6 mb-[20px] lg:mb-[80px] md:mb-[80px]">
+            <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-[#2C2C2C] leading-[28px] md:leading-[56px] lg:max-w-[691px]">
+              Inspiring stories of strength & Victories
+            </h2>
+          </div>
+          <div className="flex gap-4 overflow-x-auto pb-4">
+            {/* Skeleton cards */}
+            {Array.from({ length: 5 }).map((_, index) => (
+              <div key={index} className="flex-shrink-0 rounded-2xl overflow-hidden border border-gray-200 bg-gray-200 w-[65vw] h-[390px] sm:w-[240px] sm:h-[300px] lg:w-[380px] lg:h-[420px] animate-pulse">
+                <div className="w-full h-full bg-gray-300"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="stories-section" className="pb-[20px] md:pb-[60px] pt-[20px] md:pt-[80px] bg-[#FFFFFF] md:bg-[#F1F7FC]">

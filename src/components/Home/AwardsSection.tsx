@@ -1,9 +1,29 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+
+interface Award {
+  year: string;
+  title: string;
+  subtitle: string;
+  city: string;
+  image: string;
+}
+
+interface Knowledge {
+  year: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  views: string;
+  url: string;
+}
 
 const tabs = ["Awards & Certifications", "Knowledge Center"];
 
-const awards = [
+const awards: Award[] = [
   {
     year: "2022-23",
     title: "Best Hospital for Reproductive Medicine...",
@@ -34,44 +54,89 @@ const awards = [
   },
 ];
 
-const knowledge = [
-  {
-    year: "1 month ago",
-    title: "Breaking the Myths Around IVF",
-    subtitle:
-      "Discover the truth behind common misconceptions, so you can approach your fertility journey with clarity and confidence.",
-    image: "/awards/kc1.png",
-    views: "2k views",
-  },
-  {
-    year: "1 month ago",
-    title: "Nutrition for Fertility Success",
-    subtitle:
-      " Learn how small, mindful changes in your diet can create a healthier foundation for conception and IVF success.",
-    image: "/awards/kc2.png",
-    views: "2k views",
-  },
-  {
-    year: "1 month ago",
-    title: "Advanced Technology in IVF",
-    subtitle:
-      "Explore how innovations in reproductive science are transforming possibilities and bringing dreams to life.",
-    image: "/awards/kc3.png",
-    views: "2k views",
-  },
-  {
-    year: "1 month ago",
-    title: "Preparing for Parenthood",
-    subtitle:
-      "Steps you can take today to feel ready — emotionally, physically, and mentally — for the beautiful journey ahead.",
-    image: "/awards/kc4.png",
-    views: "2k views",
-  },
-];
-
 export default function AwardsSection() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [mobileIndex, setMobileIndex] = useState(0);
+  const [knowledge, setKnowledge] = useState<Knowledge[]>([]);
+
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+  const extractPText = (html: string) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const pElements = doc.querySelectorAll('p');
+    return Array.from(pElements).map(p => p.textContent).join(' ');
+  };
+
+  const getRelativeTime = (dateString: string) => {
+    const now = new Date();
+    const date = new Date(dateString);
+    const diffTime = now.getTime() - date.getTime();
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    if (diffDays === 0) return "today";
+    if (diffDays === 1) return "1 day ago";
+    return `${diffDays} days ago`;
+  };
+
+  useEffect(() => {
+      const fetchBlogs = async () => {
+        try {
+          const response = await fetch(`${apiUrl}/api/post-seo-meta/?page_size=4&page=1`);
+          if (response.ok) {
+            const data = await response.json();
+            const fetchedKnowledge: Knowledge[] = data.results.map((blog: any) => ({
+              year: getRelativeTime(blog.post_modified),
+              title: blog.post_title.length > 40 ? blog.post_title.substring(0, 40) + "..." : blog.post_title,
+              subtitle: extractPText(blog.post_content).length > 200 ? extractPText(blog.post_content).substring(0, 200) + "..." : extractPText(blog.post_content),
+              image: blog.image,
+              url: blog.post_name,
+            }));
+            setKnowledge(fetchedKnowledge);
+          } else {
+            const mockKnowledge: Knowledge[] = [
+              {
+                year: "1 month ago",
+                title: "Mock Blog 1",
+                subtitle: "This is a mock description for testing...",
+                image: "/awards/kc1.png",
+                views: "2k views",
+                url: "/blog/mock1",
+              },
+              {
+                year: "1 month ago",
+                title: "Mock Blog 2",
+                subtitle: "Another mock description...",
+                image: "/awards/kc2.png",
+                views: "2k views",
+                url: "/blog/mock2",
+              },
+            ];
+            setKnowledge(mockKnowledge);
+          }
+        } catch (error) {
+          const mockKnowledge: Knowledge[] = [
+            {
+              year: "1 month ago",
+              title: "Mock Blog 1",
+              subtitle: "This is a mock description for testing...",
+              image: "/awards/kc1.png",
+              views: "2k views",
+              url: "/blog/mock1",
+            },
+            {
+              year: "1 month ago",
+              title: "Mock Blog 2",
+              subtitle: "Another mock description...",
+              image: "/awards/kc2.png",
+              views: "2k views",
+              url: "/blog/mock2",
+            },
+          ];
+          setKnowledge(mockKnowledge);
+        }
+      };
+      fetchBlogs();
+  }, []);
 
   const data = activeTab === "Awards & Certifications" ? awards : knowledge;
 
@@ -123,110 +188,167 @@ export default function AwardsSection() {
             <div className="hidden lg:block mt-2">
               <div className="grid grid-cols-2 gap-x-[20px] gap-y-[32px]">
                 {data.map((item, idx) => (
-                  <article
-                    key={idx}
-                  className="bg-white rounded-[16px]  csLg:min-w-[350px] csLg:max-w-[350px]  overflow-hidden transition hover:shadow-md p-[24px] flex flex-col csLg:min-h-[415px] "
-                  >
-                    {/* <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
-                      <span>{item.year}</span>
-                      <span>
-                        {activeTab === "Awards & Certifications"
-                          ? "Awards"
-                          : item.views}
-                      </span>
-                    </div> */}
-                    <div className="flex items-center gap-1.5 mb-3 text-[#606060]/70 font-[Manrope] text-[14px] font-medium leading-[22px] tracking-[-0.3px]">
-                      {activeTab === "Awards & Certifications" ? (
-                        <>
+                  activeTab === "Knowledge Center" ? (
+                    <Link key={idx} href={`/blog/${(item as Knowledge).url}`}>
+                      <article
+                        className="bg-white rounded-[16px]  csLg:min-w-[350px] csLg:max-w-[350px] csLg:h-[415px] overflow-hidden transition hover:shadow-md p-[24px] flex flex-col cursor-pointer"
+                      >
+                        <div className="flex items-center gap-1.5 mb-3 text-[#606060]/70 font-[Manrope] text-[14px] font-medium leading-[22px] tracking-[-0.3px]">
                           <span>{item.year}</span>
-                          <span>•</span>
-                          <span>Awards</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>{item.views}</span>
-                          <span>•</span>
-                          <span>{item.year}</span>
-                        </>
-                      )}
-                    </div>
+                        </div>
 
+                        <div className="w-full h-[180px] b rounded-xl overflow-hidden">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
 
+                        <div className="pt-5 flex flex-col gap-[24px]    flex-1">
+                          <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-medium leading-[28px] tracking-[-0.4px]">
+                            {item.title}
+                          </h3>
 
-                    <div className="w-full h-[180px] b rounded-xl overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                          <div>
 
-                    <div className="pt-5 flex flex-col gap-[24px]    flex-1">
-                      <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-medium leading-[28px] tracking-[-0.4px]">
-                        {item.title}
-                      </h3>
+                          <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 mt-2">
+                            {item.subtitle}
+                          </p>
+                          </div>
 
-                      <div>
-
-                      <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 mt-2">
-                        {item.subtitle}
-                      </p>
-                       <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 ">
-                        {item?.city}
-                      </p>
+                        </div>
+                      </article>
+                    </Link>
+                  ) : (
+                    <article
+                      key={idx}
+                    className="bg-white rounded-[16px]  csLg:min-w-[350px] csLg:max-w-[350px] csLg:h-[415px] overflow-hidden transition hover:shadow-md p-[24px] flex flex-col "
+                    >
+                      <div className="flex items-center gap-1.5 mb-3 text-[#606060]/70 font-[Manrope] text-[14px] font-medium leading-[22px] tracking-[-0.3px]">
+                        <span>{item.year}</span>
+                        <span>•</span>
+                        <span>Awards</span>
                       </div>
 
-                    </div>
-                  </article>
+                      <div className="w-full h-[180px] b rounded-xl overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      <div className="pt-5 flex flex-col gap-[24px]    flex-1">
+                        <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-medium leading-[28px] tracking-[-0.4px]">
+                          {item.title}
+                        </h3>
+
+                        <div>
+
+                        <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 mt-2">
+                          {item.subtitle}
+                        </p>
+                         <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 ">
+                          {(item as Award).city}
+                        </p>
+                        </div>
+
+                      </div>
+                    </article>
+                  )
                 ))}
               </div>
             </div>
 
             {/* Mobile view */}
             <div className="lg:hidden  bg-white p-[19.3px] rounded-[12.96px]">
-              <article className="overflow-hidden p-0">
-                <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
-                  <span>{data[mobileIndex].year}</span>
-                  <span>
-                    {activeTab === "Awards & Certifications"
-                      ? "Awards"
-                      : data[mobileIndex].views}
-                  </span>
-                </div>
+              {activeTab === "Knowledge Center" && knowledge.length > 0 ? (
+                <Link href={"/blog/" + (data[mobileIndex] as Knowledge).url}>
+                  <article className="overflow-hidden p-0 cursor-pointer">
+                    <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
+                      <span>{data[mobileIndex].year}</span>
+                    </div>
 
-                <div className="w-full h-48 rounded-2xl overflow-hidden">
-                  <img
-                    src={data[mobileIndex].image}
-                    alt={data[mobileIndex].title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                    <div className="w-full h-48 rounded-2xl overflow-hidden">
+                      <img
+                        src={data[mobileIndex].image}
+                        alt={data[mobileIndex].title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
-                <div className="pt-4 flex flex-col justify-between">
-                  <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-normal leading-[28px] tracking-[-0.4px]">
-                    {data[mobileIndex].title}
-                  </h3>
+                    <div className="pt-4 flex flex-col justify-between">
+                      <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-normal leading-[28px] tracking-[-0.4px]">
+                        {data[mobileIndex].title}
+                      </h3>
 
-                  <p className="text-[#606060] font-[Manrope] text-[15px] font-normal leading-[24px] opacity-60 mt-2">
-                    {data[mobileIndex].subtitle}
-                  </p>
-                </div>
+                      <p className="text-[#606060] font-[Manrope] text-[15px] font-normal leading-[24px] opacity-60 mt-2">
+                        {data[mobileIndex].subtitle}
+                      </p>
+                    </div>
 
-                <div className="flex gap-3 mt-6">
-                  <button
-                    onClick={handlePrev}
-                    className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
-                  >
-                    <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
-                  </button>
-                  <button
-                    onClick={handleNext}
-                    className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
-                  >
-                    <ArrowRight className="w-5 h-5 text-[#1656A5]" />
-                  </button>
+                    <div className="flex gap-3 mt-6">
+                      <button
+                        onClick={handlePrev}
+                        className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                      >
+                        <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
+                      </button>
+                      <button
+                        onClick={handleNext}
+                        className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                      >
+                        <ArrowRight className="w-5 h-5 text-[#1656A5]" />
+                      </button>
+                    </div>
+                  </article>
+                </Link>
+              ) : activeTab === "Awards & Certifications" ? (
+                <article className="overflow-hidden p-0">
+                  <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
+                    <span>{data[mobileIndex].year}</span>
+                    <span>Awards</span>
+                  </div>
+
+                  <div className="w-full h-48 rounded-2xl overflow-hidden">
+                    <img
+                      src={data[mobileIndex].image}
+                      alt={data[mobileIndex].title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <div className="pt-4 flex flex-col justify-between">
+                    <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-normal leading-[28px] tracking-[-0.4px]">
+                      {data[mobileIndex].title}
+                    </h3>
+
+                    <p className="text-[#606060] font-[Manrope] text-[15px] font-normal leading-[24px] opacity-60 mt-2">
+                      {data[mobileIndex].subtitle}
+                    </p>
+                  </div>
+
+                  <div className="flex gap-3 mt-6">
+                    <button
+                      onClick={handlePrev}
+                      className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                    >
+                      <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                    >
+                      <ArrowRight className="w-5 h-5 text-[#1656A5]" />
+                    </button>
+                  </div>
+                </article>
+              ) : (
+                <div className="flex items-center justify-center h-48">
+                  <p className="text-gray-500">Loading Knowledge Center...</p>
                 </div>
-              </article>
+              )}
             </div>
           </div>
         </div>

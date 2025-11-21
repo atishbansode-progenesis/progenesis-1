@@ -124,16 +124,8 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                   }).format(new Date(card.created))
                 : card.posted || "Recently";
 
-              const previewImage =
-                card.image || card.img || "/images/Rstory1.png";
-              const previewDescription =
-                card.description ||
-                card.desc ||
-                "Discover more about this story.";
               const views =
                 typeof card.views === "number" ? `${card.views}` : card.views;
-              console.log("_card", card)
-
               const extractPText = (html: string) => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
