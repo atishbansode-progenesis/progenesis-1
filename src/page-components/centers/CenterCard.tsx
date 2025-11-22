@@ -3,6 +3,8 @@ import React, { Suspense, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AppointmentForm from '../about/AppointmentForm';
 import { centersData, Center } from '@/data/centers';
+import { Link as LinkIcon } from 'lucide-react';
+import Link from "next/link"
 
 interface CenterCardProps {
   name: string;
@@ -35,7 +37,8 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
         image: image || '',
         timings: { weekdays: 'Not available', weekends: 'Not available' },
         services: [],
-        coordinates: undefined
+        coordinates: undefined,
+        mapUri: undefined
       };
     }
     return center;
@@ -79,36 +82,23 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
             </div>
           )}
         </div>
-
         {/* Action Buttons */}
         <div className="flex items-start justify-between flex-col md:flex-row gap-3 -mt-5 lg:mt-7 ">
-          <button
-            onClick={() => {
-              if (centerData.coordinates) {
-                window.open(`https://www.google.com/maps?q=${centerData.coordinates.lat},${centerData.coordinates.lng}`, '_blank');
-              } else if (centerData.address) {
-                // If no coordinates, try to open maps with the address
-                window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(centerData.address)}`, '_blank');
-              }
-            }}
-            disabled={!centerData.coordinates && !centerData.address}
-            className={`h-10 lg:text-[16px] text-[14px] font-medium hover:cursor-auto flex items-center underline decoration-[#2C2C2C] justify-center gap-2 ${!centerData.coordinates && !centerData.address
-                ? 'text-gray-400 cursor-not-allowed'
-                : 'text-[#2C2C2C] hover:text-[#1656A5] transition-colors'}
-                  lg:mt-4
-                
-            }`}
+          <a href={`https://maps.app.goo.gl/${centerData.mapUri}`} target='_blank' rel='noreferrer'
+            onClick={(e) => {
+                        e.stopPropagation();
+                      }}
+            className="cursor-pointer flex items-center justify-start gap-2 h-10 lg:text-[16px] text-[14px] font-medium hover:text-[#1656A5] transition-colors whitespace-nowrap lg:mt-4"
           >
-            {/* <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg> */}
-            {centerData.coordinates ? 'Get Location' : 'View on Map'}
-          </button>
+            <div className="flex items-center">
+              Get Location
+              <LinkIcon className='h-4 w-4 ml-2' />
+            </div>
+          </a>
 
 
           <button
-            className="flex items-center justify-center w-[121px] h-[40px] rounded-[8px] border border-[#1656A5] px-[10px] py-[10px] bg-white  transition-colors whitespace-nowrap
+            className="cursor-pointer flex items-center justify-center w-[121px] h-[40px] rounded-[8px] border border-[#1656A5] px-[10px] py-[10px] bg-white  transition-colors whitespace-nowrap
              lg:w-[158px] lg:h-[56px] lg:rounded-[16px] lg:px-2 lg:py-2"
             onClick={(e) => {e.stopPropagation(),setOpen(true)}}
           >
