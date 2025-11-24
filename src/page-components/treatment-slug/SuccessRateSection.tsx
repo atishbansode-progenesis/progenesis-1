@@ -34,11 +34,11 @@ export default function SuccessRateSection({ percentage, text }: SuccessRateSect
     <h2
       className="
         text-[#94BA3D] font-manrope font-normal
-        text-right md:text-left
+        text-left md:text-left
         text-[120px] md:text-[100px]
         leading-none tracking-[-2.4px]
         mb-[80px] md:mb-0
-        px-6 md:px-0
+         md:px-0
       "
     >
       {percentage}
