@@ -690,7 +690,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
           </a>{" "}
           and{" "}
           <a
-            href="/terms-and-conditions"
+            href="/privacy-policy"
             className="text-blue-600 hover:underline"
             onClick={(e) => e.stopPropagation()}
           >
