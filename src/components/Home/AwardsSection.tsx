@@ -29,34 +29,34 @@ const awards: Award[] = [
     year: "2022-23",
     title: "Best Hospital for Reproductive Medicine...",
     subtitle: "Business Excellence and Research Group (BERG) Singapore",
-    city:"",
+    city: "",
     image: "/awards/awards.png",
   },
   {
     year: "2016-17",
     title: "World's Greatest Brand & World's Greatest Leaders",
     subtitle: "URS and ASIA ONE",
-    city:"In Dubai",
+    city: "In Dubai",
     image: "/awards/awardsa.png",
   },
   {
     year: "2017-18",
     title: "India's Fastest Growing Brand in IVF,Brand in IVF",
     subtitle: "URS and ASIA ONE",
-    city:"In Dubai",
+    city: "In Dubai",
     image: "/awards/awardsb.png",
   },
   {
     year: "2023-24",
     title: "The Number 1 IVF Centre for Emerging IVF Centre Category",
     subtitle: "The Times",
-    city:"of India",
+    city: "of India",
     image: "/awards/awardsc.png",
   },
 ];
 
 export default function AwardsSection() {
-  const router = useRouter(); 
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [mobileIndex, setMobileIndex] = useState(0);
   const [knowledge, setKnowledge] = useState<Knowledge[]>([]);
@@ -81,41 +81,20 @@ export default function AwardsSection() {
   };
 
   useEffect(() => {
-      const fetchBlogs = async () => {
-        try {
-          const response = await fetch(`${apiUrl}/api/post-seo-meta/?page_size=4&page=1`);
-          if (response.ok) {
-            const data = await response.json();
-            const fetchedKnowledge: Knowledge[] = data.results.map((blog: any) => ({
-              year: getRelativeTime(blog.post_modified),
-              title: blog.post_title.length > 40 ? blog.post_title.substring(0, 40) + "..." : blog.post_title,
-              subtitle: extractPText(blog.post_content).length > 200 ? extractPText(blog.post_content).substring(0, 200) + "..." : extractPText(blog.post_content),
-              image: blog.image,
-              url: blog.post_name,
-            }));
-            setKnowledge(fetchedKnowledge);
-          } else {
-            const mockKnowledge: Knowledge[] = [
-              {
-                year: "1 month ago",
-                title: "Mock Blog 1",
-                subtitle: "This is a mock description for testing...",
-                image: "/awards/kc1.png",
-                views: "2k views",
-                url: "/blog/mock1",
-              },
-              {
-                year: "1 month ago",
-                title: "Mock Blog 2",
-                subtitle: "Another mock description...",
-                image: "/awards/kc2.png",
-                views: "2k views",
-                url: "/blog/mock2",
-              },
-            ];
-            setKnowledge(mockKnowledge);
-          }
-        } catch (error) {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/api/post-seo-meta/?page_size=4&page=1`);
+        if (response.ok) {
+          const data = await response.json();
+          const fetchedKnowledge: Knowledge[] = data.results.map((blog: any) => ({
+            year: getRelativeTime(blog.post_modified),
+            title: blog.post_title.length > 40 ? blog.post_title.substring(0, 40) + "..." : blog.post_title,
+            subtitle: extractPText(blog.post_content).length > 200 ? extractPText(blog.post_content).substring(0, 200) + "..." : extractPText(blog.post_content),
+            image: blog.image,
+            url: blog.post_name,
+          }));
+          setKnowledge(fetchedKnowledge);
+        } else {
           const mockKnowledge: Knowledge[] = [
             {
               year: "1 month ago",
@@ -136,8 +115,29 @@ export default function AwardsSection() {
           ];
           setKnowledge(mockKnowledge);
         }
-      };
-      fetchBlogs();
+      } catch (error) {
+        const mockKnowledge: Knowledge[] = [
+          {
+            year: "1 month ago",
+            title: "Mock Blog 1",
+            subtitle: "This is a mock description for testing...",
+            image: "/awards/kc1.png",
+            views: "2k views",
+            url: "/blog/mock1",
+          },
+          {
+            year: "1 month ago",
+            title: "Mock Blog 2",
+            subtitle: "Another mock description...",
+            image: "/awards/kc2.png",
+            views: "2k views",
+            url: "/blog/mock2",
+          },
+        ];
+        setKnowledge(mockKnowledge);
+      }
+    };
+    fetchBlogs();
   }, []);
 
   const data = activeTab === "Awards & Certifications" ? awards : knowledge;
@@ -174,8 +174,8 @@ export default function AwardsSection() {
                     setMobileIndex(0);
                   }}
                   className={`block text-left font-[Manrope] text-[20px] md:text-[32px] leading-[40px] font-normal tracking-[-0.64px] pb-2 border-b-2 transition-all duration-200 ${activeTab === tab
-                      ? "text-[#1656A5] border-[#1656A5]"
-                      : "text-gray-400 border-gray-200 hover:text-gray-600"
+                    ? "text-[#1656A5] border-[#1656A5]"
+                    : "text-gray-400 border-gray-200 hover:text-gray-600"
                     }`}
                 >
                   {tab}
@@ -214,9 +214,9 @@ export default function AwardsSection() {
 
                           <div>
 
-                          <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 mt-2">
-                            {item.subtitle}
-                          </p>
+                            <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 mt-2">
+                              {item.subtitle}
+                            </p>
                           </div>
 
                         </div>
@@ -225,7 +225,7 @@ export default function AwardsSection() {
                   ) : (
                     <article
                       key={idx}
-                    className="bg-white rounded-[16px]  csLg:min-w-[350px] csLg:max-w-[350px] csLg:h-[415px] overflow-hidden transition hover:shadow-md p-[24px] flex flex-col "
+                      className="bg-white rounded-[16px]  csLg:min-w-[350px] csLg:max-w-[350px] csLg:h-[415px] overflow-hidden transition hover:shadow-md p-[24px] flex flex-col "
                     >
                       <div className="flex items-center gap-1.5 mb-3 text-[#606060]/70 font-[Manrope] text-[14px] font-medium leading-[22px] tracking-[-0.3px]">
                         <span>{item.year}</span>
@@ -248,12 +248,12 @@ export default function AwardsSection() {
 
                         <div>
 
-                        <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 mt-2">
-                          {item.subtitle}
-                        </p>
-                         <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 ">
-                          {(item as Award).city}
-                        </p>
+                          <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 mt-2">
+                            {item.subtitle}
+                          </p>
+                          <p className="text-[#606060] font-[Manrope] text-[15px] leading-[24px] opacity-60 ">
+                            {(item as Award).city}
+                          </p>
                         </div>
 
                       </div>
@@ -266,12 +266,12 @@ export default function AwardsSection() {
             {/* Mobile view */}
             <div className="lg:hidden  bg-white p-[19.3px] rounded-[12.96px]">
               {activeTab === "Knowledge Center" && knowledge.length > 0 ? (
-                <Link href={"/blog/" + (data[mobileIndex] as Knowledge).url}>
-                  <article className="overflow-hidden p-0 cursor-pointer">
+                <article className="overflow-hidden p-0 cursor-pointer">
                     <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">
                       <span>{data[mobileIndex].year}</span>
                     </div>
 
+                    <Link href={"/blog/" + (data[mobileIndex] as Knowledge).url}>
                     <div className="w-full h-48 rounded-2xl overflow-hidden">
                       <img
                         src={data[mobileIndex].image}
@@ -279,6 +279,7 @@ export default function AwardsSection() {
                         className="w-full h-full object-cover"
                       />
                     </div>
+                    </Link>
 
                     <div className="pt-4 flex flex-col justify-between">
                       <h3 className="text-[#2C2C2C] font-[Manrope] text-[20px] font-normal leading-[28px] tracking-[-0.4px]">
@@ -290,30 +291,35 @@ export default function AwardsSection() {
                       </p>
                     </div>
 
-                   <div className="flex mt-6  items-center justify-between">
-                    <div className="flex gap-3">
+                    <div className="flex mt-6  items-center justify-between">
+                      <div className="flex gap-3">
 
-                    <button
-                      onClick={handlePrev}
-                      className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
-                    >
-                      <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
-                    </button>
-                    <button
-                      onClick={handleNext}
-                      className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
-                    >
-                      <ArrowRight className="w-5 h-5 text-[#1656A5]" />
-                    </button>
+                        <button
+                          onClick={handlePrev}
+                          className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                        >
+                          <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
+                        </button>
+                        <button
+                          onClick={handleNext}
+                          className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
+                        >
+                          <ArrowRight className="w-5 h-5 text-[#1656A5]" />
+                        </button>
+                      </div>
+                      <div className="">
+
+                        <button className="px-4 py-2 bg-[#1656A5] text-white rounded-lg w-28" 
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          router.push("/blog");
+                        }}>
+                          See all
+                        </button>
+                      </div>
                     </div>
-                     <div className="">
-                    <button className="px-4 py-2 bg-[#1656A5] text-white rounded-lg w-28" onClick={()=>router.push("/blog")}>
-                        See all
-                    </button>
-                </div>
-                  </div>
                   </article>
-                </Link>
               ) : activeTab === "Awards & Certifications" ? (
                 <article className="overflow-hidden p-0">
                   <div className="flex justify-between mb-3 text-[#606060]/70 font-[Manrope] text-[15px] font-medium leading-[24px] tracking-[-0.3px]">

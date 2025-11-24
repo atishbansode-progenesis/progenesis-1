@@ -4,12 +4,14 @@ import React, { Suspense, useState } from "react";
 import AppointmentForm from "../about/AppointmentForm";
 import { Doctor } from "@/data/doctors";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface DoctorsInfoProps {
   doctors: Doctor[];
 }
 
 const DoctorsInfo: React.FC<DoctorsInfoProps> = ({ doctors }) => {
+  const router = useRouter();
   const [isAppointmentFormOpen, setIsAppointmentFormOpen] = useState(false);
 
   return (
@@ -25,15 +27,15 @@ const DoctorsInfo: React.FC<DoctorsInfoProps> = ({ doctors }) => {
       <div className="pb-4">
         {doctors.map((d, idx) => (
           <div
-            key={d.slug || idx} // safe key
+            key={d.slug || idx}
             className="w-full border-b border-gray-200 py-3 md:py-4 mb-2 md:mb-3 last:border-b-0 last:mb-0"
           >
-            <Link 
-              href={`/doctors/${d.slug}`}
+            <div 
+              // href={`/doctors/${d.slug}`}
               className="grid grid-cols-1 lg:grid-cols-[320px_1fr_260px] lg:gap-10 items-start lg:hover:bg-[#1656A50D] lg:p-4 rounded-[16px] cursor-pointer"
             >
               {/* Left: Image */}
-              <div className="w-full h-full md:h-full lg:h-full overflow-hidden rounded-[16px] bg-gray-100">
+              <div className="w-full h-full md:h-full lg:h-full overflow-hidden rounded-[16px] bg-gray-100" onClick={()=>{router.push(`/doctors/${d.slug}`)}}> 
                 <img
                   src={d.image}
                   alt={d.name}
@@ -42,7 +44,6 @@ const DoctorsInfo: React.FC<DoctorsInfoProps> = ({ doctors }) => {
                 />
               </div>
 
-            </Link>
 
 
               {/* Middle: Content */}
@@ -98,8 +99,12 @@ const DoctorsInfo: React.FC<DoctorsInfoProps> = ({ doctors }) => {
                   Book Your Appointment
                 </button>
               </div>
+            </div>
+
           </div>
+          
         ))}
+        
       </div>
 
       {/* Appointment Form Modal */}

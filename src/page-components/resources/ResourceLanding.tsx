@@ -9,7 +9,7 @@ const ResourceLanding = ({ recentBlog }: any) => {
     <div>
       <section>
         <div
-          className="relative  w-full h-[728px] md:h-[560px] lg:h-[620px] xl:h-[680px] bg-center bg-cover"
+          className="relative  w-full  h-[520px] md:h-[560px] lg:h-[620px] xl:h-[680px] bg-center bg-cover"
           style={{ backgroundImage: isSmallDevice ? `url('/images/blog _cover.jpg')` : `url('/images/blog _cover.jpg')`}}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/70" />
