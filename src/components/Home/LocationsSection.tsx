@@ -281,7 +281,7 @@ export default function LocationsSection() {
              
               if (loc.subCities) {
                 return loc.subCities.map((sub, idx) => (
-                  <div key={`${loc.city}-${idx}`} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white ">
+                  <div key={`${loc.city}-${idx}`} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white cursor-pointer" onClick={() => router.push(`/${sub.slug}`)}>
                     
                     <div className="relative h-[400px] w-full">
                       <Image
@@ -336,7 +336,7 @@ export default function LocationsSection() {
             
               if (!loc.subCities) {
                 return (
-                  <div key={loc.city} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white ">
+                  <div key={loc.city} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white cursor-pointer" onClick={() => router.push(`/${loc.slug}`)}>
                     
                     <div className="relative h-[400px] w-full">
                       <Image
