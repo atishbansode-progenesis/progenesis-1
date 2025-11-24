@@ -4,7 +4,10 @@ export const metadata = {
   title: "Best IVF Center in India | High Success Rate | Progenesis IVF",
   description:
     "Progenesis IVF is India's leading fertility & IVF center offering world-class infertility treatments with high success rates.",
-  openGraph: {
+  alternates: {
+    canonical: "https://progenesisivf.com/",
+  },
+    openGraph: {
     title: "Best IVF Center in India | Progenesis IVF",
     description:
       "World-class IVF, ICSI, IUI, fertility preservation & advanced infertility treatment with high success rates.",
