@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 
 interface FAQ {
   uid: string;
@@ -108,9 +109,9 @@ const FAQCenters: React.FC<FAQCentersProps> = ({ data, isLoading = false }) => {
             Didn't find what you are looking for?
             <br />
             Checkout{" "}
-            <span className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px]">
+            <Link href="/blog" className="text-[#1656A5] underline decoration-[#2C2C2C80] decoration-[0.5px]">
               Patient Resources
-            </span>{" "}
+            </Link>{" "}
             section to know more.
           </p>
         </div>
