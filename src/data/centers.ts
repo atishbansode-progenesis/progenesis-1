@@ -423,26 +423,26 @@ export const centersData: Center[] = [
     desc: "(Kailash Nagar)"
   },
   {
-  id: 17,
-  slug: "best-ivf-center-in-kalyaninagar",
-  name: "Kalyani Nagar",
-  city: "Kalyani Nagar",
-  state: "MAHARASHTRA",
-  address: "203, 1st Floor, Suman Business Park, S. No. 15/1 to 6, Kalyani Nagar, Vadgaon Sheri, Pune, Maharashtra 411014",
-  pinCode: "411014",
-  image: "/LocationsSection/kalyaninagar.jpg",
-  phone: "+91 94239 71620",
-  email: "kalyaninagar@progenesis.in",
-  services: ["IVF", "Fertility Treatment", "Counseling"],
-  mapUri: "1L5QhJpTh6zH8Hn26",
-  coordinates: { lat: 18.5516603, lng: 73.9028901 },
-  gallery: Array.from({ length: 4 }, (_, i) => `/AllCentersImage/KalyaniNagar/Kalyaninagar${i + 1}.jpg`),
-  availableDoctors: [0],
-  metadata: {
-    title: "Best IVF Center in Kalyani Nagar Pune | Progenesis IVF",
-    description: "Progenesis Fertility Center in Kalyani Nagar, Pune offers advanced IVF, ICSI, and IUI treatments with expert fertility specialists. Book your consultation today."
-  },
-  icon: "/images/Kalyaninagar.jpg",
+    id: 17,
+    slug: "best-ivf-center-in-kalyaninagar",
+    name: "Kalyani Nagar",
+    city: "Kalyani Nagar",
+    state: "MAHARASHTRA",
+    address: "203, 1st Floor, Suman Business Park, S. No. 15/1 to 6, Kalyani Nagar, Vadgaon Sheri, Pune, Maharashtra 411014",
+    pinCode: "411014",
+    image: "/LocationsSection/kalyaninagar.jpg",
+    phone: "+91 94239 71620",
+    email: "kalyaninagar@progenesis.in",
+    services: ["IVF", "Fertility Treatment", "Counseling"],
+    mapUri: "1L5QhJpTh6zH8Hn26",
+    coordinates: { lat: 18.5516603, lng: 73.9028901 },
+    gallery: Array.from({ length: 4 }, (_, i) => `/AllCentersImage/Kalyaninagar/Kalyaninagar${i + 1}.jpg`),
+    availableDoctors: [0],
+    metadata: {
+      title: "Best IVF Center in Kalyani Nagar Pune | Progenesis IVF",
+      description: "Progenesis Fertility Center in Kalyani Nagar, Pune offers advanced IVF, ICSI, and IUI treatments with expert fertility specialists. Book your consultation today."
+    },
+    icon: "/images/Kalyaninagar.jpg",
     desc: "(Wadgaon Sheri)"
-}
+  }
 ];
