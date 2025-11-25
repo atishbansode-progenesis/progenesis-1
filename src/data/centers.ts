@@ -436,7 +436,7 @@ export const centersData: Center[] = [
   services: ["IVF", "Fertility Treatment", "Counseling"],
   mapUri: "1L5QhJpTh6zH8Hn26",
   coordinates: { lat: 18.5516603, lng: 73.9028901 },
-  gallery: Array.from({ length: 4 }, (_, i) => `/AllCentersImage/KalyaniNagar/KalyaniNagar${i + 1}.jpg`),
+  gallery: Array.from({ length: 4 }, (_, i) => `/AllCentersImage/KalyaniNagar/Kalyaninagar${i + 1}.jpg`),
   availableDoctors: [0],
   metadata: {
     title: "Best IVF Center in Kalyani Nagar Pune | Progenesis IVF",
