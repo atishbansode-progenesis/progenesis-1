@@ -3,6 +3,9 @@ import SuccessStoriesPage from "@/page-components/success-stories/SuccessStories
 export const metadata = {
   title: "IVF, IUI and Fertility Treatment Success Stories and Patient Testimonials",
   description: "Watch videos of our patient testimonials. IVF, IUI and fertility treatment pregnancy success stories of patients.",
+  alternates: {
+    canonical: "https://progenesisivf.com/success-stories",
+  },
 }
 
 const page = () => {

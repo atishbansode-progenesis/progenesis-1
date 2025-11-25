@@ -1,9 +1,11 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /_next/
+Disallow: /api/
 
 # Host
-Host: https://progenesisivf.com
+Host: http://localhost:3000
 
 # Sitemaps
-Sitemap: https://progenesisivf.com/sitemap.xml
+Sitemap: http://localhost:3000/sitemap.xml

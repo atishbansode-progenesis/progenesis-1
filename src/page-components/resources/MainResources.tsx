@@ -10,7 +10,7 @@ import AppointmentForm from "../about/AppointmentForm";
 import YouTubePlaylist from "./YouTubePlaylist";
 import StoriesSection from "@/components/Home/StoriesSection";
 
-const MainResources = async ({ initialBlogs, totalCount }: any) => {
+const MainResources = ({ initialBlogs, totalCount }: any) => {
   return (
     <div>
       <ResourceLanding recentBlog={initialBlogs[0]}/>

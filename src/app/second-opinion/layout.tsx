@@ -3,6 +3,9 @@ import React from 'react';
 export const metadata = {
   title: "Get a Second Opinion on IVF from a Top Fertility Expert",
   description: "With the help of our special IVF Second Opinion, you will have the chance to talk with a fertility specialist in-depth. get expert advice on fertility.",
+  alternates: {
+    canonical: "https://progenesisivf.com/second-opinion",
+  },
 }
 
 export default function SecondOpinionLayout({

@@ -37,6 +37,7 @@ export const MaleInfertilitySection: React.FC<MaleInfertilitySectionProps> = ({
         <div className="grid mt-[40px] gap-[8px] lg:pt-[120px] grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 justify-center xl:justify-start lg:rounded-[16px]">
           {issues.map((item) => (
             <Link
+              key={item.slug}
               href={`/infertility/male/${item.slug}`}
               className="relative flex flex-col items-center justify-start w-full h-[400px] px-6 pt-6 pb-[30px] gap-[16px] rounded-[16px] bg-[#1656A5]/5 overflow-hidden"
             >

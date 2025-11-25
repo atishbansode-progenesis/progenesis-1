@@ -27,6 +27,9 @@ export const metadata = {
       "World-class IVF, ICSI, IUI, fertility preservation & advanced infertility treatment with high success rates.",
     images: ["https://progenesisivf.com/logo1.png"],
   },
+  alternates: {
+    canonical: "https://progenesisivf.com/",
+  },
 };
 
 export default function Home() {

@@ -8,6 +8,9 @@ export const metadata = {
   title: "Best IVF Doctors in India | Fertility Specialist in India",
   description:
     "Best fertility doctors in India, Progenesis team of fertility specialists provides the highest success rates on fertility treatments. Click to know more.",
+  alternates: {
+    canonical: "https://progenesisivf.com/doctors",
+  },
 };
 
 

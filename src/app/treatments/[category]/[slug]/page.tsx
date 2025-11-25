@@ -127,13 +127,16 @@ function getTreatmentMetadata(slug: string): { title: string; description: strin
 }
 
 export async function generateMetadata({ params }: TreatmentPageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { category, slug } = await params;
   const metadata = getTreatmentMetadata(slug);
 
   if (metadata) {
     return {
       title: metadata.title,
       description: metadata.description,
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_SITE_URL || "https://progenesisivf.com"}/treatments/${category}/${slug}`,
+      },
     };
   }
 

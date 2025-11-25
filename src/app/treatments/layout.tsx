@@ -2,7 +2,10 @@ import React from 'react';
 
 export const metadata = {
   title: "Treatments for Infertility | Advanced Fertility Treatments",
-  description: "Progenesis Fertility Center provides all advanced fertility treatments under one roof with its world-class labs and other technologies for all fertility problems.",
+  description: "Progenesis IVF offers comprehensive fertility treatments including IVF, ICSI, IUI, and advanced procedures. Get expert care in one location.",
+  alternates: {
+    canonical: (process.env.NEXT_PUBLIC_SITE_URL || "https://progenesisivf.com") + "/treatments",
+  },
 }
 
 export default function TreatmentsLayout({

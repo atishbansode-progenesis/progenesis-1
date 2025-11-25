@@ -93,7 +93,7 @@ export const generateMetadata = async ({
 
   const blog = response.results[0];
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://progenesisivf.com';
-  const fullUrl = `${siteUrl}/${blog.post_url}`;
+  const fullUrl = `${siteUrl}/blog/${blog.post_name}`;
 
   return {
     title: blog.seo_title_final || blog.post_title,

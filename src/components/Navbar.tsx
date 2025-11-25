@@ -1790,7 +1790,6 @@ export default function Navbar({ doctors }: { doctors: Doctor[] }) {
   };
 
   const stickyNavBar = ["/", "/our-center/", "/about-progenesis/leadership-team/", "/careers/", "our-center", "doctors", "blog", "/doctors/", "/success-stories/", "/privacy-policy/"]
-  console.log("pathname", pathname)
   const isSticky =
   stickyNavBar.includes(pathname) ||
   pathname.startsWith("/our-center/") ||

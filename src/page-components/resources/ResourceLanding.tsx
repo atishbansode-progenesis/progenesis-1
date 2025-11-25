@@ -1,9 +1,13 @@
 'use client'
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../about/AboutMain.css";
 
 const ResourceLanding = ({ recentBlog }: any) => {
-  const isSmallDevice = window.innerWidth < 768;  
+  const [isSmallDevice, setIsSmallDevice] = useState(false);
+
+  useEffect(() => {
+    setIsSmallDevice(window.innerWidth < 768);
+  }, []);  
   
   return (
     <div>
@@ -20,7 +24,7 @@ const ResourceLanding = ({ recentBlog }: any) => {
                 Featured
               </span>
 
-              <a href={`/${recentBlog?.post_url}`} className="flex items-center w-full relative cursor-pointer group">
+              <a href={`/blog/${recentBlog?.post_name}`} className="flex items-center w-full relative cursor-pointer group">
                 <h1 className="text-[#F9F9F9] font-semibold leading-tight md:leading-tight lg:leading-tight text-[28px] sm:text-[34px] md:text-[40px] lg:text-[52px] xl:text-[56px] line-clamp-2 group-hover:text-[#f1e8e8]">
                   <span dangerouslySetInnerHTML={{ __html: recentBlog?.post_title }} />
                   <img

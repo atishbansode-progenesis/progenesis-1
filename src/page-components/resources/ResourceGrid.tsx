@@ -5,12 +5,24 @@ import React, { useState, useEffect } from "react";
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const PAGE_SIZE = 12;
 
+interface BlogCard {
+  post_name: string;
+  post_title: string;
+  seo_description_final?: string;
+  post_content?: string;
+  image: string;
+  title: string;
+  created?: string;
+  posted?: string;
+  views?: number | string;
+}
+
 interface ResourceGridProps {
   eyebrowLabel?: string;
   heading?: string;
   showEyebrow?: boolean;
   showHeading?: boolean;
-  initialBlogs: any[];
+  initialBlogs: BlogCard[];
   totalCount: number;
 }
 
@@ -34,10 +46,11 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
   initialBlogs,
   totalCount,
 }) => {
-  const [cards, setCards] = useState(initialBlogs);
+  const [cards, setCards] = useState<BlogCard[]>(initialBlogs);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [descriptions, setDescriptions] = useState<string[]>(initialBlogs.map((card: BlogCard) => card.seo_description_final || ''));
 
   const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 
@@ -54,7 +67,8 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
       }
 
       const data = await response.json();
-      setCards(data.results ?? []);
+      setCards(data.results as BlogCard[] ?? []);
+      setDescriptions(data.results?.map((card: BlogCard) => card.seo_description_final || '') ?? []);
     } catch (err: unknown) {
       if (err instanceof Error) setError(err.message);
       else setError("Something went wrong");
@@ -66,10 +80,27 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
   useEffect(() => {
     if (currentPage === 1) {
       setCards(initialBlogs);
+      setDescriptions(initialBlogs.map((card: BlogCard) => card.seo_description_final || ''));
     } else {
       fetchBlogs();
     }
   }, [currentPage]);
+
+  useEffect(() => {
+    const extractDescriptions = () => {
+      const newDescriptions = cards.map((card: BlogCard) => {
+        if (card.post_content) {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(card.post_content, 'text/html');
+          const pElements = doc.querySelectorAll('p');
+          return Array.from(pElements).map(p => p.textContent).join(' ') || card.seo_description_final || '';
+        }
+        return card.seo_description_final || '';
+      });
+      setDescriptions(newDescriptions);
+    };
+    extractDescriptions();
+  }, [cards]);
 
   const handlePrevious = () => {
     if (currentPage > 1) {
@@ -116,26 +147,20 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cards?.map((card: any) => {
+            {cards?.map((card: BlogCard, index: number) => {
               const formattedDate = card.created
                 ? new Intl.DateTimeFormat("en-IN", {
                     month: "long",
                     year: "numeric",
                   }).format(new Date(card.created))
-                : card.posted || "Recently";
+                : card.posted || "";
 
               const views =
                 typeof card.views === "number" ? `${card.views}` : card.views;
-              const extractPText = (html: string) => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const pElements = doc.querySelectorAll('p');
-                return Array.from(pElements).map(p => p.textContent).join(' ');
-              };
 
               return (
                 <Link
-                  key={card.post_url || card.slug}
+                  key={card.post_name}
                   href={`/blog/${card.post_name}`}
                   className="group flex h-full flex-col rounded-2xl border border-transparent transition-shadow"
                 >
@@ -159,7 +184,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                         {card.post_title}
                       </h4>
                       <p className="text-[13px] text-[#606060]/50 leading-[19.29px] line-clamp-2">
-                        {card.post_content ? extractPText(card.post_content) : card.seo_description_final}
+                        {descriptions[index] || card.seo_description_final}
                       </p>
                     </div>
                   </article>

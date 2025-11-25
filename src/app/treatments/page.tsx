@@ -67,7 +67,7 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
   return href ? <Link href={href}>{cardContent}</Link> : cardContent;
 }
 
-const TreatmentsPage: React.FC = () => {
+const TreatmentsPage: React.FC<{ category?: string }> = ({ category }) => {
   const categories = [
     { id: "path", label: "Your Path to Parenthood" },
     { id: "advanced", label: "Advanced Infertility Treatments" },
@@ -261,6 +261,28 @@ const TreatmentsPage: React.FC = () => {
         return () => observer.disconnect();
       }, []);
   
+
+  useEffect(() => {
+    if (category) {
+      const map: Record<string, string> = {
+        advanced: "advanced",
+        infertility: "infertility",
+        "fertility-preservation": "fertility-preservation",
+        "fertility-evaluation": "fertility-evaluation",
+        stories: "stories-section",
+      };
+      const targetId = map[category.toLowerCase()];
+      if (targetId) {
+        const raf = requestAnimationFrame(() => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+        return () => cancelAnimationFrame(raf);
+      }
+    }
+  }, [category]);
 
   return (
     <div className="w-full flex flex-col">

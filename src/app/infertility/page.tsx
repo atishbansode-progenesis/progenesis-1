@@ -55,30 +55,47 @@ export function FeatureCard({ title, description, href }: FeatureCardProps) {
   return href ? <Link href={href}>{cardContent}</Link> : cardContent;
 }
 
-const Infertility: React.FC<{ category: string }> = ({ category }) => {
-  const [activeTab, setActiveTab] = useState<string>("path");
+const Infertility = ({ category }: { category?: string }) => {
+  const [activeTab, setActiveTab] = useState("path");
 
-    useEffect(() => {
-      const sections = document.querySelectorAll("section[id]");
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveTab(entry.target.id);
-            }
-          });
-        },
-        {
-          threshold: 0, 
-          rootMargin: "0px 0px -80% 0px", 
-        }
-      );
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveTab(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0, 
+        rootMargin: "0px 0px -80% 0px", 
+      }
+    );
   
-      sections.forEach((section) => observer.observe(section));
-      return () => observer.disconnect();
-    }, []);
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
+  useEffect(() => {
+    if (category) {
+      const map: Record<string, string> = {
+        female: "fertility-section",
+        male: "fertility-mini-section",
+      };
+      const targetId = map[category.toLowerCase()];
+      if (targetId) {
+        const raf = requestAnimationFrame(() => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+        return () => cancelAnimationFrame(raf);
+      }
+    }
+  }, [category]);
 
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);

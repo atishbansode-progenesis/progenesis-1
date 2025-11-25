@@ -17,6 +17,7 @@ import MainInfertility from "@/page-components/infertility-slug/MainInfertility"
 
 type InfertilityIssuesProps = {
   params: Promise<{
+    category: string;
     slug: string;
   }>;
 };
@@ -74,13 +75,16 @@ function getInfertilityMetadata(slug: string): { title: string; description: str
 }
 
 export async function generateMetadata({ params }: InfertilityIssuesProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { category, slug } = await params;
   const metadata = getInfertilityMetadata(slug);
 
   if (metadata) {
     return {
       title: metadata.title,
       description: metadata.description,
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_SITE_URL || "https://progenesisivf.com"}/infertility/${category}/${slug}`,
+      },
     };
   }
 
@@ -90,9 +94,10 @@ export async function generateMetadata({ params }: InfertilityIssuesProps): Prom
   };
 }
 
+
 export default function InfertilityIssues({ params }: InfertilityIssuesProps) {
   // ✅ Unwrap params Promise using React.use()
-  const { slug } = React.use(params);
+  const { category, slug } = React.use(params);
 
   let data;
 

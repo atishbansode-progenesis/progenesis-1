@@ -35,6 +35,9 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
       // Remove actual line breaks
       .replace(/\r?\n/g, " ")            // Replace with space to avoid gluing words
 
+      // Remove image tags
+      .replace(/<img[^>]*>/g, "")
+
       .trim();
   }, [data?.post_content]);
 
@@ -72,6 +75,7 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
 
 
   const extractPText = (html: string) => {
+    if (typeof DOMParser === 'undefined') return '';
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     const pElements = doc.querySelectorAll('p');

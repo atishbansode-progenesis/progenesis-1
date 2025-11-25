@@ -2,7 +2,10 @@ import React from 'react';
 
 export const metadata = {
   title: "Fertility Issues | Causes of Infertility",
-  description: "Multiple issues can be responsible for causing infertility in people and hindering their chances of achieving parenthood successfully. Know in detail about all fertility issues.",
+  description: "Learn about common infertility causes, from hormonal imbalances to lifestyle factors. Get comprehensive solutions and expert guidance at Progenesis IVF.",
+  alternates: {
+    canonical: (process.env.NEXT_PUBLIC_SITE_URL || "https://progenesisivf.com") + "/infertility",
+  },
 }
 
 export default function InfertilityLayout({
