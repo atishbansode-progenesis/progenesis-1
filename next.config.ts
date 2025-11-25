@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   trailingSlash: true,
+  output: 'standalone',
   async redirects() {
     return [
       {
