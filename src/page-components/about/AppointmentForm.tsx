@@ -852,7 +852,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   return (
     <div className="relative w-full">
 
-      <img src="/video/BabyImage.jpeg" alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
+      <img src="/video/BabyImage.webp" alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
 
       <div className="absolute inset-0 bg-black/40"></div>
 
@@ -879,7 +879,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
             )}
           </div>
 
-          <div className="flex-1 relative bg-[url('/images/HomeAppointment.png')] bg-cover bg-center   rounded-[16px] h-[443px] lg:h-auto mt-4 lg:mt-0"></div>
+          <div className="flex-1 relative bg-[url('/images/HomeAppointment.webp')] bg-cover bg-center   rounded-[16px] h-[443px] lg:h-auto mt-4 lg:mt-0"></div>
         </div>
       </section>
 

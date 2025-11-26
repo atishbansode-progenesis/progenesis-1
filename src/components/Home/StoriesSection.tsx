@@ -61,7 +61,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
   const getThumbnail = (index: number) => {
     // If you have specific mapping or filenames, replace this logic
     // e.g. return `/StoriesSection/TH${index+1}.png`
-    return `/StoriesSection/TH${index + 1}.png`;
+    return `/StoriesSection/TH${index + 1}.webp`;
   };
 
   const getCardStyle = () => {

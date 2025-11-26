@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 const TestimonialsSection = ({
   rating,
@@ -72,8 +73,10 @@ const TestimonialsSection = ({
                 />
 
                 {/* Desktop image */}
-                <img
-                  src="/images/g2.svg"
+                <Image
+                  width={45}
+                  height={45}
+                  src="/images/g2.webp"
                   alt="Google"
                   className="mr-[4px] hidden csLg:block"
                 />
@@ -129,13 +132,17 @@ const TestimonialsSection = ({
                 className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition swiper-button-prev-custom"
               >
                 {/* Default white icon */}
-                <img
+                <Image
+                width={14}
+                height={14}
                   src="/icons/left-white.svg"
                   alt="left"
                   className="block group-hover:hidden"
                 />
                 {/* Hover icon */}
-                 <img
+                 <Image
+                width={14}
+                height={14}
                   src="/icons/left.svg"
                   alt="left-hover"
                   className="hidden group-hover:block"
@@ -148,13 +155,17 @@ const TestimonialsSection = ({
                 className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition swiper-button-next-custom"
               >
                 {/* Default white icon */}
-                <img
+               <Image
+                width={14}
+                height={14}
                   src="/icons/right-white.svg"
                   alt="right"
                   className="block group-hover:hidden"
                 />
                 {/* Hover icon */}
-                <img
+                <Image
+                width={14}
+                height={14}
                   src="/icons/right.svg"
                   alt="right-hover"
                   className="hidden group-hover:block"
@@ -168,7 +179,7 @@ const TestimonialsSection = ({
         <div
           className="relative bg-cover bg-center h-full csLg:w-[70%] py-[42px] pl-4 md:pl-0 md:pt-[82px]"
           style={{
-            backgroundImage: "url('/TestimonialsSection/testimonial.png')",
+            backgroundImage: "url('/TestimonialsSection/testimonial.webp')",
           }}
         >
           {mounted && (
