@@ -64,6 +64,11 @@ const nextConfig: NextConfig = {
         source: '/ivf-center-in-ghatkopar',
         destination: '/our-center/best-ivf-center-in-ghatkopar',
         permanent: true,
+      },
+      {
+        source: '/fertility-consultation',
+        destination: '/',
+        permanent: true,
       }
     ];
   },
