@@ -134,7 +134,7 @@ export default function StoriesSection({ tag: propTag, heading: propHeading }: S
       <div className="px-4 md:px-[80px] lg:px-[120px]">
         {/* Header */}
         <div className="mb-[20px]">
-          <button onClick={()=> router.push("/success-stories")} className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
+          <button aria-label="route to stories" onClick={()=> router.push("/success-stories")} className="cursor-pointer bg-[#1656A5]/5 px-2 py-1 rounded-[8px] text-[12px] font-medium text-[#1656A5]">
             {tag}
           </button>
         </div>

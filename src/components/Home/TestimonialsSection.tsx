@@ -128,6 +128,7 @@ const TestimonialsSection = ({
             <div className="flex space-x-4">
               {/* Prev Button */}
               <button
+              aria-label="navigate backward"
                 ref={prevRef}
                 className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition swiper-button-prev-custom"
               >
@@ -151,6 +152,7 @@ const TestimonialsSection = ({
 
               {/* Next Button */}
               <button
+                aria-label="navigate forward"
                 ref={nextRef}
                 className="group w-14 h-14 cursor-pointer flex items-center justify-center border border-white rounded-lg hover:bg-white transition swiper-button-next-custom"
               >
