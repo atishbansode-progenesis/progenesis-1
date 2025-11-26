@@ -423,7 +423,7 @@ export const centersData: Center[] = [
     desc: "(Kailash Nagar)"
   },
   {
-    id: 17,
+    id: 18,
     slug: "best-ivf-center-in-kalyaninagar",
     name: "Pune - Kalyani Nagar",
     city: "Kalyani Nagar",
@@ -440,9 +440,55 @@ export const centersData: Center[] = [
     availableDoctors: [0],
     metadata: {
       title: "Best IVF Center in Kalyani Nagar Pune | Progenesis IVF",
-      description: "Progenesis Fertility Center in Kalyani Nagar, Pune offers advanced IVF, ICSI, and IUI treatments with expert fertility specialists. Book your consultation today."
+      description: "Progenesis Fertility Center in Kalyani Nagar - Pune, offers advanced IVF, ICSI, and IUI treatments with expert fertility specialists. Book your consultation today."
     },
     icon: "/images/Kalyaninagar.jpg",
     desc: "(Wadgaon Sheri)"
+  },
+  {
+    id: 19,
+    slug: "best-ivf-center-in-dhule",
+    name: "Dhule",
+    city: "Dhule",
+    state: "MAHARASHTRA",
+    address: "Wakaskar Chambers, Datta Mandir Chowk, Agra Road, Deopur, Dhule, Maharashtra 424005",
+    pinCode: "424005",
+    image: "/LocationsSection/dhule.jpg",
+    phone: "+91 94239 71620",
+    email: "dhule@progenesis.in",
+    services: ["IVF", "Fertility Treatment", "Counseling"],
+    mapUri: "BtembQ7Q9Tde9ZC59",
+    coordinates: { lat: 20.9248414, lng: 74.7767421 },
+    gallery: Array.from({ length: 3 }, (_, i) => `/AllCentersImage/Dhule/Dhule${i + 1}.jpg`),
+    availableDoctors: [0],
+    metadata: {
+      title: "Best IVF Center in Dhule | Top IVF Clinic in Dhule",
+      description: "Progenesis Fertility Center in Dhule, offers advanced IVF, ICSI, & IUI treatments with expert fertility specialists. Book your consultation today."
+    },
+    icon: "/images/Dhule.jpg",
+    desc: "(Wakaskar Chambers)"
+  },
+  {
+    id: 20,
+    slug: "best-ivf-center-in-nanded",
+    name: "Nanded",
+    city: "Nanded",
+    state: "MAHARASHTRA",
+    address: "2nd Floor, Anuradha Heights, Star Engineering Works, 111 C, R.G. Gupta Co-op Industrial Estate, Shivaji Nagar, Nanded, Maharashtra 431602",
+    pinCode: "431602",
+    image: "/LocationsSection/nanded.jpg",
+    phone: "+91 94239 71620",
+    email: "nanded@progenesis.in",
+    services: ["IVF", "Fertility Treatment", "Counseling"],
+    mapUri: "T7s8XwkB5A4Ufvmw6",
+    coordinates: { lat: 19.1663816, lng: 77.3053653 },
+    gallery: Array.from({ length: 3 }, (_, i) => `/AllCentersImage/Nanded/Nanded${i + 1}.jpg`),
+    availableDoctors: [0],
+    metadata: {
+      title: "Best IVF Center in Nanded | Top IVF Clinic in Nanded",
+      description: "Progenesis Fertility Center in Nanded, offers advanced IVF, ICSI, & IUI treatments with expert fertility specialists. Book your consultation today."
+    },
+    icon: "/images/Nanded.jpg",
+    desc: "(Shivaji Nagar)"
   }
 ];
