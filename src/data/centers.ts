@@ -425,7 +425,7 @@ export const centersData: Center[] = [
   {
     id: 17,
     slug: "best-ivf-center-in-kalyaninagar",
-    name: "Kalyani Nagar",
+    name: "Pune - Kalyani Nagar",
     city: "Kalyani Nagar",
     state: "MAHARASHTRA",
     address: "203, 1st Floor, Suman Business Park, S. No. 15/1 to 6, Kalyani Nagar, Vadgaon Sheri, Pune, Maharashtra 411014",
@@ -434,9 +434,9 @@ export const centersData: Center[] = [
     phone: "+91 94239 71620",
     email: "kalyaninagar@progenesis.in",
     services: ["IVF", "Fertility Treatment", "Counseling"],
-    mapUri: "1L5QhJpTh6zH8Hn26",
-    coordinates: { lat: 18.5516603, lng: 73.9028901 },
-    gallery: Array.from({ length: 4 }, (_, i) => `/AllCentersImage/Kalyaninagar/Kalyaninagar${i + 1}.jpg`),
+    mapUri: "AcaABsKTzzdaY2Yb9",
+    coordinates: { lat: 18.5460476, lng: 73.906488 },
+    gallery: Array.from({ length: 3 }, (_, i) => `/AllCentersImage/Kalyaninagar/Kalyaninagar${i + 1}.jpg`),
     availableDoctors: [0],
     metadata: {
       title: "Best IVF Center in Kalyani Nagar Pune | Progenesis IVF",
