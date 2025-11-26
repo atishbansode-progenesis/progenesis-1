@@ -82,17 +82,17 @@ export default function LocationsSection() {
 
         {/* Content */}
         <div className=" hidden csLg:flex flex-col md:flex-row gap-8">
-          {/* Left: clickable list */}
+
           <div className="hidden md:flex md:flex-col md:w-1/3 space-y-4 pr-2 overflow-y-auto h-[450px] cursor-pointer">
             {locations.map((loc, idx) => {
               const isOpen = openCity === loc.city;
 
-              // CASE 1: Parent with subCities
+             
               if (loc.subCities) {
                 return (
                   <div key={idx} className="w-full">
 
-                    {/* Parent Card */}
+                 
                     <motion.button
                       onClick={() => toggleCity(loc.city)}
                       onMouseEnter={() => setActiveLocation(loc)}
@@ -115,7 +115,7 @@ export default function LocationsSection() {
                         transition={{ duration: 0.3 }}
                         className={`flex items-center justify-center w-14 h-10 rounded-full border`}
                       >
-                        {/* Arrow DOWN */}
+                      
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                           <path d="M9 11L12 14L15 11" stroke="currentColor" strokeLinecap="square" strokeLinejoin="round" />
                         </svg>
@@ -123,7 +123,7 @@ export default function LocationsSection() {
                     </motion.button>
 
 
-                    {/* SubCities */}
+              
                     <AnimatePresence>
                       {isOpen && (
                         <motion.div

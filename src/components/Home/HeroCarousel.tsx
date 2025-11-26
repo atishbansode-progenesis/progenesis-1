@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
+import Image from "next/image";
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -138,7 +139,7 @@ const HeroCarousel = () => {
                   muted
                   playsInline
                   loop
-                  autoPlay={index === 0} // ✅ autoplay first video
+                  autoPlay={index === 0} // autoplay first video
                   preload={index === 0 ? "auto" : "metadata"}
                   className="absolute inset-0 w-full h-full object-cover z-20"
                   onLoadedData={(e) => {
@@ -149,9 +150,11 @@ const HeroCarousel = () => {
                   }}
                 />
 
-                {/* 🖼 Fade-out Thumbnail */}
+                {/* Fade-out Thumbnail */}
                 {index === 0 && (
-                  <img
+                  <Image
+              width={100}
+                  height={100}
                     src={slide.thumbnail}
                     alt="thumbnail"
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
@@ -161,7 +164,9 @@ const HeroCarousel = () => {
                 )}
               </div>
             ) : (
-              <img
+              <Image
+              width={100}
+              height={100}
                 src={slide.thumbnail}
                 alt={slide.title}
                 className="w-full h-full object-cover"

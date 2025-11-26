@@ -30,28 +30,28 @@ const awards: Award[] = [
     title: "Best Hospital for Reproductive Medicine...",
     subtitle: "Business Excellence and Research Group (BERG) Singapore",
     city: "",
-    image: "/awards/awards.png",
+    image: "/awards/awards.webp",
   },
   {
     year: "2016-17",
     title: "World's Greatest Brand & World's Greatest Leaders",
     subtitle: "URS and ASIA ONE",
     city: "In Dubai",
-    image: "/awards/awardsa.png",
+    image: "/awards/awardsa.webp",
   },
   {
     year: "2017-18",
     title: "India's Fastest Growing Brand in IVF,Brand in IVF",
     subtitle: "URS and ASIA ONE",
     city: "In Dubai",
-    image: "/awards/awardsb.png",
+    image: "/awards/awardsb.webp",
   },
   {
     year: "2023-24",
     title: "The Number 1 IVF Centre for Emerging IVF Centre Category",
     subtitle: "The Times",
     city: "of India",
-    image: "/awards/awardsc.png",
+    image: "/awards/awardsc.webp",
   },
 ];
 
