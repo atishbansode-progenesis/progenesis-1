@@ -72,7 +72,7 @@ export default function LocationsSection() {
 
           <div className="md:flex-none flex items-start csLg:items-end">
             <Link href="/our-center">
-              <button className="cursor-pointer px-4 md:px-6 py-2 border border-[#1656a5] text-[#1656a5] rounded-lg transition text-sm hover:bg-[#1656a5] hover:text-white">
+              <button aria-label="View all centers" className="cursor-pointer px-4 md:px-6 py-2 border border-[#1656a5] text-[#1656a5] rounded-lg transition text-sm hover:bg-[#1656a5] hover:text-white">
                 View all Centers
               </button>
             </Link>
@@ -139,6 +139,7 @@ export default function LocationsSection() {
                               activeLocation.name === sub.name;
                             return (
                               <button
+                              aria-label="name"
                                 key={i}
                                 onClick={() => router.push(`/${sub.slug}`)}
                                 onMouseEnter={() => setActiveLocation(sub)}
@@ -198,6 +199,7 @@ export default function LocationsSection() {
                 activeLocation.city === loc.city;
               return (
                 <button
+                aria-label="city"
                   key={idx}
                   onClick={() => router.push(`/${loc.slug}`)}
                   onMouseEnter={() => setActiveLocation(loc)}

@@ -189,6 +189,7 @@ const FaQ: React.FC = () => {
                       ) : (
                         <img
                           src="/images/icons/downward.svg"
+                          alt="downward-image"
                           className="w-[10px] h-[10px] object-contain"
                         />
                       )}

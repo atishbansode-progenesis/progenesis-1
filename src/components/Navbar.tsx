@@ -1874,9 +1874,9 @@ export default function Navbar({ doctors }: { doctors: Doctor[] }) {
                 </svg>
               </button>
 
-              <span className=" md:hidden flex items-center justify-center w-[24px] h-[24px] shrink-0">
+              <span className=" md:hidden bg-gray-100 hover:bg-gray-200 h-10 w-10 flex items-center justify-center rounded-lg  shrink-0">
 
-                <a href="tel:+917030944041">
+                <a href="tel:+917030944041" aria-label="Call support">
                            <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="17"
@@ -1895,6 +1895,7 @@ export default function Navbar({ doctors }: { doctors: Doctor[] }) {
 
               {/* MENU BUTTON */}
               <button
+              aria-label="sidebar dock"
                 className="lg:hidden flex items-center justify-center h-10 w-10 rounded-lg bg-gray-100"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >

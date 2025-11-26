@@ -113,6 +113,7 @@ const FaQ: React.FC = () => {
               const active = idx === activeTab;
               return (
                 <button
+                aria-label="Click to view"
                   key={t.label}
                   onClick={() => handleTab(idx)}
                   className={`h-[56px] w-auto px-4 rounded-[16px] border text-sm font-medium hover:cursor-pointer transition-colors ${active
@@ -138,12 +139,13 @@ const FaQ: React.FC = () => {
                     }`}
                 >
                   <button
+                  aria-label="expand"
                     aria-expanded={open}
                     onClick={() => setOpenIndex(open ? -1 : i)}
                     className="w-full flex items-center justify-between gap-3 hover:cursor-pointer text-left md:py-4 py-4 rounded-2xl  text-[14px] md:text-[15px] text-[#2C2C2C]"
                   >
                     <span className="pl-4 pr-2">{item.q}</span>
-                    <span className="text-gray-500 pr-2">{open ? <img src='/images/icons/upward.svg' className="w-[10px] h-[10px] object-contain" /> : <img src='/images/icons/downward.svg' className="w-[10px] h-[10px] object-contain" />}</span>
+                    <span className="text-gray-500 pr-2">{open ? <img src='/images/icons/upward.svg' alt="upward arrow" className="w-[10px] h-[10px] object-contain" /> : <img src='/images/icons/downward.svg' alt="downward image" className="w-[10px] h-[10px] object-contain" />}</span>
                   </button>
                   {open && (
                     <div className="pl-4 pb-4 pr-4  text-left md:text-[16px] md:leading-6 text-[14px] text-[#4B5563]" >

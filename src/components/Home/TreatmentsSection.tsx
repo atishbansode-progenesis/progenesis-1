@@ -90,7 +90,7 @@ const TreatmentsSection = () => {
                 </h2>
               </div>
 
-              <button onClick={() => window.open("/treatments", "_blank")} className="px-[14px] xl:mt-[40px] w-fit cursor-pointer xl:px-12 py-[12px] xl:py-3 xl:rounded-[16px] rounded-[8px] text-[12px] xl:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
+              <button aria-label="view all treatments" onClick={() => window.open("/treatments", "_blank")} className="px-[14px] xl:mt-[40px] w-fit cursor-pointer xl:px-12 py-[12px] xl:py-3 xl:rounded-[16px] rounded-[8px] text-[12px] xl:text-sm font-medium border border-[#1656A5] text-[#1656A5] hover:bg-[#1656A5] hover:text-white transition">
                 View all treatments
               </button>
             </div>
@@ -164,7 +164,7 @@ const TreatmentsSection = () => {
                     </p> */}
                   </div>
                 </div>
-                <button onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
+                <button  aria-label="Learn More" onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
 
                 {/* Arrow Button (Clickable Link) */}
                 <Link href={item.link} passHref>
@@ -226,7 +226,7 @@ const TreatmentsSection = () => {
                     </p> */}
                   </div>
                 </div>
-                <button onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
+                <button aria-label="Learn More" onClick={() => window.open(item.link, "_blank")} className="bg-[#f3f6fa] mt-2 block xl:hidden px-4 w-full p-2 min-h-[56px] rounded-[16px] flex justify-between items-center text-[14px] font-[Manrope] font-regular text-[#252525]">Learn More <ArrowRight /></button>
 
                 {/* Arrow Button (Clickable Link) */}
                 <Link href={item.link} passHref>

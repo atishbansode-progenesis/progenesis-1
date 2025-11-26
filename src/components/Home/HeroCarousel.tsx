@@ -205,6 +205,7 @@ const HeroCarousel = () => {
             if (isModalButton) {
               return (
                 <button
+                  aria-label="Open Modal"
                   key={i}
                   onClick={() => setIsOpen(true)}
                   className={`${baseClass} ${colorClass}`}
@@ -216,7 +217,7 @@ const HeroCarousel = () => {
 
             return (
               <Link key={i} href={btn.href}>
-                <button className={`${baseClass} ${colorClass}`}>
+                <button className={`${baseClass} ${colorClass}`} aria-label="Route">
                   {btn.label}
                 </button>
               </Link>
