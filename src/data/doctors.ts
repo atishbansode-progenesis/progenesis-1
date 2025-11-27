@@ -44,20 +44,8 @@ export async function getAllDoctors(): Promise<Doctor[]> {
     if (!response.ok) {
       throw new Error("Failed to fetch doctors");
     }
-
-    // ✅ fetch JSON properly
     const apiDoctors: Doctor[] = await response.json();
-
-    // ✅ merge images based on slug
-    const mergedDoctors = apiDoctors.map((doc) => {
-      const localMatch = doctors.find((d) => d.slug === doc.slug);
-      return {
-        ...doc,
-        image: localMatch ? localMatch.image : doc.image, // fallback to API image
-      };
-    });
-
-    return mergedDoctors;
+    return apiDoctors;
 
   } catch (error) {
     console.error("Doctors API Error:", error);

@@ -2,7 +2,6 @@
 
 import { Doctor, getAllDoctors } from "@/data/doctors";
 import MainDoctors from "@/page-components/doctors/MainDoctors";
-import { doctors as oldDoctors } from "@/data/doctors"; // ⬅️ IMPORT OLD LOCAL DOCTOR DATA
 
 export const metadata = {
   title: "Best IVF Doctors in India | Fertility Specialist in India",
@@ -23,14 +22,5 @@ export default async function DoctorsPage() {
     console.error("Error fetching doctors:", error);
   }
 
-  const mergedDoctors = apiDoctors.map((doc) => {
-    const localMatch = oldDoctors.find((d) => d.slug === doc.slug);
-
-    return {
-      ...doc,
-      image: localMatch ? localMatch.image : doc.image,
-    };
-  });
-
-  return <MainDoctors doctors={mergedDoctors} />;
+  return <MainDoctors doctors={apiDoctors} />;
 }

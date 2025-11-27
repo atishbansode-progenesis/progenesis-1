@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Search, X, ChevronDown, Menu } from "lucide-react";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
-import { centersData } from "@/data/centers";
+import { Center, centersData } from "@/data/centers";
 import { Doctor } from "@/data/doctors";
 
 /* -------------------- SEARCH SECTION -------------------- */
@@ -1663,7 +1663,7 @@ const MegaMenu = ({
 };
 
 /* -------------------- NAVBAR -------------------- */
-export default function Navbar({ doctors }: { doctors: Doctor[] }) {
+export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; centersData: Center[] }) {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);

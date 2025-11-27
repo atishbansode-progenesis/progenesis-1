@@ -25,7 +25,6 @@ const TestimonialsSection = ({
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const swiperRef = useRef<any>(null);
   const [mounted, setMounted] = useState(false);
-  console.log("reviewsList", reviewsList)
 
   useEffect(() => {
     setMounted(true);

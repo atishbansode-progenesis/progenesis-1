@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import MainContent from "@/components/MainContent";
 import { getAllDoctors } from "@/data/doctors";
+import { getAllCenters } from "@/data/centers";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default async function RootLayout({
 
   // ⬅ fetch doctors on server
   const doctors = await getAllDoctors();
+  const centers = await getAllCenters()
 
   return (
     <html lang="en">
@@ -52,7 +54,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
 
         {/* ⬅ pass doctors to navbar */}
-        <Navbar doctors={doctors} />
+        <Navbar doctors={doctors} centersData={centers} />
 
         <NextTopLoader color="#1656A5" />
         <MainContent>{children}</MainContent>

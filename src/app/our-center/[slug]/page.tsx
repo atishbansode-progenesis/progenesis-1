@@ -1,17 +1,11 @@
-import React from "react";
 import SingleCenter from '@/page-components/centers/SingleCenter';
 import { notFound } from "next/navigation";
-import { Center, centersData } from "@/data/centers";
+import { Center, getCenterBySlug } from "@/data/centers";
 import { Metadata } from 'next';
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = params;
-  const center = centersData.find((c) => c.slug === slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const center = await getCenterBySlug(slug);
 
   if (!center) {
     return {
@@ -20,7 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://progenesisivf.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://progenesisivf.com';
   const pageUrl = `${baseUrl}/our-center/${slug}`;
   const phoneNumber = center.phone || '+91 94239 71620';
 
@@ -196,14 +190,14 @@ type DynamicPageProps = {
   }>;
 };
 
-export default function DynamicPage({ params }: DynamicPageProps) {
-  const { slug } = React.use(params);
+export default async function DynamicPage({ params }: DynamicPageProps) {
+  const { slug } = await params;
 
-  const center = centersData.find((center: Center) => center.slug === slug);
+  const center = await getCenterBySlug(slug);
 
   if (!center) {
     notFound();
   }
 
-  return <SingleCenter selectedSlug={slug} />;
+  return <SingleCenter selectedSlug={slug} center={center} />;
 }

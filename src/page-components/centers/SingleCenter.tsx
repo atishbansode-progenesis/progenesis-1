@@ -17,26 +17,7 @@ import { generateMedicalClinicSchema } from "@/utils/constent/schemaGenerator";
 
 interface SingleCenterProps {
   selectedSlug?: string;
-}
-
-interface FAQ {
-  uid: string;
-  question: string;
-  answer: string;
-  is_published: boolean;
-  created_at: string;
-  updated_at: string;
-}
-
-interface CenterData {
-  uid: string;
-  location: string;
-  description: string;
-  is_published: boolean;
-  created_at: string;
-  updated_at: string;
-  faqs: FAQ[];
-  name: string;
+  center?: Center;
 }
 
 const infoGridCenters = {
@@ -83,23 +64,24 @@ const infoGridCenters = {
   ],
 };
 
-export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
+export default function SingleCenter({ selectedSlug, center }: SingleCenterProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [faqData, setFaqData] = useState<FAQ[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [rating, setRating] = useState(4.5);
   const [totalReviews, setTotalReviews] = useState(0);
   const [reviewsList, setReviewsList] = useState<{ author: string; text: string; create_time: string; star_rating: string }[]>([]);
 
   const selectedCenter = useMemo(() => {
+    if (center) {
+      return center;
+    }
     if (!selectedSlug) {
       return undefined;
     }
 
     const normalizedSlug = selectedSlug.toLowerCase();
     return centersData.find((c) => c.slug === normalizedSlug);
-  }, [selectedSlug]);
+  }, [selectedSlug, center]);
 
   // Generate schema markup
   const schemaMarkup = useMemo(() => {
@@ -187,61 +169,6 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
 
   useEffect(() => {
     getReviewData();
-    
-    const fetchCenterData = async () => {
-      try {
-        setIsLoading(true);
-        
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/centres/?page=1&page_size=100`
-        );
-        const data = await response.json();  
-        
-        const mumbaiLocations = [
-          "Thane",
-          "Andheri",
-          "Borivali",
-          "Ghatkopar",
-          "Vashi",
-          "Virar",
-          "Kalyan",
-          "Panvel",
-        ];
-
-        if (selectedCenter && data.results) {
-          const isMumbaiSuburb = mumbaiLocations.some(
-            (loc) => loc.toLowerCase() === selectedCenter.name.toLowerCase(),
-          );
-  
-          let matchingCenter;
-  
-          if (isMumbaiSuburb) {
-            matchingCenter = data.results.find(
-              (center: CenterData) =>
-                center.name.toLowerCase() === selectedCenter.name.toLowerCase(),
-            );
-          } else {
-            matchingCenter = data.results.find(
-              (center: CenterData) =>
-                center.location.toLowerCase() ===
-                selectedCenter.name.toLowerCase(),
-            );
-          }
-  
-          if (matchingCenter && matchingCenter.faqs) {
-            setFaqData(matchingCenter.faqs);
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching FAQ data:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-  
-    if (selectedCenter) {
-      fetchCenterData();
-    }
   }, [selectedCenter]);
 
   if (!selectedCenter) {
@@ -458,8 +385,8 @@ export default function SingleCenter({ selectedSlug }: SingleCenterProps) {
         )}
         <CenterDoctorsSection centre={selectedCenter} />
         <TestimonialsCenters />
-        {faqData.length > 0 && (
-          <FAQCenters data={faqData} isLoading={isLoading} />
+        {center?.faqs && center.faqs.length > 0 && (
+          <FAQCenters data={center.faqs} />
         )}
       </div>
     </>

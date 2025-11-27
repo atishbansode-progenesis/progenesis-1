@@ -1,5 +1,34 @@
 
 
+export interface Doctor {
+  id: number;
+  uid: string;
+  slug: string;
+  email?: string;
+  name: string;
+  singlePageBio: string;
+  experience: string;
+  bio: string;
+  qualifications: string;
+  fellowship: string;
+  hospital: string;
+  specialty: string;
+  languages: string;
+  image?: string;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface FAQ {
+  uid: string;
+  question: string;
+  answer: string;
+  is_published: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface Center {
   id: number;
   slug: string;
@@ -18,7 +47,7 @@ export interface Center {
     lng: number;
   };
   gallery?: string[];
-  availableDoctors: number[];
+  availableDoctors: Doctor[];
   metadata?: {
     title: string;
     description: string;
@@ -26,6 +55,7 @@ export interface Center {
   icon?: string;
   desc?: string;
   order?: number;
+  faqs?: FAQ[];
 }
 
 export const centersData: Center[] = [
@@ -45,7 +75,7 @@ export const centersData: Center[] = [
     mapUri: "LuyNRTcTaR1bH88y9",
     coordinates: { lat: 19.2319173, lng: 72.97594 },
     gallery: Array.from({ length: 9 }, (_, i) => `/AllCentersImage/Thane/Thane${i + 1}.jpg`),
-    availableDoctors: [0, 1, 4],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF center in Thane | Top Fertility Clinic in Thane",
       description: "Best IVF center in Thane offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in thane."
@@ -68,7 +98,7 @@ export const centersData: Center[] = [
     mapUri: "Qsk6P3KPvZwhi9Zb7",
     coordinates: { lat: 19.13711948, lng: 72.8323002 },
     gallery: Array.from({ length: 14 }, (_, i) => `/AllCentersImage/Andheri/Andheri${i + 1}.jpg`),
-    availableDoctors: [0, 7],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF center in Andheri | Top Fertility Clinic in Andheri",
       description: "Best IVF center in Andheri offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Andheri."
@@ -91,7 +121,7 @@ export const centersData: Center[] = [
     mapUri: "bu9UrQbqCwHokn148",
     coordinates: { lat: 19.0858784, lng: 72.9051982 },
     gallery: Array.from({ length: 13 }, (_, i) => `/AllCentersImage/Ghatkopar/Ghatkopar${i + 1}.jpg`),
-    availableDoctors: [0],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF center in Ghatkopar | Top Fertility Clinic in Ghatkopar",
       description: "Best IVF center in Ghatkopar offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Ghatkopar."
@@ -114,7 +144,7 @@ export const centersData: Center[] = [
     mapUri: "acG2v3Y8xdZcK64EA",
     coordinates: { lat: 19.4530572, lng: 72.7986412 },
     gallery: Array.from({ length: 8 }, (_, i) => `/AllCentersImage/Virar/Virar${i + 1}.jpg`),
-    availableDoctors: [0, 10],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF center in Virar | Top Fertility Clinic in Virar",
       description: "Best IVF center in Virar offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Virar."
@@ -137,7 +167,7 @@ export const centersData: Center[] = [
     mapUri: "wYmnqje6hZPsmSyX6",
     coordinates: { lat: 19.2406614, lng: 73.1296727 },
     gallery: Array.from({ length: 13 }, (_, i) => `/AllCentersImage/Kalyan/Kalyan${i + 1}.JPG`),
-    availableDoctors: [0, 8],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Kalyan - Progenesis IVF Fertility Center",
       description: "Looking for the best IVF center in Kalyan? schedule a consultation with our fertility experts and start your journey towards parenthood."
@@ -160,7 +190,7 @@ export const centersData: Center[] = [
     mapUri: "qqZZDcf3K1Hw62838",
     coordinates: { lat: 19.2221387, lng: 72.8485524 },
     gallery: Array.from({ length: 12 }, (_, i) => `/AllCentersImage/Borivali/Borivali${i + 1}.png`),
-    availableDoctors: [0, 2],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Borivali | Fertility Clinic in Borivali",
       description: "Best IVF center in Borivali offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Borivali."
@@ -183,7 +213,7 @@ export const centersData: Center[] = [
     mapUri: "zLSUwhnYjK2WfRZi7",
     coordinates: { lat: 19.0565633, lng: 73.0035369 },
     gallery: Array.from({ length: 11 }, (_, i) => `/AllCentersImage/Vashi/Vashi${i + 1}.jpg`),
-    availableDoctors: [0, 5],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF center in Vashi | Top Fertility Clinic in Vashi",
       description: "Best IVF center in Vashi offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Vashi."
@@ -206,7 +236,7 @@ export const centersData: Center[] = [
     mapUri: "X9cFyp1dBKFnmv459",
     coordinates: { lat: 18.9879311, lng: 73.1141176 },
     gallery: Array.from({ length: 8 }, (_, i) => `/AllCentersImage/Panvel/Panvel${i + 1}.jpg`),
-    availableDoctors: [0, 9],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF center in Panvel | Top Fertility Clinic in Panvel",
       description: "Best IVF center in Panvel offers advanced fertility treatment, including IVF, ICSI, and IUI. schedule a consultation from fertility specialist in Panvel."
@@ -230,7 +260,7 @@ export const centersData: Center[] = [
     mapUri: "gSE6EkZSCW6G5aNz6",
     coordinates: { lat: 18.5542529, lng: 73.8092704 },
     gallery: Array.from({ length: 8 }, (_, i) => `/AllCentersImage/Pune/Pune${i + 1}.jpg`),
-    availableDoctors: [0, 11],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Pune | Top IVF Clinic & Hospital in Pune",
       description: "Searching for the best IVF center in Pune? Our Top IVF Clinic offers advanced fertility treatment to help couples overcome infertility."
@@ -253,7 +283,7 @@ export const centersData: Center[] = [
     mapUri: "zyXCS6dEsjRpndD88",
     coordinates: { lat: 20.0009439, lng: 73.7620231 },
     gallery: Array.from({ length: 11 }, (_, i) => `/AllCentersImage/Nashik/Nashik${i + 1}.jpg`),
-    availableDoctors: [0, 12],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Nashik - Progenesis IVF Fertility Center",
       description: "Looking for the best IVF center in Nashik? schedule a consultation with our fertility experts and start your journey towards parenthood."
@@ -276,7 +306,7 @@ export const centersData: Center[] = [
     mapUri: "koq52L9pCqt9AyDM8",
     coordinates: { lat: 21.00143072, lng: 75.5610411 },
     gallery: Array.from({ length: 9 }, (_, i) => `/AllCentersImage/Jalgaon/Jalgaon${i + 1}.jpg`),
-    availableDoctors: [0, 18],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Jalgaon - Progenesis IVF Fertility Center",
       description: "Looking for the best IVF center in Jalgaon? schedule a consultation with our fertility experts and start your journey towards parenthood."
@@ -299,7 +329,7 @@ export const centersData: Center[] = [
     mapUri: "tNr54ErBfVH7mHX67",
     coordinates: { lat: 19.1151738, lng: 74.7296822 },
     gallery: Array.from({ length: 10 }, (_, i) => `/AllCentersImage/Ahilyanagar/Ahilyanagar${i + 1}.JPG`),
-    availableDoctors: [0, 15],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Ahilyanagar | Fertility Clinic in Ahilyanagar",
       description: "Best IVF center in Ahilyanagar offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Ahilyanagar."
@@ -322,7 +352,7 @@ export const centersData: Center[] = [
     mapUri: "rYd1qu5wgL4ycmjV8",
     coordinates: { lat: 20.9157935, lng: 77.7531131 },
     gallery: Array.from({ length: 6 }, (_, i) => `/AllCentersImage/Amravati/Amravati${i + 1}.jpg`),
-    availableDoctors: [0, 16],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Amravati | Fertility Clinic in Amravati",
       description: "Best IVF center in Amravati offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Amravati."
@@ -345,7 +375,7 @@ export const centersData: Center[] = [
     mapUri: "i1Ap66b3nMNhSZbh8",
     coordinates: { lat: 16.7034419, lng: 74.2377609 },
     gallery: Array.from({ length: 4 }, (_, i) => `/AllCentersImage/Kolhapur/Kolhapur${i + 1}.jpeg`),
-    availableDoctors: [0],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Kolhapur | Fertility Clinic in Kolhapur",
       description: "Best IVF center in Kolhapur offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Kolhapur."
@@ -368,7 +398,7 @@ export const centersData: Center[] = [
     mapUri: "vsx3HtpkRy9rGUHK8",
     coordinates: { lat: 18.9353097, lng: 73.2963966 },
     gallery: Array.from({ length: 7 }, (_, i) => `/AllCentersImage/Nagpur/Nagpur${i + 1}.jpg`),
-    availableDoctors: [0, 13, 14],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Nagpur | Fertility Clinic in Nagpur",
       description: "Best IVF center in Nagpur offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Nagpur."
@@ -391,7 +421,7 @@ export const centersData: Center[] = [
     mapUri: "g415S25Y1L39r6qN9",
     coordinates: { lat: 17.6671531, lng: 75.9001897 },
     gallery: Array.from({ length: 5 }, (_, i) => `/AllCentersImage/Solapur/Solapur${i + 1}.jpg`),
-    availableDoctors: [0, 17],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Solapur | Fertility Clinic in Solapur",
       description: "Best IVF center in Solapur offers advanced fertility treatment, including IVF, ICSI, & IUI. Book a consultation from fertility specialist in Solapur."
@@ -414,10 +444,48 @@ export const centersData: Center[] = [
     mapUri: "BtVkGAWAiptaGkva7",
     coordinates: { lat: 19.8768388, lng: 75.3428786 },
     gallery: Array.from({ length: 3 }, (_, i) => `/AllCentersImage/Sambhajinagar/Sambhajinagar${i + 1}.jpg`),
-    availableDoctors: [0],
+    availableDoctors: [],
     metadata: {
       title: "Best IVF Center in Chhatrapati Sambhaji Nagar | Fertility Clinic in Sambhajinagar",
       description: "Progenesis Fertility Center in Chhatrapati Sambhaji Nagar provides advanced fertility treatments including IVF, ICSI, and IUI. Book a consultation today."
     }
   }
 ];
+
+
+
+export async function getAllCenters(): Promise<Center[]> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/centers-data/`, {
+      next: { revalidate: 3600 },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch doctors");
+    }
+    const apiCenters: Center[] = await response.json();
+    return apiCenters;
+
+  } catch (error) {
+    console.error("Doctors API Error:", error);
+    return [];
+  }
+}
+
+export async function getCenterBySlug(slug: string): Promise<Center | null> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/centers-data/${slug}/`, {
+      next: { revalidate: 3600 },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch center");
+    }
+    const center: Center = await response.json();
+    return center;
+
+  } catch (error) {
+    console.error("Center API Error:", error);
+    return null;
+  }
+}

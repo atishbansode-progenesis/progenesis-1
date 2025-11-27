@@ -659,7 +659,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         id={field.name}
         className="h-4 w-4 cursor-pointer"
         onChange={(e) => handleChange(field.name, e.target.checked)}
-        checked={formData[field.name] || false}
+        checked={formData[field.name] ?? true}
         required={field.required}
         disabled={isSubmitLoading}
       />

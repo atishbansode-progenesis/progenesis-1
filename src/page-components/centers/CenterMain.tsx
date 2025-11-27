@@ -3,13 +3,13 @@ import '../about/AboutMain.css'
 import CentersNav from './CentersNav'
 import CentersLanding from "./CentersLanding";
 import AppointmentForm from "../about/AppointmentForm";
+import { Center } from "@/data/centers";
 
-const CenterMain = () => {
+const CenterMain = ({data}: {data: Center[]}) => {
   return (
     <div className="w-full bg-[#F6F6F6] !overflow-x-hidden">
       <CentersLanding />  
-      <CentersNav />
-     
+      <CentersNav data={data} /> 
 
        <section className="relative overflow-hidden">
           {/* Video Background */}

@@ -1,32 +1,32 @@
-'use client';
+"use client"
+
 import React, { useState, useRef, useEffect } from 'react';
 import CenterCard from './CenterCard';
-import { Center, centersData } from '@/data/centers';
+import { Center } from '@/data/centers';
 
 // Define type for state-city mapping
 type StateCityMap = {
   [key: string]: string[];
 };
 
-// State and City data structure
-const stateWithCities: StateCityMap = (() => {
-  const stateMap: StateCityMap = {};
-  
-  centersData.forEach((center) => {
-    if (!stateMap[center.state]) {
-      stateMap[center.state] = [];
-    }
-    if (!stateMap[center.state].includes(center.city)) {
-      stateMap[center.state].push(center.city);
-    }
-  });
-
-  return stateMap;
-})();
-
 const CENTERS_PER_PAGE = 5;
 
-const CentersNav: React.FC = () => {
+const CentersNav: React.FC<{ data: Center[] }> = ({ data }) => {
+  // State and City data structure
+  const stateWithCities: StateCityMap = (() => {
+    const stateMap: StateCityMap = {};
+    
+    data.forEach((center) => {
+      if (!stateMap[center.state]) {
+        stateMap[center.state] = [];
+      }
+      if (!stateMap[center.state].includes(center.city)) {
+        stateMap[center.state].push(center.city);
+      }
+    });
+
+    return stateMap;
+  })();
   const defaultState = "All";
   const defaultCity = "All";
 
@@ -36,7 +36,7 @@ const CentersNav: React.FC = () => {
   const [isCityDropdownOpen, setIsCityDropdownOpen] = useState(false);
   const [availableCities, setAvailableCities] = useState<string[]>(["All"]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [filteredCenters, setFilteredCenters] = useState<Center[]>(centersData);
+  const [filteredCenters, setFilteredCenters] = useState<Center[]>(data);
 
   const stateDropdownRef = useRef<HTMLDivElement>(null);
   const cityDropdownRef = useRef<HTMLDivElement>(null);
@@ -74,12 +74,12 @@ const CentersNav: React.FC = () => {
     if (state === "All") {
       setAvailableCities(["All"]);
       setSelectedCity("All");
-      setFilteredCenters(centersData);
+      setFilteredCenters(data);
     } else {
       const cities = ["All", ...stateWithCities[state]];
       setAvailableCities(cities);
       setSelectedCity("All");
-      setFilteredCenters(centersData.filter((center: Center) => center.state === state));
+      setFilteredCenters(data.filter((center: Center) => center.state === state));
     }
   };
 
@@ -90,12 +90,12 @@ const CentersNav: React.FC = () => {
     
     if (city === "All") {
       if (selectedState === "All") {
-        setFilteredCenters(centersData);
+        setFilteredCenters(data);
       } else {
-        setFilteredCenters(centersData.filter((center: Center) => center.state === selectedState));
+        setFilteredCenters(data.filter((center: Center) => center.state === selectedState));
       }
     } else {
-      setFilteredCenters(centersData.filter((center: Center) => center.city === city));
+      setFilteredCenters(data.filter((center: Center) => center.city === city));
     }
   };
 

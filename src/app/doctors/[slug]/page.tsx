@@ -1,6 +1,6 @@
 import SingleDoctor from "@/page-components/doctors/SingleDoctor";
 import { notFound } from "next/navigation";
-import { Doctor, doctors as localDoctors } from "@/data/doctors";
+import { Doctor } from "@/data/doctors";
 
 async function getDoctorBySlug(slug: string): Promise<Doctor | null> {
   try {
@@ -46,11 +46,5 @@ export default async function Page(props: {
   const apiDoctor = await getDoctorBySlug(slug);
   if (!apiDoctor) notFound();
 
-  const localMatch = localDoctors.find((d) => d.slug === slug);
-  const mergedDoctor: Doctor = {
-    ...apiDoctor,
-    image: localMatch?.image ?? apiDoctor.image,
-  };
-
-  return <SingleDoctor doctor={mergedDoctor} />;
+  return <SingleDoctor doctor={apiDoctor} />;
 }

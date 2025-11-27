@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import '../about/AboutMain.css'
-import { doctors } from "../../components/Home/DoctorsSection";
 
 const CenterDoctorsSection = ({ centre }: any) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -22,8 +21,7 @@ const CenterDoctorsSection = ({ centre }: any) => {
   const totalSlides = Math.ceil(showDotors.length / visibleCards);
 
   useEffect(() => {
-    const ansList = doctors.filter((d) => centre.availableDoctors.includes(d.id));
-    setShowDoctors(ansList);
+    setShowDoctors(centre.availableDoctors || []);
   }, [centre]);
 
   useEffect(() => {
@@ -74,7 +72,7 @@ const CenterDoctorsSection = ({ centre }: any) => {
       >
         <div className="p-4 md:w-1/2 w-full overflow-hidden">
           <img
-            src={doctor.image}
+            src={doctor.image || "/default-doctor.png"}
             alt={doctor.name}
             className="w-full h-full md:min-w-[240px] object-cover rounded-[16px]"
           />
@@ -86,16 +84,26 @@ const CenterDoctorsSection = ({ centre }: any) => {
               {doctor.name}
             </h3>
             <p className="text-[#606060] font-[Manrope] text-base leading-[24px] tracking-tight mb-4">
-              {doctor.role}
+              {doctor.specialty}
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            {doctor.experience.map((exp: string, idx: number) => (
+            {(Array.isArray(doctor.experience) ? doctor.experience : [doctor.experience]).map((exp: string, idx: number) => (
               <span
                 key={idx}
                 className="px-4 py-2 rounded-[16px] bg-[rgba(22,86,165,0.05)] text-[#1656A5] font-[Manrope] text-sm font-normal leading-[24px] tracking-tight"
               >
                 {exp}
+              </span>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-3 mt-3">
+            {[doctor.qualifications, doctor.fellowship].filter(Boolean).map((item: string, idx: number) => (
+              <span
+                key={idx}
+                className="px-4 py-2 rounded-[16px] bg-[rgba(22,86,165,0.05)] text-[#1656A5] font-[Manrope] text-sm font-normal leading-[24px] tracking-tight"
+              >
+                {item}
               </span>
             ))}
           </div>

@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   trailingSlash: true,
+  images: {
+    domains: ['admin.progenesisivf.com'],
+  },
   async redirects() {
     return [
       {
