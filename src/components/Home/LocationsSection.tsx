@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { Center, centersData } from "@/data/centers";
+import { Center } from "@/data/centers";
 
 
 type SubCity = {
@@ -24,30 +24,30 @@ type City = {
   subCities?: SubCity[];
 };
 
-const mumbaiCenters = centersData.filter((c: Center) => c.city === "Mumbai").sort((a, b) => (a.order || a.id) - (b.order || b.id));
-const otherCenters = centersData.filter((c: Center) => c.city !== "Mumbai").sort((a, b) => (a.order || a.id) - (b.order || b.id));
+export default function LocationsSection({ centersData }: { centersData: Center[] }) {
+  const router = useRouter();
+  const mumbaiCenters = centersData.filter((c: Center) => c.city === "Mumbai").sort((a, b) => (a.order || a.id) - (b.order || b.id));
+  const otherCenters = centersData.filter((c: Center) => c.city !== "Mumbai").sort((a, b) => (a.order || a.id) - (b.order || b.id));
 
-const locations: City[] = [
-  {
-    city: "Mumbai",
-    image: "/LocationsSection/Thane.jpg",
-    subCities: mumbaiCenters.map(c => ({
-      name: c.name,
+  const locations: City[] = [
+    {
+      city: "Mumbai",
+      image: "/LocationsSection/Thane.jpg",
+      subCities: mumbaiCenters.map(c => ({
+        name: c.name,
+        address: c.address,
+        image: c.image,
+        slug: `our-center/${c.slug}`
+      }))
+    },
+    ...otherCenters.map(c => ({
+      city: c.name,
       address: c.address,
       image: c.image,
       slug: `our-center/${c.slug}`
     }))
-  },
-  ...otherCenters.map(c => ({
-    city: c.name,
-    address: c.address,
-    image: c.image,
-    slug: `our-center/${c.slug}`
-  }))
-];
+  ];
 
-export default function LocationsSection() {
-  const router = useRouter();
   const [activeLocation, setActiveLocation] = useState<City | SubCity>(locations[0]); // default Mumbai
   const [openCity, setOpenCity] = useState<string | null>("Mumbai"); // default Mumbai expanded
 
@@ -87,12 +87,12 @@ export default function LocationsSection() {
             {locations.map((loc, idx) => {
               const isOpen = openCity === loc.city;
 
-             
+
               if (loc.subCities) {
                 return (
                   <div key={idx} className="w-full">
 
-                 
+
                     <motion.button
                       onClick={() => toggleCity(loc.city)}
                       onMouseEnter={() => setActiveLocation(loc)}
@@ -115,7 +115,7 @@ export default function LocationsSection() {
                         transition={{ duration: 0.3 }}
                         className={`flex items-center justify-center w-14 h-10 rounded-full border`}
                       >
-                      
+
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                           <path d="M9 11L12 14L15 11" stroke="currentColor" strokeLinecap="square" strokeLinejoin="round" />
                         </svg>
@@ -123,7 +123,7 @@ export default function LocationsSection() {
                     </motion.button>
 
 
-              
+
                     <AnimatePresence>
                       {isOpen && (
                         <motion.div
@@ -139,7 +139,7 @@ export default function LocationsSection() {
                               activeLocation.name === sub.name;
                             return (
                               <button
-                              aria-label="name"
+                                aria-label="name"
                                 key={i}
                                 onClick={() => router.push(`/${sub.slug}`)}
                                 onMouseEnter={() => setActiveLocation(sub)}
@@ -199,7 +199,7 @@ export default function LocationsSection() {
                 activeLocation.city === loc.city;
               return (
                 <button
-                aria-label="city"
+                  aria-label="city"
                   key={idx}
                   onClick={() => router.push(`/${loc.slug}`)}
                   onMouseEnter={() => setActiveLocation(loc)}
@@ -278,13 +278,13 @@ export default function LocationsSection() {
             <style jsx>{`
               div::-webkit-scrollbar { display: none; }
             `}</style>
-            
+
             {locations.flatMap((loc) => {
-             
+
               if (loc.subCities) {
                 return loc.subCities.map((sub, idx) => (
                   <div key={`${loc.city}-${idx}`} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white cursor-pointer" onClick={() => router.push(`/${sub.slug}`)}>
-                    
+
                     <div className="relative h-[400px] w-full">
                       <Image
                         src={sub.image || "/LocationsSection/location.png"}
@@ -294,7 +294,7 @@ export default function LocationsSection() {
                       />
                     </div>
 
-                   
+
                     <div className="p-5 mt-4 flex justify-between items-center bg-[#1656A50D] rounded-[16px] p-6">
                       <div className="flex-1">
                         <div className="flex justify-between items-center" >
@@ -335,11 +335,11 @@ export default function LocationsSection() {
                 ));
               }
 
-            
+
               if (!loc.subCities) {
                 return (
                   <div key={loc.city} className="snap-center shrink-0 w-[85vw] flex flex-col bg-white cursor-pointer" onClick={() => router.push(`/${loc.slug}`)}>
-                    
+
                     <div className="relative h-[400px] w-full">
                       <Image
                         src={loc.image || "/LocationsSection/location.png"}
@@ -349,7 +349,7 @@ export default function LocationsSection() {
                       />
                     </div>
 
-                   
+
                     <div className=" mt-4 flex justify-between items-center bg-[#1656A50D] rounded-[16px] p-6">
                       <div className="flex-1">
                         <div className="flex justify-between items-center" >
@@ -393,7 +393,7 @@ export default function LocationsSection() {
               return [];
             })}
 
-            
+
           </div>
         </div>
 

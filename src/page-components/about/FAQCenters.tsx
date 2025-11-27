@@ -124,7 +124,7 @@ const FAQCenters: React.FC<FAQCentersProps> = ({ data, isLoading = false }) => {
               const open = i === openIndex;
               return (
                 <div
-                  key={item.uid}
+                  key={`${item.uid}-${i}`}
                   className={`bg-[#FFFFFF] overflow-hidden rounded-[16px]`}
                 >
                   <button

@@ -17,29 +17,34 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
 
   // Clean the HTML content to remove "nnnn" and similar patterns
   const cleanedContent = useMemo(() => {
-    if (!data?.post_content) return "";
+  if (!data?.post_content) return "";
 
-    return data.post_content
-      // Remove repeated n patterns
-      .replace(/nnnn/g, "")              // Remove "nnnn"
-      .replace(/\bnnn\b/g, "")           // Remove standalone "nnn"
-      .replace(/\bnn\b/g, "")            // Remove standalone "nn"
-      .replace(/\bn\b(?=\s*<)/g, "")     // Remove "n" before tags
+  return data.post_content
+    // Remove repeated n patterns
+    .replace(/nnnn/g, "")             
+    .replace(/\bnnn\b/g, "")          
+    .replace(/\bnn\b/g, "")           
+    .replace(/\bn\b(?=\s*<)/g, "")    
 
-      // CRITICAL: Remove "rn" even when attached to the next word
-      .replace(/rn(?=[A-Za-z])/g, "")    // Remove "rn" if followed by a letter
+    // Remove "rn" attached to next word
+    .replace(/rn(?=[A-Za-z])/g, "")   
+    .replace(/\brn\b/g, "")
 
-      // Optional: Also clean up any leftover "rn" in other contexts
-      .replace(/\brn\b/g, "")
+    // Replace line breaks
+    .replace(/\r?\n/g, " ")           
 
-      // Remove actual line breaks
-      .replace(/\r?\n/g, " ")            // Replace with space to avoid gluing words
+    // Remove image tags (if needed)
+    .replace(/<img[^>]*>/g, "")
 
-      // Remove image tags
-      .replace(/<img[^>]*>/g, "")
+    // ⭐ Replace ONLY the domain inside img src
+    // .replace(
+    //   /src="https?:\/\/progenesisivf\.com/gi,
+    //   'src="https://paid.progenesisivf.com'
+    // )
 
-      .trim();
-  }, [data?.post_content]);
+    .trim();
+}, [data?.post_content]);
+
 
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const blogTitle = encodeURIComponent(data?.post_title || '');

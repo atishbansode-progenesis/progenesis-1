@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useMemo, useState, Suspense } from "react";
-import { centersData, type Center } from "@/data/centers";
+import { Center } from "@/data/centers";
 import { useRouter } from "next/navigation";
 import CenterDoctorsSection from "./SingleCenterDoctors";
 import TestimonialsCenters from "./TestimonialCenters";
@@ -18,6 +18,7 @@ import { generateMedicalClinicSchema } from "@/utils/constent/schemaGenerator";
 interface SingleCenterProps {
   selectedSlug?: string;
   center?: Center;
+  centers?: Center[];
 }
 
 const infoGridCenters = {
@@ -64,7 +65,7 @@ const infoGridCenters = {
   ],
 };
 
-export default function SingleCenter({ selectedSlug, center }: SingleCenterProps) {
+export default function SingleCenter({ selectedSlug, center, centers }: SingleCenterProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(4.5);
@@ -80,7 +81,11 @@ export default function SingleCenter({ selectedSlug, center }: SingleCenterProps
     }
 
     const normalizedSlug = selectedSlug.toLowerCase();
-    return centersData.find((c) => c.slug === normalizedSlug);
+    if (centers){
+      return centers.find((c:any) => c.slug === normalizedSlug);
+    }else{
+      return null
+    }
   }, [selectedSlug, center]);
 
   // Generate schema markup

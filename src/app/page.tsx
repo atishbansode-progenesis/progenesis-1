@@ -1,4 +1,5 @@
 import ClientHome from "@/components/Home/ClientHome";
+import { getAllCenters } from "@/data/centers";
 
 export const metadata = {
   title: "Best IVF Center in India | High Success Rate | Progenesis IVF",
@@ -32,6 +33,9 @@ export const metadata = {
   },
 };
 
-export default function Home() {
-  return <ClientHome />;
+
+
+export default async function Home() {
+  const apiCenters = await getAllCenters();
+  return <ClientHome centers={apiCenters}/>;
 }

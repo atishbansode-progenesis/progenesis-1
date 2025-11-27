@@ -16,6 +16,7 @@ import TreatmentsSection from "@/components/Home/TreatmentsSection";
 import VideoSection from "@/components/Home/VideoSection";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
 import axios from "axios";
+import { Center } from "@/data/centers";
 
 interface Review {
   author: string;
@@ -114,7 +115,7 @@ const JsonLd = () => {
   );
 };
 
-export default function ClientHome() {
+export default function ClientHome({centers}: {centers: Center[]}) {
   const [rating, setRating] = useState<number>(4.5);
   const [totalReviews, setTotalReviews] = useState<number>(0);
   const [reviewsList, setReviewsList] = useState<Review[]>([]);
@@ -191,7 +192,9 @@ export default function ClientHome() {
         reviewsList={reviewsList}
       />
       <DifferenceSection />
-      <LocationsSection />
+      <LocationsSection
+        centersData={centers}
+      />
       <DoctorsSection />
       <StoriesSection />
       <FaqSection />

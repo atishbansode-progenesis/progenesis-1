@@ -2,7 +2,7 @@
 import React, { Suspense, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AppointmentForm from '../about/AppointmentForm';
-import { centersData, Center } from '@/data/centers';
+import { Center } from '@/data/centers';
 import { Link as LinkIcon } from 'lucide-react';
 import Link from "next/link"
 
@@ -10,16 +10,17 @@ interface CenterCardProps {
   name: string;
   address: string;
   image: string;
+  data: Center[];
 }
 
-const CenterCard: React.FC<CenterCardProps> = ({ name, address, image }) => {
+const CenterCard: React.FC<CenterCardProps> = ({ name, address, image, data }) => {
   const router = useRouter();
 
   const [open, setOpen] = useState<boolean>(false);
 
 
   const centerData = React.useMemo(() => {
-    const center = centersData.find(center => center.name === name);
+    const center = data.find(center => center.name === name);
     if (!center) {
       console.warn(`Center data not found for: ${name}`);
       return {

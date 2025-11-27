@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Search, X, ChevronDown, Menu } from "lucide-react";
 import AppointmentForm from "@/page-components/about/AppointmentForm";
-import { Center, centersData } from "@/data/centers";
+import { Center } from "@/data/centers";
 import { Doctor } from "@/data/doctors";
 
 /* -------------------- SEARCH SECTION -------------------- */
@@ -13,9 +13,11 @@ import { Doctor } from "@/data/doctors";
 export function SearchSection({
   onClose,
   doctors,
+  centersData,
 }: {
   onClose: () => void;
   doctors: Doctor[];
+  centersData: Center[];
 }) {
   const router = useRouter();
   const [activeStep, setActiveStep] = useState<"what" | "where" | "who" | null>(
@@ -697,359 +699,986 @@ export function SearchSection({
 
 // Mega Menu Data Moble
 
-const megaMenuDataMobile: Record<string, any> = {
-  "About Us": {
-    image: "/Navbar/about-new.png",
-    columns: [
-      {
-        title: "About Us",
-        links: [
-          { label: "About Us", path: "/about-progenesis" },
-          { label: "Our Approach", path: "/about-progenesis" },
-          {
-            label: "Our Vision & Mission",
-            path: "/about-progenesis#our-vision",
-          },
-          { label: "Why choose us", path: "/about-progenesis#why-choose-us" },
-          { label: "Leadership Team", path: "/about-progenesis/leadership-team" },
-          // { label: "Impact & Growth", path: "/about-progenesis#impact-growth" },
-          { label: "Careers", path: "/careers" },
-          { label: "FAQs", path: "/about-progenesis#faqs" },
-        ],
-      },
-      {
-        title: "Quick Links",
-        links: [
-          {
-            label: "+91 70309 44041",
-            path: "tel:+917030944041",
-            isPhone: true,
-          },
-          {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
-            isWhatsapp: true,
-          },
-          {
-            label: "Online Consultation",
-            path: "/online-consultations",
-            isarrow: true,
-          },
-          { label: "EMI Options", path: "/emi-options", isarrow: true },
-          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-          {
-            label: "International Patients",
-            path: "/international-patient",
-            isarrow: true,
-          },
-        ],
-      },
-    ],
-  },
-  "Infertility Issues": {
-    image: "/Navbar/infertility-image.png",
-    columns: [
-      {
-        title: "Know Infertility",
-        links: [
-          {
-            label: "What is Infertility",
-            path: "/infertility#about",
-            // submenu: [
-            //   { label: "Overview", path: "/infertility#about" },
-            //   { label: "Symptoms", path: "/infertility#about" },
-            //   { label: "Diagnosis", path: "/infertility#about" },
-            //   { label: "Treatment Options", path: "/infertility#about" },
-            // ],
-          },
-          {
-            label: "Female Infertility Causes",
-            path: "/infertility#fertility-section",
-            submenu: [
-              {
-                label: "Repeated IUI Failures",
-                path: "/infertility/female/repeated-iui-failures/",
-              },
-              {
-                label: "Repeated IVF Failures",
-                path: "/infertility/female/repeated-ivf-failures/",
-              },
-              {
-                label: "Pregnancy after Menopause",
-                path: "/infertility/female/pregnancy-after-menopause/",
-              },
-              { label: "Low AMH", path: "/infertility/female/low-amh/" },
-              { label: "PCOS", path: "/infertility/female/pcos/" },
-              {
-                label: "Tubal Blockage",
-                path: "/infertility/female/tubal-blockage/",
-              },
-              { label: "Fibroids", path: "/infertility/female/fibroids/" },
-              {
-                label: "Endometriosis",
-                path: "/infertility/female/endometriosis/",
-              },
-            ],
-          },
-          {
-            label: "Male Infertility Causes",
-            path: "/infertility#fertility-mini-section",
-            submenu: [
-              { label: "Azoospermia", path: "/infertility/male/azoospermia/" },
-              {
-                label: "Low Sperm Count",
-                path: "/infertility/male/low-sperm-count/",
-              },
-              {
-                label: "Erectile Dysfunction (ED)",
-                path: "/infertility/male/erectile-dysfunction/",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: "Quick Links",
-        links: [
-          {
-            label: "+91 70309 44041",
-            path: "tel:+917030944041",
-            isPhone: true,
-          },
-          {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
-            isWhatsapp: true,
-          },
-          {
-            label: "Online Consultation",
-            path: "/online-consultations",
-            isarrow: true,
-          },
-          { label: "EMI Options", path: "/emi-options", isarrow: true },
-          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-          {
-            label: "International Patients",
-            path: "/international-patient",
-            isarrow: true,
-          },
-        ],
-      },
-    ],
-  },
-  "Our Centers": {
-    image: "/Navbar/center.png",
-    columns: [
-      {
-        title: "Where We Are",
-        links: [
-          {
-            label: "Mumbai",
-            path: "/mumbai",
-            submenu: centersData
-              .filter((center) => center.city === "Mumbai")
-              .map((center) => ({
-                label: center.name,
-                path: `/our-center/${center.slug}`,
-              })),
-          },
-          ...centersData
-            .filter((center) => center.city !== "Mumbai")
-            .map((center) => ({
-              label: center.name,
-              path: `/our-center/${center.slug}`,
-            })),
-        ],
-      },
-      {
-        title: "Quick Links",
-        links: [
-          {
-            label: "+91 70309 44041",
-            path: "tel:+917030944041",
-            isPhone: true,
-          },
-          {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
-            isWhatsapp: true,
-          },
-          {
-            label: "Online Consultation",
-            path: "/online-consultations",
-            isarrow: true,
-          },
-          { label: "EMI Options", path: "/emi-options", isarrow: true },
-          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-          {
-            label: "International Patients",
-            path: "/international-patient",
-            isarrow: true,
-          },
-        ],
-      },
-    ],
-  },
-  Treatments: {
-    image: "/Navbar/treatments.png",
-    columns: [
-      {
-        title: "Fertility Solutions",
-        links: [
-          { label: "Your Path to Parenthood", path: "/treatments#path" },
-          {
-            label: "Advanced Infertility Treatments",
-            path: "/treatments#advanced",
-            submenu: [
-              {
-                label: "IMSI – High-Resolution Sperm Selection",
-                path: "/treatments/advanced/imsi",
-              },
-              {
-                label: "PICSI – Physiological ICSI",
-                path: "/treatments/advanced/picsi",
-              },
-              {
-                label: "LAH – Laser Assisted Hatching",
-                path: "/treatments/advanced/lah",
-              },
-              {
-                label: "Blastocyst Transfer – Stronger Embryo Transfer",
-                path: "/treatments//advanced/blastocyst-transfer",
-              },
-              {
-                label: "Sequential Embryo Transfer – Two-Stage Transfer",
-                path: "/treatments/advanced/sequential-embryo-transfer/",
-              },
-              {
-                label: "PGD/PGS/PGT-A – Genetic Screening",
-                path: "/treatments/advanced/pgd-pgs-pgt-a/",
-              },
-            ],
-          },
-          {
-            label: "Advanced Facilities for Trusted Care",
-            path: "/treatments#advanced",
-            submenu: [
-              {
-                label: "Class-1000 Modular Lab",
-                path: "/treatments/advanced/class-1000-modular-lab/",
-              },
-              {
-                label: "Trigas Incubators",
-                path: "/treatments/advanced/trigas-incubators/",
-              },
-              {
-                label: "Witness System",
-                path: "/treatments/advanced/witness-system/",
-              },
-              {
-                label: "Cryopreservation",
-                path: "/treatments/advanced/cryopreservation/",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        links: [
-          {
-            label: "Infertility Treatments",
-            path: "/treatments#infertility",
-            submenu: [
-              {
-                label: "Ovulation Induction",
-                path: "/treatments/infertility/ovulation-induction/",
-              },
-              {
-                label: "IUI",
-                path: "/treatments/infertility/artificial-insemination-iui-treatment/",
-              },
-              {
-                label: "IVF",
-                path: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/",
-              },
-              {
-                label: "IVF-ICSI ",
-                path: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/",
-              },
-              {
-                label: "Frozen Embryo Transfer",
-                path: "/treatments/infertility/frozen-embryo-transfer/",
-              },
-              {
-                label: "Fertility Surgery  ",
-                path: "/treatments/infertility/fertility-surgery/",
-              },
-            ],
-          },
-          {
-            label: "Fertility Preservation",
-            path: "/treatments#preservation",
-            submenu: [
-              {
-                label: "Female Fertility Preservation",
-                path: "/treatments/preservation/female-fertility-preservation/",
-              },
-              {
-                label: "Male Fertility Preservation",
-                path: "/treatments/preservation/male-fertility-preservation/",
-              },
-              {
-                label: "Embryo Preservation",
-                path: "/treatments/preservation/egg-embryo-freezing/",
-              },
-            ],
-          },
-          {
-            label: "Fertility Evaluation",
-            path: "/treatments#evaluation",
-            submenu: [
-              {
-                label: "Female Analysis-Complete Reproductive Health Check",
-                path: "/treatments/evaluation/female-fertility-check/",
-              },
-              {
-                label: "Male Analysis – Advanced Sperm Testing",
-                path: "/treatments/evaluation/semen-analysis/",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        title: "Quick Links",
-        links: [
-          {
-            label: "+91 70309 44041",
-            path: "tel:+917030944041",
-            isPhone: true,
-          },
-          {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
-            isWhatsapp: true,
-          },
-          {
-            label: "Online Consultation",
-            path: "/online-consultations",
-            isarrow: true,
-          },
-          { label: "EMI Options", path: "/emi-options", isarrow: true },
-          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
-          {
-            label: "International Patients",
-            path: "/international-patient",
-            isarrow: true,
-          },
-        ],
-      },
-    ],
-  },
-};
+// const megaMenuDataMobile: Record<string, any> = {
+//   "About Us": {
+//     image: "/Navbar/about-new.png",
+//     columns: [
+//       {
+//         title: "About Us",
+//         links: [
+//           { label: "About Us", path: "/about-progenesis" },
+//           { label: "Our Approach", path: "/about-progenesis" },
+//           {
+//             label: "Our Vision & Mission",
+//             path: "/about-progenesis#our-vision",
+//           },
+//           { label: "Why choose us", path: "/about-progenesis#why-choose-us" },
+//           { label: "Leadership Team", path: "/about-progenesis/leadership-team" },
+//           // { label: "Impact & Growth", path: "/about-progenesis#impact-growth" },
+//           { label: "Careers", path: "/careers" },
+//           { label: "FAQs", path: "/about-progenesis#faqs" },
+//         ],
+//       },
+//       {
+//         title: "Quick Links",
+//         links: [
+//           {
+//             label: "+91 70309 44041",
+//             path: "tel:+917030944041",
+//             isPhone: true,
+//           },
+//           {
+//             label: "+91 94239 71260",
+//             path: "tel:+919423971260",
+//             isWhatsapp: true,
+//           },
+//           {
+//             label: "Online Consultation",
+//             path: "/online-consultations",
+//             isarrow: true,
+//           },
+//           { label: "EMI Options", path: "/emi-options", isarrow: true },
+//           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+//           {
+//             label: "International Patients",
+//             path: "/international-patient",
+//             isarrow: true,
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   "Infertility Issues": {
+//     image: "/Navbar/infertility-image.png",
+//     columns: [
+//       {
+//         title: "Know Infertility",
+//         links: [
+//           {
+//             label: "What is Infertility",
+//             path: "/infertility#about",
+//             // submenu: [
+//             //   { label: "Overview", path: "/infertility#about" },
+//             //   { label: "Symptoms", path: "/infertility#about" },
+//             //   { label: "Diagnosis", path: "/infertility#about" },
+//             //   { label: "Treatment Options", path: "/infertility#about" },
+//             // ],
+//           },
+//           {
+//             label: "Female Infertility Causes",
+//             path: "/infertility#fertility-section",
+//             submenu: [
+//               {
+//                 label: "Repeated IUI Failures",
+//                 path: "/infertility/female/repeated-iui-failures/",
+//               },
+//               {
+//                 label: "Repeated IVF Failures",
+//                 path: "/infertility/female/repeated-ivf-failures/",
+//               },
+//               {
+//                 label: "Pregnancy after Menopause",
+//                 path: "/infertility/female/pregnancy-after-menopause/",
+//               },
+//               { label: "Low AMH", path: "/infertility/female/low-amh/" },
+//               { label: "PCOS", path: "/infertility/female/pcos/" },
+//               {
+//                 label: "Tubal Blockage",
+//                 path: "/infertility/female/tubal-blockage/",
+//               },
+//               { label: "Fibroids", path: "/infertility/female/fibroids/" },
+//               {
+//                 label: "Endometriosis",
+//                 path: "/infertility/female/endometriosis/",
+//               },
+//             ],
+//           },
+//           {
+//             label: "Male Infertility Causes",
+//             path: "/infertility#fertility-mini-section",
+//             submenu: [
+//               { label: "Azoospermia", path: "/infertility/male/azoospermia/" },
+//               {
+//                 label: "Low Sperm Count",
+//                 path: "/infertility/male/low-sperm-count/",
+//               },
+//               {
+//                 label: "Erectile Dysfunction (ED)",
+//                 path: "/infertility/male/erectile-dysfunction/",
+//               },
+//             ],
+//           },
+//         ],
+//       },
+//       {
+//         title: "Quick Links",
+//         links: [
+//           {
+//             label: "+91 70309 44041",
+//             path: "tel:+917030944041",
+//             isPhone: true,
+//           },
+//           {
+//             label: "+91 94239 71260",
+//             path: "tel:+919423971260",
+//             isWhatsapp: true,
+//           },
+//           {
+//             label: "Online Consultation",
+//             path: "/online-consultations",
+//             isarrow: true,
+//           },
+//           { label: "EMI Options", path: "/emi-options", isarrow: true },
+//           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+//           {
+//             label: "International Patients",
+//             path: "/international-patient",
+//             isarrow: true,
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   "Our Centers": {
+//     image: "/Navbar/center.png",
+//     columns: [
+//       {
+//         title: "Where We Are",
+//         links: [
+//           {
+//             label: "Mumbai",
+//             path: "/mumbai",
+//             submenu: centersData
+//               .filter((center) => center.city === "Mumbai")
+//               .map((center) => ({
+//                 label: center.name,
+//                 path: `/our-center/${center.slug}`,
+//               })),
+//           },
+//           ...centersData
+//             .filter((center) => center.city !== "Mumbai")
+//             .map((center) => ({
+//               label: center.name,
+//               path: `/our-center/${center.slug}`,
+//             })),
+//         ],
+//       },
+//       {
+//         title: "Quick Links",
+//         links: [
+//           {
+//             label: "+91 70309 44041",
+//             path: "tel:+917030944041",
+//             isPhone: true,
+//           },
+//           {
+//             label: "+91 94239 71260",
+//             path: "tel:+919423971260",
+//             isWhatsapp: true,
+//           },
+//           {
+//             label: "Online Consultation",
+//             path: "/online-consultations",
+//             isarrow: true,
+//           },
+//           { label: "EMI Options", path: "/emi-options", isarrow: true },
+//           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+//           {
+//             label: "International Patients",
+//             path: "/international-patient",
+//             isarrow: true,
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   Treatments: {
+//     image: "/Navbar/treatments.png",
+//     columns: [
+//       {
+//         title: "Fertility Solutions",
+//         links: [
+//           { label: "Your Path to Parenthood", path: "/treatments#path" },
+//           {
+//             label: "Advanced Infertility Treatments",
+//             path: "/treatments#advanced",
+//             submenu: [
+//               {
+//                 label: "IMSI – High-Resolution Sperm Selection",
+//                 path: "/treatments/advanced/imsi",
+//               },
+//               {
+//                 label: "PICSI – Physiological ICSI",
+//                 path: "/treatments/advanced/picsi",
+//               },
+//               {
+//                 label: "LAH – Laser Assisted Hatching",
+//                 path: "/treatments/advanced/lah",
+//               },
+//               {
+//                 label: "Blastocyst Transfer – Stronger Embryo Transfer",
+//                 path: "/treatments//advanced/blastocyst-transfer",
+//               },
+//               {
+//                 label: "Sequential Embryo Transfer – Two-Stage Transfer",
+//                 path: "/treatments/advanced/sequential-embryo-transfer/",
+//               },
+//               {
+//                 label: "PGD/PGS/PGT-A – Genetic Screening",
+//                 path: "/treatments/advanced/pgd-pgs-pgt-a/",
+//               },
+//             ],
+//           },
+//           {
+//             label: "Advanced Facilities for Trusted Care",
+//             path: "/treatments#advanced",
+//             submenu: [
+//               {
+//                 label: "Class-1000 Modular Lab",
+//                 path: "/treatments/advanced/class-1000-modular-lab/",
+//               },
+//               {
+//                 label: "Trigas Incubators",
+//                 path: "/treatments/advanced/trigas-incubators/",
+//               },
+//               {
+//                 label: "Witness System",
+//                 path: "/treatments/advanced/witness-system/",
+//               },
+//               {
+//                 label: "Cryopreservation",
+//                 path: "/treatments/advanced/cryopreservation/",
+//               },
+//             ],
+//           },
+//         ],
+//       },
+//       {
+//         links: [
+//           {
+//             label: "Infertility Treatments",
+//             path: "/treatments#infertility",
+//             submenu: [
+//               {
+//                 label: "Ovulation Induction",
+//                 path: "/treatments/infertility/ovulation-induction/",
+//               },
+//               {
+//                 label: "IUI",
+//                 path: "/treatments/infertility/artificial-insemination-iui-treatment/",
+//               },
+//               {
+//                 label: "IVF",
+//                 path: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/",
+//               },
+//               {
+//                 label: "IVF-ICSI ",
+//                 path: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/",
+//               },
+//               {
+//                 label: "Frozen Embryo Transfer",
+//                 path: "/treatments/infertility/frozen-embryo-transfer/",
+//               },
+//               {
+//                 label: "Fertility Surgery  ",
+//                 path: "/treatments/infertility/fertility-surgery/",
+//               },
+//             ],
+//           },
+//           {
+//             label: "Fertility Preservation",
+//             path: "/treatments#preservation",
+//             submenu: [
+//               {
+//                 label: "Female Fertility Preservation",
+//                 path: "/treatments/preservation/female-fertility-preservation/",
+//               },
+//               {
+//                 label: "Male Fertility Preservation",
+//                 path: "/treatments/preservation/male-fertility-preservation/",
+//               },
+//               {
+//                 label: "Embryo Preservation",
+//                 path: "/treatments/preservation/egg-embryo-freezing/",
+//               },
+//             ],
+//           },
+//           {
+//             label: "Fertility Evaluation",
+//             path: "/treatments#evaluation",
+//             submenu: [
+//               {
+//                 label: "Female Analysis-Complete Reproductive Health Check",
+//                 path: "/treatments/evaluation/female-fertility-check/",
+//               },
+//               {
+//                 label: "Male Analysis – Advanced Sperm Testing",
+//                 path: "/treatments/evaluation/semen-analysis/",
+//               },
+//             ],
+//           },
+//         ],
+//       },
+//       {
+//         title: "Quick Links",
+//         links: [
+//           {
+//             label: "+91 70309 44041",
+//             path: "tel:+917030944041",
+//             isPhone: true,
+//           },
+//           {
+//             label: "+91 94239 71260",
+//             path: "tel:+919423971260",
+//             isWhatsapp: true,
+//           },
+//           {
+//             label: "Online Consultation",
+//             path: "/online-consultations",
+//             isarrow: true,
+//           },
+//           { label: "EMI Options", path: "/emi-options", isarrow: true },
+//           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+//           {
+//             label: "International Patients",
+//             path: "/international-patient",
+//             isarrow: true,
+//           },
+//         ],
+//       },
+//     ],
+//   },
+// };
 
 /* -------------------- DROPDOWN DATA -------------------- */
-const megaMenuData: Record<string, any> = {
+// const megaMenuData: Record<string, any> = {
+//   "About Us": {
+//     image: "/Navbar/about-new.png",
+//     columns: [
+//       {
+//         title: "About Us",
+//         links: [
+//           // { label: "Why Progenesis", path: "/about-progenesis#why-1" },
+//           { label: "About Us", path: "/about-progenesis" },
+//           { label: "Our Approach", path: "/about-progenesis#our-approach" },
+//           {
+//             label: "Our Vision & Mission",
+//             path: "/about-progenesis#our-vision",
+//           },
+//           { label: "Why choose us", path: "/about-progenesis#why-choose-us" },
+//           { label: "Leadership Team", path: "/about-progenesis/leadership-team" },
+//           // { label: "Impact & Growth", path: "/about-progenesis#impact-growth" },
+//           { label: "FAQs", path: "/about-progenesis#faqs" },
+//           { label: "Careers", path: "/careers" },
+//         ],
+//       },
+//       {
+//         title: "Quick Links",
+//         links: [
+//           { label: "Book Appointment", path: "/appointment", isButton: true },
+//           {
+//             label: "+91 70309 44041",
+//             path: "tel:+917030944041",
+//             isPhone: true,
+//           },
+//           {
+//             label: "+91 94239 71260",
+//             path: "tel:+919423971260",
+//             isWhatsapp: true,
+//           },
+//           // { label: "Take a Quiz", path: "/quiz", isarrow: true },
+//           // { label: "Online Consult", path: "/online-consult", isarrow: true },
+//           // { label: "EMI Options", path: "/emi-options", isarrow: true },
+//         ],
+//       },
+//       {
+//         links: [
+//           // { label: "Fellowship", path: "/fellowship", isarrow: true },
+//           { label: "Our Centers", path: "/our-center", isarrow: true },
+//           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+//           { label: "EMI Options", path: "/emi-options", isarrow: true },
+//           {
+//             label: "International Patients",
+//             path: "/international-patient",
+//             isarrow: true,
+//           },
+//           {
+//             label: "Online Consultation",
+//             path: "/online-consultations",
+//             isarrow: true,
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   "Infertility Issues": {
+//     image: "/Navbar/infertility-image.png",
+//     columns: [
+//       {
+//         title: "Know Infertility",
+//         links: [
+//           {
+//             label: "What is Infertility",
+//             path: "/infertility#about",
+//             // submenu: [
+//             //   { label: "Overview", path: "/infertility#about" },
+//             //   { label: "Symptoms", path: "/infertility#about" },
+//             //   { label: "Diagnosis", path: "/infertility#about" },
+//             //   { label: "Treatment Options", path: "/infertility#about" },
+//             // ],
+//           },
+//           {
+//             label: "Female Infertility Causes",
+//             path: "/infertility#fertility-section",
+//             submenu: [
+//               {
+//                 label: "Repeated IUI Failures",
+//                 path: "/infertility/female/repeated-iui-failures/",
+//               },
+//               {
+//                 label: "Repeated IVF Failures",
+//                 path: "/infertility/female/repeated-ivf-failures/",
+//               },
+//               {
+//                 label: "Pregnancy after Menopause",
+//                 path: "/infertility/female/pregnancy-after-menopause/",
+//               },
+//               { label: "Low AMH", path: "/infertility/female/low-amh/" },
+//               { label: "PCOS", path: "/infertility/female/pcos/" },
+//               {
+//                 label: "Tubal Blockage",
+//                 path: "/infertility/female/tubal-blockage/",
+//               },
+//               { label: "Fibroids", path: "/infertility/female/fibroids/" },
+//               {
+//                 label: "Endometriosis",
+//                 path: "/infertility/female/endometriosis/",
+//               },
+//             ],
+//           },
+//           {
+//             label: "Male Infertility Causes",
+//             path: "/infertility#fertility-mini-section",
+//             submenu: [
+//               { label: "Azoospermia", path: "/infertility/male/azoospermia/" },
+//               {
+//                 label: "Low Sperm Count",
+//                 path: "/infertility/male/low-sperm-count/",
+//               },
+//               {
+//                 label: "Erectile Dysfunction (ED)",
+//                 path: "/infertility/male/erectile-dysfunction/",
+//               },
+//             ],
+//           },
+//         ],
+//       },
+//       {
+//         title: "Quick Links",
+//         links: [
+//           { label: "Book Appointment", path: "/appointment", isButton: true },
+//           {
+//             label: "+91 70309 44041",
+//             path: "tel:+917030944041",
+//             isPhone: true,
+//           },
+//           {
+//             label: "+91 94239 71260",
+//             path: "tel:+919423971260",
+//             isWhatsapp: true,
+//           },
+//           // { label: "Take a Quiz", path: "/quiz", isarrow: true },
+//           // { label: "Online Consult", path: "/online-consult", isarrow: true },
+//           // { label: "EMI Options", path: "/emi-options", isarrow: true },
+//         ],
+//       },
+//       {
+//         links: [
+//           { label: "Our Centers", path: "/our-center", isarrow: true },
+//           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+//           { label: "EMI Options", path: "/emi-options", isarrow: true },
+//           {
+//             label: "International Patients",
+//             path: "/international-patient",
+//             isarrow: true,
+//           },
+//           {
+//             label: "Online Consultation",
+//             path: "/online-consultations",
+//             isarrow: true,
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   "Our Centers": {
+//     image: "/Navbar/center.png",
+//     columns: [
+//       {
+//         title: "Where We Are",
+//         links: [
+//           {
+//             label: "Mumbai",
+//             path: "/mumbai",
+//             submenu: centersData
+//               .filter((center) => center.city === "Mumbai")
+//               .map((center) => ({
+//                 label: center.name,
+//                 path: `/our-center/${center.slug}`,
+//               })),
+//           },
+//         ],
+//       },
+//       {
+//         links: centersData
+//           .filter((center) => center.city !== "Mumbai")
+//           .map((center) => ({
+//             label: center.name,
+//             path: `/our-center/${center.slug}`,
+//           })),
+//       },
+//       {
+//         links: [
+//           { label: "Our Centers", path: "/our-center", isarrow: true },
+//           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+//           { label: "EMI Options", path: "/emi-options", isarrow: true },
+//           {
+//             label: "International Patients",
+//             path: "/international-patient",
+//             isarrow: true,
+//           },
+//           {
+//             label: "Online Consultation",
+//             path: "/online-consultations",
+//             isarrow: true,
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   Treatments: {
+//     image: "/Navbar/treatments.png",
+//     columns: [
+//       {
+//         title: "Fertility Solutions",
+//         links: [
+//           { label: "Your Path to Parenthood", path: "/treatments#path" },
+//           {
+//             label: "Advanced Infertility Treatments",
+//             path: "/treatments#advanced",
+//             submenu: [
+//               {
+//                 label: "IMSI – High-Resolution Sperm Selection",
+//                 path: "/treatments/advanced/imsi",
+//               },
+//               {
+//                 label: "PICSI – Physiological ICSI",
+//                 path: "/treatments/advanced/picsi",
+//               },
+//               {
+//                 label: "LAH – Laser Assisted Hatching",
+//                 path: "/treatments/advanced/lah",
+//               },
+//               {
+//                 label: "Blastocyst Transfer – Stronger Embryo Transfer",
+//                 path: "/treatments//advanced/blastocyst-transfer",
+//               },
+//               {
+//                 label: "Sequential Embryo Transfer – Two-Stage Transfer",
+//                 path: "/treatments/advanced/sequential-embryo-transfer/",
+//               },
+//               {
+//                 label: "PGD/PGS/PGT-A – Genetic Screening",
+//                 path: "/treatments/advanced/pgd-pgs-pgt-a/",
+//               },
+//             ],
+//           },
+//           {
+//             label: "Advanced Facilities for Trusted Care",
+//             path: "/treatments#advanced",
+//             submenu: [
+//               {
+//                 label: "Class-1000 Modular Lab",
+//                 path: "/treatments/advanced/class-1000-modular-lab/",
+//               },
+//               {
+//                 label: "Trigas Incubators",
+//                 path: "/treatments/advanced/trigas-incubators/",
+//               },
+//               {
+//                 label: "Witness System",
+//                 path: "/treatments/advanced/witness-system/",
+//               },
+//               {
+//                 label: "Cryopreservation",
+//                 path: "/treatments/advanced/cryopreservation/",
+//               },
+//             ],
+//           },
+//         ],
+//       },
+//       {
+//         links: [
+//           {
+//             label: "Infertility Treatments",
+//             path: "/treatments#infertility",
+//             submenu: [
+//               {
+//                 label: "Ovulation Induction",
+//                 path: "/treatments/infertility/ovulation-induction/",
+//               },
+//               {
+//                 label: "IUI",
+//                 path: "/treatments/infertility/artificial-insemination-iui-treatment/",
+//               },
+//               {
+//                 label: "IVF",
+//                 path: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/",
+//               },
+//               {
+//                 label: "IVF-ICSI ",
+//                 path: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/",
+//               },
+//               {
+//                 label: "Frozen Embryo Transfer",
+//                 path: "/treatments/infertility/frozen-embryo-transfer/",
+//               },
+//               {
+//                 label: "Fertility Surgery  ",
+//                 path: "/treatments/infertility/fertility-surgery/",
+//               },
+//             ],
+//           },
+//           {
+//             label: "Fertility Preservation",
+//             path: "/treatments#preservation",
+//             submenu: [
+//               {
+//                 label: "Female Fertility Preservation",
+//                 path: "/treatments/preservation/female-fertility-preservation/",
+//               },
+//               {
+//                 label: "Male Fertility Preservation",
+//                 path: "/treatments/preservation/male-fertility-preservation/",
+//               },
+//               {
+//                 label: "Embryo Preservation",
+//                 path: "/treatments/preservation/egg-embryo-freezing/",
+//               },
+//             ],
+//           },
+//           {
+//             label: "Fertility Evaluation",
+//             path: "/treatments#evaluation",
+//             submenu: [
+//               {
+//                 label: "Female Analysis-Complete Reproductive Health Check",
+//                 path: "/treatments/evaluation/female-fertility-check/",
+//               },
+//               {
+//                 label: "Male Analysis – Advanced Sperm Testing",
+//                 path: "/treatments/evaluation/semen-analysis/",
+//               },
+//             ],
+//           },
+//         ],
+//       },
+//       {
+//         links: [
+//           { label: "Our Centers", path: "/our-center", isarrow: true },
+//           { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+//           { label: "EMI Options", path: "/emi-options", isarrow: true },
+//           {
+//             label: "International Patients",
+//             path: "/international-patient",
+//             isarrow: true,
+//           },
+//           {
+//             label: "Online Consultation",
+//             path: "/online-consultations",
+//             isarrow: true,
+//           },
+//         ],
+//       },
+//     ],
+//   },
+// };
+
+/* -------------------- MEGA MENU -------------------- */
+const MegaMenu = ({
+  menu,
+  onBookAppointment,
+}: {
+  menu: any;
+  onBookAppointment: (e: React.MouseEvent) => void;
+}) => {
+  const [expandedLink, setExpandedLink] = useState<string | null>("Mumbai");
+  if (!menu) return null;
+
+  return (
+    <div
+      className="fixed left-1/2 top-[100px] -translate-x-1/2 
+                    bg-white shadow-lg rounded-2xl z-50 
+                    w-[90vw] max-w-[1646px] flex gap-8 p-6"
+    >
+      {/* Left Image */}
+      {menu.image && (
+        <div
+          className="
+      hidden sm:block
+      w-[200px] sm:w-[250px] md:w-[300px] lg:w-[300px]
+      flex-shrink-0
+      transition-all duration-300
+      [@media(min-width:1920px)]:w-[500px]
+    "
+        >
+          <Image
+            src={menu.image}
+            alt="menu-img"
+            width={500}
+            height={500}
+            className="w-full h-auto object-contain rounded-lg"
+          />
+        </div>
+      )}
+
+      <div
+        className="w-[1px]"
+        style={{
+          background: "rgba(22, 86, 165, 0.05)",
+          height: "auto",
+        }}
+      />
+
+      {/* Dynamic Columns with Divider */}
+      <div className="flex flex-1">
+        {menu.columns.map((col: any, idx: number) => (
+          <React.Fragment key={idx}>
+            {/* Column */}
+            <div className="flex-1">
+              {col.title && (
+                <h3 className="text-[28px] font-normal leading-normal tracking-[-0.56px] text-[#2C2C2C] font-[Manrope] mb-[15px]">
+                  {col.title}
+                </h3>
+              )}
+              <ul className="space-y-2 w-[240px] text-left">
+                {col.links.map((link: any, i: number) => (
+                  <li
+                    key={i}
+                    className="mb-4 "
+                  >
+                    {link.isButton ? (
+                      // ✅ BOOK APPOINTMENT BUTTON
+                      <button
+                        onClick={onBookAppointment}
+                        className="
+            flex items-center justify-center gap-2
+            w-full px-4 py-[10px] rounded-[8px]
+            bg-[#1656A5] text-white font-[Manrope] text-[14px] font-semibold leading-[24px] tracking-[-0.28px]
+            hover:bg-[#12498C] transition cursor-pointer
+          "
+                      >
+                        {link.label}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          className="shrink-0"
+                        >
+                          <path
+                            d="M1.37624 5.5498L10.0103 5.6986M10.0103 5.6986L5.56228 1.36376M10.0103 5.6986L5.76761 9.94124"
+                            stroke="white"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    ) : link.isPhone ? (
+                      // ✅ PHONE LINK
+                      <a
+                        href={link.path}
+                        className="
+            flex items-center gap-3 w-full
+            bg-[rgba(22,86,165,0.10)] rounded-[8px]
+            px-4 py-[10px]
+            text-[#606060] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+            hover:bg-[rgba(22,86,165,0.15)] transition
+          "
+                      >
+                        <span className="flex items-center justify-center w-[24px] h-[24px] shrink-0">
+                          {/* YOUR ORIGINAL PHONE SVG */}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="17"
+                            height="18"
+                            viewBox="0 0 17 18"
+                            fill="none"
+                          >
+                            <path
+                              d="M15.675 17.3415C13.9778 17.3415 12.2128 16.8947 10.3802 16.0009C8.54757 15.1072 6.83229 13.8568 5.23437 12.2499C3.63646 10.6429 2.39062 8.92765 1.49687 7.10404C0.603125 5.28043 0.15625 3.52001 0.15625 1.82279C0.15625 1.49002 0.264583 1.21278 0.48125 0.991057C0.697917 0.769154 0.96875 0.658203 1.29375 0.658203H3.46042C3.76736 0.658203 4.03368 0.752995 4.25937 0.942578C4.48507 1.13216 4.64305 1.38043 4.73333 1.68737L5.22083 3.9082C5.275 4.21515 5.26597 4.48598 5.19375 4.7207C5.12153 4.95543 4.99514 5.14501 4.81458 5.28945L2.5125 7.37487C2.98194 8.22348 3.49201 9.00438 4.04271 9.71758C4.5934 10.4308 5.17569 11.1033 5.78958 11.7353C6.43958 12.3853 7.14375 12.9901 7.90208 13.5499C8.66042 14.1096 9.5 14.6422 10.4208 15.1478L12.6687 12.8457C12.8493 12.6471 13.0434 12.5207 13.251 12.4665C13.4587 12.4124 13.6979 12.4033 13.9687 12.4395L15.8104 12.8186C16.1174 12.8908 16.3656 13.0443 16.5552 13.279C16.7448 13.5138 16.8396 13.7846 16.8396 14.0915V16.204C16.8396 16.529 16.7286 16.7999 16.5067 17.0165C16.285 17.2332 16.0078 17.3415 15.675 17.3415ZM2.16042 6.6707L4.32708 4.7207C4.41736 4.64848 4.47604 4.54918 4.50313 4.42279C4.53021 4.2964 4.52569 4.17904 4.48958 4.0707L4.00208 1.84987C3.96597 1.70543 3.90278 1.59709 3.8125 1.52487C3.72222 1.45265 3.60486 1.41654 3.46042 1.41654H1.29375C1.18542 1.41654 1.09514 1.45265 1.02292 1.52487C0.950694 1.59709 0.914583 1.68737 0.914583 1.7957C0.914583 2.53598 1.02743 3.3214 1.25312 4.15195C1.47882 4.98251 1.78125 5.82209 2.16042 6.6707ZM11.1521 15.4999C11.8924 15.879 12.6913 16.1544 13.549 16.3259C14.4066 16.4974 15.1243 16.5832 15.7021 16.5832C15.8104 16.5832 15.9007 16.5471 15.9729 16.4749C16.0451 16.4026 16.0812 16.3124 16.0812 16.204V14.0915C16.0812 13.9471 16.0451 13.8297 15.9729 13.7395C15.9007 13.6492 15.7924 13.586 15.6479 13.5499L13.8062 13.1707C13.6979 13.1346 13.6031 13.1301 13.5219 13.1572C13.4406 13.1842 13.3549 13.2429 13.2646 13.3332L11.1521 15.4999Z"
+                              fill="#1C1B1F"
+                            />
+                          </svg>
+                        </span>
+                        {link.label}
+                      </a>
+                    ) : link.isWhatsapp ? (
+                      // ✅ WHATSAPP LINK (your same custom SVG)
+                      <a
+                        href={link.path}
+                        className="
+                            flex items-center gap-3 w-full
+                            bg-[rgba(22,86,165,0.10)] rounded-[8px]
+                            px-4 py-[10px]
+                            text-[#606060] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+                            hover:bg-[rgba(22,86,165,0.15)] transition
+                          "
+                      >
+                        <span className="flex items-center justify-center w-[24px] h-[24px] shrink-0">
+                          {/* YOUR EXISTING WHATSAPP SVG */}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="26"
+                            height="26"
+                            viewBox="0 0 27 26"
+                            fill="none"
+                          >
+                            <mask
+                              id={`mask_${i}`}
+                              style={{ maskType: "alpha" }}
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="27"
+                              height="26"
+                            >
+                              <rect
+                                x="0.5"
+                                width="26"
+                                height="26"
+                                fill="#D9D9D9"
+                              />
+                            </mask>
+                            <g mask={`url(#mask_${i})`}>
+                              <path
+                                d="M21.5497 9.57082C21.0872 8.54894 20.4234 7.63148 19.5805 6.84082C18.7376 6.05763 17.7605 5.43853 16.6715 5.00591C15.5452 4.55837 14.3517 4.33459 13.121 4.33459C11.8902 4.33459 10.6968 4.55837 9.57048 5.00591C8.48146 5.43853 7.50433 6.05017 6.66146 6.84082C5.81859 7.63148 5.15475 8.54894 4.69229 9.57082C4.21491 10.63 3.96875 11.7638 3.96875 12.9274C3.96875 14.9637 4.72956 16.918 6.1244 18.4694L5.3785 22.5346L9.34671 20.7668C10.5327 21.274 11.7933 21.5276 13.1135 21.5276C14.3442 21.5276 15.5377 21.3039 16.664 20.8563C17.753 20.4237 18.7302 19.8121 19.573 19.0214C20.4159 18.2307 21.0797 17.3133 21.5422 16.2914C22.0196 15.2322 22.2657 14.0984 22.2657 12.9348C22.2732 11.7638 22.027 10.6375 21.5497 9.57082Z"
+                                stroke="black"
+                                strokeWidth="0.7"
+                              />
+                              <path
+                                d="M16.8348 14.6452C16.4469 14.4513 16.1635 14.3319 15.9621 14.2574C15.8353 14.2126 15.5369 14.0783 15.4325 14.1604C15.1043 14.4289 14.7537 15.1897 14.3808 15.3315C13.4558 15.1524 12.5981 14.5184 11.9268 13.8695C11.6284 13.586 11.0764 12.7805 10.9571 12.5642C10.9347 12.3404 11.3375 12.042 11.427 11.8705C11.8894 11.3483 11.5389 11.0201 11.4792 10.8038C11.3748 10.5801 11.1958 10.1773 11.0391 9.84908C10.9049 9.63277 10.875 9.31203 10.6363 9.19268C9.6219 8.67055 9.04012 9.71482 8.80143 10.2593C7.36184 13.7278 16.0143 20.329 17.7746 15.779C17.8641 15.3837 17.8268 15.2345 17.6926 15.0555C17.424 14.869 17.1108 14.7869 16.8348 14.6452Z"
+                                stroke="black"
+                                strokeWidth="0.7"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        {link.label}
+                      </a>
+                    ) : link.isarrow ? (
+                      // ✅ ARROW LINKS (same SVG)
+                      <Link
+                        href={link.path}
+                        className="
+            flex items-center justify-between w-full
+            text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
+            hover:text-[#1656A5] rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
+                      >
+                        <span>{link.label}</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="shrink-0 mr-[20px]"
+                        >
+                          <path
+                            d="M7.37624 11.5498L16.0103 11.6986M16.0103 11.6986L11.5623 7.36376M16.0103 11.6986L11.7676 15.9412"
+                            stroke="#606060"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </Link>
+                    ) : (
+                      <div
+                        className="relative transition-all duration-150"
+                        onMouseEnter={() => setExpandedLink(link.label)}
+                        onMouseLeave={() => {
+                          // Clear the expanded link, but Mumbai will stay visible via the render condition
+                          if (link.label !== "Mumbai") {
+                            setExpandedLink(null);
+                          }
+                        }}
+                      >
+                        <Link
+                          href={link.path}
+                          className="block text-[#2C2C2C] font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] w-full flex items-center gap-2 rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
+                        >
+                          {link.label}
+                        </Link>
+
+                        {/* ✅ Submenu opens below on hover, no overlap */}
+                        {link.submenu &&
+                          (expandedLink === link.label ||
+                            link.label === "Mumbai") && (
+                            <ul className="pl-4 mt-2 space-y-1 transition-all duration-200 ease-in-out">
+                              {link.submenu.map(
+                                (sublink: any, subIdx: number) => (
+                                  <li key={subIdx}>
+                                    <Link
+                                      href={sublink.path}
+                                      className="block text-[#555] font-[Manrope] text-[14px] leading-[22px] hover:text-[#1656A5] transition-all duration-150"
+                                    >
+                                      {sublink.label}
+                                    </Link>
+                                  </li>
+                                ),
+                              )}
+                            </ul>
+                          )}
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Divider (not after last column) */}
+            {idx < menu.columns.length - 1 && (
+              <div
+                className="w-[1px] mx-6"
+                style={{
+                  background: "rgba(22, 86, 165, 0.05)",
+                  height: "auto",
+                }}
+              />
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+/* -------------------- NAVBAR -------------------- */
+export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; centersData: Center[] }) {
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
+  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(
+    null,
+  );
+  const [activeMobileSubmenuItem, setActiveMobileSubmenuItem] = useState<
+    string | null
+  >(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAppointmentFormOpen, setIsAppointmentFormOpen] = useState(false);
+
+  const megaMenuData: Record<string, any> = {
   "About Us": {
     image: "/Navbar/about-new.png",
     columns: [
@@ -1402,279 +2031,357 @@ const megaMenuData: Record<string, any> = {
   },
 };
 
-/* -------------------- MEGA MENU -------------------- */
-const MegaMenu = ({
-  menu,
-  onBookAppointment,
-}: {
-  menu: any;
-  onBookAppointment: (e: React.MouseEvent) => void;
-}) => {
-  const [expandedLink, setExpandedLink] = useState<string | null>("Mumbai");
-  if (!menu) return null;
 
-  return (
-    <div
-      className="fixed left-1/2 top-[100px] -translate-x-1/2 
-                    bg-white shadow-lg rounded-2xl z-50 
-                    w-[90vw] max-w-[1646px] flex gap-8 p-6"
-    >
-      {/* Left Image */}
-      {menu.image && (
-        <div
-          className="
-      hidden sm:block
-      w-[200px] sm:w-[250px] md:w-[300px] lg:w-[300px]
-      flex-shrink-0
-      transition-all duration-300
-      [@media(min-width:1920px)]:w-[500px]
-    "
-        >
-          <Image
-            src={menu.image}
-            alt="menu-img"
-            width={500}
-            height={500}
-            className="w-full h-auto object-contain rounded-lg"
-          />
-        </div>
-      )}
-
-      <div
-        className="w-[1px]"
-        style={{
-          background: "rgba(22, 86, 165, 0.05)",
-          height: "auto",
-        }}
-      />
-
-      {/* Dynamic Columns with Divider */}
-      <div className="flex flex-1">
-        {menu.columns.map((col: any, idx: number) => (
-          <React.Fragment key={idx}>
-            {/* Column */}
-            <div className="flex-1">
-              {col.title && (
-                <h3 className="text-[28px] font-normal leading-normal tracking-[-0.56px] text-[#2C2C2C] font-[Manrope] mb-[15px]">
-                  {col.title}
-                </h3>
-              )}
-              <ul className="space-y-2 w-[240px] text-left">
-                {col.links.map((link: any, i: number) => (
-                  <li
-                    key={i}
-                    className="mb-4 "
-                  >
-                    {link.isButton ? (
-                      // ✅ BOOK APPOINTMENT BUTTON
-                      <button
-                        onClick={onBookAppointment}
-                        className="
-            flex items-center justify-center gap-2
-            w-full px-4 py-[10px] rounded-[8px]
-            bg-[#1656A5] text-white font-[Manrope] text-[14px] font-semibold leading-[24px] tracking-[-0.28px]
-            hover:bg-[#12498C] transition cursor-pointer
-          "
-                      >
-                        {link.label}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 12 12"
-                          fill="none"
-                          className="shrink-0"
-                        >
-                          <path
-                            d="M1.37624 5.5498L10.0103 5.6986M10.0103 5.6986L5.56228 1.36376M10.0103 5.6986L5.76761 9.94124"
-                            stroke="white"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </button>
-                    ) : link.isPhone ? (
-                      // ✅ PHONE LINK
-                      <a
-                        href={link.path}
-                        className="
-            flex items-center gap-3 w-full
-            bg-[rgba(22,86,165,0.10)] rounded-[8px]
-            px-4 py-[10px]
-            text-[#606060] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-            hover:bg-[rgba(22,86,165,0.15)] transition
-          "
-                      >
-                        <span className="flex items-center justify-center w-[24px] h-[24px] shrink-0">
-                          {/* YOUR ORIGINAL PHONE SVG */}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="17"
-                            height="18"
-                            viewBox="0 0 17 18"
-                            fill="none"
-                          >
-                            <path
-                              d="M15.675 17.3415C13.9778 17.3415 12.2128 16.8947 10.3802 16.0009C8.54757 15.1072 6.83229 13.8568 5.23437 12.2499C3.63646 10.6429 2.39062 8.92765 1.49687 7.10404C0.603125 5.28043 0.15625 3.52001 0.15625 1.82279C0.15625 1.49002 0.264583 1.21278 0.48125 0.991057C0.697917 0.769154 0.96875 0.658203 1.29375 0.658203H3.46042C3.76736 0.658203 4.03368 0.752995 4.25937 0.942578C4.48507 1.13216 4.64305 1.38043 4.73333 1.68737L5.22083 3.9082C5.275 4.21515 5.26597 4.48598 5.19375 4.7207C5.12153 4.95543 4.99514 5.14501 4.81458 5.28945L2.5125 7.37487C2.98194 8.22348 3.49201 9.00438 4.04271 9.71758C4.5934 10.4308 5.17569 11.1033 5.78958 11.7353C6.43958 12.3853 7.14375 12.9901 7.90208 13.5499C8.66042 14.1096 9.5 14.6422 10.4208 15.1478L12.6687 12.8457C12.8493 12.6471 13.0434 12.5207 13.251 12.4665C13.4587 12.4124 13.6979 12.4033 13.9687 12.4395L15.8104 12.8186C16.1174 12.8908 16.3656 13.0443 16.5552 13.279C16.7448 13.5138 16.8396 13.7846 16.8396 14.0915V16.204C16.8396 16.529 16.7286 16.7999 16.5067 17.0165C16.285 17.2332 16.0078 17.3415 15.675 17.3415ZM2.16042 6.6707L4.32708 4.7207C4.41736 4.64848 4.47604 4.54918 4.50313 4.42279C4.53021 4.2964 4.52569 4.17904 4.48958 4.0707L4.00208 1.84987C3.96597 1.70543 3.90278 1.59709 3.8125 1.52487C3.72222 1.45265 3.60486 1.41654 3.46042 1.41654H1.29375C1.18542 1.41654 1.09514 1.45265 1.02292 1.52487C0.950694 1.59709 0.914583 1.68737 0.914583 1.7957C0.914583 2.53598 1.02743 3.3214 1.25312 4.15195C1.47882 4.98251 1.78125 5.82209 2.16042 6.6707ZM11.1521 15.4999C11.8924 15.879 12.6913 16.1544 13.549 16.3259C14.4066 16.4974 15.1243 16.5832 15.7021 16.5832C15.8104 16.5832 15.9007 16.5471 15.9729 16.4749C16.0451 16.4026 16.0812 16.3124 16.0812 16.204V14.0915C16.0812 13.9471 16.0451 13.8297 15.9729 13.7395C15.9007 13.6492 15.7924 13.586 15.6479 13.5499L13.8062 13.1707C13.6979 13.1346 13.6031 13.1301 13.5219 13.1572C13.4406 13.1842 13.3549 13.2429 13.2646 13.3332L11.1521 15.4999Z"
-                              fill="#1C1B1F"
-                            />
-                          </svg>
-                        </span>
-                        {link.label}
-                      </a>
-                    ) : link.isWhatsapp ? (
-                      // ✅ WHATSAPP LINK (your same custom SVG)
-                      <a
-                        href={link.path}
-                        className="
-                            flex items-center gap-3 w-full
-                            bg-[rgba(22,86,165,0.10)] rounded-[8px]
-                            px-4 py-[10px]
-                            text-[#606060] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-                            hover:bg-[rgba(22,86,165,0.15)] transition
-                          "
-                      >
-                        <span className="flex items-center justify-center w-[24px] h-[24px] shrink-0">
-                          {/* YOUR EXISTING WHATSAPP SVG */}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="26"
-                            height="26"
-                            viewBox="0 0 27 26"
-                            fill="none"
-                          >
-                            <mask
-                              id={`mask_${i}`}
-                              style={{ maskType: "alpha" }}
-                              maskUnits="userSpaceOnUse"
-                              x="0"
-                              y="0"
-                              width="27"
-                              height="26"
-                            >
-                              <rect
-                                x="0.5"
-                                width="26"
-                                height="26"
-                                fill="#D9D9D9"
-                              />
-                            </mask>
-                            <g mask={`url(#mask_${i})`}>
-                              <path
-                                d="M21.5497 9.57082C21.0872 8.54894 20.4234 7.63148 19.5805 6.84082C18.7376 6.05763 17.7605 5.43853 16.6715 5.00591C15.5452 4.55837 14.3517 4.33459 13.121 4.33459C11.8902 4.33459 10.6968 4.55837 9.57048 5.00591C8.48146 5.43853 7.50433 6.05017 6.66146 6.84082C5.81859 7.63148 5.15475 8.54894 4.69229 9.57082C4.21491 10.63 3.96875 11.7638 3.96875 12.9274C3.96875 14.9637 4.72956 16.918 6.1244 18.4694L5.3785 22.5346L9.34671 20.7668C10.5327 21.274 11.7933 21.5276 13.1135 21.5276C14.3442 21.5276 15.5377 21.3039 16.664 20.8563C17.753 20.4237 18.7302 19.8121 19.573 19.0214C20.4159 18.2307 21.0797 17.3133 21.5422 16.2914C22.0196 15.2322 22.2657 14.0984 22.2657 12.9348C22.2732 11.7638 22.027 10.6375 21.5497 9.57082Z"
-                                stroke="black"
-                                strokeWidth="0.7"
-                              />
-                              <path
-                                d="M16.8348 14.6452C16.4469 14.4513 16.1635 14.3319 15.9621 14.2574C15.8353 14.2126 15.5369 14.0783 15.4325 14.1604C15.1043 14.4289 14.7537 15.1897 14.3808 15.3315C13.4558 15.1524 12.5981 14.5184 11.9268 13.8695C11.6284 13.586 11.0764 12.7805 10.9571 12.5642C10.9347 12.3404 11.3375 12.042 11.427 11.8705C11.8894 11.3483 11.5389 11.0201 11.4792 10.8038C11.3748 10.5801 11.1958 10.1773 11.0391 9.84908C10.9049 9.63277 10.875 9.31203 10.6363 9.19268C9.6219 8.67055 9.04012 9.71482 8.80143 10.2593C7.36184 13.7278 16.0143 20.329 17.7746 15.779C17.8641 15.3837 17.8268 15.2345 17.6926 15.0555C17.424 14.869 17.1108 14.7869 16.8348 14.6452Z"
-                                stroke="black"
-                                strokeWidth="0.7"
-                              />
-                            </g>
-                          </svg>
-                        </span>
-                        {link.label}
-                      </a>
-                    ) : link.isarrow ? (
-                      // ✅ ARROW LINKS (same SVG)
-                      <Link
-                        href={link.path}
-                        className="
-            flex items-center justify-between w-full
-            text-[#2C2C2C] font-[Manrope] text-[14px] font-normal leading-[24px] tracking-[-0.28px]
-            hover:text-[#1656A5] rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
-                      >
-                        <span>{link.label}</span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          className="shrink-0 mr-[20px]"
-                        >
-                          <path
-                            d="M7.37624 11.5498L16.0103 11.6986M16.0103 11.6986L11.5623 7.36376M16.0103 11.6986L11.7676 15.9412"
-                            stroke="#606060"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </Link>
-                    ) : (
-                      <div
-                        className="relative transition-all duration-150"
-                        onMouseEnter={() => setExpandedLink(link.label)}
-                        onMouseLeave={() => {
-                          // Clear the expanded link, but Mumbai will stay visible via the render condition
-                          if (link.label !== "Mumbai") {
-                            setExpandedLink(null);
-                          }
-                        }}
-                      >
-                        <Link
-                          href={link.path}
-                          className="block text-[#2C2C2C] font-[Manrope] text-[14px] leading-[24px] tracking-[-0.28px] hover:text-[#1656A5] w-full flex items-center gap-2 rounded-[8px] transition-all duration-200 hover:bg-[rgba(22,86,165,0.10)] hover:px-4 hover:py-[10px]"
-                        >
-                          {link.label}
-                        </Link>
-
-                        {/* ✅ Submenu opens below on hover, no overlap */}
-                        {link.submenu &&
-                          (expandedLink === link.label ||
-                            link.label === "Mumbai") && (
-                            <ul className="pl-4 mt-2 space-y-1 transition-all duration-200 ease-in-out">
-                              {link.submenu.map(
-                                (sublink: any, subIdx: number) => (
-                                  <li key={subIdx}>
-                                    <Link
-                                      href={sublink.path}
-                                      className="block text-[#555] font-[Manrope] text-[14px] leading-[22px] hover:text-[#1656A5] transition-all duration-150"
-                                    >
-                                      {sublink.label}
-                                    </Link>
-                                  </li>
-                                ),
-                              )}
-                            </ul>
-                          )}
-                      </div>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* Divider (not after last column) */}
-            {idx < menu.columns.length - 1 && (
-              <div
-                className="w-[1px] mx-6"
-                style={{
-                  background: "rgba(22, 86, 165, 0.05)",
-                  height: "auto",
-                }}
-              />
-            )}
-          </React.Fragment>
-        ))}
-      </div>
-    </div>
-  );
+  const megaMenuDataMobile: Record<string, any> = {
+  "About Us": {
+    image: "/Navbar/about-new.png",
+    columns: [
+      {
+        title: "About Us",
+        links: [
+          { label: "About Us", path: "/about-progenesis" },
+          { label: "Our Approach", path: "/about-progenesis" },
+          {
+            label: "Our Vision & Mission",
+            path: "/about-progenesis#our-vision",
+          },
+          { label: "Why choose us", path: "/about-progenesis#why-choose-us" },
+          { label: "Leadership Team", path: "/about-progenesis/leadership-team" },
+          // { label: "Impact & Growth", path: "/about-progenesis#impact-growth" },
+          { label: "Careers", path: "/careers" },
+          { label: "FAQs", path: "/about-progenesis#faqs" },
+        ],
+      },
+      {
+        title: "Quick Links",
+        links: [
+          {
+            label: "+91 70309 44041",
+            path: "tel:+917030944041",
+            isPhone: true,
+          },
+          {
+            label: "+91 94239 71260",
+            path: "tel:+919423971260",
+            isWhatsapp: true,
+          },
+          {
+            label: "Online Consultation",
+            path: "/online-consultations",
+            isarrow: true,
+          },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          {
+            label: "International Patients",
+            path: "/international-patient",
+            isarrow: true,
+          },
+        ],
+      },
+    ],
+  },
+  "Infertility Issues": {
+    image: "/Navbar/infertility-image.png",
+    columns: [
+      {
+        title: "Know Infertility",
+        links: [
+          {
+            label: "What is Infertility",
+            path: "/infertility#about",
+            // submenu: [
+            //   { label: "Overview", path: "/infertility#about" },
+            //   { label: "Symptoms", path: "/infertility#about" },
+            //   { label: "Diagnosis", path: "/infertility#about" },
+            //   { label: "Treatment Options", path: "/infertility#about" },
+            // ],
+          },
+          {
+            label: "Female Infertility Causes",
+            path: "/infertility#fertility-section",
+            submenu: [
+              {
+                label: "Repeated IUI Failures",
+                path: "/infertility/female/repeated-iui-failures/",
+              },
+              {
+                label: "Repeated IVF Failures",
+                path: "/infertility/female/repeated-ivf-failures/",
+              },
+              {
+                label: "Pregnancy after Menopause",
+                path: "/infertility/female/pregnancy-after-menopause/",
+              },
+              { label: "Low AMH", path: "/infertility/female/low-amh/" },
+              { label: "PCOS", path: "/infertility/female/pcos/" },
+              {
+                label: "Tubal Blockage",
+                path: "/infertility/female/tubal-blockage/",
+              },
+              { label: "Fibroids", path: "/infertility/female/fibroids/" },
+              {
+                label: "Endometriosis",
+                path: "/infertility/female/endometriosis/",
+              },
+            ],
+          },
+          {
+            label: "Male Infertility Causes",
+            path: "/infertility#fertility-mini-section",
+            submenu: [
+              { label: "Azoospermia", path: "/infertility/male/azoospermia/" },
+              {
+                label: "Low Sperm Count",
+                path: "/infertility/male/low-sperm-count/",
+              },
+              {
+                label: "Erectile Dysfunction (ED)",
+                path: "/infertility/male/erectile-dysfunction/",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Quick Links",
+        links: [
+          {
+            label: "+91 70309 44041",
+            path: "tel:+917030944041",
+            isPhone: true,
+          },
+          {
+            label: "+91 94239 71260",
+            path: "tel:+919423971260",
+            isWhatsapp: true,
+          },
+          {
+            label: "Online Consultation",
+            path: "/online-consultations",
+            isarrow: true,
+          },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          {
+            label: "International Patients",
+            path: "/international-patient",
+            isarrow: true,
+          },
+        ],
+      },
+    ],
+  },
+  "Our Centers": {
+    image: "/Navbar/center.png",
+    columns: [
+      {
+        title: "Where We Are",
+        links: [
+          {
+            label: "Mumbai",
+            path: "/mumbai",
+            submenu: centersData
+              .filter((center) => center.city === "Mumbai")
+              .map((center) => ({
+                label: center.name,
+                path: `/our-center/${center.slug}`,
+              })),
+          },
+          ...centersData
+            .filter((center) => center.city !== "Mumbai")
+            .map((center) => ({
+              label: center.name,
+              path: `/our-center/${center.slug}`,
+            })),
+        ],
+      },
+      {
+        title: "Quick Links",
+        links: [
+          {
+            label: "+91 70309 44041",
+            path: "tel:+917030944041",
+            isPhone: true,
+          },
+          {
+            label: "+91 94239 71260",
+            path: "tel:+919423971260",
+            isWhatsapp: true,
+          },
+          {
+            label: "Online Consultation",
+            path: "/online-consultations",
+            isarrow: true,
+          },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          {
+            label: "International Patients",
+            path: "/international-patient",
+            isarrow: true,
+          },
+        ],
+      },
+    ],
+  },
+  Treatments: {
+    image: "/Navbar/treatments.png",
+    columns: [
+      {
+        title: "Fertility Solutions",
+        links: [
+          { label: "Your Path to Parenthood", path: "/treatments#path" },
+          {
+            label: "Advanced Infertility Treatments",
+            path: "/treatments#advanced",
+            submenu: [
+              {
+                label: "IMSI – High-Resolution Sperm Selection",
+                path: "/treatments/advanced/imsi",
+              },
+              {
+                label: "PICSI – Physiological ICSI",
+                path: "/treatments/advanced/picsi",
+              },
+              {
+                label: "LAH – Laser Assisted Hatching",
+                path: "/treatments/advanced/lah",
+              },
+              {
+                label: "Blastocyst Transfer – Stronger Embryo Transfer",
+                path: "/treatments//advanced/blastocyst-transfer",
+              },
+              {
+                label: "Sequential Embryo Transfer – Two-Stage Transfer",
+                path: "/treatments/advanced/sequential-embryo-transfer/",
+              },
+              {
+                label: "PGD/PGS/PGT-A – Genetic Screening",
+                path: "/treatments/advanced/pgd-pgs-pgt-a/",
+              },
+            ],
+          },
+          {
+            label: "Advanced Facilities for Trusted Care",
+            path: "/treatments#advanced",
+            submenu: [
+              {
+                label: "Class-1000 Modular Lab",
+                path: "/treatments/advanced/class-1000-modular-lab/",
+              },
+              {
+                label: "Trigas Incubators",
+                path: "/treatments/advanced/trigas-incubators/",
+              },
+              {
+                label: "Witness System",
+                path: "/treatments/advanced/witness-system/",
+              },
+              {
+                label: "Cryopreservation",
+                path: "/treatments/advanced/cryopreservation/",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        links: [
+          {
+            label: "Infertility Treatments",
+            path: "/treatments#infertility",
+            submenu: [
+              {
+                label: "Ovulation Induction",
+                path: "/treatments/infertility/ovulation-induction/",
+              },
+              {
+                label: "IUI",
+                path: "/treatments/infertility/artificial-insemination-iui-treatment/",
+              },
+              {
+                label: "IVF",
+                path: "/treatments/infertility/ivf-comprehensive-in-vitro-fertilization-treatment/",
+              },
+              {
+                label: "IVF-ICSI ",
+                path: "/treatments/infertility/ivf-icsi-intracytoplasmic-sperm-injection/",
+              },
+              {
+                label: "Frozen Embryo Transfer",
+                path: "/treatments/infertility/frozen-embryo-transfer/",
+              },
+              {
+                label: "Fertility Surgery  ",
+                path: "/treatments/infertility/fertility-surgery/",
+              },
+            ],
+          },
+          {
+            label: "Fertility Preservation",
+            path: "/treatments#preservation",
+            submenu: [
+              {
+                label: "Female Fertility Preservation",
+                path: "/treatments/preservation/female-fertility-preservation/",
+              },
+              {
+                label: "Male Fertility Preservation",
+                path: "/treatments/preservation/male-fertility-preservation/",
+              },
+              {
+                label: "Embryo Preservation",
+                path: "/treatments/preservation/egg-embryo-freezing/",
+              },
+            ],
+          },
+          {
+            label: "Fertility Evaluation",
+            path: "/treatments#evaluation",
+            submenu: [
+              {
+                label: "Female Analysis-Complete Reproductive Health Check",
+                path: "/treatments/evaluation/female-fertility-check/",
+              },
+              {
+                label: "Male Analysis – Advanced Sperm Testing",
+                path: "/treatments/evaluation/semen-analysis/",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Quick Links",
+        links: [
+          {
+            label: "+91 70309 44041",
+            path: "tel:+917030944041",
+            isPhone: true,
+          },
+          {
+            label: "+91 94239 71260",
+            path: "tel:+919423971260",
+            isWhatsapp: true,
+          },
+          {
+            label: "Online Consultation",
+            path: "/online-consultations",
+            isarrow: true,
+          },
+          { label: "EMI Options", path: "/emi-options", isarrow: true },
+          { label: "Second Opinion", path: "/second-opinion", isarrow: true },
+          {
+            label: "International Patients",
+            path: "/international-patient",
+            isarrow: true,
+          },
+        ],
+      },
+    ],
+  },
 };
-
-/* -------------------- NAVBAR -------------------- */
-export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; centersData: Center[] }) {
-  const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
-  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(
-    null,
-  );
-  const [activeMobileSubmenuItem, setActiveMobileSubmenuItem] = useState<
-    string | null
-  >(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAppointmentFormOpen, setIsAppointmentFormOpen] = useState(false);
 
   // Prevent background scrolling on mobile (especially iOS/iPhone)
   React.useEffect(() => {
@@ -1910,6 +2617,7 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
           <SearchSection
             onClose={() => setIsSearchOpen(false)}
             doctors={doctors}
+            centersData={centersData}
           />
         )}
         {/* MOBILE MENU */}

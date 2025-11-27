@@ -231,6 +231,7 @@ const CentersNav: React.FC<{ data: Center[] }> = ({ data }) => {
               name={center.name}
               address={center.address}
               image={center.image}
+              data={data}
             />
           ))}
       </div>

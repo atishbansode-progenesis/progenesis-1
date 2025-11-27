@@ -1,6 +1,6 @@
 import SingleCenter from '@/page-components/centers/SingleCenter';
 import { notFound } from "next/navigation";
-import { Center, getCenterBySlug } from "@/data/centers";
+import { Center, getAllCenters, getCenterBySlug } from "@/data/centers";
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -194,10 +194,11 @@ export default async function DynamicPage({ params }: DynamicPageProps) {
   const { slug } = await params;
 
   const center = await getCenterBySlug(slug);
+  const centers = await getAllCenters();
 
   if (!center) {
     notFound();
   }
 
-  return <SingleCenter selectedSlug={slug} center={center} />;
+  return <SingleCenter selectedSlug={slug} center={center} centers={centers} />;
 }
