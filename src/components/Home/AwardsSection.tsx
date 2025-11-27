@@ -30,28 +30,28 @@ const awards: Award[] = [
     title: "Best Hospital for Reproductive Medicine...",
     subtitle: "Business Excellence and Research Group (BERG) Singapore",
     city: "",
-    image: "/awards/awards.png",
+    image: "/awards/awards.webp",
   },
   {
     year: "2016-17",
     title: "World's Greatest Brand & World's Greatest Leaders",
     subtitle: "URS and ASIA ONE",
     city: "In Dubai",
-    image: "/awards/awardsa.png",
+    image: "/awards/awardsa.webp",
   },
   {
     year: "2017-18",
     title: "India's Fastest Growing Brand in IVF,Brand in IVF",
     subtitle: "URS and ASIA ONE",
     city: "In Dubai",
-    image: "/awards/awardsb.png",
+    image: "/awards/awardsb.webp",
   },
   {
     year: "2023-24",
     title: "The Number 1 IVF Centre for Emerging IVF Centre Category",
     subtitle: "The Times",
     city: "of India",
-    image: "/awards/awardsc.png",
+    image: "/awards/awardsc.webp",
   },
 ];
 
@@ -168,6 +168,7 @@ export default function AwardsSection() {
             <div className="mt-10 space-y-6 ">
               {tabs.map((tab) => (
                 <button
+                aria-label="tab"
                   key={tab}
                   onClick={() => {
                     setActiveTab(tab);
@@ -295,12 +296,14 @@ export default function AwardsSection() {
                       <div className="flex gap-3">
 
                         <button
+                        aria-label="left arrow"
                           onClick={handlePrev}
                           className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
                         >
                           <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
                         </button>
                         <button
+                        aria-label="right arrow"
                           onClick={handleNext}
                           className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
                         >
@@ -309,7 +312,9 @@ export default function AwardsSection() {
                       </div>
                       <div className="">
 
-                        <button className="px-4 py-2 bg-[#1656A5] text-white rounded-lg w-28" 
+                        <button 
+                        aria-label="view all"
+                        className="px-4 py-2 bg-[#1656A5] text-white rounded-lg w-28" 
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
@@ -347,12 +352,15 @@ export default function AwardsSection() {
 
                   <div className="flex gap-3 mt-6">
                     <button
+                    aria-label="left arrow"
                       onClick={handlePrev}
                       className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
                     >
                       <ArrowLeft className="w-5 h-5 text-[#1656A5]" />
                     </button>
                     <button
+                    aria-label="right arrow"
+
                       onClick={handleNext}
                       className="w-10 h-10 rounded-[8px] border-[1px] border-[#1656A5] flex items-center justify-center hover:bg-blue-50 transition"
                     >

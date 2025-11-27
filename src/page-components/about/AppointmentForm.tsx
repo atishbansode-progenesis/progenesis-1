@@ -85,6 +85,7 @@ const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
         </div>
 
         <button
+        aria-label="svg"
           onClick={onClose}
           className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors"
         >
@@ -170,6 +171,7 @@ const CountryCodeDropdown: React.FC<CountryDropdownProps> = ({
   return (
     <div className="relative w-full" ref={dropdownRef}>
       <button
+      aria-label="country"
         type="button"
         onClick={() => !disabled && setIsOpen(!isOpen)}
         disabled={disabled}
@@ -209,6 +211,7 @@ const CountryCodeDropdown: React.FC<CountryDropdownProps> = ({
               filteredCountries.map((country) => (
                 <li key={country.short}>
                   <button
+                    aria-label="country flag"
                     type="button"
                     onClick={() => handleSelect(country.code)}
                     className={`w-full px-2 py-2 text-left hover:bg-[#1656A50D] transition-colors flex items-center gap-3 ${
@@ -752,6 +755,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
         {checkboxFields.map((field, idx) => renderCheckbox(field, idx))}
 
         <button
+        aria-label="book your appointment"
           type="submit"
           disabled={isSubmitLoading || apiError}
           className="cursor-pointer rounded-[16px] h-[56px] overflow-hidden p-2 bg-[#1656A5] text-white min-w-[158px] disabled:cursor-not-allowed disabled:bg-[#1656A5] disabled:text-[#F9F9F9] text-[14px] leading-[24px] font-medium flex items-center gap-1 justify-center mx-auto"
@@ -773,6 +777,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
             <div className="w-[90%] lg:w-[800px] shadow-lg">
               <div className="bg-white rounded-2xl shadow-lg py-10 px-6 flex flex-row items-center justify-between relative max-h-[90vh]">
                 <button
+                aria-label="close"
                   onClick={onClose}
                   disabled={isLoading}
                   className="absolute cursor-pointer top-4 right-6 text-gray-600 hover:text-black text-xl font-bold"
@@ -852,7 +857,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
   return (
     <div className="relative w-full">
 
-      <img src="/video/BabyImage.jpeg" alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
+      <img src="/video/BabyImage.webp" alt="baby image" className="absolute top-0 left-0 w-full h-full object-cover" />
 
       <div className="absolute inset-0 bg-black/40"></div>
 
@@ -879,7 +884,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose }) => {
             )}
           </div>
 
-          <div className="flex-1 relative bg-[url('/images/HomeAppointment.png')] bg-cover bg-center   rounded-[16px] h-[443px] lg:h-auto mt-4 lg:mt-0"></div>
+          <div className="flex-1 relative bg-[url('/images/HomeAppointment.webp')] bg-cover bg-center   rounded-[16px] h-[443px] lg:h-auto mt-4 lg:mt-0"></div>
         </div>
       </section>
 

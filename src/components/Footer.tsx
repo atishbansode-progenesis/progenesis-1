@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-      className="relative w-full bg-[url('/images/Footer_PHONE.png')] csLg:bg-[url('/footer.png')] bg-[#645242] min-h-[120vh] flex flex-col justify-between bg-no-repeat md:bg-fixed text-white overflow-hidden"
+      className="relative w-full bg-[url('/images/Footer_PHONE.webp')] csLg:bg-[url('/footer.webp')] bg-[#645242] min-h-[120vh] flex flex-col justify-between bg-no-repeat md:bg-fixed text-white overflow-hidden"
       style={{
         backgroundPosition: 'center top',
         backgroundSize: '100% 100%',
