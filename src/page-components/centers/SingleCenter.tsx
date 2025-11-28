@@ -309,14 +309,14 @@ export default function SingleCenter({ selectedSlug, center, centers }: SingleCe
                   <div className="flex flex-row flex-wrap gap-3 lg:gap-4 pt-[9px] lg:pt-[52px]">
                     <button
                       onClick={() => {
-                        if (selectedCenter.mapUri) {
+                        if (selectedCenter.map_uri) {
                           window.open(
-                            `https://maps.app.goo.gl/${selectedCenter.mapUri}`,
+                            `https://maps.google.com/?q=${selectedCenter.map_uri}`,
                             "_blank",
                           );
                         }
                       }}
-                      disabled={!selectedCenter.mapUri}
+                      disabled={!selectedCenter.map_uri}
                       className=" lg:px-8 lg:py-3 p-[10px] h-10 lg:h-14 w-fit rounded-lg border hover:cursor-pointer border-[#1656A5] text-white bg-[#1656A5] text-sm font-medium hover:bg-white hover:text-[#1656A5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Get Location

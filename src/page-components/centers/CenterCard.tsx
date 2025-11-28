@@ -39,7 +39,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image, data }) =
         timings: { weekdays: 'Not available', weekends: 'Not available' },
         services: [],
         coordinates: undefined,
-        mapUri: undefined
+        map_uri: undefined
       };
     }
     return center;
@@ -85,7 +85,7 @@ const CenterCard: React.FC<CenterCardProps> = ({ name, address, image, data }) =
         </div>
         {/* Action Buttons */}
         <div className="flex items-start justify-between flex-col md:flex-row gap-3 -mt-5 lg:mt-7 ">
-          <a href={`https://maps.app.goo.gl/${centerData.mapUri}`} target='_blank' rel='noreferrer'
+          <a href={`https://maps.app.goo.gl/${centerData.map_uri}`} target='_blank' rel='noreferrer'
             onClick={(e) => {
                         e.stopPropagation();
                       }}

@@ -41,7 +41,7 @@ export interface Center {
   phone?: string;
   email?: string;
   services?: string[];
-  mapUri: string;
+  map_uri: string;
   coordinates?: {
     lat: number;
     lng: number;
@@ -528,7 +528,7 @@ export interface Center {
 export async function getAllCenters(): Promise<Center[]> {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/centers-data/`, {
-      next: { revalidate: 3600 },
+      cache: 'no-store',
     });
 
     if (!response.ok) {
@@ -546,7 +546,7 @@ export async function getAllCenters(): Promise<Center[]> {
 export async function getCenterBySlug(slug: string): Promise<Center | null> {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/centers-data/${slug}/`, {
-      next: { revalidate: 3600 },
+      cache: 'no-store',
     });
 
     if (!response.ok) {

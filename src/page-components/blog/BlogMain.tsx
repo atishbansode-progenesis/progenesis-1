@@ -21,26 +21,23 @@ const BlogMain: React.FC<BlogMainProps> = ({ data }) => {
 
   return data.post_content
     // Remove repeated n patterns
-    .replace(/nnnn/g, "")             
-    .replace(/\bnnn\b/g, "")          
-    .replace(/\bnn\b/g, "")           
-    .replace(/\bn\b(?=\s*<)/g, "")    
+    .replace(/nnnn/g, "")
+    .replace(/\bnnn\b/g, "")
+    .replace(/\bnn\b/g, "")
+    .replace(/\bn\b(?=\s*<)/g, "")
 
-    // Remove "rn" attached to next word
-    .replace(/rn(?=[A-Za-z])/g, "")   
+    // ❗ Do NOT remove rn inside img src
+    .replace(/(?<!src="[^"]*)rn(?=[A-Za-z])/g, "") 
     .replace(/\brn\b/g, "")
 
-    // Replace line breaks
-    .replace(/\r?\n/g, " ")           
+    // Remove actual line breaks
+    .replace(/\r?\n/g, " ")
 
-    // Remove image tags (if needed)
-    .replace(/<img[^>]*>/g, "")
-
-    // ⭐ Replace ONLY the domain inside img src
-    // .replace(
-    //   /src="https?:\/\/progenesisivf\.com/gi,
-    //   'src="https://paid.progenesisivf.com'
-    // )
+    // Change img domain
+    .replace(
+      /src="https?:\/\/progenesisivf\.com/gi,
+      'src="https://paid.progenesisivf.com'
+    )
 
     .trim();
 }, [data?.post_content]);
