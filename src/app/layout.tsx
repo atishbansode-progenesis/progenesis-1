@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: "Fertility Care Website",
 };
 
+export const dynamic = 'force-dynamic';
+
 // ⬅ make RootLayout async
 export default async function RootLayout({
   children,

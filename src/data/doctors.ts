@@ -38,7 +38,7 @@ export const doctors = [
 export async function getAllDoctors(): Promise<Doctor[]> {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/doctor/`, {
-      next: { revalidate: 3600 },
+      cache: 'no-store',
     });
 
     if (!response.ok) {
