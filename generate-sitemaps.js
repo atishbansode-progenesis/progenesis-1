@@ -77,32 +77,19 @@ const mainUrls = [
 
 createSitemap(mainUrls, 'sitemap-main.xml');
 
-// Centers
-const centers = [
-  'best-ivf-center-in-thane',
-  'best-ivf-center-in-andheri',
-  'best-ivf-center-in-ghatkopar',
-  'best-ivf-center-in-virar',
-  'best-ivf-center-in-kalyan',
-  'best-ivf-center-in-borivali',
-  'best-ivf-center-in-vashi',
-  'best-ivf-center-in-panvel',
-  'best-ivf-center-in-pune',
-  'best-ivf-center-in-nashik',
-  'best-ivf-center-in-jalgaon',
-  'best-ivf-center-in-ahilyanagar',
-  'best-ivf-center-in-amravati',
-  'best-ivf-center-in-kolhapur',
-  'best-ivf-center-in-nagpur',
-  'best-ivf-center-in-solapur',
-  'best-ivf-center-in-sambhajinagar',
-  'best-ivf-center-in-kalyaninagar',
-  'best-ivf-center-in-dhule',
-  'best-ivf-center-in-nanded'
-];
-
-const centerUrls = centers.map(slug => `/our-center/${slug}`);
-createSitemap(centerUrls, 'sitemap-centers.xml');
+// Centers - fetch from API
+async function generateCentersSitemap() {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/centers-data/`);
+    if (response.ok) {
+      const centers = await response.json();
+      const centerUrls = centers.map(center => `/our-center/${center.slug}`);
+      createSitemap(centerUrls, 'sitemap-centers.xml');
+    }
+  } catch (error) {
+    console.error('Error fetching centers:', error);
+  }
+}
 
 // Doctors - fetch from API
 async function generateDoctorsSitemap() {
@@ -158,6 +145,7 @@ function createSitemapIndex() {
 
 async function main() {
   createSitemapIndex();
+  await generateCentersSitemap();
   await generateDoctorsSitemap();
   await generateBlogsSitemap();
 }
