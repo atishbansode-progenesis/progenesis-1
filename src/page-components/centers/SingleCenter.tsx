@@ -311,7 +311,7 @@ export default function SingleCenter({ selectedSlug, center, centers }: SingleCe
                       onClick={() => {
                         if (selectedCenter.map_uri) {
                           window.open(
-                            `https://maps.google.com/?q=${selectedCenter.map_uri}`,
+                            `https://maps.app.goo.gl/${selectedCenter.map_uri}`,
                             "_blank",
                           );
                         }
