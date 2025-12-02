@@ -2,7 +2,8 @@ import Image from "next/image";
 import React, { useState, useRef } from "react";
 
 export const doctors = [
-  { id:0,
+  {
+    id: 0,
     name: "Dr. Narhari S. Malagaonkar",
     image: "/DoctorsSection/doctorimage.webp",
     description:
@@ -16,7 +17,7 @@ export const doctors = [
     role: "Chief Fertility Consultant",
   },
   {
-    id:1,
+    id: 1,
     name: "Dr. Sonali Malagaonkar",
     image: "/DoctorsSection/DrSonali.webp",
     description:
@@ -30,7 +31,7 @@ export const doctors = [
     role: "Sr. Fertility Consultant",
   },
   {
-    id:2,
+    id: 2,
     name: "Dr. Unnati Mamtora",
     image: "/images/doctors/Unnati.webp",
     description:
@@ -44,7 +45,7 @@ export const doctors = [
     role: "Fertility Consultant",
   },
   {
-    id:3,
+    id: 3,
     name: "Dr. Prerna Khandelwal",
     image: "/images/doctors/Prerrna.webp",
     description:
@@ -57,8 +58,8 @@ export const doctors = [
     location: "Thane",
     role: "Fertility Consultant",
   },
-   {
-    id:4,
+  {
+    id: 4,
     name: "Dr. Shraddha Pol",
     image: "/images/doctors/Shradha.webp",
     description:
@@ -72,7 +73,7 @@ export const doctors = [
     role: "Fertility Consultant",
   },
   {
-    id:5,
+    id: 5,
     name: "Dr. Bhavika Sane",
     image: "/images/doctors/Bhavika.webp",
     description:
@@ -86,8 +87,8 @@ export const doctors = [
     role: "Fertility Consultant",
   },
   {
-    id:6,
-    name:"Dr. Bhageshri",
+    id: 6,
+    name: "Dr. Bhageshri",
     image: "/images/doctors/Bhageshri.webp",
     description:
       "Dr. Bhageshri is a Fertility Consultant at Progenesis, Vashi, providing evaluation and treatment for infertility. She is trained in Ovulation Induction, IUI, IVF/ICSI, and offers individualized fertility treatment plans.",
@@ -100,7 +101,7 @@ export const doctors = [
     role: "Fertility Consultant",
   },
   {
-    id:7,
+    id: 7,
     name: "Dr. Teena  Desai",
     image: "/images/doctors/Teena.webp",
     description:
@@ -114,8 +115,8 @@ export const doctors = [
     role: "Fertility Consultant",
   },
 
-    {
-      id:8,
+  {
+    id: 8,
     name: "Dr. Priti Pardeshi",
     image: "/images/doctors/Priti.webp",
     description:
@@ -129,8 +130,8 @@ export const doctors = [
     role: "Fertility Consultant",
   },
 
-   {
-    id:9,
+  {
+    id: 9,
     name: "Dr. Darshna Wahane",
     image: "/images/doctors/Darshna.webp",
     description:
@@ -144,8 +145,8 @@ export const doctors = [
     role: "Fertility Consultant",
   },
 
-   {
-    id:10,
+  {
+    id: 10,
     name: "Dr. Rajashree Patil",
     image: "/images/doctors/Rajashree.webp",
     description:
@@ -159,10 +160,10 @@ export const doctors = [
     role: "Fertility Consultant",
   },
 
-  
+
 
   {
-    id:11,
+    id: 11,
     name: "Dr. Dinesh Wade",
     image: "/images/doctors/Dinesh.webp",
     description:
@@ -175,11 +176,11 @@ export const doctors = [
     location: "Pune",
     role: "Fertility Consultant",
   },
-  
 
-  
+
+
   {
-    id:12,
+    id: 12,
     name: "Dr. Shital Sonone",
     image: "/images/doctors/Shital.webp",
     description:
@@ -193,38 +194,23 @@ export const doctors = [
     role: "Fertility Consultant",
   },
 
-   {
-    id:13,
+  {
+    id: 13,
     name: "Dr. Ashwini Talpe",
     image: "/images/doctors/Ashwini.webp",
     description:
       "Dr. Ashwini Talpe is a Fertility Consultant at Progenesis, Nagpur, with an MS in Obstetrics & Gynaecology and a Fellowship in Reproductive Medicine. She specializes in infertility and IVF/ICSI, providing patient-focused care.",
     experience: [
-      "04+ Years of Experience",
+      "13+ Years of Experience",
       "MS (Obstetrics and Gynaecology)",
       "Fellowship in Reproductive Medicine",
     ],
     location: "Nagpur",
     role: "Fertility Consultant",
   },
- 
-    {
-      id:14,
-    name: "Dr. Suchitra Somkuwar",
-    image: "/images/doctors/Suchitra.webp",
-    description:
-      "Dr. Suchitra Somkuwar is a Fertility Consultant at Progenesis, Nagpur, specializing in reproductive health and infertility care. She provides Ovulation Induction, IUI, and IVF planning with a supportive, patient-centered approach.",
-    experience: [
-      "05+ Years of Experience",
-      "MS (Obstetrics and Gynaecology)",
-      "Fellowship in Reproductive Medicine",
-    ],
-    location: "Nagpur",
-    role: "Fertility Consultant",
-  },
- 
-    {
-      id:15,
+
+  {
+    id: 15,
     name: "Dr. Sangita Ingle",
     image: "/images/doctors/Sangita.webp",
     description:
@@ -239,7 +225,7 @@ export const doctors = [
   },
 
   {
-    id:16,
+    id: 16,
     name: "Dr. Tushar Zanjade",
     image: "/images/doctors/Tushar.webp",
     description:
@@ -254,7 +240,7 @@ export const doctors = [
   },
 
   {
-    id:17,
+    id: 17,
     name: "Dr. Apurva Patni",
     image: "/images/doctors/Apurva.webp",
     description:
@@ -267,10 +253,10 @@ export const doctors = [
     location: "Solapur",
     role: "Fertility Consultant",
   },
-  
- 
+
+
   {
-    id:18,
+    id: 18,
     name: "Dr. Vivek  Bagul",
     image: "/images/doctors/Vivek.webp",
     description:
@@ -318,7 +304,7 @@ const DoctorsSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 md:mb-6 leading-tight">
             Meet the Experts <br /> Behind the Magic
           </h2>
-          <button  aria-label="view all doctors" onClick={() => window.location.href = "/doctors"} className="px-6 cursor-pointer md:px-10 lg:px-12 py-2.5 md:py-3 rounded-lg md:rounded-2xl text-xs md:text-sm font-medium border border-[#1656a5] text-[#1656a5] hover:bg-[#1656a5] hover:text-white transition-all duration-300">
+          <button aria-label="view all doctors" onClick={() => window.location.href = "/doctors"} className="px-6 cursor-pointer md:px-10 lg:px-12 py-2.5 md:py-3 rounded-lg md:rounded-2xl text-xs md:text-sm font-medium border border-[#1656a5] text-[#1656a5] hover:bg-[#1656a5] hover:text-white transition-all duration-300">
             View all Doctors
           </button>
         </div>
@@ -326,7 +312,7 @@ const DoctorsSection = () => {
         {/* Right Side - Description */}
         <div className="w-full lg:w-1/2 flex items-center">
           <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl leading-relaxed md:leading-relaxed lg:leading-10 tracking-tight font-normal">
-          Our team of internationally trained fertility specialists, embryologists, and counselors provide medical expertise and emotional support throughout your journey — ensuring you feel cared for and confident every step of the way.          </p>
+            Our team of internationally trained fertility specialists, embryologists, and counselors provide medical expertise and emotional support throughout your journey — ensuring you feel cared for and confident every step of the way.          </p>
         </div>
       </div>
 
@@ -335,7 +321,7 @@ const DoctorsSection = () => {
         {/* Mobile Horizontal Scroll */}
         <div className="md:hidden overflow-hidden">
           {/* Counter - Mobile */}
-          
+
 
           <div
             ref={scrollContainerRef}
