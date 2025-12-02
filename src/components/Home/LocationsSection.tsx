@@ -32,7 +32,7 @@ export default function LocationsSection({ centersData }: { centersData: Center[
   const locations: City[] = [
     {
       city: "Mumbai",
-      image: "/LocationsSection/Thane.jpg",
+      image: "/LocationsSection/Thane.webp",
       subCities: mumbaiCenters.map(c => ({
         name: c.name,
         address: c.address,
