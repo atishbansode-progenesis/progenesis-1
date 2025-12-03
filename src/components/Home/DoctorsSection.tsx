@@ -103,7 +103,7 @@ export const doctors = [
   {
     id: 7,
     name: "Dr. Teena  Desai",
-    image: "/images/doctors/Teena.webp",
+    image: "/images/doctors/Teena.jpg",
     description:
       "Dr. Teena Desai is a Fertility Consultant with expertise in high-risk obstetrics, gynecology, and fertility, and has contributed to research in male subfertility.",
     experience: [
