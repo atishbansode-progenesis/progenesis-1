@@ -106,9 +106,9 @@ const CentersNav: React.FC<{ data: Center[] }> = ({ data }) => {
         <span className="inline-block bg-[#1656A50D] text-[#1656A5] text-[12px] md:text-[13px] px-3 py-1 rounded-[8px]">
           Find Our IVF Fertility Clinic Near You
         </span>
-        <h1 className="text-3xl md:text-4xl lg:text-[48px] font-manrope font-normal text-[#2C2C2C] leading-tight md:leading-[1.2] mt-2">
-          With the vision to become the leading chain of IVF- Fertility Clinic around the country, Progenesis has expanded remarkably over the years. At present we have our centers at-
-        </h1>
+        <h2 className="text-3xl md:text-4xl lg:text-[36px] font-manrope font-normal text-[#2C2C2C] leading-tight md:leading-[1.2] mt-2">
+          With the vision to become the leading chain of IVF - Fertility Clinic around the country, Progenesis has expanded remarkably over the years.
+        </h2>
       </div>
 
       {/* Filter Section */}
