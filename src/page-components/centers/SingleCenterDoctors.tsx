@@ -98,7 +98,6 @@ const CenterDoctorsSection = ({ centre }: any) => {
               </span>
             ))}
           </div>
-          <div className="flex flex-wrap gap-3 mt-3">
             {[doctor.qualifications, doctor.fellowship].filter(Boolean).map((item: string, idx: number) => (
               <span
                 key={idx}
