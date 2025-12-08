@@ -5,7 +5,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export const metadata = {
   title: "Blogs on Infertility, IVF, IUI and More | Progenesis Fertility Blog",
-  description: "Read interesting and helpful blogs related to Infertility, IVF, IUI and more at Progenesis Fertility Blogs.",
+  description: "Read interesting & helpful blogs related to Infertility, IVF, IUI and more at Progenesis Fertility Blogs.",
   alternates: {
     canonical: "https://progenesisivf.com/blog",
   },
