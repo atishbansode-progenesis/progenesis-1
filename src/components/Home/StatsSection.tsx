@@ -47,7 +47,7 @@ const StatsSection = () => {
     {
       label: "Specialists",
       description:
-        "With over 400 specialists, Every heartbeat of this journey is supported by a team that listens and cares.",
+        "With over 400 specialists, every heartbeat of this journey is supported by a team that listens and cares.",
       value: "400+",
     },
     {

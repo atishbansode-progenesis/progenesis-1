@@ -35,7 +35,7 @@ export const doctors = [
     name: "Dr. Unnati Mamtora",
     image: "/images/doctors/Unnati.webp",
     description:
-      "Dr. Unnati Mamora is a Fertility Consultant with several publications and awards, providing research-driven, empathetic care at Progenesis IVF.",
+      "Dr. Unnati Mamtora is a Fertility Consultant with several publications and awards, providing research-driven, empathetic care at Progenesis IVF.",
     experience: [
       "12+ Years of Experience",
       "DNB DGO (Obstetrics and Gynaecology)",

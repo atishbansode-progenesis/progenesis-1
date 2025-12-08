@@ -38,7 +38,7 @@ const tabs: Tab[] = [
         a: "Seek consultation after 12 months of trying (or 6 months if over 35), or earlier if you have known medical concerns.",
       },
       {
-        q: "What can cause infertility in Men?",
+        q: "Why should I meet a fertility specialist?",
         a: "Evaluation by a specialist can identify causes and guide options like lifestyle changes, medication, IUI, or IVF.",
       },
       {
@@ -59,8 +59,8 @@ const tabs: Tab[] = [
         a: "We can guide you to financing partners and flexible payment schedules where available.",
       },
       {
-        q: "Are there financing options available?",
-        a: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.",
+        q: "What are the available payment options?",
+        a: "Payment options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.",
       },
     ],
   },

@@ -22,7 +22,7 @@ const tabs: Tab[] = [
       { q: "How Common is infertility?", a: "Roughly 10–15% of couples experience infertility, and many benefit from timely evaluation and treatment." },
       { q: "What can cause infertility in Men?", a: "Low sperm count, poor motility or morphology, infections, varicocele, hormonal issues, or lifestyle factors can contribute." },
       { q: "When should I seek consultation for infertility?", a: "Seek consultation after 12 months of trying (or 6 months if over 35), or earlier if you have known medical concerns." },
-      { q: "What can cause infertility in Men?", a: "Evaluation by a specialist can identify causes and guide options like lifestyle changes, medication, IUI, or IVF." },
+      { q: "Why should I meet a fertility specialist?", a: "Evaluation by a specialist can identify causes and guide options like lifestyle changes, medication, IUI, or IVF." },
       { q: "Can I improve my fertility?", a: "Yes, adopting a healthy lifestyle with balanced nutrition, regular exercise, avoiding tobacco and excessive alcohol, and managing stress can improve fertility outcomes for both men and women." },
     ],
   },
@@ -31,7 +31,7 @@ const tabs: Tab[] = [
     items: [
       { q: "Do you offer packages?", a: "Yes, we offer transparent packages tailored to treatment needs. Contact our team for current details." },
       { q: "Are there financing options?", a: "We can guide you to financing partners and flexible payment schedules where available." },
-      { a: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.", q: "Are there financing options available?" },
+      { a: "Yes, financing options including installment plans and collaborations with third-party services are available to help patients manage treatment costs.", q: "What are the available payment options?" },
     ],
   },
   {
