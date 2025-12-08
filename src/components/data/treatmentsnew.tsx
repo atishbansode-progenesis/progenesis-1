@@ -261,7 +261,7 @@ export const eggEmbryoFreezingData = {
       },
       {
         icon: "/treatments/egg-embryo-freezing/icon3.png",
-        title: "Who It Work",
+        title: "How It Works",
         description: "Eggs are retrieved, vitrified, and stored; embryos are fertilized before freezing."
       },
       {
