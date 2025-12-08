@@ -1709,8 +1709,8 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
             isPhone: true,
           },
           {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
+            label: "+91 94239 71620",
+            path: "https://wa.me/919423971620",
             isWhatsapp: true,
           },
           // { label: "Take a Quiz", path: "/quiz", isarrow: true },
@@ -1810,8 +1810,8 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
             isPhone: true,
           },
           {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
+            label: "+91 94239 71620",
+            path: "https://wa.me/919423971620",
             isWhatsapp: true,
           },
           // { label: "Take a Quiz", path: "/quiz", isarrow: true },
@@ -2061,8 +2061,8 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
             isPhone: true,
           },
           {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
+            label: "+91 94239 71620",
+            path: "https://wa.me/919423971620",
             isWhatsapp: true,
           },
           {
@@ -2152,8 +2152,8 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
             isPhone: true,
           },
           {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
+            label: "+91 94239 71620",
+            path: "https://wa.me/919423971620",
             isWhatsapp: true,
           },
           {
@@ -2205,8 +2205,8 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
             isPhone: true,
           },
           {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
+            label: "+91 94239 71620",
+            path: "https://wa.me/919423971620",
             isWhatsapp: true,
           },
           {
@@ -2361,8 +2361,8 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
             isPhone: true,
           },
           {
-            label: "+91 94239 71260",
-            path: "tel:+919423971260",
+            label: "+91 94239 71620",
+            path: "https://wa.me/919423971620",
             isWhatsapp: true,
           },
           {
