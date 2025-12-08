@@ -7,7 +7,7 @@ function TextSection({city}: {city: string}) {
             className="absolute inset-0 hidden md:block bg-cover bg-center"    
             aria-hidden
           />
-          <p className="text-[#94BA3D] max-w-[90%] text-[28px] lg:text-[40px] lg:leading-[48px] tracking-tight text-center font-normal font-[Manrope] relative z-10">
+          <p className="text-[#94BA3D] max-w-[90%] text-[24px] lg:text-[40px] lg:leading-[48px] tracking-tight text-center font-normal font-[Manrope] relative z-10">
             Our chain of fertility clinic is one of the most successful IVF center in {city}, having completed more than 18000+ successful IVFs. Our ART lab and IVF doctors, have more than 45 years of combined experience.
             </p>
         </section>
