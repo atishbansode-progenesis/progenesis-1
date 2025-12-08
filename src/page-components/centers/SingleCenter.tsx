@@ -204,11 +204,9 @@ export default function SingleCenter({ selectedSlug, center, centers }: SingleCe
         >
           <div className="lg:pl-30 pl-4 lg:pt-20 pt-4 max-w-7xl w-full">
             <h1 className="text-white text-[32px] leading-[40px] lg:text-[60px] lg:leading-[66px] font-[Manrope] tracking-tight font-semibold mb-4">
-              Progenesis IVF,
+              Progenesis IVF, {selectedCenter.name}
             </h1>
-            <h2 className="text-white text-[32px] leading-[40px] lg:text-[60px] lg:leading-[66px] font-semibold tracking-tight font-[Manrope] mb-6">
-              {selectedCenter.name}
-            </h2>
+          
           </div>
           <div className="lg:pl-30 pl-4 pt-5">
             <button
