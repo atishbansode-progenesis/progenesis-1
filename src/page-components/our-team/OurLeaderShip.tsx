@@ -16,7 +16,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Dr. Narhari S. Malagaonkar",
     role: "Chief Fertility Consultant",
-    image: "/DoctorsSection/doctorimage.png",
+    image: "/DoctorsSection/doctorimage.webp",
   },
     {
     id: 2,
