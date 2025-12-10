@@ -15,6 +15,15 @@ import axios from "axios";
 import Script from "next/script";
 import { generateMedicalClinicSchema } from "@/utils/constent/schemaGenerator";
 
+const centerVideoMap: Record<string, string> = {
+  'best-ivf-center-in-andheri': 'https://youtu.be/PpjwhQ21ajM',
+  'best-ivf-center-in-virar': 'https://youtu.be/EedlzRolvww',
+  'best-ivf-center-in-kalyan': 'https://youtu.be/2LIhyeGwt3E',
+  'best-ivf-center-in-panvel': 'https://youtu.be/abVNkUwA2tU',
+  'best-ivf-center-in-jalgaon': 'https://youtu.be/vXBWQzTnk0A',
+  'best-ivf-center-in-ahilyanagar': 'https://youtu.be/TCtvf8OHUp8',
+};
+
 interface SingleCenterProps {
   selectedSlug?: string;
   center?: Center;
@@ -367,10 +376,10 @@ export default function SingleCenter({ selectedSlug, center, centers }: SingleCe
             )}
           </div>
         </section>
-
         <CenterCarousel
           gallery={selectedCenter.gallery}
           fallbackImage={selectedCenter.image}
+          videoUrl={centerVideoMap[selectedCenter.slug]}
         />
         <Detailing />
         <TextSection city={selectedCenter.name} />
