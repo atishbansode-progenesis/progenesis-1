@@ -70,7 +70,7 @@ const CenterDoctorsSection = ({ centre }: any) => {
         }
         style={{ ...cardStyle }}
       >
-        <div className="p-4 md:w-1/2 w-full overflow-hidden">
+        <div className="p-4 md:w-1/2 w-full h-full overflow-hidden">
           <img
             src={doctor.image || "/default-doctor.png"}
             alt={doctor.name}
@@ -87,6 +87,7 @@ const CenterDoctorsSection = ({ centre }: any) => {
               {doctor.specialty}
             </p>
           </div>
+          <div className="flex flex-wrap gap-3 mt-3">
           <div className="flex flex-wrap gap-3">
             {(Array.isArray(doctor.experience) ? doctor.experience : [doctor.experience]).map((exp: string, idx: number) => (
               <span
@@ -97,7 +98,6 @@ const CenterDoctorsSection = ({ centre }: any) => {
               </span>
             ))}
           </div>
-          <div className="flex flex-wrap gap-3 mt-3">
             {[doctor.qualifications, doctor.fellowship].filter(Boolean).map((item: string, idx: number) => (
               <span
                 key={idx}
