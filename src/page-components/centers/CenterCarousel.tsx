@@ -208,7 +208,7 @@ import React from 'react';
 interface CenterCarouselProps {
   gallery?: string[];
   fallbackImage?: string;
-  videoUrl?: string; // YouTube video URL or embed ID
+  videoUrl?: string;
 }
 
 const CenterCarousel: React.FC<CenterCarouselProps> = ({ gallery, fallbackImage, videoUrl }) => {
