@@ -308,7 +308,6 @@ const CenterCarousel: React.FC<CenterCarouselProps> = ({ gallery, fallbackImage,
         );
       })}
 
-      {/* Tabs / Progress Indicators */}
       {totalSlides > 1 && (
         <div
           ref={containerRef}
