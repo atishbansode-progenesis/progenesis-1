@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 
-export default {
+module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://progenesisivf.com",
   generateRobotsTxt: true,
   robotsTxtOptions: {
