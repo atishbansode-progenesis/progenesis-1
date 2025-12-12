@@ -22,6 +22,7 @@ const centerVideoMap: Record<string, string> = {
   'best-ivf-center-in-panvel': 'https://youtu.be/abVNkUwA2tU',
   'best-ivf-center-in-jalgaon': 'https://youtu.be/vXBWQzTnk0A',
   'best-ivf-center-in-ahilyanagar': 'https://youtu.be/TCtvf8OHUp8',
+  'best-ivf-center-in-borivali': 'https://youtu.be/HruQFsq6s04',
 };
 
 interface SingleCenterProps {
