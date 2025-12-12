@@ -69,7 +69,9 @@ export async function getAllCenters(): Promise<Center[]> {
       throw new Error("Failed to fetch doctors");
     }
     const apiCenters: Center[] = await response.json();
-    return apiCenters;
+    const mumbaiCenters = apiCenters.filter((c: Center) => c.city === "Mumbai");
+    const otherCenters = apiCenters.filter((c: Center) => c.city !== "Mumbai");
+    return [...mumbaiCenters, ...otherCenters];
 
   } catch (error) {
     console.error("Doctors API Error:", error);

@@ -26,8 +26,8 @@ type City = {
 
 export default function LocationsSection({ centersData }: { centersData: Center[] }) {
   const router = useRouter();
-  const mumbaiCenters = centersData.filter((c: Center) => c.city === "Mumbai").sort((a, b) => (a.order || a.id) - (b.order || b.id));
-  const otherCenters = centersData.filter((c: Center) => c.city !== "Mumbai").sort((a, b) => (a.order || a.id) - (b.order || b.id));
+  const mumbaiCenters = centersData.filter((c: Center) => c.city === "Mumbai");
+  const otherCenters = centersData.filter((c: Center) => c.city !== "Mumbai");
 
   const locations: City[] = [
     {
