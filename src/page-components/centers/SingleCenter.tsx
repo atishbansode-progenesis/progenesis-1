@@ -97,6 +97,7 @@ export default function SingleCenter({ selectedSlug, center, centers }: SingleCe
     }
   }, [selectedSlug, center]);
 
+
   // Generate schema markup
   const schemaMarkup = useMemo(() => {
     if (!selectedCenter) return null;

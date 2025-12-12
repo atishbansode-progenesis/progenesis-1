@@ -48,7 +48,7 @@ const CenterDoctorsSection = ({ centre }: any) => {
 
     const totalGaps = GAP * (visibleCards - 1);
     const cardWidth = (containerWidth - totalGaps) / visibleCards;
-    const scrollAmount = currentSlide * (cardWidth + GAP);
+    const scrollAmount = currentSlide * visibleCards * (cardWidth + GAP);
 
     sc.scrollTo({ left: scrollAmount, behavior: "smooth" });
   }, [currentSlide, isCarousel, winWidth, showDotors.length, visibleCards]);
