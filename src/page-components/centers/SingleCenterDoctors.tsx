@@ -48,7 +48,7 @@ const CenterDoctorsSection = ({ centre }: any) => {
 
     const totalGaps = GAP * (visibleCards - 1);
     const cardWidth = (containerWidth - totalGaps) / visibleCards;
-    const scrollAmount = currentSlide * visibleCards * (cardWidth + GAP);
+    const scrollAmount = currentSlide * (cardWidth + GAP);
 
     sc.scrollTo({ left: scrollAmount, behavior: "smooth" });
   }, [currentSlide, isCarousel, winWidth, showDotors.length, visibleCards]);
@@ -65,7 +65,7 @@ const CenterDoctorsSection = ({ centre }: any) => {
     return (
       <div
         key={index}
-        className={`doctor-card bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100 flex flex-col min-h-[250px] w-full 
+        className={`doctor-card bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100 flex flex-col min-h-[211px] md:min-h-[250px] w-full 
           ${isCarousel ? 'md:flex-row' : 'md:flex-row flex-1 max-w-[832px] mx-auto'}`
         }
         style={{ ...cardStyle }}
