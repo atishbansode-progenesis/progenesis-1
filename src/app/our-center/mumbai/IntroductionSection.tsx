@@ -3,14 +3,14 @@ import { MapPin, Phone, Clock, Users } from 'lucide-react';
 
 export default function IntroductionSection({ onBookAppointment }: { onBookAppointment: () => void }) {
   const centers = [
-    { name: 'Virar', url: 'https://maps.app.goo.gl/jjJ4VsqyucMXAdyE6' },
-    { name: 'Borivali', url: 'https://maps.app.goo.gl/YcbodoFEAgKJHuRT9' },
-    { name: 'Kalyan', url: 'https://maps.app.goo.gl/dzi2X4KZaHQaK5JZ8' },
-    { name: 'Thane', url: 'https://maps.app.goo.gl/EMAvrfHNCHC2U1LZ8' },
-    { name: 'Andheri', url: 'https://maps.app.goo.gl/PQRRFJMUFMqRfHud7' },
-    { name: 'Ghatkopar', url: 'https://maps.app.goo.gl/dvGz17dedJQoCRPZ7' },
-    { name: 'Vashi', url: 'https://maps.app.goo.gl/iV88rxwodoL4NVXb8' },
-    { name: 'Panvel', url: 'https://maps.app.goo.gl/zTeErrHg79gAWayt6' }
+    { name: 'Virar' },
+    { name: 'Borivali' },
+    { name: 'Kalyan' },
+    { name: 'Thane' },
+    { name: 'Andheri' },
+    { name: 'Ghatkopar' },
+    { name: 'Vashi' },
+    { name: 'Panvel' }
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function IntroductionSection({ onBookAppointment }: { onBookAppoi
                   <Users className="text-blue-600" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-800">Expert Team</h3>
+                  <h3 className="font-bold text-gray-800">400+ Specialist</h3>
                   <p className="text-sm text-gray-600">Experienced Doctors</p>
                 </div>
               </div>
@@ -67,8 +67,8 @@ export default function IntroductionSection({ onBookAppointment }: { onBookAppoi
                   <Phone className="text-blue-600" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-800">24/7 Support</h3>
-                  <p className="text-sm text-gray-600">Always Available</p>
+                  <h3 className="font-bold text-gray-800">Contact Us</h3>
+                  <p className="text-sm text-gray-600">+91 9423971620</p>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function IntroductionSection({ onBookAppointment }: { onBookAppoi
                 Our Mumbai Centers
               </h3>
               
-              {/* Custom Map Image with Clickable Markers */}
+              {/* Custom Map Image with Center Markers */}
               <div className="relative rounded-lg overflow-hidden shadow-lg" style={{ height: '400px' }}>
                 {/* Background Map Image */}
                 <img 
@@ -104,11 +104,8 @@ export default function IntroductionSection({ onBookAppointment }: { onBookAppoi
                 <div className="absolute inset-0">
                   <div className="relative w-full h-full">
                     {centers.map((center, index) => (
-                      <a
+                      <div
                         key={index}
-                        href={center.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="absolute bg-white px-3 py-1.5 rounded-full shadow-lg border-2 border-blue-500 hover:border-blue-700 hover:bg-blue-50 transition-all cursor-pointer hover:scale-110 z-10"
                         style={getPositionStyle(center.name)}
                       >
@@ -116,15 +113,11 @@ export default function IntroductionSection({ onBookAppointment }: { onBookAppoi
                           <MapPin size={14} className="text-blue-600" />
                           <span className="font-semibold text-xs text-gray-700">{center.name}</span>
                         </div>
-                      </a>
+                      </div>
                     ))}
                   </div>
                 </div>
               </div>
-
-              <p className="text-center text-sm text-gray-600 mt-3">
-                Click on any location to view center details on Google Maps
-              </p>
             </div>
           </div>
 
@@ -139,7 +132,7 @@ function getPositionStyle(centerName: string): React.CSSProperties {
   const positions: { [key: string]: React.CSSProperties } = {
     'Virar': { top: '3%', left: '30%' },
     'Borivali': { top: '25%', left: '27%' },
-    'Kalyan': { top: '12%', right: '8%' },
+    'Kalyan': { top: '24%', right: '18%' },
     'Thane': { top: '35%', right: '35%' },
     'Andheri': { top: '50%', left: '22%' },
     'Ghatkopar': { top: '60%', left: '35%' },
