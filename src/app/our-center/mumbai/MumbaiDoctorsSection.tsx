@@ -29,7 +29,7 @@ const MumbaiDoctorsSection = () => {
       description: "She focuses on personalised fertility care with evidence-based protocols to improve reproductive outcomes.",
       experience: [
         "12+ Years",
-        "DNB, DGO",
+        "M.S. (Obstetrics and Gynaecology)",
         "Fellowship in Reproductive Medicine"
       ],
       location: "Mumbai",
@@ -38,11 +38,11 @@ const MumbaiDoctorsSection = () => {
     {
       id: 3,
       name: "Dr. Unnati Mamtora",
-      image: "/images/doctors/Unnati.webp",
+      image: "/images/doctors/drunnati.jpg",
       description: "She provides compassionate fertility treatment plans tailored to individual patient needs.",
       experience: [
         "12+ Years",
-        "DNB, DGO",
+        "DNB DGO (Obstetrics and Gynaecology)",
         "Fellowship in Reproductive Medicine"
       ],
       location: "Borivali",
@@ -64,7 +64,7 @@ const MumbaiDoctorsSection = () => {
     {
       id: 5,
       name: "Dr. Shraddha Pol",
-      image: "/images/doctors/Shradha.webp",
+      image: "/images/doctors/drshradda.jpg",
       description: "She specialises in infertility management with a focus on ethical and advanced care.",
       experience: [
         "4+ Years",
@@ -77,11 +77,11 @@ const MumbaiDoctorsSection = () => {
     {
       id: 6,
       name: "Dr. Bhavika Sane",
-      image: "/images/doctors/Bhavika.webp",
+      image: "/images/doctors/drbhavika.jpg",
       description: "She delivers structured fertility treatments supported by clinical precision.",
       experience: [
         "4+ Years",
-        "DGO",
+        "DGO (Obstetrics and Gynaecology)",
         "Fellowship in Reproductive Medicine"
       ],
       location: "Vashi",
@@ -89,12 +89,12 @@ const MumbaiDoctorsSection = () => {
     },
     {
       id: 7,
-      name: "Dr. Bhageshri",
+      name: "Dr. Bhagyashri",
       image: "/images/doctors/Bhageshri.webp",
       description: "She is committed to comprehensive infertility care and patient education.",
       experience: [
         "8+ Years",
-        "DGO",
+        "DGO (Obstetrics and Gynaecology)",
         "Fellowship in Reproductive Medicine"
       ],
       location: "Vashi",
@@ -107,7 +107,7 @@ const MumbaiDoctorsSection = () => {
       description: "She combines clinical expertise with empathetic patient support.",
       experience: [
         "10+ Years",
-        "DNB, DGO",
+        "DNB DGO (Obstetrics and Gynaecology)",
         "Fellowship in Reproductive Medicine"
       ],
       location: "Andheri",
@@ -120,7 +120,7 @@ const MumbaiDoctorsSection = () => {
       description: "She provides evidence-driven fertility solutions with personalised care.",
       experience: [
         "12+ Years",
-        "DGO",
+        "DGO (Obstetrics and Gynaecology)",
         "Fellowship in Reproductive Medicine"
       ],
       location: "Kalyan",
@@ -129,11 +129,11 @@ const MumbaiDoctorsSection = () => {
     {
       id: 10,
       name: "Dr. Darshna Wahane",
-      image: "/images/doctors/Darshna.webp",
+      image: "/images/doctors/drdarshna.jpg",
       description: "She focuses on holistic fertility management using modern protocols.",
       experience: [
         "10+ Years",
-        "MBBS, DGO",
+        "MBBS DGO (Obstetrics and Gynaecology)",
         "Fellowship in Reproductive Medicine"
       ],
       location: "Panvel",
@@ -146,7 +146,7 @@ const MumbaiDoctorsSection = () => {
       description: "She delivers personalised infertility treatment with consistent outcomes.",
       experience: [
         "12+ Years",
-        "DNB, DGO",
+        "DNB DGO (Obstetrics and Gynaecology)",
         "Fellowship in Reproductive Medicine"
       ],
       location: "Virar",

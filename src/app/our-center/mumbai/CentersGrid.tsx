@@ -91,7 +91,7 @@ export default function CentersGrid({ onBookAppointment }: { onBookAppointment: 
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex items-center text-white text-sm space-x-2">
                       <Clock size={16} />
-                      <span>Mon - Sat: 9:30 AM - 7:00 PM</span>
+                      <span>9:30 AM - 7:00 PM</span>
                     </div>
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export default function CentersGrid({ onBookAppointment }: { onBookAppointment: 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:+919999999999"
+              href="tel:+91 9423971620"
               className="flex items-center space-x-2 bg-white px-8 py-4 rounded-lg font-semibold transition duration-300 shadow-lg hover:shadow-xl border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
             >
               <Phone size={20} />
@@ -143,7 +143,7 @@ export default function CentersGrid({ onBookAppointment }: { onBookAppointment: 
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0d4078'}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1656A5'}
             >
-              Book Appointment Online
+              Book Appointment
             </button>
           </div>
         </div>

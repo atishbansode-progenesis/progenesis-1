@@ -21,7 +21,7 @@ type Review = {
 
 export default function MumbaiCenterPage() {
   const [showForm, setShowForm] = useState(false);
-  
+
   // Add review states
   const [rating, setRating] = useState<number>(4.5);
   const [totalReviews, setTotalReviews] = useState<number>(0);
@@ -91,18 +91,18 @@ export default function MumbaiCenterPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div 
-        className="relative text-white py-40 px-4 bg-cover bg-center"
+      <div
+        className="relative text-white py-40 px-4 bg-cover bg-[60%] md:bg-center"
         style={{
           backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/images/hero-mumbai.jpg")',
           minHeight: '500px'
         }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto -mt-20">
           <h1 className="text-3xl md:text-4xl font-bold mb-6 max-w-xl">
             Progenesis IVF, Mumbai
           </h1>
-          <button 
+          <button
             onClick={() => setShowForm(true)}
             className="text-white px-6 py-3 rounded-md font-medium transition duration-300"
             style={{ backgroundColor: '#1656A5' }}
@@ -118,15 +118,15 @@ export default function MumbaiCenterPage() {
       <IntroductionSection onBookAppointment={() => setShowForm(true)} />
       <CentersGrid onBookAppointment={() => setShowForm(true)} />
       <OurExpertise />
-      
+
       {/* Pass fetched data to TestimonialsSection */}
-      <TestimonialsSection 
+      <TestimonialsSection
         rating={rating}
         totalReviews={totalReviews}
         reviewsList={reviewsList}
       />
       <MumbaiDoctorsSection />
-      <MumbaiFaqSection /> 
+      <MumbaiFaqSection />
 
       {/* Appointment Form Modal */}
       {showForm && <AppointmentForm onClose={() => setShowForm(false)} />}
