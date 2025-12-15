@@ -129,7 +129,7 @@ const MumbaiDoctorsSection = () => {
     {
       id: 10,
       name: "Dr. Darshna Wahane",
-      image: "/images/doctors/drdarshna.jpg",
+      image: "/images/doctors/drdarshana.jpg",
       description: "She focuses on holistic fertility management using modern protocols.",
       experience: [
         "10+ Years",
