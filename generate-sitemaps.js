@@ -37,6 +37,7 @@ const mainUrls = [
   '/treatments', // listing page
   '/blog',
   '/doctors',
+  '/our-center/mumbai',
 
 
   // Treatments

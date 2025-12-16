@@ -56,8 +56,6 @@ const MumbaiFaqSection: React.FC = () => {
               Quick answers to the
               <span className="text-[#94BA3D]"> most common</span>
               <br />
-              <span className="text-[#94BA3D]">fertility-related</span>
-              <br />
               <span className="text-[#94BA3D]">questions.</span>
             </h2>
           </div>

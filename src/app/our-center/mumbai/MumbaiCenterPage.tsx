@@ -94,7 +94,7 @@ export default function MumbaiCenterPage() {
       <div
         className="relative text-white py-40 px-4 bg-cover bg-[60%] md:bg-center"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/images/hero-mumbai.jpg")',
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/images/hero-mumbai.png")',
           minHeight: '500px'
         }}
       >
