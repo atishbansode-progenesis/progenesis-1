@@ -1697,6 +1697,7 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
           // { label: "Impact & Growth", path: "/about-progenesis#impact-growth" },
           { label: "FAQs", path: "/about-progenesis#faqs" },
           { label: "Careers", path: "/careers" },
+          { label: "Fellowship", path: "https://paid.progenesisivf.com/fellowship/" },
         ],
       },
       {
@@ -2050,6 +2051,8 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
           // { label: "Impact & Growth", path: "/about-progenesis#impact-growth" },
           { label: "Careers", path: "/careers" },
           { label: "FAQs", path: "/about-progenesis#faqs" },
+          { label: "Fellowship", path: "https://paid.progenesisivf.com/fellowship/" },
+          
         ],
       },
       {
@@ -2180,7 +2183,7 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
         links: [
           {
             label: "Mumbai",
-            path: "/mumbai",
+            path: "our-center/mumbai",
             submenu: centersData
               .filter((center) => center.city === "Mumbai")
               .map((center) => ({
