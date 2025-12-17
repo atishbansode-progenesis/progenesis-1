@@ -117,8 +117,14 @@ export default function SingleCenter({ selectedSlug, center, centers }: SingleCe
         process.env.NEXT_PUBLIC_API_URL + "/api/average-reviews/"
       );
 
+      const rawName = selectedCenter?.name || "";
+      const normalizedName = rawName
+        .split("-")[0]        
+        .trim()               
+        .toLowerCase();     
+
       const centerData = response.data.results.results.find((data: any) =>
-        data.city.toLowerCase() === selectedCenter?.name.toLowerCase()
+        data.city?.toLowerCase() === normalizedName
       );
 
       if (!centerData) {
