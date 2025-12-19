@@ -52,7 +52,7 @@ const AdDoctorSection = () => {
     {
       id: 4,
       name: "Dr. Prerna Khandelwal",
-      image: "/images/doctors/prerrna.webp",
+      image: "/images/doctors/Prerrna.webp",
       description: "She adopts a patient-centric approach using modern reproductive techniques.",
       experience: [
         "4+ Years",
@@ -91,7 +91,7 @@ const AdDoctorSection = () => {
     {
       id: 7,
       name: "Dr. Bhagyashri",
-      image: "/images/doctors/bhageshri.webp",
+      image: "/images/doctors/Bhageshri.webp",
       description: "She is committed to comprehensive infertility care and patient education.",
       experience: [
         "8+ Years",
@@ -104,7 +104,7 @@ const AdDoctorSection = () => {
     {
       id: 8,
       name: "Dr. Teena Desai",
-      image: "/images/doctors/teena.webp",
+      image: "/images/doctors/Teena.webp",
       description: "She combines clinical expertise with empathetic patient support.",
       experience: [
         "12+ Years",
@@ -117,7 +117,7 @@ const AdDoctorSection = () => {
     {
       id: 9,
       name: "Dr. Priti Pardeshi",
-      image: "/images/doctors/priti.webp",
+      image: "/images/doctors/Priti.webp",
       description: "She provides evidence-driven fertility solutions with personalised care.",
       experience: [
         "12+ Years",
@@ -143,7 +143,7 @@ const AdDoctorSection = () => {
     {
       id: 11,
       name: "Dr. Rajashree Patil",
-      image: "/images/doctors/rajashree.webp",
+      image: "/images/doctors/Rajashree.webp",
       description: "She delivers personalised infertility treatment with consistent outcomes.",
       experience: [
         "12+ Years",
@@ -251,7 +251,7 @@ const AdDoctorSection = () => {
       image: "/images/doctors/drjanhavi.jpg",
       description: "She specializes in individualized treatment plans to help couples on the path to conception.",
       experience: [
-        "4+ Years",
+        "7+ Years",
         "MBBS, MS (Obstetrics and Gynaecology)",
         "Fellowship in Reproductive Medicine"
       ],
