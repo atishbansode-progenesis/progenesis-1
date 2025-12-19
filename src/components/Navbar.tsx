@@ -1847,7 +1847,7 @@ export default function Navbar({ doctors, centersData }: { doctors: Doctor[]; ce
         links: [
           {
             label: "Mumbai",
-            path: "/our-center/mumbai",
+            path: "#",
             submenu: centersData
               .filter((center) => center.city === "Mumbai")
               .map((center) => ({
