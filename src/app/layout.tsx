@@ -21,20 +21,20 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-// ⬅ make RootLayout async
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
-  // ⬅ fetch doctors on server
   const doctors = await getAllDoctors();
-  const centers = await getAllCenters()
+  const centers = await getAllCenters();
 
   return (
     <html lang="en">
-      <body className={`antialiased ${manrope.variable}`}>
+      <head>
+        {/* Google Site Verification */}
+        <meta name="google-site-verification" content="Q3P1o4EPvgGGLII" />
+        
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -45,7 +45,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-P6WDNFF');`,
           }}
         />
+      </head>
 
+      <body className={`antialiased ${manrope.variable}`}>
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-P6WDNFF"
@@ -55,9 +58,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
 
-        {/* ⬅ pass doctors to navbar */}
         <Navbar doctors={doctors} centersData={centers} />
-
         <NextTopLoader color="#1656A5" />
         <MainContent>{children}</MainContent>
         <Footer />
